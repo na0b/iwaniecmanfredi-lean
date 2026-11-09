@@ -21,5 +21,5 @@ jobs:
           lake env lean Axioms.lean | tee axioms.txt
           # Theorems 1 and 2, Corollaries 1 and 2, Lemmas 1 and 2 (eight declarations):
           # only the three standard axioms.
-          test "$(grep -c "depends on axioms: \[propext, Classical.choice, Quot.sound\]" axioms.txt)" -eq 1
+          test "$(grep -c "depends on axioms: \[propext, Classical.choice, Quot.sound\]" axioms.txt)" -eq 8
           ! grep -q sorryAx axioms.txt
