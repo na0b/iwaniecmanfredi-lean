@@ -1,0 +1,188 @@
+\begin{theorem}
+Let $V\subset\mathbb{C}$ be open with $0\in V$, and let
+$H,\chi\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(i)] $H$ is continuous on $V$ and injective on $V$;
+\item[(ii)] $H(V)$ is open;
+\item[(iii)] $\chi(H(z))=z$ for every $z\in V$, and $\chi$ is continuous on
+$H(V)$;
+\item[(iv)] $H(0)=0$.
+\end{enumerate}
+Then there is $\rho>0$ such that for every $r$ with $0<r\le\rho$ and every
+continuous $\gamma\colon[0,1]\to\mathbb{C}$ which is nowhere zero and satisfies
+\[
+  \gamma(t)=H\bigl(re^{2\pi it}\bigr)\qquad\text{for all }t\in[0,1],
+\]
+one has
+\[
+  \operatorname{ind}(\gamma)=1\quad\text{or}\quad\operatorname{ind}(\gamma)=-1,
+\]
+where $\operatorname{ind}$ is the index about $0$ of \noderef{WindingNumber}.
+\end{theorem}
+\begin{proof}
+For $\delta>0$ write $B_\delta=\{w\in\mathbb{C}:|w|<\delta\}$.
+
+\emph{Step 0: $\chi$ is a two-sided inverse on $H(V)$, and the two
+non-vanishing facts.}  Let $w\in H(V)$, say $w=H(z)$ with $z\in V$.  By (iii),
+$\chi(w)=\chi(H(z))=z$, hence
+\begin{equation}\tag{1}
+  H\bigl(\chi(w)\bigr)=H(z)=w\qquad\text{for every }w\in H(V).
+\end{equation}
+Consequently, if $w\in H(V)$ and $\chi(w)=0$, then by (1) and (iv)
+$w=H(\chi(w))=H(0)=0$; that is,
+\begin{equation}\tag{2}
+  \chi(w)\neq0\qquad\text{for every }w\in H(V)\text{ with }w\neq0 .
+\end{equation}
+Also, if $\xi\in V$ and $\xi\neq0$, then $H(\xi)\neq H(0)=0$ by injectivity on
+$V$ (both $\xi$ and $0$ lie in $V$); that is,
+\begin{equation}\tag{3}
+  H(\xi)\neq0\qquad\text{for every }\xi\in V\text{ with }\xi\neq0 .
+\end{equation}
+
+\emph{Step 1: choice of $\delta$ and $\rho$.}  By (iv), $0=H(0)\in H(V)$, and
+$H(V)$ is open by (ii), so there is $\delta>0$ with
+\begin{equation}\tag{4}
+  B_\delta\subseteq H(V).
+\end{equation}
+Put
+\[
+  W=\{z\in V:H(z)\in B_\delta\}.
+\]
+Then $W$ is open: $H$ is continuous on $V$ and $B_\delta$ is open, so
+$\{z\in V:H(z)\in B_\delta\}$ is open in the subspace $V$, and $V$ is open in
+$\mathbb{C}$.  Moreover $0\in W$, since $0\in V$ and $H(0)=0\in B_\delta$.  As
+$W$ is open and contains $0$, there is $\rho>0$ with
+\begin{equation}\tag{5}
+  \{\xi\in\mathbb{C}:|\xi|\le\rho\}\subseteq W
+\end{equation}
+(choose $\rho'>0$ with the open disc of radius $\rho'$ inside $W$ and take
+$\rho=\rho'/2$).  We claim this $\rho$ has the required property.
+
+Fix $r$ with $0<r\le\rho$, and let $\gamma$ be continuous, nowhere zero, with
+$\gamma(t)=H(re^{2\pi it})$ for all $t\in[0,1]$.
+
+\emph{Step 2: $\gamma$ is a loop in the punctured disc $B_\delta-\{0\}$.}  For
+every $t$ we have $|re^{2\pi it}|=r\le\rho$, so $re^{2\pi it}\in W$ by (5); in
+particular $re^{2\pi it}\in V$ and $H(re^{2\pi it})\in B_\delta$, i.e.
+\begin{equation}\tag{6}
+  |\gamma(t)|<\delta\qquad\text{for all }t .
+\end{equation}
+Also $\gamma(0)=H(r)$ and $\gamma(1)=H(re^{2\pi i})=H(r)$, so
+\begin{equation}\tag{7}
+  \gamma(0)=\gamma(1)=H(r),
+\end{equation}
+and $H(r)\neq0$ by (3), since $r\in W\subseteq V$ and $r\neq0$.
+
+\emph{Step 3: the index of $\gamma$ is an integer, and the model loop.}  By (7)
+$\gamma$ is a loop, so by part (c) of \noderef{WindingCalculus} there is
+$d\in\mathbb{Z}$ with
+\begin{equation}\tag{8}
+  \operatorname{ind}(\gamma)=d .
+\end{equation}
+Define $\rho_d,\rho_1\colon[0,1]\to\mathbb{C}$ by
+\[
+  \rho_d(t)=H(r)\,e^{2\pi idt},\qquad \rho_1(t)=H(r)\,e^{2\pi it}.
+\]
+Both are continuous.  Since $|e^{i\vartheta}|=1$ for real $\vartheta$,
+\[
+  |\rho_d(t)|=|\rho_1(t)|=|H(r)|,
+\]
+which is nonzero and, by (6) at $t=0$ together with (7), smaller than $\delta$.
+So $\rho_d$ and $\rho_1$ are nowhere-zero paths with values in
+$B_\delta-\{0\}$, and they are loops with
+\begin{equation}\tag{9}
+  \rho_d(0)=\rho_d(1)=\rho_1(0)=\rho_1(1)=H(r)=\gamma(0).
+\end{equation}
+By part (d) of \noderef{WindingCalculus}, applied with $w=H(r)\neq0$ and $k=d$
+respectively $k=1$,
+\begin{equation}\tag{10}
+  \operatorname{ind}(\rho_d)=d,\qquad \operatorname{ind}(\rho_1)=1 .
+\end{equation}
+
+\emph{Step 4: $\gamma$ and $\rho_d$ are homotopic in the punctured disc.}  The
+loops $\gamma$ and $\rho_d$ are continuous, nowhere zero, of modulus $<\delta$
+by (6) and Step 3, they are loops by (7) and (9), they share the basepoint
+$\gamma(0)=\rho_d(0)$ by (9), and they have the same index $d$ by (8) and (10).
+So \noderef{PunctDiscLoopClass} applies with this $\delta$ and yields continuous
+maps $g,h\colon[0,1]\to D$, where
+$D=\{z\in\mathbb{C}:z\neq0,\ |z|<\delta\}$, with $g(t)=\gamma(t)$ and
+$h(t)=\rho_d(t)$ for all $t$, and a homotopy from $g$ to $h$ inside $D$
+relative to $\{0,1\}$.
+
+\emph{Step 5: transport the homotopy through $\chi$.}  By (4),
+$D\subseteq B_\delta\subseteq H(V)$, and by (2) $\chi$ does not vanish on $D$
+(every $w\in D$ is a nonzero element of $H(V)$).  Hence
+\[
+  c\colon D\to P=\{z\in\mathbb{C}:z\neq0\},\qquad c(w)=\chi(w),
+\]
+is well defined, and it is continuous because $\chi$ is continuous on
+$H(V)\supseteq D$ by (iii).  Post-composition with a continuous map carries a
+homotopy relative to a set to a homotopy relative to the same set, so
+$c\circ g$ and $c\circ h$ are homotopic relative to $\{0,1\}$ inside $P$.
+
+\emph{Step 6: the two transported loops.}  Define
+$\sigma_0,\sigma_d,\sigma_1\colon[0,1]\to\mathbb{C}$ by
+\[
+  \sigma_0(t)=\chi\bigl(\gamma(t)\bigr),\qquad
+  \sigma_d(t)=\chi\bigl(\rho_d(t)\bigr),\qquad
+  \sigma_1(t)=\chi\bigl(\rho_1(t)\bigr).
+\]
+All three are continuous (composites of continuous maps, $\chi$ being
+continuous on $H(V)$, which contains the values of $\gamma$, $\rho_d$ and
+$\rho_1$ by Step 2, Step 3 and (4)), and all three are nowhere zero by (2).
+Moreover, for every $t$,
+\begin{equation}\tag{11}
+  \sigma_0(t)=\chi\bigl(H(re^{2\pi it})\bigr)=re^{2\pi it},
+\end{equation}
+by (iii) applied at $z=re^{2\pi it}\in W\subseteq V$.
+
+Now $c\circ g$ and $c\circ h$ are maps into $P$ with
+$(c\circ g)(t)=\chi(\gamma(t))=\sigma_0(t)$ and
+$(c\circ h)(t)=\chi(\rho_d(t))=\sigma_d(t)$.  Applying
+\noderef{WindingHomotopyInvariance} to the pair $\sigma_0,\sigma_d$, with the
+maps $c\circ g$, $c\circ h$ into $P$ and the homotopy of Step 5, gives
+\begin{equation}\tag{12}
+  \operatorname{ind}(\sigma_0)=\operatorname{ind}(\sigma_d).
+\end{equation}
+By (11) and part (d) of \noderef{WindingCalculus} with $w=r\neq0$ and $k=1$,
+\begin{equation}\tag{13}
+  \operatorname{ind}(\sigma_0)=1 .
+\end{equation}
+
+\emph{Step 7: the divisibility.}  Define $\psi\colon\mathbb{R}\to\mathbb{C}$ by
+\[
+  \psi(x)=\chi\bigl(H(r)e^{2\pi ix}\bigr).
+\]
+Then:
+\begin{itemize}
+\item $\psi$ is continuous.  Indeed $x\mapsto H(r)e^{2\pi ix}$ is continuous and
+takes values of modulus $|H(r)|$, which lies in $(0,\delta)$ by Step 3; so its
+values lie in $D\subseteq H(V)$, where $\chi$ is continuous.
+\item $\psi(x)\neq0$ for every $x$, by (2), since $H(r)e^{2\pi ix}$ is a nonzero
+element of $H(V)$.
+\item $\psi(x+1)=\psi(x)$ for every $x$, because
+$e^{2\pi i(x+1)}=e^{2\pi ix}e^{2\pi i}=e^{2\pi ix}$.
+\end{itemize}
+Furthermore, for $t\in[0,1]$,
+\[
+  \sigma_1(t)=\chi\bigl(H(r)e^{2\pi it}\bigr)=\psi(t),
+  \qquad
+  \sigma_d(t)=\chi\bigl(H(r)e^{2\pi idt}\bigr)=\psi(dt).
+\]
+So part (b) of \noderef{WindingAdditivity}, applied to this $\psi$, to $d$, and
+to the paths $\sigma_1$ and $\sigma_d$, gives
+\begin{equation}\tag{14}
+  \operatorname{ind}(\sigma_d)=d\,\operatorname{ind}(\sigma_1).
+\end{equation}
+
+\emph{Step 8: conclusion.}  By (9), $\rho_1(0)=\rho_1(1)$, so
+$\sigma_1(0)=\chi(\rho_1(0))=\chi(\rho_1(1))=\sigma_1(1)$ and $\sigma_1$ is a
+loop; by part (c) of \noderef{WindingCalculus} there is $e\in\mathbb{Z}$ with
+$\operatorname{ind}(\sigma_1)=e$.  Combining (13), (12) and (14),
+\[
+  1=\operatorname{ind}(\sigma_0)=\operatorname{ind}(\sigma_d)=d\,e .
+\]
+Thus $d$ and $e$ are integers with $de=1$, which forces $d=e=1$ or
+$d=e=-1$.  In either case, by (8),
+$\operatorname{ind}(\gamma)=d\in\{1,-1\}$, which is the assertion.
+\end{proof}

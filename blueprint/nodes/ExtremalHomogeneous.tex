@@ -1,0 +1,112 @@
+\begin{lemma}
+Let $1<p<\infty$, let $H$ be the extremal function of \noderef{ExtremalH}, let
+$d=d(p)$ be the exponent of \noderef{DExp}, and let
+$f\colon\mathbb{C}\to\mathbb{C}$ be a two-sided inverse of $H$, that is
+\[
+  f\bigl(H(\xi)\bigr)=\xi\quad\text{and}\quad H\bigl(f(z)\bigr)=z
+  \qquad(\xi,z\in\mathbb{C}),
+\]
+which is the relation (55) of the paper.  Assume also that $f$ is of class
+$C^\infty$ on $\mathbb{C}-\{0\}$.  Then
+\begin{enumerate}
+\item[(57)] $f(tz)=t^{d}f(z)$ for every $z\in\mathbb{C}$ and every real
+$t\ge0$;
+\item[(H)] for every word $w$ of length $l$, every real $t>0$ and every
+$z\neq0$,
+\[
+  \bigl(D^{w}f\bigr)(tz)=t^{\,d-l}\,\bigl(D^{w}f\bigr)(z),
+\]
+where $D^{w}$ is the iterated partial derivative of \noderef{PartialWord}:
+each partial derivative of $f$ of order $l$ is homogeneous of degree $d-l$.
+\end{enumerate}
+
+Clause (57) is the paper's (57) at paper.tex:597, and clause (H) is the
+sentence that follows it, ``Hence, partial derivatives $D^\nu f$ are
+homogeneous functions of degree $d-|\nu|$''.  The paper's displays (58) and
+(59) are the two cases $l=k-1$ and $l=k+1$ of (H): since $d=k-1+\alpha$, the
+exponents are $d-(k-1)=\alpha$ and $d-(k+1)=\alpha-2$, and (59) is the latter
+rearranged.
+\end{lemma}
+\begin{proof}
+Write $d=d(p)$.
+
+\emph{Step 0: $d>0$.}  By \noderef{DExpEqGammaOneInv}, $\gamma_1(p)>0$ and
+$\gamma_1(p)\,d=1$; hence $d=1/\gamma_1(p)>0$.
+
+\emph{Step 1: proof of (57) for $t>0$.}  Let $t>0$ and $z\in\mathbb{C}$, and
+put $\xi=f(z)$, so that $H(\xi)=z$ by the second inverse relation.  By the
+second clause of \noderef{ExtremalPolarForm}, applied with this $t>0$ and this
+$\xi$,
+\[
+  t\,H(\xi)=H\bigl(t^{d}\xi\bigr).
+\]
+The left-hand side is $tz$.  Applying $f$ to both sides and using the first
+inverse relation at the point $t^{d}\xi$,
+\[
+  f(tz)=f\bigl(H(t^{d}\xi)\bigr)=t^{d}\xi=t^{d}f(z).
+\]
+
+\emph{Step 2: proof of (57) at $t=0$.}  By \noderef{ExtremalH}, $H(0)=0$; so
+the first inverse relation at $\xi=0$ gives $f(0)=f(H(0))=0$.  Hence
+$f(0\cdot z)=f(0)=0$, while $0^{d}f(z)=0$ because $0^{d}=0$ for $d>0$ by
+Step 0.  So (57) holds at $t=0$ as well, and therefore for every $t\ge0$.
+
+\emph{Step 3: how $D^{w}$ behaves under a dilation.}  Fix $t>0$.  We claim that
+for every word $w$ and every function $F$ that is $C^\infty$ on
+$\mathbb{C}-\{0\}$,
+\begin{equation}\tag{1}
+  D^{w}\bigl(\zeta\mapsto F(t\zeta)\bigr)(z)
+  =t^{\,|w|}\bigl(D^{w}F\bigr)(tz)\qquad(z\neq0).
+\end{equation}
+We induct on $w$.  If $w$ is empty, $D^{w}$ is the identity by
+\noderef{PartialWord} and both sides are $F(tz)=t^{0}F(tz)$.  For the step,
+write $w=j\!:\!\!:w'$, so that $D^{w}=\partial_j\circ D^{w'}$ by
+\noderef{PartialWord}, where $\partial_0$ and $\partial_1$ are the derivatives
+in the directions $1$ and $i$.  The dilation $\zeta\mapsto t\zeta$ is an
+$\mathbb{R}$-linear homeomorphism of $\mathbb{C}$ carrying $\mathbb{C}-\{0\}$
+onto itself, with Fréchet derivative at every point equal to itself.  By the
+inductive hypothesis the two functions
+\[
+  D^{w'}\bigl(\zeta\mapsto F(t\zeta)\bigr)
+  \qquad\text{and}\qquad
+  t^{\,|w'|}\bigl(D^{w'}F\bigr)(t\,\cdot)
+\]
+agree at every point of the open set $\mathbb{C}-\{0\}$, and both are
+$C^\infty$ there, $F$ being $C^\infty$ on $\mathbb{C}-\{0\}$ and the dilation
+mapping that set into itself.  Differentiating at $z\neq0$ in the direction
+$v$ ($v=1$ if $j=0$, $v=i$ if $j=1$) and using the chain rule together with
+$\mathbb{R}$-linearity of the derivative in its argument,
+\[
+  \partial_j\Bigl(t^{\,|w'|}\bigl(D^{w'}F\bigr)(t\,\cdot)\Bigr)(z)
+  =t^{\,|w'|}\,\mathrm{d}\bigl(D^{w'}F\bigr)(tz)[t v]
+  =t^{\,|w'|+1}\,\partial_j\bigl(D^{w'}F\bigr)(tz),
+\]
+which is (1) for $w$, since $|w|=|w'|+1$.
+
+\emph{Step 4: proof of (H).}  Fix $t>0$ and a word $w$ of length $l$.  By
+Step 1 the two functions $\zeta\mapsto f(t\zeta)$ and
+$\zeta\mapsto t^{d}f(\zeta)$ agree at every point of $\mathbb{C}$, in
+particular on the open set $\mathbb{C}-\{0\}$, where both are $C^\infty$ by
+hypothesis and by Step 3's observation about the dilation.  Apply $D^{w}$ to
+both and evaluate at $z\neq0$.  On the left, (1) with $F=f$ gives
+$t^{\,l}\bigl(D^{w}f\bigr)(tz)$.  On the right, $t^{d}$ is a constant scalar
+and $D^{w}$ is built from Fréchet derivatives, which are linear in the
+function, so $D^{w}\bigl(t^{d}f\bigr)=t^{d}D^{w}f$ and the value is
+$t^{d}\bigl(D^{w}f\bigr)(z)$.  Therefore
+\[
+  t^{\,l}\bigl(D^{w}f\bigr)(tz)=t^{d}\bigl(D^{w}f\bigr)(z),
+\]
+and dividing by $t^{\,l}>0$, together with $t^{d}/t^{\,l}=t^{\,d-l}$ for
+$t>0$,
+\[
+  \bigl(D^{w}f\bigr)(tz)=t^{\,d-l}\bigl(D^{w}f\bigr)(z),
+\]
+which is (H).
+
+\emph{Step 5: the two displays of the paper.}  Let $k$ and $\alpha$ be as in
+(9), so that $d=k-1+\alpha$.  Taking $l=k-1$ in (H) gives
+$\bigl(D^{w}f\bigr)(tz)=t^{\alpha}\bigl(D^{w}f\bigr)(z)$, which is (58); and
+taking $l=k+1$ gives
+$\bigl(D^{w}f\bigr)(tz)=t^{\alpha-2}\bigl(D^{w}f\bigr)(z)$, that is
+$\bigl(D^{w}f\bigr)(z)=t^{\,2-\alpha}\bigl(D^{w}f\bigr)(tz)$, which is (59).
+\end{proof}

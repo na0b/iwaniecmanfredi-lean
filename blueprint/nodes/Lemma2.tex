@@ -1,0 +1,144 @@
+\begin{lemma}
+Let $U$ be a convex open subset of $\mathbb{R}^n$ containing the origin, let
+$M\ge0$ and $\alpha\in(0,1]$, and let $F\colon\mathbb{R}^n\to\mathbb{C}$ be a
+function of class $C(U)\cap C^1(U-\{0\})$ such that
+\begin{enumerate}
+\item[(i)] $|F(x)|\le M|x|^\alpha$ for $x\in U$,
+\item[(ii)] $\|DF(x)\|\le M|x|^{\alpha-1}$ for $x\in U-\{0\}$,
+\end{enumerate}
+where $DF(x)$ denotes the real Fr\'echet derivative of $F$ at $x$, a
+real-linear map $\mathbb{R}^n\to\mathbb{C}$, and $\|DF(x)\|$ its operator
+norm.  Then
+\[
+  |F(x)-F(y)|\le5M|x-y|^\alpha\qquad\text{for all }x,y\in U .
+\]
+\end{lemma}
+\begin{proof}
+Let $x,y\in U$.
+
+\emph{The degenerate case $x=y$.}  Then $|F(x)-F(y)|=0$, and since
+$\alpha>0$ we have $|x-y|^\alpha=0^\alpha=0$, so the right-hand side is
+$0$ as well and the inequality holds.  Assume from now on that $x\neq y$, so
+that $|x-y|>0$.
+
+Exactly one of the following two cases occurs.
+
+\emph{Case 1: $|y|\le2|x-y|$.}  By the triangle inequality in $\mathbb{C}$,
+\[
+  |F(x)-F(y)|\le|F(x)|+|F(y)| .
+\]
+Now apply the unweighted two-term power-mean inequality
+$(z_1+z_2)^{p}\le2^{p-1}(z_1^{p}+z_2^{p})$, valid for $z_1,z_2\ge0$ and
+$p\ge1$ (mathlib's \texttt{NNReal.rpow\_add\_le\_mul\_rpow\_add\_rpow}), at the
+exponent $p=1/\alpha$, which is $\ge1$ because $0<\alpha\le1$, and with
+$z_1=|F(x)|\ge0$, $z_2=|F(y)|\ge0$.  Raising the result to the power $\alpha$,
+which is monotone since $\alpha>0$, and using
+$\bigl(t^{1/\alpha}\bigr)^{\alpha}=t$ for $t\ge0$ on the left and
+$\bigl(2^{1/\alpha-1}\bigr)^{\alpha}=2^{1-\alpha}$ on the right, gives
+\[
+  |F(x)|+|F(y)|\le2^{1-\alpha}\Bigl(|F(x)|^{1/\alpha}+|F(y)|^{1/\alpha}\Bigr)^{\alpha}.
+\]
+By hypothesis (i), $|F(x)|\le M|x|^\alpha$ and $|F(y)|\le M|y|^\alpha$, all
+four quantities being nonnegative.  Since $1/\alpha>0$, the map
+$t\mapsto t^{1/\alpha}$ is nondecreasing on $[0,\infty)$, so
+\[
+  |F(x)|^{1/\alpha}\le\bigl(M|x|^\alpha\bigr)^{1/\alpha}
+  =M^{1/\alpha}\bigl(|x|^{\alpha}\bigr)^{1/\alpha}=M^{1/\alpha}|x| ,
+\]
+and likewise $|F(y)|^{1/\alpha}\le M^{1/\alpha}|y|$, using
+$(t^\alpha)^{1/\alpha}=t$ for $t\ge0$ and the multiplicativity of real powers
+on nonnegative bases.  Since $\alpha>0$, the map $t\mapsto t^{\alpha}$ is
+nondecreasing on $[0,\infty)$, whence
+\[
+  2^{1-\alpha}\Bigl(|F(x)|^{1/\alpha}+|F(y)|^{1/\alpha}\Bigr)^{\alpha}
+  \le2^{1-\alpha}\Bigl(M^{1/\alpha}\bigl(|x|+|y|\bigr)\Bigr)^{\alpha}
+  =2^{1-\alpha}M\bigl(|x|+|y|\bigr)^{\alpha},
+\]
+where we used $\bigl(M^{1/\alpha}\bigr)^{\alpha}=M$ (valid since $M\ge0$).
+
+We now bound $|x|+|y|$.  By the triangle inequality $|x|\le|x-y|+|y|$, so
+\[
+  |x|+|y|\le|x-y|+2|y|\le|x-y|+4|x-y|=5|x-y| ,
+\]
+the second inequality being the case hypothesis $|y|\le2|x-y|$.  Hence,
+again by monotonicity of $t\mapsto t^\alpha$ on $[0,\infty)$ and $M\ge0$,
+\[
+  |F(x)-F(y)|\le2^{1-\alpha}M\bigl(5|x-y|\bigr)^{\alpha}
+  =2^{1-\alpha}5^{\alpha}M|x-y|^{\alpha}.
+\]
+Finally
+\[
+  2^{1-\alpha}5^{\alpha}=2\cdot\Bigl(\frac52\Bigr)^{\alpha}\le2\cdot\frac52=5 ,
+\]
+because $\frac52>1$ and $0<\alpha\le1$, so that
+$t\mapsto(\frac52)^{t}$ is nondecreasing.  Since $M|x-y|^\alpha\ge0$, we
+conclude
+\[
+  |F(x)-F(y)|\le5M|x-y|^{\alpha}.
+\]
+
+\emph{Case 2: $|y|>2|x-y|$.}  For $t\in[0,1]$ put
+\[
+  z(t)=tx+(1-t)y .
+\]
+Since $U$ is convex and $x,y\in U$, we have $z(t)\in U$ for every
+$t\in[0,1]$.  Moreover $z(t)=y+t(x-y)$, so for $t\in[0,1]$,
+\[
+  |z(t)|\ge|y|-t\,|x-y|\ge|y|-|x-y|>2|x-y|-|x-y|=|x-y|>0 ,
+\]
+using $t\le1$ and the case hypothesis.  In particular $z(t)\neq0$, so
+\[
+  z(t)\in U-\{0\}\qquad\text{for every }t\in[0,1].
+\]
+
+Since $U$ is open and $\{0\}$ is closed, $U-\{0\}$ is open, and $F$ is of
+class $C^1$ on it.  The segment $\{z(t):t\in[0,1]\}$ is contained in
+$U-\{0\}$, so the map $t\mapsto F(z(t))$ is of class $C^1$ on $[0,1]$, with
+derivative
+\[
+  \frac{d}{dt}F\bigl(z(t)\bigr)=DF\bigl(z(t)\bigr)[x-y]
+\]
+by the chain rule, $t\mapsto z(t)$ being affine with derivative the constant
+vector $x-y$.  By the fundamental theorem of calculus, applied to the real and
+imaginary parts of this $C^1$ function on $[0,1]$,
+\[
+  F(x)-F(y)=F\bigl(z(1)\bigr)-F\bigl(z(0)\bigr)
+  =\int_0^1 DF\bigl(z(t)\bigr)[x-y]\,dt .
+\]
+
+We estimate the integrand.  For each $t\in[0,1]$, by the definition of the
+operator norm,
+\[
+  \bigl|DF\bigl(z(t)\bigr)[x-y]\bigr|\le\bigl\|DF\bigl(z(t)\bigr)\bigr\|\,|x-y| ,
+\]
+and by hypothesis (ii), applicable since $z(t)\in U-\{0\}$,
+\[
+  \bigl\|DF\bigl(z(t)\bigr)\bigr\|\le M\,|z(t)|^{\alpha-1}.
+\]
+Now $\alpha-1\le0$, so $r\mapsto r^{\alpha-1}$ is nonincreasing on
+$(0,\infty)$; since $|z(t)|\ge|x-y|>0$, this gives
+\[
+  |z(t)|^{\alpha-1}\le|x-y|^{\alpha-1}.
+\]
+As $M\ge0$, combining the last three displays yields, for every $t\in[0,1]$,
+\[
+  \bigl|DF\bigl(z(t)\bigr)[x-y]\bigr|\le M\,|x-y|^{\alpha-1}\,|x-y|
+  =M\,|x-y|^{\alpha},
+\]
+the last step using $|x-y|>0$ and
+$|x-y|^{\alpha-1}|x-y|=|x-y|^{(\alpha-1)+1}=|x-y|^{\alpha}$.
+
+Therefore
+\[
+  |F(x)-F(y)|=\Bigl|\int_0^1 DF\bigl(z(t)\bigr)[x-y]\,dt\Bigr|
+  \le\int_0^1\bigl|DF\bigl(z(t)\bigr)[x-y]\bigr|\,dt
+  \le\int_0^1 M|x-y|^{\alpha}\,dt=M|x-y|^{\alpha}.
+\]
+Since $M|x-y|^{\alpha}\ge0$, we have $M|x-y|^\alpha\le5M|x-y|^\alpha$, so
+\[
+  |F(x)-F(y)|\le5M|x-y|^{\alpha}
+\]
+in Case 2 as well.
+
+As Cases 1 and 2 are exhaustive, the estimate (53) holds for all $x,y\in U$.
+\end{proof}

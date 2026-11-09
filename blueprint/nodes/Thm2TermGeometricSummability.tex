@@ -1,0 +1,201 @@
+\begin{helper}
+Let $n\ge1$ be an integer, let $1<p<\infty$ and let
+$A\colon\mathbb{Z}\to\mathbb{C}$.  Write $A_k=A(k)$, let
+$\lambda_k=\lambda_k(n,p)$ be as in \noderef{LambdaCoef}, let
+$\epsilon_k=\epsilon_k(n,p)$ be as in \noderef{EpsCoef}, and let
+$T_k=T_k(n,p,A,\cdot)$ be the $k$-th summand of the series (19) as in
+\noderef{Thm2Term}.  Assume the energy hypothesis
+\[
+  \sum_{m\ge0}(n+m)\,|A_{n+m}|^{2}<\infty .
+\]
+Then there are real numbers $b$ and $C_A$ such that
+\begin{enumerate}
+\item[(i)] $0<b$ and $b\le\tfrac12$;
+\item[(ii)] $b\,m\le\lambda_{n+m}$ for every integer $m\ge0$;
+\item[(iii)] $0\le C_A$ and $|A_{n+m}|\le C_A$ for every integer $m\ge0$;
+\item[(iv)] $\rho^{\lambda_{n+m}}\le\bigl(\rho^{b}\bigr)^{m}$ for every
+  $\rho$ with $0<\rho<1$ and every $m\ge0$;
+\item[(v)] for every integer $M\ge0$ and every $\rho$ with $0<\rho<1$ the
+  series
+  \[
+    \sum_{m\ge0}(n+m)^{M}\,|A_{n+m}|\,\rho^{\lambda_{n+m}}
+  \]
+  converges;
+\item[(vi)] $T_n(\xi)=A_n$ for every $\xi\ne0$;
+\item[(vii)] $|T_{n+m}(\xi)|\le2|A_{n+m}|\,|\xi|^{\lambda_{n+m}}$ for every
+  integer $m\ge0$ and every $\xi\ne0$;
+\item[(viii)] for every $\rho$ with $0<\rho<1$ the series
+  $\sum_{m\ge0}2|A_{n+m}|\,\rho^{\lambda_{n+m}}$ converges.
+\end{enumerate}
+
+This is the summability engine behind the series (19), and it is the paper's
+"we note that $\lim\lambda_k=\infty$.  Therefore, we can perform any finite
+number of term-by-term differentiations in formula (19)"
+(\texttt{paper.tex:387}) made quantitative.  The point of (ii) is that the rate
+is \emph{linear} in $m$ and not merely positive: by (iv) it converts
+$\rho^{\lambda_{n+m}}$ into the geometric $(\rho^{b})^{m}$, which is what makes
+(v) hold simultaneously for every polynomial weight $M$ and so permits
+differentiating the series any finite number of times.  The engine is
+\noderef{LambdaLinearLowerBound} alone; the constant lower bound
+$\lambda_k\ge(p-1)/(np)$ of (25) contributes nothing here, being constant in
+$k$, so it yields neither $\lambda_k\to\infty$ nor any decay.
+
+The numbers $b$ and $C_A$ are produced existentially because no property of
+the particular witnesses $\min\bigl(\gamma_n/(n+1),\tfrac12\bigr)$ and
+$\bigl(\sum_m(n+m)|A_{n+m}|^{2}\bigr)^{1/2}$ is used downstream --- only the
+inequalities listed above.
+\end{helper}
+\begin{proof}
+\emph{Step 0: the four inputs.}  Write $\gamma_n=\gamma_n(p)$ for the exponent
+of \noderef{GammaExp}.  We use:
+\begin{equation}\tag{1}
+  \gamma_n>0 ,
+\end{equation}
+which is \noderef{GammaRatioMinAtOne} applied at the index $n\ge1$;
+\begin{equation}\tag{2}
+  \lambda_n=0,\qquad \epsilon_n=0 ,
+\end{equation}
+which is (23) of \noderef{LambdaEpsEstimates};
+\begin{equation}\tag{3}
+  |\epsilon_{n+m}|\le1\qquad(m\ge0),
+\end{equation}
+which for $m=0$ is (2) and for $m\ge1$ is (24) of
+\noderef{LambdaEpsEstimates}, since then $n+1\le n+m$; and
+\begin{equation}\tag{4}
+  \lambda_k\ge\frac{\gamma_n}{n+1}\,k\qquad(k\ge n+1),
+\end{equation}
+which is \noderef{LambdaLinearLowerBound}.
+
+\emph{Step 1: the rate $b$.}  Put
+\[
+  b=\min\Bigl(\frac{\gamma_n}{n+1},\ \frac12\Bigr).
+\]
+Then $b\le\tfrac12$ by definition, and $b>0$ because $\gamma_n/(n+1)>0$ by (1)
+and $n+1>0$, and because $\tfrac12>0$; this is (i).
+
+For (ii), fix $m\ge0$.  Since $b\le\gamma_n/(n+1)$ and $m\ge0$,
+\[
+  b\,m\le\frac{\gamma_n}{n+1}\,m ,
+\]
+so it suffices to bound the right-hand side by $\lambda_{n+m}$.  If $m=0$ this
+right-hand side is $0$ and $\lambda_{n+0}=\lambda_n=0$ by (2), so the two are
+equal.  If $m\ge1$ then $n+m\ge n+1$, so (4) applies at $k=n+m$ and gives
+$\lambda_{n+m}\ge\frac{\gamma_n}{n+1}(n+m)$; and since
+$\frac{\gamma_n}{n+1}\ge0$ and $m\le n+m$ (as $n\ge0$) we have
+$\frac{\gamma_n}{n+1}m\le\frac{\gamma_n}{n+1}(n+m)\le\lambda_{n+m}$.  In both
+cases $b\,m\le\lambda_{n+m}$.
+
+\emph{Step 2: the coefficient bound $C_A$.}  Let
+\[
+  S=\sum_{m\ge0}(n+m)|A_{n+m}|^{2},
+\]
+which is a convergent sum of nonnegative terms by hypothesis, so $S\ge0$; put
+$C_A=\sqrt S\ge0$.  Fix $m\ge0$.  Since every term of the sum is nonnegative
+and the sum converges, the single term at index $m$ is at most the whole sum:
+\[
+  (n+m)|A_{n+m}|^{2}\le S .
+\]
+Also $n+m\ge1$, because $n\ge1$ and $m\ge0$, so
+$|A_{n+m}|^{2}\le(n+m)|A_{n+m}|^{2}\le S$.  Taking square roots of the
+nonnegative numbers $|A_{n+m}|^{2}\le S$ gives $|A_{n+m}|\le\sqrt S=C_A$.
+This is (iii).  (No Cauchy--Schwarz inequality is needed: a single term of a
+nonnegative convergent series is bounded by its sum.)
+
+\emph{Step 3: geometric domination, (iv).}  Let $0<\rho<1$ and $m\ge0$.  Since
+$\rho>0$, the real-power laws give
+$\bigl(\rho^{b}\bigr)^{m}=\rho^{bm}$.  Since $0<\rho\le1$, the function
+$t\mapsto\rho^{t}$ is nonincreasing on $\mathbb{R}$, and $bm\le\lambda_{n+m}$
+by (ii), so
+\[
+  \rho^{\lambda_{n+m}}\le\rho^{bm}=\bigl(\rho^{b}\bigr)^{m} .
+\]
+
+\emph{Step 4: summability at every polynomial weight, (v).}  Fix an integer
+$M\ge0$ and $\rho$ with $0<\rho<1$, and put $q=\rho^{b}$.  Then $q>0$, being a
+real power of a positive number, and $q<1$, because $0<\rho<1$ and $b>0$.  By
+Step 3,
+\begin{equation}\tag{5}
+  \rho^{\lambda_{n+m}}\le q^{m}\qquad(m\ge0).
+\end{equation}
+
+Next, an elementary inequality: for every real $x\ge0$,
+\begin{equation}\tag{6}
+  (x+1)^{M}\le2^{M}\bigl(x^{M}+1\bigr).
+\end{equation}
+Indeed if $x\le1$ then $x+1\le2$, so $(x+1)^{M}\le2^{M}\le2^{M}(x^{M}+1)$
+because $x^{M}\ge0$; and if $x>1$ then $x+1\le2x$, so
+$(x+1)^{M}\le(2x)^{M}=2^{M}x^{M}\le2^{M}(x^{M}+1)$.  Consequently, for $m\ge0$,
+\begin{equation}\tag{7}
+  (n+m)^{M}\le\bigl((n+1)(m+1)\bigr)^{M}=(n+1)^{M}(m+1)^{M}
+  \le(n+1)^{M}2^{M}\bigl(m^{M}+1\bigr),
+\end{equation}
+where the first inequality holds because
+$(n+1)(m+1)=nm+n+m+1\ge n+m$ and both bases are nonnegative, and the last
+step is (6) at $x=m$ multiplied by the nonnegative factor $(n+1)^{M}$.
+
+Combining (7), $|A_{n+m}|\le C_A$ from Step 2, and (5) --- all three factors
+being nonnegative --- we get, for every $m\ge0$,
+\[
+  (n+m)^{M}|A_{n+m}|\,\rho^{\lambda_{n+m}}
+  \le(n+1)^{M}2^{M}\bigl(m^{M}+1\bigr)\,C_A\,q^{m}
+  =\bigl((n+1)^{M}2^{M}C_A\bigr)\,m^{M}q^{m}
+   +\bigl((n+1)^{M}2^{M}C_A\bigr)\,q^{m} .
+\]
+The majorant on the right is summable in $m$: since $0\le q<1$, the series
+$\sum_m m^{M}q^{m}$ converges (the standard polynomial-times-geometric
+series) and $\sum_m q^{m}$ converges (geometric series), and a convergent
+series stays convergent after multiplication by a constant and addition of
+another convergent series.  The terms of the series in (v) are nonnegative,
+so by comparison with this majorant that series converges.
+
+\emph{Step 5: the constant summand, (vi).}  Let $\xi\ne0$.  By (2),
+$\lambda_n=0$ and $\epsilon_n=0$, so the exponent of the modulus factor is
+$\lambda_n+n-n=0$ and the second term of the bracket vanishes.  Hence, by
+\noderef{Thm2Term},
+\[
+  T_n(\xi)=\bigl(A_n\xi^{n}+0\cdot\overline{A_n}\,\bar\xi^{\,n}\bigr)
+    \,|\xi|^{0}\,\xi^{-n}
+  =A_n\,\xi^{n}\,\xi^{-n}=A_n ,
+\]
+using $|\xi|^{0}=1$ and $\xi^{n}\xi^{-n}=1$, legitimate because $\xi\ne0$ and
+so $\xi^{n}\ne0$.
+
+\emph{Step 6: the pointwise bound, (vii).}  First a bound for a general index.
+Let $k\ge0$ be an integer and $\xi\ne0$, and write $r=|\xi|>0$.  Since
+$|\overline{A_k}|=|A_k|$, $|\bar\xi|=|\xi|=r$ and $\epsilon_k$ is real,
+\begin{equation}\tag{8}
+  \bigl|A_k\xi^{k}+\epsilon_k\overline{A_k}\,\bar\xi^{\,k}\bigr|
+  \le|A_k|\,r^{k}+|\epsilon_k|\,|A_k|\,r^{k}
+  =\bigl(1+|\epsilon_k|\bigr)|A_k|\,r^{k}
+\end{equation}
+by the triangle inequality and multiplicativity of the modulus.  Taking moduli
+in the definition of $T_k$ and using $\bigl||\xi|^{a}\bigr|=r^{a}$ for real $a$
+(the modulus factor is a positive real) and $|\xi^{-n}|=r^{-n}$,
+\[
+  |T_k(\xi)|
+  =\bigl|A_k\xi^{k}+\epsilon_k\overline{A_k}\bar\xi^{\,k}\bigr|
+     \cdot r^{\lambda_k+n-k}\cdot r^{-n}
+  \le\bigl(1+|\epsilon_k|\bigr)|A_k|\,
+     r^{k}\,r^{\lambda_k+n-k}\,r^{-n}
+  =\bigl(1+|\epsilon_k|\bigr)|A_k|\,r^{\lambda_k},
+\]
+where the inequality is (8) multiplied by the nonnegative factors
+$r^{\lambda_k+n-k}$ and $r^{-n}$, and the last step adds the exponents of the
+positive base $r$:
+$k+(\lambda_k+n-k)+(-n)=\lambda_k$.  Now take $k=n+m$.  By (3) we have
+$1+|\epsilon_{n+m}|\le2$, and $|A_{n+m}|\ge0$ and $r^{\lambda_{n+m}}\ge0$, so
+\[
+  |T_{n+m}(\xi)|\le\bigl(1+|\epsilon_{n+m}|\bigr)|A_{n+m}|\,r^{\lambda_{n+m}}
+  \le2|A_{n+m}|\,|\xi|^{\lambda_{n+m}} ,
+\]
+which is (vii).
+
+\emph{Step 7: (viii).}  Apply (v) with $M=0$: since $(n+m)^{0}=1$, the series
+$\sum_m|A_{n+m}|\rho^{\lambda_{n+m}}$ converges for every $\rho\in(0,1)$.
+Multiplying a convergent series of reals by the constant $2$ leaves it
+convergent, and $2|A_{n+m}|\rho^{\lambda_{n+m}}
+=2\bigl(|A_{n+m}|\rho^{\lambda_{n+m}}\bigr)$ termwise, which gives (viii).
+
+With $b$ from Step 1 and $C_A$ from Step 2, all eight assertions have been
+established, so the existential statement holds.
+\end{proof}

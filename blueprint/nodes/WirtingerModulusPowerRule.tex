@@ -1,0 +1,85 @@
+\begin{lemma}
+Let $\mu\in\mathbb{R}$ and let $\xi\in\mathbb{C}$ with $\xi\neq0$, and let
+$g(z)=|z|^{\mu}$, regarded as a complex-valued function of $z$.  Then
+\begin{enumerate}
+\item[(a)] $g$ is $C^\infty$ at $\xi$, and
+\item[(b)] $\displaystyle
+  \frac{\partial g}{\partial\xi}(\xi)=\frac{\mu}{2}\,\frac{|\xi|^{\mu}}{\xi},
+  \qquad
+  \frac{\partial g}{\partial\bar\xi}(\xi)
+    =\frac{\mu}{2}\,\frac{|\xi|^{\mu}}{\bar\xi},$
+\end{enumerate}
+where $\partial/\partial\xi$ and $\partial/\partial\bar\xi$ are the Wirtinger
+operators of \noderef{DZ} and \noderef{DZbar}, and real powers are taken in the
+sense $t^{\mu}=\exp(\mu\log t)$ for $t>0$.
+
+This is the rule that differentiates the factor $|\xi|^{\lambda_k+n-k}$ of the
+series (19).  The exponent is a real number, so the integer power rules do not
+apply to it.
+\end{lemma}
+\begin{proof}
+Write $z=x+iy$ with $x,y\in\mathbb{R}$, so that $|z|^2=x^2+y^2$, and put
+$\xi=x_0+iy_0$.  Since $\xi\neq0$ we have $x_0^2+y_0^2>0$.
+
+\emph{Step 1: proof of (a), smoothness at $\xi$.}  The map $(x,y)\mapsto x^2+y^2$ is a
+polynomial, hence $C^\infty$ on $\mathbb{R}^2$, and it takes the value
+$x_0^2+y_0^2>0$ at $(x_0,y_0)$; by continuity it is positive on an open
+neighbourhood $U$ of $(x_0,y_0)$.  The map $t\mapsto t^{\mu/2}=\exp((\mu/2)\log t)$
+is $C^\infty$ on $(0,\infty)$, being a composite of $\log$ and $\exp$, which are
+$C^\infty$ there.  Hence
+\[
+  g(z)=|z|^{\mu}=\bigl(x^2+y^2\bigr)^{\mu/2}
+\]
+is $C^\infty$ on $U$, and so is its inclusion into $\mathbb{C}$, which is
+$\mathbb{R}$-linear.  In particular $g$ is $C^\infty$ at $\xi$, which is (a), and all the
+derivatives used below exist.
+
+\emph{Step 2: the two real partial derivatives.}  By the chain rule, on $U$,
+\[
+  \frac{\partial g}{\partial x}
+  =\frac{\mu}{2}\bigl(x^2+y^2\bigr)^{\mu/2-1}\cdot2x
+  =\mu\,x\,\bigl(x^2+y^2\bigr)^{\mu/2-1},
+\]
+and symmetrically
+\[
+  \frac{\partial g}{\partial y}=\mu\,y\,\bigl(x^2+y^2\bigr)^{\mu/2-1}.
+\]
+Writing $|z|^{\mu-2}=(x^2+y^2)^{\mu/2-1}$, which is legitimate because
+$|z|>0$ on $U$ and $t\mapsto t^{\mu}$ obeys $t^{a}t^{b}=t^{a+b}$ for $t>0$,
+these read
+\begin{equation}\tag{1}
+  \frac{\partial g}{\partial x}(\xi)=\mu\,x_0\,|\xi|^{\mu-2},\qquad
+  \frac{\partial g}{\partial y}(\xi)=\mu\,y_0\,|\xi|^{\mu-2}.
+\end{equation}
+
+\emph{Step 3: proof of (b), the Wirtinger derivatives.}  By \noderef{DZ} and \noderef{DZbar},
+\[
+  \frac{\partial g}{\partial\xi}(\xi)
+    =\tfrac12\Bigl(\frac{\partial g}{\partial x}(\xi)
+      -i\,\frac{\partial g}{\partial y}(\xi)\Bigr),\qquad
+  \frac{\partial g}{\partial\bar\xi}(\xi)
+    =\tfrac12\Bigl(\frac{\partial g}{\partial x}(\xi)
+      +i\,\frac{\partial g}{\partial y}(\xi)\Bigr),
+\]
+the two partial derivatives being the values of the real Fréchet derivative of
+$g$ at $\xi$ on the vectors $1$ and $i$.  Substituting (1),
+\[
+  \frac{\partial g}{\partial\xi}(\xi)
+  =\tfrac12\mu\,|\xi|^{\mu-2}\bigl(x_0-iy_0\bigr)
+  =\frac{\mu}{2}\,|\xi|^{\mu-2}\,\bar\xi,
+  \qquad
+  \frac{\partial g}{\partial\bar\xi}(\xi)
+  =\frac{\mu}{2}\,|\xi|^{\mu-2}\,\xi .
+\]
+Finally $|\xi|^2=\xi\bar\xi$, so $|\xi|^{\mu-2}\bar\xi
+=|\xi|^{\mu}\bar\xi/|\xi|^{2}=|\xi|^{\mu}\bar\xi/(\xi\bar\xi)=|\xi|^{\mu}/\xi$,
+and likewise $|\xi|^{\mu-2}\xi=|\xi|^{\mu}/\bar\xi$; both divisions are
+legitimate because $\xi\neq0$ and hence $\bar\xi\neq0$.  Therefore
+\[
+  \frac{\partial g}{\partial\xi}(\xi)=\frac{\mu}{2}\,\frac{|\xi|^{\mu}}{\xi},
+  \qquad
+  \frac{\partial g}{\partial\bar\xi}(\xi)
+    =\frac{\mu}{2}\,\frac{|\xi|^{\mu}}{\bar\xi},
+\]
+which is (b).
+\end{proof}

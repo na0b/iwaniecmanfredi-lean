@@ -1,0 +1,153 @@
+\begin{helper}
+Let $n\ge1$ be an integer, let $p>1$ be real, let $A\colon\mathbb{Z}\to\mathbb{C}$
+satisfy the energy hypothesis
+\[
+  \sum_{m=0}^\infty(n+m)\,|A_{n+m}|^2<\infty ,
+\]
+write $A_k=A(k)$, $\lambda_k=\lambda_k(n,p)$ for the exponent of
+\noderef{LambdaCoef}, $\epsilon_k=\epsilon_k(n,p)$ for the coefficient of
+\noderef{EpsCoef}, and let $T_k=T_k(n,p,A,\cdot)$ be the $k$-th summand of the
+series (19) as in \noderef{Thm2Term}.  Let
+\[
+  H(\xi)=\begin{cases}A_n,&\xi=0,\\[2pt]
+    \displaystyle\sum_{m=0}^\infty T_{n+m}(\xi),&\xi\ne0,\end{cases}
+\]
+be the sum of the series (19), completed at the origin by the value $A_n$ of
+its constant summand $T_n$, and let $a_j(r)$ denote the Fourier
+coefficient (30) of \noderef{FourierCoefOfH} formed from $n$ and $H$.  Then
+both of the following hold.
+
+\textbf{(a)} For every integer $m\ge0$, every $j\in\mathbb{Z}$, every $r>0$ and
+every real $\theta$,
+\[
+  T_{n+m}\bigl(re^{i\theta}\bigr)\,e^{i(n-j)\theta}
+  =r^{\lambda_{n+m}}A_{n+m}\,e^{i((n+m)-j)\theta}
+   +r^{\lambda_{n+m}}\epsilon_{n+m}\overline{A_{n+m}}\,
+     e^{i(-(n+m)-j)\theta}.
+\]
+
+\textbf{(b)} For every $j\in\mathbb{Z}$ and every $r$ with $0<r<1$,
+\[
+  a_j(r)=\frac1{2\pi}\sum_{m=0}^\infty
+    2\pi\,r^{\lambda_{n+m}}
+    \Bigl(\bigl[\,n+m=j\,\bigr]A_{n+m}
+      +\bigl[\,n+m=-j\,\bigr]\epsilon_{n+m}\overline{A_{n+m}}\Bigr),
+\]
+where $[\,P\,]$ denotes $1$ if $P$ holds and $0$ otherwise, so that each
+bracket selects at most one index $m$.
+
+These are two statements about one computation, the Fourier expansion (29)--(30)
+of the paper evaluated on the series (19) rather than on an abstract solution
+of (18).  Part (a) is the per-summand algebra: tested against the frequency
+$e^{i(n-j)\theta}$ of (30), one summand of (19) on the circle $|\xi|=r$ is a
+sum of exactly two pure angular exponentials, of frequencies $(n+m)-j$ and
+$-(n+m)-j$, both carried by the single radial factor $r^{\lambda_{n+m}}$; this
+is the polar form (40) of the paper for a single term.  Part (b) is its
+consequence for the coefficient: integration over the circle annihilates every
+nonzero frequency, so the $j$-th coefficient of the series sees only those $m$
+with $n+m=j$ or $n+m=-j$.  In particular $a_j(r)=A_jr^{\lambda_j}$ when
+$j\ge n$, $a_j(r)=\epsilon_{-j}\overline{A_{-j}}r^{\lambda_{-j}}$ when
+$j\le-n$, and $a_j(r)=0$ when $|j|<n$, since then no index $n+m$ meets either
+selection.
+
+The factor $2\pi$ is left standing inside the sum, uncancelled against the
+$1/(2\pi)$ of (30), so that (b) is exactly what term-by-term integration
+produces and nothing is folded in by hand.  The value of $H$ at the origin is
+irrelevant to both parts, which evaluate only at points $re^{i\theta}$ with
+$r>0$.
+\end{helper}
+\begin{proof}
+\emph{Step 1: part (a).}  Fix $m\ge0$, $j\in\mathbb{Z}$, $r>0$ and $\theta$.
+Since $n+m\ge n$, part (b) of \noderef{Thm2TermSolvesEq18} applies to the index
+$k=n+m$ and gives the polar form of that summand on the circle of radius $r$,
+\begin{equation}\tag{1}
+  T_{n+m}\bigl(re^{i\theta}\bigr)
+  =r^{\lambda_{n+m}}\Bigl(A_{n+m}e^{i((n+m)-n)\theta}
+    +\epsilon_{n+m}\overline{A_{n+m}}\,e^{i(-(n+m)-n)\theta}\Bigr),
+\end{equation}
+which is the paper's (40) for one term.  Multiplying (1) by
+$e^{i(n-j)\theta}$ and using $e^{ia\theta}e^{ib\theta}=e^{i(a+b)\theta}$ on
+each of the two summands, the two frequencies become
+\[
+  \bigl((n+m)-n\bigr)+(n-j)=(n+m)-j,
+  \qquad
+  \bigl(-(n+m)-n\bigr)+(n-j)=-(n+m)-j,
+\]
+and distributing $r^{\lambda_{n+m}}$ over the two terms gives precisely the
+asserted identity.  This is (a).
+
+\emph{Step 2: two consequences of (a) used below.}  First, each function
+\[
+  \theta\mapsto T_{n+m}\bigl(re^{i\theta}\bigr)e^{i(n-j)\theta}
+\]
+is continuous on $\mathbb{R}$: by (a) it equals a fixed linear combination of
+$\theta\mapsto e^{il\theta}$ for two integers $l$, and those are continuous.
+Second, for every integer $l$,
+\begin{equation}\tag{2}
+  \int_0^{2\pi}e^{il\theta}\,d\theta=\begin{cases}2\pi,&l=0,\\0,&l\ne0,\end{cases}
+\end{equation}
+by the elementary evaluation of $\int_0^{2\pi}e^{c\theta}d\theta$ at
+$c=il\ne0$, whose value is $(e^{2\pi il}-1)/(il)=0$ because
+$e^{2\pi il}=1$ for integer $l$, and by direct computation when $l=0$.
+
+\emph{Step 3: the integral of one summand.}  Fix $m$, $j$ and $r>0$.
+Integrating the identity of (a) over $[0,2\pi]$ --- legitimate term by term
+because the right-hand side is a sum of two continuous functions --- and
+applying (2) to each of the two frequencies,
+\begin{equation}\tag{3}
+  \int_0^{2\pi}T_{n+m}\bigl(re^{i\theta}\bigr)e^{i(n-j)\theta}\,d\theta
+  =2\pi\,r^{\lambda_{n+m}}
+    \Bigl(\bigl[\,n+m=j\,\bigr]A_{n+m}
+      +\bigl[\,n+m=-j\,\bigr]\epsilon_{n+m}\overline{A_{n+m}}\Bigr).
+\end{equation}
+Indeed the first frequency vanishes exactly when $(n+m)-j=0$ and the second
+exactly when $-(n+m)-j=0$, i.e.\ when $n+m=j$ and when $n+m=-j$ respectively;
+the three cases ($n+m=j$; $n+m=-j$; neither) are disjoint because $n+m\ge n\ge1$
+is positive, so $n+m=j$ and $n+m=-j$ cannot both hold.
+
+\emph{Step 4: term-by-term integration.}  Fix $j$ and $0<r<1$.  By definition
+(30),
+\[
+  a_j(r)=\frac1{2\pi}\int_0^{2\pi}
+    H\bigl(re^{i\theta}\bigr)e^{i(n-j)\theta}\,d\theta,
+\]
+so it suffices to evaluate the integral.  For each $\theta$ the point
+$re^{i\theta}$ is nonzero, because $r\ne0$ and $e^{i\theta}\ne0$; hence
+$H(re^{i\theta})=\sum_mT_{n+m}(re^{i\theta})$ by the definition of $H$, and
+multiplying a convergent series by the constant $e^{i(n-j)\theta}$,
+\begin{equation}\tag{4}
+  H\bigl(re^{i\theta}\bigr)e^{i(n-j)\theta}
+  =\sum_{m=0}^\infty T_{n+m}\bigl(re^{i\theta}\bigr)e^{i(n-j)\theta} .
+\end{equation}
+To interchange this sum with the integral we check the hypothesis of the
+dominated-convergence form of term-by-term integration: each summand is
+measurable on $[0,2\pi]$ by Step 2, and
+\begin{equation}\tag{5}
+  \sum_{m=0}^\infty\int_0^{2\pi}
+    \bigl\|T_{n+m}\bigl(re^{i\theta}\bigr)e^{i(n-j)\theta}\bigr\|\,d\theta
+  <\infty .
+\end{equation}
+For the pointwise bound, $\bigl|e^{i(n-j)\theta}\bigr|=1$ and
+$\bigl|re^{i\theta}\bigr|=r$, so the summand bound of
+\noderef{Thm2TermGeometricSummability} gives
+\[
+  \bigl\|T_{n+m}\bigl(re^{i\theta}\bigr)e^{i(n-j)\theta}\bigr\|
+  =\bigl\|T_{n+m}\bigl(re^{i\theta}\bigr)\bigr\|
+  \le2\,|A_{n+m}|\,r^{\lambda_{n+m}}
+\]
+for every $\theta$; the bound is independent of $\theta$, so the $m$-th
+integral in (5) is at most $2\pi\cdot2|A_{n+m}|r^{\lambda_{n+m}}$.  The series
+$\sum_m2|A_{n+m}|r^{\lambda_{n+m}}$ converges, by the final clause of
+\noderef{Thm2TermGeometricSummability} applied at $\rho=r$ with $0<r<1$ ---
+this is where the energy hypothesis on $A$ and the geometric domination
+$r^{\lambda_{n+m}}\le(r^b)^m$ are consumed --- so (5) holds.
+
+Therefore the integral of (4) may be taken term by term, and by (3)
+\[
+  \int_0^{2\pi}H\bigl(re^{i\theta}\bigr)e^{i(n-j)\theta}\,d\theta
+  =\sum_{m=0}^\infty 2\pi\,r^{\lambda_{n+m}}
+    \Bigl(\bigl[\,n+m=j\,\bigr]A_{n+m}
+      +\bigl[\,n+m=-j\,\bigr]\epsilon_{n+m}\overline{A_{n+m}}\Bigr).
+\]
+Dividing by $2\pi$ gives (b).
+\end{proof}

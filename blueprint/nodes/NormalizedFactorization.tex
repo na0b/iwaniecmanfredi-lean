@@ -1,0 +1,215 @@
+\begin{lemma}
+Let $1<p<\infty$, let $K\in\mathbb{R}$, let $\Omega\subseteq\mathbb{C}$ be open
+and connected, and let $f\colon\mathbb{C}\to\mathbb{C}$ be $K$-quasiregular on
+$\Omega$ in the sense of \noderef{QuasiregularOn}.  Let
+$g\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(i)] $g=f$ almost everywhere on $\Omega$;
+\item[(ii)] $g$ is continuous on $\Omega$;
+\item[(iii)] $g$ is real-differentiable at almost every point of $\Omega$;
+\item[(iv)] $g$ solves equation (12) of the paper on $\Omega$ in the sense of
+  \noderef{SolvesEq12}.
+\end{enumerate}
+Assume $g(z^{*})\neq0$ for some $z^{*}\in\Omega$, and let $z_0\in\Omega$
+satisfy $g(z_0)=0$.  Assume the bundles (C2) and (C3) of \noderef{QCPackage}
+and \noderef{SmoothOffZeros}.  Then there
+are an integer $m\ge1$, a constant $K'\ge1$, an open set $V'$ with
+$z_0\in V'\subseteq\Omega$ and maps $\chi,H\colon\mathbb{C}\to\mathbb{C}$ such
+that
+\begin{enumerate}
+\item[(a)] $\chi$ is $K'$-quasiconformal on $V'$ in the sense of
+  \noderef{QuasiconformalOn}, $\chi(z_0)=0$, and $g(z)=[\chi(z)]^{m}$ for every
+  $z\in V'$;
+\item[(b)] $\chi$ is $C^\infty$ on $V'-\{z_0\}$;
+\item[(c)] $H(\chi(z))=z$ for every $z\in V'$, $H$ is continuous on
+  $\chi(V')$, $H(0)=z_0$, and for every $\xi\in\chi(V')$ one has
+  $H(\xi)\in V'$ and $\chi(H(\xi))=\xi$.
+\end{enumerate}
+
+This is the normalised form of the factorization (15) that Sections~3 to~5
+use.  Clause (a) is the factorization theorem quoted in (C2), shrunk so that
+$z_0$ is the only zero of $g$ in $V'$; (b) is \noderef{ChiSmoothOffZero}
+applied on the punctured neighborhood, where (C3) makes $g$ smooth and the
+discreteness of the zero set makes it nonvanishing; and (c) is the inverse
+furnished by the quasiconformality of $\chi$, with the two inversion
+identities and $H(0)=z_0$.
+
+The factorization, the equation and the singular point are all read for the
+continuous representative $g$ of $f$, not for $f$ itself, and they must be.
+Quasiregularity as \noderef{QuasiregularOn} defines it constrains $f$ only
+through $W^{1,2}_{\mathrm{loc}}$ membership and an almost-everywhere
+inequality, both unchanged by altering $f$ on a null set; so no hypothesis on
+$f$ alone can give a pointwise identity $f=\chi^{m}$ on an open set, and the
+set $f^{-1}(0)$ is not determined modulo null sets, whereas $g^{-1}(0)$ is.
+This is the same reading of the quoted (C2) and (C3) that \noderef{QCPackage}
+and \noderef{SmoothOffZeros} carry --- the paper's own at paper.tex:156, where
+the singular set is written $f^{-1}(0)=\{z\in\Omega:\nabla u(z)=0\}$ --- and a
+single representative is threaded through all of them.
+
+No smoothness of $H$ is claimed, and none is available here: the paper's arrow
+runs $H\to\chi$ (paper.tex:416), and $H$'s regularity off the origin is
+produced downstream, by term-by-term differentiation of the expansion (19) as
+at paper.tex:387--388.  Claiming it here would invert the development, and it
+is what forced the illegal fourth bundle in earlier cycles.  Nothing else about
+$H$ is claimed either.  Its $W^{1,2}_{\mathrm{loc}}$ membership, almost
+everywhere differentiability and $J_H>0$ almost everywhere are one application
+of (C2)'s inverse clause away; and its quasiconformality --- which the paper
+asserts flatly at paper.tex:179 but which (C2) does not quote, so that
+paper.tex:113 requires it to be proved --- is assembled from those, from (18)
+and from the homeomorphism clauses of $\chi$ in the node that applies
+Corollary 1, which already carries the bundle (C2) and the $\chi$ data.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the factorization and the isolated zero.}  The clause
+\texttt{qr\_factorization} of \noderef{QCPackage}, applied with $K$, $\Omega$,
+the pair $f,g$, the point $z_0$, the openness and connectedness of $\Omega$,
+the quasiregularity of $f$, the hypotheses (i) and (ii) on $g$, the point
+$z^{*}$ with $g(z^{*})\neq0$ and $g(z_0)=0$, provides an integer $m\ge1$, a
+constant $K'$, an open set $V_0$ with $z_0\in V_0\subseteq\Omega$ and a map
+$\chi$ with
+\begin{equation}\tag{1}
+  \chi\ \text{is }K'\text{-quasiconformal on }V_0,\qquad \chi(z_0)=0,\qquad
+  g(z)=[\chi(z)]^{m}\ (z\in V_0).
+\end{equation}
+By \noderef{QuasiconformalOn} the first clause of (1) contains
+$K'$-quasiregularity of $\chi$ on $V_0$, whose first clause is $1\le K'$ by
+\noderef{QuasiregularOn}; so
+\begin{equation}\tag{2}
+  1\le m,\qquad 1\le K'.
+\end{equation}
+The clause \texttt{qr\_discrete\_zeros} of \noderef{QCPackage}, applied with
+the same $K$, $\Omega$, the pair $f,g$, the openness and connectedness of
+$\Omega$, the quasiregularity of $f$, the hypotheses (i) and (ii) on $g$ and
+the point $z^{*}$, read at the point $z_0\in\Omega$, provides $r_0>0$ with
+\begin{equation}\tag{3}
+  g(z)\neq0\qquad\text{for every }z\in\Omega\ \text{with }z\neq z_0\
+  \text{and}\ |z-z_0|<r_0 .
+\end{equation}
+
+\emph{Step 2: the neighborhood $V'$.}  Put
+\[
+  V'=V_0\cap\{z:|z-z_0|<r_0\} .
+\]
+It is open, being an intersection of two open sets; $z_0\in V'$, since
+$z_0\in V_0$ and $|z_0-z_0|=0<r_0$; and $V'\subseteq V_0\subseteq\Omega$.  By
+(3) and $V'\subseteq\Omega$,
+\begin{equation}\tag{4}
+  g(z)\neq0\qquad(z\in V'-\{z_0\}),
+\end{equation}
+and by (1), restricted to $V'\subseteq V_0$,
+\begin{equation}\tag{5}
+  \chi(z_0)=0,\qquad g(z)=[\chi(z)]^{m}\quad(z\in V').
+\end{equation}
+
+\emph{Step 3: $\chi$ is $K'$-quasiconformal on $V'$.}  By
+\noderef{QuasiconformalOn} applied to $V_0$ we have: $\chi$ is
+$K'$-quasiregular on $V_0$, injective on $V_0$, continuous on $V_0$, the image
+$\chi(V_0)$ is open, and there is $\psi$ with $\psi(\chi(z))=z$ for $z\in V_0$
+and $\psi$ continuous on $\chi(V_0)$.  We verify the same five clauses for
+$V'$.
+
+\emph{(3a) $K'$-quasiregularity on $V'$.}  By \noderef{QuasiregularOn} this
+asks for $1\le K'$, which is (2), for $\chi\in W^{1,2}_{\mathrm{loc}}(V')$ in
+the sense of \noderef{MemWLocOn}, and for a pair of weak Wirtinger derivatives
+of $\chi$ on $V'$ satisfying the distortion inequality (11) of the paper almost
+everywhere on $V'$.
+
+For the last clause, let $a,b$ be weak Wirtinger derivatives of $\chi$ on
+$V_0$, with underlying family $\chi_x,\chi_y$, such that
+$|b|\le\kappa_0|a|$ almost everywhere on $V_0$, where
+$\kappa_0=(K'-1)/(K'+1)$; these exist by \noderef{QuasiregularOn} applied on
+$V_0$.  The same $a,b$ are weak Wirtinger derivatives of $\chi$ on $V'$: the
+local integrability clause (a) of \noderef{IsWeakWirtingerOn} restricts,
+because every compact subset of $V'$ is a compact subset of $V_0$ and
+\noderef{MemLpLocOn} quantifies over those; the distributional-derivative
+clause (b) restricts, because by \noderef{IsTestFn} the only clause of
+``$\varphi$ is a test function for a set'' which mentions the set is
+$\operatorname{tsupp}\varphi\subseteq V'\subseteq V_0$, so every test function
+for $V'$ is one for $V_0$, while the integral identity of
+\noderef{IsWeakPartialOn} does not mention the set; and clause (c) is a
+pointwise identity, independent of the set.  The inequality also restricts,
+since $V'\subseteq V_0$ and an almost-everywhere implication with a smaller
+antecedent set is weaker.
+
+For the Sobolev clause, take the family $D$
+witnessing $\chi\in W^{1,2}_{\mathrm{loc}}(V_0)$: each $D(w)$ with $|w|\le1$
+lies in $L^{2}_{\mathrm{loc}}(V')$ in the sense of \noderef{MemLpLocOn},
+because every compact subset of $V'$ is a compact subset of $V_0$; and for
+$|w|<1$ and $j\in\{0,1\}$ the identity of \noderef{IsWeakPartialOn} holds on
+$V'$ because every test function for $V'$ is a test function for $V_0$ --- by
+\noderef{IsTestFn} the only clause involving the set is
+$\operatorname{tsupp}\varphi\subseteq V'\subseteq V_0$ --- and the identity
+itself does not mention the set.  So $D$ witnesses
+$\chi\in W^{1,2}_{\mathrm{loc}}(V')$.
+
+\emph{(3b) injectivity and continuity on $V'$.}  Both restrict from $V_0$
+along $V'\subseteq V_0$.
+
+\emph{(3c) $\chi(V')$ is open.}  We claim
+\begin{equation}\tag{6}
+  \chi(V')=\chi(V_0)\cap\psi^{-1}(V') .
+\end{equation}
+If $\xi=\chi(z)$ with $z\in V'$, then $z\in V_0$, so $\xi\in\chi(V_0)$ and
+$\psi(\xi)=\psi(\chi(z))=z\in V'$.  Conversely, let $\xi\in\chi(V_0)$ with
+$\psi(\xi)\in V'$ and write $\xi=\chi(y)$ with $y\in V_0$; then
+$\psi(\xi)=\psi(\chi(y))=y$, so $y\in V'$ and $\xi=\chi(y)\in\chi(V')$.  This
+proves (6).  Now $\psi$ is continuous on $\chi(V_0)$ and $V'$ is open, so the
+right-hand side of (6) is open in the subspace $\chi(V_0)$; and $\chi(V_0)$ is
+open in $\mathbb{C}$.  A subset of $\mathbb{C}$ open in an open subspace is
+open, so $\chi(V')$ is open.
+
+\emph{(3d) the inverse clause.}  The same $\psi$ satisfies $\psi(\chi(z))=z$
+for $z\in V'\subseteq V_0$ and is continuous on
+$\chi(V')\subseteq\chi(V_0)$.
+
+With (3a)--(3d) and (5), $\chi$ is $K'$-quasiconformal on $V'$ with
+$\chi(z_0)=0$ and $g=\chi^{m}$ on $V'$, which is assertion (a).
+
+\emph{Step 4: $g$ is $C^\infty$ on $V'-\{z_0\}$.}  By \noderef{QuasiregularOn}
+the quasiregularity of $f$ on $\Omega$ contains
+$f\in W^{1,2}_{\mathrm{loc}}(\Omega)$.  The clause
+\texttt{smooth\_off\_zeros} of \noderef{SmoothOffZeros}, applied with $p$,
+$\Omega$, the pair $f,g$, the openness of $\Omega$, $1<p$, that membership and
+the four hypotheses (i)--(iv) on $g$, gives that $g$ is $C^\infty$ on
+$\Omega-\{z:g(z)=0\}$.  By (4) every $z\in V'-\{z_0\}$ lies in $\Omega$ with
+$g(z)\neq0$, so
+\begin{equation}\tag{7}
+  V'-\{z_0\}\subseteq\Omega-\{z:g(z)=0\},
+\end{equation}
+and a function of class $C^\infty$ on a set is of class $C^\infty$ on every
+subset of it; hence $g$ is $C^\infty$ on $V'-\{z_0\}$.
+
+\emph{Step 5: $\chi$ is $C^\infty$ on $V'-\{z_0\}$.}  The set $U=V'-\{z_0\}$
+is open, $V'$ being open and $\{z_0\}$ closed.  The hypotheses of
+\noderef{ChiSmoothOffZero} hold with this $m$, this $U$, and $g,\chi$ in the
+roles of its two maps: $m\ge1$ is (2); (H1), continuity of $\chi$ on $U$, is
+the restriction of (3b); (H2), $g=\chi^{m}$ on $U$, is (5) restricted to
+$U\subseteq V'$; (H3), $g$ of class $C^\infty$ on $U$, is Step 4; and (H4),
+$g\neq0$ on $U$, is (4).  Therefore
+\begin{equation}\tag{8}
+  \chi\ \text{is }C^\infty\ \text{on }U=V'-\{z_0\},
+\end{equation}
+which is assertion (b).
+
+\emph{Step 6: the inverse $H$.}  Put $H=\psi$, the map of Step 3.  By (3d),
+\begin{equation}\tag{9}
+  H(\chi(z))=z\ \ (z\in V'),\qquad H\ \text{is continuous on }\chi(V') .
+\end{equation}
+Three consequences.  First, taking $z=z_0\in V'$ in (9) and using $\chi(z_0)=0$
+from (5),
+\begin{equation}\tag{10}
+  H(0)=H\bigl(\chi(z_0)\bigr)=z_0 .
+\end{equation}
+Second, let $\xi\in\chi(V')$ and write $\xi=\chi(z)$ with $z\in V'$; then
+$H(\xi)=z$ by (9), so
+\begin{equation}\tag{11}
+  H(\xi)\in V'\qquad\text{and}\qquad \chi\bigl(H(\xi)\bigr)=\chi(z)=\xi
+  \qquad\bigl(\xi\in\chi(V')\bigr).
+\end{equation}
+With (9), (10) and (11), assertion (c) is proved.
+
+\emph{Step 7: conclusion.}  The data $m$, $K'$, $V'$, $\chi$ and $H$ satisfy
+$m\ge1$ and $K'\ge1$ by (2); $V'$ is open with $z_0\in V'\subseteq\Omega$ by
+Step 2; assertion (a) holds by Step 3 with (5); (b) by (8); and (c) by (9),
+(10) and (11).
+\end{proof}

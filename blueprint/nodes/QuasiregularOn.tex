@@ -1,0 +1,49 @@
+\begin{definition}
+Let $\Omega\subset\mathbb{C}$ be open and let $1\le K<\infty$.  A mapping
+$f\colon\mathbb{C}\to\mathbb{C}$ is \emph{$K$-quasiregular on $\Omega$} if
+\begin{enumerate}
+\item[(a)] $f\in W^{1,2}_{\mathrm{loc}}(\Omega)$, in the sense of
+\noderef{MemWLocOn}; and
+\item[(b)] there are weak Wirtinger derivatives $a=\partial f/\partial z$ and
+$b=\partial f/\partial\bar z$ of $f$ on $\Omega$, in the sense of
+\noderef{IsWeakWirtingerOn}, such that
+\[
+  \bigl|b(z)\bigr|\le\frac{K-1}{K+1}\bigl|a(z)\bigr|
+\]
+for almost every $z\in\Omega$, ``almost every'' referring to two-dimensional
+Lebesgue measure.
+\end{enumerate}
+
+This is the definition of $K$-quasiregularity given at paper.tex:129--133,
+together with its differential inequality
+\[
+  \Bigl|\frac{\partial f(z)}{\partial\bar z}\Bigr|
+  \le\frac{K-1}{K+1}\Bigl|\frac{\partial f(z)}{\partial z}\Bigr|
+  \tag{11}
+\]
+for almost every $z\in\Omega$.
+
+Two remarks on the reading of (11).
+
+First, the derivatives in (b) are the weak ones.  This is what the paper's
+sentence says: the only hypothesis $f$ carries where (11) is stated is
+$f\in W^{1,2}_{\mathrm{loc}}(\Omega)$, and the two Wirtinger operators have
+just been introduced, two lines earlier, as the combinations
+$\frac12(\partial_x\mp i\partial_y)$; so the derivatives in (11) are the
+distributional ones whose existence the Sobolev membership asserts.  Reading
+them instead through the real Fr\'echet derivative of the given representative
+would not formalize (11) at all.  Clause (a) constrains $f$ only up to null
+sets --- by \noderef{MemWLocOn} it is a family of integral identities and
+local $L^2$-conditions --- so a class in $W^{1,2}_{\mathrm{loc}}(\Omega)$ has
+representatives that are differentiable at no point whatever; for such a
+representative every pointwise Wirtinger derivative is $0$, by the convention
+that the differential is $0$ where it does not exist, and the pointwise form
+of (11) would hold vacuously however large the class's genuine distortion.
+With (b) as stated this cannot happen: the weak derivatives depend only on the
+class of $f$, so (11) is a condition on the class, as the paper intends.
+
+Second, the witnessing pair in (b) is immaterial.  By the last paragraph of
+\noderef{IsWeakWirtingerOn}, two pairs of weak Wirtinger derivatives of $f$ on
+an open $\Omega$ agree almost everywhere there, so the validity of (b) does not
+depend on which pair is chosen; and (b) for one pair gives (b) for every pair.
+\end{definition}

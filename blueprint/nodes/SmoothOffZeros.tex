@@ -1,0 +1,53 @@
+\begin{definition}
+A \emph{smoothness-off-zeros package} is a single datum: a proof of the
+following statement.
+
+Let $\Omega\subset\mathbb{C}$ be open, let $1<p<\infty$, let
+$f\colon\mathbb{C}\to\mathbb{C}$ belong to $W^{1,2}_{\mathrm{loc}}(\Omega)$ in
+the sense of \noderef{MemWLocOn}, and let $g\colon\mathbb{C}\to\mathbb{C}$
+satisfy
+\begin{enumerate}
+\item[(i)] $g=f$ almost everywhere on $\Omega$;
+\item[(ii)] $g$ is continuous on $\Omega$;
+\item[(iii)] $g$ is real-differentiable at almost every point of $\Omega$;
+\item[(iv)] $g$ satisfies equation (12) on $\Omega$ in the sense of
+  \noderef{SolvesEq12}.
+\end{enumerate}
+Then $g$ is $C^\infty$ on $\Omega\setminus g^{-1}(0)$.
+
+This is item (C3) of the paper's note for the formalization: ``(General
+elliptic regularity, as used in Section~2.)  A $W^{1,2}_{\mathrm{loc}}$
+solution of (12) is $C^\infty$ outside its zero set.''  The note directs that
+such quoted results be carried as explicit hypotheses rather than axioms; this
+definition is that bundle, so that a theorem needing (C3) takes a
+smoothness-off-zeros package as an argument.
+
+The conclusion is asserted of the representative $g$, and the exceptional set
+is $g^{-1}(0)$.  It has to be.  Both $W^{1,2}_{\mathrm{loc}}$ membership and
+equation (12) see their argument only almost everywhere: the first by
+\noderef{MemWLocOn}, which is a family of integral identities and indicator
+$L^2$-conditions; the second because \noderef{SolvesEq12} is an identity
+between the weak Wirtinger derivatives of its argument, and by
+\noderef{IsWeakWirtingerOn} those are determined by the argument's
+almost-everywhere class, the pointwise values of the argument entering (12)
+only inside an ``almost every $z$'' quantifier.  Consequently nothing about
+the smoothness of $f$ at any individual point follows from a hypothesis on $f$
+alone, the set $f^{-1}(0)$ is not determined modulo null sets, and the
+statement with $f$ in place of $g$ throughout would be false, making the
+package uninhabited; paper.tex:107 forbids exactly that.  The paper writes the
+exceptional set as $f^{-1}(0)=\{z\in\Omega:\nabla u(z)=0\}$ at paper.tex:156,
+that is, as the zero set of the continuous complex gradient, which is
+$g^{-1}(0)$ here.  Note that, (12) being a condition on the class, hypothesis
+(iv) for $g$ and the same condition for $f$ are equivalent given (i); it is
+stated for $g$ because $g$ is the function the conclusion is about.
+
+Hypotheses (ii) and (iii) only weaken the statement, so the package remains no
+stronger than the quoted result; they are what pin $g$ down.  Continuity makes
+$g$ the unique continuous representative of $f$, two continuous functions
+agreeing almost everywhere on an open set being equal there; and
+almost-everywhere differentiability identifies the weak derivatives of $g$
+with its classical ones almost everywhere, so that the classical Wirtinger
+derivatives of $g$ --- the objects the elliptic theory differentiates --- do
+satisfy (12) almost everywhere, which is the form of the equation the quoted
+result is about.
+\end{definition}

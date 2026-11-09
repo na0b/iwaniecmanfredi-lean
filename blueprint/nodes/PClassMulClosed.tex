@@ -1,0 +1,73 @@
+\begin{lemma}
+Let $H\colon\mathbb{C}\to\mathbb{C}$, let $s,k,t,l\ge0$ be integers, and let
+$P\in\mathbb{P}(s,k)$ and $Q\in\mathbb{P}(t,l)$ relative to $H$ in the sense
+of \noderef{PClass}.  Then the pointwise product $PQ$ belongs to
+$\mathbb{P}(s+t,k+l)$ relative to $H$.
+\end{lemma}
+\begin{proof}
+By \noderef{PClass} applied to $P$, choose an integer $r\ge0$, complex numbers
+$c_1,\dots,c_r$ and lists $M_1,\dots,M_r$ of derivative symbols with
+\begin{equation}\tag{1}
+  s(M_\alpha)=s,\qquad k(M_\alpha)=k\qquad(\alpha=1,\dots,r),
+\end{equation}
+\begin{equation}\tag{2}
+  P(\xi)=\sum_{\alpha=1}^{r}c_\alpha H^{M_\alpha}(\xi)\qquad\text{for every }\xi\in\mathbb{C},
+\end{equation}
+and by \noderef{PClass} applied to $Q$, choose an integer $q\ge0$, complex
+numbers $b_1,\dots,b_q$ and lists $N_1,\dots,N_q$ with
+\begin{equation}\tag{3}
+  s(N_\beta)=t,\qquad k(N_\beta)=l\qquad(\beta=1,\dots,q),
+\end{equation}
+\begin{equation}\tag{4}
+  Q(\xi)=\sum_{\beta=1}^{q}b_\beta H^{N_\beta}(\xi)\qquad\text{for every }\xi\in\mathbb{C}.
+\end{equation}
+
+Consider the $rq$ pairs $(\alpha,\beta)$ with $1\le\alpha\le r$,
+$1\le\beta\le q$.  To each we attach the complex number $c_\alpha b_\beta$ and
+the list
+\[
+  M_\alpha * N_\beta
+\]
+obtained by concatenating $M_\alpha$ and $N_\beta$, i.e.\ by listing the
+entries of $M_\alpha$ followed by the entries of $N_\beta$.
+
+\emph{Step 1: every attached list has type $(s+t,k+l)$.}  By
+\noderef{MonomialValue}, $k(\,\cdot\,)$ is the length of a list and
+$s(\,\cdot\,)$ is the sum of the orders of its entries.  Concatenation lists
+the entries of the two lists one after the other, so its length is the sum of
+the two lengths and the sum of the orders of its entries is the sum of the two
+sums:
+\[
+  k(M_\alpha * N_\beta)=k(M_\alpha)+k(N_\beta)=k+l,
+  \qquad
+  s(M_\alpha * N_\beta)=s(M_\alpha)+s(N_\beta)=s+t,
+\]
+using (1) and (3).
+
+\emph{Step 2: the monomial of a concatenation is the product of the
+monomials.}  Again by \noderef{MonomialValue}, $H^{M}(\xi)$ is the product of
+the symbol values $H^{d}(\xi)$ over the entries $d$ of $M$.  For a
+concatenation the list of entries is the concatenation of the two lists of
+entries, so the product splits as the product of the two partial products:
+\begin{equation}\tag{5}
+  H^{M_\alpha * N_\beta}(\xi)=H^{M_\alpha}(\xi)\,H^{N_\beta}(\xi)
+  \qquad\text{for every }\xi\in\mathbb{C}.
+\end{equation}
+
+\emph{Step 3: the linear combination.}  Let $\xi\in\mathbb{C}$.  Using (5) and
+then the distributive law for finite sums of complex numbers,
+\[
+  \sum_{\alpha=1}^{r}\sum_{\beta=1}^{q}c_\alpha b_\beta\,H^{M_\alpha * N_\beta}(\xi)
+  =\sum_{\alpha=1}^{r}\sum_{\beta=1}^{q}
+     \bigl(c_\alpha H^{M_\alpha}(\xi)\bigr)\bigl(b_\beta H^{N_\beta}(\xi)\bigr)
+  =\Bigl(\sum_{\alpha=1}^{r}c_\alpha H^{M_\alpha}(\xi)\Bigr)
+   \Bigl(\sum_{\beta=1}^{q}b_\beta H^{N_\beta}(\xi)\Bigr),
+\]
+and by (2) and (4) the right-hand side is $P(\xi)Q(\xi)$.
+
+The finite family of coefficients $c_\alpha b_\beta$ together with the lists
+$M_\alpha * N_\beta$, which all have type $(s+t,k+l)$ by Step 1, therefore
+presents $PQ$ as a finite $\mathbb{C}$-linear combination of monomials of type
+$(s+t,k+l)$, valid at every point of $\mathbb{C}$.  By \noderef{PClass} this
+says exactly that $PQ\in\mathbb{P}(s+t,k+l)$ relative to $H$.
+\end{proof}

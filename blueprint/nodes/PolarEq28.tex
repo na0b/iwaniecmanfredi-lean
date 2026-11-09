@@ -1,0 +1,163 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, let $\Omega\subset\mathbb{C}$ be
+open, and let $H\colon\mathbb{C}\to\mathbb{C}$ be differentiable at almost
+every point of $\Omega$ and satisfy equation (18) on $\Omega$ in the sense of
+\noderef{SolvesEq18}.
+Then for almost every $\xi\in\Omega$ with $\xi\neq0$,
+\[
+  2r\,H_r(\xi)=-ip\,H_\theta(\xi)+(p-2)\,i\,e^{-2in\theta}\,\overline{H_\theta(\xi)},
+\]
+where $r=|\xi|$, $e^{-2in\theta}=(\bar\xi/\xi)^{n}$, and $H_r$, $H_\theta$ are
+as in \noderef{HRad} and \noderef{HAng}.
+
+This is equation (28) of the paper.  Both sides are built from the Fr\'echet
+derivative of $H$, so almost-everywhere differentiability is exactly the right
+hypothesis: it is what item (C2) of the paper's note supplies for the inverse of
+a quasiconformal homeomorphism, and the conclusion, like (18) itself, is an
+almost-everywhere identity.
+\end{lemma}
+\begin{proof}
+Put
+\[
+  c=\frac12-\frac1p .
+\]
+Since $p>1$ we have $1/p>0$, hence
+\begin{equation}\tag{0}
+  1-c=\frac12+\frac1p>0,\qquad\text{in particular } 1-c\neq0 .
+\end{equation}
+
+\emph{Step 0: (18) for the pointwise derivatives.}  By \noderef{SolvesEq18}
+there are weak Wirtinger derivatives $a,b$ of $H$ on $\Omega$, in the sense of
+\noderef{IsWeakWirtingerOn}, and a null set $Z_0$ such that
+\begin{equation}\tag{18$'$}
+  b(\xi)=c\Bigl[\frac{\xi}{\bar\xi}a(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{\,n}}\overline{a(\xi)}\Bigr]
+  \qquad(\xi\in\Omega-Z_0,\ \xi\neq0).
+\end{equation}
+By \noderef{IsWeakWirtingerOn} there are in turn $H_x,H_y$ such that
+$H,H_x,H_y\in L^1_{\mathrm{loc}}(\Omega)$, such that $H_x$ and $H_y$ are the
+distributional $\partial_0$- and $\partial_1$-derivatives of $H$ on $\Omega$,
+and such that $a=\tfrac12(H_x-iH_y)$, $b=\tfrac12(H_x+iH_y)$ at every point.
+These are hypotheses (H1) and (H2) of \noderef{WeakPartialEqFDerivAE} for the
+open set $\Omega$, the function $H$ and the pair $D_0=H_x$, $D_1=H_y$, and its
+(H3) is the hypothesis that $H$ is differentiable at almost every point of
+$\Omega$; so that lemma provides a null set $Z_1$ with
+\[
+  H_x(\xi)=\partial_0H(\xi),\qquad H_y(\xi)=\partial_1H(\xi)
+  \qquad(\xi\in\Omega-Z_1),
+\]
+where $\partial_j=D^{[j]}$ is the classical partial derivative of
+\noderef{PartialWord}, that is $\partial_0H(\xi)=\mathrm{d}H(\xi)[1]$ and
+$\partial_1H(\xi)=\mathrm{d}H(\xi)[i]$.  By \noderef{DZ} and \noderef{DZbar},
+$H_\xi(\xi)$ and $H_{\bar\xi}(\xi)$ are the same two combinations
+$\tfrac12\bigl(\mathrm{d}H(\xi)[1]\mp i\,\mathrm{d}H(\xi)[i]\bigr)$, so
+\begin{equation}\tag{18$''$}
+  a(\xi)=H_\xi(\xi),\qquad b(\xi)=H_{\bar\xi}(\xi)\qquad(\xi\in\Omega-Z_1).
+\end{equation}
+Substituting (18$''$) into (18$'$), the pointwise form
+\begin{equation}\tag{18}
+  H_{\bar\xi}(\xi)=c\Bigl[\frac{\xi}{\bar\xi}H_\xi(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{\,n}}\overline{H_\xi(\xi)}\Bigr]
+\end{equation}
+holds at every $\xi\in\Omega-(Z_0\cup Z_1)$ with $\xi\neq0$.
+
+Discard the union of $Z_0\cup Z_1$ and the null set where $H$ fails to be
+differentiable, which is again null, and fix a remaining $\xi\in\Omega$ with
+$\xi\neq0$.  Then (18) holds at $\xi$ and $H$ is real-differentiable there, so
+\noderef{WirtingerPolarForm} applies at $\xi$.
+
+\emph{Notation.}  Put
+\[
+  r=|\xi|>0,\qquad e=\frac{\xi}{r},\qquad
+  u=H_r(\xi),\qquad v=\frac ir H_\theta(\xi),\qquad E=\Bigl(\frac{\bar\xi}{\xi}\Bigr)^{n}.
+\]
+Then $|e|=1$, i.e.\ $e\bar e=1$, and $\bar e=\bar\xi/r$.  Consequently
+\[
+  \frac{\xi}{\bar\xi}=\frac{re}{r\bar e}=\frac{e}{\bar e}=e^{2},
+  \qquad
+  \frac{\bar\xi^{\,n}}{\xi^{\,n}}=\Bigl(\frac{\bar\xi}{\xi}\Bigr)^{n}=E,
+\]
+the middle step because $1/\bar e=e$.  Also $\overline{E}=(\xi/\bar\xi)^{n}$
+and
+\begin{equation}\tag{1}
+  E\,\overline{E}=1 .
+\end{equation}
+By \noderef{WirtingerPolarForm},
+\begin{equation}\tag{2}
+  H_{\bar\xi}(\xi)=\tfrac12(u+v)\,e,\qquad H_\xi(\xi)=\tfrac12(u-v)\,\bar e,
+\end{equation}
+and therefore, conjugation being a ring homomorphism with $\bar{\bar e}=e$,
+\begin{equation}\tag{3}
+  \overline{H_\xi(\xi)}=\tfrac12\,\overline{(u-v)}\;e .
+\end{equation}
+
+\emph{Step 1: (18) in polar form.}  Substituting (2) and (3) into (18), and
+using $\xi/\bar\xi=e^{2}$ together with $e^{2}\bar e=e$ (which follows from
+$e\bar e=1$),
+\[
+  \tfrac12(u+v)e
+  =c\Bigl[e^{2}\cdot\tfrac12(u-v)\bar e+E\cdot\tfrac12\overline{(u-v)}\,e\Bigr]
+  =\tfrac12\,c\,e\Bigl[(u-v)+E\,\overline{(u-v)}\Bigr].
+\]
+Since $e\neq0$, dividing by $\tfrac12 e$ gives
+\begin{equation}\tag{4}
+  u+v=c\Bigl[(u-v)+E\,\overline{(u-v)}\Bigr].
+\end{equation}
+
+\emph{Step 2: conjugate and eliminate $\bar u$.}  Expanding (4) and collecting
+the terms containing $\bar u$ on the right,
+\begin{equation}\tag{5}
+  (1-c)u+(1+c)v+cE\,\bar v=cE\,\bar u .
+\end{equation}
+Conjugating (4) — the number $c$ is real, so $\bar c=c$ — gives
+$\bar u+\bar v=c\bigl[\overline{(u-v)}+\overline{E}(u-v)\bigr]$, that is,
+collecting the $\bar u$ terms,
+\begin{equation}\tag{6}
+  (1-c)\bar u=-(1+c)\bar v+c\,\overline{E}\,(u-v).
+\end{equation}
+Multiply (5) by $1-c$ and then replace $(1-c)\bar u$ using (6):
+\[
+  (1-c)^2u+(1-c)(1+c)v+c(1-c)E\,\bar v
+  =cE\cdot(1-c)\bar u
+  =cE\Bigl[-(1+c)\bar v+c\,\overline{E}\,(u-v)\Bigr],
+\]
+and the right side equals $-c(1+c)E\,\bar v+c^{2}(u-v)$ by (1).  Bringing
+everything to one side and using $(1-c)(1+c)=1-c^{2}$,
+\[
+  \bigl[(1-c)^2-c^2\bigr]u+\bigl[(1-c^{2})+c^{2}\bigr]v
+    +\bigl[c(1-c)+c(1+c)\bigr]E\,\bar v=0 .
+\]
+Now $(1-c)^2-c^2=1-2c$, $(1-c^{2})+c^{2}=1$ and
+$c(1-c)+c(1+c)=2c$, so
+\begin{equation}\tag{7}
+  (1-2c)\,u+v+2c\,E\,\bar v=0 .
+\end{equation}
+(Note that this elimination multiplied by $1-c$, which is nonzero by (0); it
+did not divide by $c$, so (7) is valid also when $c=0$, i.e.\ when $p=2$.)
+
+\emph{Step 3: back to $H_r$ and $H_\theta$.}  From $c=\tfrac12-\tfrac1p$,
+\[
+  1-2c=1-1+\frac2p=\frac2p,\qquad 2c=1-\frac2p=\frac{p-2}{p}.
+\]
+Multiplying (7) by $p>0$,
+\begin{equation}\tag{8}
+  2u+p\,v+(p-2)\,E\,\bar v=0 .
+\end{equation}
+Finally $v=\frac ir H_\theta(\xi)$ with $r$ real, so
+\[
+  r\,v=i\,H_\theta(\xi),
+  \qquad
+  r\,\bar v=r\,\overline{\Bigl(\frac ir H_\theta(\xi)\Bigr)}
+  =r\cdot\Bigl(-\frac ir\Bigr)\overline{H_\theta(\xi)}
+  =-i\,\overline{H_\theta(\xi)} ,
+\]
+using that $r$ is real so $\overline{i/r}=-i/r$.  Multiplying (8) by $r>0$ and substituting,
+\[
+  2r\,H_r(\xi)+i\,p\,H_\theta(\xi)-(p-2)\,i\,E\,\overline{H_\theta(\xi)}=0,
+\]
+that is
+\[
+  2r\,H_r(\xi)=-i\,p\,H_\theta(\xi)+(p-2)\,i\,E\,\overline{H_\theta(\xi)},
+\]
+which is the assertion, since $E=(\bar\xi/\xi)^{n}=e^{-2in\theta}$.
+\end{proof}

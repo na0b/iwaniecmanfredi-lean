@@ -1,0 +1,145 @@
+\begin{lemma}
+Let $n\ge1$ be an integer and let $1<p<\infty$.  Then
+\begin{enumerate}
+\item[(23)] $\lambda_n(n,p)=0$ and $\epsilon_n(n,p)=0$;
+\item[(24)] $|\epsilon_k(n,p)|<1$ for $k=n+1,n+2,\dots$;
+\item[(25)] $\dfrac{p-1}{np}\le\lambda_k(n,p)\le k\sqrt{p-1}$ for
+$k=n+1,n+2,\dots$
+\end{enumerate}
+Here $\lambda_k(n,p)$ is as in \noderef{LambdaCoef} and $\epsilon_k(n,p)$ is
+as in \noderef{EpsCoef}.
+\end{lemma}
+\begin{proof}
+Throughout, $n\ge1$ and $p>1$ are fixed.  Write $\lambda_k=\lambda_k(n,p)$ and
+\[
+  R_k=4k^2(p-1)+n^2(p-2)^2,
+\]
+so that, by \noderef{LambdaCoef},
+\[
+  2\lambda_k=-np+\sqrt{R_k}.
+\]
+Note $np>0$ because $n\ge1$ and $p>1$, and $p-1>0$.
+
+\emph{Step 0 (the radicand).}  Each of $4k^2(p-1)$ and $n^2(p-2)^2$ is
+nonnegative, so $R_k\ge0$ for every $k\ge0$ and $\sqrt{R_k}$ is the ordinary
+square root of a nonnegative number.  Moreover, for $k\ge j\ge0$,
+\[
+  R_k-R_j=4(p-1)(k^2-j^2)\ge0,
+\]
+with strict inequality when $k>j$, since $p-1>0$.  Hence $k\mapsto R_k$ is
+nondecreasing, and $k\mapsto\sqrt{R_k}$ and $k\mapsto\lambda_k$ are
+nondecreasing as well, strictly increasing where $R$ strictly increases.
+
+\emph{Step 1 ($\lambda_n=0$).}  Taking $k=n$,
+\[
+  R_n=4n^2(p-1)+n^2(p-2)^2=n^2\bigl(4p-4+p^2-4p+4\bigr)=n^2p^2 .
+\]
+Since $np>0$ we get $\sqrt{R_n}=np$, and therefore
+$2\lambda_n=-np+np=0$, i.e.\ $\lambda_n=0$.  This is the first half of (23).
+
+\emph{Step 2 ($\epsilon_n=0$).}  By \noderef{EpsCoef} and Step~1,
+\[
+  \epsilon_n(n,p)=\frac{\lambda_n+n-n}{\lambda_n+n+n}=\frac{0}{2n}=0,
+\]
+the denominator $2n$ being nonzero because $n\ge1$.  This completes (23).
+
+\emph{Step 3 ($\lambda_k>0$ for $k>n$).}  Let $k\ge n+1$.  By Step~0 and
+Step~1,
+\[
+  R_k-n^2p^2=R_k-R_n=4(p-1)(k^2-n^2)>0,
+\]
+since $p-1>0$ and $k>n\ge1$ gives $k^2>n^2$.  Hence $R_k>n^2p^2\ge0$, so
+$\sqrt{R_k}>\sqrt{n^2p^2}=np$, and therefore $2\lambda_k=-np+\sqrt{R_k}>0$,
+i.e.\ $\lambda_k>0$.
+
+\emph{Step 4 (proof of (24)).}  Let $k\ge n+1$ and put
+$A=\lambda_k+n$ and $B=k$.  By Step~3, $\lambda_k>0$, and $n\ge1$, so $A>0$;
+also $B=k\ge n+1>0$.  Consequently $A+B>0$, and
+\[
+  A-B<A+B\quad\text{(because $-B<B$, as $B>0$)},\qquad
+  -(A+B)<A-B\quad\text{(because $0<2A$)} .
+\]
+Thus $|A-B|<A+B$, and dividing by $A+B>0$,
+\[
+  |\epsilon_k(n,p)|=\Bigl|\frac{\lambda_k+n-k}{\lambda_k+n+k}\Bigr|
+  =\frac{|A-B|}{A+B}<1 .
+\]
+
+\emph{Step 5 (upper bound in (25)).}  Let $k\ge n+1$.  Since $p-1>0$ we have
+$\sqrt{p-1}>0$, so $np+2k\sqrt{p-1}>0$; and $\sqrt{R_k}\ge0$.  To conclude
+$\sqrt{R_k}\le np+2k\sqrt{p-1}$ it therefore suffices to compare the squares
+of these two nonnegative numbers.  Using $(\sqrt{p-1})^2=p-1$,
+\[
+  \bigl(np+2k\sqrt{p-1}\bigr)^2-R_k
+  =n^2p^2+4npk\sqrt{p-1}+4k^2(p-1)-4k^2(p-1)-n^2(p-2)^2
+\]
+\[
+  \qquad=n^2\bigl(p^2-(p-2)^2\bigr)+4npk\sqrt{p-1}
+  =4n^2(p-1)+4npk\sqrt{p-1}>0,
+\]
+where $p^2-(p-2)^2=4(p-1)$ and both displayed terms are positive because
+$p-1>0$, $n\ge1$, $k>0$ and $p>0$.  Hence
+$\sqrt{R_k}\le np+2k\sqrt{p-1}$, so
+\[
+  2\lambda_k=-np+\sqrt{R_k}\le 2k\sqrt{p-1},
+\]
+that is, $\lambda_k\le k\sqrt{p-1}$.
+
+\emph{Step 6 (a lower bound for $\lambda_{n+1}$).}  By Step~1, $R_n=n^2p^2$,
+and $\sqrt{R_{n+1}}+np>0$.  Hence
+\[
+  2\lambda_{n+1}=\sqrt{R_{n+1}}-np
+  =\frac{R_{n+1}-n^2p^2}{\sqrt{R_{n+1}}+np}
+  =\frac{R_{n+1}-R_n}{\sqrt{R_{n+1}}+np}
+  =\frac{4(p-1)(2n+1)}{\sqrt{R_{n+1}}+np},
+\]
+using $(n+1)^2-n^2=2n+1$ and Step~0.
+
+We next bound the denominator by $2np(2n+1)$, i.e.\ we show
+$\sqrt{R_{n+1}}\le np(4n+1)$.  Both sides are nonnegative ($np>0$), so it is
+enough to show $R_{n+1}\le n^2p^2(4n+1)^2$.  Now
+\[
+  n^2p^2(4n+1)^2-R_{n+1}
+  =n^2\bigl[\bigl(p(4n+1)\bigr)^2-(p-2)^2\bigr]-4(n+1)^2(p-1)
+\]
+\[
+  \qquad=n^2\bigl[p(4n+1)-(p-2)\bigr]\bigl[p(4n+1)+(p-2)\bigr]-4(n+1)^2(p-1)
+\]
+\[
+  \qquad=n^2(4np+2)\bigl((4n+2)p-2\bigr)-4(n+1)^2(p-1)
+  =4\Bigl[n^2(2np+1)\bigl((2n+1)p-1\bigr)-(n+1)^2(p-1)\Bigr],
+\]
+so it suffices to prove
+\begin{equation*}
+  n^2(2np+1)\bigl((2n+1)p-1\bigr)\ge(n+1)^2(p-1).
+\end{equation*}
+Since $p>1$ we have $2np+1>2n+1>0$, and
+\[
+  (2n+1)p-1=(2n+1)(p-1)+2n\ge(2n+1)(p-1)>0 ,
+\]
+both factors on the left being positive.  Multiplying the two lower bounds,
+\[
+  n^2(2np+1)\bigl((2n+1)p-1\bigr)\ge n^2(2n+1)\cdot(2n+1)(p-1)
+  =n^2(2n+1)^2(p-1).
+\]
+Finally $n(2n+1)=2n^2+n\ge n+1$ for $n\ge1$, because $2n^2\ge2>1$; hence
+$n^2(2n+1)^2\ge(n+1)^2$, and as $p-1>0$,
+\[
+  n^2(2n+1)^2(p-1)\ge(n+1)^2(p-1).
+\]
+This gives the required inequality, hence $\sqrt{R_{n+1}}+np\le 2np(2n+1)$.
+
+Substituting into the displayed formula for $2\lambda_{n+1}$, and using that
+its numerator $4(p-1)(2n+1)$ is positive,
+\[
+  2\lambda_{n+1}=\frac{4(p-1)(2n+1)}{\sqrt{R_{n+1}}+np}
+  \ge\frac{4(p-1)(2n+1)}{2np(2n+1)}=\frac{2(p-1)}{np},
+\]
+that is, $\lambda_{n+1}\ge\dfrac{p-1}{np}$.
+
+\emph{Step 7 (lower bound in (25)).}  Let $k\ge n+1$.  By Step~0,
+$\lambda_k\ge\lambda_{n+1}$, and by Step~6,
+$\lambda_{n+1}\ge(p-1)/(np)$.  Hence $\lambda_k\ge(p-1)/(np)$.
+
+Steps 1, 2, 4, 5 and 7 are exactly the four assertions (23), (24) and (25).
+\end{proof}

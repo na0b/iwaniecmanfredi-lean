@@ -1,0 +1,170 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, and let $k\in\mathbb{Z}$ satisfy
+the non-degeneracy condition
+\[
+  k\neq0\quad\text{or}\quad p\neq2 .
+\]
+Put
+\[
+  \lambda^{+}=\lambda_{|k|}(n,p),\qquad \lambda^{-}=-pn-\lambda^{+},
+\]
+where $\lambda_{|k|}(n,p)$ is the exponent of \noderef{LambdaCoef}.  Let
+$y\colon\mathbb{R}\to\mathbb{C}$ be $C^\infty$ on $(0,1)$ and satisfy the Euler
+equation
+\[
+  r\bigl(r\,y'\bigr)'(r)+pn\,r\,y'(r)+(n^2-k^2)(p-1)\,y(r)=0
+  \qquad\text{for every }r\in(0,1).
+\]
+Then there are $A^{+},A^{-}\in\mathbb{C}$ with
+\[
+  y(r)=A^{+}r^{\lambda^{+}}+A^{-}r^{\lambda^{-}}\qquad\text{for every }r\in(0,1).
+\]
+
+Explicitly, with $S=\sqrt{4k^2(p-1)+n^2(p-2)^2}$ one has $2\lambda^{\pm}=-pn\pm S$,
+so $\lambda^{+}$ and $\lambda^{-}$ are the two roots displayed at
+paper.tex:318--321 of the indicial equation
+$\lambda^2+pn\lambda+(n^2-k^2)(p-1)=0$ of paper.tex:315.  Indeed
+$\lambda_{|k|}(n,p)=\frac12(-pn+\sqrt{4|k|^2(p-1)+n^2(p-2)^2})$ and $|k|^2=k^2$;
+in particular $\lambda_k=\lambda_{-k}$, as the paper notes at line 331.
+
+The non-degeneracy condition is exactly the positivity of the indicial
+discriminant $4k^2(p-1)+n^2(p-2)^2$, which is what the paper's assertion at line
+313 that the two roots are \emph{distinct} requires: for $n\ge1$ and $p>1$ the
+discriminant vanishes precisely when $k=0$ and $p=2$.  In that single degenerate
+case the indicial polynomial is $(\lambda+n)^2$, the two roots coincide at $-n$,
+and the conclusion above is false, since $(\log r)\,r^{-n}$ then solves the same
+equation without lying in the span of $r^{\lambda^{+}}$ and $r^{\lambda^{-}}$;
+that case is treated separately.
+\end{lemma}
+\begin{proof}
+Write $S=\sqrt{4k^2(p-1)+n^2(p-2)^2}$, so that by \noderef{LambdaCoef} and
+$|k|^2=k^2$,
+\begin{equation}\tag{0}
+  \lambda^{+}=\frac{-pn+S}{2},\qquad \lambda^{-}=-pn-\lambda^{+}=\frac{-pn-S}{2}.
+\end{equation}
+
+\emph{Step 0: the roots are real, distinct, and satisfy Vieta's relations.}
+Since $p>1$ we have $4k^2(p-1)\ge0$, with $4k^2(p-1)>0$ when $k\neq0$; and
+$n^2(p-2)^2\ge0$, with $n^2(p-2)^2>0$ when $p\neq2$, because $n\ge1$.  By the
+non-degeneracy hypothesis at least one of $k\neq0$ and $p\neq2$ holds, so in
+either case the radicand $4k^2(p-1)+n^2(p-2)^2$ is a sum of two nonnegative
+terms of which one is positive.  Hence the radicand is positive and
+\begin{equation}\tag{1}
+  S>0,\qquad S^2=4k^2(p-1)+n^2(p-2)^2 .
+\end{equation}
+From (0), $\lambda^{+}-\lambda^{-}=S>0$, so the two roots are distinct.  Also
+from (0),
+\begin{equation}\tag{2}
+  \lambda^{+}+\lambda^{-}=-pn,
+\end{equation}
+and, using (1) and the identity $p^2-(p-2)^2=4(p-1)$,
+\begin{equation}\tag{3}
+  \lambda^{+}\lambda^{-}=\frac{(-pn)^2-S^2}{4}
+  =\frac{p^2n^2-4k^2(p-1)-n^2(p-2)^2}{4}
+  =\frac{n^2\bigl(p^2-(p-2)^2\bigr)-4k^2(p-1)}{4}
+  =(n^2-k^2)(p-1).
+\end{equation}
+
+\emph{Step 1: the substitution $r=e^{t}$.}  Put $J=(-\infty,0)$ and
+\[
+  Y(t)=y\bigl(e^{t}\bigr)\qquad(t\in J).
+\]
+For $t<0$ we have $e^{t}\in(0,1)$, so $Y$ is well defined on $J$, and $Y$ is
+$C^\infty$ on $J$ as the composite of the $C^\infty$ map $t\mapsto e^{t}$ (with
+values in $(0,1)$) and the map $y$, which is $C^\infty$ on $(0,1)$.  By the
+chain rule, writing $r=e^{t}$,
+\[
+  Y'(t)=e^{t}y'(e^{t})=r\,y'(r),
+\]
+and differentiating once more,
+\[
+  Y''(t)=e^{t}y'(e^{t})+e^{2t}y''(e^{t})=r\,y'(r)+r^{2}y''(r).
+\]
+On the other hand
+$r\bigl(r\,y'\bigr)'(r)=r\bigl(y'(r)+r\,y''(r)\bigr)=r\,y'(r)+r^{2}y''(r)$, so
+\begin{equation}\tag{4}
+  Y''(t)=r\bigl(r\,y'\bigr)'(r)\quad\text{and}\quad Y'(t)=r\,y'(r)
+  \qquad\bigl(r=e^{t}\bigr).
+\end{equation}
+Every $r\in(0,1)$ is $e^{t}$ for exactly one $t\in J$, namely $t=\log r$, so
+the Euler equation together with (4) says precisely that
+\[
+  Y''(t)+pn\,Y'(t)+(n^2-k^2)(p-1)\,Y(t)=0\qquad\text{for every }t\in J,
+\]
+and by (2) and (3) this is
+\begin{equation}\tag{5}
+  Y''(t)-\bigl(\lambda^{+}+\lambda^{-}\bigr)Y'(t)+\lambda^{+}\lambda^{-}Y(t)=0
+  \qquad(t\in J).
+\end{equation}
+
+\emph{Step 2: a function with vanishing derivative on $J$ is constant.}  We
+isolate the step used twice below, because the standard statement is for a
+closed interval while $J$ is open.  Let $g\colon J\to\mathbb{C}$ be
+differentiable with $g'(t)=0$ for every $t\in J$.  Let $t_0,t_1\in J$ with
+$t_0\le t_1$.  Since $J$ is an interval, $[t_0,t_1]\subseteq J$; $g$ is
+continuous on the compact interval $[t_0,t_1]$, and for every $x\in[t_0,t_1)$
+the derivative of $g$ at $x$ within $[x,\infty)$ exists and equals $0$, being
+the restriction of the two-sided derivative $g'(x)=0$.  The theorem that a
+function continuous on $[t_0,t_1]$ whose derivative within $[x,\infty)$
+vanishes at every $x\in[t_0,t_1)$ is constant on $[t_0,t_1]$ therefore gives
+$g(t_1)=g(t_0)$.  As any two points of $J$ are comparable, $g$ takes the same
+value at every point of $J$: $g$ is constant on $J$.
+
+\emph{Step 3: first integrating factor.}  Put
+\[
+  W(t)=Y'(t)-\lambda^{-}Y(t)\qquad(t\in J),
+\]
+which is $C^\infty$ on $J$.  By (5),
+\[
+  W'(t)=Y''(t)-\lambda^{-}Y'(t)
+  =\bigl(\lambda^{+}+\lambda^{-}\bigr)Y'(t)-\lambda^{+}\lambda^{-}Y(t)-\lambda^{-}Y'(t)
+  =\lambda^{+}\bigl(Y'(t)-\lambda^{-}Y(t)\bigr)=\lambda^{+}W(t).
+\]
+Hence the function $g(t)=e^{-\lambda^{+}t}W(t)$, which is differentiable on
+$J$, satisfies
+\[
+  g'(t)=e^{-\lambda^{+}t}\bigl(W'(t)-\lambda^{+}W(t)\bigr)=0\qquad(t\in J).
+\]
+By Step 2, $g$ is constant on $J$; call its value $C_1\in\mathbb{C}$.  Thus
+\begin{equation}\tag{6}
+  Y'(t)-\lambda^{-}Y(t)=W(t)=C_1e^{\lambda^{+}t}\qquad(t\in J).
+\end{equation}
+
+\emph{Step 4: second integrating factor.}  Since $\lambda^{+}\neq\lambda^{-}$
+by Step 0, we may define
+\[
+  h(t)=e^{-\lambda^{-}t}Y(t)-\frac{C_1}{\lambda^{+}-\lambda^{-}}
+    e^{(\lambda^{+}-\lambda^{-})t}\qquad(t\in J),
+\]
+which is differentiable on $J$.  Using (6),
+\[
+  \frac{d}{dt}\Bigl(e^{-\lambda^{-}t}Y(t)\Bigr)
+  =e^{-\lambda^{-}t}\bigl(Y'(t)-\lambda^{-}Y(t)\bigr)
+  =C_1e^{(\lambda^{+}-\lambda^{-})t},
+\]
+so
+\[
+  h'(t)=C_1e^{(\lambda^{+}-\lambda^{-})t}
+    -\frac{C_1}{\lambda^{+}-\lambda^{-}}\bigl(\lambda^{+}-\lambda^{-}\bigr)
+      e^{(\lambda^{+}-\lambda^{-})t}=0\qquad(t\in J).
+\]
+By Step 2 again, $h$ is constant on $J$; call its value $C_2\in\mathbb{C}$.
+Multiplying $h\equiv C_2$ by $e^{\lambda^{-}t}$ and rearranging,
+\begin{equation}\tag{7}
+  Y(t)=\frac{C_1}{\lambda^{+}-\lambda^{-}}e^{\lambda^{+}t}+C_2e^{\lambda^{-}t}
+  \qquad(t\in J).
+\end{equation}
+
+\emph{Step 5: back to the variable $r$.}  Put
+\[
+  A^{+}=\frac{C_1}{\lambda^{+}-\lambda^{-}},\qquad A^{-}=C_2 .
+\]
+Let $r\in(0,1)$ and $t=\log r$.  Then $t<0$, so $t\in J$, and $e^{t}=r$.  For a
+real exponent $\lambda$ and $r>0$ one has $e^{\lambda\log r}=r^{\lambda}$.
+Hence by (7)
+\[
+  y(r)=Y(\log r)=A^{+}e^{\lambda^{+}\log r}+A^{-}e^{\lambda^{-}\log r}
+  =A^{+}r^{\lambda^{+}}+A^{-}r^{\lambda^{-}},
+\]
+which is the assertion.
+\end{proof}

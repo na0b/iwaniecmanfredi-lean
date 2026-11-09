@@ -1,0 +1,229 @@
+\begin{lemma}
+Let $\Omega\subseteq\mathbb{C}$ be open, let $u\colon\mathbb{C}\to\mathbb{R}$
+and let $F_0,F_1\colon\mathbb{C}\to\mathbb{C}$.  Assume
+\begin{enumerate}
+\item[(H1)] $u\in L^1_{\mathrm{loc}}(\Omega)$ in the sense of
+  \noderef{MemLpLocOn};
+\item[(H2)] $F_0$ and $F_1$ are continuous on $\Omega$;
+\item[(H3)] for $j=0,1$, $F_j$ is the distributional $j$-th partial derivative
+  of $u$ on $\Omega$, in the sense of \noderef{IsWeakPartialOn}.
+\end{enumerate}
+Then there is $w\colon\mathbb{C}\to\mathbb{R}$ with
+\begin{enumerate}
+\item[(a)] $w(z)=u(z)$ for almost every $z$ with $z\in\Omega$;
+\item[(b)] $w$ of class $C^1$ on $\Omega$;
+\item[(c)] $\partial_jw=F_j$ on $\Omega$ for $j=0,1$, where $\partial_0$ and
+  $\partial_1$ are the partial derivatives of \noderef{PartialWord} along the
+  words $[0]$ and $[1]$, and where the real number $\partial_jw(z)$ is read as
+  a complex number.  Clause (c) in particular asserts that $F_0$ and $F_1$ are
+  real-valued on $\Omega$; that is a consequence of (H3), proved as Step 0
+  below, and not an extra assumption.
+\end{enumerate}
+
+This is the first of the three steps Section 6 of the paper states in one line.
+It is what makes the conclusion of Theorem 1 a true statement about $u$: a
+$p$-harmonic function is constrained only through integrals, so it may be
+altered on a null set without ceasing to be $p$-harmonic, while membership in a
+H\"older class is not invariant under such an alteration; the regularity
+assertion must therefore be made of a representative.  For a $p$-harmonic $u$
+the hypothesis (H2) holds because the complex gradient $f$ is continuous, so
+that $\nabla u=(2\operatorname{Re}f,-2\operatorname{Im}f)$ is continuous on all
+of $\Omega$.  The instance $F_0=F_1=0$ is the constant-$u$ branch.
+\end{lemma}
+\begin{proof}
+Write $d\sigma$ for plane Lebesgue measure, $B(z,r)=\{\zeta:|\zeta-z|<r\}$ and
+$\bar B(z,r)=\{\zeta:|\zeta-z|\le r\}$.
+
+\emph{Step 0: $F_0$ and $F_1$ are real-valued on $\Omega$.}  Let $j\in\{0,1\}$
+and let $\varphi$ be a test function for $\Omega$ in the sense of
+\noderef{IsTestFn} which is real-valued.  Then $\partial_j\varphi$ is
+real-valued, so $\int u\,\partial_j\varphi\,d\sigma$ is a real number; by (H3)
+it equals $-\int F_j\varphi\,d\sigma$, whence
+$\int(\operatorname{Im}F_j)\varphi\,d\sigma=0$.  Now
+$\operatorname{Im}F_j$ is continuous on $\Omega$ by (H2); if it were nonzero at
+some $z\in\Omega$, say positive, it would be positive on a ball
+$B(z,r)\subseteq\Omega$, and taking for $\varphi$ a nonnegative real test
+function supported in that ball and positive at $z$ --- a standard smooth bump
+--- would make $\int(\operatorname{Im}F_j)\varphi\,d\sigma>0$, a
+contradiction; the negative case is symmetric.  Hence
+\begin{equation}\tag{0}
+  F_j(z)\in\mathbb{R}\qquad(z\in\Omega,\ j=0,1).
+\end{equation}
+
+\emph{Step 1: the local set-up.}  Fix $z_*\in\Omega$.  Since $\Omega$ is open
+there is $\rho>0$ with $\bar B(z_*,4\rho)\subseteq\Omega$.  Put
+\[
+  U=B(z_*,2\rho),\qquad K=\bar B(z_*,2\rho),
+\]
+so $K$ is compact and convex, $K\subseteq B(z_*,3\rho)$, and
+$\bar B(z_*,3\rho)\subseteq\Omega$.  Let
+\[
+  \hat u=\mathbf{1}_{\bar B(z_*,4\rho)}\,u,\qquad
+  \hat F_j=\mathbf{1}_{\bar B(z_*,4\rho)}\,F_j .
+\]
+By (H1) and compactness of $\bar B(z_*,4\rho)\subseteq\Omega$ the function
+$\hat u$ is integrable on $\mathbb{C}$, hence locally integrable; and $\hat F_j$
+is bounded and measurable, hence also locally integrable, $F_j$ being
+continuous on the compact $\bar B(z_*,4\rho)$.
+
+For $0<\varepsilon<\rho$ let $\rho_\varepsilon\colon\mathbb{C}\to\mathbb{R}$ be
+a smooth mollifier: $\rho_\varepsilon\ge0$, smooth, supported in
+$\bar B(0,\varepsilon)$, with $\int\rho_\varepsilon\,d\sigma=1$ (the normalized
+smooth bump functions).  Put
+\[
+  u_\varepsilon=\rho_\varepsilon*\hat u,\qquad
+  G_{j,\varepsilon}=\rho_\varepsilon*\hat F_j .
+\]
+Both are $C^\infty$ on $\mathbb{C}$, being convolutions of a smooth compactly
+supported function with a locally integrable one, and $u_\varepsilon$ is
+real-valued because $\hat u$ and $\rho_\varepsilon$ are.  Note that for
+$x\in B(z_*,3\rho)$ and $\varepsilon<\rho$ the convolution integrals see only
+points of $\bar B(x,\varepsilon)\subseteq\bar B(z_*,4\rho)$, where $\hat u=u$
+and $\hat F_j=F_j$.
+
+\emph{Step 2: $\partial_ju_\varepsilon=G_{j,\varepsilon}$ on $B(z_*,3\rho)$.}
+Let $x\in B(z_*,3\rho)$ and put $\varphi_x(z)=\rho_\varepsilon(x-z)$.  Then
+$\varphi_x$ is smooth with support contained in
+$\bar B(x,\varepsilon)\subseteq\bar B(z_*,4\rho)\subseteq\Omega$, since
+$|x-z_*|<3\rho$ and $\varepsilon<\rho$; so $\varphi_x$ is a test function for
+$\Omega$ in the sense of \noderef{IsTestFn}.
+
+Differentiating the convolution under the integral sign --- legitimate because
+$\rho_\varepsilon$ is $C^\infty$ with compact support and $\hat u$ is
+integrable --- gives
+\[
+  \partial_ju_\varepsilon(x)
+  =\int\bigl(\partial_j\rho_\varepsilon\bigr)(x-z)\,\hat u(z)\,d\sigma(z).
+\]
+On the other hand $\partial_{z_j}\varphi_x(z)=-(\partial_j\rho_\varepsilon)(x-z)$
+by the chain rule, so, using that $\varphi_x$ and $\partial_j\varphi_x$ are
+supported where $\hat u=u$ and $\hat F_j=F_j$, and then (H3),
+\[
+  \partial_ju_\varepsilon(x)
+  =-\int u\,\partial_j\varphi_x\,d\sigma
+  =\int F_j\,\varphi_x\,d\sigma
+  =\int\hat F_j(z)\,\rho_\varepsilon(x-z)\,d\sigma(z)
+  =G_{j,\varepsilon}(x).
+\]
+Thus
+\begin{equation}\tag{1}
+  \partial_ju_\varepsilon=G_{j,\varepsilon}\quad\text{on }B(z_*,3\rho),
+  \qquad j=0,1,\ 0<\varepsilon<\rho .
+\end{equation}
+
+\emph{Step 3: $G_{j,\varepsilon}\to F_j$ uniformly on $K$.}  The function $F_j$
+is continuous on the compact set $\bar B(z_*,3\rho)$, hence uniformly
+continuous there; let $\omega$ be a modulus of continuity, so
+$|F_j(a)-F_j(b)|\le\omega(|a-b|)$ for $a,b\in\bar B(z_*,3\rho)$ with
+$\omega(t)\to0$ as $t\to0^{+}$.  For $x\in K$ and $0<\varepsilon<\rho$, using
+$\int\rho_\varepsilon=1$, $\rho_\varepsilon\ge0$ and
+$\operatorname{supp}\rho_\varepsilon\subseteq\bar B(0,\varepsilon)$,
+\[
+  \bigl|G_{j,\varepsilon}(x)-F_j(x)\bigr|
+  =\Bigl|\int\rho_\varepsilon(y)\bigl(F_j(x-y)-F_j(x)\bigr)d\sigma(y)\Bigr|
+  \le\sup_{|y|\le\varepsilon}\bigl|F_j(x-y)-F_j(x)\bigr|\le\omega(\varepsilon),
+\]
+the points $x-y$ lying in $\bar B(z_*,3\rho)$ because $|x-z_*|\le2\rho$ and
+$|y|\le\varepsilon<\rho$.  So
+\begin{equation}\tag{2}
+  \sup_{K}\bigl|G_{j,\varepsilon}-F_j\bigr|\le\omega(\varepsilon)
+  \ \longrightarrow\ 0\qquad(\varepsilon\to0^{+}).
+\end{equation}
+
+\emph{Step 4: $u_\varepsilon\to u$ almost everywhere on $U$.}  The
+mollifications of a locally integrable function converge to it almost
+everywhere as the radius tends to $0$.  Applied to $\hat u$ this gives a null
+set $N$ with
+\begin{equation}\tag{3}
+  u_{\varepsilon}(x)\to\hat u(x)=u(x)\qquad(\varepsilon\to0^{+}),
+  \quad x\in U-N ,
+\end{equation}
+the identification $\hat u=u$ holding on $U\subseteq\bar B(z_*,4\rho)$.
+
+\emph{Step 5: the local representative.}  Fix a sequence
+$\varepsilon_n=\rho/(n+2)\downarrow0$ and choose a base point $z_1\in U-N$;
+this is possible because $U$ has positive measure and $N$ is null.  Let
+$h=u_{\varepsilon_n}-u_{\varepsilon_m}$.  By (1), $h$ is $C^\infty$ on
+$B(z_*,3\rho)$ with $\partial_jh=G_{j,\varepsilon_n}-G_{j,\varepsilon_m}$
+there, so by (2), writing
+$\sigma_{n,m}=2\bigl(\omega(\varepsilon_n)+\omega(\varepsilon_m)\bigr)$,
+\[
+  \sup_{K}\bigl\|\mathrm{d}h\bigr\|
+  \le\sup_{K}\bigl|\partial_0h\bigr|+\sup_{K}\bigl|\partial_1h\bigr|
+  \le\sigma_{n,m},
+\]
+since an $\mathbb{R}$-linear map $\mathbb{C}\to\mathbb{C}$ has operator norm at
+most the sum of the moduli of its values on $1$ and $i$.  The set $K$ is convex
+and $h$ is differentiable at each of its points, so the mean value inequality
+gives, for $x\in K$,
+\[
+  \bigl|h(x)-h(z_1)\bigr|\le\sigma_{n,m}\,|x-z_1|\le4\rho\,\sigma_{n,m}.
+\]
+Moreover $h(z_1)=u_{\varepsilon_n}(z_1)-u_{\varepsilon_m}(z_1)\to0$ as
+$n,m\to\infty$ by (3), since $z_1\in U-N$.  As $\sigma_{n,m}\to0$ as
+$n,m\to\infty$, the sequence $(u_{\varepsilon_n})$ is uniformly Cauchy on $K$,
+hence converges uniformly on $K$ to a continuous real-valued function $w_*$.
+
+Three consequences.  First, by (3), for $x\in U-N$ we have
+$u_{\varepsilon_n}(x)\to u(x)$ and $u_{\varepsilon_n}(x)\to w_*(x)$, so
+\begin{equation}\tag{4}
+  w_*=u\qquad\text{almost everywhere on }U .
+\end{equation}
+Second, let $L(x)$ denote the $\mathbb{R}$-linear map $\mathbb{C}\to\mathbb{C}$
+determined by $L(x)[1]=F_0(x)$ and $L(x)[i]=F_1(x)$, which is real-valued by
+(0).  By (1) each $u_{\varepsilon_n}$ is differentiable at each point of the
+open set $U$ with derivative the map sending $1,i$ to
+$G_{0,\varepsilon_n},G_{1,\varepsilon_n}$; by (2) those derivatives converge to
+$L$ uniformly on $K\supseteq U$, hence locally uniformly on $U$; and
+$u_{\varepsilon_n}\to w_*$ pointwise on $U$.  By the theorem that a locally
+uniform limit of derivatives is the derivative of the limit, $w_*$ is
+differentiable at every $x\in U$ with $\mathrm{d}w_*(x)=L(x)$, that is
+\begin{equation}\tag{5}
+  \partial_jw_*=F_j\qquad\text{on }U,\ j=0,1 .
+\end{equation}
+Third, by (5) and (H2) the derivative $\mathrm{d}w_*$ is continuous on $U$, so
+\begin{equation}\tag{6}
+  w_*\ \text{is of class }C^1\text{ on }U .
+\end{equation}
+
+\emph{Step 6: a canonical global definition.}  Define
+\[
+  w(z)=\lim_{r\to0^{+}}\frac{1}{\pi r^{2}}\int_{B(z,r)}u\,d\sigma
+  \quad(z\in\Omega),\qquad w(z)=0\quad(z\notin\Omega),
+\]
+and let us check that the limit exists for every $z\in\Omega$ and that $w$
+agrees with every local representative.
+
+Let $z_*\in\Omega$ and let $U$, $w_*$ be as in Steps 1--5 for this $z_*$.  Let
+$z\in U$.  For $r>0$ small enough that $B(z,r)\subseteq U$, (4) gives
+\[
+  \frac{1}{\pi r^{2}}\int_{B(z,r)}u\,d\sigma
+  =\frac{1}{\pi r^{2}}\int_{B(z,r)}w_*\,d\sigma ,
+\]
+the two integrands agreeing almost everywhere on $B(z,r)\subseteq U$; and since
+$w_*$ is continuous at $z$ by (6), the averages of $w_*$ over $B(z,r)$ tend to
+$w_*(z)$ as $r\to0^{+}$.  Hence the limit defining $w(z)$ exists and
+\begin{equation}\tag{7}
+  w=w_*\qquad\text{on }U .
+\end{equation}
+In particular $w$ is real-valued, since $w_*$ is.
+
+\emph{Step 7: conclusion.}  Each $z_*\in\Omega$ has a neighbourhood
+$U(z_*)=B(z_*,2\rho(z_*))$ as in Step 1, and by (7), (6), (5),
+\[
+  w=w_*^{(z_*)}\ \text{on }U(z_*),\qquad
+  w\in C^1\bigl(U(z_*)\bigr),\qquad \partial_jw=F_j\ \text{on }U(z_*).
+\]
+Since $\Omega$ is open and is covered by these neighbourhoods, $w$ is of class
+$C^1$ on a neighbourhood of each of its points in $\Omega$, hence $C^1$ on
+$\Omega$, which is (b); and $\partial_jw=F_j$ at every point of $\Omega$, which
+is (c).
+
+For (a): $\Omega$ is an open subset of $\mathbb{C}$, hence second countable, so
+the cover $\{U(z_*)\}_{z_*\in\Omega}$ has a countable subcover
+$U_1,U_2,\dots$ of $\Omega$.  By (4) and (7), for each $i$ there is a null set
+$N_i$ with $w=u$ on $U_i-N_i$.  The set $N=\bigcup_iN_i$ is null, being a
+countable union of null sets, and every $z\in\Omega-N$ lies in some $U_i$ and
+hence satisfies $w(z)=u(z)$.  So $w=u$ almost everywhere on $\Omega$, which is
+(a).
+\end{proof}

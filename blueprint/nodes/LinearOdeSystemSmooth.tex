@@ -1,0 +1,86 @@
+\begin{lemma}
+Let $a<b$ be real, write $I=(a,b)$, and let
+$u,v,U,V\colon\mathbb{R}\to\mathbb{C}$ and
+$M_{ij}\colon\mathbb{R}\to\mathbb{C}$, $i,j\in\{0,1\}$, satisfy
+\begin{enumerate}
+\item[(H1)] each $M_{ij}$ is $C^\infty$ on $I$;
+\item[(H2)] $U$ and $V$ are integrable on the closed interval with endpoints
+  $c$ and $d$, for all $c,d\in I$;
+\item[(H3)] $u(d)-u(c)=\displaystyle\int_c^dU(s)\,ds$ and
+  $v(d)-v(c)=\displaystyle\int_c^dV(s)\,ds$ for all $c,d\in I$;
+\item[(H4)] for almost every $r\in I$,
+\[
+  U(r)=M_{00}(r)u(r)+M_{01}(r)v(r),
+  \qquad
+  V(r)=M_{10}(r)u(r)+M_{11}(r)v(r).
+\]
+\end{enumerate}
+Then $u$ and $v$ are $C^\infty$ on $I$.
+
+This is the one-dimensional bootstrapping step that regains the paper's (31)
+once the Fourier coefficients are known to satisfy the system (33).  At
+paper.tex:265--266 the paper obtains $a_k\in C[0,1)\cap C^\infty(0,1)$ from the
+standing assumption that $H$ is continuous on $\mathbb{B}$ and $C^\infty$ on
+$\mathbb{B}-\{0\}$; the content here is that the $C^\infty$ half follows instead
+from the system the coefficients satisfy, so that only $W^{1,2}$ data is
+needed.  Hypotheses (H2) and (H3) are local absolute continuity in the form in
+which an indefinite integral provides it, which is what the circle averages of
+a Sobolev function supply, and (H4) is the system holding only almost
+everywhere, which is all that an almost-everywhere derivative identity gives.
+No existence theorem for ordinary differential equations is involved: this is
+bootstrapping, not solving.  In particular no nondegeneracy of $M$ is assumed,
+and none is used -- the conclusion holds even when a row of the system
+decouples, which happens in the intended application at $|k|=n$.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: $u$ and $v$ are continuous on $I$.}  Fix $c\in I$.  For $r\in I$,
+(H3) gives $u(r)=u(c)+\int_c^rU(s)\,ds$.  Let $r_0\in I$ and choose
+$c_1,d_1\in I$ with $c_1<r_0<d_1$ and $c\in[c_1,d_1]$; by (H2), $U$ is
+integrable on $[c_1,d_1]$.  The indefinite integral of a function integrable on
+a compact interval is continuous there: if $r_j\to r_0$ in $[c_1,d_1]$ then
+$\bigl|\int_c^{r_j}U-\int_c^{r_0}U\bigr|
+=\bigl|\int_{r_0}^{r_j}U\bigr|\le\int_{[r_0\wedge r_j,\,r_0\vee r_j]}|U|$,
+which tends to $0$ by absolute continuity of the measure $|U|\,ds$ with respect
+to Lebesgue measure.  Hence $u$ is continuous at $r_0$, and as $r_0\in I$ was
+arbitrary, $u$ is continuous on $I$.  The same argument applies to $v$ with
+$V$.
+
+\emph{Step 2: the hinge -- $u$ and $v$ are $C^1$ on $I$ with derivatives given
+by the system at every point.}  Put
+\[
+  W(r)=M_{00}(r)u(r)+M_{01}(r)v(r),\qquad
+  Z(r)=M_{10}(r)u(r)+M_{11}(r)v(r)\qquad(r\in I).
+\]
+By (H1) each $M_{ij}$ is continuous on $I$ and by Step 1 so are $u$ and $v$;
+hence $W$ and $Z$ are continuous on $I$.  By (H4), $U=W$ almost everywhere on
+$I$ and $V=Z$ almost everywhere on $I$.  Two functions that agree almost
+everywhere have the same integral over every interval on which one of them is
+integrable, so by (H2) and (H3), for all $c,d\in I$,
+\begin{equation}\tag{1}
+  u(d)-u(c)=\int_c^dW(s)\,ds,\qquad v(d)-v(c)=\int_c^dZ(s)\,ds .
+\end{equation}
+Fix $c\in I$ and $r\in I$.  Choose $c_1,d_1\in I$ with $c_1<r<d_1$ and
+$c\in[c_1,d_1]$.  On $[c_1,d_1]$ the function $W$ is continuous, so by the
+fundamental theorem of calculus the map $t\mapsto\int_c^tW(s)\,ds$ is
+differentiable at $r$ with derivative $W(r)$.  By (1) that map is
+$t\mapsto u(t)-u(c)$, so $u$ is differentiable at $r$ with
+\begin{equation}\tag{2}
+  u'(r)=W(r)=M_{00}(r)u(r)+M_{01}(r)v(r),
+\end{equation}
+and likewise
+\begin{equation}\tag{3}
+  v'(r)=Z(r)=M_{10}(r)u(r)+M_{11}(r)v(r).
+\end{equation}
+These hold at \emph{every} $r\in I$, not merely almost everywhere: that is the
+point of the step.  Since $W$ and $Z$ are continuous on $I$, $u$ and $v$ are
+$C^1$ on $I$.
+
+\emph{Step 3: induction.}  We show by induction on $m\ge0$ that $u$ and $v$ are
+$C^m$ on $I$.  For $m=0$ this is Step 1.  Assume $u$ and $v$ are $C^m$ on $I$.
+Each $M_{ij}$ is $C^\infty$ on $I$ by (H1), hence $C^m$ there, and the
+pointwise product and sum of $C^m$ functions on $I$ are $C^m$; so $W$ and $Z$
+are $C^m$ on $I$.  By (2) and (3) the functions $u$ and $v$ are differentiable
+on the open set $I$ with derivatives $W$ and $Z$ of class $C^m$, hence $u$ and
+$v$ are $C^{m+1}$ on $I$.  This completes the induction, and a function that is
+$C^m$ on $I$ for every $m$ is $C^\infty$ on $I$.
+\end{proof}

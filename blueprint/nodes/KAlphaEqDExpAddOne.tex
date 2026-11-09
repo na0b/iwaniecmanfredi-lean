@@ -1,0 +1,34 @@
+\begin{lemma}
+Let $1<p<\infty$, let $k+\alpha$ denote the right-hand side of equation (9) of
+the paper, as defined in \noderef{KAlphaExp}, and let $d=d(p)$ be the exponent
+(50), as defined in \noderef{DExp}.  Then
+\[
+  k+\alpha=d+1,\qquad\text{equivalently}\qquad d=k-1+\alpha .
+\]
+
+This is the identity the paper records at paper.tex:530, ``Let the integer $k$
+and the exponent $\alpha\in(0,1]$ be determined by (9), so $d=k-1+\alpha$''.
+Both halves of Theorem 1 use it: the regularity half converts Corollary 2's
+exponent $d-m$ into $k-1+\alpha-m$, and the optimality half reads the cases
+(58), (59) off the same identity.
+\end{lemma}
+\begin{proof}
+By \noderef{KAlphaExp} and \noderef{DExp}, writing
+\[
+  S=\sqrt{1+\frac{14}{p-1}+\frac{1}{(p-1)^2}},
+\]
+we have
+\[
+  k+\alpha=\frac{1}{6}\Bigl(7+\frac{1}{p-1}+S\Bigr),
+  \qquad
+  d=\frac{1}{6}\Bigl(1+\frac{1}{p-1}+S\Bigr).
+\]
+The two expressions have the same second and third summands, so
+\[
+  (k+\alpha)-d=\frac{1}{6}\bigl(7-1\bigr)=\frac{6}{6}=1 ,
+\]
+that is $k+\alpha=d+1$.  Subtracting $1$ from both sides and rearranging gives
+$d=k-1+\alpha$.  Note that no property of $p$ beyond the definitions is used:
+the identity is a consequence of the fact that (9) and (50) differ only in
+their leading constant.
+\end{proof}

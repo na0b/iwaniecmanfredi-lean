@@ -1,0 +1,29 @@
+\begin{definition}
+Let $\Omega\subset\mathbb{C}$ be open, let $k\ge0$ be an integer and let
+$0<\alpha\le1$.  A function $u\colon\mathbb{C}\to\mathbb{C}$ belongs to the
+H\"older space $C^{k,\alpha}_{\mathrm{loc}}(\Omega)$ if
+\begin{enumerate}
+\item[(a)] $u$ is of class $C^k$ on $\Omega$, and
+\item[(b)] for every compact $F\subset\Omega$ there is a constant $C\ge0$ with
+\[
+  \bigl\|D^ku(x)-D^ku(y)\bigr\|\le C\,|x-y|^\alpha
+  \qquad\text{for all }x,y\in F .
+\]
+\end{enumerate}
+Here $D^ku(x)$ denotes the $k$-th total derivative of $u$ at $x$, a symmetric
+$k$-linear map on $\mathbb{R}^2$, and $\|\cdot\|$ its operator norm.
+
+This is the space $C^{k,\alpha}_{\mathrm{loc}}(\Omega)$ of Section~1 of the
+paper, which is described there as the space of complex-valued $u\in
+C^k(\Omega)$ whose $k$-th order partial derivatives $D^\nu u$, $|\nu|=k$, are
+locally H\"older continuous with exponent $\alpha$; condition (b) is the
+finiteness, for each compact $F$, of the second seminorm in the displayed
+norm $\|u\|_{C^{k,\alpha}(F)}$ of Section~1.  Using the operator norm of the
+$k$-th total derivative in place of the sum
+$\sum_{|\nu|=k}|D^\nu u(x)-D^\nu u(y)|$ defines the same space: the two
+quantities bound one another up to factors depending only on $k$, because the
+partial derivatives $D^\nu u(x)$ with $|\nu|=k$ are precisely the values of
+$D^ku(x)$ on the $k$-fold tuples drawn from the basis $\{1,i\}$ of
+$\mathbb{R}^2$, and condition (b) is unchanged when $C$ is multiplied by such
+a factor.
+\end{definition}

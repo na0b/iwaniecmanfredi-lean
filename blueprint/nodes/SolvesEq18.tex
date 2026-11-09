@@ -1,0 +1,46 @@
+\begin{definition}
+Let $\Omega\subset\mathbb{C}$ be open, let $n\ge1$ be an integer and let
+$1<p<\infty$.  A mapping $H\colon\mathbb{C}\to\mathbb{C}$ is said to
+\emph{satisfy the system (18) on $\Omega$} if there are weak Wirtinger
+derivatives $a=\partial H/\partial\xi$ and
+$b=\partial H/\partial\bar\xi$ of $H$ on $\Omega$, in the sense of
+\noderef{IsWeakWirtingerOn}, such that
+\[
+  b(\xi)
+  =\Bigl(\frac12-\frac1p\Bigr)
+   \Bigl[\frac{\xi}{\bar\xi}\,a(\xi)
+     +\frac{\bar\xi^{\,n}}{\xi^{\,n}}\,\overline{a(\xi)}\Bigr]
+\]
+at almost every $\xi\in\Omega$ with $\xi\neq0$, ``almost every'' referring to
+two-dimensional Lebesgue measure.
+
+This is equation (18) of the paper, the linear first order system that the
+hodograph transformation of Section~3 produces for the inverse $H$ of the
+quasiconformal factor $\chi$, written
+\[
+  H_{\bar\xi}
+  =\Bigl(\frac12-\frac1p\Bigr)
+   \Bigl[\frac{\xi}{\bar\xi}H_\xi+\frac{\bar\xi^{\,n}}{\xi^{\,n}}\,\overline{H_\xi}\Bigr].
+  \tag{18}
+\]
+Its coefficients $\xi/\bar\xi$ and $\bar\xi^{\,n}/\xi^{\,n}$ are defined only
+for $\xi\neq0$, which is why the origin is excluded; the single point $\xi=0$
+has measure zero.
+
+The derivatives are the weak ones, for the same reason as in
+\noderef{QuasiregularOn}: the only hypothesis the paper's solutions of (18)
+carry is membership in $W^{1,2}$, so $H_\xi$ and $H_{\bar\xi}$ are the
+distributional derivatives, and a solution in this sense is a condition on the
+class of $H$ rather than on a chosen representative.  Read through the real
+Fr\'echet derivative of the given representative the system would be satisfied
+by every nowhere differentiable representative of every $L^2$-class, both
+sides vanishing identically, and the paper's assertion that a $W^{1,2}$
+solution of (18) is $K$-quasiregular with $K=\max\{p-1,1/(p-1)\}$ would be
+false.  By the next-to-last paragraph of \noderef{IsWeakWirtingerOn}, whenever
+$H$ is in addition differentiable at almost every point of $\Omega$ the pair
+$(a,b)$ agrees almost everywhere with the pointwise pair
+$(H_\xi,H_{\bar\xi})$ read through $\mathrm{d}H$; this is how Sections~4--6,
+which work with almost everywhere differentiable maps, recover the pointwise
+form of (18).  By the last paragraph of \noderef{IsWeakWirtingerOn} the choice
+of the witnessing pair is immaterial.
+\end{definition}

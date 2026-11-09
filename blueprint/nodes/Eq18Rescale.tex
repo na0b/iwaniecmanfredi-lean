@@ -1,0 +1,422 @@
+\begin{lemma}
+Let $n\ge0$ be an integer, let $1<p<\infty$, let $K\ge1$ and $t>0$, let
+$V\subseteq\mathbb{C}$ be open with
+$\overline{\mathbb{B}(0,t)}=\{z:|z|\le t\}\subseteq V$, and let
+$H\colon\mathbb{C}\to\mathbb{C}$ be continuous on $V$, differentiable at almost
+every point of $V$, $K$-quasiconformal on $V$ in the sense of
+\noderef{QuasiconformalOn}, and a solution of equation (18) on $V$ in the sense
+of \noderef{SolvesEq18}.  Write $\mathbb{B}=\{\xi:|\xi|<1\}$, $d\sigma$ for
+plane Lebesgue measure, and
+\[
+  G(\zeta)=H(t\zeta).
+\]
+Then
+\begin{enumerate}
+\item[(a)] $G$ is continuous on $\mathbb{B}$;
+\item[(b)] $G$ is differentiable at almost every point of $\mathbb{B}$;
+\item[(c)] $G$ solves (18) on $\mathbb{B}$ in the sense of
+  \noderef{SolvesEq18};
+\item[(d)] $G\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in the sense of
+  \noderef{MemWLocOn};
+\item[(e)] $|G_\zeta|^2+|G_{\bar\zeta}|^2$ is integrable on $\mathbb{B}$, where
+  $G_\zeta$, $G_{\bar\zeta}$ are the Wirtinger derivatives of \noderef{DZ} and
+  \noderef{DZbar};
+\item[(f)] $G$ is $K$-quasiconformal on $\mathbb{B}$ in the sense of
+  \noderef{QuasiconformalOn};
+\item[(g)] if $G$ is of class $C^\infty$ on $\mathbb{B}-\{0\}$, then $H$ is of
+  class $C^\infty$ on $\{z:0<|z|<t\}$ and
+\[
+  \bigl(D^{w}H\bigr)(t\zeta)=t^{-|w|}D^{w}G(\zeta)
+  \qquad\text{for every word }w\text{ and every }\zeta\text{ with }0<|\zeta|<1,
+\]
+where $D^{w}$ is the iterated partial derivative of \noderef{PartialWord} and
+$|w|$ its length.
+\end{enumerate}
+
+Clauses (a)--(f) are the content of the paper's opening sentence in the proof
+of Corollary 1 (paper.tex:376), ``By rescaling the variable $\xi$ one may
+assume without loss of generality that $H$ is a quasiconformal solution of
+(18) on the unit disk'', licensed at paper.tex:183; they are exactly the
+hypotheses under which Theorem 2 applies, so they are what makes that
+``without loss of generality'' legitimate rather than a change of problem.
+No smoothness of $H$ is assumed: rescaling a variable cannot manufacture it,
+and in the paper's order it is not yet available here --- the smoothness off
+the origin is produced later, by term-by-term differentiation of the expansion
+(19) at paper.tex:387--388.  That is why clause (g), which is what transports
+the conclusions (41), (42), (43) --- stated for $H$ --- back from $G$, is a
+conditional whose hypothesis is the smoothness of $G$: at the point of use that
+is exactly what has just been produced for $G$, and (g) hands it on to $H$
+together with the derivative dictionary.
+\end{lemma}
+\begin{proof}
+Write $s(\zeta)=t\zeta$, so that $G=H\circ s$, and put $c=\tfrac12-\tfrac1p$.
+
+\emph{Step 0: the scaling map.}  Since $t>0$, $s$ is an $\mathbb{R}$-linear
+bijection of $\mathbb{C}$ with inverse $z\mapsto z/t$, hence a $C^\infty$
+diffeomorphism, and its Fréchet derivative at every point is $s$ itself.  We
+record three consequences used repeatedly.
+
+First, $s(\mathbb{B})=\mathbb{B}(0,t)\subseteq\overline{\mathbb{B}(0,t)}\subseteq V$;
+more precisely $|s(\zeta)|=t|\zeta|<t$ for $|\zeta|<1$.  Second,
+$s(\zeta)=0$ if and only if $\zeta=0$, so $s$ maps $\mathbb{B}-\{0\}$ into
+$V-\{0\}$.  Third, identifying $\mathbb{C}$ with $\mathbb{R}^2$, $s$ is
+multiplication by the matrix $t\,\mathrm{Id}$, whose determinant is $t^2$; so
+for every measurable $E$,
+\begin{equation}\tag{1}
+  \sigma\bigl(s(E)\bigr)=t^2\sigma(E),\qquad
+  \int_{E}f\circ s\,d\sigma=t^{-2}\int_{s(E)}f\,d\sigma
+\end{equation}
+for every nonnegative measurable $f$, and in particular $E$ is null if and only
+if $s(E)$ is null.
+
+\emph{Step 1: proof of (a).}  $s$ is continuous and maps $\mathbb{B}$ into $V$
+by Step 0, and $H$ is continuous on $V$; so $G=H\circ s$ is continuous on
+$\mathbb{B}$.
+
+\emph{Step 2: proof of (b).}  Let $N\subseteq\mathbb{C}$ be the null set
+outside which every point of $V$ is a point of differentiability of $H$, as the
+hypothesis provides.  By (1) the set $s^{-1}(N)$ is null, and for
+$\zeta\in\mathbb{B}$ outside it we have $s(\zeta)\in V$ by Step 0 and $H$
+differentiable at $s(\zeta)$; since $s$ is $C^\infty$, the chain rule makes
+$G=H\circ s$ differentiable at $\zeta$, with
+\begin{equation}\tag{1$'$}
+  \mathrm{d}G(\zeta)[v]=\mathrm{d}H(t\zeta)\bigl[s(v)\bigr]
+  =t\,\mathrm{d}H(t\zeta)[v]\qquad(v\in\mathbb{C}),
+\end{equation}
+using $\mathrm{d}s=s$, $s(v)=tv$ and the $\mathbb{R}$-linearity of
+$\mathrm{d}H(t\zeta)$.  So $G$ is differentiable at almost every point of
+$\mathbb{B}$, which is (b).
+
+\emph{Step 3: the first-order partials scale by $t$.}  By
+\noderef{PartialWord}, $D^{[j]}f=\partial_jf$ is the value of the real
+Fr\'echet derivative of $f$ on the vector $e_0=1$ or $e_1=i$.  So (1$'$) of
+Step 2 says: at every $\zeta\in\mathbb{B}$ outside the null set $s^{-1}(N)$,
+\begin{equation}\tag{1$''$}
+  D^{[j]}G(\zeta)=t\,\bigl(D^{[j]}H\bigr)(t\zeta)\qquad(j=0,1).
+\end{equation}
+
+\emph{Step 4: the Wirtinger derivatives scale by $t$.}  By \noderef{DZ} and
+\noderef{DZbar},
+\[
+  f_\zeta=\tfrac12\bigl(\partial_xf-i\,\partial_yf\bigr),\qquad
+  f_{\bar\zeta}=\tfrac12\bigl(\partial_xf+i\,\partial_yf\bigr),
+\]
+the two partial derivatives being the values of the real Fréchet derivative on
+$1$ and $i$, i.e.\ $D^{[0]}f$ and $D^{[1]}f$.  So (1$''$) of Step 3 gives, for
+every $\zeta\in\mathbb{B}$ outside the null set $s^{-1}(N)$,
+\begin{equation}\tag{2}
+  G_\zeta(\zeta)=t\,H_\xi(t\zeta),\qquad
+  G_{\bar\zeta}(\zeta)=t\,H_{\bar\xi}(t\zeta).
+\end{equation}
+
+\emph{Step 4$'$: weak and classical Wirtinger derivatives agree.}  We record
+once, in general form, the passage between the two readings of the Wirtinger
+operators, and use it twice below.  \emph{Let $\Omega\subseteq\mathbb{C}$ be
+open, let $u\colon\mathbb{C}\to\mathbb{C}$ be differentiable at almost every
+point of $\Omega$, and let $a,b$ be weak Wirtinger derivatives of $u$ on
+$\Omega$ in the sense of \noderef{IsWeakWirtingerOn}.  Then $a=u_z$ and
+$b=u_{\bar z}$ almost everywhere on $\Omega$, with $u_z$, $u_{\bar z}$ the
+pointwise operators of \noderef{DZ} and \noderef{DZbar}.}  Indeed, by
+\noderef{IsWeakWirtingerOn} there are $u_x,u_y$ with
+$u,u_x,u_y\in L^1_{\mathrm{loc}}(\Omega)$, with $u_x$ and $u_y$ the
+distributional $\partial_0$- and $\partial_1$-derivatives of $u$ on $\Omega$,
+and with $a=\tfrac12(u_x-iu_y)$, $b=\tfrac12(u_x+iu_y)$ at every point.  The
+first two facts are hypotheses (H1) and (H2) of
+\noderef{WeakPartialEqFDerivAE} for $\Omega$, $u$ and the pair $D_0=u_x$,
+$D_1=u_y$, and the almost-everywhere differentiability is its (H3); so
+$u_x=\partial_0u$ and $u_y=\partial_1u$ almost everywhere on $\Omega$, where
+$\partial_j=D^{[j]}$ is the classical partial derivative of
+\noderef{PartialWord}, that is $\partial_0u=\mathrm{d}u[1]$ and
+$\partial_1u=\mathrm{d}u[i]$.  By \noderef{DZ} and \noderef{DZbar}, $u_z$ and
+$u_{\bar z}$ are the same two combinations
+$\tfrac12\bigl(\mathrm{d}u[1]\mp i\,\mathrm{d}u[i]\bigr)$, which gives the
+claim.  The two applications are: $u=H$ on $\Omega=V$, where $V$ is open and
+almost-everywhere differentiability is a hypothesis; and $u=G$ on
+$\Omega=\mathbb{B}$, where $\mathbb{B}$ is open and almost-everywhere
+differentiability is (b) of Step 2.
+
+\emph{Step 5: the pointwise form of (18) for $G$.}  By \noderef{SolvesEq18}
+there are weak Wirtinger derivatives $a_H,b_H$ of $H$ on $V$ and a null set
+$Z_0$ such that
+\[
+  b_H(z)=c\Bigl[\frac{z}{\bar z}a_H(z)
+    +\frac{\bar z^{\,n}}{z^{n}}\overline{a_H(z)}\Bigr]
+  \qquad(z\in V-Z_0,\ z\neq0),
+\]
+and by Step 4$'$ applied to $H$ on $V$ there is a null set $Z_2$ with
+$a_H=H_\xi$ and $b_H=H_{\bar\xi}$ on $V-Z_2$.  So, with $Z=Z_0\cup Z_2$, a
+null set, every $z\notin Z$ with $z\in V$ and $z\neq0$ satisfies
+\begin{equation}\tag{3}
+  H_{\bar\xi}(z)=c\Bigl[\frac{z}{\bar z}H_\xi(z)
+    +\frac{\bar z^{\,n}}{z^{n}}\overline{H_\xi(z)}\Bigr].
+\end{equation}
+Put $Z'=s^{-1}(Z)\cup s^{-1}(N)\cup\{0\}$, a null set by (1) and because a
+singleton is null; the term $s^{-1}(N)$ is there so that (2) is available at the
+points considered.
+Let $\zeta\notin Z'$ with $\zeta\in\mathbb{B}$ and $\zeta\neq0$, and set
+$z=t\zeta$.  Then $z\in V$ and $z\neq0$ by Step 0, and $z\notin Z$.  Since $t$
+is a positive real, $\bar z=t\bar\zeta$ and therefore
+\[
+  \frac{z}{\bar z}=\frac{t\zeta}{t\bar\zeta}=\frac{\zeta}{\bar\zeta},
+  \qquad
+  \frac{\bar z^{\,n}}{z^{n}}
+    =\frac{t^{n}\bar\zeta^{\,n}}{t^{n}\zeta^{n}}
+    =\frac{\bar\zeta^{\,n}}{\zeta^{n}} .
+\]
+Multiplying (3) by $t$ and using (2), together with $t\,\overline{x}=\overline{t\,x}$
+for real $t$,
+\[
+  G_{\bar\zeta}(\zeta)=t\,H_{\bar\xi}(z)
+  =c\Bigl[\frac{\zeta}{\bar\zeta}\,t\,H_\xi(z)
+    +\frac{\bar\zeta^{\,n}}{\zeta^{n}}\,\overline{t\,H_\xi(z)}\Bigr]
+  =c\Bigl[\frac{\zeta}{\bar\zeta}G_\zeta(\zeta)
+    +\frac{\bar\zeta^{\,n}}{\zeta^{n}}\overline{G_\zeta(\zeta)}\Bigr].
+\]
+As $Z'$ is null, the pointwise identity
+\begin{equation}\tag{3$'$}
+  G_{\bar\zeta}(\zeta)=c\Bigl[\frac{\zeta}{\bar\zeta}G_\zeta(\zeta)
+    +\frac{\bar\zeta^{\,n}}{\zeta^{n}}\overline{G_\zeta(\zeta)}\Bigr]
+\end{equation}
+holds at almost every $\zeta\in\mathbb{B}$ with $\zeta\neq0$.  Step 7$'$ below
+turns this into (c).
+
+The same argument gives the pointwise distortion inequality for $H$, which
+Step 9 uses: $H$ being $K$-quasiregular on $V$, \noderef{QuasiregularOn}
+provides weak Wirtinger derivatives $a',b'$ of $H$ on $V$ and a null set with
+$|b'|\le\kappa_0|a'|$ off it, where $\kappa_0=(K-1)/(K+1)$, and Step 4$'$
+applied to that pair gives $a'=H_\xi$, $b'=H_{\bar\xi}$ almost everywhere on
+$V$; hence
+\begin{equation}\tag{3$''$}
+  |H_{\bar\xi}(z)|\le\kappa_0\,|H_\xi(z)|\qquad\text{for almost every }z\in V .
+\end{equation}
+
+\emph{Step 6: proof of (d).}  By \noderef{QuasiconformalOn} and
+\noderef{QuasiregularOn}, $H\in W^{1,2}_{\mathrm{loc}}(V)$, so by
+\noderef{MemWLocOn} there is a family $D$ of functions indexed by words with
+$D[\,]=H$, with $D(w)\in L^2_{\mathrm{loc}}(V)$ for $|w|\le1$ in the sense of
+\noderef{MemLpLocOn}, and with $D[j]$ the distributional $j$-th partial
+derivative of $H$ on $V$ in the sense of \noderef{IsWeakPartialOn}.  Define
+\[
+  D'[\,]=G,\qquad D'[j]=t\,\bigl(D[j]\circ s\bigr)\ (j=0,1),\qquad
+  D'(w)=0\ \ (|w|\ge2).
+\]
+We check the three clauses of \noderef{MemWLocOn} for $D'$ with $k=1$, $s=2$.
+
+$D'[\,]=G$ holds by definition.
+
+Local square integrability: let $\kappa\subseteq\mathbb{B}$ be compact.  Then
+$s(\kappa)$ is compact, and $s(\kappa)\subseteq\mathbb{B}(0,t)\subseteq V$ by
+Step 0.  By (1), for $j=0,1$,
+\[
+  \int_{\kappa}\bigl|D'[j]\bigr|^2d\sigma
+  =t^2\int_\kappa\bigl|D[j]\circ s\bigr|^2d\sigma
+  =t^2\cdot t^{-2}\int_{s(\kappa)}\bigl|D[j]\bigr|^2d\sigma<\infty,
+\]
+the last integral being finite because $D[j]\in L^2_{\mathrm{loc}}(V)$ and
+$s(\kappa)$ is a compact subset of $V$; and likewise
+$\int_\kappa|G|^2d\sigma=t^{-2}\int_{s(\kappa)}|H|^2d\sigma<\infty$.  The
+functions $D'(w)$ with $|w|\ge2$ are $0$, trivially square integrable.
+
+The weak-derivative clause: the only word of length $<1$ is the empty word, so
+we must show that $D'[j]$ is the distributional $j$-th partial derivative of
+$G$ on $\mathbb{B}$.  Let $\varphi$ be a test function for $\mathbb{B}$ in the
+sense of \noderef{IsTestFn} and put $\tilde\varphi(z)=\varphi(z/t)$.  Then
+$\tilde\varphi$ is $C^\infty$ on $\mathbb{C}$, with compact support
+$s(\operatorname{supp}\varphi)\subseteq\mathbb{B}(0,t)\subseteq V$, so
+$\tilde\varphi$ is a test function for $V$.  Differentiating
+$\tilde\varphi=\varphi\circ s^{-1}$ gives
+$\partial_j\tilde\varphi(z)=t^{-1}(\partial_j\varphi)(z/t)$, i.e.
+$(\partial_j\varphi)(z/t)=t\,\partial_j\tilde\varphi(z)$.  Hence, substituting
+$z=t\zeta$ by (1),
+\[
+  \int G\,\partial_j\varphi\,d\sigma
+  =t^{-2}\int H(z)\,(\partial_j\varphi)(z/t)\,d\sigma(z)
+  =t^{-1}\int H\,\partial_j\tilde\varphi\,d\sigma
+  =-t^{-1}\int D[j]\,\tilde\varphi\,d\sigma,
+\]
+the last step by \noderef{IsWeakPartialOn} for $H$ on $V$ applied to the test
+function $\tilde\varphi$.  Substituting back by (1),
+\[
+  -t^{-1}\int D[j]\,\tilde\varphi\,d\sigma
+  =-t^{-1}\cdot t^{2}\int \bigl(D[j]\circ s\bigr)\varphi\,d\sigma
+  =-\int D'[j]\,\varphi\,d\sigma .
+\]
+As $\varphi$ was arbitrary, $D'[j]$ is the distributional $j$-th partial of $G$
+on $\mathbb{B}$.  This proves (d).
+
+\emph{Step 7: the classical and weak first derivatives agree almost
+everywhere.}  The hypotheses of \noderef{WeakPartialEqFDerivAE} hold with
+$\Omega=V$, which is open, the function $H$ and the family $D_j=D[j]$ of
+Step 6: each of $H$, $D[0]$, $D[1]$ lies in $L^1_{\mathrm{loc}}(V)$, because it
+lies in $L^2_{\mathrm{loc}}(V)$ by Step 6 and a compact set has finite measure,
+so the Cauchy--Schwarz inequality gives
+$\int_\kappa|g|\le(\int_\kappa|g|^2)^{1/2}\sigma(\kappa)^{1/2}<\infty$ for
+compact $\kappa\subseteq V$; $D[j]$ is the distributional $j$-th partial
+derivative of $H$ on $V$ by Step 6; and $H$ is differentiable at almost every
+point of $V$ by hypothesis.  Hence
+\begin{equation}\tag{4}
+  D[j]=\partial_jH\qquad\text{almost everywhere on }V\quad(j=0,1).
+\end{equation}
+
+\emph{Step 7$'$: proof of (c).}  Define
+\[
+  a_G=\tfrac12\bigl(D'[0]-i\,D'[1]\bigr),\qquad
+  b_G=\tfrac12\bigl(D'[0]+i\,D'[1]\bigr)
+\]
+at every point of $\mathbb{C}$, with $D'$ the family of Step 6.  Then $a_G$ and
+$b_G$ are weak Wirtinger derivatives of $G$ on $\mathbb{B}$ in the sense of
+\noderef{IsWeakWirtingerOn}: its clause (b) is the weak-derivative clause
+proved in Step 6, its clause (c) is the definition just made, and its clause
+(a) holds because $G$, $D'[0]$ and $D'[1]$ lie in
+$L^2_{\mathrm{loc}}(\mathbb{B})$ by Step 6 and hence in
+$L^1_{\mathrm{loc}}(\mathbb{B})$, by the Cauchy--Schwarz inequality on compact
+subsets of $\mathbb{B}$ exactly as in Step 7.
+
+By Step 4$'$ applied to $G$ on $\mathbb{B}$ --- legitimate by (b) --- we have
+$a_G=G_\zeta$ and $b_G=G_{\bar\zeta}$ almost everywhere on $\mathbb{B}$.
+Combining this with (3$'$), the identity
+\[
+  b_G(\zeta)=c\Bigl[\frac{\zeta}{\bar\zeta}a_G(\zeta)
+    +\frac{\bar\zeta^{\,n}}{\zeta^{n}}\overline{a_G(\zeta)}\Bigr]
+\]
+holds at almost every $\zeta\in\mathbb{B}$ with $\zeta\neq0$, the union of the
+two exceptional null sets being null.  With the pair $a_G,b_G$ this is exactly
+the assertion that $G$ solves (18) on $\mathbb{B}$ in the sense of
+\noderef{SolvesEq18}, which is (c).
+
+\emph{Step 8: proof of (e).}  Put
+$E=|H_\xi|^2+|H_{\bar\xi}|^2$ and $E_G=|G_\zeta|^2+|G_{\bar\zeta}|^2$.  By (2),
+\begin{equation}\tag{5}
+  E_G(\zeta)=t^2E(t\zeta)\qquad(0<|\zeta|<1).
+\end{equation}
+By Step 4 and the parallelogram law in $\mathbb{C}$, namely
+$|a-ib|^2+|a+ib|^2=2|a|^2+2|b|^2$ for $a,b\in\mathbb{C}$, we have on $V-\{0\}$
+\[
+  E=\tfrac14\bigl(|\partial_xH-i\partial_yH|^2+|\partial_xH+i\partial_yH|^2\bigr)
+  =\tfrac12\bigl(|\partial_xH|^2+|\partial_yH|^2\bigr),
+\]
+so by (4),
+$E=\tfrac12\bigl(|D[0]|^2+|D[1]|^2\bigr)$ almost everywhere on $V$.  Since
+$\overline{\mathbb{B}(0,t)}$ is a compact subset of $V$ and
+$D[j]\in L^2_{\mathrm{loc}}(V)$,
+\[
+  \int_{\mathbb{B}(0,t)}E\,d\sigma
+  \le\tfrac12\int_{\overline{\mathbb{B}(0,t)}}
+    \bigl(|D[0]|^2+|D[1]|^2\bigr)d\sigma<\infty .
+\]
+Therefore, by (5) and (1) applied to $E_G$ on $\mathbb{B}-\{0\}$, whose
+complement in $\mathbb{B}$ is the null set $\{0\}$,
+\[
+  \int_{\mathbb{B}}E_G\,d\sigma
+  =t^2\int_{\mathbb{B}-\{0\}}E\circ s\,d\sigma
+  =t^2\cdot t^{-2}\int_{\mathbb{B}(0,t)-\{0\}}E\,d\sigma
+  \le\int_{\mathbb{B}(0,t)}E\,d\sigma<\infty .
+\]
+Finally $E_G$ is measurable: by (2) it agrees almost everywhere on
+$\mathbb{B}$ with $t^2(E\circ s)$, and $E$ agrees almost everywhere on $V$ with
+$\tfrac12(|D[0]|^2+|D[1]|^2)$ by (4), a measurable function, so $E\circ s$ is
+measurable by (1); a function agreeing almost everywhere with a measurable
+function is measurable for the completed Lebesgue measure.  A nonnegative measurable
+function with finite integral is integrable, which is (e).
+
+\emph{Step 9: proof of (f).}  We verify the five clauses of
+\noderef{QuasiconformalOn} for $G$ on $\mathbb{B}$ with the same $K$.  Write
+$\kappa_0=(K-1)/(K+1)$.
+
+\emph{$K$-quasiregularity.}  By \noderef{QuasiregularOn} we need $1\le K$,
+which is a hypothesis; $G\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$, which is (d);
+and a pair of weak Wirtinger derivatives of $G$ on $\mathbb{B}$ satisfying the
+distortion inequality almost everywhere.  We take the pair $a_G,b_G$ of
+Step 7$'$, for which $a_G=G_\zeta$ and $b_G=G_{\bar\zeta}$ almost everywhere on
+$\mathbb{B}$, also by Step 7$'$; so it suffices to prove
+$|G_{\bar\zeta}|\le\kappa_0|G_\zeta|$ almost everywhere on $\mathbb{B}$.  By
+(3$''$) of Step 5 there is a null set $Z_1$ with
+$|H_{\bar\xi}(z)|\le\kappa_0|H_\xi(z)|$ for every $z\in V$ outside $Z_1$.  Let
+$\zeta\in\mathbb{B}$ lie outside the null set
+$s^{-1}(Z_1)\cup s^{-1}(N)\cup\{0\}$, which is null by (1); then
+$t\zeta\in V-\{0\}$ lies outside $Z_1$, and (2) is available at $\zeta$, so
+\[
+  |G_{\bar\zeta}(\zeta)|=t\,|H_{\bar\xi}(t\zeta)|
+  \le t\,\kappa_0|H_\xi(t\zeta)|=\kappa_0|G_\zeta(\zeta)| .
+\]
+
+\emph{Injectivity.}  If $\zeta_1,\zeta_2\in\mathbb{B}$ and
+$G(\zeta_1)=G(\zeta_2)$ then $H(t\zeta_1)=H(t\zeta_2)$ with
+$t\zeta_1,t\zeta_2\in V$ by Step 0, so $t\zeta_1=t\zeta_2$ because $H$ is
+injective on $V$, whence $\zeta_1=\zeta_2$ as $t\neq0$.
+
+\emph{Continuity} is (a).
+
+\emph{Openness of the image.}  By \noderef{QuasiconformalOn} applied to $H$
+there is $\psi$ with $\psi(H(z))=z$ for every $z\in V$ and $\psi$ continuous on
+$H(V)$, and $H(V)$ is open.  We claim
+\begin{equation}\tag{6}
+  G(\mathbb{B})=H\bigl(\mathbb{B}(0,t)\bigr)
+  =\bigl\{w\in H(V):\psi(w)\in\mathbb{B}(0,t)\bigr\}.
+\end{equation}
+The first equality holds because $G(\mathbb{B})=\{H(t\zeta):|\zeta|<1\}
+=\{H(z):|z|<t\}$.  For the second: if $w=H(z)$ with $|z|<t$ then $z\in V$ by
+Step 0, so $w\in H(V)$ and $\psi(w)=z\in\mathbb{B}(0,t)$; conversely if
+$w\in H(V)$ with $\psi(w)\in\mathbb{B}(0,t)$, write $w=H(z)$ with $z\in V$, so
+that $\psi(w)=z$, whence $|z|<t$ and $w\in H(\mathbb{B}(0,t))$.  Now the right
+side of (6) is $\psi^{-1}\bigl(\mathbb{B}(0,t)\bigr)\cap H(V)$, which by
+continuity of $\psi$ on $H(V)$ is open in the subspace $H(V)$, that is, of the
+form $U\cap H(V)$ with $U\subseteq\mathbb{C}$ open; and $H(V)$ is open in
+$\mathbb{C}$.  So $G(\mathbb{B})$ is open in $\mathbb{C}$.
+
+\emph{The inverse.}  Put $\psi_G(w)=\psi(w)/t$.  For $\zeta\in\mathbb{B}$ we
+have $\psi_G(G(\zeta))=\psi(H(t\zeta))/t=t\zeta/t=\zeta$.  And
+$G(\mathbb{B})\subseteq H(V)$ by (6), where $\psi$ is continuous, so $\psi_G$ is
+continuous on $G(\mathbb{B})$, division by the nonzero constant $t$ being
+continuous.
+
+All five clauses hold, which is (f), and the proof is complete.
+
+\emph{Step 10: proof of (g).}  Assume $G$ is of class $C^\infty$ on
+$\mathbb{B}-\{0\}$ and put $W=\{z:0<|z|<t\}$, an open set.  By Step 0 the map
+$\sigma_0(z)=z/t$, the inverse of $s$, is $C^\infty$ and carries $W$ onto
+$\mathbb{B}-\{0\}$: indeed $0<|z|<t$ if and only if $0<|z/t|<1$.  For $z\in W$
+we have $H(z)=H\bigl(s(z/t)\bigr)=G(z/t)$, so
+\[
+  H=G\circ\sigma_0\qquad\text{on }W,
+\]
+a composition of $C^\infty$ maps between open sets; since smoothness on an open
+set is a local property and $H$ agrees with that composition on all of $W$, $H$
+is $C^\infty$ on $W$.
+
+For the derivative dictionary we induct on $w$, proving
+\begin{equation}\tag{6}
+  \bigl(D^{w}H\bigr)(t\zeta)=t^{-|w|}D^{w}G(\zeta)
+  \qquad(0<|\zeta|<1).
+\end{equation}
+If $w$ is empty, $D^{w}$ is the identity by \noderef{PartialWord} and both
+sides are $H(t\zeta)=G(\zeta)$, since $t^{0}=1$.
+
+Let $w=j\colon\!\!\colon w'$, so that $D^{w}f=\partial_j(D^{w'}f)$ by
+\noderef{PartialWord}, where $\partial_j$ is the value of the real Fréchet
+derivative on $e_0=1$ or $e_1=i$.  By the inductive hypothesis the two
+functions
+\[
+  \zeta\mapsto\bigl(D^{w'}H\bigr)(t\zeta)
+  \qquad\text{and}\qquad
+  \zeta\mapsto t^{-|w'|}D^{w'}G(\zeta)
+\]
+agree at every point of the open set $\mathbb{B}-\{0\}$, so their Fréchet
+derivatives agree there.  Both are differentiable: $D^{w'}G$ is $C^\infty$ on
+$\mathbb{B}-\{0\}$ because $G$ is, and $D^{w'}H$ is $C^\infty$ on $W$ because
+$H$ is, by the first half of this step, while $\zeta\mapsto t\zeta$ carries
+$\mathbb{B}-\{0\}$ into $W$.  Differentiating the left-hand function at
+$\zeta\in\mathbb{B}-\{0\}$ by the chain rule, with $\mathrm{d}s=s$ and
+$s(v)=tv$,
+\[
+  \mathrm{d}\bigl(\bigl(D^{w'}H\bigr)\circ s\bigr)(\zeta)[v]
+  =t\,\mathrm{d}\bigl(D^{w'}H\bigr)(t\zeta)[v],
+\]
+so taking $v=e_j$ and equating with the derivative of the right-hand function,
+\[
+  t\,\bigl(D^{w}H\bigr)(t\zeta)=t^{-|w'|}D^{w}G(\zeta),
+\]
+that is $\bigl(D^{w}H\bigr)(t\zeta)=t^{-|w'|-1}D^{w}G(\zeta)
+=t^{-|w|}D^{w}G(\zeta)$, since $|w|=|w'|+1$.  This completes the induction and
+proves (g).
+\end{proof}

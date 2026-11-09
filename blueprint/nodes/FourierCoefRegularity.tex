@@ -1,0 +1,166 @@
+\begin{lemma}
+Let $n\ge0$ be an integer, write $\mathbb{B}=\{\xi:|\xi|<1\}$, and let
+$H\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $H$ is continuous on $\mathbb{B}$;
+\item[(H2)] $H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in the sense of
+  \noderef{MemWLocOn};
+\item[(H3)] $H$ is differentiable at almost every point of $\mathbb{B}$.
+\end{enumerate}
+Let $a_k$, $k\in\mathbb{Z}$, be the Fourier coefficients of
+\noderef{FourierCoefOfH} of $H$, and write $A_k$ for the Fourier coefficient of
+the same index of $H_r$, the polar radial derivative of \noderef{HRad}, and
+$B_k$ for that of $H_\theta$, the polar angular derivative of
+\noderef{HAng}.  Then
+\begin{enumerate}
+\item[(a)] each $a_k$ is continuous on $[0,1)$;
+\item[(b)] for every $k$ and all $c,d\in(0,1)$, the function $A_k$ is
+  integrable on the closed interval with endpoints $c$ and $d$, and
+  $a_k(d)-a_k(c)=\displaystyle\int_c^dA_k(s)\,ds$;
+\item[(c)] for every $k$ and almost every $r\in(0,1)$, $a_k$ is differentiable
+  at $r$ with $a_k'(r)=A_k(r)$;
+\item[(d)] for every $k$ and almost every $r\in(0,1)$, $B_k(r)=i(k-n)a_k(r)$;
+\item[(e)] for almost every $r\in(0,1)$ the functions
+  $\theta\mapsto H_r(re^{i\theta})$ and $\theta\mapsto H_\theta(re^{i\theta})$
+  are integrable on $[0,2\pi]$;
+\item[(f)] for every $r\in[0,1)$ the expansion (29) holds in $L^2(0,2\pi)$:
+\[
+  \int_0^{2\pi}\Bigl|H\bigl(re^{i\theta}\bigr)
+    -\sum_{k=-N}^{N}a_k(r)e^{i(k-n)\theta}\Bigr|^2\,d\theta\ \longrightarrow\ 0
+  \qquad(N\to\infty).
+\]
+\end{enumerate}
+
+This is the paper's (31) and (32) with Section 3's $C^\infty$ standing
+assumption removed.  The paper reads that assumption at exactly one place,
+paper.tex:265--266, to obtain $a_k\in C[0,1)\cap C^\infty(0,1)$, whereas
+paper.tex:269 justifies the term-by-term differentiation (32) from
+$H\in W^{1,2}(\mathbb{B})$ alone.  Accordingly the $C[0,1)$ half of (31) is (a),
+which needs only continuity -- free for the inverse of a quasiconformal
+homeomorphism -- while the $C^\infty(0,1)$ half is deliberately \emph{not}
+claimed here: it is regained downstream from the system (33) that the
+coefficients satisfy, which is the paper's own reason for (31) in the first
+place.  Parts (c) and (d) are what (32) asserts, namely that the Fourier
+coefficients of $H_r$ and $H_\theta$ are $a_k'$ and $i(k-n)a_k$; (b) is the
+integrated form of (c), which is what survives when $a_k$ is not yet known to
+be differentiable everywhere; (e) is the integrability on circles that the
+passage from (28) to (33) needs in order to integrate in $\theta$; and (f) is
+the expansion (29).
+\end{lemma}
+\begin{proof}
+Fix $k\in\mathbb{Z}$ and write, for $r\in[0,1)$ and $\theta\in\mathbb{R}$,
+\[
+  \gamma_r(\theta)=re^{i\theta},\qquad \varphi_k(\theta)=e^{i(n-k)\theta},
+\]
+so that, by \noderef{FourierCoefOfH},
+\begin{equation}\tag{0}
+  a_k(r)=\frac1{2\pi}\int_0^{2\pi}H\bigl(\gamma_r(\theta)\bigr)\varphi_k(\theta)\,d\theta .
+\end{equation}
+Since $|e^{i\theta}|=1$ we have $|\gamma_r(\theta)|=r<1$, so
+$\gamma_r(\theta)\in\mathbb{B}$ for every $\theta$; and $|\varphi_k(\theta)|=1$.
+
+\emph{Step 1: joint continuity and local bounds.}  The map
+$(r,\theta)\mapsto\gamma_r(\theta)$ is continuous from $[0,1)\times\mathbb{R}$
+into $\mathbb{B}$, so $(r,\theta)\mapsto H(\gamma_r(\theta))\varphi_k(\theta)$
+is continuous on $[0,1)\times\mathbb{R}$, by (H1) and by continuity of
+$\varphi_k$.  For $0\le\rho<1$ the set $\{\xi:|\xi|\le\rho\}$ is a compact
+subset of $\mathbb{B}$, so
+\[
+  M_\rho=\sup\bigl\{|H(\xi)|:|\xi|\le\rho\bigr\}<\infty,
+\]
+and $|H(\gamma_r(\theta))\varphi_k(\theta)|\le M_\rho$ for all $r\in[0,\rho]$
+and all $\theta$.
+
+\emph{Step 2: proof of (a).}  Let $r_0\in[0,1)$ and choose $\rho$ with
+$r_0<\rho<1$.  For $r\in[0,\rho]$ the integrand in (0) is dominated by the
+constant $M_\rho$, which is integrable on $[0,2\pi]$, and for each fixed
+$\theta$ it is continuous in $r$ by Step 1.  Hence for any sequence
+$r_j\to r_0$ in $[0,\rho]$ the dominated convergence theorem gives
+\[
+  \int_0^{2\pi}H\bigl(\gamma_{r_j}(\theta)\bigr)\varphi_k(\theta)\,d\theta
+  \longrightarrow
+  \int_0^{2\pi}H\bigl(\gamma_{r_0}(\theta)\bigr)\varphi_k(\theta)\,d\theta,
+\]
+so $a_k$ is continuous at $r_0$.  As $r_0\in[0,1)$ was arbitrary, $a_k$ is
+continuous on $[0,1)$, and $k$ was arbitrary; this is (a).
+
+\emph{Step 3: the punctured disk as an annulus, and the Sobolev data there.}
+Put
+\[
+  A=\{\xi:0<|\xi|<1\}=\mathbb{B}-\{0\},
+\]
+the annulus with radii $a=0$ and $b=1$, so that $0\le a<b$.  By (H2) and
+\noderef{MemWLocOn} there is a family $D$ of functions indexed by words in
+$\{0,1\}$ with $D[\,]=H$, with $D(w)\in L^{2}_{\mathrm{loc}}(\mathbb{B})$ in the
+sense of \noderef{MemLpLocOn} for every word $w$ of length at most $1$, and
+with $D([j])$ the distributional $j$-th partial derivative of $H$ on
+$\mathbb{B}$ in the sense of \noderef{IsWeakPartialOn} for $j=0,1$ --- the
+latter because the only word $w$ with $|w|<1$ is the empty word, and
+$[\,]+\!\!+[j]=[j]$.  Put $D_j=D([j])$.  We check the four hypotheses of
+\noderef{CircleAvgLocAbsCont} for $n$, $a=0$, $b=1$, the index $k$, the
+function $H$ and the family $D_0,D_1$.
+
+For its (H1): let $\kappa\subseteq A$ be compact.  Then $\kappa$ is a compact
+subset of $\mathbb{B}$, so by the above $\mathbf1_\kappa H$ and
+$\mathbf1_\kappa D_j$ lie in $L^{2}$; and $\kappa$ has finite Lebesgue measure,
+so by the Cauchy--Schwarz inequality $\int_\kappa|g|\le
+\bigl(\int_\kappa|g|^{2}\bigr)^{1/2}\sigma(\kappa)^{1/2}<\infty$ for
+$g\in\{H,D_0,D_1\}$.  Hence $H$ and the $D_j$ lie in $L^{1}_{\mathrm{loc}}(A)$
+in the sense of \noderef{MemLpLocOn}.
+
+For its (H2): a test function for $A$ is a test function for $\mathbb{B}$,
+since by \noderef{IsTestFn} the only clause mentioning the set is
+$\operatorname{tsupp}\varphi\subseteq A\subseteq\mathbb{B}$, and the
+integration-by-parts identity of \noderef{IsWeakPartialOn} does not mention the
+set; so $D_j$ is the distributional $j$-th partial derivative of $H$ on $A$ as
+well.
+
+For its (H3): $H$ is continuous on $A\subseteq\mathbb{B}$ by (H1) of the
+present lemma.
+
+For its (H4): by (H3) of the present lemma $H$ is differentiable at almost
+every point of $\mathbb{B}$, hence at almost every point of the subset $A$.
+
+\emph{Step 4: proof of (b), (c), (d), (e).}  \noderef{CircleAvgLocAbsCont},
+applied as in Step 3, yields for this $k$: its (a), that $A_k$ is integrable on
+the closed interval with endpoints $c$ and $d$ for all $c,d\in(0,1)$; its (b),
+that $a_k(d)-a_k(c)=\int_c^dA_k(s)\,ds$ for all such $c,d$; its (c), that for
+almost every $r\in(0,1)$ the function $a_k$ is differentiable at $r$ with
+$a_k'(r)=A_k(r)$; its (d), that $B_k(r)=i(k-n)a_k(r)$ for almost every
+$r\in(0,1)$; and its (e), that for almost every $r\in(0,1)$ the functions
+$\theta\mapsto H_r(re^{i\theta})$ and $\theta\mapsto H_\theta(re^{i\theta})$ are
+integrable on $[0,2\pi]$.  The first two are (b), the third is (c), the fourth
+is (d), all for this $k$ and hence, $k$ being arbitrary, for every $k$; and the
+fifth is (e), which does not depend on $k$.
+
+\emph{Step 5: proof of (f).}  Fix $r\in[0,1)$.  By Step 1 the function
+$\theta\mapsto H(\gamma_r(\theta))$ is continuous on the compact interval
+$[0,2\pi]$, hence bounded and measurable there, so it belongs to
+$L^2(0,2\pi)$.  The family $(e_m)_{m\in\mathbb{Z}}$,
+$e_m(\theta)=(2\pi)^{-1/2}e^{im\theta}$, is an orthonormal basis of
+$L^2(0,2\pi)$.  Its $m$-th coefficient for our function is
+\[
+  \bigl\langle H\circ\gamma_r,\,e_m\bigr\rangle
+  =(2\pi)^{-1/2}\int_0^{2\pi}H\bigl(\gamma_r(\theta)\bigr)e^{-im\theta}\,d\theta .
+\]
+Taking $m=k-n$ and using $e^{-i(k-n)\theta}=e^{i(n-k)\theta}=\varphi_k(\theta)$,
+this equals $(2\pi)^{1/2}a_k(r)$ by (0); consequently
+\[
+  \bigl\langle H\circ\gamma_r,\,e_{k-n}\bigr\rangle\,e_{k-n}(\theta)
+  =(2\pi)^{1/2}a_k(r)\cdot(2\pi)^{-1/2}e^{i(k-n)\theta}
+  =a_k(r)\,e^{i(k-n)\theta}.
+\]
+Because $(e_m)_{m\in\mathbb{Z}}$ is an orthonormal basis, the expansion of
+$H\circ\gamma_r$ converges unconditionally in $L^2(0,2\pi)$: the net of partial
+sums over finite subsets of the index set converges to $H\circ\gamma_r$.  In
+particular, along any sequence of finite index sets increasing to the whole
+index set the partial sums converge in $L^2(0,2\pi)$.  The sets
+$\{k\in\mathbb{Z}:|k|\le N\}$ increase to $\mathbb{Z}$ as $N\to\infty$, and the
+corresponding partial sum is, by the display above,
+$\sum_{k=-N}^{N}a_k(r)e^{i(k-n)\theta}$.  Hence
+\[
+  \int_0^{2\pi}\Bigl|H\bigl(\gamma_r(\theta)\bigr)
+    -\sum_{k=-N}^{N}a_k(r)e^{i(k-n)\theta}\Bigr|^2\,d\theta\longrightarrow0
+\]
+as $N\to\infty$, which is (f).
+\end{proof}

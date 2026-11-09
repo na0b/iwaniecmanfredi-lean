@@ -1,0 +1,129 @@
+\begin{lemma}
+Let $H\colon\mathbb{C}\to\mathbb{C}$, let $\Omega\subseteq\mathbb{C}$ be open
+with $H$ of class $C^\infty$ on $\Omega$ and $\xi\neq0$ for every
+$\xi\in\Omega$, let $g\in\mathbb{R}$, and let $C_m$, $m=0,1,2,\dots$, be reals
+such that
+\[
+  \sum_{|w|=m}\bigl|D^{w}H(\xi)\bigr|\le C_m|\xi|^{g-m}
+  \qquad\text{for every }m\ge0\text{ and every }\xi\in\Omega,
+\]
+the sum running over the $2^m$ words $w$ of length $m$ in $\{0,1\}$ and $D^{w}$
+being the iterated partial derivative of \noderef{PartialWord}.  Let
+$s,k\ge0$ be integers and let $P\in\mathbb{P}(s,k)$ relative to $H$ in the
+sense of \noderef{PClass}.  Then there is $M\ge0$ with
+\[
+  \bigl|P(\xi)\bigr|\le M\,|\xi|^{kg-s}\qquad\text{for every }\xi\in\Omega .
+\]
+
+This is the growth estimate the paper records at paper.tex:488 for a monomial
+$Q=H^{s_1}\cdots H^{s_k}$ of type $(s,k)$, namely
+$|Q(\xi)|\le M|\xi|^{g-s_1}\cdots|\xi|^{g-s_k}=M|\xi|^{kg-s}$, extended to all
+of $\mathbb{P}(s,k)$ by summing over the finite linear combination that
+membership in $\mathbb{P}(s,k)$ carries.  Applied with $g=\gamma_n$, the
+hypothesis is estimate (43) of Corollary 1 and the conclusion at
+$P_\nu\in\mathbb{P}(4l-3,3l-2)$ is the paper's
+$|P_\nu(\xi)|\le M|\xi|^{(3l-2)\gamma_n-4l+3}$ of paper.tex:492.
+\end{lemma}
+\begin{proof}
+If $\Omega=\emptyset$ the assertion holds with $M=0$, the conclusion being
+vacuous.  So assume $\Omega\neq\emptyset$ and fix $\xi_0\in\Omega$.
+
+\emph{Step 1: $C_m\ge0$ for every $m$.}  The left-hand side of the hypothesis
+at $\xi_0$ is a sum of moduli, hence $\ge0$, so
+$0\le C_m|\xi_0|^{g-m}$.  By assumption $\xi_0\neq0$, so $|\xi_0|>0$ and
+$|\xi_0|^{g-m}>0$; dividing, $C_m\ge0$.
+
+\emph{Step 2: every Wirtinger derivative of order $q$ is controlled by the
+real ones.}  We claim: if $G$ is $C^\infty$ on $\Omega$ and $T_1,\dots,T_q$ is
+any list with each $T_a\in\{\partial/\partial\xi,\partial/\partial\bar\xi\}$,
+then on $\Omega$
+\begin{equation}\tag{1}
+  T_1T_2\cdots T_q\,G=2^{-q}\sum_{|w|=q}\varepsilon_w\,D^{w}G,
+\end{equation}
+for some complex numbers $\varepsilon_w$ with $|\varepsilon_w|\le1$, the sum
+being over the $2^q$ words of length $q$.
+
+We induct on $q$.  For $q=0$ the composite is $G=D^{[\,]}G$, so (1) holds with
+the single coefficient $1$.  For the step, let $T_1\cdots T_qG=T_1\bigl(T_2\cdots T_qG\bigr)$
+and write $G'=T_2\cdots T_qG$.  By \noderef{DZ} and \noderef{DZbar},
+\[
+  \frac{\partial G'}{\partial\xi}
+    =\tfrac12\bigl(D^{[0]}G'-i\,D^{[1]}G'\bigr),\qquad
+  \frac{\partial G'}{\partial\bar\xi}
+    =\tfrac12\bigl(D^{[0]}G'+i\,D^{[1]}G'\bigr),
+\]
+the two real partials being the values of the Fréchet derivative on $1$ and
+$i$, i.e.\ $D^{[0]}$ and $D^{[1]}$ in the sense of \noderef{PartialWord}.  By
+the inductive hypothesis $G'=2^{-(q-1)}\sum_{|w'|=q-1}\varepsilon_{w'}D^{w'}G$
+as functions on the open set $\Omega$, where each $D^{w'}G$ is $C^\infty$ on
+$\Omega$ because $G$ is; so $\partial_t$ may be applied term by term, and by
+the recursion $D^{t::w'}=\partial_t D^{w'}$ of \noderef{PartialWord},
+\[
+  D^{[t]}G'=2^{-(q-1)}\sum_{|w'|=q-1}\varepsilon_{w'}D^{t::w'}G
+  \qquad(t=0,1).
+\]
+Substituting into the two displays above expresses $T_1G'$ as
+$2^{-q}\sum_{|w|=q}\varepsilon_wD^{w}G$ with each $\varepsilon_w$ equal to
+$\pm\varepsilon_{w'}$ or $\pm i\varepsilon_{w'}$ for the corresponding $w'$,
+hence of modulus at most $1$.  This proves (1).
+
+Now let $d$ be a derivative symbol in the sense of \noderef{DerivSymbol}, with
+orders $i,j$ and total order $q=i+j$; note $q\ge1$, since
+\noderef{DerivSymbol} requires $0<i+j$.  By \noderef{WirtingerIter} the
+iterated Wirtinger derivative $\partial^{q}H/\partial\xi^{i}\partial\bar\xi^{j}$
+is the composite of $j$ copies of $\partial/\partial\bar\xi$ followed by $i$
+copies of $\partial/\partial\xi$ applied to $H$, which is a composite as in
+(1) with $G=H$; and by \noderef{SymbolValue} the value of $d$ on $H$ is that
+iterated derivative or its complex conjugate, which has the same modulus.
+Hence, for $\xi\in\Omega$, by (1) and $|\varepsilon_w|\le1$,
+\[
+  \bigl|H^{d}(\xi)\bigr|
+  \le2^{-q}\sum_{|w|=q}\bigl|D^{w}H(\xi)\bigr|
+  \le\sum_{|w|=q}\bigl|D^{w}H(\xi)\bigr|
+  \le C_q|\xi|^{g-q},
+\]
+writing $H^{d}$ for the value of $d$ on $H$, using $2^{-q}\le1$ and all terms
+nonnegative, and applying the hypothesis with $m=q$.  So
+\begin{equation}\tag{2}
+  \bigl|H^{d}(\xi)\bigr|\le C_{q_d}\,|\xi|^{g-q_d}\qquad(\xi\in\Omega),
+\end{equation}
+where $q_d\ge1$ is the order of $d$.
+
+\emph{Step 3: the monomial bound.}  Let $\mathcal{M}=[d_1,\dots,d_k]$ be a list
+of derivative symbols with $\sum_{a=1}^{k}q_{d_a}=s$, i.e.\ a monomial of type
+$(s,k)$, and let $\xi\in\Omega$.  By \noderef{MonomialValue} its value is the
+product $\prod_{a=1}^{k}H^{d_a}(\xi)$, so by (2), all factors and all bounds
+being nonnegative by Step 1,
+\[
+  \bigl|Q_{\mathcal{M}}(\xi)\bigr|
+  =\prod_{a=1}^{k}\bigl|H^{d_a}(\xi)\bigr|
+  \le\prod_{a=1}^{k}C_{q_{d_a}}|\xi|^{g-q_{d_a}}
+  =\Bigl(\prod_{a=1}^{k}C_{q_{d_a}}\Bigr)\,|\xi|^{\sum_{a}(g-q_{d_a})}
+  =\Bigl(\prod_{a=1}^{k}C_{q_{d_a}}\Bigr)|\xi|^{kg-s},
+\]
+where the powers of the positive real $|\xi|$ were combined by
+$|\xi|^{\alpha}|\xi|^{\beta}=|\xi|^{\alpha+\beta}$, legitimate because
+$|\xi|>0$, and $\sum_{a}(g-q_{d_a})=kg-\sum_aq_{d_a}=kg-s$.  This is exactly
+the paper's display at paper.tex:488.
+
+\emph{Step 4: the linear combination.}  By \noderef{PClass} there is a finite
+list $L$ of pairs $(c,\mathcal{M})$, with every $\mathcal{M}$ occurring in $L$
+of type $(s,k)$ --- that is, of length $k$ and with orders summing to $s$ ---
+such that
+\[
+  P(\xi)=\sum_{(c,\mathcal{M})\in L}c\,Q_{\mathcal{M}}(\xi)
+  \qquad\text{for every }\xi .
+\]
+Hence, by the triangle inequality and Step 3, for $\xi\in\Omega$,
+\[
+  \bigl|P(\xi)\bigr|
+  \le\sum_{(c,\mathcal{M})\in L}|c|\,\bigl|Q_{\mathcal{M}}(\xi)\bigr|
+  \le\Bigl(\sum_{(c,\mathcal{M})\in L}|c|\prod_{a=1}^{k}C_{q_{d_a(\mathcal{M})}}\Bigr)
+    |\xi|^{kg-s}
+  =M\,|\xi|^{kg-s},
+\]
+where $M$ denotes the bracketed sum.  It is a finite sum of products of
+nonnegative numbers by Step 1, hence $M\ge0$.  Note that the exponent is the
+same for every term because \noderef{PClass} requires every monomial in the
+presentation to have the \emph{same} type $(s,k)$.  This is the assertion.
+\end{proof}

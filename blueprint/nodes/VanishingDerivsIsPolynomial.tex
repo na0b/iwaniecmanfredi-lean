@@ -1,0 +1,143 @@
+\begin{lemma}
+Let $U\subseteq\mathbb{C}$ be open, non-empty and connected, let $m\ge0$ be an
+integer, and
+let $g\colon\mathbb{C}\to\mathbb{C}$ be $C^\infty$ on $U$.  Assume that
+\[
+  D^\nu g(z)=0\qquad\text{for every }z\in U\text{ and every }\nu\text{ with }
+  |\nu|=m+1,
+\]
+where $D^\nu$ runs over the iterated real partial derivatives
+$\partial_{j_1}\cdots\partial_{j_{m+1}}$ of \noderef{PartialWord},
+$\partial_0=\partial/\partial x$ and $\partial_1=\partial/\partial y$.  Then
+there are coefficients $a_{ij}\in\mathbb{C}$, $i,j\ge0$, with $a_{ij}=0$
+whenever $i+j>m$, such that
+\[
+  g(z)=\sum_{i=0}^{m}\sum_{j=0}^{m}a_{ij}\,z^{i}\bar z^{\,j}
+  \qquad(z\in U).
+\]
+
+This is the step Section 7 of the paper states as ``in each case, we conclude
+that $f$ must be a homogeneous polynomial''.  Only the polynomial character is
+proved here; the homogeneity, which turns the degree bound into an exact
+degree, comes from the homogeneity (57) of the extremal inverse and is applied
+separately.
+\end{lemma}
+\begin{proof}
+Throughout, $e_0=1$ and $e_1=i$ are the two coordinate directions, so that
+$\partial_j h=\mathrm{d}h[e_j]$, and for $h\in\mathbb{C}$ we write
+$h^{(0)}=\operatorname{Re}h$ and $h^{(1)}=\operatorname{Im}h$, so that
+$h=h^{(0)}e_0+h^{(1)}e_1$.
+
+\emph{Step 1: the directional-derivative expansion.}  Let $\Omega\subseteq U$ be
+open, let $h\in\mathbb{C}$, let $w\in\Omega$, and suppose the segment
+$\{w+th:0\le t\le1\}$ lies in $\Omega$.  Put $\psi(t)=g(w+th)$.  We claim that
+for every $s\ge0$ and every $t$ with $w+th\in\Omega$,
+\begin{equation}\tag{1}
+  \psi^{(s)}(t)=\sum_{|\nu|=s}c_\nu(h)\,D^\nu g(w+th),
+\end{equation}
+where the sum is over the $2^s$ words $\nu=(j_1,\dots,j_s)$ of length $s$ in
+$\{0,1\}$ and $c_\nu(h)=h^{(j_1)}\cdots h^{(j_s)}$.  Indeed, for $s=0$ this is
+the definition of $\psi$.  Assume (1) for $s$.  Each $D^\nu g$ is $C^\infty$ on
+$\Omega$, and by the chain rule, for any $C^1$ function $F$ on $\Omega$,
+\[
+  \frac{\mathrm{d}}{\mathrm{d}t}F(w+th)=\mathrm{d}F(w+th)[h]
+  =h^{(0)}\,\mathrm{d}F(w+th)[e_0]+h^{(1)}\,\mathrm{d}F(w+th)[e_1]
+  =\sum_{j\in\{0,1\}}h^{(j)}(\partial_jF)(w+th),
+\]
+using the $\mathbb{R}$-linearity of $\mathrm{d}F(w+th)$ in the direction.
+Applying this to each $F=D^\nu g$ in (1) and using
+$\partial_j D^\nu=D^{(j,\nu)}$ --- which is how \noderef{PartialWord} composes,
+the word being extended on the left --- gives (1) for $s+1$.  This proves the
+claim.
+
+\emph{Step 2: all partials of order at least $m+1$ vanish on $U$.}  We show by
+induction on $s\ge m+1$ that $D^\nu g=0$ on $U$ for every $|\nu|=s$.  For
+$s=m+1$ this is the hypothesis.  Assume it for $s$ and let $|\nu|=s+1$.  Write
+$\nu=(j,\nu')$ with $|\nu'|=s$, so that $D^\nu g=\partial_j(D^{\nu'}g)$.  By the
+inductive hypothesis $D^{\nu'}g$ vanishes identically on the open set $U$, so
+its real Fréchet derivative vanishes at every point of $U$, and therefore
+$D^\nu g=0$ on $U$.
+
+\emph{Step 3: $g$ is a polynomial on each ball contained in $U$.}  Let $z_0\in U$
+and let $r>0$ be such that the open ball $B=B(z_0,r)$ is contained in $U$.  Fix
+$z\in B$ and put $h=z-z_0$ and $\psi(t)=g(z_0+th)$; the segment
+$\{z_0+th:0\le t\le1\}$ lies in the convex set $B\subseteq U$.  By Step 1,
+$\psi$ is $C^\infty$ on a neighbourhood of $[0,1]$, and by (1) with $s=m+1$
+together with the hypothesis,
+\[
+  \psi^{(m+1)}(t)=\sum_{|\nu|=m+1}c_\nu(h)\,D^\nu g(z_0+th)=0
+  \qquad(0\le t\le1).
+\]
+Taylor's formula with integral remainder for the one-variable $C^{m+1}$
+function $\psi$ on $[0,1]$ therefore gives
+\[
+  g(z)=\psi(1)=\sum_{s=0}^{m}\frac{\psi^{(s)}(0)}{s!}
+    +\int_0^1\frac{(1-t)^m}{m!}\psi^{(m+1)}(t)\,\mathrm{d}t
+  =\sum_{s=0}^{m}\frac{1}{s!}\sum_{|\nu|=s}c_\nu(z-z_0)\,D^\nu g(z_0),
+\]
+where the second equality uses (1) at $t=0$.  Each $c_\nu(z-z_0)$ is a product
+of $s$ factors, each equal to $\operatorname{Re}(z-z_0)$ or
+$\operatorname{Im}(z-z_0)$.  Writing
+\[
+  \operatorname{Re}(z-z_0)=\tfrac12\bigl((z-z_0)+\overline{(z-z_0)}\bigr),
+  \qquad
+  \operatorname{Im}(z-z_0)=\tfrac1{2i}\bigl((z-z_0)-\overline{(z-z_0)}\bigr),
+\]
+and expanding, and then expanding the powers of $z-z_0$ and
+$\bar z-\bar z_0$ by the binomial theorem, we obtain coefficients
+$a_{ij}(z_0)\in\mathbb{C}$, vanishing unless $i+j\le m$, with
+\begin{equation}\tag{2}
+  g(z)=\sum_{i+j\le m}a_{ij}(z_0)\,z^i\bar z^{\,j}\qquad(z\in B(z_0,r)).
+\end{equation}
+
+\emph{Step 4: rigidity.}  We claim that if coefficients $b_{ij}$, $i+j\le m$,
+satisfy $\sum_{i+j\le m}b_{ij}z^i\bar z^{\,j}=0$ for every $z$ in some nonempty
+open set $O\subseteq\mathbb{C}$, then every $b_{ij}=0$.
+
+Let $\mathcal{P}_m$ denote the complex vector space of functions
+$\mathbb{R}^2\to\mathbb{C}$ of the form $\sum_{a+b\le m}\gamma_{ab}x^ay^b$.  Its
+dimension is the number $N$ of pairs $(a,b)$ with $a+b\le m$, because the
+monomials $x^ay^b$ are linearly independent as functions (a nonzero polynomial
+in two real variables is not the zero function).  Under $z=x+iy$ each
+$z^i\bar z^{\,j}$ with $i+j\le m$ lies in $\mathcal{P}_m$, and conversely each
+$x^ay^b$ with $a+b\le m$ is, by the two displays of Step 3, a linear
+combination of the $z^i\bar z^{\,j}$ with $i+j\le m$; so the $N$ functions
+$z^i\bar z^{\,j}$, $i+j\le m$, span the $N$-dimensional space $\mathcal{P}_m$
+and hence form a basis of it.
+
+Now $Q=\sum_{i+j\le m}b_{ij}z^i\bar z^{\,j}$ is an element of $\mathcal{P}_m$
+vanishing on the nonempty open set $O$.  Writing $Q=\sum_{a+b\le m}
+\gamma_{ab}x^ay^b$ and fixing a point $(x_0,y_0)\in O$, all partial derivatives
+$\partial_x^a\partial_y^bQ$ vanish at $(x_0,y_0)$, since $Q$ vanishes on a
+neighbourhood of it; and those derivatives at $(x_0,y_0)$ determine all the
+$\gamma_{ab}$ (by downward induction on $a+b$, the derivative of order $(a,b)$
+at $(x_0,y_0)$ equals $a!\,b!\,\gamma_{ab}$ plus a combination of
+$\gamma_{a'b'}$ with $a'+b'>a+b$).  Hence every $\gamma_{ab}=0$, so $Q=0$ in
+$\mathcal{P}_m$, and since the $z^i\bar z^{\,j}$ form a basis, every
+$b_{ij}=0$.  This proves the claim.
+
+\emph{Step 5: the coefficients do not depend on the base point.}  For $z_0\in U$
+choose $r(z_0)>0$ with $B(z_0,r(z_0))\subseteq U$ and let
+$\Phi(z_0)=\bigl(a_{ij}(z_0)\bigr)_{i+j\le m}$ be the coefficient family of (2);
+it is well defined, because by Step 4 two families representing $g$ on the same
+ball coincide.  We claim $\Phi$ is locally constant.  Let $z_0\in U$ and
+$z_1\in B(z_0,r(z_0))$.  The set
+$B(z_0,r(z_0))\cap B(z_1,r(z_1))$ is open and contains $z_1$, hence is
+nonempty, and on it both representations (2) hold, so
+\[
+  \sum_{i+j\le m}\bigl(a_{ij}(z_0)-a_{ij}(z_1)\bigr)z^i\bar z^{\,j}=0
+\]
+there.  By Step 4, $a_{ij}(z_0)=a_{ij}(z_1)$ for all $i,j$.  Thus $\Phi$ is
+constant on $B(z_0,r(z_0))$, and so locally constant on $U$.
+
+The set $U$ is connected and nonempty, so a locally constant function on it is
+constant: $\Phi\equiv(a_{ij})$ for a single family $a_{ij}$, $i+j\le m$.
+Extend it by $a_{ij}=0$ for $i+j>m$.  Finally, for $z\in U$ apply (2) with
+$z_0=z$, which is legitimate because $z\in B(z,r(z))$:
+\[
+  g(z)=\sum_{i+j\le m}a_{ij}\,z^i\bar z^{\,j}
+      =\sum_{i=0}^{m}\sum_{j=0}^{m}a_{ij}\,z^i\bar z^{\,j},
+\]
+the second equality because the added terms have $i+j>m$ and so vanishing
+coefficients.  This is the assertion.
+\end{proof}

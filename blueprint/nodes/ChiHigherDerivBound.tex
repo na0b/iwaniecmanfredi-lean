@@ -1,0 +1,244 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$ and let $K\ge1$.  Let
+$V,U\subseteq\mathbb{C}$ be open with $0\in V$, and let
+$H,\chi\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $H$ is continuous on $V$ and differentiable at almost every point
+  of $V$;
+\item[(H2)] $H$ is $K$-quasiconformal on $V$ in the sense of
+  \noderef{QuasiconformalOn}, and $H(0)=0$;
+\item[(H3)] $H$ solves equation (18) on $V$ in the sense of
+  \noderef{SolvesEq18};
+\item[(H4)] $\chi$ is $C^\infty$ on $U$, $H(\xi)\in U$ for every
+  $\xi\in V-\{0\}$, and $\chi(H(\xi))=\xi$ for every $\xi\in V$.
+\end{enumerate}
+Write $\gamma_n$ for the exponent of \noderef{GammaExp} and $D^{w}$ for the
+iterated partial derivative of \noderef{PartialWord}.  Then there is $\delta>0$
+with $\{z:|z|<\delta\}\subseteq H(V)$ and there are constants $B_l\ge0$,
+$l=0,1,2,\dots$, such that
+\[
+  \bigl|D^{w}\chi(z)\bigr|\le B_l\,|z|^{1/\gamma_n-l}
+  \qquad\text{for every word }w\text{ of length }l\text{ and every }
+  0<|z|<\delta .
+\]
+
+This is the estimate the paper reaches at paper.tex:506 in the proof of
+Corollary 2, with the case $l=0$ included as the paper notes at
+paper.tex:502 (``This also holds true for $l=0$ since $\chi(z)=\xi$'').  No
+smoothness of $H$ is assumed: \noderef{Cor1} \emph{produces} it, on the ball
+of its own radius $\rho$, and since the conclusion here is existential in
+$\delta$ the proof simply works inside that ball.
+\end{lemma}
+\begin{proof}
+Write $\gamma=\gamma_n$ and $J(\xi)=\mathrm{Jac}\,H(\xi)$ in the sense of
+\noderef{Jac}.
+
+\emph{Step 0: $\gamma>0$.}  By part (a) of \noderef{GammaRatioMinAtOne}, using
+$n\ge1$ and $1<p$, we have $\gamma=\gamma_n>0$.
+
+\emph{Step 1: Corollary 1.}  The hypotheses of \noderef{Cor1} hold with this
+$n$, $p$, $K$, $V$ and $H$: $V$ is open with $0\in V$; $H$ is continuous on
+$V$ by (H1); $H$ is differentiable at almost every point of $V$ by (H1); $H$ is
+$K$-quasiconformal on $V$ by (H2); $H$ solves (18) on $V$ by (H3); and
+$H(0)=0$ by (H2).  It therefore provides $\rho>0$, constants $0<c<C$ and a
+family $C_m$ with
+\begin{align}
+  c|\xi|^{\gamma}&\le|H(\xi)|\le C|\xi|^{\gamma}
+    &&(|\xi|\le\rho),\tag{41}\\
+  c|\xi|^{2\gamma-2}&\le J(\xi)\le C|\xi|^{2\gamma-2}
+    &&(0<|\xi|\le\rho),\tag{42}\\
+  \sum_{|w|=m}\bigl|D^{w}H(\xi)\bigr|&\le C_m|\xi|^{\gamma-m}
+    &&(m\ge0,\ 0<|\xi|\le\rho),\tag{43}
+\end{align}
+and, as its first conclusion,
+\begin{equation}\tag{43$'$}
+  H\ \text{is of class }C^\infty\ \text{on }\{\xi:|\xi|<\rho\}-\{0\} .
+\end{equation}
+This is the only source of the derivatives $D^{w}H$ that (43) speaks of, and it
+is why no smoothness hypothesis is needed: the radius is $\rho$, and every
+estimate below is made inside the ball of radius $\rho$.
+
+\emph{Step 2: the set $\Omega$.}  Put
+\[
+  \Omega=\bigl\{\xi\in V:0<|\xi|\ \text{and}\ |\xi|<\rho\bigr\}
+  =V\cap\{\xi:|\xi|<\rho\}\cap\bigl(\mathbb{C}-\{0\}\bigr).
+\]
+This is open, being an intersection of three open sets.  Every $\xi\in\Omega$
+satisfies $\xi\neq0$ and $|\xi|<\rho$, so
+$\Omega\subseteq\{\xi:|\xi|<\rho\}-\{0\}$ and therefore $H$ is $C^\infty$ on
+$\Omega$ by (43$'$); a function of class $C^\infty$ on a set is of class
+$C^\infty$ on every subset of it.  Since $|\xi|<\rho$ implies $|\xi|\le\rho$, the estimates
+(41), (42), (43) all hold at every $\xi\in\Omega$.
+
+\emph{Step 3: $J\neq0$ on $\Omega$ --- this is where (42)-lower enters.}  For
+$\xi\in\Omega$, by the lower half of (42),
+\begin{equation}\tag{1}
+  J(\xi)\ge c|\xi|^{2\gamma-2}>0,
+\end{equation}
+because $c>0$ and $|\xi|>0$.  In particular $J(\xi)\neq0$ on $\Omega$.
+
+\emph{Step 4: formula (49).}  Let $l\ge1$ and let $w$ be a word of length $l$.
+The hypotheses of \noderef{Lemma1} hold with the open sets $\Omega$ and $U$,
+the maps $\chi$ and $H$, the smoothness of $H$ on $\Omega$ from Step 2 and of
+$\chi$ on $U$ from (H4), the inclusion $H(\xi)\in U$ for $\xi\in\Omega$ --- by
+(H4), since $\Omega\subseteq V-\{0\}$ --- the relation $\chi(H(\xi))=\xi$ for
+$\xi\in\Omega$ from (H4), since $\Omega\subseteq V$, and $J\neq0$ on $\Omega$
+from Step 3.  It therefore provides $P_w$ with
+$P_w\in\mathbb{P}(4l-3,3l-2)$ relative to $H$ in the sense of
+\noderef{PClass} and
+\begin{equation}\tag{49}
+  D^{w}\chi\bigl(H(\xi)\bigr)=J(\xi)^{1-2l}P_w(\xi)\qquad(\xi\in\Omega).
+\end{equation}
+Note that for $l\ge1$ the two indices are genuine positive integers,
+$4l-3\ge1$ and $3l-2\ge1$, so no truncation occurs and they equal $4l-3$ and
+$3l-2$ as real numbers.
+
+\emph{Step 5: the bound on $P_w$.}  The hypotheses of
+\noderef{PClassGrowthBound} hold with $H$, the open set $\Omega$, the
+smoothness of $H$ on $\Omega$, the fact that every $\xi\in\Omega$ is nonzero,
+the exponent $g=\gamma$, the family $C_m$, and the estimate (43) on $\Omega$
+from Step 2.  Applied to $P_w\in\mathbb{P}(4l-3,3l-2)$ it gives $M_w\ge0$ with
+\begin{equation}\tag{2}
+  \bigl|P_w(\xi)\bigr|\le M_w|\xi|^{(3l-2)\gamma-(4l-3)}\qquad(\xi\in\Omega),
+\end{equation}
+which is the paper's display at paper.tex:492.
+
+\emph{Step 6: the $J^{1-2l}$ factor.}  Let $\xi\in\Omega$ and $l\ge1$.  Since
+$l\ge1$ we have $1-2l\le-1<0$.  The function $t\mapsto t^{1-2l}$ is strictly
+decreasing on $(0,\infty)$ because its exponent is negative; and
+$0<c|\xi|^{2\gamma-2}\le J(\xi)$ by (1).  Therefore
+\begin{equation}\tag{3}
+  \bigl|J(\xi)^{1-2l}\bigr|=J(\xi)^{1-2l}
+  \le\bigl(c|\xi|^{2\gamma-2}\bigr)^{1-2l}
+  =c^{1-2l}\,|\xi|^{(2\gamma-2)(1-2l)},
+\end{equation}
+the first equality because $J(\xi)>0$.  This is the step the paper writes at
+paper.tex:496; note that although it is displayed as an upper bound on
+$J^{1-2l}$, what it consumes is the \emph{lower} bound of (42), precisely
+because $1-2l<0$.
+
+\emph{Step 7: the exponents collapse.}  Combining (49), (2) and (3), for
+$\xi\in\Omega$ and $l\ge1$,
+\[
+  \bigl|D^{w}\chi(H(\xi))\bigr|
+  \le c^{1-2l}M_w\,|\xi|^{(2\gamma-2)(1-2l)}\,|\xi|^{(3l-2)\gamma-(4l-3)}
+  =c^{1-2l}M_w\,|\xi|^{(1-2l)(2\gamma-2)+(3l-2)\gamma-4l+3},
+\]
+the powers of the positive real $|\xi|$ combining additively.  The exponent is
+\[
+  (1-2l)(2\gamma-2)+(3l-2)\gamma-4l+3
+  =\bigl(2\gamma-2-4l\gamma+4l\bigr)+\bigl(3l\gamma-2\gamma-4l+3\bigr)
+  =1-l\gamma,
+\]
+every other term cancelling.  Hence
+\begin{equation}\tag{4}
+  \bigl|D^{w}\chi(H(\xi))\bigr|\le c^{1-2l}M_w\,|\xi|^{1-l\gamma}
+  \qquad(\xi\in\Omega,\ |w|=l\ge1),
+\end{equation}
+which is the paper's display at paper.tex:500.
+
+\emph{Step 8: the case $l=0$.}  The only word of length $0$ is the empty word,
+and $D^{[\,]}\chi=\chi$ by \noderef{PartialWord}.  For $\xi\in\Omega$ we have
+$\chi(H(\xi))=\xi$ by (H4), so
+\begin{equation}\tag{5}
+  \bigl|D^{[\,]}\chi(H(\xi))\bigr|=|\xi|=|\xi|^{1-0\cdot\gamma},
+\end{equation}
+so (4) holds for $l=0$ as well, with the constant $1$ in place of
+$c^{1-2l}M_w$.  This is the paper's remark at paper.tex:502; it must be made
+separately, because (49) is stated only for $l\ge1$ and the indices
+$4l-3$, $3l-2$ are not meaningful at $l=0$.
+
+\emph{Step 9: change of variable --- this is where both halves of (41) enter.}
+Let $\xi\in\Omega$ and put $z=H(\xi)$.  By (41), since $|\xi|\le\rho$,
+\begin{equation}\tag{6}
+  c|\xi|^{\gamma}\le|z|\le C|\xi|^{\gamma}.
+\end{equation}
+In particular $|z|\ge c|\xi|^{\gamma}>0$, so $z\neq0$.  Since $\gamma>0$, the
+map $t\mapsto t^{1/\gamma}$ is increasing on $[0,\infty)$, so (6) gives
+\begin{equation}\tag{7}
+  \Bigl(\frac{|z|}{C}\Bigr)^{1/\gamma}\le|\xi|\le\Bigl(\frac{|z|}{c}\Bigr)^{1/\gamma}.
+\end{equation}
+Fix $l\ge0$ and put $e=1-l\gamma$.  We bound $|\xi|^{e}$ by a multiple of
+$|z|^{e/\gamma}$, distinguishing the sign of $e$, which can be either.
+
+If $e\ge0$ then $t\mapsto t^{e}$ is nondecreasing, so by the upper bound in
+(7),
+\[
+  |\xi|^{e}\le\Bigl(\bigl(|z|/c\bigr)^{1/\gamma}\Bigr)^{e}
+  =c^{-e/\gamma}|z|^{e/\gamma};
+\]
+this uses the \emph{lower} half of (41), which is what bounds $|\xi|$ above.
+
+If $e<0$ then $t\mapsto t^{e}$ is decreasing on $(0,\infty)$, so by the lower
+bound in (7), whose left side is positive since $|z|>0$,
+\[
+  |\xi|^{e}\le\Bigl(\bigl(|z|/C\bigr)^{1/\gamma}\Bigr)^{e}
+  =C^{-e/\gamma}|z|^{e/\gamma};
+\]
+this uses the \emph{upper} half of (41), which is what bounds $|\xi|$ below.
+
+In either case, with
+$\kappa_l=\max\{c^{-e/\gamma},C^{-e/\gamma}\}>0$,
+\begin{equation}\tag{8}
+  |\xi|^{1-l\gamma}\le\kappa_l\,|z|^{1/\gamma-l},
+\end{equation}
+because $e/\gamma=(1-l\gamma)/\gamma=1/\gamma-l$, the division being
+legitimate since $\gamma\neq0$ by Step 0.
+
+\emph{Step 10: the radius $\delta$.}  Put $V_2=\{\xi\in V:|\xi|<\rho\}$, an
+open set containing $0$, since $0\in V$ and $|0|=0<\rho$.  By
+\noderef{QuasiconformalOn} applied to $H$ on $V$ there is $\psi$ with
+$\psi(H(\xi))=\xi$ for every $\xi\in V$ and $\psi$ continuous on $H(V)$, and
+$H(V)$ is open.  We claim
+\begin{equation}\tag{9}
+  H(V_2)=\psi^{-1}(V_2)\cap H(V).
+\end{equation}
+If $w=H(\xi)$ with $\xi\in V_2\subseteq V$, then $w\in H(V)$ and
+$\psi(w)=\xi\in V_2$.  Conversely if $w\in H(V)$ with $\psi(w)\in V_2$, write
+$w=H(\xi)$ with $\xi\in V$; then $\psi(w)=\xi$, so $\xi\in V_2$ and
+$w\in H(V_2)$.  The right side of (9) is open in the subspace $H(V)$ by
+continuity of $\psi$ there, that is, of the form $G\cap H(V)$ with
+$G\subseteq\mathbb{C}$ open; and $H(V)$ is open in $\mathbb{C}$.  So $H(V_2)$
+is open in $\mathbb{C}$, and it contains $H(0)=0$ by (H2).  Hence there is
+$\delta>0$ with
+\begin{equation}\tag{10}
+  \{z:|z|<\delta\}\subseteq H(V_2)\subseteq H(V),
+\end{equation}
+which in particular is the asserted inclusion
+$\{z:|z|<\delta\}\subseteq H(V)$.
+
+Moreover, every $z$ with $0<|z|<\delta$ is $H(\xi)$ for some $\xi\in\Omega$:
+by (10), $z=H(\xi)$ with $\xi\in V_2$, i.e.\ $\xi\in V$ and $|\xi|<\rho$; and
+$\xi\neq0$, since $\xi=0$ would give $z=H(0)=0$, contradicting $|z|>0$.  So
+$\xi\in\Omega$.
+
+\emph{Step 11: the constants.}  For each $l\ge0$ there are only $2^{l}$ words
+of length $l$, so
+\[
+  M_l^{\ast}=\max\bigl\{M_w:|w|=l\bigr\}
+\]
+is a maximum over a finite nonempty set, and $M_l^{\ast}\ge0$; for $l=0$ put
+$M_0^{\ast}=1$.  Define
+\[
+  B_l=\kappa_l\cdot\max\bigl\{1,\ c^{1-2l}M_l^{\ast}\bigr\}\ \ (l\ge1),
+  \qquad B_0=\kappa_0 .
+\]
+Then $B_l\ge0$ for every $l$, since $\kappa_l>0$ and the other factor is
+positive.
+
+Let $l\ge0$, let $w$ be a word of length $l$, and let $z$ satisfy
+$0<|z|<\delta$.  By Step 10 there is $\xi\in\Omega$ with $H(\xi)=z$.  If
+$l\ge1$ then by (4) and (8),
+\[
+  \bigl|D^{w}\chi(z)\bigr|=\bigl|D^{w}\chi(H(\xi))\bigr|
+  \le c^{1-2l}M_w\,|\xi|^{1-l\gamma}
+  \le c^{1-2l}M_l^{\ast}\,\kappa_l\,|z|^{1/\gamma-l}
+  \le B_l\,|z|^{1/\gamma-l},
+\]
+all factors being nonnegative.  If $l=0$ then by (5) and (8),
+\[
+  \bigl|D^{w}\chi(z)\bigr|=|\xi|=|\xi|^{1-0\cdot\gamma}
+  \le\kappa_0|z|^{1/\gamma-0}=B_0|z|^{1/\gamma-0}.
+\]
+This is the assertion, with this $\delta$ and these $B_l$.
+\end{proof}

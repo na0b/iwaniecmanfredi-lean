@@ -1,0 +1,130 @@
+\begin{lemma}
+Write $\mathbb{T}=\mathbb{R}/2\pi\mathbb{Z}$, let $q\colon\mathbb{R}\to\mathbb{T}$
+be the quotient map, and let $\operatorname{ind}$ denote the index about $0$ of
+\noderef{WindingNumber}.
+\begin{enumerate}
+\item[(a)] \emph{(Pointwise products.)}  Let
+$\alpha,\beta,\sigma\colon[0,1]\to\mathbb{C}$ be continuous and nowhere zero
+with $\sigma(t)=\alpha(t)\beta(t)$ for every $t$.  Then
+\[
+  \operatorname{ind}(\sigma)=\operatorname{ind}(\alpha)+\operatorname{ind}(\beta).
+\]
+\item[(b)] \emph{($d$-fold traversal.)}  Let $\psi\colon\mathbb{R}\to\mathbb{C}$
+be continuous with $\psi(x)\neq0$ for all $x$ and $\psi(x+1)=\psi(x)$ for all
+$x$, let $d\in\mathbb{Z}$, and let
+$\gamma_1,\gamma_d\colon[0,1]\to\mathbb{C}$ be continuous and nowhere zero with
+\[
+  \gamma_1(t)=\psi(t),\qquad \gamma_d(t)=\psi(dt)\qquad\text{for all }t\in[0,1].
+\]
+Then $\operatorname{ind}(\gamma_d)=d\,\operatorname{ind}(\gamma_1)$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Throughout we use that $q$ is an additive homomorphism, that
+\begin{equation}\tag{0}
+  q(x)=q(y)\iff x-y\in2\pi\mathbb{Z},
+\end{equation}
+and the characterisation of the index in part (b) of \noderef{WindingCalculus}:
+if $\Theta\colon[0,1]\to\mathbb{R}$ is continuous with
+$\Theta(0)=\arg\gamma(0)$ and $q(\Theta(t))=q(\arg\gamma(t))$ for all $t$, then
+$2\pi\operatorname{ind}(\gamma)=\Theta(1)-\Theta(0)$.
+
+\emph{Proof of (a).}  By part (a) of \noderef{WindingCalculus} choose
+continuous $\Theta_\alpha,\Theta_\beta\colon[0,1]\to\mathbb{R}$ with
+\[
+  \Theta_\alpha(0)=\arg\alpha(0),\quad q\bigl(\Theta_\alpha(t)\bigr)=q\bigl(\arg\alpha(t)\bigr),
+  \qquad
+  \Theta_\beta(0)=\arg\beta(0),\quad q\bigl(\Theta_\beta(t)\bigr)=q\bigl(\arg\beta(t)\bigr).
+\]
+Put
+\[
+  c=\arg\sigma(0)-\Theta_\alpha(0)-\Theta_\beta(0),
+  \qquad
+  \Theta(t)=\Theta_\alpha(t)+\Theta_\beta(t)+c .
+\]
+Then $\Theta$ is continuous and $\Theta(0)=\arg\sigma(0)$ by construction.
+
+We check that $\Theta$ lifts the argument of $\sigma$.  First,
+$q(c)=0$: indeed $\sigma(0)=\alpha(0)\beta(0)$ with $\alpha(0),\beta(0)\neq0$,
+so by the additivity of the argument modulo $2\pi$,
+\[
+  q\bigl(\arg\sigma(0)\bigr)=q\bigl(\arg\alpha(0)\bigr)+q\bigl(\arg\beta(0)\bigr)
+  =q\bigl(\Theta_\alpha(0)\bigr)+q\bigl(\Theta_\beta(0)\bigr),
+\]
+and therefore
+$q(c)=q(\arg\sigma(0))-q(\Theta_\alpha(0))-q(\Theta_\beta(0))=0$.  Now for every
+$t$, using additivity of $q$, the same argument-additivity applied to
+$\sigma(t)=\alpha(t)\beta(t)$ with $\alpha(t),\beta(t)\neq0$, and $q(c)=0$,
+\[
+  q\bigl(\Theta(t)\bigr)=q\bigl(\Theta_\alpha(t)\bigr)+q\bigl(\Theta_\beta(t)\bigr)+q(c)
+  =q\bigl(\arg\alpha(t)\bigr)+q\bigl(\arg\beta(t)\bigr)
+  =q\bigl(\arg\sigma(t)\bigr).
+\]
+So $\Theta$ satisfies both hypotheses of \noderef{WindingCalculus}(b) for
+$\sigma$, and likewise $\Theta_\alpha$, $\Theta_\beta$ do for $\alpha$,
+$\beta$.  Hence
+\[
+  2\pi\operatorname{ind}(\sigma)=\Theta(1)-\Theta(0)
+  =\bigl(\Theta_\alpha(1)-\Theta_\alpha(0)\bigr)+\bigl(\Theta_\beta(1)-\Theta_\beta(0)\bigr)
+  =2\pi\operatorname{ind}(\alpha)+2\pi\operatorname{ind}(\beta),
+\]
+the constant $c$ cancelling in the difference.  Dividing by $2\pi\neq0$ gives (a).
+
+\emph{Proof of (b).}  Note first that $\gamma_1$ is a loop: $\gamma_1(0)=\psi(0)$
+and $\gamma_1(1)=\psi(1)=\psi(0+1)=\psi(0)$.  So by part (c) of
+\noderef{WindingCalculus} there is $c\in\mathbb{Z}$ with
+$\operatorname{ind}(\gamma_1)=c$.
+
+By part (a) of \noderef{WindingCalculus} choose a continuous
+$\Theta\colon[0,1]\to\mathbb{R}$ with $\Theta(0)=\arg\gamma_1(0)=\arg\psi(0)$ and
+$q(\Theta(t))=q(\arg\gamma_1(t))=q(\arg\psi(t))$ for all $t\in[0,1]$.  By part
+(b) of \noderef{WindingCalculus},
+\begin{equation}\tag{1}
+  \Theta(1)-\Theta(0)=2\pi\operatorname{ind}(\gamma_1)=2\pi c .
+\end{equation}
+
+\emph{A branch on all of $\mathbb{R}$.}  Define $\Phi\colon\mathbb{R}\to\mathbb{R}$
+by
+\[
+  \Phi(x)=\Theta(x-m)+2\pi c\,m,\qquad\text{where }m=\lfloor x\rfloor,
+\]
+so that $x-m\in[0,1)$.  We record four properties.
+
+(i) \emph{$\Phi$ is continuous.}  On each interval $[m,m+1)$ with
+$m\in\mathbb{Z}$ the formula reads $\Phi(x)=\Theta(x-m)+2\pi cm$, which is
+continuous there.  It remains to check that the left-hand limit at an integer
+$m+1$ equals the value there.  As $x\uparrow m+1$ we have
+$\lfloor x\rfloor=m$ and $x-m\uparrow1$, so
+$\Phi(x)\to\Theta(1)+2\pi cm$, while
+$\Phi(m+1)=\Theta(0)+2\pi c(m+1)=\Theta(0)+2\pi c+2\pi cm$, and these agree by
+(1).  Hence $\Phi$ is continuous on $\mathbb{R}$.
+
+(ii) \emph{$\Phi$ lifts the argument of $\psi$.}  Let $x\in\mathbb{R}$ and
+$m=\lfloor x\rfloor$.  Iterating $\psi(y+1)=\psi(y)$ exactly $|m|$ times gives
+$\psi(x)=\psi(x-m)$.  Since $c\in\mathbb{Z}$ and $m\in\mathbb{Z}$ we have
+$q(2\pi cm)=0$ by (0), so
+\[
+  q\bigl(\Phi(x)\bigr)=q\bigl(\Theta(x-m)\bigr)+q(2\pi cm)
+  =q\bigl(\arg\psi(x-m)\bigr)=q\bigl(\arg\psi(x)\bigr).
+\]
+
+(iii) \emph{$\Phi(0)=\Theta(0)=\arg\psi(0)$}, since $\lfloor0\rfloor=0$.
+
+(iv) \emph{$\Phi(m)=\Phi(0)+2\pi cm$ for every $m\in\mathbb{Z}$}, directly from
+the formula: $\lfloor m\rfloor=m$, so $\Phi(m)=\Theta(0)+2\pi cm$.
+
+\emph{Conclusion.}  Define $\Theta_d\colon[0,1]\to\mathbb{R}$ by
+$\Theta_d(t)=\Phi(dt)$.  It is continuous by (i).  By (iii),
+$\Theta_d(0)=\Phi(0)=\arg\psi(0)=\arg\gamma_d(0)$, using
+$\gamma_d(0)=\psi(d\cdot0)=\psi(0)$.  By (ii), for every $t\in[0,1]$,
+\[
+  q\bigl(\Theta_d(t)\bigr)=q\bigl(\arg\psi(dt)\bigr)=q\bigl(\arg\gamma_d(t)\bigr).
+\]
+So $\Theta_d$ satisfies both hypotheses of \noderef{WindingCalculus}(b) for
+$\gamma_d$, and therefore, using (iv) with $m=d$,
+\[
+  2\pi\operatorname{ind}(\gamma_d)=\Theta_d(1)-\Theta_d(0)=\Phi(d)-\Phi(0)=2\pi c\,d .
+\]
+Dividing by $2\pi\neq0$ gives
+$\operatorname{ind}(\gamma_d)=d\,c=d\operatorname{ind}(\gamma_1)$.
+\end{proof}

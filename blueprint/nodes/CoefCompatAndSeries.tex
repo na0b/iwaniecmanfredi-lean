@@ -1,0 +1,270 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, write
+$\mathbb{B}=\{\xi:|\xi|<1\}$, and let $H\colon\mathbb{C}\to\mathbb{C}$ be
+continuous on $\mathbb{B}$, a member of $W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in
+the sense of \noderef{MemWLocOn}, differentiable at almost every point of
+$\mathbb{B}$, and a solution of (18) on $\mathbb{B}$ in the sense of
+\noderef{SolvesEq18}.  Let $a_j$,
+$j\in\mathbb{Z}$, be the Fourier coefficients of \noderef{FourierCoefOfH}, let
+$\lambda_j=\lambda_{|j|}(n,p)$ be the exponent of \noderef{LambdaCoef} and
+$\epsilon_k=\epsilon_k(n,p)$ the coefficient of \noderef{EpsCoef}.  Suppose
+given $A\colon\mathbb{Z}\to\mathbb{C}$ with
+\[
+  a_k(r)=A_k\,r^{\lambda_k}\qquad\text{for all }k\in\mathbb{Z}\text{ with }|k|\ge n
+  \text{ and all }r\in(0,1).
+\]
+Then:
+\begin{enumerate}
+\item[(38)] for every $k\in\mathbb{Z}$ with $|k|\ge n$,
+\[
+  \bigl[2\lambda_k+p(n-k)\bigr]A_k=(2-p)(n+k)\overline{A_{-k}};
+\]
+\item[(a)] $A_{-n}=0$;
+\item[(39)] for every integer $k>n$, $A_{-k}=\epsilon_k\overline{A_k}$;
+\item[(b)] for every integer $k\ge n$, every $r>0$ and every
+$\theta\in\mathbb{R}$, the $k$-th summand $T_k$ of (19), in the sense of
+\noderef{Thm2Term}, satisfies
+\[
+  T_k\bigl(re^{i\theta}\bigr)
+  =\bigl(A_ke^{ik\theta}+\epsilon_k\overline{A_k}e^{-ik\theta}\bigr)r^{\lambda_k}e^{-in\theta};
+\]
+\item[(40)] for every $r\in(0,1)$,
+\[
+  \int_0^{2\pi}\Bigl|H\bigl(re^{i\theta}\bigr)
+    -\sum_{k=n}^{n+N}T_k\bigl(re^{i\theta}\bigr)\Bigr|^2\,d\theta\ \longrightarrow\ 0
+  \qquad(N\to\infty),
+\]
+that is, the series (40) converges to $H(r,\cdot)$ in $L^2(0,2\pi)$.
+\end{enumerate}
+A coefficient family $A$ as in the hypothesis exists by \noderef{FourierCoefForm36},
+which supplies for each $k$ with $|k|\ge n$ a constant with this property; the
+family is taken as given here so that no choice is made inside the statement.
+\end{lemma}
+\begin{proof}
+Throughout, $\lambda_j=\lambda_{|j|}(n,p)$ depends on $j$ only through $j^2$, so
+$\lambda_{-j}=\lambda_j$; this is the paper's remark at line 331.
+
+\emph{Step 0: the indicial equation, without unfolding the square root.}  By
+\noderef{LambdaCoef}, for every $j\in\mathbb{Z}$,
+\[
+  2\lambda_j+pn=\sqrt{4j^2(p-1)+n^2(p-2)^2},
+\]
+the right-hand side being nonnegative.  Squaring,
+$(2\lambda_j+pn)^2=4j^2(p-1)+n^2(p-2)^2$, i.e.
+\[
+  4\lambda_j^2+4pn\lambda_j+n^2p^2=4j^2(p-1)+n^2(p-2)^2 .
+\]
+Hence, using $(p-2)^2-p^2=-4(p-1)$,
+\[
+  4\lambda_j^2+4pn\lambda_j=4j^2(p-1)+n^2\bigl[(p-2)^2-p^2\bigr]
+  =4j^2(p-1)-4n^2(p-1)=4(j^2-n^2)(p-1),
+\]
+and dividing by $4$,
+\begin{equation}\tag{I}
+  \lambda_j^2+pn\lambda_j+(n^2-j^2)(p-1)=0 .
+\end{equation}
+This is the indicial equation of paper.tex:315.  It is the only property of
+$\lambda_j$ used below, so no square root is ever unfolded.
+
+\emph{Step 0: the hypotheses of the Section-4 nodes.}  Both
+\noderef{FourierCoefRegularity} and \noderef{FourierCoefOde} ask of $H$ that it
+be continuous on $\mathbb{B}$, that it lie in
+$W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in the sense of \noderef{MemWLocOn}, and
+that it be differentiable at almost every point of $\mathbb{B}$; all three are
+hypotheses of the present lemma.  \noderef{FourierCoefOde} asks in addition
+that $H$ solve (18) on $\mathbb{B}$, which is a hypothesis as well.
+
+\emph{Step 1: proof of (38).}  Let $k\in\mathbb{Z}$ with $|k|\ge n$ and let
+$r\in(0,1)$.  By the first clause of \noderef{FourierCoefOde}, whose
+hypotheses hold by Step 0,
+\begin{equation}\tag{33}
+  2r\,a_k'(r)=-p(n-k)a_k(r)-(p-2)(n+k)\overline{a_{-k}(r)} .
+\end{equation}
+Since $|-k|=|k|\ge n$, the hypothesis applies to both indices and gives, on
+$(0,1)$,
+\[
+  a_k(r)=A_kr^{\lambda_k},\qquad a_{-k}(r)=A_{-k}r^{\lambda_{-k}}=A_{-k}r^{\lambda_k},
+\]
+using $\lambda_{-k}=\lambda_k$.  Differentiating the first identity on the open
+interval $(0,1)$,
+$a_k'(r)=A_k\lambda_kr^{\lambda_k-1}$, so
+$2r\,a_k'(r)=2\lambda_kA_kr^{\lambda_k}$; and $r^{\lambda_k}$ is a positive
+real, so $\overline{a_{-k}(r)}=\overline{A_{-k}}\,r^{\lambda_k}$.  Substituting
+into (33),
+\[
+  2\lambda_kA_kr^{\lambda_k}
+  =\Bigl[-p(n-k)A_k-(p-2)(n+k)\overline{A_{-k}}\Bigr]r^{\lambda_k},
+\]
+and dividing by $r^{\lambda_k}\neq0$,
+\[
+  2\lambda_kA_k=-p(n-k)A_k-(p-2)(n+k)\overline{A_{-k}},
+\]
+that is $\bigl[2\lambda_k+p(n-k)\bigr]A_k=-(p-2)(n+k)\overline{A_{-k}}
+=(2-p)(n+k)\overline{A_{-k}}$, which is (38).
+
+\emph{Step 2: proof of (a).}  The paper's sentence ``For $k=\pm n$, in view of
+$\lambda_{-n}=\lambda_n=0$, we obtain $A_{-n}=0$'' compresses two distinct
+derivations, since (38) is indexed over all $k$ with $|k|\ge n$ and both $k=n$
+and $k=-n$ are available.  We use the corner $k=-n$, because it is the one that
+needs no restriction on $p$.  By part (23) of \noderef{LambdaEpsEstimates},
+$\lambda_n(n,p)=0$, hence also $\lambda_{-n}=\lambda_n=0$.
+
+\emph{Corner $k=-n$.}  Take (38) at the index $k=-n$, which is permitted since
+$|-n|=n\ge n$.  Its right-hand factor is $n+k=n-n=0$, and its left-hand
+coefficient is $2\lambda_{-n}+p\bigl(n-(-n)\bigr)=0+2pn$, so (38) reads
+\[
+  2pn\,A_{-n}=(2-p)\cdot0\cdot\overline{A_{n}}=0 .
+\]
+Since $p>1>0$ and $n\ge1$ we have $2pn>0$, in particular $2pn\neq0$, so
+$A_{-n}=0$.
+
+For comparison, the other corner $k=n$ gives the same conclusion but only for
+$p\neq2$: there $2\lambda_n+p(n-n)=0$, so the left side of (38) vanishes and
+(38) reads $0=(2-p)(2n)\overline{A_{-n}}$, from which $\overline{A_{-n}}=0$
+follows only after dividing by $(2-p)(2n)$, which requires $p\neq2$.  Since
+Theorem 2 as printed does not exclude $p=2$, we do not use that corner.
+
+Note that there is no constraint on $A_n$: at $k=n$ the left side of (38)
+vanishes identically, and at $k=-n$ the right side does.
+
+\emph{Step 3: proof of (39), and the two forms of $\epsilon_k$.}  Let
+$k\in\mathbb{Z}$ with $k>n$.  We apply (38) at the index $-k$, which is
+permitted since $|-k|=k\ge n$.  As in Step 2, this is the instance that avoids
+any restriction on $p$: it has the \emph{coefficient of the unknown} on the
+left, so the division below is by a quantity that is positive for every
+$1<p<\infty$.
+
+First, three facts about signs.  By part (25) of \noderef{LambdaEpsEstimates},
+$\lambda_k\ge(p-1)/(np)>0$ for $k\ge n+1$, so
+\begin{equation}\tag{1}
+  \lambda_k>0,\qquad \lambda_k+n+k>0,\qquad 2\lambda_k+p(n+k)>0,
+\end{equation}
+the second because $n,k>0$ and the third because $\lambda_k>0$, $p>0$ and
+$n+k>0$.  No claim like $(2-p)(n+k)\neq0$ is needed anywhere below.
+
+Now take (38) at the index $-k$.  Using $\lambda_{-k}=\lambda_k$ and
+$-(-k)=k$, it reads
+\begin{equation}\tag{2}
+  \bigl[2\lambda_k+p(n+k)\bigr]A_{-k}=(2-p)(n-k)\overline{A_k} .
+\end{equation}
+By the third inequality of (1) we may divide by $2\lambda_k+p(n+k)$:
+\begin{equation}\tag{3}
+  A_{-k}=\frac{(2-p)(n-k)}{2\lambda_k+p(n+k)}\;\overline{A_k} .
+\end{equation}
+
+It remains to identify the real quotient in (3) with $\epsilon_k$.  This is the
+same polynomial identity as the one relating the paper's two displayed forms of
+$\epsilon_k$ at paper.tex:342, taken at $-k$ in place of $k$.  We claim
+\begin{equation}\tag{4}
+  (2-p)(n-k)\bigl(\lambda_k+n+k\bigr)
+  =\bigl(\lambda_k+n-k\bigr)\bigl(2\lambda_k+p(n+k)\bigr).
+\end{equation}
+Indeed, expanding the right-hand side,
+\[
+  2\lambda_k^2+p(n+k)\lambda_k+2(n-k)\lambda_k+p(n^2-k^2),
+\]
+and substituting $\lambda_k^2=-pn\lambda_k-(n^2-k^2)(p-1)$ from (I),
+\begin{align*}
+  &=-2pn\lambda_k-2(n^2-k^2)(p-1)+p(n+k)\lambda_k+2(n-k)\lambda_k+p(n^2-k^2)\\
+  &=\lambda_k\bigl[-2pn+pn+pk+2n-2k\bigr]+(n^2-k^2)\bigl[-2(p-1)+p\bigr]\\
+  &=\lambda_k\bigl[-pn+pk+2n-2k\bigr]+(n^2-k^2)(2-p)\\
+  &=\lambda_k(2-p)(n-k)+(n-k)(n+k)(2-p)
+  =(2-p)(n-k)\bigl(\lambda_k+n+k\bigr),
+\end{align*}
+where the penultimate step used $-pn+2n=n(2-p)$ and $pk-2k=-k(2-p)$.  This is
+(4).  Dividing (4) by the positive number
+$\bigl(\lambda_k+n+k\bigr)\bigl(2\lambda_k+p(n+k)\bigr)$, legitimate by (1),
+gives
+\begin{equation}\tag{5}
+  \frac{(2-p)(n-k)}{2\lambda_k+p(n+k)}
+  =\frac{\lambda_k+n-k}{\lambda_k+n+k}=\epsilon_k,
+\end{equation}
+the last equality by \noderef{EpsCoef}.  So the quotient appearing in (3) is
+exactly $\epsilon_k$, and the computation used only the indicial equation (I),
+never formula (37)'s square root.
+
+Substituting (5) into (3),
+\[
+  A_{-k}=\epsilon_k\overline{A_k},
+\]
+which is (39).
+
+Two remarks.  First, the second form of $\epsilon_k$ has denominator
+$\lambda_k+n+k$, which vanishes at $k=-n$ (there $\lambda_{-n}=0$ and
+$n+k=0$); that is exactly why the paper restricts (39) to $|k|>n$.  Second,
+the case $p=2$, which the derivation above includes, is the one the paper
+computes explicitly at paper.tex:226--229.  There the radicand of
+\noderef{LambdaCoef} is $4k^2(p-1)+n^2(p-2)^2=4k^2$, so
+$\lambda_k=\tfrac12(-2n+2|k|)=|k|-n$ for every $k$, and consequently
+$\epsilon_k=(\lambda_k+n-k)/(\lambda_k+n+k)=0$ for $k\ge0$ by
+\noderef{EpsCoef}.  Then (39) gives $A_{-k}=0$ for every $k\ge n$, and by
+Step 4 below the $k$-th summand of (19) is
+$T_k(\xi)=A_k\xi^k|\xi|^{0}\xi^{-n}=A_k\xi^{k-n}$, so that (40) becomes
+$H(\xi)=\sum_{k\ge n}A_k\xi^{k-n}$ --- the paper's displayed formula for
+$p=2$.
+
+\emph{Step 4: proof of (b), the identification of (19) with (40).}  Let
+$k\ge n$, $r>0$, $\theta\in\mathbb{R}$ and $\xi=re^{i\theta}$.  Since
+$|e^{i\theta}|=1$ and $r>0$ we have $|\xi|=r$, and
+\[
+  \xi^k=r^ke^{ik\theta},\qquad \bar\xi^{\,k}=r^ke^{-ik\theta},\qquad
+  \xi^{-n}=r^{-n}e^{-in\theta}.
+\]
+Hence, by \noderef{Thm2Term},
+\[
+  T_k(\xi)=\bigl(A_kr^ke^{ik\theta}+\epsilon_k\overline{A_k}r^ke^{-ik\theta}\bigr)
+    r^{\lambda_k+n-k}\,r^{-n}e^{-in\theta}
+  =\bigl(A_ke^{ik\theta}+\epsilon_k\overline{A_k}e^{-ik\theta}\bigr)
+    r^{k+(\lambda_k+n-k)-n}e^{-in\theta},
+\]
+where the powers of the positive real $r$ combine by $r^ar^b=r^{a+b}$.  The
+exponent is $k+\lambda_k+n-k-n=\lambda_k$, which gives (b).  This is the sense
+in which (40) is ``the polar form of (19)'', as the paper says at line 351.
+
+\emph{Step 5: proof of (40).}  Fix $r\in(0,1)$.
+
+First, $a_j(r)=0$ whenever $|j|<n$.  Indeed, for each $j\in\mathbb{Z}$ the
+function $a_j$ is continuous on $[0,1)$ by part (a) of
+\noderef{FourierCoefRegularity} and $C^\infty$ on $(0,1)$ by the third clause
+of \noderef{FourierCoefOde}, and satisfies the Euler equation (35) on $(0,1)$
+by the second clause of \noderef{FourierCoefOde}; so \noderef{FourierCoefForm36}
+applies to $a_j$ and its first case gives $a_j=0$ on $[0,1)$ when $|j|<n$.
+
+Now let $N\ge0$ and put $M=n+N$.  By part (f) of
+\noderef{FourierCoefRegularity}, the expansion (29) converges in
+$L^2(0,2\pi)$:
+\[
+  \int_0^{2\pi}\Bigl|H\bigl(re^{i\theta}\bigr)
+    -\sum_{|j|\le M}a_j(r)e^{i(j-n)\theta}\Bigr|^2d\theta\ \longrightarrow\ 0
+  \qquad(M\to\infty).
+\]
+We identify the partial sum.  The index set $\{j:|j|\le M\}$ splits into
+$\{j:|j|<n\}$, where $a_j(r)=0$, and the two blocks $n\le j\le M$ and
+$-M\le j\le -n$, which correspond under $j\mapsto-j$; the blocks are disjoint
+because $n\ge1$.  Hence
+\[
+  \sum_{|j|\le M}a_j(r)e^{i(j-n)\theta}
+  =\sum_{j=n}^{M}\Bigl[a_j(r)e^{i(j-n)\theta}+a_{-j}(r)e^{i(-j-n)\theta}\Bigr].
+\]
+By hypothesis $a_j(r)=A_jr^{\lambda_j}$ and $a_{-j}(r)=A_{-j}r^{\lambda_j}$ for
+$j\ge n$, so the bracket equals
+\[
+  r^{\lambda_j}\bigl[A_je^{ij\theta}+A_{-j}e^{-ij\theta}\bigr]e^{-in\theta}.
+\]
+Finally $A_{-j}=\epsilon_j\overline{A_j}$ for every $j\ge n$: for $j>n$ this is
+(39) from Step 3, and for $j=n$ both sides vanish, since $A_{-n}=0$ by Step 2
+and $\epsilon_n=0$ by part (23) of \noderef{LambdaEpsEstimates}.  Therefore,
+using Step 4,
+\[
+  \sum_{|j|\le M}a_j(r)e^{i(j-n)\theta}
+  =\sum_{j=n}^{M}\bigl(A_je^{ij\theta}+\epsilon_j\overline{A_j}e^{-ij\theta}\bigr)
+    r^{\lambda_j}e^{-in\theta}
+  =\sum_{j=n}^{n+N}T_j\bigl(re^{i\theta}\bigr).
+\]
+As $N\to\infty$ we have $M=n+N\to\infty$, so the convergence just quoted gives
+\[
+  \int_0^{2\pi}\Bigl|H\bigl(re^{i\theta}\bigr)
+    -\sum_{j=n}^{n+N}T_j\bigl(re^{i\theta}\bigr)\Bigr|^2d\theta\longrightarrow0,
+\]
+which is (40).
+\end{proof}

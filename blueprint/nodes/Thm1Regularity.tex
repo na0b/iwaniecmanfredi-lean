@@ -1,0 +1,494 @@
+\begin{theorem}
+Let $1<p<\infty$, let $k\ge1$ be an integer and $\alpha\in(0,1]$ with
+$k+\alpha$ equal to the right-hand side of (9), as given by
+\noderef{KAlphaExp}.  Assume the three quoted bundles (C1), (C2), (C3) of
+\noderef{CGradPackage}, \noderef{QCPackage} and \noderef{SmoothOffZeros}.
+Let $\Omega\subseteq\mathbb{C}$ be a plane domain, that is open and connected,
+and let $u\colon\mathbb{C}\to\mathbb{R}$ be $p$-harmonic on $\Omega$ in the
+sense of \noderef{PHarmonicOn}.  Then there is
+$\tilde u\colon\mathbb{C}\to\mathbb{R}$ with
+\begin{enumerate}
+\item[(a)] $\tilde u(z)=u(z)$ for almost every $z$ with $z\in\Omega$;
+\item[(b)] $\tilde u\in C^{k,\alpha}_{\mathrm{loc}}(\Omega)$ in the sense of
+  \noderef{MemHolderLocOn};
+\item[(c)] $\tilde u\in W^{k+2,q}_{\mathrm{loc}}(\Omega)$ in the sense of
+  \noderef{MemWLocOn} for every $q$ with $1\le q<2/(2-\alpha)$.
+\end{enumerate}
+
+This is the assertion (8) of Theorem 1 of the paper, with the integrability
+range (10).  It covers every $1<p<\infty$: Section 6 opens at paper.tex:515
+with $p\neq2$, but Theorem 1 claims (8) for all $p$, and only its optimality
+clause at paper.tex:95 excludes $p=2$.
+
+Two points about the shape.  First, the conclusion is asserted of a
+representative $\tilde u$ rather than of $u$, and it must be: $p$-harmonicity
+constrains $u$ only through integrals against test functions and through
+membership in $L^{p}_{\mathrm{loc}}$, all unaffected by changing $u$ on a null
+set, whereas $C^{k,\alpha}_{\mathrm{loc}}$ requires $C^{k}$-smoothness and so
+is destroyed by changing a function at a single point.  Since
+$W^{k+2,q}_{\mathrm{loc}}$ is itself invariant under changes on null sets, (c)
+holds for $u$ as well as for $\tilde u$.  For the same reason the quoted
+bundles (C2) and (C3) are read of a representative of the complex gradient:
+quasiregularity and $W^{1,2}_{\mathrm{loc}}$ membership see that gradient only
+almost everywhere, so its continuity, the discreteness of its zero set and its
+smoothness off that set are statements about its continuous representative, as
+the paper's own $f^{-1}(0)=\{z:\nabla u(z)=0\}$ at paper.tex:156 already
+indicates.  The proof below introduces that representative once, in Step 2, and
+runs on it throughout.  Second, Section 3's normalisation of
+the factorization (15) --- that $\chi$ and its inverse may be taken $C^\infty$
+off the singular point --- is \emph{not} a hypothesis here: it is derived from
+the three bundles by \noderef{NormalizedFactorization}, which are exactly the
+ones the note at paper.tex:103 enumerates.  Nothing beyond them is assumed: in
+particular the smoothness of the hodograph inverse off the origin, which
+Section 3 takes as a standing assumption at paper.tex:183 and which
+paper.tex:115 licenses for Theorem 2 only, is not a hypothesis anywhere on this
+chain --- it is produced from the expansion (19) by \noderef{Cor1}, as the
+paper does at paper.tex:387--388.
+\end{theorem}
+\begin{proof}
+One remark on well-posedness before the argument proper.  The hypothesis above
+presents the pair $(k,\alpha)$ as given, whereas Theorem 1 of the paper says at
+paper.tex:87--90 that ``the integer $k\ge1$ and the exponent $\alpha\in(0,1]$
+are determined by the equation (9)''.  By \noderef{KAlphaWellDefined} there is,
+for the given $p$, exactly one pair consisting of an integer $k\ge1$ and a real
+number $\alpha$ with $0<\alpha\le1$ such that $k+\alpha$ equals the right-hand
+side of (9); so the hypothesis on $(k,\alpha)$ is satisfiable for every
+$1<p<\infty$ and determines the pair from $p$, exactly as the paper asserts, and
+the statement proved below is therefore not vacuous for any $p$.  This is a
+well-posedness remark and not a step in the argument: nothing in the rest of
+this proof invokes that lemma, every step below being valid for whichever pair
+satisfies the hypothesis.
+
+Write $d=d(p)$ for the exponent of \noderef{DExp} and $d\sigma$ for plane
+Lebesgue measure.  By \noderef{KAlphaEqDExpAddOne} and the hypothesis on
+$(k,\alpha)$,
+\begin{equation}\tag{1}
+  d+1=\text{(right-hand side of (9))}=k+\alpha,\qquad\text{so}\qquad
+  d=k-1+\alpha .
+\end{equation}
+In particular $d-m=k+\alpha-(m+1)$ for every $m$, which is the bookkeeping used
+below.
+
+\emph{Step 1: the complex gradient.}  By \noderef{PHarmonicOn} there is
+$g\colon\mathbb{C}\to\mathbb{C}$ with
+$u\in L^{p}_{\mathrm{loc}}(\Omega)$ and $g\in L^{p}_{\mathrm{loc}}(\Omega)$ in
+the sense of \noderef{MemLpLocOn}, with
+\begin{equation}\tag{2}
+  F_0:=\operatorname{Re}g\ \text{the weak }\partial_0\text{-derivative of }u,
+  \qquad
+  F_1:=\operatorname{Im}g\ \text{the weak }\partial_1\text{-derivative of }u
+\end{equation}
+on $\Omega$ in the sense of \noderef{IsWeakPartialOn}, and with the weak
+$p$-harmonic equation.  Here $F_0$ and $F_1$ are real-valued, and are read as
+complex-valued functions wherever the ambient notions require it, as
+\noderef{PHarmonicOn} does.  Put
+\[
+  f=\tfrac12\bar g .
+\]
+The clause \texttt{complex\_gradient} of \noderef{CGradPackage}, applied with
+$p$, $\Omega$, $u$, $g$, the openness of $\Omega$, $1<p$, the
+$p$-harmonicity of $u$ and the two clauses (2), gives
+\begin{equation}\tag{3}
+  f\in W^{1,2}_{\mathrm{loc}}(\Omega),\qquad
+  f\ \text{solves (12) on }\Omega,\qquad
+  f\ \text{is }K\text{-quasiregular on }\Omega,
+\end{equation}
+with $K=\max\{p-1,1/(p-1)\}$, in the senses of \noderef{MemWLocOn},
+\noderef{SolvesEq12} and \noderef{QuasiregularOn}.  Note $K\ge1$: if $p\ge2$
+then $p-1\ge1$, and if $p<2$ then $0<p-1<1$ so $1/(p-1)>1$.
+
+\emph{Step 2: the continuous representative of the gradient.}  First we record
+the relation between $g$ and $f$: as $f=\tfrac12\bar g$,
+\begin{equation}\tag{4}
+  F_0=\operatorname{Re}g=f+\bar f,\qquad
+  F_1=\operatorname{Im}g=i\bigl(f-\bar f\bigr),
+\end{equation}
+the first because $f+\bar f=\tfrac12(\bar g+g)=\operatorname{Re}g$ and the
+second because
+$i(f-\bar f)=\tfrac{i}{2}(\bar g-g)=\tfrac{i}{2}(-2i\operatorname{Im}g)
+=\operatorname{Im}g$.
+
+The clause \texttt{qr\_continuous} of \noderef{QCPackage}, applied with $K$,
+$\Omega$, $f$, the openness of $\Omega$ and the quasiregularity in (3),
+provides $\hat f\colon\mathbb{C}\to\mathbb{C}$ with
+\begin{equation}\tag{4$'$}
+  \hat f=f\ \text{almost everywhere on }\Omega,\qquad
+  \hat f\ \text{is continuous on }\Omega .
+\end{equation}
+It does not give continuity of $f$ itself and cannot: by
+\noderef{QuasiregularOn} quasiregularity constrains $f$ only through
+$W^{1,2}_{\mathrm{loc}}$ membership, which \noderef{MemWLocOn} expresses by
+integral identities and indicator $L^2$-conditions, and through an
+almost-everywhere inequality between the weak Wirtinger derivatives of $f$,
+which by \noderef{IsWeakWirtingerOn} are themselves determined by the class of
+$f$ up to null sets; none of this is affected by altering $f$ on a null set.  Put
+\[
+  \hat F_0=\hat f+\overline{\hat f},\qquad
+  \hat F_1=i\bigl(\hat f-\overline{\hat f}\bigr),
+\]
+which are real-valued and continuous on $\Omega$ by the second clause of
+(4$'$), and which by (4) and the first clause of (4$'$) satisfy
+$\hat F_j=F_j$ almost everywhere on $\Omega$.  By \noderef{IsWeakPartialOn} the
+assertion that a function is the weak $\partial_j$-derivative of $u$ on
+$\Omega$ is the identity $\int u\,\partial_j\varphi=-\int F_j\varphi$ over test
+functions for $\Omega$, and the right-hand integral is unchanged when $F_j$ is
+altered on a null set; so by (2),
+\begin{equation}\tag{4$''$}
+  \hat F_0\ \text{and}\ \hat F_1\ \text{are the weak }\partial_0\text{- and }
+  \partial_1\text{-derivatives of }u\ \text{on }\Omega .
+\end{equation}
+Finally, the clause \texttt{complex\_gradient\_rep} of
+\noderef{CGradPackage}, applied with $p$, $\Omega$, $u$, $g$ and
+$\hat f$, the openness of $\Omega$, $1<p$, the $p$-harmonicity of $u$, the two
+clauses (2), and the two clauses of (4$'$) --- note that
+$\hat f=f=\tfrac12\bar g$ almost everywhere on $\Omega$ is the first of them
+--- gives
+\begin{equation}\tag{4$'''$}
+  \hat f\ \text{is differentiable at almost every point of }\Omega,\qquad
+  \hat f\ \text{solves (12) on }\Omega
+\end{equation}
+in the sense of \noderef{SolvesEq12}.  Of these two clauses it is the first,
+the almost-everywhere differentiability of $\hat f$, that is genuinely new:
+the second could equally be read off from the second clause of (3), because by
+\noderef{SolvesEq12} and \noderef{IsWeakWirtingerOn} solving (12) is a
+property of the almost-everywhere class of its argument --- the local
+integrability and integration-by-parts clauses see the argument only through
+integrals, and its pointwise values enter (12) only inside an ``almost every
+$z$'' quantifier --- and $\hat f=f$ almost everywhere on $\Omega$ by (4$'$).
+Nothing in (3), by contrast, gives differentiability of any representative at
+any point, and that is what the smoothness bundle (C3) consumes.
+
+\emph{Step 3: $u$ is locally integrable.}  Let $\kappa\subseteq\Omega$ be
+compact.  By Step 1 the indicator of $\kappa$ times $u$ lies in $L^{p}$, and
+$\kappa$ has finite measure, so by H\"older's inequality with exponents $p\ge1$
+and $p/(p-1)$ it lies in $L^{1}$.  Hence
+$u\in L^{1}_{\mathrm{loc}}(\Omega)$ in the sense of \noderef{MemLpLocOn}.
+
+\emph{Step 4: the representative.}  The hypotheses of
+\noderef{WeakGradContinuousRep} hold for $\Omega$, $u$ and
+$\hat F_0,\hat F_1$: local integrability of $u$ is Step 3, continuity of
+$\hat F_0,\hat F_1$ on $\Omega$ is Step 2, and the weak-derivative clauses are
+(4$''$).  It therefore provides
+$\tilde u\colon\mathbb{C}\to\mathbb{R}$ with
+\begin{equation}\tag{5}
+  \tilde u=u\ \text{a.e. on }\Omega,\qquad
+  \tilde u\in C^{1}(\Omega),\qquad
+  \partial_j\tilde u=\hat F_j\ \text{on }\Omega\ (j=0,1),
+\end{equation}
+where $\partial_0,\partial_1$ are the partial derivatives of
+\noderef{PartialWord} along $[0]$, $[1]$.  The first clause of (5) is
+assertion (a).  Combining the third with the definition of $\hat F_j$,
+\begin{equation}\tag{6}
+  \partial_0\tilde u=\hat f+\overline{\hat f},\qquad
+  \partial_1\tilde u=i\bigl(\hat f-\overline{\hat f}\bigr)
+  \qquad\text{on }\Omega .
+\end{equation}
+Throughout the rest of the proof we write $w=\tilde u$, regarded as a
+complex-valued function with real values where the ambient notions require it.
+
+\emph{Step 5: the degenerate case $\hat f\equiv0$.}  Suppose $\hat f(z)=0$ for
+every $z\in\Omega$.  Then $\hat F_0=\hat F_1=0$ on $\Omega$ by their
+definitions, and by (5) both first partial derivatives of $w$ vanish at every
+point of $\Omega$.  An
+$\mathbb{R}$-linear map $\mathbb{C}\to\mathbb{C}$ is determined by its values
+on $1$ and $i$, so $\mathrm{d}w=0$ on $\Omega$; and $w$ is $C^1$ on $\Omega$ by
+(5).  A $C^{1}$ function with vanishing derivative on a connected open set is
+constant, so $w\equiv c$ on $\Omega$ for some real $c$.
+
+Then (b) and (c) hold.  For (b): $w$ agrees with a constant on the open set
+$\Omega$, hence is $C^\infty$ there, so in particular
+$\mathrm{ContDiff}^{k}$ on $\Omega$; and the iterated derivative of order
+$k\ge1$ of a locally constant function vanishes identically on $\Omega$, so for
+any compact $\kappa\subseteq\Omega$ the H\"older condition of
+\noderef{MemHolderLocOn} holds with constant $0$.  For (c): let
+$1\le q<2/(2-\alpha)$, and take the family $D$ with $D[\,]=w$ and $D(v)=0$ for
+every nonempty word $v$.  Each $D(v)$ lies in $L^{q}_{\mathrm{loc}}(\Omega)$,
+being either a constant or $0$ and compact sets having finite measure; and for
+every word $v$ with $|v|<k+2$ and every $j$, the identity of
+\noderef{IsWeakPartialOn} holds: for $v=[\,]$ it reads
+$\int w\,\partial_j\varphi=-\int0\cdot\varphi=0$, and
+$\int w\,\partial_j\varphi=c\int\partial_j\varphi=0$ because the integral of a
+partial derivative of a test function vanishes, as in Step 2 of
+\noderef{WeakPartialAcrossPoint}; and for $v$ nonempty both sides are $0$.  So
+$w\in W^{k+2,q}_{\mathrm{loc}}(\Omega)$ in the sense of \noderef{MemWLocOn}.
+This settles the theorem in this case, and we assume from now on that
+$\hat f(z^{*})\neq0$ for some $z^{*}\in\Omega$.
+
+\emph{Step 6: the singular set.}  Put
+\[
+  Z=\{z\in\Omega:\hat f(z)=0\} .
+\]
+The clause \texttt{qr\_discrete\_zeros} of \noderef{QCPackage}, applied with
+$K$, $\Omega$, the pair $f,\hat f$, the openness and connectedness of
+$\Omega$, the quasiregularity in (3), the two clauses of (4$'$) and the point
+$z^{*}$, gives for each $z_0\in\Omega$ an $r>0$ with $\hat f(z)\neq0$ for every
+$z\in\Omega$ with $z\neq z_0$ and $\mathrm{dist}(z,z_0)<r$.  Read at $z_0\in Z$
+this says
+\begin{equation}\tag{7}
+  \forall z_0\in Z,\ \exists r>0,\ \forall z\in\Omega,\ z\neq z_0,\
+  \mathrm{dist}(z,z_0)<r\ \Rightarrow\ z\notin Z .
+\end{equation}
+Moreover $Z$ meets every compact $\kappa\subseteq\Omega$ in a finite set.
+Indeed, $Z$ is closed in $\Omega$, because $\hat f$ is continuous on $\Omega$
+by (4$'$); if $Z\cap\kappa$ were infinite it would have an accumulation point
+$\zeta\in\kappa\subseteq\Omega$, and $\zeta\in Z$ by closedness, contradicting
+(7) at $\zeta$.  So
+\begin{equation}\tag{8}
+  Z\cap\kappa\ \text{is finite for every compact }\kappa\subseteq\Omega .
+\end{equation}
+
+\emph{Step 7: smoothness off the singular set.}  The clause
+\texttt{smooth\_off\_zeros} of \noderef{SmoothOffZeros}, applied with $p$,
+$\Omega$, the pair $f,\hat f$, the openness of $\Omega$, $1<p$, the first
+clause of (3), the two clauses of (4$'$) and the two clauses of (4$'''$), gives
+that $\hat f$ is $C^\infty$ on
+$\Omega-\{z:\hat f(z)=0\}=\Omega-Z$.  By (6) the two first partial derivatives
+of $w$ are the $\mathbb{R}$-linear combinations $\hat f+\overline{\hat f}$ and
+$i(\hat f-\overline{\hat f})$ of $\hat f$ and $\overline{\hat f}$, hence are
+$C^\infty$ on $\Omega-Z$; and $w$ is $C^{1}$ on $\Omega$ by (5).  A $C^{1}$
+function on an open set whose first partial derivatives are $C^\infty$ there is
+itself $C^\infty$ there, so
+\begin{equation}\tag{9}
+  w\ \text{is }C^\infty\ \text{on }\Omega-Z .
+\end{equation}
+
+\emph{Step 8: the estimates (51), (52) at each singular point.}  Fix
+$\zeta\in Z$, so $\zeta\in\Omega$ and $\hat f(\zeta)=0$.  The hypotheses of
+\noderef{NormalizedFactorization} hold with $p$, $K$, the bundles (C2), (C3),
+the domain $\Omega$, the pair $f,\hat f$ and the point $\zeta$: the openness
+and connectedness of $\Omega$ are hypotheses of the present theorem, the
+quasiregularity of $f$ is the third clause of (3), its hypotheses (i) and (ii)
+on $\hat f$ are the two clauses of (4$'$) and its (iii) and (iv) are the two
+clauses of (4$'''$), the point $z^{*}$ has $\hat f(z^{*})\neq0$ by the case
+assumption of Step 5, and $\hat f(\zeta)=0$.  It provides $m\ge1$, $K'\ge1$, an
+open $V'$ with $\zeta\in V'\subseteq\Omega$, and $\chi,H$ with: $\chi$
+$K'$-quasiconformal on $V'$, $\chi(\zeta)=0$, $\hat f=\chi^{m}$ on $V'$, $\chi$
+of class $C^\infty$ on $V'-\{\zeta\}$, $H(\chi(z))=z$ on $V'$, $H$ continuous
+on $\chi(V')$, $H(0)=\zeta$, and $H(\xi)\in V'$ with $\chi(H(\xi))=\xi$ for
+$\xi\in\chi(V')$.  No smoothness of $H$ is provided and none is needed:
+\noderef{Thm1DerivBounds} asks only for its continuity.
+
+The hypotheses of \noderef{Thm1DerivBounds} now hold with $m$, $p$, $K'$, the
+bundle (C2), the point $\zeta$, the open set $V'$, the function $w$ in place of
+$u$, and $\hat f,\chi,H$ in place of its $f,\chi,H$: (H1) is the restriction to
+$V'$ of the second clause of (4$'''$) --- an almost-everywhere statement
+restricts to a subset --- together with $\hat f(\zeta)=0$; (H2), (H3), (H4) are
+the data just produced; and (H5) is (6) restricted to $V'\subseteq\Omega$.  It therefore provides $\delta_\zeta$ with
+$0<\delta_\zeta\le1$ and constants $B^{\zeta}_m$ with
+\begin{align}
+  \sum_{|v|=m}\bigl|D^{v}\hat f(z)\bigr|
+    &\le B^{\zeta}_m|z-\zeta|^{\,d-m},\tag{51$_\zeta$}\\
+  \sum_{|v|=m+1}\bigl|D^{v}w(z)\bigr|
+    &\le B^{\zeta}_m|z-\zeta|^{\,d-m},\tag{52$_\zeta$}
+\end{align}
+for $0<|z-\zeta|<\delta_\zeta$ and every $m\ge0$.  Using (1), (52$_\zeta$) reads
+in terms of the order $j=m+1$:
+\begin{equation}\tag{10}
+  \sum_{|v|=j}\bigl|D^{v}w(z)\bigr|\le B^{\zeta}_{j-1}|z-\zeta|^{\,k+\alpha-j}
+  \qquad(j\ge1,\ 0<|z-\zeta|<\delta_\zeta).
+\end{equation}
+Each $B^{\zeta}_{j-1}\ge0$, the left side being a sum of moduli and the power
+positive for some admissible $z$.  Shrinking $\delta_\zeta$ we may and do also
+assume
+\begin{equation}\tag{11}
+  \{z:|z-\zeta|<\delta_\zeta\}\subseteq\Omega
+  \quad\text{and}\quad
+  \{z:|z-\zeta|<\delta_\zeta\}\cap Z=\{\zeta\},
+\end{equation}
+the first by openness of $\Omega$ and the second by (7).
+
+\emph{Step 9: $w$ is of class $C^{k}$ on $\Omega$.}  The hypotheses of
+\noderef{Thm1SmoothAcrossZeros} hold with $\Omega$, $Z$, $k$, $\alpha$ and $w$:
+$Z\subseteq\Omega$; the hypothesis that $Z$ meets every compact subset of
+$\Omega$ in a finite set is (8); (H1) is the second clause
+of (5); (H2) is (9); and (H3) is (10), with $\delta=\delta_\zeta$ and
+$B_j=B^{\zeta}_{j-1}$.  Hence
+\begin{equation}\tag{12}
+  w\ \text{is of class }C^{k}\ \text{on }\Omega .
+\end{equation}
+This is the first clause of \noderef{MemHolderLocOn}.
+
+\emph{Step 10: from the derivatives of order $k$ to the H\"older condition.}
+Write $T(x)=$ the iterated derivative of order $k$ of $w$ within $\Omega$ at
+$x$, the object appearing in \noderef{MemHolderLocOn}.  We first record a
+comparison with the $D^{v}$.
+
+\emph{(10a) The comparison.}  For $x,y\in\Omega$,
+\begin{equation}\tag{13}
+  \bigl\|T(x)-T(y)\bigr\|\le\sum_{|v|=k}\bigl|D^{v}w(x)-D^{v}w(y)\bigr| .
+\end{equation}
+Indeed $T(x)-T(y)$ is a continuous $\mathbb{R}$-multilinear map of $k$
+arguments on $\mathbb{C}$, and its norm is the supremum of its values on
+$k$-tuples of unit vectors.  Writing a unit vector as $a\cdot1+b\cdot i$ with
+$a^{2}+b^{2}=1$, so $|a|,|b|\le1$, and expanding each of the $k$ arguments by
+multilinearity, the value on such a tuple is a sum over the $2^{k}$ words $v$
+of length $k$ of a coefficient of modulus at most $1$ times the value of
+$T(x)-T(y)$ on the corresponding tuple of basis vectors.  That value is the
+iterated directional derivative of $w$ along those basis vectors, taken at $x$
+and at $y$, which by \noderef{PartialWord} is $D^{v}w(x)-D^{v}w(y)$ for the
+word $v$ of the corresponding indices --- the order in which the indices are
+read is a convention, and immaterial here because the sum in (13) is over all
+words of length $k$.  Taking absolute values and summing gives (13).
+
+\emph{(10b) The three cases.}  Let $\kappa\subseteq\Omega$ be compact; we must
+produce $C\ge0$ with $\|T(x)-T(y)\|\le C|x-y|^{\alpha}$ for all
+$x,y\in\kappa$.  Since $\Omega$ is open and $\kappa$ compact, fix $r_0>0$ with
+$\kappa_{3r_0}:=\{x:\mathrm{dist}(x,\kappa)\le3r_0\}\subseteq\Omega$; this set
+is compact.  By (8) the set $Z\cap\kappa_{3r_0}$ is finite.  Choose
+$r\in(0,r_0]$ with
+\[
+  r\le1,\qquad 4r<\delta_\zeta\ \text{ for every }\zeta\in Z\cap\kappa_{3r_0},
+  \qquad 4r<\min|\zeta-\zeta'|
+\]
+over distinct $\zeta,\zeta'\in Z\cap\kappa_{3r_0}$ (the last condition omitted
+if there are fewer than two such points).  Let $x,y\in\kappa$.
+
+\emph{Case 1: $|x-y|\ge r$.}  By (12) the map $T$ is continuous on $\Omega$,
+hence bounded on the compact $\kappa$, say by $M_T$.  Then
+\[
+  \|T(x)-T(y)\|\le2M_T=2M_Tr^{-\alpha}r^{\alpha}\le2M_Tr^{-\alpha}|x-y|^{\alpha}.
+\]
+
+\emph{Case 2: $|x-y|<r$ and $|x-\zeta|\le2r$ for some $\zeta\in Z$.}  Such a
+$\zeta$ lies in $\kappa_{3r_0}$, since $\mathrm{dist}(\zeta,\kappa)\le2r\le3r_0$.
+Also $|y-\zeta|\le|y-x|+|x-\zeta|<3r$.  Fix a word $v$ of length $k$ and put
+\[
+  U=\{\eta:|\eta|<4r\},\qquad F(\eta)=D^{v}w(\eta+\zeta)\quad(\eta\in U).
+\]
+We verify the hypotheses of \noderef{Lemma2} for $F$ on $U$, in dimension
+$n=2$.  The plane $\mathbb{C}$ with its modulus is carried onto
+$\mathbb{R}^{2}$ with its Euclidean norm by the $\mathbb{R}$-linear isometry
+$\eta\mapsto(\operatorname{Re}\eta,\operatorname{Im}\eta)$, under which
+convexity, openness, membership of the origin, continuity, membership of
+$C^{1}$, norms of vectors and operator norms of Fréchet derivatives all
+correspond; so it is equivalent, and we argue in $\mathbb{C}$.
+
+$U$ is open and convex and contains $0$.  By (11) and $4r<\delta_\zeta$ the
+translate $\zeta+U$ is contained in $\Omega$ and meets $Z$ only at $\zeta$.
+Hence $F$ is continuous on $U$, by (12); and $F$ is $C^{1}$ on $U-\{0\}$, by
+(9).  For hypothesis (i), (10) at $j=k$ gives for $0<|\eta|<4r<\delta_\zeta$
+\[
+  |F(\eta)|\le\sum_{|v'|=k}\bigl|D^{v'}w(\eta+\zeta)\bigr|
+  \le B^{\zeta}_{k-1}|\eta|^{\,k+\alpha-k}=B^{\zeta}_{k-1}|\eta|^{\alpha},
+\]
+and at $\eta=0$ the same bound holds because the right-hand side tends to $0$
+as $\eta\to0$ while $F$ is continuous at $0$, forcing $F(0)=0$.  For
+hypothesis (ii), let $0<|\eta|<4r$.  As in Step 9, the operator norm of the
+Fréchet derivative of $F$ at $\eta$ is at most the sum of the moduli of its two
+first partial derivatives, which are $D^{[0]+\!\!+v}w$ and $D^{[1]+\!\!+v}w$ at
+$\eta+\zeta$ --- prefixing a letter applies that partial derivative last, by the
+recursion of \noderef{PartialWord} --- and both words have length $k+1$, so by
+(10) at $j=k+1$
+\[
+  \|\mathrm{d}F(\eta)\|\le\sum_{|v'|=k+1}\bigl|D^{v'}w(\eta+\zeta)\bigr|
+  \le B^{\zeta}_{k}|\eta|^{\,k+\alpha-(k+1)}=B^{\zeta}_{k}|\eta|^{\alpha-1}.
+\]
+So \noderef{Lemma2} applies with $M=\max\{B^{\zeta}_{k-1},B^{\zeta}_{k}\}\ge0$
+and this $\alpha\in(0,1]$, and yields
+\[
+  \bigl|D^{v}w(x)-D^{v}w(y)\bigr|=\bigl|F(x-\zeta)-F(y-\zeta)\bigr|
+  \le5M|x-y|^{\alpha},
+\]
+the two arguments lying in $U$ because $|x-\zeta|\le2r<4r$ and
+$|y-\zeta|<3r<4r$.  Summing over the $2^{k}$ words $v$ and using (13),
+\[
+  \|T(x)-T(y)\|\le 2^{k}\cdot5M_{*}|x-y|^{\alpha},\qquad
+  M_{*}=\max_{\zeta\in Z\cap\kappa_{3r_0}}
+    \max\{B^{\zeta}_{k-1},B^{\zeta}_{k}\},
+\]
+a maximum over a finite set by (8).
+
+\emph{Case 3: $|x-y|<r$ and $|x-\zeta|>2r$ for every $\zeta\in Z$.}  Then the
+ball $\{\xi:|\xi-x|<r\}$ is contained in $\Omega-Z$: it lies in
+$\kappa_{3r_0}\subseteq\Omega$, and any $\xi$ in it has
+$|\xi-\zeta|\ge|x-\zeta|-|x-\xi|>2r-r=r>0$ for every $\zeta\in Z$.  Put
+\[
+  S=\bigl\{\xi\in\kappa_{3r_0}:\mathrm{dist}(\xi,Z)\ge r\bigr\},
+\]
+a compact subset of $\Omega-Z$, and let $L$ be the supremum over $S$ and over
+the $2^{k}$ words $v$ of length $k$ of
+$\|\mathrm{d}\bigl(D^{v}w\bigr)\|$, finite because each $D^{v}w$ is $C^{1}$ on
+the open $\Omega-Z\supseteq S$ by (9), so its derivative is continuous on the
+compact $S$.  Every point of the segment from $x$ to $y$ lies in
+$\{\xi:|\xi-x|<r\}$, hence in $S$; the segment is convex, so the mean value
+inequality gives, for each word $v$ of length $k$,
+\[
+  \bigl|D^{v}w(x)-D^{v}w(y)\bigr|\le L|x-y|
+  =L|x-y|^{\alpha}|x-y|^{1-\alpha}\le L\,r^{1-\alpha}|x-y|^{\alpha},
+\]
+using $|x-y|<r$ and $1-\alpha\ge0$.  Summing over $v$ and using (13),
+$\|T(x)-T(y)\|\le2^{k}Lr^{1-\alpha}|x-y|^{\alpha}$.
+
+Taking for $C$ the maximum of the three constants
+$2M_Tr^{-\alpha}$, $2^{k}\cdot5M_{*}$ and $2^{k}Lr^{1-\alpha}$ --- and noting
+that the three cases exhaust the possibilities --- gives the H\"older condition
+on $\kappa$.  With (12) this proves (b).
+
+\emph{Step 11: the Sobolev clause.}  Let $q$ satisfy $1\le q<2/(2-\alpha)$.
+Define a family of functions indexed by words by
+\[
+  D(v)=D^{\,\mathrm{rev}(v)}w ,
+\]
+where $\mathrm{rev}(v)$ is $v$ read backwards.  This convention is chosen so
+that the coherence required by \noderef{MemWLocOn} is a tautology at the level
+of functions: $D([\,])=w$, and for every $v$ and $j$, by the recursion of
+\noderef{PartialWord},
+\begin{equation}\tag{14}
+  D\bigl(v+\!\!+[j]\bigr)=D^{\,j::\mathrm{rev}(v)}w
+  =\partial_j\bigl(D^{\,\mathrm{rev}(v)}w\bigr)=\partial_j\bigl(D(v)\bigr),
+\end{equation}
+so no commutation of mixed partial derivatives is needed anywhere.
+
+\emph{(11a) Local $L^{q}$ bounds.}  Let $v$ be a word with $|v|\le k+2$ and let
+$\kappa\subseteq\Omega$ be compact.  If $|v|\le k$ then $D(v)$ is continuous on
+$\Omega$ by (12), hence bounded on $\kappa$, hence in $L^{q}$ there, $\kappa$
+having finite measure.  Suppose $|v|=j\in\{k+1,k+2\}$.  By (8) the set
+$Z\cap\kappa$ is finite; enlarge $\kappa$ to the compact
+$\kappa'=\{x:\mathrm{dist}(x,\kappa)\le\varrho\}\subseteq\Omega$ for some
+$\varrho>0$, and for each $\zeta\in Z\cap\kappa'$ pick
+$\varrho_\zeta\in(0,\min\{\varrho,\delta_\zeta,1\})$.  Off the union of the
+balls $\{|z-\zeta|<\varrho_\zeta\}$ the function $D(v)$ is continuous on a
+compact subset of $\Omega-Z$ by (9), hence bounded there, so contributes a
+finite amount to $\int_{\kappa}\|D(v)\|^{q}$.  On each such ball, (10) gives
+$\|D(v)(z)\|\le B^{\zeta}_{j-1}|z-\zeta|^{\,k+\alpha-j}$, and since
+$|z-\zeta|<1$ and $k+\alpha-j\ge\alpha-2$ we get
+$|z-\zeta|^{\,k+\alpha-j}\le|z-\zeta|^{\alpha-2}$; hence
+\[
+  \int_{\{|z-\zeta|<\varrho_\zeta\}}\|D(v)\|^{q}\,d\sigma
+  \le\bigl(B^{\zeta}_{j-1}\bigr)^{q}
+  \int_{\{|z-\zeta|<\varrho_\zeta\}}|z-\zeta|^{(\alpha-2)q}\,d\sigma<\infty
+\]
+by \noderef{PowerIntegrableNearZero}, applied with this $\alpha$, the radius
+$\varrho_\zeta$ and this $q$, after the translation $z\mapsto z-\zeta$, which
+preserves Lebesgue measure.  Summing the finitely many contributions,
+$D(v)\in L^{q}(\kappa)$.  As $\kappa$ was arbitrary,
+$D(v)\in L^{q}_{\mathrm{loc}}(\Omega)$ in the sense of \noderef{MemLpLocOn}.
+(The case $q=1$ of this computation will be used in (11b).)
+
+\emph{(11b) The weak-derivative clauses.}  Let $v$ be a word with $|v|<k+2$ and
+let $\iota\in\{0,1\}$; we apply \noderef{WeakPartialAcrossPoint} with
+$\Omega$, the exceptional set $S=Z$, the index $\iota$, the functions
+$G=D(v)$ and $V=D(v+\!\!+[\iota])$, and the exponent $\beta=1-\alpha$, which lies
+in $[0,1)$ because $0<\alpha\le1$.  Its hypotheses hold:
+$Z\subseteq\Omega$; local finiteness is (8); $G$ is $C^{1}$ on $\Omega-Z$ by
+(9); $\partial_\iota G=V$ on $\Omega-Z$ --- indeed everywhere --- by (14); $G$ and
+$V$ lie in $L^{1}_{\mathrm{loc}}(\Omega)$ by (11a) with $q=1$, since
+$|v|\le k+1$ and $|v+\!\!+[\iota]|\le k+2$; and for the growth bound, let
+$\zeta\in Z$ and $0<|z-\zeta|<\min\{\delta_\zeta,1\}$, so that by (10) at the
+order $|v|$ --- or trivially if $|v|=0$, $G=w$ being continuous hence bounded
+near $\zeta$ ---
+\[
+  \|G(z)\|\le B^{\zeta}_{|v|-1}\,|z-\zeta|^{\,k+\alpha-|v|}
+  \le B^{\zeta}_{|v|-1}\,|z-\zeta|^{\alpha-1}
+  =B^{\zeta}_{|v|-1}\,|z-\zeta|^{-\beta},
+\]
+using $k+\alpha-|v|\ge k+\alpha-(k+1)=\alpha-1$ and $|z-\zeta|<1$.  Hence
+\noderef{WeakPartialAcrossPoint} gives that $D(v+\!\!+[\iota])$ is the
+distributional $\iota$-th partial derivative of $D(v)$ on $\Omega$, in the sense
+of \noderef{IsWeakPartialOn}.
+
+By (11a), (11b) and $D([\,])=w$, the family $D$ witnesses
+$w\in W^{k+2,q}_{\mathrm{loc}}(\Omega)$ in the sense of \noderef{MemWLocOn}.
+As $q$ was arbitrary in the range $1\le q<2/(2-\alpha)$, this is (c), and with
+(a) from Step 4 and (b) from Step 10 the proof is complete.
+\end{proof}

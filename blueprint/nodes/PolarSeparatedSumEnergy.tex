@@ -1,0 +1,135 @@
+\begin{helper}
+Write $\mathbb{B}=\{\xi\in\mathbb{C}:|\xi|<1\}$ and $d\sigma$ for plane
+Lebesgue measure.  Let $F\subset\mathbb{N}$ be finite, let
+$f_k\colon\mathbb{C}\to\mathbb{C}$ be measurable for every $k$, let
+$g_1,g_2\colon\mathbb{N}\to\mathbb{Z}$, let
+$\gamma,\delta\colon\mathbb{N}\to\mathbb{C}$ and let
+$e\colon\mathbb{N}\to\mathbb{R}$.  Assume, for all $k,k'\in F$,
+\begin{enumerate}
+\item[(i)] $e(k)>-1$;
+\item[(ii)] $g_1(k)=g_1(k')$ implies $k=k'$, and $g_2(k)=g_2(k')$ implies
+  $k=k'$;
+\item[(iii)] $g_1(k)\neq g_2(k')$;
+\item[(iv)] $f_k$ is polar-separated with radial exponent $e(k)$ and the two
+  angular frequencies $g_1(k),g_2(k)$: for every $r>0$ and every $\theta$,
+  \[
+    f_k\bigl(re^{i\theta}\bigr)
+    =r^{e(k)}\Bigl(\gamma(k)\,e^{ig_1(k)\theta}
+      +\delta(k)\,e^{ig_2(k)\theta}\Bigr).
+  \]
+\end{enumerate}
+Then, as an identity between Lebesgue integrals with values in $[0,\infty]$,
+\[
+  \int_{\mathbb{B}}\Bigl|\sum_{k\in F}f_k(\xi)\Bigr|^{2}d\sigma(\xi)
+  =\sum_{k\in F}\frac{2\pi\bigl(|\gamma(k)|^{2}+|\delta(k)|^{2}\bigr)}
+      {2e(k)+2}.
+\]
+
+This is the finite-sum engine for the display the paper calls "a standard
+computation" at \texttt{paper.tex:351-353},
+\[
+  \int_0^1r\Bigl(\int_0^{2\pi}|H_r(r,\theta)|^{2}d\theta\Bigr)dr
+  =\pi\sum_{k=n+1}^{\infty}\lambda_k\bigl(1+\epsilon_k^{2}\bigr)|A_k|^{2},
+\]
+which together with (24), (25) and (27) is what yields Theorem~2's bound (22).
+Each summand of the polar form (40) of the series (19) has exactly the shape
+(iv): differentiating $\bigl(A_ke^{ik\theta}+\epsilon_k\overline{A_k}
+e^{-ik\theta}\bigr)r^{\lambda_k}e^{-in\theta}$ in $r$ gives radial exponent
+$e(k)=\lambda_k-1$ and the two frequencies $k-n$ and $-k-n$, with
+$\gamma(k)=\lambda_kA_k$ and $\delta(k)=\lambda_k\epsilon_k\overline{A_k}$; and
+then $2e(k)+2=2\lambda_k$, so the $k$-th term of the conclusion is
+\[
+  \frac{2\pi\lambda_k^{2}\bigl(|A_k|^{2}+\epsilon_k^{2}|A_k|^{2}\bigr)}
+    {2\lambda_k}
+  =\pi\lambda_k\bigl(1+\epsilon_k^{2}\bigr)|A_k|^{2},
+\]
+the paper's summand exactly.
+
+Hypotheses (ii) and (iii) are what make the right-hand side a bare sum over
+$F$ rather than a double sum: every cross term between two distinct indices,
+and every cross term between the two frequency families, integrates to zero
+over a full period.  Hypothesis (i) is precisely the convergence condition for
+the radial integral $\int_0^1r^{2e(k)+1}dr=1/(2e(k)+2)$, and it is where the
+denominator comes from.  Both sides are read in $[0,\infty]$, so no
+integrability hypothesis is needed; (i) already makes the right-hand side
+finite.
+\end{helper}
+\begin{proof}
+Write $S(\xi)=\sum_{k\in F}f_k(\xi)$.  All integrals below are Lebesgue
+integrals of nonnegative measurable functions with values in $[0,\infty]$.
+
+\emph{Step 1: to polar coordinates.}  Each $f_k$ is measurable, and $F$ is
+finite, so $S$ is measurable.  Hence \noderef{DiscEnergyPolarCoord} applies to
+$S$ and gives
+\begin{equation}\tag{1}
+  \int_{\mathbb{B}}|S(\xi)|^{2}d\sigma(\xi)
+  =\int_{0}^{1}\!r\Bigl(\int_{0}^{2\pi}
+      \bigl|S\bigl(re^{i\theta}\bigr)\bigr|^{2}d\theta\Bigr)dr .
+\end{equation}
+
+\emph{Step 2: the angular integral at a fixed radius.}  Fix $r$ with
+$0<r<1$.  Since $r>0$, hypothesis (iv) applies at every $k\in F$ and every
+$\theta$, so
+\begin{equation}\tag{2}
+  S\bigl(re^{i\theta}\bigr)
+  =\sum_{k\in F}\Bigl(\bigl(r^{e(k)}\gamma(k)\bigr)e^{ig_1(k)\theta}
+     +\bigl(r^{e(k)}\delta(k)\bigr)e^{ig_2(k)\theta}\Bigr),
+\end{equation}
+which is a two-family trigonometric sum over $F$ with coefficients
+$c_1(k)=r^{e(k)}\gamma(k)$ and $c_2(k)=r^{e(k)}\delta(k)$.  Hypotheses (ii)
+and (iii) are verbatim the three side conditions of
+\noderef{TwoFamilyTrigParseval}, so that node applies and yields
+\[
+  \int_{0}^{2\pi}\bigl|S\bigl(re^{i\theta}\bigr)\bigr|^{2}d\theta
+  =2\pi\sum_{k\in F}\Bigl(\bigl|r^{e(k)}\gamma(k)\bigr|^{2}
+    +\bigl|r^{e(k)}\delta(k)\bigr|^{2}\Bigr).
+\]
+Now $r^{e(k)}$ is a positive real, because $r>0$, so
+$\bigl|r^{e(k)}\gamma(k)\bigr|=r^{e(k)}|\gamma(k)|$ and likewise for $\delta$;
+squaring,
+\begin{equation}\tag{3}
+  \int_{0}^{2\pi}\bigl|S\bigl(re^{i\theta}\bigr)\bigr|^{2}d\theta
+  =2\pi\sum_{k\in F}r^{2e(k)}
+    \bigl(|\gamma(k)|^{2}+|\delta(k)|^{2}\bigr)
+  \qquad(0<r<1).
+\end{equation}
+(The integrand is continuous in $\theta$, by (2) and the continuity of the
+exponentials, so its interval integral over $[0,2\pi]$ and its Lebesgue
+integral over $(0,2\pi)$ agree, and both are finite; this is what lets (3) be
+substituted into the $[0,\infty]$-valued inner integral of (1).)
+
+\emph{Step 3: the radial integral.}  Substituting (3) into (1) and using
+$r\cdot r^{2e(k)}=r^{2e(k)+1}$ for $r>0$,
+\[
+  \int_{\mathbb{B}}|S|^{2}d\sigma
+  =\int_{0}^{1}\sum_{k\in F}2\pi
+      \bigl(|\gamma(k)|^{2}+|\delta(k)|^{2}\bigr)r^{2e(k)+1}\,dr
+  =\sum_{k\in F}2\pi\bigl(|\gamma(k)|^{2}+|\delta(k)|^{2}\bigr)
+     \int_{0}^{1}r^{2e(k)+1}dr ,
+\]
+where the finite sum and the integral are interchanged, legitimate because
+there are finitely many summands and each is a nonnegative measurable function
+of $r$, and the constant factors are pulled out of the integrals.
+
+It remains to evaluate the radial integral.  For a real $s>-1$ the function
+$r\mapsto r^{s}$ is integrable on $(0,1)$ with
+\begin{equation}\tag{4}
+  \int_{0}^{1}r^{s}\,dr=\frac{1}{s+1},
+\end{equation}
+since $r\mapsto r^{s+1}/(s+1)$ is an antiderivative on $(0,1)$ whose limits at
+the endpoints are $0$ and $1/(s+1)$, both finite because $s+1>0$.  Apply (4)
+with $s=2e(k)+1$: by hypothesis (i) we have $e(k)>-1$, hence
+$s+1=2e(k)+2>0$, i.e. $s>-1$, and
+\[
+  \int_{0}^{1}r^{2e(k)+1}dr=\frac{1}{2e(k)+2}.
+\]
+Therefore
+\[
+  \int_{\mathbb{B}}\Bigl|\sum_{k\in F}f_k\Bigr|^{2}d\sigma
+  =\sum_{k\in F}\frac{2\pi\bigl(|\gamma(k)|^{2}+|\delta(k)|^{2}\bigr)}
+      {2e(k)+2},
+\]
+which is the assertion.  Each term on the right is a finite nonnegative real,
+again because $2e(k)+2>0$, so the right-hand side is a finite sum of finite
+terms.
+\end{proof}

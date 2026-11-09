@@ -1,0 +1,56 @@
+\begin{lemma}
+Let $\alpha$ satisfy $0<\alpha\le1$, let $\delta>0$ and let $q$ satisfy
+\[
+  1\le q<\frac{2}{2-\alpha}.
+\]
+Then the function $z\mapsto|z|^{(\alpha-2)q}$ is integrable on the disk
+$\{z:|z|<\delta\}$ for plane Lebesgue measure; equivalently,
+$|z|^{\alpha-2}$ belongs to $L^{q}$ of that disk.
+
+This is the assertion the paper makes in one line at paper.tex:534, ``The
+function $|z|^{\alpha-2}$ is integrable over the disk $0\le|z|<\delta$ with
+every exponent $q$ such that $1\le q<2/(2-\alpha)$'', and it is what turns the
+estimate (52) at $m=k+1$ into $u\in W^{k+2,q}_{\mathrm{loc}}(\Omega)$.  The
+range of $q$ is exactly (10).
+\end{lemma}
+\begin{proof}
+Write $s=(\alpha-2)q$ and $d\sigma$ for plane Lebesgue measure.
+
+\emph{Step 1: the exponent.}  Since $\alpha\le1$ we have $2-\alpha\ge1>0$, so
+the inequality $q<2/(2-\alpha)$ may be multiplied by $2-\alpha>0$ to give
+$(2-\alpha)q<2$, that is
+\begin{equation}\tag{1}
+  s=(\alpha-2)q=-(2-\alpha)q>-2 .
+\end{equation}
+Equivalently $s+2>0$.  Note also $s<0$, since $\alpha-2<0$ and $q\ge1>0$.
+
+\emph{Step 2: measurability.}  The function $z\mapsto|z|^{s}$ is continuous on
+$\mathbb{C}-\{0\}$, being a composition of the continuous $z\mapsto|z|$, which
+is positive there, with the continuous $t\mapsto t^{s}$ on $(0,\infty)$; and
+$\{0\}$ is a Lebesgue null set.  Hence the function is measurable, and it is
+nonnegative, so integrability on the disk is equivalent to the finiteness of
+its integral there.
+
+\emph{Step 3: the polar computation.}  Passing to polar coordinates about the
+origin, $d\sigma=r\,dr\,d\theta$,
+\[
+  \int_{|z|<\delta}|z|^{s}\,d\sigma
+  =\int_0^{2\pi}\!\!\int_0^{\delta}r^{s}\cdot r\,dr\,d\theta
+  =2\pi\int_0^{\delta}r^{s+1}\,dr .
+\]
+By (1) we have $s+1>-1$, so the one-dimensional integral converges:
+\[
+  \int_0^{\delta}r^{s+1}\,dr=\frac{\delta^{s+2}}{s+2}<\infty ,
+\]
+the denominator being positive by (1).  Therefore
+\[
+  \int_{|z|<\delta}|z|^{(\alpha-2)q}\,d\sigma
+  =\frac{2\pi\,\delta^{(\alpha-2)q+2}}{(\alpha-2)q+2}<\infty ,
+\]
+and the function is integrable on the disk, which is the assertion.
+
+Conversely --- and this is why the range of $q$ in (10) is what it is, though
+the statement does not assert it --- for $q\ge2/(2-\alpha)$ one has $s+1\le-1$
+and the same computation gives a divergent integral; so the condition
+$q<2/(2-\alpha)$ cannot be relaxed.
+\end{proof}

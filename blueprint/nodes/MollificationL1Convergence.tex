@@ -1,0 +1,175 @@
+\begin{helper}
+Let $d\sigma$ denote Lebesgue measure on $\mathbb{C}\cong\mathbb{R}^{2}$ and
+let $g\in L^{1}(\mathbb{C})$, i.e. $g\colon\mathbb{C}\to\mathbb{C}$ is
+integrable for $d\sigma$.  For each $m\in\mathbb{N}$ let $\varphi_m$ be a
+smooth bump function centred at $0$: a $C^\infty$ function
+$\varphi_m\colon\mathbb{C}\to\mathbb{R}$ with radii
+$0<r_m^{\mathrm{in}}<r_m^{\mathrm{out}}$ such that $0\le\varphi_m\le1$,
+$\varphi_m\equiv1$ on $\{|y|\le r_m^{\mathrm{in}}\}$ and $\varphi_m(y)=0$ for
+$|y|\ge r_m^{\mathrm{out}}$.  Write
+\[
+  \varrho_m=\frac{\varphi_m}{\int\varphi_m\,d\sigma}
+\]
+for its normalisation, so that $\varrho_m\in C^\infty(\mathbb{C})$,
+$\varrho_m\ge0$, $\varrho_m(y)=0$ for $|y|\ge r_m^{\mathrm{out}}$, and
+$\int\varrho_m\,d\sigma=1$.  Assume
+\[
+  r_m^{\mathrm{out}}\le1\quad\text{for every }m,
+  \qquad\text{and}\qquad r_m^{\mathrm{out}}\longrightarrow0 .
+\]
+Then, with $(\varrho_m*g)(x)=\int\varrho_m(t)\,g(x-t)\,d\sigma(t)$,
+\[
+  \int_{\mathbb{C}}\bigl|(\varrho_m*g)(x)-g(x)\bigr|\,d\sigma(x)
+  \longrightarrow0\qquad(m\to\infty).
+\]
+
+This is the $L^{1}$-norm form of the convergence of mollifications.  Only the
+pointwise form (at a point of continuity) and the almost-everywhere form are
+standard background; the $L^{1}$ form is what is needed whenever the limit
+$m\to\infty$ has to be taken inside a further integration, for there
+almost-everywhere convergence of the $\varrho_m*g$ would have to be
+accompanied by an $m$-uniform dominating function, which mere local
+integrability of $g$ does not supply.  The normalisation
+$\int\varrho_m\,d\sigma=1$ is what makes the statement true, and the bound
+$r_m^{\mathrm{out}}\le1$ only serves to confine all the supports involved to
+one fixed ball.
+\end{helper}
+\begin{proof}
+Throughout, all integrals without an indicated domain are over $\mathbb{C}$
+against $d\sigma$.  Note first that each $\varrho_m$ is well defined, since
+$\varphi_m\ge0$ is continuous, is $\ge1$ on the ball $\{|y|\le
+r_m^{\mathrm{in}}\}$ of positive measure and vanishes off a bounded set, so
+$0<\int\varphi_m\,d\sigma<\infty$; and that $\varrho_m\in L^{1}(\mathbb{C})$
+with $\int|\varrho_m|\,d\sigma=\int\varrho_m\,d\sigma=1$, because
+$\varrho_m\ge0$.
+
+\emph{Step 1: convolution with an $L^{1}$ kernel is an $L^{1}$ contraction
+(Young's inequality at $p=1$).}  We claim that for every real-valued
+$\rho\in L^{1}(\mathbb{C})$ and every $f\in L^{1}(\mathbb{C})$,
+\begin{equation}\tag{1}
+  \int\bigl|(\rho*f)(x)\bigr|\,d\sigma(x)
+  \le\Bigl(\int|\rho(t)|\,d\sigma(t)\Bigr)
+     \Bigl(\int|f(x)|\,d\sigma(x)\Bigr).
+\end{equation}
+Indeed, the map $(x,t)\mapsto\rho(t)f(x-t)$ is measurable on
+$\mathbb{C}\times\mathbb{C}$, being the product of a measurable function of
+$t$ with the composition of the measurable $f$ with the continuous map
+$(x,t)\mapsto x-t$; and it is integrable for $d\sigma\otimes d\sigma$, since
+by Tonelli's theorem and the translation invariance of $d\sigma$
+\[
+  \iint|\rho(t)|\,|f(x-t)|\,d\sigma(x)\,d\sigma(t)
+  =\int|\rho(t)|\Bigl(\int|f(x-t)|\,d\sigma(x)\Bigr)d\sigma(t)
+  =\Bigl(\int|\rho|\Bigr)\Bigl(\int|f|\Bigr)<\infty .
+\]
+In particular $(\rho*f)(x)=\int\rho(t)f(x-t)\,d\sigma(t)$ is an absolutely
+convergent integral for almost every $x$, the function $\rho*f$ is in
+$L^{1}(\mathbb{C})$, and
+\[
+  \int\bigl|(\rho*f)(x)\bigr|\,d\sigma(x)
+  \le\int\Bigl(\int|\rho(t)|\,|f(x-t)|\,d\sigma(t)\Bigr)d\sigma(x)
+  =\Bigl(\int|\rho|\Bigr)\Bigl(\int|f|\Bigr),
+\]
+where the inequality is the triangle inequality for the inner integral
+and the equality is the computation just displayed, read with the order of
+integration exchanged by Fubini's theorem.  This proves (1).  Applied to
+$\rho=\varrho_m$, for which $\int|\varrho_m|=1$, it gives
+\begin{equation}\tag{2}
+  \int\bigl|(\varrho_m*f)(x)\bigr|\,d\sigma(x)\le\int|f|\,d\sigma
+  \qquad\bigl(f\in L^{1}(\mathbb{C}),\ m\in\mathbb{N}\bigr).
+\end{equation}
+
+\emph{Step 2: the assertion for a continuous compactly supported function.}
+Let $h\colon\mathbb{C}\to\mathbb{C}$ be continuous with compact support.  We
+claim
+\begin{equation}\tag{3}
+  \int\bigl|(\varrho_m*h)(x)-h(x)\bigr|\,d\sigma(x)\longrightarrow0 .
+\end{equation}
+Being continuous with compact support, $h$ is bounded, say $|h|\le C$, and
+integrable; choose $R>0$ with $\operatorname{supp}h\subseteq\{|y|\le R\}$ and
+put
+\[
+  S=\{x\in\mathbb{C}:|x|\le1+R\},
+\]
+a closed ball, hence measurable with $\sigma(S)<\infty$.
+
+First, both $h$ and $\varrho_m*h$ vanish off $S$.  For $h$ this is clear from
+$R\le1+R$.  For $\varrho_m*h$, the support of a convolution is contained in
+the closure of the sum of the supports, so if $(\varrho_m*h)(x)\ne0$ then
+$x=a+b$ with $|a|<r_m^{\mathrm{out}}$ and $|b|\le R$, whence
+$|x|\le|a|+|b|<r_m^{\mathrm{out}}+R\le1+R$ by the hypothesis
+$r_m^{\mathrm{out}}\le1$, i.e. $x\in S$.
+
+Second, on all of $\mathbb{C}$ we have the $m$-independent bound
+\begin{equation}\tag{4}
+  \bigl|(\varrho_m*h)(x)-h(x)\bigr|\le2C+1 .
+\end{equation}
+Indeed, since $\int\varrho_m\,d\sigma=1$,
+\[
+  (\varrho_m*h)(x)-h(x)=\int\varrho_m(t)\bigl[h(x-t)-h(x)\bigr]\,d\sigma(t),
+\]
+and $\varrho_m\ge0$ vanishes for $|t|\ge r_m^{\mathrm{out}}$, so the modulus
+of the left-hand side is at most
+$\sup_{|y-x|<r_m^{\mathrm{out}}}|h(y)-h(x)|\le2C\le2C+1$.
+
+Third, for each fixed $x$ we have $(\varrho_m*h)(x)\to h(x)$.  This is the
+pointwise form of the convergence of mollifications: given $\epsilon>0$,
+continuity of $h$ at $x$ provides $\tau>0$ with $|h(y)-h(x)|\le\epsilon$
+whenever $|y-x|\le\tau$; since $r_m^{\mathrm{out}}\to0$ we have
+$r_m^{\mathrm{out}}\le\tau$ for all large $m$, and then the display above
+bounds $|(\varrho_m*h)(x)-h(x)|$ by
+$\int\varrho_m(t)\,\epsilon\,d\sigma(t)=\epsilon$.
+
+Now apply the dominated convergence theorem to the functions
+$x\mapsto|(\varrho_m*h)(x)-h(x)|$, which are measurable (each
+$\varrho_m*h$ is in $L^{1}$ by Step 1, and $h$ is measurable).  By the three
+observations they converge pointwise to $0$ and are dominated by the fixed
+integrable function $(2C+1)\mathbf1_S$: on $S$ this is (4), and off $S$ the
+function is identically $0$.  Hence their integrals tend to $0$, which is (3).
+
+\emph{Step 3: the general case, by density.}  Let $\eta>0$.  The continuous
+compactly supported functions are dense in $L^{1}(\mathbb{C})$, so there is a
+continuous $h$ with compact support such that
+\begin{equation}\tag{5}
+  \int|g-h|\,d\sigma\le\frac{\eta}{3};
+\end{equation}
+such an $h$ is in particular integrable.  Fix $m$.  Since
+$\varrho_m\in L^{1}$ and $g,h\in L^{1}$, Step 1 shows that for almost every
+$x$ both defining integrals of $(\varrho_m*g)(x)$ and $(\varrho_m*h)(x)$
+converge absolutely, so for almost every $x$
+\[
+  (\varrho_m*g)(x)-(\varrho_m*h)(x)
+  =\int\varrho_m(t)\bigl[g(x-t)-h(x-t)\bigr]\,d\sigma(t)
+  =\bigl(\varrho_m*(g-h)\bigr)(x).
+\]
+Combining this with (2) applied to $f=g-h\in L^{1}$ and with (5),
+\begin{equation}\tag{6}
+  \int\bigl|(\varrho_m*g)(x)-(\varrho_m*h)(x)\bigr|\,d\sigma(x)
+  =\int\bigl|\bigl(\varrho_m*(g-h)\bigr)(x)\bigr|\,d\sigma(x)
+  \le\int|g-h|\,d\sigma\le\frac{\eta}{3}.
+\end{equation}
+The pointwise triangle inequality
+\[
+  \bigl|(\varrho_m*g)(x)-g(x)\bigr|
+  \le\bigl|(\varrho_m*g)(x)-(\varrho_m*h)(x)\bigr|
+    +\bigl|(\varrho_m*h)(x)-h(x)\bigr|
+    +\bigl|h(x)-g(x)\bigr|
+\]
+holds for every $x$, and each of the three functions on the right is
+integrable: the first and second because $\varrho_m*g$, $\varrho_m*h$, $g$
+and $h$ all lie in $L^{1}$ by Step 1, the third likewise.  Integrating and
+using additivity of the integral, then (6) and (5), we get for every $m$
+\begin{equation}\tag{7}
+  \int\bigl|(\varrho_m*g)(x)-g(x)\bigr|\,d\sigma(x)
+  \le\frac{\eta}{3}
+    +\int\bigl|(\varrho_m*h)(x)-h(x)\bigr|\,d\sigma(x)
+    +\frac{\eta}{3}.
+\end{equation}
+By Step 2 applied to this $h$, there is $M$ such that the middle term is
+$<\eta/3$ for every $m\ge M$.  Hence
+\[
+  \int\bigl|(\varrho_m*g)(x)-g(x)\bigr|\,d\sigma(x)<\eta
+  \qquad(m\ge M).
+\]
+Since $\eta>0$ was arbitrary and the quantity on the left is nonnegative, it
+tends to $0$ as $m\to\infty$, which is the assertion.
+\end{proof}

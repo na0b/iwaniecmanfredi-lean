@@ -1,0 +1,255 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, write
+$\mathbb{B}=\{\xi\in\mathbb{C}:|\xi|<1\}$, and let
+$H\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $H$ is continuous on $\mathbb{B}$;
+\item[(H2)] $H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in the sense of
+  \noderef{MemWLocOn};
+\item[(H3)] $H$ is differentiable at almost every point of $\mathbb{B}$;
+\item[(H4)] $H$ solves equation (18) on $\mathbb{B}$ in the sense of
+  \noderef{SolvesEq18}.
+\end{enumerate}
+Let $a_k$, $k\in\mathbb{Z}$, be the Fourier coefficients of $H$ in the sense of
+\noderef{FourierCoefOfH}.  Then for every $k\in\mathbb{Z}$ and every
+$r\in(0,1)$,
+\begin{equation*}\tag{33}
+  2r\,a_k'(r)=-p(n-k)\,a_k(r)-(p-2)(n+k)\,\overline{a_{-k}(r)},
+\end{equation*}
+and
+\begin{equation*}\tag{35}
+  r\bigl(r\,a_k'\bigr)'(r)+pn\,r\,a_k'(r)+(n^2-k^2)(p-1)\,a_k(r)=0 ,
+\end{equation*}
+and moreover each $a_k$ is $C^\infty$ on $(0,1)$.
+
+The hypothesis surface is Theorem 2's as printed, $H\in W^{1,2}(\mathbb{B})$
+solving (18), together with the continuity of $H$, which the inverse of a
+quasiconformal homeomorphism has for nothing, and the almost-everywhere
+differentiability that item (C2) of the paper's note supplies for it.
+Section 3's $C^\infty$ standing assumption is absent, and the smoothness of the
+coefficients -- the paper's (31), read at paper.tex:265--266 from that
+assumption -- appears here as a \emph{conclusion}: it is what the system (33)
+itself yields, the pair $(a_k,\overline{a_{-k}})$ being closed under (33).  That
+is also what lets (33) be asserted at every $r$ rather than almost every $r$.
+\end{lemma}
+\begin{proof}
+Fix $k\in\mathbb{Z}$.  For $r\in[0,1)$ and $\theta\in\mathbb{R}$ write
+$\gamma_r(\theta)=re^{i\theta}$, so that by \noderef{FourierCoefOfH}, for every
+$j\in\mathbb{Z}$,
+\begin{equation}\tag{0}
+  a_j(r)=\frac1{2\pi}\int_0^{2\pi}H\bigl(\gamma_r(\theta)\bigr)e^{i(n-j)\theta}\,d\theta .
+\end{equation}
+Write $A_j$ and $B_j$ for the Fourier coefficients of the same index of $H_r$
+and $H_\theta$, the polar derivatives of \noderef{HRad} and \noderef{HAng}:
+\[
+  A_j(r)=\frac1{2\pi}\int_0^{2\pi}H_r\bigl(\gamma_r(\theta)\bigr)e^{i(n-j)\theta}d\theta,
+  \qquad
+  B_j(r)=\frac1{2\pi}\int_0^{2\pi}H_\theta\bigl(\gamma_r(\theta)\bigr)e^{i(n-j)\theta}d\theta .
+\]
+Note $|\gamma_r(\theta)|=r$, so $\gamma_r(\theta)\in\mathbb{B}$ for $r\in[0,1)$
+and $\gamma_r(\theta)\in\mathbb{B}-\{0\}$ for $r\in(0,1)$.
+
+\emph{Step 1: the coefficient identities.}  The hypotheses (H1), (H2), (H3) are
+exactly those of \noderef{FourierCoefRegularity}, which therefore gives, for
+every $j\in\mathbb{Z}$:
+\begin{itemize}
+\item[(1b)] for all $c,d\in(0,1)$, $A_j$ is integrable on the closed interval
+with endpoints $c$ and $d$, and $a_j(d)-a_j(c)=\int_c^dA_j(s)\,ds$;
+\item[(1c)] for almost every $r\in(0,1)$, $a_j$ is differentiable at $r$ with
+$a_j'(r)=A_j(r)$;
+\item[(1d)] for almost every $r\in(0,1)$, $B_j(r)=i(j-n)\,a_j(r)$;
+\item[(1e)] for almost every $r\in(0,1)$, the functions
+$\theta\mapsto H_r(\gamma_r(\theta))$ and $\theta\mapsto H_\theta(\gamma_r(\theta))$
+are integrable on $[0,2\pi]$.
+\end{itemize}
+
+\emph{Step 2: equation (28) for almost every $r$, for almost every $\theta$.}
+The set $\mathbb{B}$ is open and, by (H3), $H$ is differentiable almost
+everywhere on it, so \noderef{PolarEq28} applies with $\Omega=\mathbb{B}$ and
+yields a set $N_0\subset\mathbb{C}$ of plane Lebesgue measure zero such that
+for every $\xi\in\mathbb{B}$ with $\xi\neq0$ and $\xi\notin N_0$,
+\begin{equation}\tag{2}
+  2|\xi|\,H_r(\xi)=-ip\,H_\theta(\xi)
+    +(p-2)\,i\,\Bigl(\frac{\bar\xi}{\xi}\Bigr)^{n}\,\overline{H_\theta(\xi)} .
+\end{equation}
+In polar coordinates plane Lebesgue measure is $r\,dr\,d\theta$, so by Fubini's
+theorem applied to the indicator of $N_0$ there is a set $N_1\subset(0,1)$ of
+linear measure zero such that for every $r\in(0,1)\setminus N_1$ one has
+$\gamma_r(\theta)\notin N_0$ for almost every $\theta\in[0,2\pi]$.  For such an
+$r$ and such a $\theta$, (2) applies at $\xi=\gamma_r(\theta)$; since
+$|\gamma_r(\theta)|=r$ and
+\[
+  \Bigl(\frac{\overline{\gamma_r(\theta)}}{\gamma_r(\theta)}\Bigr)^{n}
+  =\Bigl(\frac{re^{-i\theta}}{re^{i\theta}}\Bigr)^{n}=e^{-2in\theta},
+\]
+this reads
+\begin{equation}\tag{3}
+  2r\,H_r\bigl(\gamma_r(\theta)\bigr)=-ip\,H_\theta\bigl(\gamma_r(\theta)\bigr)
+    +(p-2)\,i\,e^{-2in\theta}\,\overline{H_\theta\bigl(\gamma_r(\theta)\bigr)} .
+\end{equation}
+
+\emph{Step 3: the coefficient identity off a null set.}  Let $N_2\subset(0,1)$
+be the union of $N_1$, of the two null sets outside which (1d) holds for the
+indices $k$ and $-k$, and of the null set outside which (1e) holds; $N_2$ is
+null.  Fix $r\in(0,1)\setminus N_2$.  By (1e) the functions
+$\theta\mapsto H_r(\gamma_r(\theta))$ and
+$\theta\mapsto H_\theta(\gamma_r(\theta))$ are integrable on $[0,2\pi]$, and
+multiplying an integrable function by the continuous unimodular factor
+$e^{i(n-j)\theta}$ or by $e^{-2in\theta}$ preserves integrability, so every
+integral written below is absolutely convergent.  Multiplying (3) by
+$\frac1{2\pi}e^{i(n-k)\theta}$ and integrating over $\theta\in[0,2\pi]$ ---
+legitimate because (3) holds for almost every $\theta$, and a null set of
+$\theta$ does not affect the integrals --- gives
+\[
+  2r\,A_k(r)
+  =-ip\cdot\frac1{2\pi}\int_0^{2\pi}H_\theta(\gamma_r(\theta))e^{i(n-k)\theta}d\theta
+   +(p-2)i\cdot\frac1{2\pi}\int_0^{2\pi}\overline{H_\theta(\gamma_r(\theta))}
+     e^{i(n-k)\theta}e^{-2in\theta}d\theta .
+\]
+For the first term on the right, (1d) with $j=k$ gives $B_k(r)=i(k-n)a_k(r)$, so
+that term is
+\[
+  -ip\cdot i(k-n)a_k(r)=p(k-n)a_k(r)=-p(n-k)a_k(r),
+\]
+using $i\cdot i=-1$.  For the second, $e^{i(n-k)\theta}e^{-2in\theta}
+=e^{-i(n+k)\theta}=\overline{e^{i(n+k)\theta}}$, and conjugation commutes with
+the integral, so
+\[
+  \frac1{2\pi}\int_0^{2\pi}\overline{H_\theta(\gamma_r(\theta))}\,
+    \overline{e^{i(n+k)\theta}}\,d\theta
+  =\overline{\frac1{2\pi}\int_0^{2\pi}H_\theta(\gamma_r(\theta))e^{i(n+k)\theta}\,d\theta}
+  =\overline{B_{-k}(r)},
+\]
+because $n+k=n-(-k)$.  By (1d) with $j=-k$, $B_{-k}(r)=i(-k-n)a_{-k}(r)$, so,
+using $\overline{i}=-i$, that $k+n$ is a real integer, and $i\cdot(-i)=1$, the
+second term equals
+\[
+  (p-2)i\cdot\overline{i(-k-n)a_{-k}(r)}
+  =(p-2)\,i\,(-i)(-k-n)\overline{a_{-k}(r)}
+  =-(p-2)(n+k)\overline{a_{-k}(r)} .
+\]
+Altogether
+\begin{equation}\tag{4}
+  2r\,A_k(r)=-p(n-k)a_k(r)-(p-2)(n+k)\overline{a_{-k}(r)}
+  \qquad\bigl(r\in(0,1)\setminus N_2\bigr),
+\end{equation}
+and, $k\in\mathbb{Z}$ having been arbitrary in Steps 1--3, the same identity
+with $k$ replaced by $-k$ holds off a null set $N_3$:
+\begin{equation}\tag{5}
+  2r\,A_{-k}(r)=-p(n+k)a_{-k}(r)-(p-2)(n-k)\overline{a_{k}(r)}
+  \qquad\bigl(r\in(0,1)\setminus N_3\bigr).
+\end{equation}
+
+\emph{Step 4: each $a_k$ is $C^\infty$ on $(0,1)$.}  Put
+\[
+  u=a_k,\quad v=\overline{a_{-k}},\quad U=A_k,\quad V=\overline{A_{-k}},
+\]
+and, for $r\in(0,1)$,
+\[
+  M_{00}(r)=\frac{-p(n-k)}{2r},\quad M_{01}(r)=\frac{-(p-2)(n+k)}{2r},\quad
+  M_{10}(r)=\frac{-(p-2)(n-k)}{2r},\quad M_{11}(r)=\frac{-p(n+k)}{2r}.
+\]
+We verify the hypotheses of \noderef{LinearOdeSystemSmooth} with $a=0$, $b=1$.
+
+(H1): each $M_{ij}$ is a real constant times $r\mapsto1/(2r)$, which is
+$C^\infty$ on $(0,1)$ because $r\neq0$ there.
+
+(H2): by (1b) with $j=k$, $U=A_k$ is integrable on the closed interval with
+endpoints $c$ and $d$ for all $c,d\in(0,1)$; by (1b) with $j=-k$ the same holds
+for $A_{-k}$, hence for $V=\overline{A_{-k}}$, since $|\overline{w}|=|w|$.
+
+(H3): by (1b) with $j=k$, $u(d)-u(c)=\int_c^dU(s)\,ds$.  By (1b) with $j=-k$,
+$a_{-k}(d)-a_{-k}(c)=\int_c^dA_{-k}(s)\,ds$; conjugating and using that
+conjugation is a continuous $\mathbb{R}$-linear map, hence commutes with the
+integral of an integrable function,
+\[
+  v(d)-v(c)=\overline{a_{-k}(d)-a_{-k}(c)}
+  =\overline{\int_c^dA_{-k}(s)\,ds}=\int_c^d\overline{A_{-k}(s)}\,ds
+  =\int_c^dV(s)\,ds .
+\]
+
+(H4): let $r\in(0,1)$ lie outside the null set $N_2\cup N_3$.  Dividing (4) by
+$2r\neq0$ gives $U(r)=M_{00}(r)u(r)+M_{01}(r)v(r)$.  Conjugating (5), and using
+that $p$, $n$, $k$, $r$ are real and that conjugation is a ring homomorphism
+with $\overline{\overline{w}}=w$,
+\[
+  2r\,\overline{A_{-k}(r)}=-p(n+k)\overline{a_{-k}(r)}-(p-2)(n-k)a_k(r),
+\]
+and dividing by $2r$ gives $V(r)=M_{10}(r)u(r)+M_{11}(r)v(r)$.
+
+\noderef{LinearOdeSystemSmooth} therefore applies and gives that $u=a_k$ and
+$v=\overline{a_{-k}}$ are $C^\infty$ on $(0,1)$.  Since $k\in\mathbb{Z}$ was
+arbitrary, every $a_k$ is $C^\infty$ on $(0,1)$; this is the third assertion.
+
+\emph{Step 5: (33) for every $r\in(0,1)$.}  By Step 4 and (1c) with $j=k$ there
+is a null set off which $a_k'(r)=A_k(r)$, so by (4), for every
+$r\in(0,1)$ outside a null set,
+\begin{equation}\tag{6}
+  2r\,a_k'(r)=-p(n-k)a_k(r)-(p-2)(n+k)\overline{a_{-k}(r)} .
+\end{equation}
+Both sides of (6) are continuous on $(0,1)$: by Step 4 the functions $a_k$ and
+$a_{-k}$ are $C^\infty$ on $(0,1)$, hence so is $a_k'$, and
+$r\mapsto\overline{a_{-k}(r)}$ is continuous because complex conjugation is
+continuous.  The complement of a null set is dense in $(0,1)$: if some nonempty
+open subinterval missed it, that subinterval would be null, which is false.
+Two continuous functions on $(0,1)$ agreeing on a dense subset agree
+everywhere.  Hence (6) holds for every $r\in(0,1)$; this is (33).
+
+\emph{Step 6: the elimination (34).}  Fix $r\in(0,1)$.  Since $k$ was arbitrary
+in Steps 1--5, (33) holds with $k$ replaced by $-k$:
+\[
+  2r\,a_{-k}'(r)=-p(n+k)a_{-k}(r)-(p-2)(n-k)\overline{a_k(r)} .
+\]
+Conjugating, and using that $p$, $n$, $k$, $r$ are real and that conjugation is
+a ring homomorphism with $\overline{\overline{w}}=w$,
+\[
+  2r\,\overline{a_{-k}'(r)}=-p(n+k)\overline{a_{-k}(r)}-(p-2)(n-k)a_k(r).
+\]
+Multiplying by $(p-2)$,
+\[
+  2(p-2)r\,\overline{a_{-k}'(r)}
+  =-p\cdot(p-2)(n+k)\overline{a_{-k}(r)}-(p-2)^2(n-k)a_k(r).
+\]
+By (33), $(p-2)(n+k)\overline{a_{-k}(r)}=-2r\,a_k'(r)-p(n-k)a_k(r)$.
+Substituting,
+\begin{equation}\tag{7}
+  2(p-2)r\,\overline{a_{-k}'(r)}
+  =p\bigl[2r\,a_k'(r)+p(n-k)a_k(r)\bigr]-(p-2)^2(n-k)a_k(r)
+  =2pr\,a_k'(r)+4(p-1)(n-k)a_k(r),
+\end{equation}
+where the last step uses the identity $p^2-(p-2)^2=4(p-1)$.  This is (34).
+
+\emph{Step 7: (35).}  Differentiate (33) with respect to $r$ on $(0,1)$.  Every
+term is differentiable there: $a_k$ and $a_{-k}$ are $C^\infty$ on $(0,1)$ by
+Step 4, and $\overline{a_{-k}}$ is too, with
+$\bigl(\overline{a_{-k}}\bigr)'(r)=\overline{a_{-k}'(r)}$, because conjugation is
+an $\mathbb{R}$-linear continuous map and therefore commutes with
+differentiation.  We obtain, for $r\in(0,1)$,
+\[
+  \bigl(2r\,a_k'\bigr)'(r)
+  =-p(n-k)a_k'(r)-(p-2)(n+k)\overline{a_{-k}'(r)} .
+\]
+Multiply by $2r$ and use (7) for the quantity
+$2(p-2)r\,\overline{a_{-k}'(r)}$:
+\[
+  2r\bigl(2r\,a_k'\bigr)'(r)
+  =-2pr(n-k)a_k'(r)-(n+k)\bigl[2pr\,a_k'(r)+4(p-1)(n-k)a_k(r)\bigr].
+\]
+Now expand both sides.  On the left,
+$\bigl(2ra_k'\bigr)'(r)=2a_k'(r)+2r\,a_k''(r)$, so the left side is
+$4r\,a_k'(r)+4r^2a_k''(r)$.  On the right,
+\[
+  -2pr\,a_k'(r)\bigl[(n-k)+(n+k)\bigr]-4(p-1)(n+k)(n-k)a_k(r)
+  =-4pnr\,a_k'(r)-4(p-1)(n^2-k^2)a_k(r).
+\]
+Dividing by $4$,
+\[
+  r\,a_k'(r)+r^2a_k''(r)+pn\,r\,a_k'(r)+(n^2-k^2)(p-1)a_k(r)=0 .
+\]
+Finally $r\bigl(r\,a_k'\bigr)'(r)=r\bigl(a_k'(r)+r\,a_k''(r)\bigr)
+=r\,a_k'(r)+r^2a_k''(r)$, so the last display is exactly
+\[
+  r\bigl(r\,a_k'\bigr)'(r)+pn\,r\,a_k'(r)+(n^2-k^2)(p-1)a_k(r)=0,
+\]
+which is (35).
+\end{proof}

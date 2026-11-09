@@ -1,0 +1,339 @@
+\begin{theorem}
+Let $1<p<\infty$ with $p\neq2$, let $k\ge1$ be an integer and $0<\alpha\le1$
+with $k+\alpha$ equal to the right-hand side of (9), as in
+\noderef{KAlphaExp}, and let $\Omega\subseteq\mathbb{C}$ be open, non-empty and connected.
+Then there is a function $v\colon\mathbb{C}\to\mathbb{R}$ such that
+\begin{enumerate}
+\item[(a)] $v$ is $p$-harmonic on $\Omega$ in the sense of
+  \noderef{PHarmonicOn};
+\item[(b)] $v$ is continuous on $\Omega$;
+\item[(c)] $v\notin C^{k+\alpha}_{\mathrm{loc}}(\Omega)$ in the sense of
+  \noderef{MemHolderSmallOn};
+\item[(d)] $v\notin W^{k+2,q}_{\mathrm{loc}}(\Omega)$ in the sense of
+  \noderef{MemWLocOn}, where $q=\frac{2}{2-\alpha}$.
+\end{enumerate}
+
+This is the optimality clause of Theorem 1 of the paper: ``for each
+$1<p<\infty$, $p\neq2$, there is a $p$-harmonic function
+$v\in W^{1,p}_{\mathrm{loc}}(\Omega)$ which is not in the class
+$C^{k+\alpha}_{\mathrm{loc}}(\Omega)\cup W^{k+2,\frac{2}{2-\alpha}}
+_{\mathrm{loc}}(\Omega)$''; the membership $v\in W^{1,p}_{\mathrm{loc}}(\Omega)$
+is part of \noderef{PHarmonicOn}.  Together with the regularity half it covers
+the target: neither half covers it alone.
+
+Two features of the statement deserve comment.  The conclusion concerns $v$,
+whose two indices exceed by one those of (56), which concerns the complex
+gradient $f=\partial v/\partial z$; the exponent $q$ does not move.  And the
+continuity (b) is asserted deliberately.  Being $p$-harmonic is a property of
+$v$ seen only through integrals, so it is unchanged when $v$ is altered on a
+set of measure zero, whereas membership in a Hölder class is not; without (b)
+the non-membership (c) could be arranged by altering any function on a null
+set, and the statement would be vacuous.  It is not a strengthening the paper
+does not justify: the paper's own witness, the potential of the continuous
+function $f$ of (55), is continuous.  Connectedness of $\Omega$ carries its
+non-emptiness, without which (c) and (d) are false, every function lying in
+every class on the empty set; and it is the paper's hypothesis on the domain.
+\end{theorem}
+\begin{proof}
+One remark on well-posedness before the argument proper.  The hypothesis above
+presents the pair $(k,\alpha)$ as given, whereas Theorem 1 of the paper says at
+paper.tex:87--90 that ``the integer $k\ge1$ and the exponent $\alpha\in(0,1]$
+are determined by the equation (9)''.  By \noderef{KAlphaWellDefined} there is,
+for the given $p$, exactly one pair consisting of an integer $k\ge1$ and a real
+number $\alpha$ with $0<\alpha\le1$ such that $k+\alpha$ equals the right-hand
+side of (9); so the hypothesis on $(k,\alpha)$ is satisfiable for every
+$1<p<\infty$, and in particular for every $p\neq2$, and determines the pair from
+$p$, exactly as the paper asserts, and the statement proved below is therefore
+not vacuous for any such $p$.  This is a well-posedness remark and not a step in
+the argument: nothing in the rest of this proof invokes that lemma, and in
+particular the bundle fed to \noderef{Section7Heart} in Step 3 below uses only
+the hypothesis on $(k,\alpha)$ as stated, for whichever pair satisfies it.
+
+\emph{Step 1: the extremal data.}  By \noderef{ExtremalInverseGradient} there
+are $f\colon\mathbb{C}\to\mathbb{C}$ and $v_0\colon\mathbb{C}\to\mathbb{R}$ such
+that: $f$ is continuous on $\mathbb{C}$ and satisfies $f(H(\xi))=\xi$ and
+$H(f(z))=z$ for all $\xi,z$, where $H=H_p$ is the extremal function of
+\noderef{ExtremalH}; $f$ is $C^\infty$ on $\mathbb{C}-\{0\}$; $f$ satisfies the
+two homogeneity identities of degree $d=d(p)$ and $d-|\nu|$ of
+\noderef{DExp} and \noderef{PartialWord}; $v_0$ is continuous on $\mathbb{C}$,
+is $C^\infty$ on $\mathbb{C}-\{0\}$ and is $p$-harmonic on $\mathbb{C}$ in the
+sense of \noderef{PHarmonicOn}; and
+\begin{equation}\tag{1}
+  \frac{\partial v_0}{\partial z}(z)=f(z)\qquad(z\neq0),
+\end{equation}
+with $\partial/\partial z$ as in \noderef{DZ}.
+
+\emph{Step 2: translation of the singular point into $\Omega$.}  Since $\Omega$
+is connected it is non-empty; fix $z_0\in\Omega$ and put
+\[
+  U=\{z-z_0:z\in\Omega\},\qquad v(z)=v_0(z-z_0)\quad(z\in\mathbb{C}).
+\]
+Then $U$ is open, being the image of the open set $\Omega$ under the
+homeomorphism $z\mapsto z-z_0$, and $0=z_0-z_0\in U$.  Write
+$\tau(z)=z-z_0$, so that $v=v_0\circ\tau$, $U=\tau(\Omega)$ and
+$\Omega=\tau^{-1}(U)$.
+
+\emph{Step 3: (56) on $U$.}  The hypotheses of \noderef{Section7Heart} hold with
+this $U$ and this $f$: $1<p<\infty$ and $p\neq2$; $k\ge1$, $0<\alpha\le1$ and
+$k+\alpha$ is the right-hand side of (9); $U$ is open with $0\in U$; and the
+four properties (H1)--(H4) of $f$ --- smoothness off the origin, the two
+inverse relations, and the two homogeneity identities --- are precisely those
+listed in Step 1.
+Therefore
+\begin{equation}\tag{2}
+  f\notin C^{k-1+\alpha}_{\mathrm{loc}}(U)
+  \quad\text{and}\quad
+  f\notin W^{k+1,q}_{\mathrm{loc}}(U).
+\end{equation}
+
+\emph{Step 4: two remarks on norms and on translation.}
+
+\noindent(4a) Let $\Omega'$ be open, let $g$ be of class $C^m$ on $\Omega'$ and
+let $\mathrm{d}^mg$ be its $m$-th iterated Fréchet derivative, which on the
+open set $\Omega'$ agrees with the derivative within $\Omega'$.  As in
+\noderef{MemHolderSmallOn} the little-o condition is expressed through
+$\mathrm{d}^mg$, whereas the partial derivatives $D^\nu g$ of
+\noderef{PartialWord} with $|\nu|=m$ are the values
+$\mathrm{d}^mg(x)[e_{j_1},\dots,e_{j_m}]$ on the basis vectors $e_0=1$,
+$e_1=i$.  Expanding each argument of an $m$-linear map in that basis and
+using $|u^{(j)}|\le\|u\|$ gives, for $x,y\in\Omega'$,
+\begin{equation}\tag{3}
+  \bigl|D^\nu g(x)-D^\nu g(y)\bigr|
+    \le\bigl\|\mathrm{d}^mg(x)-\mathrm{d}^mg(y)\bigr\|
+    \le\sum_{|\nu'|=m}\bigl|D^{\nu'}g(x)-D^{\nu'}g(y)\bigr| ,
+\end{equation}
+the last sum having $2^m$ terms.
+
+\noindent(4b) Translation covariance.  Lebesgue measure on $\mathbb{C}$ is
+translation invariant, $\tau$ is a $C^\infty$ diffeomorphism with
+$\mathrm{d}\tau=\mathrm{id}$, $\tau$ carries compact subsets of $\Omega$ to
+compact subsets of $U$ and preserves distances, and
+$\phi\mapsto\phi\circ\tau^{-1}$ is a bijection between the test functions for
+$\Omega$ of \noderef{IsTestFn} and those for $U$.  Consequently each of the
+notions used below is covariant under $\tau$: for $u\colon\mathbb{C}\to\mathbb{C}$,
+\begin{itemize}
+\item $u\in L^{s}_{\mathrm{loc}}(\Omega)$ if and only if
+  $u\circ\tau^{-1}\in L^{s}_{\mathrm{loc}}(U)$, by
+  \noderef{MemLpLocOn} and translation invariance of the measure;
+\item $w$ is the distributional $j$-th partial of $u$ on $\Omega$ in the sense
+  of \noderef{IsWeakPartialOn} if and only if $w\circ\tau^{-1}$ is that of
+  $u\circ\tau^{-1}$ on $U$, by the change of variables $\zeta=\tau(z)$ in both
+  integrals, which also converts $\phi$ into $\phi\circ\tau^{-1}$;
+\item $u\in C^{m+\alpha}_{\mathrm{loc}}(\Omega)$ if and only if
+  $u\circ\tau^{-1}\in C^{m+\alpha}_{\mathrm{loc}}(U)$, by
+  \noderef{MemHolderSmallOn}: the $C^m$ clause is preserved by composition with
+  a diffeomorphism whose differential is the identity, which also gives
+  $\mathrm{d}^m(u\circ\tau^{-1})(\zeta)=\mathrm{d}^mu(\tau^{-1}(\zeta))$, and
+  the little-o clause then transfers because $\tau^{-1}$ carries compact
+  subsets of $U$ to compact subsets of $\Omega$ and preserves distances;
+\item $u\in W^{m,s}_{\mathrm{loc}}(\Omega)$ if and only if
+  $u\circ\tau^{-1}\in W^{m,s}_{\mathrm{loc}}(U)$, by \noderef{MemWLocOn}: the
+  family $(D_w)$ for $u$ on $\Omega$ transforms into the family
+  $(D_w\circ\tau^{-1})$ for $u\circ\tau^{-1}$ on $U$ by the two previous
+  items;
+\item for $h\colon\mathbb{C}\to\mathbb{C}$, the integral identity of clause (c)
+  of \noderef{PHarmonicOn} holds with witness $h$ on $\Omega$ if and only if it
+  holds with witness $h\circ\tau^{-1}$ on $U$.  Written out, with
+  $\nabla\phi=\phi_x+i\phi_y$ and the integrand that \noderef{PHarmonicOn}
+  records for clause (c), the two assertions are
+  \[
+    \int_{\mathbb{C}}|h|^{p-2}
+      \operatorname{Re}\bigl(h\,\overline{\nabla\phi}\bigr)\,d\sigma=0
+    \quad\text{for every real test function }\phi\text{ for }\Omega
+  \]
+  and the same with $h$ replaced by $h\circ\tau^{-1}$ and $\phi$ ranging over
+  the real test functions for $U$.  Take the direction $U\to\Omega$, which is
+  the one Step 5 uses, and assume the second.  Let $\phi$ be a real test
+  function for $\Omega$ and put $\psi=\phi\circ\tau^{-1}$, a real test function
+  for $U$ by the bijection recorded above.  Substituting $\zeta=\tau(z)$,
+  \[
+    \int_{\mathbb{C}}|h(z)|^{p-2}
+      \operatorname{Re}\bigl(h(z)\,\overline{\nabla\phi(z)}\bigr)\,d\sigma(z)
+    =\int_{\mathbb{C}}\bigl|(h\circ\tau^{-1})(\zeta)\bigr|^{p-2}
+      \operatorname{Re}\bigl((h\circ\tau^{-1})(\zeta)\,
+        \overline{\nabla\psi(\zeta)}\bigr)\,d\sigma(\zeta),
+  \]
+  by three facts, each already recorded in the preamble to this list: the
+  measure is unchanged because Lebesgue measure on $\mathbb{C}$ is translation
+  invariant; the witness is carried along because
+  $h(z)=(h\circ\tau^{-1})(\tau z)$ by definition; and the gradient is carried
+  along because $\mathrm{d}\tau=\mathrm{id}$ gives
+  $\nabla\psi(\zeta)=\nabla\phi(\tau^{-1}\zeta)=\nabla\phi(z)$.  The right-hand
+  integral vanishes by the assumption on $U$, so the left-hand one does too;
+  and since $\phi\mapsto\phi\circ\tau^{-1}$ is a \emph{bijection} onto the real
+  test functions for $U$, the quantifier transfers as well.  The converse
+  direction is the same computation run through $\tau^{-1}$, which is again a
+  translation.  The convention of \noderef{PHarmonicOn} by which $|h|^{p-2}$ is
+  read as $0$ where $h$ vanishes causes no difficulty here: the integrand is a
+  fixed function of the two values $h(z)$ and $\nabla\phi(z)$, so the
+  substitution transports it along with them.
+\end{itemize}
+Finally $v\circ\tau^{-1}=v_0$ and $\tau(\Omega)=U$.
+
+\emph{Step 5: (a) and (b).}  By Step 1, $v_0$ is $p$-harmonic on $\mathbb{C}$.
+Restricting to $\Omega$ is legitimate: by \noderef{PHarmonicOn} with the
+witness $g_0$, the two local $L^p$ memberships and the two
+integration-by-parts identities and the integral identity are required against
+test functions for the ambient set, and every test function for a subset of
+$\mathbb{C}$ is one for $\mathbb{C}$, while compact subsets of a subset are
+compact subsets of $\mathbb{C}$; so $v_0$ is $p$-harmonic on $U$ with the same
+witness.  Now transfer that back to $\Omega$.  By \noderef{PHarmonicOn} what
+has to be checked for $v=v_0\circ\tau$ on $\Omega$ with witness
+$g=g_0\circ\tau$ is exactly its three clauses, and each is an instance of (4b)
+read in the direction $U\to\Omega$ --- that is, right to left in the stated
+equivalence, with the function on the $\Omega$ side taken to be $v_0\circ\tau$
+or $g_0\circ\tau$, so that composing it with $\tau^{-1}$ returns the function
+already known on $U$.  Clause (a), that $v$ and $g$ lie in
+$L^p_{\mathrm{loc}}(\Omega)$, is the first item applied once to each of the two
+functions.  Clause (b), that $\operatorname{Re}g$ and $\operatorname{Im}g$ are
+the distributional $x$- and $y$-partials of $v$ on $\Omega$, is the second item
+applied once for each of the two letters, using
+$\operatorname{Re}(g_0\circ\tau)=(\operatorname{Re}g_0)\circ\tau$ and likewise
+for the imaginary part.  Clause (c), the integral identity, is the fifth item
+with $h=g_0\circ\tau$.  All three therefore hold, so $v$ is $p$-harmonic on
+$\Omega$, which is (a).  And $v$ is continuous on $\mathbb{C}$, being the
+composition of the continuous $v_0$ with $\tau$; in particular it is continuous
+on $\Omega$, which is (b).
+
+\emph{Step 6: (c).}  Suppose $v\in C^{k+\alpha}_{\mathrm{loc}}(\Omega)$.  By the
+third item of (4b), $v_0=v\circ\tau^{-1}\in C^{k+\alpha}_{\mathrm{loc}}(U)$.
+We show that then $f\in C^{k-1+\alpha}_{\mathrm{loc}}(U)$, contradicting the
+first half of (2).
+
+By \noderef{MemHolderSmallOn} there are two cases, and in both $v_0$ is at
+least of class $C^{k}$ on $U$: if $\alpha=1$ the clause is
+$v_0\in C^{k+1}(U)$, and if $\alpha<1$ it is $v_0\in C^{k}(U)$ together with
+the little-o condition on $\mathrm{d}^{k}v_0$.  Put
+\[
+  w_0=\frac{\partial v_0}{\partial z}
+  =\tfrac12\bigl(\partial_x v_0-i\,\partial_y v_0\bigr),
+\]
+which by \noderef{DZ} is the stated combination of first partial derivatives,
+and which is therefore of class $C^{k-1}$ on $U$, with
+\begin{equation}\tag{4}
+  D^\nu w_0=\tfrac12\bigl(D^{\nu\frown(0)}v_0-i\,D^{\nu\frown(1)}v_0\bigr)
+  \qquad(|\nu|\le k-1)
+\end{equation}
+at every point of $U$, where $\nu\frown(j)$ is $\nu$ with the letter $j$
+appended on the right, a word of length $|\nu|+1$.  Two things make (4)
+legitimate, and both need the set named.  First,
+$D^{\nu\frown(j)}=D^{\nu}\circ\partial_j$: by \noderef{PartialWord} the
+operator attached to a word is the composite
+$\partial_{j_1}\partial_{j_2}\cdots\partial_{j_m}$ in which the last letter is
+applied first, so appending $j$ on the right applies $\partial_j$ first.
+Second, the step is linearity of $D^{\nu}$, which is \emph{not} available
+unconditionally: by the convention of \noderef{PartialWord} a derivative is
+taken to be $0$ wherever the function fails to be real-differentiable, so these
+operators are additive only where both summands are differentiable.  Here the
+instance is located.  The set is the open set $U$, on which $v_0$ is of class
+$C^{k}$ as just established; for $|\nu|\le k-1$ each of the at most $k$
+applications of $\partial_0$ or $\partial_1$ occurring on either side of (4)
+acts on a function of class $C^{k}$ on $U$, so at every point of $U$ all the
+derivatives involved are genuine and the convention never intervenes.  Since
+$U$ is open, that is all (4) asserts.
+
+First, $w_0=f$ on $U$.  Both are continuous on $U$: $w_0$ because
+$v_0\in C^{k}(U)$ with $k\ge1$, and $f$ by Step 1.  They agree on $U-\{0\}$ by
+(1).  The singleton $\{0\}$ has empty interior, so $U-\{0\}$ is dense in $U$,
+and two continuous functions on $U$ agreeing on a dense subset agree on $U$.
+
+Now the index shift.  If $\alpha=1$, then $v_0\in C^{k+1}(U)$, so
+$w_0\in C^{k}(U)$ by (4), and by \noderef{MemHolderSmallOn} at the index $k-1$
+and $\alpha=1$ --- whose clause is $C^{(k-1)+1}=C^{k}$, using $k\ge1$ --- we get
+$w_0\in C^{k-1+\alpha}_{\mathrm{loc}}(U)$.  If $\alpha<1$, then
+$w_0\in C^{k-1}(U)$, and we must verify the little-o clause for $w_0$ at the
+index $k-1$.  Let $K\subseteq U$ be compact and $\delta>0$.  Apply the little-o
+clause for $v_0$ at the index $k$ with the same $K$ and with
+$\delta/2^{k-1}>0$, obtaining $\rho>0$ such that
+$\|\mathrm{d}^{k}v_0(x)-\mathrm{d}^{k}v_0(y)\|\le2^{-(k-1)}\delta|x-y|^{\alpha}$
+for $x,y\in K$ with $|x-y|<\rho$.  For such $x,y$ and for $|\nu|=k-1$, (4) and
+the first inequality of (3) applied to $v_0$ at the order $k$ give
+\[
+  \bigl|D^\nu w_0(x)-D^\nu w_0(y)\bigr|
+  \le\tfrac12\sum_{j\in\{0,1\}}
+    \bigl|D^{\nu\frown(j)}v_0(x)-D^{\nu\frown(j)}v_0(y)\bigr|
+  \le\bigl\|\mathrm{d}^{k}v_0(x)-\mathrm{d}^{k}v_0(y)\bigr\|
+  \le\frac{\delta|x-y|^{\alpha}}{2^{k-1}} ,
+\]
+and then the second inequality of (3) applied to $w_0$ at the order $k-1$,
+whose sum has $2^{k-1}$ terms, gives
+\[
+  \bigl\|\mathrm{d}^{k-1}w_0(x)-\mathrm{d}^{k-1}w_0(y)\bigr\|
+  \le2^{k-1}\cdot\frac{\delta|x-y|^{\alpha}}{2^{k-1}}
+  =\delta|x-y|^{\alpha}.
+\]
+This is the little-o clause for $w_0$, so again
+$w_0\in C^{k-1+\alpha}_{\mathrm{loc}}(U)$.
+
+Since $w_0=f$ on $U$, and since both clauses of \noderef{MemHolderSmallOn}
+involve the function only through its restriction to $U$ --- the smoothness
+being smoothness on $U$ and the derivatives being taken within $U$ --- we
+conclude $f\in C^{k-1+\alpha}_{\mathrm{loc}}(U)$, contradicting (2).
+Hence (c) holds.
+
+\emph{Step 7: (d).}  Suppose $v\in W^{k+2,q}_{\mathrm{loc}}(\Omega)$.  By the
+fourth item of (4b), $v_0\in W^{k+2,q}_{\mathrm{loc}}(U)$.  We show that then
+$f\in W^{k+1,q}_{\mathrm{loc}}(U)$, contradicting the second half of (2).
+
+Let $(D_w)_w$ be a family as in \noderef{MemWLocOn} for $v_0$ on $U$ at the
+order $k+2$: $D_{()}=v_0$, each $D_w$ with $|w|\le k+2$ lies in
+$L^{q}_{\mathrm{loc}}(U)$, and $D_{w\frown(j)}$ is the distributional $j$-th
+partial of $D_w$ on $U$ whenever $|w|<k+2$.  Note that
+\noderef{IsWeakPartialOn} is an identity between integrals which is linear in
+the pair of functions involved: if $w_1$ is the distributional $j$-th partial of
+$u_1$ and $w_2$ that of $u_2$, then $c_1w_1+c_2w_2$ is that of
+$c_1u_1+c_2u_2$; and it is unchanged if either function is replaced by one
+agreeing with it almost everywhere.
+
+Define
+\[
+  E_{()}=f,\qquad
+  E_w=\tfrac12\bigl(D_{(0)\frown w}-i\,D_{(1)\frown w}\bigr)
+  \quad\text{for }1\le|w|\le k+1,
+\]
+where $(j)\frown w$ is the word $w$ with the letter $j$ prepended, of length
+$|w|+1\le k+2$.
+
+\noindent(7a) \emph{$E_{()}$ agrees almost everywhere with
+$\tfrac12(D_{(0)}-iD_{(1)})$.}  On the open set $U-\{0\}$ the function $v_0$ is
+$C^\infty$ by Step 1.  Restricting the integration-by-parts identities to test
+functions for $U-\{0\}$, each $D_{(j)}$ is the distributional $j$-th partial of
+$v_0$ on $U-\{0\}$.  Apply \noderef{WeakPartialEqFDerivAE} on $U-\{0\}$ to
+$v_0$ and the pair $j\mapsto D_{(j)}$: its hypotheses hold, since $v_0$ is
+continuous on $U$ and hence in $L^1_{\mathrm{loc}}(U-\{0\})$; each $D_{(j)}$
+lies in $L^{q}_{\mathrm{loc}}(U)$ with $q\ge1$, hence in
+$L^1_{\mathrm{loc}}(U-\{0\})$ by Hölder's inequality on compact sets, which
+have finite measure; the two identities were just noted; and $v_0$ is
+differentiable at every point of $U-\{0\}$.  The conclusion is that
+$D_{(j)}=\partial_jv_0$ almost everywhere on $U-\{0\}$ for each $j$, so by
+\noderef{DZ} and (1),
+\[
+  \tfrac12\bigl(D_{(0)}-iD_{(1)}\bigr)
+  =\tfrac12\bigl(\partial_xv_0-i\,\partial_yv_0\bigr)
+  =\frac{\partial v_0}{\partial z}=f=E_{()}
+\]
+almost everywhere on $U-\{0\}$, hence almost everywhere on $U$, the origin
+being a null set.
+
+\noindent(7b) \emph{$(E_w)$ is a family as required.}  We have $E_{()}=f$.  Each
+$E_w$ with $1\le|w|\le k+1$ is a linear combination of two members of
+$L^{q}_{\mathrm{loc}}(U)$, hence lies in $L^{q}_{\mathrm{loc}}(U)$; and
+$E_{()}=f$ is continuous on $U$, hence bounded on compact subsets of $U$ and so
+in $L^{q}_{\mathrm{loc}}(U)$ as well.  Let $|w|\le k$ and $j\in\{0,1\}$; we
+check that $E_{w\frown(j)}$ is the distributional $j$-th partial of $E_w$ on
+$U$.  Since $|(j')\frown w|=|w|+1\le k+1<k+2$ for each letter $j'$, the family
+$(D_w)$ gives that $D_{(j')\frown w\frown(j)}$ is the distributional $j$-th
+partial of $D_{(j')\frown w}$ on $U$; by linearity, 
+\[
+  E_{w\frown(j)}
+  =\tfrac12\bigl(D_{(0)\frown w\frown(j)}-i\,D_{(1)\frown w\frown(j)}\bigr)
+\]
+is the distributional $j$-th partial of
+$\tfrac12(D_{(0)\frown w}-iD_{(1)\frown w})$ on $U$.  If $|w|\ge1$ the latter is
+$E_w$ and we are done; if $w=()$ the latter agrees with $E_{()}=f$ almost
+everywhere by (7a), and the integral identity is insensitive to that, so
+$E_{(j)}$ is the distributional $j$-th partial of $E_{()}$ as well.
+
+Hence $f\in W^{k+1,q}_{\mathrm{loc}}(U)$ in the sense of \noderef{MemWLocOn},
+contradicting (2).  This proves (d), and with Steps 5 and 6 the theorem.
+\end{proof}

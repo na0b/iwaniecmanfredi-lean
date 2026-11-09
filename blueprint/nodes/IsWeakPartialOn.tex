@@ -1,0 +1,17 @@
+\begin{definition}
+Let $\Omega\subset\mathbb{C}$, let $j\in\{0,1\}$ and let
+$u,v\colon\mathbb{C}\to\mathbb{C}$.  Identify $\mathbb{C}$ with $\mathbb{R}^2$
+by $z=x+iy$ and write $\partial_0=\partial/\partial x$,
+$\partial_1=\partial/\partial y$.  We say that $v$ is the
+\emph{distributional $\partial_j$-derivative of $u$ on $\Omega$} if
+\[
+  \int_{\mathbb{C}}u(z)\,\partial_j\phi(z)\,d\sigma(z)
+  =-\int_{\mathbb{C}}v(z)\,\phi(z)\,d\sigma(z)
+\]
+for every test function $\phi$ for $\Omega$ in the sense of
+\noderef{IsTestFn}.  (Both integrands vanish off the compact support of
+$\phi$, so both integrals are taken over a compact subset of $\Omega$.)
+
+This is the usual meaning of the phrase ``distributional derivative
+$D^\nu u$'' in Section~1 of the paper, for a multi-index $\nu$ of order one.
+\end{definition}

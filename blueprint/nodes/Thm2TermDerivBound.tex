@@ -1,0 +1,143 @@
+\begin{helper}
+Let $n\ge1$ be an integer, let $1<p<\infty$, let
+$A\colon\mathbb{Z}\to\mathbb{C}$, let $m\ge0$ be an integer and let
+$\xi\in\mathbb{C}$ with $\xi\ne0$.  Write $k=n+m$, $A_k=A(k)$,
+$\lambda_k=\lambda_k(n,p)$ as in \noderef{LambdaCoef},
+$\epsilon_k=\epsilon_k(n,p)$ as in \noderef{EpsCoef}, and let
+$T_k=T_k(n,p,A,\cdot)$ be the $k$-th summand of the series (19) as in
+\noderef{Thm2Term}.  Then
+\[
+  \Bigl|\frac{\partial T_k}{\partial\xi}(\xi)\Bigr|
+  \le\bigl(4+\sqrt{p-1}\bigr)(n+m)\,|A_{n+m}|\,|\xi|^{\lambda_{n+m}-1}
+\]
+and
+\[
+  \Bigl|\frac{\partial T_k}{\partial\bar\xi}(\xi)\Bigr|
+  \le\bigl(4+\sqrt{p-1}\bigr)(n+m)\,|A_{n+m}|\,|\xi|^{\lambda_{n+m}-1},
+\]
+with $\partial/\partial\xi$ as in \noderef{DZ} and $\partial/\partial\bar\xi$
+as in \noderef{DZbar}.
+
+The content of the statement is that the constant $4+\sqrt{p-1}$ does not
+depend on $m$: the only $m$-dependence left on the right is the explicit
+factor $n+m$ and the explicit power $|\xi|^{\lambda_{n+m}-1}$.  That
+uniformity comes entirely from the Remark's estimates (23)--(25), carried by
+\noderef{LambdaEpsEstimates}: $0\le\lambda_{n+m}\le(n+m)\sqrt{p-1}$ and
+$|\epsilon_{n+m}|\le1$.  Without the \emph{upper} bound on $\lambda_k$ the
+coefficients of the closed form would grow in $k$ at an unknown rate and no
+uniform constant would exist.
+
+This is the pointwise estimate the $W^{1,2}$ convergence argument needs before
+it can sum over $k$: on a disc of radius $\rho<1$ the factor
+$|\xi|^{\lambda_{n+m}-1}$ decays geometrically in $m$, so this bound makes the
+tail of the differentiated series dominated by a convergent one, which is what
+allows (19) to be differentiated term by term in the $W^{1,2}$ norm.
+
+The family is indexed by $m$ rather than by $k\ge n$ because that is the shape
+in which \noderef{LambdaEpsEstimates} is used throughout: all three of its
+estimates are read as statements about $\lambda_{n+m}$ and $\epsilon_{n+m}$.
+The constant $4$ is not sharp; the route below gives $3$.
+\end{helper}
+\begin{proof}
+Throughout, $k=n+m$, $r=|\xi|>0$, and
+\[
+  s=\lambda_k+n-k=\lambda_{n+m}-m,\qquad
+  F=A_k\xi^{k}+\epsilon_k\overline{A_k}\,\bar\xi^{\,k},
+\]
+so that $T_k(\xi)=F\,|\xi|^{s}\xi^{-n}$ by \noderef{Thm2Term}.
+
+\emph{Step 0: the three estimates used.}  From
+\noderef{LambdaEpsEstimates} we record, for every $m\ge0$,
+\begin{equation}\tag{1}
+  0\le\lambda_{n+m},\qquad
+  \lambda_{n+m}\le\bigl((n:\mathbb{R})+m\bigr)\sqrt{p-1},\qquad
+  |\epsilon_{n+m}|\le1 .
+\end{equation}
+For $m=0$ these are (23), $\lambda_n=0$ and $\epsilon_n=0$, together with
+$0\le n\sqrt{p-1}$; for $m\ge1$ we have $n+1\le n+m$, so the first and second
+are (25) and the third is (24).
+
+\emph{Step 1: the closed form.}  By \noderef{Thm2TermWirtingerDerivs}, applied
+at the index $k=n+m$ and the point $\xi\ne0$,
+\begin{equation}\tag{2}
+  \frac{\partial T_k}{\partial\xi}(\xi)
+  =\frac{|\xi|^{s}\xi^{-n}}{\xi}
+    \Bigl(k\,A_k\xi^{k}+\Bigl(\frac{s}{2}-n\Bigr)F\Bigr),
+  \qquad
+  \frac{\partial T_k}{\partial\bar\xi}(\xi)
+  =\frac{|\xi|^{s}\xi^{-n}}{\bar\xi}
+    \Bigl(k\,\epsilon_k\overline{A_k}\,\bar\xi^{\,k}+\frac{s}{2}F\Bigr).
+\end{equation}
+That node requires no constraint on $n$, $p$ or $k$, only $\xi\ne0$.
+
+\emph{Step 2: the modulus of the common prefactor.}  Since $r>0$, real and
+integer powers of $r$ multiply by adding exponents, and
+$\bigl||\xi|^{s}\bigr|=r^{s}$, $|\xi^{-n}|=r^{-n}$, $|\xi|=|\bar\xi|=r$.  Hence
+\begin{equation}\tag{3}
+  \Bigl|\frac{|\xi|^{s}\xi^{-n}}{\xi}\Bigr|
+  =\Bigl|\frac{|\xi|^{s}\xi^{-n}}{\bar\xi}\Bigr|
+  =r^{s-n-1}=r^{\lambda_k-k-1},
+\end{equation}
+using $s-n-1=(\lambda_k+n-k)-n-1=\lambda_k-k-1$.
+
+\emph{Step 3: the two brackets.}  Since $|\overline{A_k}|=|A_k|$,
+$|\bar\xi|=r$ and $\epsilon_k$ is real, the two terms of $F$ have moduli
+$|A_k|r^{k}$ and $|\epsilon_k||A_k|r^{k}$, so by the triangle inequality and
+(1),
+\begin{equation}\tag{4}
+  |F|\le\bigl(1+|\epsilon_k|\bigr)|A_k|\,r^{k}\le2|A_k|\,r^{k}.
+\end{equation}
+Therefore, again by the triangle inequality and (4),
+\[
+  \Bigl|k\,A_k\xi^{k}+\Bigl(\frac{s}{2}-n\Bigr)F\Bigr|
+  \le k\,|A_k|r^{k}+\Bigl|\frac{s}{2}-n\Bigr|\cdot2|A_k|r^{k}
+  =\bigl(k+|s-2n|\bigr)|A_k|\,r^{k},
+\]
+\[
+  \Bigl|k\,\epsilon_k\overline{A_k}\bar\xi^{\,k}+\frac{s}{2}F\Bigr|
+  \le k\,|\epsilon_k||A_k|r^{k}+\Bigl|\frac{s}{2}\Bigr|\cdot2|A_k|r^{k}
+  \le\bigl(k+|s|\bigr)|A_k|\,r^{k},
+\]
+where $2\bigl|\tfrac{s}{2}-n\bigr|=|s-2n|$, $2\bigl|\tfrac{s}{2}\bigr|=|s|$,
+and $|\epsilon_k|\le1$ was used in the second display.
+
+\emph{Step 4: the two coefficient sizes are at most
+$(4+\sqrt{p-1})(n+m)$.}  Write $N=(n:\mathbb{R})+m$, so $k=N$ as a real number
+and, by (1), $0\le\lambda_k\le N\sqrt{p-1}$.  Since $\lambda_k\ge0$ and
+$m\ge0$, the number $s=\lambda_k-m$ satisfies
+$-(\lambda_k+m)\le s\le\lambda_k+m$, i.e.
+\begin{equation}\tag{5}
+  |s|\le\lambda_k+m\le N\sqrt{p-1}+m .
+\end{equation}
+Hence, using $m\le N$ and $n\le N$,
+\[
+  k+|s|\le N+N\sqrt{p-1}+m\le 2N+N\sqrt{p-1}
+  =N\bigl(2+\sqrt{p-1}\bigr)\le N\bigl(4+\sqrt{p-1}\bigr),
+\]
+and, since $|s-2n|\le|s|+2n\le N\sqrt{p-1}+m+2n\le N\sqrt{p-1}+2N$,
+\[
+  k+|s-2n|\le N+N\sqrt{p-1}+2N=N\bigl(3+\sqrt{p-1}\bigr)
+  \le N\bigl(4+\sqrt{p-1}\bigr).
+\]
+(The second chain is where the constant is largest, and it is the reason $3$
+would already do.)
+
+\emph{Step 5: collecting.}  Multiply the bound of Step 3 by the modulus (3) of
+the prefactor, which is legitimate because both factors are nonnegative, and
+use $r^{k}\,r^{\lambda_k-k-1}=r^{\lambda_k-1}$ (again $r>0$).  For the
+$\partial/\partial\xi$ derivative this gives, by (2),
+\[
+  \Bigl|\frac{\partial T_k}{\partial\xi}(\xi)\Bigr|
+  \le\bigl(k+|s-2n|\bigr)|A_k|\,r^{\lambda_k-1}
+  \le\bigl(4+\sqrt{p-1}\bigr)N\,|A_k|\,r^{\lambda_k-1},
+\]
+the last step by Step 4 together with $|A_k|r^{\lambda_k-1}\ge0$; and for the
+$\partial/\partial\bar\xi$ derivative, identically,
+\[
+  \Bigl|\frac{\partial T_k}{\partial\bar\xi}(\xi)\Bigr|
+  \le\bigl(k+|s|\bigr)|A_k|\,r^{\lambda_k-1}
+  \le\bigl(4+\sqrt{p-1}\bigr)N\,|A_k|\,r^{\lambda_k-1}.
+\]
+Since $N=(n:\mathbb{R})+m$, $k=n+m$ and $A_k=A_{n+m}$, these are the two
+asserted inequalities.
+\end{proof}

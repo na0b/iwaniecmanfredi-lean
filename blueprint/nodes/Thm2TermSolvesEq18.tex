@@ -1,0 +1,416 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, let $k\ge n$ be an integer and let
+$A\colon\mathbb{Z}\to\mathbb{C}$.  Write $\lambda_k=\lambda_k(n,p)$ for the
+exponent of \noderef{LambdaCoef}, $\epsilon_k=\epsilon_k(n,p)$ for the
+coefficient of \noderef{EpsCoef}, and $T_k$ for the $k$-th summand of (19) in
+the sense of \noderef{Thm2Term}, so that
+\[
+  T_k(\xi)=\bigl(A_k\xi^k+\epsilon_k\overline{A_k}\bar\xi^{\,k}\bigr)
+    |\xi|^{\lambda_k+n-k}\xi^{-n}.
+\]
+Then:
+\begin{enumerate}
+\item[(a)] $T_k$ is $C^\infty$ at every $\xi\neq0$;
+\item[(b)] for every $r>0$ and every $\theta\in\mathbb{R}$,
+\[
+  T_k\bigl(re^{i\theta}\bigr)
+  =r^{\lambda_k}\Bigl(A_ke^{i(k-n)\theta}
+    +\epsilon_k\overline{A_k}e^{i(-k-n)\theta}\Bigr),
+\]
+so $T_k$ is homogeneous of degree $\lambda_k$ with angular profile a
+trigonometric polynomial of frequencies $k-n$ and $-k-n$;
+\item[(c)] $T_k$ solves equation (18) on the unit disk
+$\mathbb{B}=\{\xi:|\xi|<1\}$, in the sense of \noderef{SolvesEq18}.
+\end{enumerate}
+
+Part (c) is the paper's assertion at line 357 that ``our arguments can be
+turned back'', and it is the whole content of the converse half of Theorem 2.
+No restriction on $p$ is imposed; in particular (c) holds at $p=2$, where
+$\lambda_k=k-n$, $\epsilon_k=0$ and $T_k(\xi)=A_k\xi^{k-n}$ is holomorphic.
+\end{lemma}
+\begin{proof}
+Throughout, write $L=\lambda_k$, $e=\epsilon_k$, $\mu=L+n-k$ and
+\[
+  F(\xi)=A_k\xi^k+e\,\overline{A_k}\,\bar\xi^{\,k},
+\]
+so that by \noderef{Thm2Term}
+\begin{equation}\tag{0}
+  T_k(\xi)=F(\xi)\,|\xi|^{\mu}\,\xi^{-n}\qquad(\xi\neq0).
+\end{equation}
+Note $e\in\mathbb{R}$ by \noderef{EpsCoef}.
+
+\emph{Step 0: $L\ge0$, $L+n+k>0$, and the indicial equation.}  By part (23) of
+\noderef{LambdaEpsEstimates}, $\lambda_n(n,p)=0$, and by part (25) of the same
+node $\lambda_k\ge(p-1)/(np)>0$ for $k\ge n+1$.  Since $k\ge n$, in either case
+\begin{equation}\tag{1}
+  L\ge0,\qquad\text{hence}\qquad L+n+k\ge0+1+1>0 ,
+\end{equation}
+using $n\ge1$ and $k\ge n\ge1$.
+
+Next the indicial equation.  By \noderef{LambdaCoef}, with $|k|=k$,
+\[
+  2L+pn=\sqrt{4k^2(p-1)+n^2(p-2)^2},
+\]
+the right-hand side being a nonnegative real number.  Squaring,
+$(2L+pn)^2=4k^2(p-1)+n^2(p-2)^2$, that is
+$4L^2+4pnL+n^2p^2=4k^2(p-1)+n^2(p-2)^2$; hence, using
+$(p-2)^2-p^2=-4(p-1)$,
+\[
+  4L^2+4pnL=4k^2(p-1)+n^2\bigl[(p-2)^2-p^2\bigr]=4(k^2-n^2)(p-1),
+\]
+and dividing by $4$,
+\begin{equation}\tag{I}
+  L^2+pnL+(n^2-k^2)(p-1)=0 .
+\end{equation}
+This is the indicial equation at paper.tex:315.  It is the only property of $L$
+used below, so formula (37)'s square root is never unfolded again.
+
+\emph{Step 1: proof of (b).}  Let $r>0$, $\theta\in\mathbb{R}$ and
+$\xi=re^{i\theta}$.  Since $|e^{i\theta}|=1$ we have $|\xi|=r>0$, and
+\[
+  \xi^k=r^ke^{ik\theta},\qquad \bar\xi^{\,k}=r^ke^{-ik\theta},\qquad
+  \xi^{-n}=r^{-n}e^{-in\theta},
+\]
+the last because $\xi\neq0$.  Substituting into (0) and using $r^ar^b=r^{a+b}$
+for $r>0$,
+\[
+  T_k(\xi)=\bigl(A_kr^ke^{ik\theta}+e\overline{A_k}r^ke^{-ik\theta}\bigr)
+    r^{\mu}r^{-n}e^{-in\theta}
+  =r^{k+\mu-n}\bigl(A_ke^{i(k-n)\theta}+e\overline{A_k}e^{i(-k-n)\theta}\bigr).
+\]
+The exponent is $k+\mu-n=k+(L+n-k)-n=L$, which is (b).
+
+\emph{Step 2: proof of (a).}  Fix $\xi\neq0$.  The four factors in (0) are
+$C^\infty$ at $\xi$:
+\begin{itemize}
+\item $z\mapsto z^{k}$ is a polynomial, hence $C^\infty$ on $\mathbb{C}$;
+\item $z\mapsto\bar z$ is $\mathbb{R}$-linear, hence $C^\infty$, so
+  $z\mapsto\bar z^{\,k}$ is $C^\infty$ on $\mathbb{C}$;
+\item $z\mapsto|z|^{\mu}$ is $C^\infty$ at $\xi$ by part (a) of
+  \noderef{WirtingerModulusPowerRule};
+\item $z\mapsto z^{-n}$ is $C^\infty$ on $\mathbb{C}-\{0\}$, being the
+  reciprocal of the nonvanishing polynomial $z^{n}$ there.
+\end{itemize}
+A product of finitely many functions $C^\infty$ at $\xi$ is $C^\infty$ at
+$\xi$, so $T_k$ is $C^\infty$ at $\xi$.  This is (a); in particular all the
+first derivatives used in Steps 3--5 exist, and each factor is in particular
+real-differentiable at $\xi$, which is the hypothesis the Wirtinger rules
+require.
+
+\emph{Step 3: the Wirtinger derivatives of the four factors.}  Let
+$\Omega=\mathbb{C}-\{0\}$, which is open, and fix $\xi\in\Omega$.
+
+The identity map $z\mapsto z$ has real Fréchet derivative the identity, so by
+\noderef{DZ} and \noderef{DZbar}
+\[
+  \frac{\partial z}{\partial\xi}=\tfrac12\bigl(1-i\cdot i\bigr)=1,\qquad
+  \frac{\partial z}{\partial\bar\xi}=\tfrac12\bigl(1+i\cdot i\bigr)=0 .
+\]
+The identity map is $C^\infty$ and nonvanishing on $\Omega$, so
+\noderef{WirtingerPowerRule} applies to it with the integer exponents $k$ and
+$-n$ and gives
+\begin{equation}\tag{2}
+  \frac{\partial\,\xi^{k}}{\partial\xi}=k\,\xi^{k-1},\qquad
+  \frac{\partial\,\xi^{k}}{\partial\bar\xi}=0,\qquad
+  \frac{\partial\,\xi^{-n}}{\partial\xi}=-n\,\xi^{-n-1},\qquad
+  \frac{\partial\,\xi^{-n}}{\partial\bar\xi}=0 .
+\end{equation}
+By \noderef{WirtingerConjRule} applied to the identity map, the map
+$c(z)=\bar z$ satisfies
+$\partial c/\partial\xi=\overline{\partial z/\partial\bar\xi}=0$ and
+$\partial c/\partial\bar\xi=\overline{\partial z/\partial\xi}=1$; and $c$ is
+$C^\infty$ and nonvanishing on $\Omega$, so \noderef{WirtingerPowerRule}
+applied to $c$ with exponent $k$ gives
+\begin{equation}\tag{3}
+  \frac{\partial\,\bar\xi^{\,k}}{\partial\xi}=k\,\bar\xi^{\,k-1}\cdot0=0,\qquad
+  \frac{\partial\,\bar\xi^{\,k}}{\partial\bar\xi}=k\,\bar\xi^{\,k-1} .
+\end{equation}
+By \noderef{WirtingerModulusPowerRule},
+\begin{equation}\tag{4}
+  \frac{\partial\,|\xi|^{\mu}}{\partial\xi}=\frac{\mu}{2}\frac{|\xi|^{\mu}}{\xi},
+  \qquad
+  \frac{\partial\,|\xi|^{\mu}}{\partial\bar\xi}
+    =\frac{\mu}{2}\frac{|\xi|^{\mu}}{\bar\xi}.
+\end{equation}
+From (2) and (3), by $\mathbb{C}$-linearity of each Wirtinger operator in the
+function (immediate from \noderef{DZ}, \noderef{DZbar} and linearity of the
+Fréchet derivative),
+\begin{equation}\tag{5}
+  \frac{\partial F}{\partial\xi}(\xi)=k\,A_k\xi^{k-1},\qquad
+  \frac{\partial F}{\partial\bar\xi}(\xi)=k\,e\,\overline{A_k}\,\bar\xi^{\,k-1}.
+\end{equation}
+
+\emph{Step 4: the Wirtinger derivatives of $T_k$.}  Apply
+\noderef{WirtingerProductRule} twice to the product (0) --- legitimate by
+Step 2, since each factor is real-differentiable at $\xi$ --- and substitute
+(2), (4), (5):
+\begin{align*}
+  \frac{\partial T_k}{\partial\xi}(\xi)
+  &=\frac{\partial F}{\partial\xi}|\xi|^{\mu}\xi^{-n}
+    +F\cdot\frac{\mu}{2}\frac{|\xi|^{\mu}}{\xi}\cdot\xi^{-n}
+    +F|\xi|^{\mu}\cdot\bigl(-n\xi^{-n-1}\bigr)\\
+  &=|\xi|^{\mu}\xi^{-n}\Bigl[k\,A_k\xi^{k-1}
+      +\Bigl(\frac{\mu}{2}-n\Bigr)\frac{F(\xi)}{\xi}\Bigr],
+\end{align*}
+\begin{align*}
+  \frac{\partial T_k}{\partial\bar\xi}(\xi)
+  &=\frac{\partial F}{\partial\bar\xi}|\xi|^{\mu}\xi^{-n}
+    +F\cdot\frac{\mu}{2}\frac{|\xi|^{\mu}}{\bar\xi}\cdot\xi^{-n}+0
+  =|\xi|^{\mu}\xi^{-n}\Bigl[k\,e\,\overline{A_k}\,\bar\xi^{\,k-1}
+      +\frac{\mu}{2}\frac{F(\xi)}{\bar\xi}\Bigr].
+\end{align*}
+Both displays used $\xi^{-n}/\xi=\xi^{-n-1}$ and $\xi\neq0$.
+These two closed forms, with the factor $|\xi|^{\mu}\xi^{-n}/\xi$ and
+$|\xi|^{\mu}\xi^{-n}/\bar\xi$ pulled out, are
+\noderef{Thm2TermWirtingerDerivs}, which proves them with no constraint on
+$n$, $p$ or $k$.
+
+\emph{Step 5: reduction of (18) to two scalar identities.}  Fix $\xi\neq0$ and
+put $c=\tfrac12-\tfrac1p$.  Equation (18) at $\xi$ reads
+\begin{equation}\tag{18}
+  \frac{\partial T_k}{\partial\bar\xi}
+  =c\Bigl[\frac{\xi}{\bar\xi}\frac{\partial T_k}{\partial\xi}
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}
+      \overline{\Bigl(\frac{\partial T_k}{\partial\xi}\Bigr)}\Bigr].
+\end{equation}
+Conjugating the first display of Step 4, and using that $|\xi|^{\mu}$ is real
+and $e$ is real,
+\[
+  \overline{\frac{\partial T_k}{\partial\xi}(\xi)}
+  =|\xi|^{\mu}\bar\xi^{\,-n}\Bigl[k\,\overline{A_k}\,\bar\xi^{\,k-1}
+    +\Bigl(\frac{\mu}{2}-n\Bigr)\frac{\overline{F(\xi)}}{\bar\xi}\Bigr],
+  \qquad
+  \overline{F(\xi)}=\overline{A_k}\bar\xi^{\,k}+e\,A_k\xi^{k},
+\]
+so, since $\bar\xi^{\,n}\bar\xi^{\,-n}=1$,
+\[
+  \frac{\bar\xi^{\,n}}{\xi^{n}}\overline{\frac{\partial T_k}{\partial\xi}(\xi)}
+  =|\xi|^{\mu}\xi^{-n}\Bigl[k\,\overline{A_k}\,\bar\xi^{\,k-1}
+    +\Bigl(\frac{\mu}{2}-n\Bigr)\frac{\overline{F(\xi)}}{\bar\xi}\Bigr].
+\]
+The common factor $|\xi|^{\mu}\xi^{-n}$ is nonzero, since $|\xi|^{\mu}>0$ and
+$\xi\neq0$.  Dividing (18) by it and then multiplying by $\bar\xi\neq0$, and
+writing
+\[
+  u=A_k\xi^{k},\qquad v=\overline{A_k}\,\bar\xi^{\,k},
+\]
+so that $F=u+e\,v$, $\overline{F}=v+e\,u$ and $F+\overline{F}=(1+e)(u+v)$,
+equation (18) becomes
+\[
+  k\,e\,v+\frac{\mu}{2}\bigl(u+e\,v\bigr)
+  =c\Bigl[k\,u+k\,v+\Bigl(\frac{\mu}{2}-n\Bigr)(1+e)(u+v)\Bigr],
+\]
+where on the left $\bar\xi\cdot\overline{A_k}\bar\xi^{\,k-1}=v$ and
+$\bar\xi\cdot F/\bar\xi=F$, and on the right
+$\bar\xi\cdot(\xi/\bar\xi)\,A_k k\xi^{k-1}=k\,u$ and
+$\bar\xi\cdot(\xi/\bar\xi)(\mu/2-n)F/\xi=(\mu/2-n)F$, while
+$\bar\xi\cdot k\overline{A_k}\bar\xi^{\,k-1}=k\,v$ and
+$\bar\xi\cdot(\mu/2-n)\overline{F}/\bar\xi=(\mu/2-n)\overline{F}$.  Grouping
+the coefficients of $u$ and of $v$, (18) holds at $\xi$ as soon as the two
+scalar identities
+\begin{equation}\tag{$\alpha$}
+  \frac{\mu}{2}=c\Bigl[k+\Bigl(\frac{\mu}{2}-n\Bigr)(1+e)\Bigr]
+\end{equation}
+and
+\begin{equation}\tag{$\beta$}
+  e\Bigl(k+\frac{\mu}{2}\Bigr)=c\Bigl[k+\Bigl(\frac{\mu}{2}-n\Bigr)(1+e)\Bigr]
+\end{equation}
+hold, because then the left side is $\tfrac{\mu}{2}u+e(k+\tfrac{\mu}{2})v$ and
+the right side is the same bracket times $u+v$.  Note that no property of
+$\xi$, $A_k$ or $n$ beyond $\xi\neq0$ entered this reduction: the remaining
+work is pure algebra in $L$, $n$, $k$ and $p$.
+
+\emph{Step 6: proof of $(\beta)$ from $(\alpha)$.}  By \noderef{EpsCoef} and
+(1),
+\[
+  e=\frac{L+n-k}{L+n+k}=\frac{\mu}{L+n+k},
+\]
+the denominator being positive by (1).  Also
+$k+\frac{\mu}{2}=k+\frac{L+n-k}{2}=\frac{L+n+k}{2}$.  Hence
+\begin{equation}\tag{6}
+  e\Bigl(k+\frac{\mu}{2}\Bigr)
+  =\frac{\mu}{L+n+k}\cdot\frac{L+n+k}{2}=\frac{\mu}{2},
+\end{equation}
+so $(\beta)$ is exactly $(\alpha)$.  (This identity is an algebraic triviality:
+it holds for every value of $L$, and uses neither (I) nor the sign of $p-2$.)
+
+\emph{Step 7: proof of $(\alpha)$.}  First simplify the bracket.  From
+$e=\mu/(L+n+k)$,
+\[
+  1+e=\frac{(L+n+k)+(L+n-k)}{L+n+k}=\frac{2(L+n)}{L+n+k},
+  \qquad
+  \frac{\mu}{2}-n=\frac{L+n-k}{2}-n=\frac{L-n-k}{2},
+\]
+so
+\[
+  \Bigl(\frac{\mu}{2}-n\Bigr)(1+e)
+  =\frac{L-n-k}{2}\cdot\frac{2(L+n)}{L+n+k}
+  =\frac{(L-n-k)(L+n)}{L+n+k},
+\]
+and therefore
+\[
+  k+\Bigl(\frac{\mu}{2}-n\Bigr)(1+e)
+  =\frac{k(L+n+k)+(L-n-k)(L+n)}{L+n+k}
+  =\frac{L^2+k^2-n^2}{L+n+k},
+\]
+the numerator because
+$k(L+n+k)+(L-n-k)(L+n)=kL+kn+k^2+L^2+Ln-nL-n^2-kL-kn=L^2+k^2-n^2$.
+By (I), $L^2=-pnL-(n^2-k^2)(p-1)$, so
+\[
+  L^2+k^2-n^2=-pnL-(n^2-k^2)(p-1)+k^2-n^2
+  =-pnL+(k^2-n^2)\bigl[(p-1)+1\bigr]=p\bigl(k^2-n^2-nL\bigr).
+\]
+Since $p>1>0$ we have $c=\tfrac12-\tfrac1p=\dfrac{p-2}{2p}$, and hence
+\begin{equation}\tag{7}
+  c\Bigl[k+\Bigl(\frac{\mu}{2}-n\Bigr)(1+e)\Bigr]
+  =\frac{p-2}{2p}\cdot\frac{p\bigl(k^2-n^2-nL\bigr)}{L+n+k}
+  =\frac{(p-2)\bigl(k^2-n^2-nL\bigr)}{2(L+n+k)} .
+\end{equation}
+So $(\alpha)$, which reads $\mu/2=(L+n-k)/2$ on the left, is equivalent --- after
+multiplying by $2(L+n+k)>0$ --- to
+\begin{equation}\tag{8}
+  (p-2)\bigl(k^2-n^2-nL\bigr)=(L+n-k)(L+n+k)=(L+n)^2-k^2 .
+\end{equation}
+We verify (8).  Using (I) once more,
+\begin{align*}
+  (L+n)^2-k^2&=L^2+2nL+n^2-k^2\\
+  &=-pnL-(n^2-k^2)(p-1)+2nL+n^2-k^2\\
+  &=nL(2-p)+(k^2-n^2)(p-1)+(n^2-k^2)\\
+  &=nL(2-p)+(k^2-n^2)\bigl[(p-1)-1\bigr]
+  =nL(2-p)+(k^2-n^2)(p-2),
+\end{align*}
+whereas the left-hand side of (8) is
+\[
+  (p-2)(k^2-n^2)-(p-2)nL=(k^2-n^2)(p-2)+nL(2-p).
+\]
+The two agree, so (8) holds, and with it $(\alpha)$ and, by Step 6, $(\beta)$.
+
+\emph{Step 8: the pointwise form of (18).}  By Steps 5--7, equation (18) holds
+at every $\xi\neq0$; that is,
+\begin{equation}\tag{9}
+  \frac{\partial T_k}{\partial\bar\xi}(\xi)
+  =c\Bigl[\frac{\xi}{\bar\xi}\frac{\partial T_k}{\partial\xi}(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}
+      \overline{\frac{\partial T_k}{\partial\xi}(\xi)}\Bigr]
+  \qquad(\xi\neq0),
+\end{equation}
+the derivatives being the pointwise operators of \noderef{DZ} and
+\noderef{DZbar}.  In particular (9) holds at every $\xi\in\mathbb{B}$ with
+$\xi\neq0$.
+
+\emph{Step 9: growth bounds for $T_k$ and its first derivatives.}  Put
+$M=(1+|e|)|A_k|$ and let $\xi\neq0$, $r=|\xi|$.  Since $|\bar\xi|=|\xi|=r$ and
+$e$ is real,
+\[
+  |F(\xi)|\le|A_k|r^{k}+|e|\,|A_k|r^{k}=M\,r^{k},
+\]
+so by (0), $\bigl||\xi|^{\mu}\bigr|=r^{\mu}$, $|\xi^{-n}|=r^{-n}$ and
+$k+\mu-n=L$ (Step 1),
+\begin{equation}\tag{10}
+  |T_k(\xi)|\le M\,r^{k+\mu-n}=M\,r^{L}.
+\end{equation}
+By the two displays of Step 4, with $|\xi^{k-1}|=|\bar\xi^{\,k-1}|=r^{k-1}$,
+$|1/\xi|=|1/\bar\xi|=r^{-1}$ and the bound on $|F|$,
+\[
+  \Bigl|\frac{\partial T_k}{\partial\xi}(\xi)\Bigr|
+  \le r^{\mu-n}\Bigl[k|A_k|r^{k-1}
+    +\Bigl|\frac{\mu}{2}-n\Bigr|M\,r^{k-1}\Bigr],
+  \qquad
+  \Bigl|\frac{\partial T_k}{\partial\bar\xi}(\xi)\Bigr|
+  \le r^{\mu-n}\Bigl[k|e||A_k|r^{k-1}
+    +\frac{|\mu|}{2}M\,r^{k-1}\Bigr],
+\]
+so, with $M_1=M\bigl(k+\bigl|\tfrac{\mu}{2}-n\bigr|+\tfrac{|\mu|}{2}\bigr)$ and
+$\mu-n+k-1=L-1$,
+\begin{equation}\tag{11}
+  \Bigl|\frac{\partial T_k}{\partial\xi}(\xi)\Bigr|\le M_1r^{L-1},
+  \qquad
+  \Bigl|\frac{\partial T_k}{\partial\bar\xi}(\xi)\Bigr|\le M_1r^{L-1}
+  \qquad(\xi\neq0),
+\end{equation}
+using $|A_k|\le M$ and $|e|\,|A_k|\le M$.
+
+Write $\partial_0=D^{[0]}$ and $\partial_1=D^{[1]}$ for the classical partial
+derivatives of \noderef{PartialWord}, so that
+$\partial_0f(\xi)=\mathrm{d}f(\xi)[1]$ and $\partial_1f(\xi)=\mathrm{d}f(\xi)[i]$.
+By \noderef{DZ} and \noderef{DZbar},
+$\partial T_k/\partial\xi=\tfrac12(\partial_0T_k-i\,\partial_1T_k)$ and
+$\partial T_k/\partial\bar\xi=\tfrac12(\partial_0T_k+i\,\partial_1T_k)$ at
+every point, whence
+\begin{equation}\tag{12}
+  \partial_0T_k=\frac{\partial T_k}{\partial\xi}
+    +\frac{\partial T_k}{\partial\bar\xi},
+  \qquad
+  \partial_1T_k=i\Bigl(\frac{\partial T_k}{\partial\xi}
+    -\frac{\partial T_k}{\partial\bar\xi}\Bigr)
+\end{equation}
+at every point.  With (11), and with $L\ge0$ from (1) so that
+$r^{L-1}=r^{L}r^{-1}\le r^{-1}$ for $0<r\le1$,
+\begin{equation}\tag{13}
+  |T_k(\xi)|\le M,\qquad |\partial_jT_k(\xi)|\le2M_1\,|\xi|^{-1}
+  \qquad(0<|\xi|<1,\ j=0,1),
+\end{equation}
+the first by (10) and $r^{L}\le1$.
+
+\emph{Step 10: the weak first partial derivatives of $T_k$ on $\mathbb{B}$.}
+Fix $j\in\{0,1\}$.  We verify the hypotheses of
+\noderef{WeakPartialAcrossPoint} with $\Omega=\mathbb{B}$, $S=\{0\}$, this
+$j$, $g=T_k$, $v=\partial_jT_k$ and $\beta=0$.
+
+The set $\mathbb{B}$ is open and $S=\{0\}\subseteq\mathbb{B}$; $S\cap\kappa$ is
+finite for every compact $\kappa$, $S$ being a singleton; and
+$0\le\beta=0<1$.
+
+$g$ is of class $C^1$ on $\mathbb{B}-S$: the set $\mathbb{B}-\{0\}$ is open and
+$T_k$ is $C^\infty$ at each of its points by (a), and a function of class
+$C^\infty$ on an open set is of class $C^1$ there.  And $D^{[j]}g=v$ on
+$\mathbb{B}-S$ holds by the definition of $v$.
+
+$g\in L^1_{\mathrm{loc}}(\mathbb{B})$ in the sense of \noderef{MemLpLocOn}:
+$T_k$ is continuous on the open set $\mathbb{B}-\{0\}$ by (a), hence
+measurable there, and $\{0\}$ is a null set, so $T_k$ is measurable on
+$\mathbb{B}$ for the completed Lebesgue measure; and by (13), for every
+compact $\kappa\subseteq\mathbb{B}$,
+$\int_\kappa|T_k|\,d\sigma\le M\,\sigma(\kappa)<\infty$, $\sigma(\kappa)$
+being finite because $\kappa$ is bounded.
+
+$v\in L^1_{\mathrm{loc}}(\mathbb{B})$: measurability is the same argument,
+$\partial_jT_k$ being continuous on $\mathbb{B}-\{0\}$ by (a).  For
+integrability, apply \noderef{PowerIntegrableNearZero} with $\alpha=1$,
+$\delta=1$ and $q=1$; its hypotheses $0<\alpha$, $\alpha\le1$, $0<\delta$,
+$1\le q$ and $q<2/(2-\alpha)=2$ all hold, and its conclusion is that
+$\xi\mapsto|\xi|^{(\alpha-2)q}=|\xi|^{-1}$ is integrable on
+$\mathbb{B}=\{|\xi|<1\}$.  By (13), $|v|\le2M_1|\xi|^{-1}$ on
+$\mathbb{B}-\{0\}$, hence almost everywhere on $\mathbb{B}$, so
+$\int_{\mathbb{B}}|v|\,d\sigma<\infty$ and a fortiori
+$\int_\kappa|v|\,d\sigma<\infty$ for every compact $\kappa\subseteq\mathbb{B}$.
+
+The growth hypothesis: at the only point $0$ of $S$, take the constants $M$
+and $\rho=1$; by (13), $\|T_k(\xi)\|\le M=M\,|\xi-0|^{-0}$ whenever
+$0<|\xi-0|<1$.
+
+Therefore $\partial_jT_k$ is the distributional $\partial_j$-derivative of
+$T_k$ on $\mathbb{B}$, in the sense of \noderef{IsWeakPartialOn}, for
+$j=0,1$.
+
+\emph{Step 11: conclusion.}  Put
+$a=\partial T_k/\partial\xi$ and $b=\partial T_k/\partial\bar\xi$, and
+$f_x=\partial_0T_k$, $f_y=\partial_1T_k$.  The three clauses of
+\noderef{IsWeakWirtingerOn} hold for $T_k$, $a$, $b$ on $\mathbb{B}$ with this
+$f_x,f_y$: clause (a) is the local integrability of $T_k$, $f_x$ and $f_y$
+established in Step 10; clause (b) is the conclusion of Step 10; and clause
+(c) is the identity
+$a=\tfrac12(f_x-if_y)$, $b=\tfrac12(f_x+if_y)$, valid at every point of
+$\mathbb{C}$ by \noderef{DZ} and \noderef{DZbar} as recorded before (12).  So
+$a$ and $b$ are weak Wirtinger derivatives of $T_k$ on $\mathbb{B}$.
+
+By Step 8 the identity (9), which is exactly
+\[
+  b(\xi)=c\Bigl[\frac{\xi}{\bar\xi}a(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}\overline{a(\xi)}\Bigr],
+\]
+holds at every $\xi\in\mathbb{B}$ with $\xi\neq0$, hence at almost every such
+$\xi$.  With the pair $a,b$ this is precisely the assertion that $T_k$ solves
+(18) on $\mathbb{B}$ in the sense of \noderef{SolvesEq18}.  This is (c), and
+the proof is complete.
+\end{proof}

@@ -1,0 +1,44 @@
+\begin{definition}
+Let $\gamma\colon[0,1]\to\mathbb{C}$ be continuous with $\gamma(t)\neq0$ for
+every $t\in[0,1]$.  The \emph{index of $\gamma$ about $0$} is defined as
+follows.
+
+Write $\mathbb{T}=\mathbb{R}/2\pi\mathbb{Z}$ and let
+$q\colon\mathbb{R}\to\mathbb{T}$ be the quotient map, which is a covering map.
+The principal argument $\arg\colon\mathbb{C}-\{0\}\to(-\pi,\pi]$ is
+discontinuous on the negative reals, but its reduction
+$\xi\mapsto q(\arg\xi)$ is continuous at every $\xi\neq0$; hence
+\[
+  \alpha=q\circ\arg\circ\gamma\colon[0,1]\to\mathbb{T}
+\]
+is continuous.  Because $q$ is a covering map and $[0,1]$ is an interval,
+$\alpha$ lifts along $q$: there is a unique continuous
+$\vartheta\colon[0,1]\to\mathbb{R}$ with $q\circ\vartheta=\alpha$ and
+$\vartheta(0)=\arg\gamma(0)$.  We set
+\[
+  \operatorname{ind}(\gamma)=\frac{\vartheta(1)-\vartheta(0)}{2\pi}
+  =\frac{\vartheta(1)-\arg\gamma(0)}{2\pi}.
+\]
+
+Thus $\vartheta$ is a continuous branch of the argument along $\gamma$, normalised
+at $t=0$, and $\operatorname{ind}(\gamma)$ is the normalised increment of that
+branch.  This is the quantity behind the paper's step ``Applying argument
+principle, we find that $A_{n+1}\neq0$'' in the proof of Corollary~1.
+
+Note that \emph{no loop condition is imposed}: $\gamma$ is an arbitrary
+non-vanishing path, and $\operatorname{ind}(\gamma)$ is defined for it.  For a
+general path the value is a real number, measuring the total turning of
+$\gamma$ in units of a full turn; it is an integer precisely when
+$\gamma(0)=\gamma(1)$, since only then do the two endpoints of the lift project
+to the same point of $\mathbb{T}$.  Several of the lemmas built on this
+definition are applied to genuine paths rather than loops -- for instance to a
+branch traversed a fractional number of times -- which is why the definition is
+stated at this generality.
+
+Two remarks on the formal rendering.  The loop is taken as a continuous map on
+the unit interval $[0,1]$, so the parametrisation $\theta\in[0,2\pi]$ used in
+the paper corresponds to $t=\theta/2\pi$.  And the lift $\vartheta$ is the one
+produced by the path-lifting property of the covering $q$ with the specified
+initial value, so no choice is involved: the normalisation
+$\vartheta(0)=\arg\gamma(0)$ determines it.
+\end{definition}

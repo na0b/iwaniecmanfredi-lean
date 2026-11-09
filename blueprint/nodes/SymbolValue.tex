@@ -1,0 +1,19 @@
+\begin{definition}
+Let $H\colon\mathbb{C}\to\mathbb{C}$ and let $d=(i,j,\beta)$ be a derivative
+symbol in the sense of \noderef{DerivSymbol}.  The \emph{value of $d$ on $H$}
+is the function $H^d\colon\mathbb{C}\to\mathbb{C}$ given by
+\[
+  H^d=\begin{cases}
+    \dfrac{\partial^{i+j}H}{\partial\xi^i\partial\bar\xi^j}
+      &\text{if }\beta\text{ is false},\\[2.5ex]
+    \overline{\dfrac{\partial^{i+j}H}{\partial\xi^i\partial\bar\xi^j}}
+      &\text{if }\beta\text{ is true},
+  \end{cases}
+\]
+where $\partial^{i+j}H/\partial\xi^i\partial\bar\xi^j$ is the iterated
+Wirtinger derivative of \noderef{WirtingerIter} and the bar denotes complex
+conjugation of the value.
+
+Thus $H^d$ is precisely one of the partials denoted $H^s$ in Section~5 of the
+paper, with $s=i+j=|d|$.
+\end{definition}

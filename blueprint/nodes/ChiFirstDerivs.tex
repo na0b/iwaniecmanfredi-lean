@@ -1,0 +1,116 @@
+\begin{lemma}
+Let $U\subset\mathbb{C}$ be open, let $\chi,H\colon\mathbb{C}\to\mathbb{C}$ and
+let $\xi\in U$ be such that
+\[
+  \chi\bigl(H(\zeta)\bigr)=\zeta\qquad\text{for every }\zeta\in U .
+\]
+Assume that $H$ is real-differentiable at $\xi$, that $\chi$ is
+real-differentiable at $H(\xi)$, and that $J(\xi)\neq0$, where
+$J=|H_\xi|^2-|H_{\bar\xi}|^2$ is the Jacobian of \noderef{Jac}.  Then
+\[
+  \frac{\partial\chi}{\partial z}\bigl(H(\xi)\bigr)
+  =\frac{\overline{H_\xi(\xi)}}{J(\xi)},
+  \qquad
+  \frac{\partial\chi}{\partial\bar z}\bigl(H(\xi)\bigr)
+  =-\frac{H_{\bar\xi}(\xi)}{J(\xi)},
+\]
+with $\partial/\partial z$, $\partial/\partial\xi$ as in \noderef{DZ} and
+$\partial/\partial\bar z$, $\partial/\partial\bar\xi$ as in \noderef{DZbar}.
+
+These are the two formulas (17) of Section~3 of the paper, repeated as (46) in
+Section~5.  The hypotheses involve the pair $(\chi,H)$ only through the
+relation $\chi\circ H=\mathrm{id}$ on $U$ together with differentiability at
+the two matched points, so the statement may equally be applied with the roles
+of $\chi$ and $H$ exchanged; that is the direction in which Section~7 runs the
+hodograph correspondence.
+\end{lemma}
+\begin{proof}
+Abbreviate
+\[
+  a=\frac{\partial\chi}{\partial z}\bigl(H(\xi)\bigr),\quad
+  b=\frac{\partial\chi}{\partial\bar z}\bigl(H(\xi)\bigr),\quad
+  A=\frac{\partial H}{\partial\xi}(\xi),\quad
+  B=\frac{\partial H}{\partial\bar\xi}(\xi).
+\]
+
+\emph{Step 1: the composite has the derivatives of the identity.}  By
+hypothesis $\chi\circ H$ agrees with the identity map $\zeta\mapsto\zeta$ at
+every point of $U$.  Since $U$ is open and $\xi\in U$, the two functions agree
+on a neighbourhood of $\xi$, hence have the same real Fr\'echet derivative at
+$\xi$, and therefore, by \noderef{DZ} and \noderef{DZbar}, the same
+$\partial/\partial\xi$ and $\partial/\partial\bar\xi$ at $\xi$.  The identity
+map is real-differentiable with $D\,\mathrm{id}(\xi)[v]=v$ for every $v$, so by
+\noderef{DZ} and \noderef{DZbar}
+\[
+  \frac{\partial\,\mathrm{id}}{\partial\xi}(\xi)=\tfrac12(1-i\cdot i)=1,
+  \qquad
+  \frac{\partial\,\mathrm{id}}{\partial\bar\xi}(\xi)=\tfrac12(1+i\cdot i)=0 .
+\]
+Consequently
+\begin{equation}\tag{1}
+  \frac{\partial(\chi\circ H)}{\partial\xi}(\xi)=1,
+  \qquad
+  \frac{\partial(\chi\circ H)}{\partial\bar\xi}(\xi)=0 .
+\end{equation}
+
+\emph{Step 2: the chain rule gives a linear system for $a$ and $b$.}  The
+hypotheses of \noderef{WirtingerChainRule} hold with $F=\chi$ and $G=H$ at the
+point $\xi$: $H$ is real-differentiable at $\xi$ and $\chi$ is
+real-differentiable at $H(\xi)$.  That lemma therefore gives
+\[
+  \frac{\partial(\chi\circ H)}{\partial\xi}(\xi)=a\,A+b\,\overline{B},
+  \qquad
+  \frac{\partial(\chi\circ H)}{\partial\bar\xi}(\xi)=a\,B+b\,\overline{A}.
+\]
+Combining with (1),
+\begin{equation}\tag{2}
+  a\,A+b\,\overline{B}=1,
+\end{equation}
+\begin{equation}\tag{3}
+  a\,B+b\,\overline{A}=0 .
+\end{equation}
+
+\emph{Step 3: the determinant of the system is $J(\xi)$.}  For any
+$w\in\mathbb{C}$ one has $|w|^2=w\bar w$ as complex numbers, so by
+\noderef{Jac}
+\begin{equation}\tag{4}
+  J(\xi)=|A|^2-|B|^2=A\overline{A}-B\overline{B} .
+\end{equation}
+By hypothesis $J(\xi)\neq0$.
+
+\emph{Step 4: solving for $a$.}  Multiply (2) by $\overline{A}$ and (3) by
+$\overline{B}$:
+\[
+  a\,A\overline{A}+b\,\overline{B}\,\overline{A}=\overline{A},
+  \qquad
+  a\,B\overline{B}+b\,\overline{A}\,\overline{B}=0 .
+\]
+Subtracting the second from the first, the terms in $b$ cancel because
+$\overline{B}\,\overline{A}=\overline{A}\,\overline{B}$, and we obtain
+\[
+  a\bigl(A\overline{A}-B\overline{B}\bigr)=\overline{A},
+\]
+that is, $a\,J(\xi)=\overline{A}$ by (4).  Since $J(\xi)\neq0$,
+\[
+  a=\frac{\overline{A}}{J(\xi)}
+  =\frac{\overline{H_\xi(\xi)}}{J(\xi)},
+\]
+which is the first assertion.
+
+\emph{Step 5: solving for $b$.}  Multiply (2) by $B$ and (3) by $A$:
+\[
+  a\,AB+b\,\overline{B}B=B,
+  \qquad
+  a\,BA+b\,\overline{A}A=0 .
+\]
+Subtracting the second from the first, the terms in $a$ cancel because
+$AB=BA$, and we obtain
+\[
+  b\bigl(\overline{B}B-\overline{A}A\bigr)=B,
+\]
+that is, $-b\,J(\xi)=B$ by (4).  Since $J(\xi)\neq0$,
+\[
+  b=-\frac{B}{J(\xi)}=-\frac{H_{\bar\xi}(\xi)}{J(\xi)},
+\]
+which is the second assertion.
+\end{proof}

@@ -1,0 +1,185 @@
+\begin{helper}
+Let $n\ge0$ be an integer, let $k\in\mathbb{Z}$ and let $c',d'$ be real with
+$c'>0$.  Write
+\[
+  \mathcal{A}=\{\zeta\in\mathbb{C}:c'\le|\zeta|\le d'\}
+\]
+for the compact annulus between the two radii, and for
+$F\colon\mathbb{C}\to\mathbb{C}$ write
+$\widehat F_k(s)=\frac1{2\pi}\int_0^{2\pi}F(se^{i\theta})e^{i(n-k)\theta}d\theta$
+for its $k$-th Fourier coefficient at radius $s$, as in
+\noderef{FourierCoefOfH}.  Then the operator $F\mapsto\widehat F_k$ has the
+following two properties.
+\begin{enumerate}
+\item[(a)] If $W\colon\mathbb{C}\to\mathbb{C}$ is measurable and integrable on
+  $\mathcal{A}$, then $s\mapsto\widehat W_k(s)$ is integrable on $(c',d')$,
+  and for almost every $s\in(c',d')$ the circle restriction
+  $\theta\mapsto W(se^{i\theta})$ is interval-integrable over $[0,2\pi]$.
+\item[(b)] The coefficient depends continuously on the function in $L^1$: if
+  $F_l,F\colon\mathbb{C}\to\mathbb{C}$ are measurable and integrable on
+  $\mathbb{C}$ and $\int_{\mathbb{C}}|F_l-F|\,d\sigma\to0$, then
+  \[
+    \int_{(c',d')}\bigl\|\widehat{(F_l)}_k(s)-\widehat F_k(s)\bigr\|\,ds
+    \longrightarrow0,
+  \]
+  the integral being the $[0,\infty]$-valued Lebesgue integral.
+\end{enumerate}
+
+Both are properties of the one operator $F\mapsto\widehat F_k$, which is why
+they are stated together: (b) is proved from the same estimate that proves
+(a), and (a) is what makes the inner integral defining $\widehat F_k$
+meaningful in the first place.
+
+This is the measure-theoretic foundation under the circle-average argument.
+The paper reads $a_k\in C[0,1)\cap C^\infty(0,1)$ off its standing smoothness
+hypothesis at \texttt{paper.tex:265-266}; the tablet carries no such
+hypothesis and replaces that step by \noderef{CircleAvgLocAbsCont}, which
+needs exactly these two facts before it can begin --- (a) to know that
+$\widehat W_k$ is a genuine integrable function of the radius, and (b) to pass
+to the limit in a mollification, where the approximating functions converge to
+$W$ only in $L^1$.
+
+The hypothesis $c'>0$ is essential and is used twice: it keeps the Jacobian
+$s$ of the polar map bounded below on $\mathcal{A}$, which is what converts an
+$L^1$ bound on the plane into an $L^1$ bound in the polar variables, and it
+bounds the factor $1/s$ implicit in the pointwise estimate behind (b).  The
+upper radius $d'$ plays no such role; it only makes the annulus bounded.
+\end{helper}
+\begin{proof}
+Throughout write
+\[
+  \mathrm{ci}(s,\theta)=se^{i\theta},\qquad
+  \mathrm{wt}(\theta)=e^{i(n-k)\theta},
+\]
+and $d\sigma$ for plane Lebesgue measure.  By \noderef{FourierCoefOfH},
+$\widehat F_k(s)=\frac1{2\pi}\int_0^{2\pi}F(\mathrm{ci}(s,\theta))\,
+\mathrm{wt}(\theta)\,d\theta$.  Note $|\mathrm{wt}(\theta)|=1$ and
+$\mathrm{wt}(\theta)\neq0$ for every $\theta$, since $n-k$ is an integer and
+$\theta$ is real, so the exponent is purely imaginary; and
+$|\mathrm{ci}(s,\theta)|=|s|$.  Both $\mathrm{ci}$ and $\mathrm{wt}$ are
+continuous.  The set $\mathcal{A}$ is closed and bounded, hence compact, hence
+measurable.
+
+\emph{Step 0: two standard transfers.}  First, the polar change of variables:
+for every measurable $G\colon\mathbb{C}\to[0,\infty]$,
+\begin{equation}\tag{1}
+  \int_{(0,\infty)\times(-\pi,\pi)}s\,G\bigl(\mathrm{ci}(s,\theta)\bigr)
+    \,d(s,\theta)
+  =\int_{\mathbb{C}}G\,d\sigma ,
+\end{equation}
+the map $(s,\theta)\mapsto se^{i\theta}$ being a diffeomorphism of
+$(0,\infty)\times(-\pi,\pi)$ onto the plane minus a null ray, with Jacobian
+$s$.  Second, the window change: for fixed $s$ the function
+$\theta\mapsto F(\mathrm{ci}(s,\theta))\mathrm{wt}(\theta)$ is $2\pi$-periodic,
+because $\mathrm{ci}$ and $\mathrm{wt}$ are, so
+\begin{equation}\tag{2}
+  \int_0^{2\pi}F\bigl(\mathrm{ci}(s,\theta)\bigr)\mathrm{wt}(\theta)\,d\theta
+  =\int_{(-\pi,\pi)}F\bigl(\mathrm{ci}(s,\theta)\bigr)\mathrm{wt}(\theta)
+    \,d\theta ,
+\end{equation}
+a period's worth of integral being independent of where the period starts.
+
+\emph{Step 1: the key lower bound, where $c'>0$ enters.}  For every
+$F\colon\mathbb{C}\to\mathbb{C}$,
+\begin{equation}\tag{3}
+  c'\int_{(c',d')\times(-\pi,\pi)}
+      \bigl\|F\bigl(\mathrm{ci}(s,\theta)\bigr)\bigr\|\,d(s,\theta)
+  \le\int_{\mathbb{C}}\|F\|\,d\sigma ,
+\end{equation}
+all integrals being $[0,\infty]$-valued.  Indeed on $(c',d')\times(-\pi,\pi)$
+we have $s>c'$, so pointwise
+$c'\|F(\mathrm{ci}(s,\theta))\|\le s\,\|F(\mathrm{ci}(s,\theta))\|$; hence
+the left side is at most
+$\int_{(c',d')\times(-\pi,\pi)}s\|F(\mathrm{ci}(s,\theta))\|$, which is at most
+the same integral over the larger set $(0,\infty)\times(-\pi,\pi)$ because
+$(c',d')\subseteq(0,\infty)$ and the integrand is nonnegative, and that equals
+$\int_{\mathbb{C}}\|F\|$ by (1) applied to $G=\|F\|$.
+
+\emph{Step 2: the product is integrable on the rectangle.}  Let $F$ be
+measurable and integrable on $\mathbb{C}$.  Then
+$(s,\theta)\mapsto F(\mathrm{ci}(s,\theta))\mathrm{wt}(\theta)$ is measurable
+on $(c',d')\times(-\pi,\pi)$, being the product of the composition of the
+measurable $F$ with the continuous $\mathrm{ci}$ and of the continuous
+$\mathrm{wt}$; and it is integrable there, because
+$\|F(\mathrm{ci}(s,\theta))\mathrm{wt}(\theta)\|
+=\|F(\mathrm{ci}(s,\theta))\|$ by $|\mathrm{wt}|=1$, and by (3)
+\begin{equation}\tag{4}
+  \int_{(c',d')\times(-\pi,\pi)}
+    \bigl\|F\bigl(\mathrm{ci}(s,\theta)\bigr)\bigr\|\,d(s,\theta)
+  \le\frac1{c'}\int_{\mathbb{C}}\|F\|\,d\sigma<\infty ,
+\end{equation}
+where dividing by $c'$ is legitimate because $c'>0$.
+
+\emph{Step 3: proof of (a).}  Let $W$ be measurable and integrable on
+$\mathcal{A}$, and put $F=\mathbf1_{\mathcal{A}}W$.  Then $F$ is measurable,
+$\mathcal{A}$ being measurable, and $F$ is integrable on all of $\mathbb{C}$,
+since it vanishes off $\mathcal{A}$ and agrees with $W$ there.  So Step 2
+applies to $F$, and Fubini's theorem for integrable functions on the product
+$(c',d')\times(-\pi,\pi)$ gives both
+\begin{equation}\tag{5}
+  \text{for a.e. }s\in(c',d'):\quad
+  \theta\mapsto F\bigl(\mathrm{ci}(s,\theta)\bigr)\mathrm{wt}(\theta)
+  \text{ is integrable on }(-\pi,\pi),
+\end{equation}
+and
+\begin{equation}\tag{6}
+  s\mapsto\int_{(-\pi,\pi)}F\bigl(\mathrm{ci}(s,\theta)\bigr)
+    \mathrm{wt}(\theta)\,d\theta
+  \text{ is integrable on }(c',d').
+\end{equation}
+Now let $s\in(c',d')$.  For every $\theta$ we have
+$|\mathrm{ci}(s,\theta)|=|s|=s\in(c',d')\subseteq[c',d']$, so
+$\mathrm{ci}(s,\theta)\in\mathcal{A}$ and therefore
+$F(\mathrm{ci}(s,\theta))=W(\mathrm{ci}(s,\theta))$.  Hence, by the definition
+of the coefficient and by (2),
+\[
+  \widehat W_k(s)
+  =\frac1{2\pi}\int_0^{2\pi}W\bigl(\mathrm{ci}(s,\theta)\bigr)
+     \mathrm{wt}(\theta)\,d\theta
+  =\frac1{2\pi}\int_{(-\pi,\pi)}F\bigl(\mathrm{ci}(s,\theta)\bigr)
+     \mathrm{wt}(\theta)\,d\theta
+  \qquad\bigl(s\in(c',d')\bigr),
+\]
+so on $(c',d')$ the function $s\mapsto\widehat W_k(s)$ is the constant
+$\frac1{2\pi}$ times the function of (6), and is therefore integrable on
+$(c',d')$.  That is the first half of (a).
+
+For the second half, fix an $s\in(c',d')$ for which (5) holds.  Dividing by
+$\mathrm{wt}$, which is continuous and never zero, the function
+$\theta\mapsto F(\mathrm{ci}(s,\theta))$ is integrable on $(-\pi,\pi)$; it
+equals $\theta\mapsto W(\mathrm{ci}(s,\theta))$, as just observed; and that
+function is $2\pi$-periodic, so by the same period-shift argument as in (2) it
+is interval-integrable over $[0,2\pi]$.  Since the exceptional set of $s$ is
+null, this holds for almost every $s\in(c',d')$, which is the second half of
+(a).
+
+\emph{Step 4: the pointwise estimate behind (b).}  Let $G_1,G_2$ be measurable
+and integrable on $\mathbb{C}$ and let $s$ be real.  The coefficient is linear
+in the function, so
+$\widehat{(G_1)}_k(s)-\widehat{(G_2)}_k(s)
+=\frac1{2\pi}\int_0^{2\pi}(G_1-G_2)(\mathrm{ci}(s,\theta))
+\mathrm{wt}(\theta)\,d\theta$, and hence, by the triangle inequality for the
+integral, by $|\mathrm{wt}|=1$, and by (2),
+\begin{equation}\tag{7}
+  \bigl\|\widehat{(G_1)}_k(s)-\widehat{(G_2)}_k(s)\bigr\|
+  \le\frac1{2\pi}\int_{(-\pi,\pi)}
+      \bigl\|(G_1-G_2)\bigl(\mathrm{ci}(s,\theta)\bigr)\bigr\|\,d\theta .
+\end{equation}
+
+\emph{Step 5: proof of (b).}  Let $F_l$, $F$ be as in (b) and put
+$\eta_l=\int_{\mathbb{C}}\|F_l-F\|\,d\sigma$, so $\eta_l\to0$ by hypothesis.
+Integrating (7) with $G_1=F_l$, $G_2=F$ over $s\in(c',d')$, using Tonelli's
+theorem to read the iterated integral of a nonnegative measurable function as
+an integral over the rectangle, and then applying (3) to $F_l-F$,
+\[
+  \int_{(c',d')}\bigl\|\widehat{(F_l)}_k(s)-\widehat F_k(s)\bigr\|\,ds
+  \le\frac1{2\pi}\int_{(c',d')\times(-\pi,\pi)}
+      \bigl\|(F_l-F)\bigl(\mathrm{ci}(s,\theta)\bigr)\bigr\|\,d(s,\theta)
+  \le\frac1{2\pi}\cdot\frac{\eta_l}{c'} .
+\]
+Both constants $\frac1{2\pi}$ and $\frac1{c'}$ are finite and independent of
+$l$, the first because $\pi>0$ and the second because $c'>0$, so the
+right-hand side tends to $0$ as $l\to\infty$.  The left-hand side is
+nonnegative, so it is squeezed between $0$ and a sequence tending to $0$ and
+therefore tends to $0$ itself.  That is (b), and the proof is complete.
+\end{proof}

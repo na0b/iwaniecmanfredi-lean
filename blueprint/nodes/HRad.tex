@@ -1,0 +1,26 @@
+\begin{definition}
+For a map $H\colon\mathbb{C}\to\mathbb{C}$ and a point $\xi\in\mathbb{C}$ put
+\[
+  H_r(\xi)=DH(\xi)\Bigl[\frac{\xi}{|\xi|}\Bigr],
+\]
+the value of the real Fr\'echet derivative $DH(\xi)$ on the vector
+$\xi/|\xi|$.
+
+This is the radial derivative $H_r$ of Section~4 of the paper, written as a
+function of $\xi$ rather than of the polar coordinates.  Indeed, Section~4
+writes $\xi=re^{i\theta}$ with $0\le r<1$ and $H(r,\theta)=H(re^{i\theta})$;
+for $r>0$ the curve $r\mapsto re^{i\theta}$ has velocity
+$\partial(re^{i\theta})/\partial r=e^{i\theta}=\xi/|\xi|$, so the chain rule
+gives
+\[
+  \frac{\partial}{\partial r}H(r,\theta)=DH(re^{i\theta})\bigl[e^{i\theta}\bigr]
+  =H_r\bigl(re^{i\theta}\bigr),
+\]
+whenever $H$ is real-differentiable at $re^{i\theta}$.  Recording $H_r$ as a
+function of $\xi$ rather than of $(r,\theta)$ avoids carrying the polar chart
+and is what makes the formulas of Section~4 usable at a point.
+
+At $\xi=0$ the quotient $\xi/|\xi|$ is read as $0$ (the convention $w/0=0$),
+and at a point where $H$ is not real-differentiable $DH(\xi)$ is taken to be
+the zero map; so the expression is defined at every point of $\mathbb{C}$.  Section~4 uses it only for $0<|\xi|<1$.
+\end{definition}

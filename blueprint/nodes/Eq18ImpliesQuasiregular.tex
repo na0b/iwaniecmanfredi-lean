@@ -1,0 +1,107 @@
+\begin{lemma}
+Let $1<p<\infty$, let $n\ge0$ be an integer, let $\Omega\subseteq\mathbb{C}$ and
+let $H\colon\mathbb{C}\to\mathbb{C}$ belong to $W^{1,2}_{\mathrm{loc}}(\Omega)$
+in the sense of \noderef{MemWLocOn} and solve equation (18) on $\Omega$ in the
+sense of \noderef{SolvesEq18}.  Put
+\[
+  K=\max\Bigl\{p-1,\ \frac1{p-1}\Bigr\} .
+\]
+Then $H$ is $K$-quasiregular on $\Omega$ in the sense of
+\noderef{QuasiregularOn}.
+
+This is the paper's assertion at line 239, ``Since $H$ is $K$-quasiregular,
+$K=\max\{p-1,1/(p-1)\}$'', which the paper states without proof and which the
+estimates (26) and (27) then use.  Because $K$ here is determined by $p$ alone,
+a constant of the form $C(n,p,K)$ obtained from it is a constant $C(n,p)$;
+this is what allows Theorem 2 to carry no quasiregularity hypothesis.
+\end{lemma}
+\begin{proof}
+By \noderef{QuasiregularOn} we must verify three things: $1\le K$, that
+$H\in W^{1,2}_{\mathrm{loc}}(\Omega)$, and that there are weak Wirtinger
+derivatives $a=\partial H/\partial\xi$, $b=\partial H/\partial\bar\xi$ of $H$
+on $\Omega$, in the sense of \noderef{IsWeakWirtingerOn}, with
+\begin{equation}\tag{11}
+  |b(\xi)|\le\frac{K-1}{K+1}\,|a(\xi)|
+  \qquad\text{for almost every }\xi\in\Omega .
+\end{equation}
+The second is the hypothesis.  We prove the first and third.  Note that the
+derivatives in the hypothesis and in the conclusion are the same objects: by
+\noderef{SolvesEq18} the system (18) is an identity between weak Wirtinger
+derivatives of $H$ on $\Omega$, and by \noderef{QuasiregularOn} so is the
+distortion inequality, so no passage between two notions of derivative is
+needed here.
+
+\emph{Step 1: $p-1>0$, and $1\le K$.}  Since $p>1$ we have $p-1>0$, so
+$1/(p-1)$ is defined and positive.  If $p\ge2$ then $p-1\ge1$, so
+$K\ge p-1\ge1$.  If $p<2$ then $0<p-1<1$, so $1/(p-1)>1$ and $K\ge1/(p-1)>1$.
+In both cases $1\le K$.
+
+\emph{Step 2: $\dfrac{K-1}{K+1}=\dfrac{|p-2|}{p}$.}  We compute the two cases
+separately.
+
+If $p\ge2$ then $p-1\ge1$, hence $1/(p-1)\le1\le p-1$, so $K=p-1$.  Therefore
+$K-1=p-2$ and $K+1=p$, and since $p-2\ge0$,
+\[
+  \frac{K-1}{K+1}=\frac{p-2}{p}=\frac{|p-2|}{p}.
+\]
+
+If $1<p<2$ then $0<p-1<1$, hence $p-1<1<1/(p-1)$, so $K=1/(p-1)$.  Multiplying
+numerator and denominator by the positive number $p-1$,
+\[
+  \frac{K-1}{K+1}=\frac{\frac1{p-1}-1}{\frac1{p-1}+1}
+  =\frac{1-(p-1)}{1+(p-1)}=\frac{2-p}{p}=\frac{|p-2|}{p},
+\]
+the last equality because $p-2<0$.  In both cases
+\begin{equation}\tag{1}
+  \frac{K-1}{K+1}=\frac{|p-2|}{p}.
+\end{equation}
+
+\emph{Step 3: the estimate off the origin.}  By \noderef{SolvesEq18} there are
+weak Wirtinger derivatives $a,b$ of $H$ on $\Omega$, in the sense of
+\noderef{IsWeakWirtingerOn}, and a Lebesgue null set $Z$ such that
+\begin{equation}\tag{18}
+  b(\xi)=\Bigl(\frac12-\frac1p\Bigr)
+    \Bigl[\frac{\xi}{\bar\xi}a(\xi)+\frac{\bar\xi^{\,n}}{\xi^{n}}
+      \overline{a(\xi)}\Bigr]
+\end{equation}
+for every $\xi\notin Z$ with $\xi\in\Omega$ and $\xi\neq0$.  Fix this pair
+$a,b$, and fix such a $\xi$.  Since $\xi\neq0$ we have $\bar\xi\neq0$ and
+$|\bar\xi|=|\xi|\neq0$, so the two bracketed factors are defined and
+\[
+  \Bigl|\frac{\xi}{\bar\xi}\Bigr|=\frac{|\xi|}{|\bar\xi|}=1,\qquad
+  \Bigl|\frac{\bar\xi^{\,n}}{\xi^{n}}\Bigr|
+    =\frac{|\bar\xi|^{n}}{|\xi|^{n}}=1 .
+\]
+Also $\bigl|\overline{a(\xi)}\bigr|=|a(\xi)|$.  Hence by (18), the triangle
+inequality and multiplicativity of the modulus,
+\[
+  |b(\xi)|
+  \le\Bigl|\frac12-\frac1p\Bigr|
+    \Bigl(\Bigl|\frac{\xi}{\bar\xi}\Bigr||a(\xi)|
+      +\Bigl|\frac{\bar\xi^{\,n}}{\xi^{n}}\Bigr|
+        \bigl|\overline{a(\xi)}\bigr|\Bigr)
+  =2\Bigl|\frac12-\frac1p\Bigr|\,|a(\xi)| .
+\]
+Finally, since $p>1>0$,
+\[
+  \Bigl|\frac12-\frac1p\Bigr|=\Bigl|\frac{p-2}{2p}\Bigr|=\frac{|p-2|}{2p},
+\]
+so $2\bigl|\tfrac12-\tfrac1p\bigr|=|p-2|/p$ and, by (1),
+\begin{equation}\tag{2}
+  |b(\xi)|\le\frac{|p-2|}{p}\,|a(\xi)|
+  =\frac{K-1}{K+1}\,|a(\xi)| .
+\end{equation}
+
+\emph{Step 4: removing the restriction $\xi\neq0$.}  Step 3 establishes (2) at
+every $\xi\in\Omega-Z$ with $\xi\neq0$.  The singleton $\{0\}$ is a Lebesgue
+null set in $\mathbb{C}\cong\mathbb{R}^2$, and the union of two null sets is
+null; outside $Z\cup\{0\}$ every $\xi\in\Omega$ satisfies $\xi\neq0$ and hence
+(2).  So (2) holds for almost every $\xi\in\Omega$, which is (11) for the pair
+$a,b$ of Step 3.
+
+Together with Step 1 and the hypothesis $H\in W^{1,2}_{\mathrm{loc}}(\Omega)$,
+the three clauses of \noderef{QuasiregularOn} hold for the constant $K$, the
+pair exhibited in its clause (b) being the pair $a,b$ of Step 3; this is the
+assertion.  Note that no property of $n$ was used beyond $n\ge0$: the factor
+$\bar\xi^{\,n}/\xi^{n}$ has modulus $1$ for every such $n$.
+\end{proof}

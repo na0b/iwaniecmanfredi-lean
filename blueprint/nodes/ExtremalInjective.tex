@@ -1,0 +1,187 @@
+\begin{lemma}
+Let $1<p<\infty$ and let $H$ be the extremal function of \noderef{ExtremalH}.
+Then $H$ is continuous on $\mathbb{C}$, is a bijection of $\mathbb{C}$ onto
+$\mathbb{C}$, and its inverse is continuous; that is, $H$ is a homeomorphism of
+the plane onto itself.
+
+This is the paper's assertion at paper.tex:586 that ``in this case $H$ is a
+quasiconformal homeomorphism on the whole plane'', in the form that Section~7
+actually uses: the inverse $f$ of (55) is defined and continuous on all of
+$\mathbb{C}$.  It rests on the \emph{strict} inequality $|\epsilon|<1/3$ of
+\noderef{ExtremalEpsBound}, and needs no degree-theoretic input.
+\end{lemma}
+\begin{proof}
+Write $d=d(p)$ for the exponent of \noderef{DExp},
+$\epsilon=\epsilon_2(1,p)$ for the coefficient of \noderef{EpsCoef} as used in
+\noderef{ExtremalH}, $a=1/d$, and
+\[
+  G(\theta)=e^{i\theta}+\epsilon e^{-3i\theta},\qquad
+  w(\theta)=\epsilon e^{-4i\theta}.
+\]
+Note $\epsilon\in\mathbb{R}$, so $\bar\epsilon=\epsilon$.
+
+\emph{Step 0: the two constants.}  By \noderef{DExpEqGammaOneInv},
+$\gamma_1(p)>0$ and $\gamma_1(p)\,d=1$, so
+\begin{equation}\tag{1}
+  d=1/\gamma_1(p)>0,\qquad a=1/d=\gamma_1(p)>0 .
+\end{equation}
+By part (b) of \noderef{ExtremalEpsBound},
+\begin{equation}\tag{2}
+  |\epsilon|<\tfrac13,\qquad\text{hence}\qquad
+  1-3|\epsilon|>0\ \text{ and }\ 1-|\epsilon|>\tfrac23>0 .
+\end{equation}
+
+\emph{Step 1: polar form, and two-sided control of $|H|$.}  By the first clause
+of \noderef{ExtremalPolarForm}, for every $r>0$ and every $\theta$,
+\begin{equation}\tag{3}
+  H\bigl(re^{i\theta}\bigr)=r^{a}\,G(\theta).
+\end{equation}
+Also
+\begin{equation}\tag{4}
+  G(\theta)=e^{i\theta}\bigl(1+w(\theta)\bigr),
+\end{equation}
+since $e^{i\theta}\cdot\epsilon e^{-4i\theta}=\epsilon e^{-3i\theta}$.  As
+$|e^{-4i\theta}|=1$ we have $|w(\theta)|=|\epsilon|$ for every $\theta$, so by
+the triangle inequality and (2),
+\begin{equation}\tag{5}
+  0<1-|\epsilon|\le\bigl|1+w(\theta)\bigr|\le1+|\epsilon|,
+  \qquad\text{and}\qquad |G(\theta)|=\bigl|1+w(\theta)\bigr| ,
+\end{equation}
+the last equality from (4) and $|e^{i\theta}|=1$.  Combining with (3),
+\begin{equation}\tag{6}
+  \bigl(1-|\epsilon|\bigr)r^{a}\le\bigl|H(re^{i\theta})\bigr|
+  \le\bigl(1+|\epsilon|\bigr)r^{a}\qquad(r>0).
+\end{equation}
+In particular $H(\xi)\neq0$ for every $\xi\neq0$.  And $H(0)=0$, as
+\noderef{ExtremalH} records.
+
+\emph{Step 2: continuity of $H$.}  On $\mathbb{C}-\{0\}$ the formula of
+\noderef{ExtremalH} is a product of continuous functions --- there $|\xi|>0$ and
+$\xi\neq0$, so both quotients are continuous, and $\xi\mapsto|\xi|^{a}$ is
+continuous --- so $H$ is continuous there.  At $0$: by (6) applied with
+$r=|\xi|$, for $\xi\neq0$,
+\[
+  \bigl|H(\xi)-H(0)\bigr|=\bigl|H(\xi)\bigr|\le\bigl(1+|\epsilon|\bigr)|\xi|^{a},
+\]
+and $|\xi|^{a}\to0$ as $\xi\to0$ because $a>0$ by (1).  So $H$ is continuous at
+$0$ as well, hence on $\mathbb{C}$.
+
+\emph{Step 3: a strictly increasing argument for $G$.}  By (5),
+$\mathrm{Re}\bigl(1+w(\theta)\bigr)\ge1-|w(\theta)|=1-|\epsilon|>0$, so
+$1+w(\theta)$ lies in the open right half plane for every $\theta$.  On that
+half plane the principal argument $\mathrm{Arg}$ is $C^\infty$, so
+\[
+  \Theta(\theta)=\theta+\mathrm{Arg}\bigl(1+w(\theta)\bigr)
+\]
+defines a $C^\infty$ function $\Theta\colon\mathbb{R}\to\mathbb{R}$, and by (4)
+and (5),
+\begin{equation}\tag{7}
+  G(\theta)=\bigl|G(\theta)\bigr|\,e^{i\Theta(\theta)},
+  \qquad\bigl|G(\theta)\bigr|>0 .
+\end{equation}
+
+We compute $\Theta'$.  From $w'(\theta)=-4i\,w(\theta)$ and the formula
+$\frac{d}{d\theta}\mathrm{Arg}\,z(\theta)=\mathrm{Im}\bigl(z'(\theta)/z(\theta)\bigr)$,
+valid for a differentiable curve $z$ in the right half plane,
+\[
+  \frac{d}{d\theta}\mathrm{Arg}\bigl(1+w\bigr)
+  =\mathrm{Im}\Bigl(\frac{-4iw}{1+w}\Bigr)
+  =-4\,\mathrm{Re}\Bigl(\frac{w}{1+w}\Bigr),
+\]
+so
+\begin{equation}\tag{8}
+  \Theta'(\theta)=1-4\,\mathrm{Re}\Bigl(\frac{w}{1+w}\Bigr)
+  =\mathrm{Re}\Bigl(\frac{1+w-4w}{1+w}\Bigr)
+  =\mathrm{Re}\Bigl(\frac{1-3w}{1+w}\Bigr).
+\end{equation}
+Now, multiplying numerator and denominator by $\overline{1+w}$ and using
+$\epsilon\in\mathbb{R}$,
+\[
+  \mathrm{Re}\Bigl(\frac{1-3w}{1+w}\Bigr)
+  =\frac{\mathrm{Re}\bigl((1-3w)(1+\bar w)\bigr)}{|1+w|^2}
+  =\frac{1+\mathrm{Re}(\bar w)-3\,\mathrm{Re}(w)-3|w|^2}{|1+w|^2}
+  =\frac{1-2\,\mathrm{Re}(w)-3|w|^2}{|1+w|^2},
+\]
+since $\mathrm{Re}(\bar w)=\mathrm{Re}(w)$.  Using
+$\mathrm{Re}(w)\le|w|=|\epsilon|$, the factorization
+$1-2t-3t^2=(1-3t)(1+t)$, and (5),
+\begin{equation}\tag{9}
+  \Theta'(\theta)\ \ge\ \frac{1-2|\epsilon|-3|\epsilon|^2}{|1+w|^2}
+  =\frac{\bigl(1-3|\epsilon|\bigr)\bigl(1+|\epsilon|\bigr)}{|1+w|^2}
+  \ \ge\ \frac{\bigl(1-3|\epsilon|\bigr)\bigl(1+|\epsilon|\bigr)}{\bigl(1+|\epsilon|\bigr)^2}
+  =\frac{1-3|\epsilon|}{1+|\epsilon|}=:\mu>0,
+\end{equation}
+by (2).  So $\Theta$ is strictly increasing, with $\Theta(\theta_2)-\Theta(\theta_1)\ge\mu(\theta_2-\theta_1)$
+for $\theta_1\le\theta_2$, by the mean value theorem.
+
+\emph{Step 4: $\Theta$ is a bijection of $\mathbb{R}$ with $\Theta(\theta+2\pi)=\Theta(\theta)+2\pi$.}
+Since $w(\theta+2\pi)=\epsilon e^{-4i\theta}e^{-8\pi i}=w(\theta)$, the function
+$\mathrm{Arg}(1+w)$ is $2\pi$-periodic, so
+\begin{equation}\tag{10}
+  \Theta(\theta+2\pi)=\Theta(\theta)+2\pi .
+\end{equation}
+By Step 3, $\Theta(\theta)\ge\Theta(0)+\mu\theta$ for $\theta\ge0$ and
+$\Theta(\theta)\le\Theta(0)+\mu\theta$ for $\theta\le0$, so
+$\Theta(\theta)\to\pm\infty$ as $\theta\to\pm\infty$; being continuous, $\Theta$
+is onto $\mathbb{R}$ by the intermediate value theorem, and it is injective by
+strict monotonicity.  So $\Theta\colon\mathbb{R}\to\mathbb{R}$ is a strictly
+increasing continuous bijection.
+
+\emph{Step 5: $H$ is injective.}  Since $H(0)=0$ and $H(\xi)\neq0$ for
+$\xi\neq0$ by Step 1, it suffices to show that $H$ is injective on
+$\mathbb{C}-\{0\}$.  Let $\xi_1,\xi_2\neq0$ with $H(\xi_1)=H(\xi_2)=:z$, and
+write $\xi_j=r_je^{i\theta_j}$ with $r_j=|\xi_j|>0$.  By (3) and (7),
+\[
+  z=r_j^{a}\bigl|G(\theta_j)\bigr|\,e^{i\Theta(\theta_j)}\qquad(j=1,2),
+\]
+with $r_j^{a}|G(\theta_j)|>0$.  Comparing moduli and then unit vectors,
+\begin{equation}\tag{11}
+  r_1^{a}\bigl|G(\theta_1)\bigr|=r_2^{a}\bigl|G(\theta_2)\bigr|,
+  \qquad e^{i\Theta(\theta_1)}=e^{i\Theta(\theta_2)} .
+\end{equation}
+The second equality gives $\Theta(\theta_1)-\Theta(\theta_2)=2\pi k$ for some
+$k\in\mathbb{Z}$.  By (10), $\Theta(\theta_2+2\pi k)=\Theta(\theta_2)+2\pi k
+=\Theta(\theta_1)$, so $\theta_1=\theta_2+2\pi k$ by injectivity of $\Theta$
+(Step 4).  Hence $e^{i\theta_1}=e^{i\theta_2}$, and $G$, being a combination of
+$e^{i\theta}$ and $e^{-3i\theta}$, is $2\pi$-periodic, so
+$G(\theta_1)=G(\theta_2)$.  Dividing the first equality of (11) by
+$|G(\theta_1)|>0$ gives $r_1^{a}=r_2^{a}$, and since $a>0$ the map
+$t\mapsto t^{a}$ is strictly increasing on $(0,\infty)$, hence injective; so
+$r_1=r_2$.  Therefore
+$\xi_1=r_1e^{i\theta_1}=r_2e^{i\theta_2}=\xi_2$.
+
+\emph{Step 6: $H$ is surjective.}  We have $H(0)=0$.  Let $z\neq0$ and write
+$z=|z|e^{i\varphi}$ with $\varphi\in\mathbb{R}$.  By Step 4 there is $\theta$
+with $\Theta(\theta)=\varphi$, and then by (7)
+$G(\theta)=|G(\theta)|e^{i\varphi}$ with $|G(\theta)|>0$.  Put
+\[
+  s=\frac{|z|}{|G(\theta)|}>0,\qquad r=s^{d}>0 .
+\]
+Then $r^{a}=s^{da}=s^{1}=s$, using $da=1$ from (1) and $s>0$.  Hence by (3)
+\[
+  H\bigl(re^{i\theta}\bigr)=r^{a}G(\theta)=s\,\bigl|G(\theta)\bigr|e^{i\varphi}
+  =|z|e^{i\varphi}=z .
+\]
+So $H$ is onto $\mathbb{C}$, and with Step 5 it is a bijection of $\mathbb{C}$.
+
+\emph{Step 7: $H$ is a closed map, hence a homeomorphism.}  Let
+$C\subseteq\mathbb{C}$ be closed and let $y$ lie in the closure of $H(C)$;
+choose $\xi_k\in C$ with $H(\xi_k)\to y$.  The sequence $\bigl(|H(\xi_k)|\bigr)$
+is convergent, hence bounded by some $R$, so by (6), which also holds trivially
+at $\xi_k=0$,
+\[
+  \bigl(1-|\epsilon|\bigr)|\xi_k|^{a}\le\bigl|H(\xi_k)\bigr|\le R ,
+\]
+whence $|\xi_k|^{a}\le R/(1-|\epsilon|)$ by (2).  Since $a>0$, the map
+$t\mapsto t^{a}$ is an increasing bijection of $[0,\infty)$ onto itself, so
+$|\xi_k|\le\bigl(R/(1-|\epsilon|)\bigr)^{1/a}$: the sequence
+$(\xi_k)$ is bounded.  By the Bolzano--Weierstrass theorem a subsequence
+converges, say $\xi_{k_i}\to\xi$, and $\xi\in C$ because $C$ is closed.  By
+Step 2, $H(\xi)=\lim_iH(\xi_{k_i})=y$, so $y\in H(C)$.  Hence $H(C)$ is closed.
+
+Let $g$ be the inverse of the bijection $H$, so that $g(H(\xi))=\xi$ for every
+$\xi$ and $H(g(z))=z$ for every $z$.  For closed $C\subseteq\mathbb{C}$ we have
+$g^{-1}(C)=H(C)$, which is closed by the previous paragraph; as preimages of
+closed sets under $g$ are closed, $g$ is continuous.  Together with Step 2 and
+Steps 5--6 this is the assertion.
+\end{proof}

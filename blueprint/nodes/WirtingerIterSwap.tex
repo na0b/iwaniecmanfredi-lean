@@ -1,0 +1,120 @@
+\begin{lemma}
+Let $\Omega\subset\mathbb{C}$ be open, let $H\colon\mathbb{C}\to\mathbb{C}$ be
+$C^\infty$ on $\Omega$, and let $i,j\ge0$ be integers.  Then
+\begin{enumerate}
+\item[(a)] $\dfrac{\partial^{i+j}H}{\partial\xi^i\partial\bar\xi^j}$ is
+$C^\infty$ on $\Omega$, and
+\item[(b)] $\dfrac{\partial}{\partial\bar\xi}
+\dfrac{\partial^{i+j}H}{\partial\xi^i\partial\bar\xi^j}(\xi)
+=\dfrac{\partial^{i+j+1}H}{\partial\xi^i\partial\bar\xi^{j+1}}(\xi)$ for every
+$\xi\in\Omega$,
+\end{enumerate}
+where the iterated derivatives are those of \noderef{WirtingerIter} and
+$\partial/\partial\bar\xi$ is as in \noderef{DZbar}.
+\end{lemma}
+\begin{proof}
+Throughout, $\partial_x$ and $\partial_y$ denote the two real first partial
+derivatives, taken through the real Fr\'echet derivative as in \noderef{DZ};
+thus for any $g$ and any point, $\partial_xg=Dg[1]$ and $\partial_yg=Dg[i]$,
+and by \noderef{DZ} and \noderef{DZbar}
+\begin{equation}\tag{0}
+  \frac{\partial g}{\partial\xi}=\tfrac12\bigl(\partial_xg-i\,\partial_yg\bigr),
+  \qquad
+  \frac{\partial g}{\partial\bar\xi}=\tfrac12\bigl(\partial_xg+i\,\partial_yg\bigr).
+\end{equation}
+
+\emph{Step 1: both Wirtinger operators preserve $C^\infty(\Omega)$.}  Let $g$ be
+$C^\infty$ on the open set $\Omega$.  Then $g$ is in particular
+real-differentiable at each point of $\Omega$, and each of its first partial
+derivatives $\partial_xg$, $\partial_yg$ is again $C^\infty$ on $\Omega$ (the
+partial derivatives of a $C^\infty$ function on an open set are $C^\infty$
+there).  By (0), $\partial g/\partial\xi$ and $\partial g/\partial\bar\xi$ are
+fixed $\mathbb{C}$-linear combinations of $\partial_xg$ and $\partial_yg$, hence
+both are $C^\infty$ on $\Omega$.
+
+\emph{Step 2: proof of (a).}  By \noderef{WirtingerIter},
+$\partial^{i+j}H/\partial\xi^i\partial\bar\xi^j$ is obtained from $H$ by
+applying $j$ times the operator $\partial/\partial\bar\xi$ and then $i$ times
+the operator $\partial/\partial\xi$.  Each of these $i+j$ operators carries
+$C^\infty(\Omega)$ into $C^\infty(\Omega)$ by Step 1, and $H\in C^\infty(\Omega)$
+by hypothesis.  Induction on the number of operators applied gives
+$\partial^{i+j}H/\partial\xi^i\partial\bar\xi^j\in C^\infty(\Omega)$.
+
+\emph{Step 3: the two operators commute on $C^\infty(\Omega)$.}  Let $g$ be
+$C^\infty$ on $\Omega$ and let $\xi\in\Omega$.  Using (0) twice, and writing
+$\partial_u\partial_vg$ for $\partial_u(\partial_vg)$,
+\begin{align*}
+  \frac{\partial}{\partial\xi}\Bigl(\frac{\partial g}{\partial\bar\xi}\Bigr)
+  &=\tfrac12\bigl(\partial_x-i\,\partial_y\bigr)
+     \Bigl[\tfrac12\bigl(\partial_xg+i\,\partial_yg\bigr)\Bigr]\\
+  &=\tfrac14\Bigl(\partial_x\partial_xg+\partial_y\partial_yg
+      +i\bigl(\partial_x\partial_yg-\partial_y\partial_xg\bigr)\Bigr),
+\end{align*}
+and symmetrically
+\[
+  \frac{\partial}{\partial\bar\xi}\Bigl(\frac{\partial g}{\partial\xi}\Bigr)
+  =\tfrac14\Bigl(\partial_x\partial_xg+\partial_y\partial_yg
+      -i\bigl(\partial_x\partial_yg-\partial_y\partial_xg\bigr)\Bigr),
+\]
+both at every point of $\Omega$; in each case the step is the expansion of the
+product of the two first-order operators, legitimate because the first
+derivatives of $g$ are themselves differentiable on $\Omega$ by Step 1.  Since
+$g$ is $C^\infty$ on the open set $\Omega$, its second derivative is symmetric
+at every point of $\Omega$ (Schwarz's theorem on mixed partials, valid for
+$C^2$ functions on an open set), so
+$\partial_x\partial_yg=\partial_y\partial_xg$ on $\Omega$.  The two displayed
+expressions therefore coincide:
+\begin{equation}\tag{1}
+  \frac{\partial}{\partial\xi}\Bigl(\frac{\partial g}{\partial\bar\xi}\Bigr)(\xi)
+  =\frac{\partial}{\partial\bar\xi}\Bigl(\frac{\partial g}{\partial\xi}\Bigr)(\xi)
+  \qquad\text{for every }\xi\in\Omega .
+\end{equation}
+
+\emph{Step 4: proof of (b), by induction on $i$ with $j$ fixed.}
+
+\emph{Base case $i=0$.}  By \noderef{WirtingerIter},
+$\partial^{j}H/\partial\xi^0\partial\bar\xi^{j}$ is
+$(\partial/\partial\bar\xi)^{j}H$, so applying $\partial/\partial\bar\xi$ to it
+gives $(\partial/\partial\bar\xi)^{j+1}H$, which is
+$\partial^{j+1}H/\partial\xi^0\partial\bar\xi^{j+1}$.  This is an identity of
+functions on all of $\mathbb{C}$ and needs no hypothesis.
+
+\emph{Inductive step.}  Assume
+\begin{equation}\tag{2}
+  \frac{\partial}{\partial\bar\xi}
+  \Bigl(\frac{\partial^{i+j}H}{\partial\xi^i\partial\bar\xi^j}\Bigr)(\zeta)
+  =\frac{\partial^{i+j+1}H}{\partial\xi^i\partial\bar\xi^{j+1}}(\zeta)
+  \qquad\text{for every }\zeta\in\Omega .
+\end{equation}
+Put $g=\partial^{i+j}H/\partial\xi^i\partial\bar\xi^j$, which is $C^\infty$ on
+$\Omega$ by Step 2.  By \noderef{WirtingerIter},
+\[
+  \frac{\partial^{i+1+j}H}{\partial\xi^{i+1}\partial\bar\xi^{j}}
+  =\frac{\partial g}{\partial\xi},
+  \qquad
+  \frac{\partial^{i+j+1}H}{\partial\xi^{i}\partial\bar\xi^{j+1}}
+  \ \text{ is a $C^\infty(\Omega)$ function by Step 2.}
+\]
+Let $\xi\in\Omega$.  Then
+\[
+  \frac{\partial}{\partial\bar\xi}
+  \Bigl(\frac{\partial^{i+1+j}H}{\partial\xi^{i+1}\partial\bar\xi^{j}}\Bigr)(\xi)
+  =\frac{\partial}{\partial\bar\xi}\Bigl(\frac{\partial g}{\partial\xi}\Bigr)(\xi)
+  =\frac{\partial}{\partial\xi}\Bigl(\frac{\partial g}{\partial\bar\xi}\Bigr)(\xi),
+\]
+by (1) applied to $g$.  By the induction hypothesis (2), the functions
+$\partial g/\partial\bar\xi$ and
+$\partial^{i+j+1}H/\partial\xi^{i}\partial\bar\xi^{j+1}$ agree at every point
+of $\Omega$.  Since $\Omega$ is open and $\xi\in\Omega$, two functions agreeing
+on $\Omega$ agree on a neighbourhood of $\xi$, hence have the same real
+Fr\'echet derivative at $\xi$ and therefore, by (0), the same
+$\partial/\partial\xi$ at $\xi$.  Consequently
+\[
+  \frac{\partial}{\partial\xi}\Bigl(\frac{\partial g}{\partial\bar\xi}\Bigr)(\xi)
+  =\frac{\partial}{\partial\xi}
+   \Bigl(\frac{\partial^{i+j+1}H}{\partial\xi^{i}\partial\bar\xi^{j+1}}\Bigr)(\xi)
+  =\frac{\partial^{i+1+j+1}H}{\partial\xi^{i+1}\partial\bar\xi^{j+1}}(\xi),
+\]
+the last equality again by \noderef{WirtingerIter}.  Combining the two displays
+gives (b) for $i+1$, and the induction is complete.
+\end{proof}

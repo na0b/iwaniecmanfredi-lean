@@ -1,0 +1,27 @@
+\begin{definition}
+Let $\Omega\subset\mathbb{C}$, let $k\ge0$ be an integer, let
+$1\le s\le\infty$ and let $u\colon\mathbb{C}\to\mathbb{C}$.  We say that $u$
+belongs to $W^{k,s}_{\mathrm{loc}}(\Omega)$ if there is a family of functions
+$\bigl(u_w\bigr)_w$, indexed by the finite words $w$ with entries in
+$\{0,1\}$, such that
+\begin{enumerate}
+\item[(a)] $u_{()}=u$ for the empty word;
+\item[(b)] $u_w\in L^s_{\mathrm{loc}}(\Omega)$, in the sense of
+\noderef{MemLpLocOn}, for every word $w$ with $|w|\le k$;
+\item[(c)] for every word $w$ with $|w|<k$ and every $j\in\{0,1\}$, the
+function $u_{wj}$ obtained by appending $j$ to $w$ is the distributional
+$\partial_j$-derivative of $u_w$ on $\Omega$, in the sense of
+\noderef{IsWeakPartialOn}.
+\end{enumerate}
+
+This is the space $W^{k,s}_{\mathrm{loc}}(\Omega)$ of Section~1 of the paper:
+the space of functions $u\colon\Omega\to\mathbb{C}$ whose distributional
+derivatives $D^\nu u$, $|\nu|\le k$, belong to $L^s_{\mathrm{loc}}(\Omega)$.
+Conditions (a) and (c) say that $u_w$ is the iterated distributional
+derivative of $u$ along the word $w$, so that (b) is
+exactly the requirement that $D^\nu u\in L^s_{\mathrm{loc}}(\Omega)$ for
+$|\nu|\le k$; indexing by words rather than by multi-indices records the same
+collection of derivatives, since a word of length $m$ determines a
+multi-index of order $m$ and every multi-index of order $m\le k$ arises from
+some word.
+\end{definition}

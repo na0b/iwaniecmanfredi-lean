@@ -1,0 +1,222 @@
+\begin{lemma}
+Let $f\colon\mathbb{R}\to\mathbb{C}$ be Lebesgue measurable and suppose that
+$|f|^2$ is integrable on $(0,2\pi]$.  For $m\in\mathbb{Z}$ set
+\[
+  c_m=\frac1{2\pi}\int_0^{2\pi}f(\theta)e^{-im\theta}\,d\theta .
+\]
+Then the family $\bigl(2\pi|c_m|^2\bigr)_{m\in\mathbb{Z}}$ is summable and
+\[
+  \sum_{m\in\mathbb{Z}}2\pi\,|c_m|^2=\int_0^{2\pi}\bigl|f(\theta)\bigr|^2\,d\theta .
+\]
+
+This is Parseval's identity for the exponential system
+$\{e^{im\theta}\}_{m\in\mathbb{Z}}$ on a period, i.e. the completeness of that
+system in $L^2(0,2\pi)$, stated for an arbitrary square-integrable $f$.  The
+paper performs exactly this evaluation at paper.tex:353--357, where
+$\int_0^{2\pi}|H_r(re^{i\theta})|^2d\theta$ is replaced by
+$2\pi\sum_{j}|a_j'(r)|^2$ in the course of the energy identity; that
+substitution is the only step of Section 4 that needs completeness rather than
+mere orthogonality, and the energy identity cannot be obtained without it.
+Both directions of the identity are used downstream: the inequality
+$\sum\le\int$ gives the forward coefficient bound (22a) and the inequality
+$\int\le\sum$ gives the converse bound (22b).
+
+The hypotheses are exactly what the application supplies: measurability, which
+the radial derivative has because it is read off a Fréchet derivative, and
+square-integrability on a single period, which is what Fubini's theorem yields
+for almost every radius from the finiteness of the Dirichlet energy.  No
+continuity and no periodicity of $f$ are assumed, since neither is available
+there; correspondingly the sum runs over all of $\mathbb{Z}$ and the
+coefficients are those of $f$ itself, not of a smoothed version.
+\end{lemma}
+\begin{proof}
+Write $e_m(\theta)=e^{im\theta}$ and, for a finite set $s\subset\mathbb{Z}$ and
+a family $(b_m)_{m\in\mathbb{Z}}$ of complex numbers,
+$T_b^s(\theta)=\sum_{m\in s}b_me_m(\theta)$.  Put
+$S_s=T_c^s$, the Fourier partial sum of $f$ over the window $s$.  All integrals
+below are over $[0,2\pi]$ unless stated otherwise.
+
+\emph{Step 0: integrability.}  Since $|f|^2$ is integrable on $(0,2\pi]$ and
+$|f|\le\tfrac12\bigl(1+|f|^2\bigr)$ pointwise --- because
+$(|f|-1)^2\ge0$ --- and $(0,2\pi]$ has finite measure, $f$ itself is integrable
+on $(0,2\pi]$.  Each $e_m$ is continuous with $|e_m|=1$, so every product
+$fe_m$ and every $T_b^se_m$ is integrable on $[0,2\pi]$, and every integral
+written below converges absolutely.
+
+\emph{Step 1: orthogonality.}  For $m\neq0$ the function
+$\theta\mapsto e^{im\theta}$ has the antiderivative
+$e^{im\theta}/(im)$, so
+$\int_0^{2\pi}e_m=\bigl(e^{2\pi im}-1\bigr)/(im)=0$, while
+$\int_0^{2\pi}e_0=2\pi$.  Hence
+\begin{equation}\tag{1}
+  \int_0^{2\pi}e_m(\theta)\,d\theta=\begin{cases}2\pi,&m=0,\\0,&m\neq0.\end{cases}
+\end{equation}
+Consequently, for a finite $s\subset\mathbb{Z}$, any $(b_m)$ and any $i\in s$,
+using $e_je_{-i}=e_{j-i}$ and (1),
+\begin{equation}\tag{2}
+  \int_0^{2\pi}T_b^s(\theta)e_{-i}(\theta)\,d\theta
+  =\sum_{j\in s}b_j\int_0^{2\pi}e_{j-i}(\theta)\,d\theta=2\pi b_i ,
+\end{equation}
+and, by the definition of $c_i$,
+$\int_0^{2\pi}f(\theta)e_{-i}(\theta)\,d\theta=2\pi c_i$; subtracting,
+\begin{equation}\tag{3}
+  \int_0^{2\pi}\bigl(f(\theta)-T_b^s(\theta)\bigr)e_{-i}(\theta)\,d\theta
+  =2\pi\bigl(c_i-b_i\bigr)\qquad(i\in s).
+\end{equation}
+
+\emph{Step 2: a Pythagoras identity.}  Let $R$ be integrable on $[0,2\pi]$ with
+$|R|^2$ integrable there, let $s\subset\mathbb{Z}$ be finite, let $(d_m)$ be
+complex numbers, and suppose
+$\int_0^{2\pi}R(\theta)e_{-j}(\theta)\,d\theta=0$ for every $j\in s$.  Write
+$D=T_d^s$.  Using $|z|^2=z\bar z$ and expanding,
+\[
+  |R+D|^2=R\bar R+D\bar D+R\bar D+D\bar R .
+\]
+All four products are integrable: $R\bar R=|R|^2$ by hypothesis; $D\bar D$ is
+continuous; and $R\bar D$, $D\bar R$ are products of an integrable function
+with a bounded continuous one.  Now
+$\bar D=\sum_{j\in s}\bar d_je_{-j}$, because $\overline{e_j}=e_{-j}$, so
+$\int R\bar D=\sum_{j\in s}\bar d_j\int Re_{-j}=0$ by hypothesis; and
+$\int D\bar R=\overline{\int \bar D R}=\overline{\int R\bar D}=0$, since
+complex conjugation commutes with the integral.  Therefore
+\begin{equation}\tag{4}
+  \int_0^{2\pi}|R+D|^2=\int_0^{2\pi}|R|^2+\int_0^{2\pi}|D|^2 .
+\end{equation}
+
+\emph{Step 3: the squared norm of a partial sum, and Bessel's identity.}
+Taking $R=0$ is not enough, so we compute $\int|S_s|^2$ directly.  By
+$|z|^2=z\bar z$, $\bar S_s=\sum_{j\in s}\bar c_je_{-j}$ and (2) with $b=c$,
+\begin{equation}\tag{5}
+  \int_0^{2\pi}|S_s|^2
+  =\sum_{j\in s}\bar c_j\int_0^{2\pi}S_s(\theta)e_{-j}(\theta)\,d\theta
+  =\sum_{j\in s}\bar c_j\cdot2\pi c_j=2\pi\sum_{j\in s}|c_j|^2 .
+\end{equation}
+Apply (4) with $R=f-S_s$ and $D=S_s$: the hypothesis of Step 2 holds for this
+$R$ by (3) with $b=c$, which gives $\int(f-S_s)e_{-j}=2\pi(c_j-c_j)=0$ for
+$j\in s$; and $f-S_s$ is integrable with $|f-S_s|^2$ integrable, since
+$|f-S_s|^2\le2|f|^2+2|S_s|^2$.  Since $(f-S_s)+S_s=f$, (4) and (5) give
+\begin{equation}\tag{6}
+  \int_0^{2\pi}|f|^2=\int_0^{2\pi}\bigl|f-S_s\bigr|^2+2\pi\sum_{j\in s}|c_j|^2 .
+\end{equation}
+
+\emph{Step 4: the partial sum is the best approximation from its window.}  Let
+$(b_m)$ be arbitrary.  Then
+$f-T_b^s=(f-S_s)+T_{c-b}^s$, and the hypothesis of Step 2 again holds for
+$R=f-S_s$, so (4) gives
+\[
+  \int_0^{2\pi}\bigl|f-T_b^s\bigr|^2
+  =\int_0^{2\pi}\bigl|f-S_s\bigr|^2+\int_0^{2\pi}\bigl|T_{c-b}^s\bigr|^2
+  \ \ge\ \int_0^{2\pi}\bigl|f-S_s\bigr|^2 ,
+\]
+the last step because the omitted integrand is nonnegative.  Hence
+\begin{equation}\tag{7}
+  \int_0^{2\pi}\bigl|f-S_s\bigr|^2\le\int_0^{2\pi}\bigl|f-T_b^s\bigr|^2 .
+\end{equation}
+
+\emph{Step 5: trigonometric polynomials are dense in $L^2(0,2\pi)$.}  Let
+$\varepsilon>0$.  Let $F=\mathbf1_{(0,2\pi]}f$, so that $F$ is measurable on
+$\mathbb{R}$, agrees with $f$ on $(0,2\pi]$ and vanishes elsewhere, and
+$|F|^2=\mathbf1_{(0,2\pi]}|f|^2$ is integrable on $\mathbb{R}$; thus
+$F\in L^2(\mathbb{R})$.  Since continuous compactly supported functions are
+dense in $L^2(\mathbb{R})$, there is a continuous $g$ with compact support and
+\begin{equation}\tag{8}
+  \int_{\mathbb{R}}|F-g|^2\le\varepsilon/9 .
+\end{equation}
+Being continuous with compact support, $g$ is bounded: $|g|\le C_g$ on
+$\mathbb{R}$ for some $C_g\ge0$.
+
+Choose $\delta=\min\bigl(\pi/2,\ \varepsilon/(18(C_g^2+1))\bigr)>0$; then
+$\delta<\pi$ and
+\begin{equation}\tag{9}
+  C_g^2\cdot2\delta\le\varepsilon/9 ,
+\end{equation}
+because $C_g^2\cdot2\delta\le(C_g^2+1)\cdot2\delta\le\varepsilon/9$.  By
+Urysohn's lemma applied to the disjoint closed sets
+$\mathbb{R}\setminus(\delta/2,2\pi-\delta/2)$ and $[\delta,2\pi-\delta]$ there
+is a continuous $\chi\colon\mathbb{R}\to[0,1]$ with $\chi=1$ on
+$[\delta,2\pi-\delta]$ and $\chi=0$ off $(\delta/2,2\pi-\delta/2)$.
+
+Put $u=\chi g$.  Then $u$ is continuous and vanishes off
+$(\delta/2,2\pi-\delta/2)$; in particular $u$ vanishes on a neighbourhood of
+each of $0$ and $2\pi$.  Therefore $u$ descends to the unit circle: the
+function
+\[
+  G(w)=u\bigl(\arg(-w)+\pi\bigr)
+\]
+is defined for all $w$, and for $|w|=1$ it satisfies
+$G\bigl(e^{i\theta}\bigr)=u(\theta)$ for every $\theta\in[0,2\pi]$.  Indeed for
+$\theta\in(0,2\pi)$ one has $-e^{i\theta}=e^{i(\theta-\pi)}$ with
+$\theta-\pi\in(-\pi,\pi)$, so $\arg(-e^{i\theta})=\theta-\pi$; and for
+$\theta\in\{0,2\pi\}$ one has $e^{i\theta}=1$ and
+$G(1)=u(\arg(-1)+\pi)=u(2\pi)=0=u(\theta)$.  Moreover $G$ is continuous on the
+unit circle: at $w\neq1$ with $|w|=1$ the point $-w$ avoids the closed
+negative real axis, so $\arg$ is continuous there; and at $w=1$ the function
+$G$ vanishes identically on the neighbourhood $\{|w|=1:\ \cos\delta/2<\operatorname{Re}w\}$
+of $1$, because $\cos\bigl(\arg(-w)\bigr)=-\operatorname{Re}w<-\cos(\delta/2)
+=\cos(\pi-\delta/2)$ forces $|\arg(-w)|>\pi-\delta/2$, hence
+$\arg(-w)+\pi\notin(\delta/2,2\pi-\delta/2)$.
+
+The Laurent monomials $w\mapsto w^j$, $j\in\mathbb{Z}$, span a
+$*$-subalgebra of the continuous functions on the unit circle: it contains the
+constants ($j=0$), is closed under multiplication ($w^jw^{j'}=w^{j+j'}$) and
+under conjugation ($\overline{w^j}=w^{-j}$ for $|w|=1$), and it separates
+points, since $w\mapsto w^1$ is injective.  By the Stone--Weierstrass theorem
+it is therefore uniformly dense in the continuous functions on the circle.  So,
+with $\eta=\sqrt{\varepsilon/(18\pi)}>0$, there are a finite
+$s\subset\mathbb{Z}$ and coefficients $(b_j)$ with
+\begin{equation}\tag{10}
+  \Bigl|G(w)-\sum_{j\in s}b_jw^j\Bigr|\le\eta\qquad\text{whenever }|w|=1 .
+\end{equation}
+Evaluating at $w=e^{i\theta}$ and using $\bigl(e^{i\theta}\bigr)^j=e_j(\theta)$
+together with $G(e^{i\theta})=u(\theta)$,
+\begin{equation}\tag{11}
+  \bigl|u(\theta)-T_b^s(\theta)\bigr|\le\eta\qquad(\theta\in[0,2\pi]).
+\end{equation}
+
+Now estimate pointwise on $[0,2\pi]$.  Since
+$f-T_b^s=(f-g)+(1-\chi)g+\bigl(u-T_b^s\bigr)$ and $0\le\chi\le1$, the triangle
+inequality with $|g|\le C_g$ and (11) gives
+\[
+  \bigl|f(\theta)-T_b^s(\theta)\bigr|
+  \le\bigl|f(\theta)-g(\theta)\bigr|+\bigl(1-\chi(\theta)\bigr)C_g+\eta ,
+\]
+hence, by $(x+y+z)^2\le3(x^2+y^2+z^2)$ and
+$\bigl(1-\chi\bigr)^2\le1-\chi$ (valid since $0\le1-\chi\le1$),
+\[
+  \bigl|f-T_b^s\bigr|^2
+  \le3\Bigl(\bigl|f-g\bigr|^2+C_g^2\bigl(1-\chi\bigr)+\eta^2\Bigr).
+\]
+Integrate over $[0,2\pi]$.  For the first term, $f=F$ on $(0,2\pi]$ and the
+integrand is nonnegative, so by (8)
+$\int_0^{2\pi}|f-g|^2\le\int_{\mathbb{R}}|F-g|^2\le\varepsilon/9$.  For the
+second, $1-\chi$ vanishes on $[\delta,2\pi-\delta]$ and is at most $1$, so
+splitting $[0,2\pi]$ into $[0,\delta]$, $[\delta,2\pi-\delta]$ and
+$[2\pi-\delta,2\pi]$ gives $\int_0^{2\pi}(1-\chi)\le\delta+0+\delta=2\delta$,
+whence $C_g^2\int_0^{2\pi}(1-\chi)\le\varepsilon/9$ by (9).  For the third,
+$\int_0^{2\pi}\eta^2=2\pi\eta^2=\varepsilon/9$.  Altogether
+\begin{equation}\tag{12}
+  \int_0^{2\pi}\bigl|f-T_b^s\bigr|^2\le3\cdot3\cdot\frac{\varepsilon}{9}=\varepsilon .
+\end{equation}
+
+\emph{Step 6: conclusion.}  The numbers $2\pi|c_m|^2$ are nonnegative, so by
+the characterisation of unordered summability for nonnegative families it
+suffices to show that
+$\int_0^{2\pi}|f|^2$ is the least upper bound of the finite partial sums
+$\sigma_s=\sum_{m\in s}2\pi|c_m|^2$, $s\subset\mathbb{Z}$ finite.
+
+It is an upper bound: by (6), $\sigma_s=\int_0^{2\pi}|f|^2-\int_0^{2\pi}|f-S_s|^2
+\le\int_0^{2\pi}|f|^2$, the omitted integral being nonnegative.
+
+It is the least one: let $y$ be an upper bound and suppose
+$y<\int_0^{2\pi}|f|^2$.  Apply Step 5 with
+$\varepsilon=\tfrac12\bigl(\int_0^{2\pi}|f|^2-y\bigr)>0$ to obtain $s$ and
+$(b_j)$ satisfying (12); then (7) gives
+$\int_0^{2\pi}|f-S_s|^2\le\varepsilon$, so by (6)
+\[
+  \sigma_s=\int_0^{2\pi}|f|^2-\int_0^{2\pi}\bigl|f-S_s\bigr|^2
+  \ge\int_0^{2\pi}|f|^2-\varepsilon=y+\varepsilon>y ,
+\]
+contradicting that $y$ is an upper bound.  Hence
+$\int_0^{2\pi}|f|^2\le y$ for every upper bound $y$, and the least upper bound
+is $\int_0^{2\pi}|f|^2$.  This is the assertion.
+\end{proof}

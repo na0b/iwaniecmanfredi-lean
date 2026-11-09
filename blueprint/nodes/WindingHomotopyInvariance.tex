@@ -1,0 +1,73 @@
+\begin{lemma}
+Let $\gamma_0,\gamma_1\colon[0,1]\to\mathbb{C}$ be continuous and nowhere zero,
+and suppose they are homotopic relative to $\{0,1\}$ through
+$\mathbb{C}-\{0\}$: that is, writing
+$P=\{z\in\mathbb{C}:z\neq0\}$ with its subspace topology, there are continuous
+maps $g_0,g_1\colon[0,1]\to P$ with $g_j(t)=\gamma_j(t)$ for all $t$, and a
+homotopy from $g_0$ to $g_1$ inside $P$ which is stationary at $t=0$ and at
+$t=1$.  Then
+\[
+  \operatorname{ind}(\gamma_0)=\operatorname{ind}(\gamma_1),
+\]
+with $\operatorname{ind}$ the index about $0$ of \noderef{WindingNumber}.
+\end{lemma}
+\begin{proof}
+Write $\mathbb{T}=\mathbb{R}/2\pi\mathbb{Z}$ and let
+$q\colon\mathbb{R}\to\mathbb{T}$ be the quotient map, a covering map.  Recall
+from \noderef{WindingNumber} that for a continuous nowhere-zero
+$\gamma\colon[0,1]\to\mathbb{C}$ the index is
+\begin{equation}\tag{1}
+  \operatorname{ind}(\gamma)=\frac{\Theta_\gamma(1)-\arg\gamma(0)}{2\pi},
+\end{equation}
+where $\Theta_\gamma$ is the lift along $q$ of the continuous map
+$\alpha_\gamma\colon[0,1]\to\mathbb{T}$, $\alpha_\gamma(t)=q(\arg\gamma(t))$,
+normalised by $\Theta_\gamma(0)=\arg\gamma(0)$.
+
+\emph{Step 1: a continuous map $P\to\mathbb{T}$.}  Define
+\[
+  u\colon P\to\mathbb{T},\qquad u(z)=q(\arg z).
+\]
+This is continuous: the reduction $z\mapsto q(\arg z)$ of the principal
+argument is continuous at every nonzero complex number, and every point of $P$
+is such a point.  By construction, for $j\in\{0,1\}$ and every $t$,
+\begin{equation}\tag{2}
+  \bigl(u\circ g_j\bigr)(t)=q\bigl(\arg g_j(t)\bigr)=q\bigl(\arg\gamma_j(t)\bigr)
+  =\alpha_{\gamma_j}(t),
+\end{equation}
+using $g_j(t)=\gamma_j(t)$.
+
+\emph{Step 2: the endpoints agree.}  A homotopy relative to $\{0,1\}$ is
+stationary at $0$ and at $1$, so its two ends agree there:
+$g_0(0)=g_1(0)$ and $g_0(1)=g_1(1)$.  Hence
+\begin{equation}\tag{3}
+  \gamma_0(0)=\gamma_1(0),\qquad \gamma_0(1)=\gamma_1(1),
+\end{equation}
+and in particular $\arg\gamma_0(0)=\arg\gamma_1(0)$.  Call this common value
+$e$, so that both lifts $\Theta_{\gamma_0}$ and $\Theta_{\gamma_1}$ are
+normalised by the same initial value $e$.
+
+\emph{Step 3: transport the homotopy.}  Post-composition with a continuous map
+carries a homotopy relative to a set to a homotopy relative to the same set:
+applying $u$ to the given homotopy from $g_0$ to $g_1$ produces a homotopy from
+$u\circ g_0$ to $u\circ g_1$ relative to $\{0,1\}$, inside $\mathbb{T}$.  By
+(2) this says
+\[
+  \alpha_{\gamma_0}\ \text{ and }\ \alpha_{\gamma_1}\ \text{ are homotopic relative to }\{0,1\}.
+\]
+
+\emph{Step 4: invariance of the lifted endpoint.}  For a covering map, two
+paths in the base that are homotopic relative to $\{0,1\}$ have lifts with the
+same terminal value, once the lifts are started at the same point: this is the
+homotopy invariance of the endpoint of the lift.  Applying it to $q$, to the
+two paths $\alpha_{\gamma_0}$ and $\alpha_{\gamma_1}$ of Step 3, and to the
+common initial value $e$ of Step 2, we get
+\[
+  \Theta_{\gamma_0}(1)=\Theta_{\gamma_1}(1).
+\]
+
+\emph{Step 5: conclusion.}  By (1), (3) and Step 4,
+\[
+  \operatorname{ind}(\gamma_0)=\frac{\Theta_{\gamma_0}(1)-\arg\gamma_0(0)}{2\pi}
+  =\frac{\Theta_{\gamma_1}(1)-\arg\gamma_1(0)}{2\pi}=\operatorname{ind}(\gamma_1).
+\]
+\end{proof}

@@ -1,0 +1,157 @@
+\begin{helper}
+Let $n\ge0$ and $k\ge0$ be integers, let $p$ be real, let
+$A\colon\mathbb{Z}\to\mathbb{C}$, let $r>0$ be real and let $\theta$ be real.
+Write $A_k=A(k)$, $\lambda_k=\lambda_k(n,p)$ for the exponent of
+\noderef{LambdaCoef}, $\epsilon_k=\epsilon_k(n,p)$ for the coefficient of
+\noderef{EpsCoef}, and let $T_k=T_k(n,p,A,\cdot)$ be the $k$-th summand of the
+series (19) as in \noderef{Thm2Term}.  Then, with $\partial/\partial\xi$ as in
+\noderef{DZ} and $\partial/\partial\bar\xi$ as in \noderef{DZbar}, evaluated at
+the point $\xi=re^{i\theta}$,
+\[
+  \frac{\partial T_k}{\partial\xi}\bigl(re^{i\theta}\bigr)
+  =r^{\lambda_k-1}\Bigl(
+      \frac{\lambda_k+k-n}{2}\,A_k\,e^{i(k-n-1)\theta}
+     +\frac{\lambda_k-k-n}{2}\,\epsilon_k\overline{A_k}\,
+        e^{i(-k-n-1)\theta}\Bigr)
+\]
+and
+\[
+  \frac{\partial T_k}{\partial\bar\xi}\bigl(re^{i\theta}\bigr)
+  =r^{\lambda_k-1}\Bigl(
+      \frac{\lambda_k+n-k}{2}\,A_k\,e^{i(k-n+1)\theta}
+     +\frac{\lambda_k+n+k}{2}\,\epsilon_k\overline{A_k}\,
+        e^{i(-k-n+1)\theta}\Bigr).
+\]
+
+This is the summand-level instance of the polar transformation formulas that
+open Section~4 of the paper at \texttt{paper.tex:234-237},
+\[
+  H_{\bar\xi}=\tfrac12\Bigl(H_r+\tfrac irH_\theta\Bigr)e^{i\theta},\qquad
+  H_\xi=\tfrac12\Bigl(H_r-\tfrac irH_\theta\Bigr)e^{-i\theta},
+\]
+in the one case where both sides can be written out: for $H=T_k$ the radial and
+angular dependences separate completely, the modulus contributes the single
+power $r^{\lambda_k-1}$, and the angle contributes exactly two pure
+frequencies, $k-n\mp1$ and $-k-n\mp1$.  It is the form in which the two
+derivatives of a summand enter the circlewise Parseval computation of
+Section~4, where the two frequencies are what makes distinct summands
+orthogonal, and the radial integral, where $r^{\lambda_k-1}$ is what is
+integrated against $r\,dr$.
+
+No inequality among $n$, $p$ and $k$ is imposed; the only hypothesis is $r>0$,
+which keeps the point off the origin, where $T_k$ need not be differentiable
+and where the negative powers of the statement are not defined.
+\end{helper}
+\begin{proof}
+Throughout put $s=\lambda_k+n-k$, fix $r>0$ and $\theta$, and write
+$\xi=re^{i\theta}$, so that $\xi\ne0$ because $r\ne0$ and $e^{i\theta}\ne0$.
+Two elementary identities are used repeatedly:
+\begin{equation}\tag{1}
+  |\xi|=\bigl|re^{i\theta}\bigr|=r,
+  \qquad
+  \overline{e^{i\theta}}=e^{-i\theta},
+\end{equation}
+the first because $|e^{i\theta}|=1$ and $r>0$, the second because conjugation
+is a ring homomorphism fixing the reals and sending $i$ to $-i$, so that
+$\overline{\exp(i\theta)}=\exp(\overline{i\theta})=\exp(-i\theta)$.  From the
+second, $\bar\xi=r\,e^{-i\theta}$.
+
+\emph{Step 1: the Cartesian closed form.}  Since $\xi\ne0$,
+\noderef{Thm2TermWirtingerDerivs} applies verbatim and gives
+\begin{equation}\tag{2}
+  \frac{\partial T_k}{\partial\xi}(\xi)
+  =\frac{|\xi|^{s}\,\xi^{-n}}{\xi}
+    \Bigl(k\,A_k\xi^{k}
+      +\Bigl(\frac{s}{2}-n\Bigr)
+        \bigl(A_k\xi^{k}+\epsilon_k\overline{A_k}\,\bar\xi^{\,k}\bigr)\Bigr)
+\end{equation}
+and
+\begin{equation}\tag{3}
+  \frac{\partial T_k}{\partial\bar\xi}(\xi)
+  =\frac{|\xi|^{s}\,\xi^{-n}}{\bar\xi}
+    \Bigl(k\,\epsilon_k\overline{A_k}\,\bar\xi^{\,k}
+      +\frac{s}{2}
+        \bigl(A_k\xi^{k}+\epsilon_k\overline{A_k}\,\bar\xi^{\,k}\bigr)\Bigr).
+\end{equation}
+Nothing beyond $\xi\ne0$ is needed for (2) and (3); in particular no relation
+between $n$, $k$ and $p$ is assumed.
+
+\emph{Step 2: the four powers at $\xi=re^{i\theta}$.}  Because $r>0$ and
+$e^{i\theta}\ne0$, each of the following is a product of powers of the two
+nonzero factors separately:
+\begin{equation}\tag{4}
+  \xi^{k}=r^{k}e^{ik\theta},\qquad
+  \bar\xi^{\,k}=r^{k}e^{-ik\theta},\qquad
+  \xi^{-n}=r^{-n}e^{-in\theta},\qquad
+  |\xi|^{s}=r^{s},
+\end{equation}
+the second by $\bar\xi=re^{-i\theta}$ and the last by the first identity of
+(1).
+
+\emph{Step 3: the common prefactor, for $\partial/\partial\xi$.}  Substituting
+(4) into the prefactor of (2),
+\[
+  \frac{|\xi|^{s}\,\xi^{-n}}{\xi}
+  =\frac{r^{s}\,r^{-n}e^{-in\theta}}{r\,e^{i\theta}}
+  =r^{s-n-1}\,e^{-i(n+1)\theta}
+  =r^{\lambda_k-k-1}\,e^{-i(n+1)\theta},
+\]
+using $s-n-1=\lambda_k-k-1$.  Here the three separate real powers of $r$
+collapse into one because $r>0$, so $r^{a}r^{b}=r^{a+b}$ and $r^{a}/r=r^{a-1}$
+hold for all real exponents; this is the only place where $r>0$ rather than
+$r\ne0$ is used.
+
+\emph{Step 4: the bracket, for $\partial/\partial\xi$.}  Substituting (4) into
+the bracket of (2) and taking out the common factor $r^{k}$,
+\[
+  k\,A_k\xi^{k}
+   +\Bigl(\frac{s}{2}-n\Bigr)
+     \bigl(A_k\xi^{k}+\epsilon_k\overline{A_k}\,\bar\xi^{\,k}\bigr)
+  =r^{k}\Bigl(\Bigl(k+\frac{s}{2}-n\Bigr)A_k\,e^{ik\theta}
+     +\Bigl(\frac{s}{2}-n\Bigr)\epsilon_k\overline{A_k}\,e^{-ik\theta}\Bigr).
+\]
+The two scalars simplify, by $s=\lambda_k+n-k$:
+\begin{equation}\tag{5}
+  k+\frac{s}{2}-n=\frac{2k+\lambda_k+n-k-2n}{2}=\frac{\lambda_k+k-n}{2},
+  \qquad
+  \frac{s}{2}-n=\frac{\lambda_k+n-k-2n}{2}=\frac{\lambda_k-k-n}{2}.
+\end{equation}
+
+\emph{Step 5: the first identity.}  Multiplying Step 3 by Step 4, the powers of
+$r$ combine as $r^{\lambda_k-k-1}r^{k}=r^{\lambda_k-1}$, and the exponentials
+combine as
+\[
+  e^{-i(n+1)\theta}e^{ik\theta}=e^{i(k-n-1)\theta},
+  \qquad
+  e^{-i(n+1)\theta}e^{-ik\theta}=e^{i(-k-n-1)\theta},
+\]
+since $e^{ia\theta}e^{ib\theta}=e^{i(a+b)\theta}$.  With (5) this is exactly
+the first asserted identity.
+
+\emph{Step 6: the second identity.}  The prefactor of (3) differs from that of
+(2) only in carrying $\bar\xi=re^{-i\theta}$ in place of $\xi=re^{i\theta}$ in
+the denominator, so by (4)
+\[
+  \frac{|\xi|^{s}\,\xi^{-n}}{\bar\xi}
+  =\frac{r^{s}\,r^{-n}e^{-in\theta}}{r\,e^{-i\theta}}
+  =r^{\lambda_k-k-1}\,e^{-i(n-1)\theta}.
+\]
+The bracket of (3), again after taking out $r^{k}$, is
+\[
+  r^{k}\Bigl(\frac{s}{2}\,A_k\,e^{ik\theta}
+    +\Bigl(k+\frac{s}{2}\Bigr)\epsilon_k\overline{A_k}\,e^{-ik\theta}\Bigr),
+\]
+and the two scalars are
+\begin{equation}\tag{6}
+  \frac{s}{2}=\frac{\lambda_k+n-k}{2},
+  \qquad
+  k+\frac{s}{2}=\frac{2k+\lambda_k+n-k}{2}=\frac{\lambda_k+n+k}{2}.
+\end{equation}
+Multiplying, the powers of $r$ again give $r^{\lambda_k-1}$, while
+\[
+  e^{-i(n-1)\theta}e^{ik\theta}=e^{i(k-n+1)\theta},
+  \qquad
+  e^{-i(n-1)\theta}e^{-ik\theta}=e^{i(-k-n+1)\theta},
+\]
+which with (6) is the second asserted identity.
+\end{proof}

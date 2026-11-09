@@ -1,0 +1,368 @@
+\begin{corollary}
+Let $n\ge1$ be an integer, let $1<p<\infty$ and let $K\ge1$.  Let
+$V\subseteq\mathbb{C}$ be open with $0\in V$ and let
+$H\colon\mathbb{C}\to\mathbb{C}$ be continuous on $V$, differentiable at almost
+every point of $V$, $K$-quasiconformal on $V$ in the sense of
+\noderef{QuasiconformalOn}, a solution of equation (18) on $V$ in the sense of
+\noderef{SolvesEq18}, and such that $H(0)=0$.  Write
+$\gamma_n=\gamma_n(p)$ for the exponent of \noderef{GammaExp},
+$J=|H_\xi|^2-|H_{\bar\xi}|^2$ for the Jacobian of \noderef{Jac}, and $D^{w}$
+for the iterated partial derivative of \noderef{PartialWord}.
+
+Then there is $\rho>0$ and there are constants $0<c<C$ and $C_m$,
+$m=0,1,2,\dots$, such that $H$ is of class $C^\infty$ on
+$\{\xi:0<|\xi|<\rho\}$ and
+\begin{align}
+  c|\xi|^{\gamma_n}&\le|H(\xi)|\le C|\xi|^{\gamma_n}
+    &&\text{for }0\le|\xi|\le\rho,\tag{41}\\
+  c|\xi|^{2\gamma_n-2}&\le J(\xi)\le C|\xi|^{2\gamma_n-2}
+    &&\text{for }0<|\xi|\le\rho,\tag{42}
+\end{align}
+and
+\begin{equation}\tag{43}
+  \sum_{|w|=m}\bigl|D^{w}H(\xi)\bigr|\le C_m|\xi|^{\gamma_n-m}
+  \qquad\text{for }0<|\xi|\le\rho,
+\end{equation}
+the sum running over all $2^m$ words $w$ of length $m$ in $\{0,1\}$, and
+moreover
+\begin{equation}\tag{44}
+  \gamma_n=\lambda_{n+1}(n,p)
+  =\frac n2\Bigl\{-p+\sqrt{4\bigl(1+\tfrac1n\bigr)^2(p-1)+(p-2)^2}\Bigr\}.
+\end{equation}
+
+This is Corollary 1 of the paper (paper.tex:360--374).  The printed corollary
+assumes only that $H$ is a local solution of (18), quasiconformal in a
+neighborhood of the origin, with $H(0)=0$; no smoothness.  Yet (43) bounds
+$\sum_{|\nu|=m}|D^\nu H|$ for every $m$, which presupposes that $H$ is
+$C^\infty$ off the origin.  That smoothness is therefore a \emph{conclusion}
+here, and it is the paper's own step: at paper.tex:387--388 it notes
+$\lambda_k\to\infty$ and performs any finite number of term-by-term
+differentiations of the expansion (19).  The two clauses retained beyond the
+printed hypotheses --- continuity on $V$, which a quasiconformal homeomorphism
+has, and differentiability almost everywhere, which item (C2) of the paper's
+note supplies for the inverse of one --- are what make (18), $J$ and the $D^\nu$
+meaningful, every one of them being written with the Fr\'echet derivative.  The words of length $m$
+realize exactly the operators $D^\nu$ with $|\nu|=m$, as \noderef{PartialWord}
+records, so the sum in (43) is the paper's $\sum_{|\nu|=m}$ up to the
+multiplicities with which each $D^\nu$ occurs, at most $2^m$, absorbed into
+$C_m$.  The single radius $\rho$ and the single pair $c<C$ shared by (41), (42)
+and (43) are as the paper states them.
+\end{corollary}
+\begin{proof}
+Write $\lambda_k=\lambda_{|k|}(n,p)$ for the exponent of \noderef{LambdaCoef}
+and $\epsilon_k=\epsilon_k(n,p)$ for the coefficient of \noderef{EpsCoef}, so
+that $\gamma_n=\lambda_{n+1}$ by \noderef{GammaExp}.  By part (a) of
+\noderef{GammaRatioMinAtOne}, $\gamma_n>0$.  By (2) of Step 0 below,
+$\lambda_{n+2}>\lambda_{n+1}=\gamma_n$.
+
+\emph{Step 0: monotonicity of the exponents, and (44).}  By
+\noderef{LambdaCoef},
+$2\lambda_k+np=\sqrt{4k^2(p-1)+n^2(p-2)^2}$; the radicand is strictly
+increasing in $k\ge0$ because $p-1>0$ and $(k+1)^2>k^2$, and the square root is
+strictly increasing on $[0,\infty)$, so
+\begin{equation}\tag{2}
+  \lambda_k<\lambda_{k+1}\qquad(k\ge0).
+\end{equation}
+For (44): by \noderef{GammaExp} and \noderef{LambdaCoef},
+\[
+  \gamma_n=\lambda_{n+1}(n,p)
+  =\tfrac12\Bigl(-np+\sqrt{4(n+1)^2(p-1)+n^2(p-2)^2}\Bigr).
+\]
+Since $n\ge1$ we have $n>0$ and $n\bigl(1+\tfrac1n\bigr)=n+1$, so
+$n^2\bigl(1+\tfrac1n\bigr)^2=(n+1)^2$ and therefore, using $n\sqrt{x}=\sqrt{n^2x}$
+for $n>0$ and $x\ge0$,
+\[
+  \frac n2\Bigl\{-p+\sqrt{4\bigl(1+\tfrac1n\bigr)^2(p-1)+(p-2)^2}\Bigr\}
+  =\tfrac12\Bigl(-np+\sqrt{4n^2\bigl(1+\tfrac1n\bigr)^2(p-1)+n^2(p-2)^2}\Bigr)
+  =\gamma_n .
+\]
+This is (44); note it does not involve $H$.
+
+\emph{Step 1: rescaling.}  Since $V$ is open and $0\in V$, there is
+$\varepsilon>0$ with $\{z:|z|<\varepsilon\}\subseteq V$.  Put
+$t=\varepsilon/2>0$; then $\{z:|z|\le t\}\subseteq\{z:|z|<\varepsilon\}
+\subseteq V$.  Define
+\[
+  G(\zeta)=H(t\zeta).
+\]
+The hypotheses of \noderef{Eq18Rescale} hold with this $t$, $V$, $K$ and $H$:
+its hypotheses are exactly the present ones, with
+$\{z:|z|\le t\}\subseteq V$ as just arranged.  So that node gives: $G$ is
+continuous on $\mathbb{B}=\{\zeta:|\zeta|<1\}$; $G$ is differentiable at almost
+every point of $\mathbb{B}$; $G$ solves (18) on $\mathbb{B}$; $G\in
+W^{1,2}_{\mathrm{loc}}(\mathbb{B})$; $|G_\zeta|^2+|G_{\bar\zeta}|^2$ is
+integrable on $\mathbb{B}$; $G$ is $K$-quasiconformal on $\mathbb{B}$; and the
+conditional clause
+\begin{equation}\tag{3}
+  \text{if }G\text{ is }C^\infty\text{ on }\mathbb{B}-\{0\},\text{ then }
+  H\text{ is }C^\infty\text{ on }\{z:0<|z|<t\}\text{ and }
+  \bigl(D^{w}H\bigr)(t\zeta)=t^{-|w|}D^{w}G(\zeta)
+\end{equation}
+for every word $w$ and every $\zeta$ with $0<|\zeta|<1$.  Also
+$G(0)=H(0)=0$.  The hypothesis of (3) is discharged in Step 5 below, where the
+smoothness of $G$ is produced; nothing before that point uses it.
+
+\emph{Step 2: the coefficients.}  The hypotheses of
+\noderef{Thm2Expansion} on the unit disk --- membership in
+$W^{1,2}_{\mathrm{loc}}(\mathbb{B})$, continuity on $\mathbb{B}$,
+differentiability at almost every point of $\mathbb{B}$, equation (18), and
+integrability of $|G_\zeta|^2+|G_{\bar\zeta}|^2$ --- are among the conclusions
+of Step 1.
+Applying it to $G$ yields $A\colon\mathbb{Z}\to\mathbb{C}$ with
+\begin{align}
+  A_{-k}&=\epsilon_k\overline{A_k}\qquad(k\ge n),\tag{4}\\
+  a_k(G)(r)&=A_k\,r^{\lambda_k}\qquad(|k|\ge n,\ r\in(0,1)),\tag{5}
+\end{align}
+where $a_k(G)$ is the Fourier coefficient of \noderef{FourierCoefOfH} for $G$,
+and with $\sum_{m\ge0}(n+1+m)|A_{n+1+m}|^2$ convergent.  Adding the single
+further term $n|A_n|^2$,
+\begin{equation}\tag{6}
+  \sum_{m\ge0}(n+m)|A_{n+m}|^2
+  =n|A_n|^2+\sum_{m\ge0}(n+1+m)|A_{n+1+m}|^2<\infty .
+\end{equation}
+
+\emph{Step 3: $A_n=0$ and $A_{n+1}\neq0$.}  The hypotheses (H1)--(H6) of
+\noderef{LeadingCoefNonzero} hold for $G$ and $A$: (H1), (H2) and the
+quasiconformality in (H3) are from Step 1, $G(0)=0$ is from Step 1, (H4) is
+(5), (H5) is (4), and (H6) is (6).  Hence
+\begin{equation}\tag{7}
+  A_n=0,\qquad A_{n+1}\neq0 .
+\end{equation}
+By \noderef{Thm2Term}, $A_n=0$ forces $T_n\equiv0$, where $T_k$ denotes the
+$k$-th summand of (19) for $G$ and $A$, both of its terms carrying a factor
+$A_n$ or $\overline{A_n}$.  Consequently
+\begin{equation}\tag{8}
+  \sum_{k=n}^{n+1}T_k=T_{n+1}.
+\end{equation}
+
+\emph{Step 4: the leading profile.}  By part (b) of
+\noderef{Thm2TermSolvesEq18} at $k=n+1$, for $r>0$ and $\theta\in\mathbb{R}$,
+\[
+  T_{n+1}\bigl(re^{i\theta}\bigr)=r^{\gamma_n}\Phi(\theta),\qquad
+  \Phi(\theta)=A_{n+1}e^{i\theta}
+    +\epsilon_{n+1}\overline{A_{n+1}}e^{i(-2n-1)\theta},
+\]
+since $\lambda_{n+1}=\gamma_n$ and $(n+1)-n=1$, $-(n+1)-n=-2n-1$.  As
+$A_{n+1}\neq0$ by (7) we may set $u=\overline{A_{n+1}}/A_{n+1}$, so $|u|=1$ and
+\[
+  \Phi(\theta)=A_{n+1}e^{i\theta}\bigl(1+\epsilon_{n+1}u\,e^{-2i(n+1)\theta}\bigr),
+\]
+because $A_{n+1}\epsilon_{n+1}u\,e^{i\theta}e^{-2i(n+1)\theta}
+=\epsilon_{n+1}\overline{A_{n+1}}e^{i(-2n-1)\theta}$.  By part (24) of
+\noderef{LambdaEpsEstimates}, $|\epsilon_{n+1}|<1$, so for every $\theta$,
+$\epsilon_{n+1}$ being real and $|u|=1$,
+\[
+  \bigl|1+\epsilon_{n+1}u\,e^{-2i(n+1)\theta}\bigr|\ge1-|\epsilon_{n+1}|>0 .
+\]
+Hence, writing
+\begin{equation}\tag{9}
+  a=|A_{n+1}|\bigl(1-|\epsilon_{n+1}|\bigr)>0,
+\end{equation}
+we have $|\Phi(\theta)|\ge a$ for every $\theta$ and therefore
+\begin{equation}\tag{10}
+  \bigl|T_{n+1}(\zeta)\bigr|\ge a\,|\zeta|^{\gamma_n}\qquad(\zeta\neq0).
+\end{equation}
+Also, by \noderef{HRad} the radial derivative $f_r(\zeta)$ is the derivative of
+$f$ at $\zeta$ in the direction $\zeta/|\zeta|$, which at $\zeta=re^{i\theta}$
+with $r>0$ is $\partial\bigl(f(re^{i\theta})\bigr)/\partial r$; so
+differentiating $r\mapsto r^{\gamma_n}\Phi(\theta)$ gives
+\begin{equation}\tag{11}
+  \bigl(T_{n+1}\bigr)_r\bigl(re^{i\theta}\bigr)
+  =\gamma_n\,r^{\gamma_n-1}\Phi(\theta),\qquad
+  \bigl|\bigl(T_{n+1}\bigr)_r(\zeta)\bigr|
+  \ge\gamma_n\,a\,|\zeta|^{\gamma_n-1}\quad(\zeta\neq0).
+\end{equation}
+
+\emph{Step 5: the series estimates for $G$, and the smoothness.}  The
+hypotheses (H1)--(H5) of \noderef{SeriesTermwiseDeriv} hold for $G$ and $A$, by
+Step 1, (5), (4) and (6); in particular its (H1) asks that $G$ be continuous on
+$\mathbb{B}$, lie in $W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ and be
+differentiable at almost every point of $\mathbb{B}$, and Step 1 records all
+three.  Write (a$'$), (b$'$), (c$'$), (d$'$), (e$'$) for its five conclusions.
+
+By (e$'$), $G$ is of class $C^\infty$ on $\mathbb{B}-\{0\}$.  This discharges
+the hypothesis of the conditional (3) of Step 1, which therefore gives
+\begin{equation}\tag{11$'$}
+  H\ \text{is }C^\infty\text{ on }\{z:0<|z|<t\},\qquad
+  \bigl(D^{w}H\bigr)(t\zeta)=t^{-|w|}D^{w}G(\zeta)
+  \quad(0<|\zeta|<1),
+\end{equation}
+for every word $w$.  This is the only route to the derivatives $D^{w}H$ that
+(43) speaks of: no smoothness of $H$ was assumed.
+
+\emph{Upper bound in (41) for $G$.}  By (d$'$), which applies because $A_n=0$
+by (7), with $m=0$ and $\rho=\tfrac12$, there is $C_2\ge0$ with
+$\sum_{|w|=0}|D^{w}G(\zeta)|\le C_2|\zeta|^{\gamma_n}$ for
+$0<|\zeta|\le\tfrac12$.  The only word of length $0$ is the empty word, and
+$D^{[\,]}G=G$ by \noderef{PartialWord}, so
+\begin{equation}\tag{12}
+  |G(\zeta)|\le C_2|\zeta|^{\gamma_n}\qquad(0<|\zeta|\le\tfrac12),
+\end{equation}
+and this also holds at $\zeta=0$, both sides being $0$ there because $G(0)=0$
+and $0^{\gamma_n}=0$ for $\gamma_n>0$.
+
+\emph{Lower bound in (41) for $G$.}  By (b$'$) with $\rho=\tfrac12$ and
+$j=n+1$, which is legitimate as $n+1\ge n$, there is $C_3\ge0$ with
+\[
+  \Bigl|G(\zeta)-\sum_{k=n}^{n+1}T_k(\zeta)\Bigr|\le C_3|\zeta|^{\lambda_{n+2}}
+  \qquad(0<|\zeta|\le\tfrac12),
+\]
+hence, by (8) and (10) and the triangle inequality,
+\[
+  |G(\zeta)|\ \ge\ \bigl|T_{n+1}(\zeta)\bigr|-C_3|\zeta|^{\lambda_{n+2}}
+  \ \ge\ |\zeta|^{\gamma_n}\Bigl(a-C_3|\zeta|^{\lambda_{n+2}-\gamma_n}\Bigr),
+\]
+where we used $|\zeta|^{\lambda_{n+2}}=|\zeta|^{\gamma_n}
+|\zeta|^{\lambda_{n+2}-\gamma_n}$.  Since $\lambda_{n+2}-\gamma_n>0$ by (2) and
+$a>0$ by (9), and since $s\mapsto s^{\lambda_{n+2}-\gamma_n}$ is continuous at
+$0$ with value $0$, we may choose $\rho_1$ with
+\begin{equation}\tag{13}
+  0<\rho_1\le\tfrac12,\qquad C_3\,\rho_1^{\lambda_{n+2}-\gamma_n}\le\tfrac a2 ,
+\end{equation}
+and then, $s\mapsto s^{\lambda_{n+2}-\gamma_n}$ being nondecreasing,
+\begin{equation}\tag{14}
+  |G(\zeta)|\ge\tfrac a2\,|\zeta|^{\gamma_n}\qquad(0<|\zeta|\le\rho_1),
+\end{equation}
+which also holds at $\zeta=0$, both sides being $0$.
+
+\emph{Estimate (43) for $G$, and the upper bound in (42) for $G$.}  By (d$'$),
+for each $m\ge0$ with $\rho=\tfrac12$ there is $C_m'\ge0$ with
+\begin{equation}\tag{15}
+  \sum_{|w|=m}\bigl|D^{w}G(\zeta)\bigr|\le C_m'|\zeta|^{\gamma_n-m}
+  \qquad(0<|\zeta|\le\tfrac12).
+\end{equation}
+Take $m=1$.  The two words of length $1$ are $[0]$ and $[1]$, and by
+\noderef{PartialWord} $D^{[0]}G=\partial_xG$, $D^{[1]}G=\partial_yG$, these
+being the values of the real Fréchet derivative on $1$ and $i$.  By
+\noderef{DZ} and \noderef{DZbar},
+$G_\zeta=\tfrac12(\partial_xG-i\partial_yG)$ and
+$G_{\bar\zeta}=\tfrac12(\partial_xG+i\partial_yG)$, so by the triangle
+inequality and (15),
+\[
+  \bigl|G_\zeta(\zeta)\bigr|\le\tfrac12\bigl(|\partial_xG(\zeta)|
+    +|\partial_yG(\zeta)|\bigr)\le\tfrac12C_1'|\zeta|^{\gamma_n-1}
+  \qquad(0<|\zeta|\le\tfrac12).
+\]
+Hence, by \noderef{Jac} and $|G_{\bar\zeta}|^2\ge0$,
+\begin{equation}\tag{16}
+  J_G(\zeta)=\bigl|G_\zeta(\zeta)\bigr|^2-\bigl|G_{\bar\zeta}(\zeta)\bigr|^2
+  \le\bigl|G_\zeta(\zeta)\bigr|^2
+  \le\tfrac14(C_1')^2|\zeta|^{2\gamma_n-2}\qquad(0<|\zeta|\le\tfrac12),
+\end{equation}
+using $\bigl(|\zeta|^{\gamma_n-1}\bigr)^2=|\zeta|^{2\gamma_n-2}$.
+
+\emph{Lower bound in (42) for $G$.}  By (c$'$) with $\rho=\tfrac12$ and
+$j=n+1$ there is $C_4\ge0$ with
+\[
+  \Bigl|G_r(\zeta)-\sum_{k=n}^{n+1}\bigl(T_k\bigr)_r(\zeta)\Bigr|
+  \le C_4|\zeta|^{\lambda_{n+2}-1}\qquad(0<|\zeta|\le\tfrac12).
+\]
+Since $T_n\equiv0$ we have $(T_n)_r\equiv0$, so the sum is $(T_{n+1})_r$, and
+by (11) and the triangle inequality
+\[
+  \bigl|G_r(\zeta)\bigr|
+  \ \ge\ \gamma_n a|\zeta|^{\gamma_n-1}-C_4|\zeta|^{\lambda_{n+2}-1}
+  \ =\ |\zeta|^{\gamma_n-1}\Bigl(\gamma_na-C_4|\zeta|^{\lambda_{n+2}-\gamma_n}\Bigr).
+\]
+As $\gamma_na>0$, choose $\rho_2$ with
+\begin{equation}\tag{17}
+  0<\rho_2\le\rho_1,\qquad C_4\,\rho_2^{\lambda_{n+2}-\gamma_n}
+  \le\tfrac{\gamma_na}{2},
+\end{equation}
+so that, putting $b=\gamma_na/2>0$,
+\begin{equation}\tag{18}
+  \bigl|G_r(\zeta)\bigr|\ge b\,|\zeta|^{\gamma_n-1}\qquad(0<|\zeta|\le\rho_2).
+\end{equation}
+
+Now we pass from $|G_r|$ to $J_G$ by (26).  The hypotheses of
+\noderef{QCDistortionPolar} hold with $\Omega=\mathbb{B}$, which is open, with
+this $K$, with $G$ $K$-quasiregular on $\mathbb{B}$ --- this is part of
+$K$-quasiconformality, by \noderef{QuasiconformalOn} --- and with $G$
+differentiable at almost every point of $\mathbb{B}$, both from Step 1.  Its conclusion (26) gives
+\begin{equation}\tag{19}
+  K^{-1}\bigl|G_r(\zeta)\bigr|^2\le J_G(\zeta)
+  \qquad\text{for almost every }\zeta\in\mathbb{B}\text{ with }\zeta\neq0 .
+\end{equation}
+We upgrade (19) to \emph{every} such $\zeta$.  Both sides are continuous on the
+open set $\mathbb{B}-\{0\}$: there $G$ is $C^\infty$ by (e$'$) of Step 5, so
+$\zeta\mapsto\mathrm{d}G(\zeta)$ is continuous; $G_r(\zeta)
+=\mathrm{d}G(\zeta)[\zeta/|\zeta|]$ by \noderef{HRad}, with
+$\zeta\mapsto\zeta/|\zeta|$ continuous and $|\zeta|>0$; and
+$G_\zeta,G_{\bar\zeta}$ are the fixed linear combinations
+$\tfrac12(\mathrm{d}G[1]\mp i\,\mathrm{d}G[i])$ of \noderef{DZ} and
+\noderef{DZbar}, so $J_G$ is continuous by \noderef{Jac}.  The set where (19)
+holds has full measure in $\mathbb{B}-\{0\}$, so its complement contains no
+nonempty open set and it is therefore dense in $\mathbb{B}-\{0\}$.  A
+non-strict inequality between continuous functions that holds on a dense subset
+of an open set holds on all of it.  Hence (19) holds at every
+$\zeta\in\mathbb{B}$ with $\zeta\neq0$, and with (18),
+\begin{equation}\tag{20}
+  J_G(\zeta)\ge K^{-1}b^2|\zeta|^{2\gamma_n-2}\qquad(0<|\zeta|\le\rho_2).
+\end{equation}
+
+\emph{Step 6: transfer back to $H$.}  Put
+\[
+  \rho=t\rho_2>0 .
+\]
+Let $\xi$ with $|\xi|\le\rho$ and put $\zeta=\xi/t$, so that
+$|\zeta|=|\xi|/t\le\rho_2\le\tfrac12<1$ and $t\zeta=\xi$, whence
+$H(\xi)=H(t\zeta)=G(\zeta)$ by the definition of $G$.  Note
+$|\zeta|^{e}=t^{-e}|\xi|^{e}$ for every real $e$, since $t>0$.
+
+\emph{(41).}  By (12) and (14),
+\[
+  \tfrac a2 t^{-\gamma_n}|\xi|^{\gamma_n}\ \le\ |H(\xi)|\ \le\
+  C_2t^{-\gamma_n}|\xi|^{\gamma_n}\qquad(|\xi|\le\rho),
+\]
+including $\xi=0$, where all three quantities vanish.
+
+\emph{(43).}  Let $m\ge0$ and $0<|\xi|\le\rho$, so $0<|\zeta|<1$.  By
+(11$'$), $\bigl(D^{w}H\bigr)(\xi)=t^{-m}D^{w}G(\zeta)$ for every word $w$ of
+length $m$, so $|D^{w}H(\xi)|=t^{-m}|D^{w}G(\zeta)|$ and, by (15),
+\[
+  \sum_{|w|=m}\bigl|D^{w}H(\xi)\bigr|
+  =t^{-m}\sum_{|w|=m}\bigl|D^{w}G(\zeta)\bigr|
+  \le t^{-m}C_m'|\zeta|^{\gamma_n-m}
+  =C_m'\,t^{-\gamma_n}\,|\xi|^{\gamma_n-m},
+\]
+the last step because $t^{-m}|\zeta|^{\gamma_n-m}
+=t^{-m}t^{-(\gamma_n-m)}|\xi|^{\gamma_n-m}=t^{-\gamma_n}|\xi|^{\gamma_n-m}$.
+
+\emph{(42).}  By (11$'$) with $w=[0]$ and $w=[1]$ we get
+$\partial_xG(\zeta)=t\,\partial_xH(\xi)$ and
+$\partial_yG(\zeta)=t\,\partial_yH(\xi)$, so by the linearity in
+\noderef{DZ} and \noderef{DZbar},
+\[
+  G_\zeta(\zeta)=t\,H_\xi(\xi),\qquad G_{\bar\zeta}(\zeta)=t\,H_{\bar\xi}(\xi),
+\]
+and hence, by \noderef{Jac}, $J_G(\zeta)=t^2J_H(\xi)$, that is
+$J_H(\xi)=t^{-2}J_G(\zeta)$.  With (16) and (20), and
+$t^{-2}|\zeta|^{2\gamma_n-2}=t^{-2}t^{-(2\gamma_n-2)}|\xi|^{2\gamma_n-2}
+=t^{-2\gamma_n}|\xi|^{2\gamma_n-2}$,
+\[
+  K^{-1}b^2t^{-2\gamma_n}|\xi|^{2\gamma_n-2}\ \le\ J_H(\xi)\ \le\
+  \tfrac14(C_1')^2t^{-2\gamma_n}|\xi|^{2\gamma_n-2}\qquad(0<|\xi|\le\rho).
+\]
+
+\emph{Step 7: the constants.}  Put
+\[
+  c=\min\Bigl\{\tfrac a2t^{-\gamma_n},\ K^{-1}b^2t^{-2\gamma_n}\Bigr\},\qquad
+  C_m=C_m'\,t^{-\gamma_n}\quad(m\ge0),
+\]
+\[
+  C=\max\Bigl\{C_2t^{-\gamma_n},\ \tfrac14(C_1')^2t^{-2\gamma_n},\ c+1\Bigr\}.
+\]
+Then $c>0$, being the minimum of two positive numbers ($a>0$, $b>0$,
+$K^{-1}>0$, $t^{-\gamma_n}>0$), and $c<c+1\le C$.  Replacing the two lower
+constants by the smaller $c$ preserves the lower bounds, and replacing the two
+upper constants by the larger $C$ preserves the upper bounds, because the
+powers $|\xi|^{\gamma_n}$ and $|\xi|^{2\gamma_n-2}$ are nonnegative.  So (41)
+and (42) hold with $c$, $C$ and this $\rho$, and (43) holds with $C_m$, while
+(44) was proved in Step 0.
+
+Finally the smoothness assertion: $\rho=t\rho_2\le t/2<t$ by (13) and the
+choice of $\rho_2\le\tfrac12$, so
+$\{\xi:0<|\xi|<\rho\}\subseteq\{z:0<|z|<t\}$, on which $H$ is $C^\infty$ by
+(11$'$); and a function of class $C^\infty$ on a set is of class $C^\infty$ on
+every subset of it.  This completes the proof.
+\end{proof}

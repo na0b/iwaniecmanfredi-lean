@@ -1,0 +1,263 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, and let $K\ge1$.
+Write $\mathbb{B}=\{\xi:|\xi|<1\}$, $\gamma_n=\lambda_{n+1}(n,p)$, and
+$d\sigma$ for planar Lebesgue measure.  Then there is a constant
+$C=C(n,p,K)>0$ such that the following holds for every
+$H\colon\mathbb{C}\to\mathbb{C}$ and every $A\colon\mathbb{Z}\to\mathbb{C}$
+satisfying
+\begin{enumerate}
+\item[(H0)] $H$ solves equation (18) on $\mathbb{B}$, in the sense of
+  \noderef{SolvesEq18};
+\item[(H1)] $H$ is continuous on $\mathbb{B}$ and differentiable at almost
+  every point of $\mathbb{B}$;
+\item[(H2)] $H$ is $K$-quasiregular on $\mathbb{B}$, in the sense of
+  \noderef{QuasiregularOn};
+\item[(H3)] $|H_\xi|^2+|H_{\bar\xi}|^2$ is integrable on $\mathbb{B}$
+  (this is the standing assumption $H\in W^{1,2}(\mathbb{B})$ of Section 3);
+\item[(H4)] $a_k(r)=A_kr^{\lambda_k}$ for all $k$ with $|k|\ge n$ and all
+  $r\in(0,1)$, where $a_k$ is as in \noderef{FourierCoefOfH} and
+  $\lambda_k=\lambda_{|k|}(n,p)$ as in \noderef{LambdaCoef};
+\item[(H5)] $A_{-k}=\epsilon_k\overline{A_k}$ for every integer $k>n$, with
+  $\epsilon_k$ as in \noderef{EpsCoef}.
+\end{enumerate}
+Namely, writing $H_r$ for the radial derivative of \noderef{HRad}:
+\begin{enumerate}
+\item[(E)] \emph{the energy identity}: the series
+$\sum_{k\ge n+1}\lambda_k(1+\epsilon_k^2)|A_k|^2$ converges, and
+\[
+  \int_0^1\!\!\int_0^{2\pi}\bigl|H_r\bigl(re^{i\theta}\bigr)\bigr|^2\,r\,d\theta\,dr
+  =\pi\sum_{k=n+1}^{\infty}\lambda_k\bigl(1+\epsilon_k^2\bigr)|A_k|^2 ;
+\]
+\item[(22a)] the series $\sum_{k\ge n+1}k|A_k|^2$ converges, and
+\[
+  \sum_{k=n+1}^{\infty}k\,|A_k|^2
+  \le C\iint_{\mathbb{B}}\bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma ;
+\]
+\item[(22b)] $\displaystyle\iint_{\mathbb{B}}\bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma
+  \le C\sum_{k=n+1}^{\infty}k\,|A_k|^2$.
+\end{enumerate}
+Together, (22a) and (22b) are the assertion (22) of Theorem 2 that
+$\sum_{k>n}k|A_k|^2$ and the Dirichlet energy of $H$ are comparable, with a
+constant depending only on $n$, $p$ and $K$.  The two convergence assertions
+are the paper's own ``$<\infty$'' in (22).
+
+Hypothesis (H0) cannot be omitted, and it is not a consequence of (H4)/(H5):
+those pin $a_j$ only for $|j|\ge n$, whereas the Parseval sum of Step 2 below
+runs over all of $\mathbb{Z}$.  Without (H0) a free low mode is unconstrained,
+and $a_0(r)=r$ --- which is continuous on $[0,1)$ and contributes
+$2\pi\int_0^1 r\,dr=\pi$ to the left-hand side of (E) while changing no
+$A_k$ --- already defeats (E).  What (H0) supplies is exactly the Euler
+equation (35) for \emph{every} index, through \noderef{FourierCoefOde}, and
+with it the vanishing of the modes $|j|<n$ by \noderef{FourierCoefForm36}.
+
+No hypothesis $p\neq2$ is imposed, since Theorem 2 as printed carries none;
+at $p=2$ one has $K=1$, $\lambda_k=k-n$ and $\epsilon_k=0$, and the
+conclusions hold with the constants constructed below.
+\end{lemma}
+\begin{proof}
+The paper's line 353 says only ``a standard computation shows''.  We write the
+computation out.
+
+\emph{The constants.}  By part (a) of \noderef{GammaRatioMinAtOne},
+$\gamma_n=\lambda_{n+1}(n,p)>0$.  Put
+\[
+  C_1=\frac{2(n+1)}{\pi\,\gamma_n\,(1+K^{-2})},\qquad
+  C_2=\bigl(1+K^2\bigr)\pi\sqrt{p-1},\qquad C=\max(C_1,C_2).
+\]
+Both are positive: $\gamma_n>0$, $1+K^{-2}>0$, and $p>1$ so
+$\sqrt{p-1}>0$; hence $C>0$.  Note $C$ depends only on $n$, $p$, $K$, which is
+why the quantifier on $C$ precedes those on $H$ and $A$.
+
+Throughout, $\lambda_{-k}=\lambda_k$ and $\epsilon_k\in\mathbb{R}$, and for
+$k\ge n+1$ we have, by parts (23), (24), (25) of
+\noderef{LambdaEpsEstimates},
+\begin{equation}\tag{$\ast$}
+  \lambda_n=0,\quad\epsilon_n=0,\quad|\epsilon_k|<1,\quad
+  0<\frac{p-1}{np}\le\lambda_k\le k\sqrt{p-1}.
+\end{equation}
+
+\medskip\noindent\textbf{Step 0: the hypotheses of the Section-4 nodes.}
+Both \noderef{FourierCoefRegularity} and \noderef{FourierCoefOde} require of
+$H$ that it be continuous on $\mathbb{B}$, that it lie in
+$W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in the sense of \noderef{MemWLocOn}, and
+that it be differentiable at almost every point of $\mathbb{B}$.  All three
+hold here: the first and the third are (H1); and the second is contained in
+(H2), since by \noderef{QuasiregularOn} a $K$-quasiregular map on $\mathbb{B}$
+lies in $W^{1,2}_{\mathrm{loc}}(\mathbb{B})$.  \noderef{FourierCoefOde} needs
+in addition that $H$ solve (18) on $\mathbb{B}$, which is (H0).
+
+We also record here the integrability of the radial derivative, which Steps 2
+and 3 both use.  By the lower half of (27), that is by
+\noderef{QCDistortionPolar} applied to $\Omega=\mathbb{B}$ (open) with $K$,
+(H1)'s almost-everywhere differentiability and (H2),
+\begin{equation}\tag{F0}
+  \bigl(1+K^{-2}\bigr)\bigl|H_r(\xi)\bigr|^2\le2|H_\xi(\xi)|^2+2|H_{\bar\xi}(\xi)|^2
+  \qquad\text{for a.e. }\xi\in\mathbb{B}-\{0\},
+\end{equation}
+and the punctured disk differs from $\mathbb{B}$ by a null set; since
+$1+K^{-2}>0$ and, by (H3), $|H_\xi|^2+|H_{\bar\xi}|^2$ is integrable on
+$\mathbb{B}$, the function $|H_r|^2$ is integrable on $\mathbb{B}$ and the
+polar change of variables $\xi=re^{i\theta}$, $d\sigma=r\,dr\,d\theta$, gives
+\begin{equation}\tag{F0$'$}
+  \int_0^1\!\!\int_0^{2\pi}\bigl|H_r\bigr|^2r\,d\theta\,dr
+  =\iint_{\mathbb{B}}|H_r|^2d\sigma
+  \le\frac{2}{1+K^{-2}}\iint_{\mathbb{B}}
+    \bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma<\infty .
+\end{equation}
+By Tonelli's theorem the inner integral
+$r\mapsto r\int_0^{2\pi}|H_r(re^{i\theta})|^2d\theta$ is therefore finite for
+almost every $r\in(0,1)$, hence, $r>0$ there,
+\begin{equation}\tag{F0$''$}
+  \theta\mapsto H_r\bigl(re^{i\theta}\bigr)\ \text{lies in }L^2(0,2\pi)
+  \qquad\text{for almost every }r\in(0,1).
+\end{equation}
+
+\medskip\noindent\textbf{Step 1: the Fourier coefficients of $H_r$.}
+By part (c) of \noderef{FourierCoefRegularity}, applied with the data of
+Step 0, for each $j\in\mathbb{Z}$ there is a null set of radii outside which
+$a_j$ is differentiable with $a_j'(r)$ equal to the $j$-th Fourier coefficient
+of $H_r(r,\cdot)$ in the sense of \noderef{FourierCoefOfH}.  The union of
+those null sets over $j\in\mathbb{Z}$ is a countable union of null sets, hence
+null, so for almost every $r\in(0,1)$ the identity holds for every
+$j\in\mathbb{Z}$ simultaneously.  Fix such an $r$, chosen also to satisfy
+(F0$''$) --- again a full-measure condition; every use of $r$ below is inside
+an integral over $r\in(0,1)$, so this costs nothing.
+We evaluate the coefficient in three regimes.
+
+If $|j|<n$: this is where (H0) is used, and it is the only place.  The
+hypotheses of \noderef{FourierCoefOde} are met, by Step 0 together with
+$n\ge1$ and $1<p<\infty$, so its second clause gives,
+for this $j$ and every $r\in(0,1)$,
+\[
+  r\bigl(r\,a_j'\bigr)'(r)+pn\,r\,a_j'(r)+(n^2-j^2)(p-1)\,a_j(r)=0,
+\]
+which is the Euler equation (35).  Moreover $a_j$ is continuous on $[0,1)$ by
+part (a) of \noderef{FourierCoefRegularity} and $C^\infty$ on $(0,1)$ by the
+third clause of \noderef{FourierCoefOde}.  These are exactly the hypotheses of
+\noderef{FourierCoefForm36} at the index $j$ (which imposes no restriction on
+$p$), and since $|j|<n$ its first case gives $a_j\equiv0$ on $[0,1)$; hence
+$a_j'(r)=0$.
+
+If $|j|\ge n$: by (H4), $a_j(r)=A_jr^{\lambda_j}$ on $(0,1)$, so
+differentiating,
+\[
+  a_j'(r)=A_j\lambda_jr^{\lambda_j-1}.
+\]
+In particular, if $|j|=n$ then $\lambda_j=\lambda_n=0$ by $(\ast)$, so
+$a_j'(r)=0$ --- \emph{whatever $A_{\pm n}$ are}.  This is the precise reason the
+sums below start at $n+1$ and not at $n$: the two terms $j=\pm n$ carry no
+energy, because $r^{\lambda_n}=r^0$ is constant in $r$.
+
+So the nonzero coefficients of $H_r(r,\cdot)$ are exactly those with
+$|j|\ge n+1$, and there $a_j'(r)=A_j\lambda_jr^{\lambda_j-1}$.
+
+\medskip\noindent\textbf{Step 2: Parseval on each circle.}  Still with the
+$r$ fixed in Step 1, $H_r(r,\cdot)\in L^2(0,2\pi)$ by (F0$''$), so Parseval's
+identity for the orthogonal system
+$\{e^{i(j-n)\theta}\}_{j\in\mathbb{Z}}$, of squared norm $2\pi$ each, gives
+\[
+  \int_0^{2\pi}\bigl|H_r\bigl(re^{i\theta}\bigr)\bigr|^2d\theta
+  =2\pi\sum_{j\in\mathbb{Z}}|a_j'(r)|^2
+  =2\pi\sum_{|j|\ge n+1}\lambda_j^2|A_j|^2r^{2\lambda_j-2},
+\]
+by Step 1.  We now fold $j$ and $-j$.  The two index blocks
+$\{j\ge n+1\}$ and $\{-j:j\ge n+1\}$ are disjoint, since $n+1\ge2>0$, and
+their union is $\{|j|\ge n+1\}$.  Since $\lambda_{-j}=\lambda_j$, and by (H5)
+$A_{-j}=\epsilon_j\overline{A_j}$ with $\epsilon_j$ real, so that
+$|A_{-j}|^2=\epsilon_j^2|A_j|^2$ and therefore
+\[
+  |A_j|^2+|A_{-j}|^2=\bigl(1+\epsilon_j^2\bigr)|A_j|^2 ,
+\]
+we obtain
+\begin{equation}\tag{P}
+  \int_0^{2\pi}\bigl|H_r\bigl(re^{i\theta}\bigr)\bigr|^2d\theta
+  =2\pi\sum_{k=n+1}^{\infty}\lambda_k^2\bigl(1+\epsilon_k^2\bigr)|A_k|^2
+    r^{2\lambda_k-2}.
+\end{equation}
+
+\medskip\noindent\textbf{Step 3: integration in $r$, and the energy identity (E).}
+That the left-hand side of (E) is finite is (F0$'$) of Step 0.
+
+Now multiply (P) by $r>0$ and integrate over $r\in(0,1)$.  Every term of the
+series in (P) is nonnegative, so Tonelli's theorem permits the interchange of
+$\int_0^1dr$ with the sum, with both sides possibly $+\infty$ a priori:
+\[
+  \int_0^1\!\!\int_0^{2\pi}\bigl|H_r\bigr|^2r\,d\theta\,dr
+  =2\pi\sum_{k=n+1}^{\infty}\lambda_k^2\bigl(1+\epsilon_k^2\bigr)|A_k|^2
+    \int_0^1r^{2\lambda_k-1}\,dr .
+\]
+For $k\ge n+1$ we have $\lambda_k>0$ by $(\ast)$, hence $2\lambda_k-1>-1$, so
+the inner integral converges and
+\[
+  \int_0^1r^{2\lambda_k-1}dr=\frac{1}{2\lambda_k}.
+\]
+(This is exactly where $\lambda_k>0$ is needed, and exactly why the terms
+$k=n$, for which $\lambda_n=0$ and the integral $\int_0^1r^{-1}dr$ diverges,
+must be --- and by Step 1 are --- absent.)  Therefore
+\[
+  \int_0^1\!\!\int_0^{2\pi}\bigl|H_r\bigr|^2r\,d\theta\,dr
+  =2\pi\sum_{k=n+1}^{\infty}\frac{\lambda_k^2}{2\lambda_k}
+    \bigl(1+\epsilon_k^2\bigr)|A_k|^2
+  =\pi\sum_{k=n+1}^{\infty}\lambda_k\bigl(1+\epsilon_k^2\bigr)|A_k|^2,
+\]
+Combining with (F0$'$), the right-hand side is finite; being a series of
+nonnegative terms with finite sum, $\sum_{k\ge n+1}\lambda_k(1+\epsilon_k^2)|A_k|^2$
+converges.  This, together with the displayed identity, is (E).
+
+\medskip\noindent\textbf{Step 4: the forward bound (22a).}  Let $k\ge n+1$.  By
+\noderef{LambdaLinearLowerBound},
+$\lambda_k\ge\frac{\gamma_n}{n+1}k$, i.e.
+\[
+  k\le\frac{n+1}{\gamma_n}\lambda_k .
+\]
+Also $1+\epsilon_k^2\ge1$, simply because $\epsilon_k^2\ge0$ --- no use is made
+here of the sharper estimate $|\epsilon_k|<1$.  Hence, termwise,
+\[
+  k\,|A_k|^2\le\frac{n+1}{\gamma_n}\lambda_k\bigl(1+\epsilon_k^2\bigr)|A_k|^2,
+\]
+and since the series $\sum_{k\ge n+1}\lambda_k(1+\epsilon_k^2)|A_k|^2$ converges
+by (E), the comparison test gives the convergence of $\sum_{k\ge n+1}k|A_k|^2$,
+which is the first assertion of (22a); summing the termwise inequality and
+applying (E),
+\begin{equation}\tag{F1}
+  \sum_{k=n+1}^{\infty}k|A_k|^2
+  \le\frac{n+1}{\gamma_n}\cdot\frac1\pi
+    \int_0^1\!\!\int_0^{2\pi}\bigl|H_r\bigr|^2r\,d\theta\,dr .
+\end{equation}
+Combining with (F0$'$) of Step 0,
+\[
+  \sum_{k=n+1}^{\infty}k|A_k|^2
+  \le\frac{2(n+1)}{\pi\gamma_n\bigl(1+K^{-2}\bigr)}
+    \iint_{\mathbb{B}}\bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma
+  =C_1\iint_{\mathbb{B}}\bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma .
+\]
+Since the right-hand integrand is nonnegative, so is the integral, and
+$C_1\le C$ gives (22a).
+
+\medskip\noindent\textbf{Step 5: the converse bound (22b).}  Here both sharper
+estimates of $(\ast)$ enter.  For $k\ge n+1$, $|\epsilon_k|<1$ gives
+$1+\epsilon_k^2<2$, and $\lambda_k\le k\sqrt{p-1}$ gives
+\[
+  \lambda_k\bigl(1+\epsilon_k^2\bigr)\le 2k\sqrt{p-1}.
+\]
+Hence, by (E),
+\[
+  \iint_{\mathbb{B}}|H_r|^2d\sigma
+  =\pi\sum_{k=n+1}^{\infty}\lambda_k\bigl(1+\epsilon_k^2\bigr)|A_k|^2
+  \le2\pi\sqrt{p-1}\sum_{k=n+1}^{\infty}k|A_k|^2 .
+\]
+By the upper half of (27) from \noderef{QCDistortionPolar},
+\[
+  2|H_\xi|^2+2|H_{\bar\xi}|^2\le\bigl(1+K^2\bigr)|H_r|^2
+  \qquad\text{a.e. on }\mathbb{B},
+\]
+so integrating and combining,
+\[
+  \iint_{\mathbb{B}}\bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma
+  \le\frac{1+K^2}{2}\iint_{\mathbb{B}}|H_r|^2d\sigma
+  \le\bigl(1+K^2\bigr)\pi\sqrt{p-1}\sum_{k=n+1}^{\infty}k|A_k|^2
+  =C_2\sum_{k=n+1}^{\infty}k|A_k|^2 .
+\]
+Since $\sum_{k>n}k|A_k|^2\ge0$ and $C_2\le C$, this gives (22b), and the proof
+is complete.
+\end{proof}

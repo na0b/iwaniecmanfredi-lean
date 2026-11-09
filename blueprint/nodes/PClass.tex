@@ -1,0 +1,24 @@
+\begin{definition}
+Let $H\colon\mathbb{C}\to\mathbb{C}$ and let $s,k$ be non-negative integers.
+A function $P\colon\mathbb{C}\to\mathbb{C}$ is said to belong to
+$\mathbb{P}(s,k)$ \emph{relative to $H$} if there are an integer $r\ge0$,
+complex numbers $c_1,\dots,c_r$, and lists $M_1,\dots,M_r$ of derivative
+symbols, each of type $(s,k)$ in the sense of \noderef{MonomialValue}, i.e.
+\[
+  s(M_\alpha)=s\quad\text{and}\quad k(M_\alpha)=k\qquad(\alpha=1,\dots,r),
+\]
+such that
+\[
+  P(\xi)=\sum_{\alpha=1}^{r}c_\alpha\,H^{M_\alpha}(\xi)
+  \qquad\text{for every }\xi\in\mathbb{C},
+\]
+with $H^{M}$ the monomial of \noderef{MonomialValue}.  The case $r=0$ is
+allowed, so the zero function belongs to every $\mathbb{P}(s,k)$.
+
+This is the set $\mathbb{P}(s,k)$ of Section~5 of the paper: ``The set of all
+linear combinations of monomials of type $(s,k)$ is denoted by
+$\mathbb{P}(s,k)$.''  The paper uses it for $s\ge1$ and $k\ge1$.  Note that
+the condition is an equality of functions on all of $\mathbb{C}$, and that it
+is existential in the presentation: to know $P\in\mathbb{P}(s,k)$ is to have
+some expression of $P$ as a linear combination of monomials of type $(s,k)$.
+\end{definition}

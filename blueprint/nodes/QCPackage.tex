@@ -1,0 +1,114 @@
+\begin{definition}
+A \emph{quasiregular-theory package} is a datum consisting of proofs of the
+following four statements.
+\begin{enumerate}
+\item[(a)] (Continuity.)  For every $K$, every open $\Omega\subset\mathbb{C}$
+and every $f$ which is $K$-quasiregular on $\Omega$ in the sense of
+\noderef{QuasiregularOn}, there is $g\colon\mathbb{C}\to\mathbb{C}$ with
+$g=f$ almost everywhere on $\Omega$ and $g$ continuous on $\Omega$.
+
+\item[(b)] (Discreteness of the zero set.)  For every $K$, every open
+connected $\Omega$, every $f$ which is $K$-quasiregular on $\Omega$, and every
+$g$ with $g=f$ almost everywhere on $\Omega$ and $g$ continuous on $\Omega$
+such that $g$ does not vanish identically on $\Omega$, every point
+$z_0\in\Omega$ has a punctured neighbourhood in $\Omega$ on which $g$ does not
+vanish: there is $r>0$ such that $g(z)\neq0$ for all $z\in\Omega$ with
+$z\neq z_0$ and $|z-z_0|<r$.
+
+\item[(c)] (Factorization near a zero.)  For every $K$, every open connected
+$\Omega$, every $f$ which is $K$-quasiregular on $\Omega$, every $g$ with
+$g=f$ almost everywhere on $\Omega$ and $g$ continuous on $\Omega$ such that
+$g$ does not vanish identically on $\Omega$, and every $z_0\in\Omega$ with
+$g(z_0)=0$, there are an integer $n\ge1$, a constant $K'$, an open set $V$
+with $z_0\in V\subset\Omega$ and a map $\chi$ which is a $K'$-quasiconformal
+homeomorphism of $V$ in the sense of \noderef{QuasiconformalOn}, such that
+\[
+  \chi(z_0)=0\qquad\text{and}\qquad g(z)=\bigl[\chi(z)\bigr]^n\ \text{ for }z\in V .
+\]
+
+\item[(d)] (The inverse of a quasiconformal homeomorphism.)  For every $K$,
+every open $V$, every $\chi$ which is a $K$-quasiconformal homeomorphism of
+$V$, and every $H$ with $H(\chi(z))=z$ for all $z\in V$, the map $H$ belongs
+to $W^{1,2}_{\mathrm{loc}}(\chi(V))$ in the sense of \noderef{MemWLocOn}, is
+real-differentiable at almost every point of $\chi(V)$, and satisfies
+$J(\xi)>0$ for almost every $\xi\in\chi(V)$, where $J$ is the Jacobian of
+\noderef{Jac}.
+\end{enumerate}
+
+This is item (C2) of the paper's note for the formalization, quoted there from
+[Ah] and [LV]: ``A $K$-quasiregular mapping is continuous; if it is
+not identically zero its zero set is discrete.  Near a zero $z_0$ it factors
+as $f=\chi^n$ with $n\ge1$ and $\chi$ a quasiconformal homeomorphism of a
+neighborhood of $z_0$ with $\chi(z_0)=0$; the inverse $H$ of a quasiconformal
+homeomorphism belongs to $W^{1,2}_{\mathrm{loc}}$, has Jacobian $J>0$ almost
+everywhere, and satisfies (17).''  Clause (c) is the factorization (15) of
+Section~3.  The note directs that such quoted results be carried as explicit
+hypotheses rather than axioms; this definition is that bundle, so that a
+theorem needing (C2) takes a quasiregular-theory package as an argument.
+
+Three points of reading.
+
+First, why the first three clauses speak of a representative $g$ rather than
+of $f$.  Quasiregularity as \noderef{QuasiregularOn} defines it is a property
+of the almost-everywhere class of $f$ and of nothing more.  Its two clauses
+are membership in $W^{1,2}_{\mathrm{loc}}$, which by \noderef{MemWLocOn} is a
+family of integral identities and indicator $L^2$-conditions, and an
+almost-everywhere inequality between the weak Wirtinger derivatives of $f$,
+which by \noderef{IsWeakWirtingerOn} depend only on that class as well.  Both
+are unchanged when $f$ is altered on a set of measure zero, so neither can
+force $f$ to be continuous at any point.  The function $f$ equal to $1$ at the
+origin and to $0$ elsewhere is $K$-quasiregular on $\mathbb{C}$ for $K=1$: it
+vanishes almost everywhere, so the integral identities and the indicator
+conditions are those of the zero function, and the zero function is a
+distributional $\partial_0$- and $\partial_1$-derivative of $f$ on
+$\mathbb{C}$, since $\int f\,\partial_j\phi\,d\sigma=0=-\int0\cdot\phi\,
+d\sigma$ for every test function; so both weak Wirtinger derivatives of $f$
+may be taken to be $0$ and the inequality reads $0\le0$.  Yet $f$ is
+discontinuous at the origin, has $f(1)=0$ with $f$ vanishing on a whole
+punctured neighbourhood of $1$, and cannot factor as $\chi^n$ near $1$ with
+$\chi$ injective and continuous.  So the three clauses stated of $f$ would be
+false, the package would be uninhabited, and every theorem taking one would be
+vacuously true; `paper.tex:107` forbids exactly that, requiring the quoted
+results not to be vacuous.  Stated of a continuous representative they are the
+literature's statements: a quasiregular mapping \emph{is} a
+$W^{1,2}_{\mathrm{loc}}$ map with a distortion bound on its weak derivatives,
+and ``it is continuous'' means that it has a continuous representative.  The
+representative is unique: two continuous functions on an open set agreeing
+almost everywhere agree everywhere on it.
+
+It matters here that the distortion inequality of \noderef{QuasiregularOn} is
+read for the weak derivatives.  Were it read for the pointwise Wirtinger
+derivatives of the given representative, which are built from
+$\mathrm{d}f$ and vanish wherever $f$ is not differentiable, the hypothesis
+$K$-quasiregular would be met by representatives with no continuous
+representative at all --- for instance by $f_0(z)=\log\log(1/|z|)$ on
+$\{|z|<1/2\}$, which lies in $W^{1,2}$ there but is essentially unbounded at
+the origin, altered by $1$ on the countable dense null set
+$\mathbb{Q}+i\mathbb{Q}$, so that it becomes nowhere continuous and hence
+nowhere differentiable while both pointwise derivatives vanish identically ---
+and clause (a) would then be false, making this bundle uninhabited.  With the
+weak reading, $(a)$ asserts no more and no less than the literature's
+continuity theorem.
+
+Second, the zero set in (b) and (c) is the representative's.  The set
+$f^{-1}(0)$ is not determined by $f$ modulo null sets, whereas $g^{-1}(0)$ is;
+and the paper itself writes the exceptional set as
+$f^{-1}(0)=\{z\in\Omega:\nabla u(z)=0\}$ at paper.tex:156, that is, as the zero
+set of the continuous complex gradient.  Only clause (a) produces a
+representative, so a consumer of the package introduces a single $g$ and runs
+(b), (c) and the bundle (C3) on that same $g$.
+
+Third, clause (d) needs no such reading, and the final clause ``and satisfies
+(17)'' of the quoted (C2) is deliberately \emph{not} among the assumptions
+above.  The hypotheses of (d) constrain $\chi$ through
+\noderef{QuasiconformalOn}, which carries genuine pointwise content ---
+injectivity, continuity, openness of the image and a continuous inverse ---
+and its three conclusions are themselves almost-everywhere statements, so it
+is inhabited as it stands.  Equation (17) is derived in the tablet from the
+chain rule for the Wirtinger operators, wherever $H$ and $\chi$ are
+differentiable at matched points and $J\neq0$, and the almost-everywhere
+differentiability and positivity of $J$ which make that derivation applicable
+almost everywhere are assumed in (d).  Omitting a clause that is proved rather
+than quoted leaves the package no stronger than the literature statement, which
+is what the note requires.
+\end{definition}

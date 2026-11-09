@@ -1,0 +1,247 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, let $K\ge1$, write
+$\mathbb{B}=\{\xi:|\xi|<1\}$, let $\lambda_k=\lambda_{|k|}(n,p)$ be the
+exponent of \noderef{LambdaCoef}, $\epsilon_k=\epsilon_k(n,p)$ the coefficient
+of \noderef{EpsCoef} and $a_k$ the Fourier coefficient of
+\noderef{FourierCoefOfH}.  Let $H\colon\mathbb{C}\to\mathbb{C}$ and
+$A\colon\mathbb{Z}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $H$ is continuous on $\mathbb{B}$ and differentiable at almost
+  every point of $\mathbb{B}$;
+\item[(H2)] $H$ solves (18) on $\mathbb{B}$ in the sense of
+  \noderef{SolvesEq18};
+\item[(H3)] $H$ is $K$-quasiconformal on $\mathbb{B}$ in the sense of
+  \noderef{QuasiconformalOn}, and $H(0)=0$;
+\item[(H4)] $a_k(r)=A_k\,r^{\lambda_k}$ for every $k\in\mathbb{Z}$ with
+  $|k|\ge n$ and every $r\in(0,1)$;
+\item[(H5)] $A_{-k}=\epsilon_k\overline{A_k}$ for every integer $k\ge n$;
+\item[(H6)] $\sum_{m\ge0}(n+m)|A_{n+m}|^2<\infty$.
+\end{enumerate}
+Then
+\[
+  A_n=0\qquad\text{and}\qquad A_{n+1}\neq0 .
+\]
+
+The second assertion is the paper's step at paper.tex:382, ``Applying argument
+principle, we find that $A_{n+1}\neq0$''; the first is the paper's remark at
+paper.tex:377 that under the hypotheses of Corollary 1 the expansion (19) has
+$A_n=0$.
+\end{lemma}
+\begin{proof}
+Write $T_k$ for the $k$-th summand of (19) in the sense of \noderef{Thm2Term},
+$\gamma_n=\lambda_{n+1}$, and $I=[0,1]$.
+
+\emph{Step 0: the exponents.}  By part (a) of \noderef{GammaRatioMinAtOne},
+$\gamma_n>0$.  By parts (23) and (24) of \noderef{LambdaEpsEstimates},
+\begin{equation}\tag{1}
+  \lambda_n=0,\qquad\epsilon_n=0,\qquad|\epsilon_k|<1\ \ (k\ge n+1).
+\end{equation}
+Moreover $\lambda_k$ is strictly increasing in $k\ge0$: by
+\noderef{LambdaCoef}, $2\lambda_k+np=\sqrt{4k^2(p-1)+n^2(p-2)^2}$, the radicand
+is strictly increasing in $k\ge0$ because $p-1>0$ and $(k+1)^2>k^2$, and the
+square root is strictly increasing on $[0,\infty)$; so
+\begin{equation}\tag{2}
+  \lambda_k<\lambda_{k+1}\qquad(k\ge0).
+\end{equation}
+The hypotheses (H1)--(H5) of \noderef{SeriesTermwiseDeriv} hold here.  Its
+(H1) asks that $H$ be continuous on $\mathbb{B}$, lie in
+$W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ and be differentiable at almost every
+point of $\mathbb{B}$: the first and third are our (H1), and the second is
+contained in our (H3), since by \noderef{QuasiconformalOn} and
+\noderef{QuasiregularOn} a $K$-quasiconformal map on $\mathbb{B}$ lies in
+$W^{1,2}_{\mathrm{loc}}(\mathbb{B})$.  Its (H2) is our (H2), its (H3) is our
+(H4), its (H4) is our (H5) and its (H5) is our (H6).  We may therefore invoke
+it; write (a), (b) for its first two conclusions.
+
+\emph{Step 1: $A_n=0$.}  Apply (b) with $\rho=\tfrac12$ and $j=n$: there is
+$C\ge0$ with
+\[
+  \Bigl|H(\xi)-\sum_{k=n}^{n}T_k(\xi)\Bigr|=\bigl|H(\xi)-T_n(\xi)\bigr|
+  \le C|\xi|^{\lambda_{n+1}}=C|\xi|^{\gamma_n}
+  \qquad\text{for }0<|\xi|\le\tfrac12 .
+\]
+By part (b) of \noderef{Thm2TermSolvesEq18} at $k=n$, for $r>0$,
+\[
+  T_n\bigl(re^{i\theta}\bigr)
+  =r^{\lambda_n}\bigl(A_ne^{i(n-n)\theta}
+    +\epsilon_n\overline{A_n}e^{i(-n-n)\theta}\bigr)=A_n,
+\]
+using $\lambda_n=0$ and $\epsilon_n=0$ from (1); so $T_n(\xi)=A_n$ for every
+$\xi\neq0$.  Hence
+\[
+  \bigl|H(\xi)-A_n\bigr|\le C|\xi|^{\gamma_n}\qquad(0<|\xi|\le\tfrac12),
+\]
+and since $\gamma_n>0$ we have $|\xi|^{\gamma_n}\to0$ as $\xi\to0$; therefore
+$H(\xi)\to A_n$ as $\xi\to0$ through $\mathbb{B}-\{0\}$.  On the other hand $H$
+is continuous on $\mathbb{B}$ by (H1) and $0\in\mathbb{B}$, so
+$H(\xi)\to H(0)=0$ as $\xi\to0$.  A limit along a filter is unique, and
+$\xi\to0$ through $\mathbb{B}-\{0\}$ is a nontrivial filter since every
+punctured neighbourhood of $0$ in $\mathbb{B}$ is nonempty; so $A_n=0$.
+
+\emph{Step 2: a least nonvanishing index.}  Suppose $A_k=0$ for every integer
+$k\ge n+1$.  With $A_n=0$ from Step 1 this gives $A_k=0$ for every $k\ge n$,
+hence by \noderef{Thm2Term} every $T_k$ with $k\ge n$ vanishes identically,
+both of its terms carrying a factor $A_k$ or $\overline{A_k}$.  By (a) then
+$H(\xi)=0$ for every $\xi$ with $0<|\xi|<1$, and $H(0)=0$ by (H3); so
+$H\equiv0$ on $\mathbb{B}$.  But $H$ is injective on $\mathbb{B}$ by
+\noderef{QuasiconformalOn}, while $0$ and $\tfrac12$ are two distinct points of
+$\mathbb{B}$ with $H(0)=H(\tfrac12)=0$ --- a contradiction.
+
+Hence $\{k\in\mathbb{Z}:k>n,\ A_k\neq0\}$ is a nonempty set of integers bounded
+below, so it has a least element $m$, and $m\ge n+1$.  By minimality together
+with Step 1,
+\begin{equation}\tag{3}
+  A_k=0\ \ \text{for } n\le k\le m-1,\qquad A_m\neq0 .
+\end{equation}
+Consequently $T_k\equiv0$ for $n\le k\le m-1$, so
+$\sum_{k=n}^{m}T_k=T_m$.
+
+\emph{Step 3: the leading profile and its lower bound.}  By part (b) of
+\noderef{Thm2TermSolvesEq18} at $k=m$, for $r>0$ and $\theta\in\mathbb{R}$,
+\begin{equation}\tag{4}
+  T_m\bigl(re^{i\theta}\bigr)=r^{\lambda_m}\Phi(\theta),\qquad
+  \Phi(\theta)=A_me^{i(m-n)\theta}+\epsilon_m\overline{A_m}e^{i(-m-n)\theta}.
+\end{equation}
+Since $A_m\neq0$ we may put $u=\overline{A_m}/A_m$, so that $|u|=1$ and
+\begin{equation}\tag{5}
+  \Phi(\theta)=A_me^{i(m-n)\theta}\bigl(1+\epsilon_m\,u\,e^{-2im\theta}\bigr),
+\end{equation}
+because $A_m\,\epsilon_m u\,e^{i(m-n)\theta}e^{-2im\theta}
+=\epsilon_m\overline{A_m}e^{i(-m-n)\theta}$.  Since $m\ge n+1$, (1) gives
+$|\epsilon_m|<1$, so for every $\theta$
+\begin{equation}\tag{6}
+  \operatorname{Re}\bigl(1+\epsilon_m u e^{-2im\theta}\bigr)
+  \ \ge\ 1-\bigl|\epsilon_m u e^{-2im\theta}\bigr|=1-|\epsilon_m|>0 ,
+\end{equation}
+using $|u|=1$ and $\epsilon_m\in\mathbb{R}$.
+
+\emph{Step 4: the tail.}  Apply (b) with $\rho=\tfrac12$ and $j=m$, which is
+legitimate since $m\ge n$: there is $C_1\ge0$ with
+\begin{equation}\tag{7}
+  \bigl|H(\xi)-T_m(\xi)\bigr|\le C_1|\xi|^{\lambda_{m+1}}
+  \qquad\text{for }0<|\xi|\le\tfrac12 ,
+\end{equation}
+using $\sum_{k=n}^{m}T_k=T_m$ from Step 2.
+
+\emph{Step 5: $H$ does not vanish off the origin, and the index is $\pm1$.}
+If $\xi\in\mathbb{B}$ and $H(\xi)=0$, then $H(\xi)=H(0)$ and injectivity of
+$H$ on $\mathbb{B}$ (\noderef{QuasiconformalOn}) forces $\xi=0$.  So
+\begin{equation}\tag{8}
+  H(\xi)\neq0\qquad\text{for every }\xi\in\mathbb{B}-\{0\}.
+\end{equation}
+The set $\mathbb{B}$ is open and contains $0$.  By \noderef{QuasiconformalOn},
+$H$ is continuous and injective on $\mathbb{B}$, the image $H(\mathbb{B})$ is
+open, and there is $\chi$ with $\chi(H(z))=z$ for every $z\in\mathbb{B}$ and
+$\chi$ continuous on $H(\mathbb{B})$; and $H(0)=0$ by (H3).  These are exactly
+the hypotheses of \noderef{HomeoCircleIndex} with $V=\mathbb{B}$, which
+therefore provides $\rho_0>0$ such that
+\begin{equation}\tag{9}
+  \begin{gathered}
+  \text{for every }r\text{ with }0<r\le\rho_0\text{ and every continuous }
+  \gamma\colon I\to\mathbb{C}\text{ with}\\
+  \gamma(t)=H\bigl(re^{2\pi it}\bigr)\text{ for all }t\text{ and }
+  \gamma(t)\neq0\text{ for all }t,\quad
+  \operatorname{ind}\gamma=1\ \text{or}\ \operatorname{ind}\gamma=-1,
+  \end{gathered}
+\end{equation}
+where $\operatorname{ind}$ is the winding number of \noderef{WindingNumber}.
+
+\emph{Step 6: the index computed from the leading term.}  Since
+$\lambda_{m+1}>\lambda_m$ by (2), the number $\lambda_{m+1}-\lambda_m$ is
+positive, so $r\mapsto r^{\lambda_{m+1}-\lambda_m}$ tends to $0$ as
+$r\to0^{+}$.  As $1-|\epsilon_m|>0$ by (1), we may choose $\rho_1$ with
+\begin{equation}\tag{10}
+  0<\rho_1\le\min\bigl\{\rho_0,\tfrac12\bigr\},\qquad
+  \frac{C_1}{|A_m|}\,\rho_1^{\lambda_{m+1}-\lambda_m}<1-|\epsilon_m| .
+\end{equation}
+Fix $r$ with $0<r\le\rho_1$ and define three maps on $I$:
+\[
+  \gamma(t)=H\bigl(re^{2\pi it}\bigr),\qquad
+  \alpha(t)=A_mr^{\lambda_m}e^{2\pi i(m-n)t},\qquad
+  \beta(t)=\frac{\gamma(t)}{\alpha(t)} .
+\]
+Then $\gamma$ is continuous, because $t\mapsto re^{2\pi it}$ is continuous with
+values in $\mathbb{B}$ (its modulus is $r<1$) and $H$ is continuous on
+$\mathbb{B}$; and $\gamma(t)\neq0$ for every $t$ by (8).  The map $\alpha$ is
+continuous and never $0$, since $A_m\neq0$ and $r>0$.  Hence $\beta$ is
+continuous and never $0$, and $\gamma=\alpha\cdot\beta$ pointwise.
+
+By part (d) of \noderef{WindingCalculus}, applied with $w=A_mr^{\lambda_m}\neq0$
+and $k=m-n\in\mathbb{Z}$, we get $\operatorname{ind}\alpha=m-n$.  By the first
+clause of \noderef{WindingAdditivity} applied to $\gamma=\alpha\cdot\beta$,
+\begin{equation}\tag{11}
+  \operatorname{ind}\gamma=\operatorname{ind}\alpha+\operatorname{ind}\beta
+  =(m-n)+\operatorname{ind}\beta .
+\end{equation}
+
+We now show $\operatorname{Re}\beta(t)>0$ for every $t$.  Put
+$\xi=re^{2\pi it}$, so $|\xi|=r$.  By (4) and (5) with $\theta=2\pi t$,
+\[
+  T_m(\xi)=r^{\lambda_m}\Phi(2\pi t)
+  =A_mr^{\lambda_m}e^{2\pi i(m-n)t}\bigl(1+\epsilon_m u e^{-4\pi imt}\bigr)
+  =\alpha(t)\bigl(1+\epsilon_m u e^{-4\pi imt}\bigr),
+\]
+hence
+\[
+  \beta(t)=\bigl(1+\epsilon_m u e^{-4\pi imt}\bigr)
+    +\frac{H(\xi)-T_m(\xi)}{\alpha(t)} .
+\]
+Since $|\alpha(t)|=|A_m|r^{\lambda_m}$ and $0<r\le\rho_1\le\tfrac12$, (7) gives
+\[
+  \left|\frac{H(\xi)-T_m(\xi)}{\alpha(t)}\right|
+  \le\frac{C_1r^{\lambda_{m+1}}}{|A_m|r^{\lambda_m}}
+  =\frac{C_1}{|A_m|}r^{\lambda_{m+1}-\lambda_m}
+  \le\frac{C_1}{|A_m|}\rho_1^{\lambda_{m+1}-\lambda_m}<1-|\epsilon_m|,
+\]
+the middle inequality because $\lambda_{m+1}-\lambda_m>0$ and $r\le\rho_1$, and
+the last by (10).  Combining with (6),
+\begin{equation}\tag{12}
+  \operatorname{Re}\beta(t)
+  \ \ge\ \bigl(1-|\epsilon_m|\bigr)
+    -\frac{C_1}{|A_m|}\rho_1^{\lambda_{m+1}-\lambda_m}\ >\ 0
+  \qquad\text{for every }t\in I .
+\end{equation}
+
+\emph{Step 7: $\operatorname{ind}\beta=0$.}  First, $\beta$ is a loop:
+$\gamma(0)=\gamma(1)$ because $e^{0}=e^{2\pi i}=1$, and
+$\alpha(0)=\alpha(1)$ because $m-n$ is an integer; hence $\beta(0)=\beta(1)$.
+
+By part (a) of \noderef{WindingCalculus} applied to $\beta$ there is a
+continuous $\Theta\colon I\to\mathbb{R}$ with
+\[
+  \Theta(0)=\arg\beta(0),\qquad
+  \Theta(t)\equiv\arg\beta(t)\ \ \bigl(\mathrm{mod}\ 2\pi\bigr),\qquad
+  \beta(t)=|\beta(t)|\,e^{i\Theta(t)}\quad\text{for every }t ,
+\]
+the first two of these being exactly the two hypotheses that part (b) of
+\noderef{WindingCalculus} requires of a branch, so (b) is applicable to this
+$\Theta$ below.
+Taking real parts, $\operatorname{Re}\beta(t)=|\beta(t)|\cos\Theta(t)$, and
+$|\beta(t)|>0$; so by (12), $\cos\Theta(t)>0$ for every $t$.  The set
+$\{x\in\mathbb{R}:\cos x>0\}$ is the disjoint union of the open intervals
+$\bigl(-\tfrac\pi2+2\pi j,\ \tfrac\pi2+2\pi j\bigr)$, $j\in\mathbb{Z}$.  The
+image $\Theta(I)$ is connected, being the image of an interval under a
+continuous map, so it lies in exactly one of them.  Also
+$\cos\Theta(0)=\cos(\arg\beta(0))>0$ and $\arg\beta(0)\in(-\pi,\pi]$, which
+forces $\arg\beta(0)\in(-\tfrac\pi2,\tfrac\pi2)$; so the interval containing
+$\Theta(I)$ is the one with $j=0$:
+\[
+  \Theta(t)\in\bigl(-\tfrac\pi2,\tfrac\pi2\bigr)\qquad\text{for every }t\in I .
+\]
+By part (b) of \noderef{WindingCalculus}, applied to this $\Theta$,
+\[
+  2\pi\operatorname{ind}\beta=\Theta(1)-\Theta(0)\in(-\pi,\pi),
+\]
+so $|\operatorname{ind}\beta|<\tfrac12$.  Since $\beta$ is a loop, part (c) of
+\noderef{WindingCalculus} gives that $\operatorname{ind}\beta$ is an integer.
+The only integer of modulus less than $\tfrac12$ is $0$, so
+$\operatorname{ind}\beta=0$.
+
+\emph{Step 8: conclusion.}  Take $r=\rho_1$.  By (11) and Step 7,
+$\operatorname{ind}\gamma=m-n$.  By (10) we have $0<r\le\rho_0$, and $\gamma$
+is a continuous non-vanishing map with $\gamma(t)=H(re^{2\pi it})$, so (9)
+gives $\operatorname{ind}\gamma=1$ or $\operatorname{ind}\gamma=-1$; that is,
+$m-n=1$ or $m-n=-1$.  Since $m\ge n+1$ we have $m-n\ge1>0$, so $m-n\neq-1$ and
+therefore $m-n=1$, i.e.\ $m=n+1$.  By (3), $A_{n+1}=A_m\neq0$.  Together with
+Step 1 this is the assertion.
+\end{proof}

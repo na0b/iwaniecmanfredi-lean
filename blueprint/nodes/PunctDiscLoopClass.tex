@@ -1,0 +1,113 @@
+\begin{lemma}
+Let $\delta>0$ and put
+\[
+  D=\{z\in\mathbb{C}:z\neq0\ \text{and}\ |z|<\delta\},
+\]
+with its subspace topology.  Let $\gamma_0,\gamma_1\colon[0,1]\to\mathbb{C}$ be
+continuous with, for $j=0,1$ and all $t$,
+\[
+  \gamma_j(t)\neq0,\qquad |\gamma_j(t)|<\delta,\qquad \gamma_j(0)=\gamma_j(1),
+\]
+and suppose further that
+\[
+  \gamma_0(0)=\gamma_1(0)
+  \qquad\text{and}\qquad
+  \operatorname{ind}(\gamma_0)=\operatorname{ind}(\gamma_1),
+\]
+with $\operatorname{ind}$ the index about $0$ of \noderef{WindingNumber}.  Then
+there are continuous maps $g_0,g_1\colon[0,1]\to D$ with $g_j(t)=\gamma_j(t)$
+for all $t$, and a homotopy from $g_0$ to $g_1$ inside $D$ which is stationary
+at $t=0$ and at $t=1$; that is, $g_0$ and $g_1$ are homotopic relative to
+$\{0,1\}$ through $D$.
+\end{lemma}
+\begin{proof}
+Write $\mathbb{T}=\mathbb{R}/2\pi\mathbb{Z}$ and let
+$q\colon\mathbb{R}\to\mathbb{T}$ be the quotient map.
+
+\emph{Step 1: polar data for the two loops.}  By part (a) of
+\noderef{WindingCalculus}, applied to $\gamma_0$ and to $\gamma_1$, there are
+continuous $\Theta_0,\Theta_1\colon[0,1]\to\mathbb{R}$ with, for $j=0,1$,
+\begin{equation}\tag{1}
+  \Theta_j(0)=\arg\gamma_j(0),\qquad
+  q\bigl(\Theta_j(t)\bigr)=q\bigl(\arg\gamma_j(t)\bigr),\qquad
+  \gamma_j(t)=|\gamma_j(t)|\,e^{i\Theta_j(t)} .
+\end{equation}
+By part (b) of \noderef{WindingCalculus},
+\begin{equation}\tag{2}
+  \Theta_j(1)-\Theta_j(0)=2\pi\operatorname{ind}(\gamma_j)\qquad(j=0,1).
+\end{equation}
+Put $m_j(t)=|\gamma_j(t)|$, a continuous function of $t$ with
+\begin{equation}\tag{3}
+  0<m_j(t)<\delta\qquad\text{for all }t .
+\end{equation}
+
+\emph{Step 2: the polar data agree at both ends.}  At $t=0$: by hypothesis
+$\gamma_0(0)=\gamma_1(0)$, so
+\begin{equation}\tag{4}
+  m_0(0)=m_1(0)\qquad\text{and}\qquad \Theta_0(0)=\arg\gamma_0(0)=\arg\gamma_1(0)=\Theta_1(0),
+\end{equation}
+the second by the first identity of (1).  At $t=1$: since each $\gamma_j$ is a
+loop, $\gamma_0(1)=\gamma_0(0)=\gamma_1(0)=\gamma_1(1)$, so $m_0(1)=m_1(1)$;
+and by (2), (4) and the hypothesis
+$\operatorname{ind}(\gamma_0)=\operatorname{ind}(\gamma_1)$,
+\begin{equation}\tag{5}
+  \Theta_0(1)=\Theta_0(0)+2\pi\operatorname{ind}(\gamma_0)
+  =\Theta_1(0)+2\pi\operatorname{ind}(\gamma_1)=\Theta_1(1).
+\end{equation}
+This is the only place where the equality of the two indices is used.
+
+\emph{Step 3: the homotopy.}  For $s,t\in[0,1]$ put
+\[
+  F(s,t)=\Bigl((1-s)m_0(t)+s\,m_1(t)\Bigr)\,
+    \exp\Bigl(i\bigl((1-s)\Theta_0(t)+s\,\Theta_1(t)\bigr)\Bigr).
+\]
+We verify the required properties.
+
+(3a) \emph{$F$ is continuous on $[0,1]\times[0,1]$.}  The functions $m_j$ and
+$\Theta_j$ are continuous, and $F$ is obtained from them and from the
+coordinate $s$ by sums, products, real-to-complex inclusion and the complex
+exponential, all continuous.
+
+(3b) \emph{The modulus is the interpolated modulus, and it is positive.}  Put
+$R(s,t)=(1-s)m_0(t)+s\,m_1(t)$.  Since $0\le s\le1$ and $m_0(t),m_1(t)>0$ by
+(3), we have $R(s,t)>0$: if $s<1$ then $(1-s)m_0(t)>0$ and
+$s\,m_1(t)\ge0$, while if $s=1$ then $R(1,t)=m_1(t)>0$.  As
+$|e^{i\vartheta}|=1$ for real $\vartheta$ and $R(s,t)$ is a positive real,
+\[
+  |F(s,t)|=R(s,t)>0 .
+\]
+In particular $F(s,t)\neq0$.
+
+(3c) \emph{The modulus stays below $\delta$.}  A convex combination is at most
+the larger of the two numbers combined, so by (3),
+\[
+  |F(s,t)|=R(s,t)\le\max\bigl(m_0(t),m_1(t)\bigr)<\delta .
+\]
+Together with (3b), $F(s,t)\in D$ for all $s,t$.
+
+(3d) \emph{The two ends in $s$.}  Taking $s=0$ and $s=1$ and using the polar
+representation in (1),
+\[
+  F(0,t)=m_0(t)e^{i\Theta_0(t)}=\gamma_0(t),
+  \qquad
+  F(1,t)=m_1(t)e^{i\Theta_1(t)}=\gamma_1(t).
+\]
+
+(3e) \emph{Stationarity at $t=0$ and $t=1$.}  Let $t\in\{0,1\}$.  By Step 2,
+$m_0(t)=m_1(t)$ and $\Theta_0(t)=\Theta_1(t)$.  Hence for every $s$,
+\[
+  (1-s)m_0(t)+s\,m_1(t)=m_0(t),
+  \qquad
+  (1-s)\Theta_0(t)+s\,\Theta_1(t)=\Theta_0(t),
+\]
+so $F(s,t)=m_0(t)e^{i\Theta_0(t)}=\gamma_0(t)$ does not depend on $s$.
+
+\emph{Step 4: conclusion.}  Define $g_j\colon[0,1]\to D$ by $g_j(t)=\gamma_j(t)$;
+this is legitimate because $\gamma_j(t)\neq0$ and $|\gamma_j(t)|<\delta$ by
+hypothesis, and $g_j$ is continuous as a map into the subspace $D$ because
+$\gamma_j$ is continuous into $\mathbb{C}$.  By (3b) and (3c) the map $F$ takes
+values in $D$, so by (3a) it is a continuous map
+$[0,1]\times[0,1]\to D$; by (3d) it equals $g_0$ at $s=0$ and $g_1$ at $s=1$;
+and by (3e) it is stationary at $t=0$ and at $t=1$.  Therefore $F$ is a
+homotopy from $g_0$ to $g_1$ inside $D$, relative to $\{0,1\}$.
+\end{proof}

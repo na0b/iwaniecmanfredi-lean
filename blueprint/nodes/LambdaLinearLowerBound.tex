@@ -1,0 +1,107 @@
+\begin{lemma}
+Let $n\ge1$ be an integer and let $1<p<\infty$.  Then
+\[
+  \lambda_k(n,p)\ \ge\ \frac{\gamma_n}{n+1}\,k
+  \qquad\text{for }k=n+1,n+2,\dots,
+\]
+where $\lambda_k(n,p)$ is as in \noderef{LambdaCoef} and
+$\gamma_n=\gamma_n(p)=\lambda_{n+1}(n,p)$ is as in \noderef{GammaExp}.
+Equality holds at $k=n+1$.
+\end{lemma}
+\begin{proof}
+Fix $n\ge1$ and $p>1$, and put
+\[
+  A=4(p-1),\qquad B=n^2(p-2)^2 .
+\]
+Then $A>0$ and $B\ge0$, and $np>0$.  For $k\ge1$ write, as in
+\noderef{LambdaCoef},
+\[
+  2\lambda_k=-np+\sqrt{4k^2(p-1)+n^2(p-2)^2}=-np+\sqrt{A k^2+B}.
+\]
+Define
+\[
+  g(t)=-np\,t+\sqrt{A+Bt^2}\qquad(t\ge0).
+\]
+
+\emph{Step 1 (a pointwise inequality).}  For every $t\ge0$,
+\begin{equation*}
+  B\,t\ \le\ np\,\sqrt{A+Bt^2}.
+\end{equation*}
+Indeed, both sides are nonnegative: $B\ge0$ and $t\ge0$ on the left, and
+$np>0$ with $A+Bt^2\ge A>0$ on the right.  It therefore suffices to compare
+their squares.  Using $\bigl(\sqrt{A+Bt^2}\bigr)^2=A+Bt^2$ (legitimate since
+$A+Bt^2\ge0$) and substituting $A=4(p-1)$, $B=n^2(p-2)^2$,
+\[
+  (np)^2\bigl(A+Bt^2\bigr)-(Bt)^2
+  =4n^2p^2(p-1)+n^4p^2(p-2)^2t^2-n^4(p-2)^4t^2
+\]
+\[
+  \qquad=4n^2p^2(p-1)+n^4(p-2)^2t^2\bigl(p^2-(p-2)^2\bigr)
+  =4(p-1)\Bigl(n^2p^2+n^4(p-2)^2t^2\Bigr),
+\]
+where the last step uses the identity $p^2-(p-2)^2=4(p-1)$.  Since $p-1>0$ and
+$n^2p^2+n^4(p-2)^2t^2\ge0$, this quantity is nonnegative, i.e.\
+$(Bt)^2\le(np)^2(A+Bt^2)$.  As both $Bt$ and $np\sqrt{A+Bt^2}$ are
+nonnegative, the inequality of Step 1 follows.
+
+\emph{Step 2 ($g$ is nonincreasing on $[0,\infty)$).}  Let $0\le t_1\le t_2$.
+Then
+\[
+  g(t_2)-g(t_1)=-np\,(t_2-t_1)+\Bigl(\sqrt{A+Bt_2^2}-\sqrt{A+Bt_1^2}\Bigr).
+\]
+Both radicands are $\ge A>0$, so both square roots are positive and their sum
+$S=\sqrt{A+Bt_2^2}+\sqrt{A+Bt_1^2}$ is positive.  Multiplying and dividing by
+$S$,
+\[
+  \sqrt{A+Bt_2^2}-\sqrt{A+Bt_1^2}
+  =\frac{\bigl(A+Bt_2^2\bigr)-\bigl(A+Bt_1^2\bigr)}{S}
+  =\frac{B\,(t_2^2-t_1^2)}{S}
+  =\frac{B\,(t_2+t_1)(t_2-t_1)}{S}.
+\]
+Hence
+\[
+  g(t_2)-g(t_1)=(t_2-t_1)\Bigl[\frac{B\,(t_1+t_2)}{S}-np\Bigr].
+\]
+By Step 1 applied with $t=t_1$ and with $t=t_2$,
+\[
+  B\,t_1\le np\sqrt{A+Bt_1^2},\qquad B\,t_2\le np\sqrt{A+Bt_2^2},
+\]
+and adding these gives $B(t_1+t_2)\le np\,S$.  Dividing by $S>0$, the bracket
+is $\le0$; and $t_2-t_1\ge0$.  Therefore $g(t_2)-g(t_1)\le0$, i.e.\
+$g(t_2)\le g(t_1)$.
+
+\emph{Step 3 (the rescaling identity).}  For every integer $k\ge1$,
+\[
+  g\!\left(\frac1k\right)=\frac{2\lambda_k}{k}.
+\]
+Indeed, since $k>0$,
+\[
+  \sqrt{A+\frac{B}{k^2}}=\sqrt{\frac{Ak^2+B}{k^2}}
+  =\frac{\sqrt{Ak^2+B}}{k},
+\]
+so
+\[
+  g\!\left(\frac1k\right)=-\frac{np}{k}+\frac{\sqrt{Ak^2+B}}{k}
+  =\frac{1}{k}\Bigl(-np+\sqrt{Ak^2+B}\Bigr)=\frac{2\lambda_k}{k}.
+\]
+
+\emph{Step 4 (conclusion).}  Let $k\ge n+1$.  Then $k\ge n+1\ge2>0$, so
+\[
+  0<\frac1k\le\frac1{n+1},
+\]
+so that Step 2 applies with $t_1=1/k$ and $t_2=1/(n+1)$ and yields
+\[
+  g\!\left(\frac1{n+1}\right)\le g\!\left(\frac1k\right).
+\]
+By Step 3 this reads
+\[
+  \frac{2\lambda_{n+1}}{n+1}\le\frac{2\lambda_k}{k},
+\]
+and $\lambda_{n+1}=\gamma_n$ by \noderef{GammaExp}.  Multiplying by
+$k/2>0$,
+\[
+  \frac{\gamma_n}{n+1}\,k\le\lambda_k ,
+\]
+as claimed.  For $k=n+1$ both sides equal $\gamma_n$, so the inequality is an
+equality there.
+\end{proof}

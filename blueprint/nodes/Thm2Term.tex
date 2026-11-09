@@ -1,0 +1,27 @@
+\begin{definition}
+Let $n\ge0$ and $k\ge0$ be integers, let $p$ be real, let
+$A\colon\mathbb{Z}\to\mathbb{C}$, and let $\xi\in\mathbb{C}$.  Put
+\[
+  T_k(\xi)=\Bigl(A_k\,\xi^{k}+\epsilon_k\,\overline{A_k}\,\bar\xi^{\,k}\Bigr)\,
+    |\xi|^{\lambda_k+n-k}\,\xi^{-n},
+\]
+where $A_k=A(k)$, $\lambda_k=\lambda_k(n,p)$ is the exponent of
+\noderef{LambdaCoef} and $\epsilon_k=\epsilon_k(n,p)$ is the coefficient of
+\noderef{EpsCoef}.
+
+This is the $k$-th summand of the series (19) of Theorem~2 of the paper,
+\[
+  H(\xi)=\sum_{k=n}^{\infty}\bigl(A_k\xi^k+\epsilon_k\bar A_k\bar\xi^k\bigr)
+    |\xi|^{\lambda_k+n-k}\xi^{-n},
+\]
+so that (19) reads $H(\xi)=\sum_{k\ge n}T_k(\xi)$.  The coefficient family is
+indexed by all of $\mathbb{Z}$ because the compatibility condition (39) of the
+paper determines $A_{-k}$ from $A_k$; only the values $A_k$ with $k\ge n$ enter
+$T_k$.
+
+Two conventions make the formula total.  The factor $|\xi|^{\lambda_k+n-k}$ is a
+real power of a nonnegative real, read with $0^{a}=0$ for $a>0$ and $0^{0}=1$;
+and $\xi^{-n}$ is an integer power, read as $0$ at $\xi=0$ when $n>0$ (Lean's
+convention $w/0=0$).  The paper uses (19) for $0<|\xi|<1$, where neither
+convention is invoked.
+\end{definition}

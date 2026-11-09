@@ -1,0 +1,342 @@
+\begin{lemma}
+Let $n\ge0$ be an integer, let $0\le a<b$, let $k\in\mathbb{Z}$, put
+\[
+  A=\{\xi\in\mathbb{C}:a<|\xi|<b\},
+\]
+and let $H,D_0,D_1\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $H\in L^{1}_{\mathrm{loc}}(A)$ and $D_j\in L^{1}_{\mathrm{loc}}(A)$
+  for $j=0,1$, in the sense of \noderef{MemLpLocOn};
+\item[(H2)] $D_j$ is the distributional $j$-th partial derivative of $H$ on
+  $A$ for $j=0,1$, in the sense of \noderef{IsWeakPartialOn};
+\item[(H3)] $H$ is continuous on $A$;
+\item[(H4)] $H$ is differentiable at almost every point of $A$.
+\end{enumerate}
+Write
+\[
+  a_k(r)=\frac1{2\pi}\int_0^{2\pi}H(re^{i\theta})e^{i(n-k)\theta}\,d\theta,
+  \qquad
+  A_k(r)=\frac1{2\pi}\int_0^{2\pi}H_r(re^{i\theta})e^{i(n-k)\theta}\,d\theta,
+  \qquad
+  B_k(r)=\frac1{2\pi}\int_0^{2\pi}H_\theta(re^{i\theta})e^{i(n-k)\theta}\,d\theta
+\]
+where the three displayed expressions are the Fourier coefficient (30) of
+\noderef{FourierCoefOfH} formed from $H$, from the polar radial derivative
+$H_r$ of \noderef{HRad} and from the polar angular derivative $H_\theta$ of
+\noderef{HAng} respectively.  Then
+\begin{enumerate}
+\item[(a)] for all $c,d\in(a,b)$, $A_k$ is integrable on the closed interval
+  with endpoints $c$ and $d$;
+\item[(b)] for all $c,d\in(a,b)$,
+  $a_k(d)-a_k(c)=\displaystyle\int_c^dA_k(s)\,ds$;
+\item[(c)] for almost every $r\in(a,b)$, $a_k$ is differentiable at $r$ with
+  $a_k'(r)=A_k(r)$;
+\item[(d)] for almost every $r\in(a,b)$, $B_k(r)=i(k-n)\,a_k(r)$;
+\item[(e)] for almost every $r\in(a,b)$, the functions
+  $\theta\mapsto H_r(re^{i\theta})$ and $\theta\mapsto H_\theta(re^{i\theta})$
+  are integrable on $[0,2\pi]$.
+\end{enumerate}
+
+This is the one-variable content of the paper's (31) and of the two identities
+that the term-by-term differentiation (32) amounts to.  It is what replaces
+Section 3's standing assumption $H\in C^\infty(\mathbb{B}-\{0\})$: the paper
+reads that assumption at exactly one place, paper.tex:265--266, to obtain
+$a_k\in C[0,1)\cap C^\infty(0,1)$, while paper.tex:269 justifies (32) from
+$H\in W^{1,2}(\mathbb{B})$ alone; and the $C[0,1)$ half of (31) is continuity,
+which the inverse of a quasiconformal homeomorphism has for nothing.  (a), (b)
+and (c) say that $a_k$ is locally absolutely continuous on $(a,b)$ in the
+strongest usable sense -- it is the indefinite integral of $A_k$ -- and (d) is
+the integration by parts in $\theta$ that the paper performs at
+paper.tex:281--286 to turn (28) into the system (33).  The hypotheses are
+exactly the data of a $W^{1,1}_{\mathrm{loc}}(A)$ function, with $D_j$ the
+member of the coherent family indexed by the one-letter word $[j]$, together
+with the continuity and almost-everywhere differentiability that item (C2) of
+the paper's note supplies for the inverse of a quasiconformal homeomorphism.
+That the paper means its circle averages to be differentiated in exactly this
+way is explicit at paper.tex:268--277, where $H\in W^{1,2}(\mathbb{B})$ alone
+is what justifies (32) and its two series are said to converge in
+$L^{2}(\mathbb{B})$, the derivatives $H_r$ and $H_\theta$ appearing there being
+the classical ones.
+
+The conclusions are no stronger than that: the derivative identity can only
+hold almost everywhere, since $H_r$ and $H_\theta$ are defined through the
+Fr\'echet derivative of $H$, which (H4) provides only almost everywhere.  They
+are also deliberately short of (31) itself.  Nothing here concerns the centre
+of the disk, or the family of all $k$ at once, or the $L^{2}$ expansion (29),
+or $C^\infty$ regularity in $r$: the $C^\infty$ half of (31) is a consequence
+of the system (33) satisfied by the coefficients, not of this lemma, and the
+$C[0,1)$ half is continuity.
+\end{lemma}
+\begin{proof}
+Write $d\sigma$ for plane Lebesgue measure, $e_0=1$, $e_1=i$, and
+$\partial_jv(\zeta)=\mathrm{d}v(\zeta)[e_j]$.  The set $A$ is open, and
+$0\notin A$ because $|\xi|>a\ge0$ for $\xi\in A$.  For $\zeta\in\mathbb{C}$
+write $\zeta=\zeta_1+i\zeta_2$ with $\zeta_1,\zeta_2$ real.
+
+\emph{Step 1: the radial and angular combinations of the weak partials.}
+Define, for $\zeta\neq0$,
+\[
+  R(\zeta)=\frac{\zeta_1}{|\zeta|}D_0(\zeta)+\frac{\zeta_2}{|\zeta|}D_1(\zeta),
+  \qquad
+  S(\zeta)=-\zeta_2D_0(\zeta)+\zeta_1D_1(\zeta).
+\]
+The hypotheses of \noderef{WeakPartialEqFDerivAE} hold with $\Omega=A$, which
+is open, the function $H$, the family $D$, and (H1), (H2), (H4).  Its
+conclusion gives, for each of $j=0$ and $j=1$, a null set outside which
+$D_j=\partial_jH$ on $A$; let $N_1$ be the union of those two null sets and of
+the null set outside which (H4) makes $H$ differentiable on $A$, so that $N_1$
+is null and, for every $\zeta\in A-N_1$, $H$ is differentiable at $\zeta$ and
+$D_j(\zeta)=\partial_jH(\zeta)$ for $j=0,1$.  Fix
+$\zeta\in A-N_1$ and put $r=|\zeta|>0$.  Since
+$\zeta/|\zeta|=(\zeta_1/r)e_0+(\zeta_2/r)e_1$ and
+$i\zeta=-\zeta_2e_0+\zeta_1e_1$, and $\mathrm{d}H(\zeta)$ is
+$\mathbb{R}$-linear, \noderef{HRad} and \noderef{HAng} give
+\begin{equation}\tag{1}
+  H_r(\zeta)=\mathrm{d}H(\zeta)\Bigl[\frac{\zeta}{|\zeta|}\Bigr]=R(\zeta),
+  \qquad
+  H_\theta(\zeta)=\mathrm{d}H(\zeta)[i\zeta]=S(\zeta)
+  \qquad(\zeta\in A-N_1).
+\end{equation}
+
+\emph{Step 2: polar consequences of (1).}  Let $[c',d']\subseteq(a,b)$ be a
+closed interval and put
+$A'=\{\zeta:c'\le|\zeta|\le d'\}$, a compact subset of $A$.  On $A'$ the
+coefficients of $R$ and $S$ are bounded, by $1$ and by $d'$ respectively, so by
+(H1) applied to the compact set $A'$ both $R$ and $S$ are integrable on $A'$.
+Polar coordinates, that is the change of variables $(s,\theta)\mapsto
+se^{i\theta}$ under which $d\sigma=s\,ds\,d\theta$, together with Tonelli's
+theorem and $s\ge c'>0$ on $A'$, give
+\begin{equation}\tag{2}
+  \int_{c'}^{d'}\!\!\int_0^{2\pi}|R(se^{i\theta})|\,d\theta\,ds
+  \le\frac1{c'}\int_{A'}|R|\,d\sigma<\infty,
+\end{equation}
+and the same bound for $S$.  This estimate, together with the two consequences
+drawn from it below --- that the coefficient of a function integrable on the
+annulus is integrable in the radius, and that the coefficient depends
+continuously on the function in $L^1$ --- is
+\noderef{FourierCoefAnnulusRegularity}, stated there for an arbitrary
+measurable function on a compact annulus of positive inner radius, and it is
+what Step 4's mollification limit is applied through.  By Fubini's theorem the
+function
+$s\mapsto\frac1{2\pi}\int_0^{2\pi}R(se^{i\theta})e^{i(n-k)\theta}\,d\theta$ is
+therefore defined for almost every $s\in[c',d']$, measurable, and integrable
+there; write $\widetilde A_k$ for it, and $\widetilde B_k$ for the same
+expression with $S$ in place of $R$.  Moreover the null set $N_1$ of Step 1 has
+$\int_{c'}^{d'}\int_0^{2\pi}\mathbf1_{N_1}(se^{i\theta})\,s\,d\theta\,ds=0$,
+so for almost every $s\in[c',d']$ the circle $\{se^{i\theta}:0\le\theta<2\pi\}$
+meets $N_1$ in a set of $\theta$-measure zero; for such $s$ the integrands of
+$A_k(s)$ and $\widetilde A_k(s)$ agree for almost every $\theta$ by (1), as do
+those of $B_k(s)$ and $\widetilde B_k(s)$.  For almost every
+$s\in[c',d']$ the integrand of $\widetilde A_k(s)$ is moreover integrable in
+$\theta$, by the Fubini theorem just invoked, hence so is the integrand of
+$A_k(s)$, two functions agreeing almost everywhere being integrable together;
+and then the two integrals coincide.  The same applies to $B_k$ and
+$\widetilde B_k$.  Hence
+\begin{equation}\tag{3}
+  A_k(s)=\widetilde A_k(s)\quad\text{and}\quad B_k(s)=\widetilde B_k(s)
+  \qquad\text{for almost every }s\in[c',d'] .
+\end{equation}
+In particular $A_k$ agrees almost everywhere on $[c',d']$ with an integrable
+function, so $A_k$ is integrable on $[c',d']$.  Since every $c,d\in(a,b)$ lie
+in such an interval $[c',d']\subseteq(a,b)$, this proves (a).
+
+\emph{Step 3: the mollification.}  Fix $c,d\in(a,b)$ and assume first that
+$c\le d$; the opposite case is reduced to this one at the end of Step 6.  Choose $\delta>0$ with
+$[c-3\delta,d+3\delta]\subseteq(a,b)$, which is possible because $(a,b)$ is
+open and $[c,d]\subseteq(a,b)$ is compact; note $c-3\delta>a\ge0$.  Put
+\[
+  A''=\{\zeta:c-3\delta\le|\zeta|\le d+3\delta\},\qquad
+  A^{\flat}=\{\zeta:c-\delta\le|\zeta|\le d+\delta\},
+\]
+both compact subsets of $A$, with $A^\flat\subseteq A''$.  Fix
+$\varrho\colon\mathbb{C}\to\mathbb{R}$ of class $C^\infty$ with $\varrho\ge0$,
+$\varrho(y)=0$ for $|y|\ge1$ and $\int\varrho\,d\sigma=1$, and for
+$0<\varepsilon\le\delta$ put
+$\varrho_\varepsilon(y)=\varepsilon^{-2}\varrho(y/\varepsilon)$, so that
+$\varrho_\varepsilon$ is $C^\infty$, vanishes for $|y|\ge\varepsilon$ and has
+integral $1$.  By (H1) applied to the compact set $A''$ the functions
+$\mathbf1_{A''}H$ and $\mathbf1_{A''}D_j$ lie in $L^{1}(\mathbb{C})$; put
+\[
+  H_\varepsilon=(\mathbf1_{A''}H)*\varrho_\varepsilon,\qquad
+  W_{j,\varepsilon}=(\mathbf1_{A''}D_j)*\varrho_\varepsilon .
+\]
+These are $C^\infty$ on $\mathbb{C}$, being convolutions of $L^{1}$ functions
+with a compactly supported $C^\infty$ function, and
+$\partial_jH_\varepsilon=(\mathbf1_{A''}H)*\partial_j\varrho_\varepsilon$.
+
+\emph{Step 4: $\partial_jH_\varepsilon=W_{j,\varepsilon}$ on $A^\flat$.}  Let
+$\zeta\in A^\flat$ and $0<\varepsilon\le\delta$, and put
+$\varphi(w)=\varrho_\varepsilon(\zeta-w)$, read as a complex-valued function.
+Then $\varphi$ is $C^\infty$ and vanishes off
+$\{w:|w-\zeta|\le\varepsilon\}$, a compact set contained in $A''\subseteq A$,
+because $|\,|w|-|\zeta|\,|\le\varepsilon\le\delta$ there and
+$c-\delta\le|\zeta|\le d+\delta$.  So
+$\operatorname{tsupp}\varphi\subseteq A$ and $\varphi$ is a test function for
+$A$ in the sense of \noderef{IsTestFn}.  The map $w\mapsto\zeta-w$ is affine
+with derivative $-\mathrm{id}$, so
+$\mathrm{d}\varphi(w)[e_j]=-(\partial_j\varrho_\varepsilon)(\zeta-w)$, and (H2)
+applied to $\varphi$ reads
+\[
+  -\int H(w)(\partial_j\varrho_\varepsilon)(\zeta-w)\,d\sigma(w)
+  =-\int D_j(w)\varrho_\varepsilon(\zeta-w)\,d\sigma(w).
+\]
+Both integrands vanish off $\{w:|w-\zeta|\le\varepsilon\}\subseteq A''$, where
+$H=\mathbf1_{A''}H$ and $D_j=\mathbf1_{A''}D_j$, so the displayed identity says
+precisely
+\begin{equation}\tag{4}
+  \partial_jH_\varepsilon(\zeta)=W_{j,\varepsilon}(\zeta)
+  \qquad(\zeta\in A^\flat,\ 0<\varepsilon\le\delta).
+\end{equation}
+Consequently, with
+$R_\varepsilon(\zeta)=\frac{\zeta_1}{|\zeta|}W_{0,\varepsilon}(\zeta)
++\frac{\zeta_2}{|\zeta|}W_{1,\varepsilon}(\zeta)$ and
+$S_\varepsilon(\zeta)=-\zeta_2W_{0,\varepsilon}(\zeta)
++\zeta_1W_{1,\varepsilon}(\zeta)$, the computation of Step 1 applied to the
+everywhere differentiable $H_\varepsilon$ gives
+\begin{equation}\tag{5}
+  (H_\varepsilon)_r=R_\varepsilon\quad\text{and}\quad
+  (H_\varepsilon)_\theta=S_\varepsilon\qquad\text{on }A^\flat .
+\end{equation}
+
+\emph{Step 5: the radial identity for $H_\varepsilon$.}  Put
+\[
+  g_\varepsilon(r)=\frac1{2\pi}\int_0^{2\pi}
+    H_\varepsilon(re^{i\theta})e^{i(n-k)\theta}\,d\theta .
+\]
+The function $(r,\theta)\mapsto H_\varepsilon(re^{i\theta})e^{i(n-k)\theta}$ is
+$C^\infty$ on $\mathbb{R}^2$ and the $\theta$-range is a compact interval, so
+differentiation under the integral sign applies: $g_\varepsilon$ is $C^1$ with
+\[
+  g_\varepsilon'(r)=\frac1{2\pi}\int_0^{2\pi}
+    \frac{\partial}{\partial r}\bigl[H_\varepsilon(re^{i\theta})\bigr]
+    e^{i(n-k)\theta}\,d\theta .
+\]
+The curve $r\mapsto re^{i\theta}$ has velocity $e^{i\theta}$, so by the chain
+rule $\frac{\partial}{\partial r}[H_\varepsilon(re^{i\theta})]
+=\mathrm{d}H_\varepsilon(re^{i\theta})[e^{i\theta}]$, and for $r>0$ the vector
+$e^{i\theta}$ is $\xi/|\xi|$ at $\xi=re^{i\theta}$, so this is
+$(H_\varepsilon)_r(re^{i\theta})$ by \noderef{HRad}.  Hence, for $r>0$,
+$g_\varepsilon'(r)=\frac1{2\pi}\int_0^{2\pi}(H_\varepsilon)_r(re^{i\theta})
+e^{i(n-k)\theta}\,d\theta$, and the fundamental theorem of calculus for the
+$C^1$ function $g_\varepsilon$ on $[c,d]\subseteq(0,\infty)$ gives, using (5)
+and $\{se^{i\theta}:c\le s\le d\}\subseteq A^\flat$,
+\begin{equation}\tag{6}
+  g_\varepsilon(d)-g_\varepsilon(c)
+  =\int_c^d\Bigl(\frac1{2\pi}\int_0^{2\pi}
+     R_\varepsilon(se^{i\theta})e^{i(n-k)\theta}\,d\theta\Bigr)ds .
+\end{equation}
+
+\emph{Step 6: letting $\varepsilon\to0$ in (6); proof of (b).}  First,
+$H_\varepsilon\to H$ uniformly on $A^\flat$.  Indeed $H$ is continuous on $A$
+by (H3) and $A''\subseteq A$ is compact, so $H$ is uniformly continuous on
+$A''$; and for $\zeta\in A^\flat$,
+\[
+  H_\varepsilon(\zeta)-H(\zeta)
+  =\int\bigl[H(\zeta-y)-H(\zeta)\bigr]\varrho_\varepsilon(y)\,d\sigma(y),
+\]
+because $\int\varrho_\varepsilon=1$ and $\mathbf1_{A''}H=H$ on
+$\{\zeta-y:|y|\le\varepsilon\}\subseteq A''$; so
+$|H_\varepsilon(\zeta)-H(\zeta)|\le\sup\{|H(\zeta')-H(\zeta'')|:
+\zeta',\zeta''\in A'',\ |\zeta'-\zeta''|\le\varepsilon\}$, which tends to $0$
+with $\varepsilon$ by uniform continuity.  Since
+$\{re^{i\theta}:r\in[c,d]\}\subseteq A^\flat$ and $|e^{i(n-k)\theta}|=1$, it
+follows that $g_\varepsilon\to a_k$ uniformly on $[c,d]$; in particular
+$g_\varepsilon(c)\to a_k(c)$ and $g_\varepsilon(d)\to a_k(d)$.
+
+Next, $\|W_{j,\varepsilon}-\mathbf1_{A''}D_j\|_{L^{1}(\mathbb{C})}\to0$, since
+$g*\varrho_\varepsilon\to g$ in $L^{1}(\mathbb{C})$ for every
+$g\in L^{1}(\mathbb{C})$ by \noderef{MollificationL1Convergence}.  On $A^\flat$ the coefficients
+$\zeta_1/|\zeta|,\zeta_2/|\zeta|$ are bounded by $1$ and
+$\mathbf1_{A''}D_j=D_j$, so
+\[
+  \int_{A^\flat}|R_\varepsilon-R|\,d\sigma
+  \le\sum_{j=0}^1\|W_{j,\varepsilon}-\mathbf1_{A''}D_j\|_{L^{1}(\mathbb{C})}
+  \longrightarrow0 .
+\]
+Passing to polar coordinates exactly as in (2), with $s\ge c-\delta>0$,
+\[
+  \Bigl|\int_c^d\Bigl(\frac1{2\pi}\int_0^{2\pi}
+    (R_\varepsilon-R)(se^{i\theta})e^{i(n-k)\theta}d\theta\Bigr)ds\Bigr|
+  \le\frac1{2\pi(c-\delta)}\int_{A^\flat}|R_\varepsilon-R|\,d\sigma
+  \longrightarrow0 .
+\]
+So the right-hand side of (6) converges to
+$\int_c^d\widetilde A_k(s)\,ds$, which by (3) equals $\int_c^dA_k(s)\,ds$.
+Letting $\varepsilon\to0$ in (6) therefore gives
+$a_k(d)-a_k(c)=\int_c^dA_k(s)\,ds$ whenever $c\le d$.  For $d<c$ apply this to
+the pair $(d,c)$ and use $\int_c^d=-\int_d^c$; for $c=d$ both sides vanish.
+This is (b).
+
+\emph{Step 7: proof of (c).}  Fix $c_0\in(a,b)$.  By (a) the function $A_k$ is
+integrable on every closed subinterval of $(a,b)$, hence locally integrable
+there, and by (b) $a_k(r)=a_k(c_0)+\int_{c_0}^rA_k(s)\,ds$ for every
+$r\in(a,b)$.  The indefinite integral of a locally integrable function on an
+interval is differentiable at almost every point of that interval, with
+derivative the integrand (the Lebesgue differentiation theorem in one
+variable).  Hence for almost every $r\in(a,b)$ the function $a_k$ is
+differentiable at $r$ with $a_k'(r)=A_k(r)$, which is (c).
+
+\emph{Step 8: proof of (d).}  Fix $c,d\in(a,b)$ with $c\le d$ and keep the
+notation of Steps 3--6.  For $r\in[c,d]$ the function
+$\theta\mapsto H_\varepsilon(re^{i\theta})$ is $C^\infty$ on $\mathbb{R}$, and
+the curve $\theta\mapsto re^{i\theta}$ has velocity $ire^{i\theta}=i\xi$ at
+$\xi=re^{i\theta}$, so by the chain rule and \noderef{HAng}
+\[
+  \frac{\partial}{\partial\theta}\bigl[H_\varepsilon(re^{i\theta})\bigr]
+  =\mathrm{d}H_\varepsilon(re^{i\theta})[i\,re^{i\theta}]
+  =(H_\varepsilon)_\theta(re^{i\theta}).
+\]
+Both $\theta\mapsto H_\varepsilon(re^{i\theta})$ and
+$\theta\mapsto e^{i(n-k)\theta}$ are $C^1$ on $[0,2\pi]$ and take the same
+values at $0$ and at $2\pi$, the first because $e^{i\theta}$ is $2\pi$-periodic
+and the second because $n-k$ is an integer.  So integration by parts on
+$[0,2\pi]$ has vanishing boundary term and gives
+\[
+  \frac1{2\pi}\int_0^{2\pi}(H_\varepsilon)_\theta(re^{i\theta})
+    e^{i(n-k)\theta}\,d\theta
+  =-i(n-k)\frac1{2\pi}\int_0^{2\pi}H_\varepsilon(re^{i\theta})
+    e^{i(n-k)\theta}\,d\theta
+  =i(k-n)\,g_\varepsilon(r).
+\]
+By (5) the left-hand side is
+$\frac1{2\pi}\int_0^{2\pi}S_\varepsilon(re^{i\theta})e^{i(n-k)\theta}d\theta$,
+so
+\begin{equation}\tag{7}
+  \frac1{2\pi}\int_0^{2\pi}S_\varepsilon(re^{i\theta})
+    e^{i(n-k)\theta}\,d\theta=i(k-n)g_\varepsilon(r)
+  \qquad(r\in[c,d],\ 0<\varepsilon\le\delta).
+\end{equation}
+Now let $\varepsilon\to0$ in (7), comparing the two sides in $L^{1}[c,d]$.  On
+$A^\flat$ the coefficients of $S$ and $S_\varepsilon$ are bounded by
+$d+\delta$, so as in Step 6
+\[
+  \int_c^d\Bigl|\frac1{2\pi}\int_0^{2\pi}(S_\varepsilon-S)(se^{i\theta})
+    e^{i(n-k)\theta}d\theta\Bigr|ds
+  \le\frac{d+\delta}{2\pi(c-\delta)}
+    \sum_{j=0}^1\|W_{j,\varepsilon}-\mathbf1_{A''}D_j\|_{L^{1}(\mathbb{C})}
+  \longrightarrow0,
+\]
+so the left-hand side of (7) converges in $L^{1}[c,d]$ to $\widetilde B_k$,
+which equals $B_k$ almost everywhere on $[c,d]$ by (3).  The right-hand side
+converges to $i(k-n)a_k$ uniformly on $[c,d]$ by Step 6, hence in
+$L^{1}[c,d]$.  Two $L^{1}[c,d]$ limits of one family agree almost everywhere,
+so $B_k(r)=i(k-n)a_k(r)$ for almost every $r\in[c,d]$.
+
+Finally, $(a,b)=\bigcup_{m\ge1}[c_m,d_m]$ with
+$c_m=a+\tfrac{b-a}{m+2}$ and $d_m=b-\tfrac{b-a}{m+2}$, each contained in
+$(a,b)$; a countable union of null sets is null, so the exceptional sets
+assemble and (d) holds for almost every $r\in(a,b)$.
+
+\emph{Step 9: proof of (e).}  Step 2, applied on the interval $[c_m,d_m]$,
+established that for almost every $s\in[c_m,d_m]$ the integrand of
+$\widetilde A_k(s)$ is integrable in $\theta$ and that the integrand of
+$A_k(s)$ is integrable with it, and likewise for $\widetilde B_k$ and $B_k$;
+those integrands are $\theta\mapsto R(se^{i\theta})e^{i(n-k)\theta}$ and
+$\theta\mapsto H_r(se^{i\theta})e^{i(n-k)\theta}$, and the two angular ones.
+Since $|e^{i(n-k)\theta}|=1$ and $\theta\mapsto e^{i(n-k)\theta}$ is
+continuous, a function is integrable on $[0,2\pi]$ if and only if its product
+with that factor is.  So for almost every $s\in[c_m,d_m]$ the functions
+$\theta\mapsto H_r(se^{i\theta})$ and $\theta\mapsto H_\theta(se^{i\theta})$
+are integrable on $[0,2\pi]$, and assembling the countably many exceptional
+sets over the exhaustion above gives (e).
+\end{proof}

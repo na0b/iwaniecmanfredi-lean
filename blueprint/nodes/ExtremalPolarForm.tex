@@ -1,0 +1,104 @@
+\begin{lemma}
+Let $1<p<\infty$, let $d=d(p)$ and $\epsilon=\epsilon_2(1,p)$ be as in
+\noderef{ExtremalH}, and let $H$ be the extremal function of
+\noderef{ExtremalH}.  Then
+\begin{enumerate}
+\item[(a)] for every $r>0$ and every $\theta\in\mathbb{R}$,
+\[
+  H\bigl(re^{i\theta}\bigr)=r^{1/d}\Bigl(e^{i\theta}+\epsilon\,e^{-3i\theta}\Bigr);
+\]
+\item[(b)] for every $t>0$ and every $\xi\in\mathbb{C}$,
+\[
+  t\,H(\xi)=H\bigl(t^{d}\xi\bigr).
+\]
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Throughout, $1<p<\infty$ is fixed.  We first record that $d=d(p)>0$.  Indeed,
+by \noderef{DExp},
+\[
+  6\,d=1+\frac{1}{p-1}+\sqrt{1+\frac{14}{p-1}+\frac{1}{(p-1)^2}} ,
+\]
+and since $p-1>0$ the first two summands are positive and the square root is
+nonnegative, so $6d\ge1+\frac1{p-1}>0$ and hence $d>0$.  In particular $1/d$
+is defined and positive, and $d\neq0$.
+
+\emph{Proof of (a).}  Fix $r>0$ and $\theta\in\mathbb{R}$, and put
+$\xi=re^{i\theta}$.
+
+\emph{Step 1: $|\xi|=r$ and $\xi\neq0$.}  Since $|e^{i\theta}|=1$ and $r>0$,
+\[
+  |\xi|=|r|\,\bigl|e^{i\theta}\bigr|=r .
+\]
+As $r>0$ this gives $|\xi|\neq0$, hence $\xi\neq0$.
+
+\emph{Step 2: the first quotient.}  By Step 1 and $r\neq0$,
+\[
+  \frac{\xi}{|\xi|}=\frac{re^{i\theta}}{r}=e^{i\theta}.
+\]
+
+\emph{Step 3: the second quotient.}  We have
+$\xi^{3}=r^{3}e^{3i\theta}$ and, by Step 1, $|\xi|^{3}=r^{3}$.  Both $r^{3}$
+and $e^{3i\theta}$ are nonzero, so
+\[
+  \frac{|\xi|^{3}}{\xi^{3}}=\frac{r^{3}}{r^{3}e^{3i\theta}}
+  =\frac{1}{e^{3i\theta}}=e^{-3i\theta},
+\]
+the last equality because $e^{-3i\theta}e^{3i\theta}=e^{0}=1$.
+
+\emph{Step 4: the modulus factor.}  By Step 1, $|\xi|^{1/d}=r^{1/d}$.
+
+\emph{Step 5.}  Substituting Steps 2, 3 and 4 into the formula of
+\noderef{ExtremalH},
+\[
+  H(\xi)=\bigl(e^{i\theta}+\epsilon\,e^{-3i\theta}\bigr)\,r^{1/d}
+  =r^{1/d}\bigl(e^{i\theta}+\epsilon\,e^{-3i\theta}\bigr),
+\]
+which is (a).
+
+\emph{Proof of (b).}  Fix $t>0$ and $\xi\in\mathbb{C}$, and put
+$\zeta=t^{d}\xi$.  Note $t^{d}>0$, since $t>0$.
+
+\emph{Case $\xi=0$.}  Then $\zeta=0$ as well.  By \noderef{ExtremalH} and the
+convention $w/0=0$, the first factor of $H(0)$ is
+$0/0+\epsilon\cdot(0/0)=0$, so $H(0)=0$.  Hence both sides of (b) are $0$:
+the left is $t\cdot0=0$ and the right is $H(0)=0$.
+
+\emph{Case $\xi\neq0$.}  Then $|\xi|>0$ and, since $t^{d}>0$,
+\[
+  \zeta\neq0,\qquad |\zeta|=\bigl|t^{d}\bigr|\,|\xi|=t^{d}|\xi|>0 .
+\]
+We compare the three ingredients of \noderef{ExtremalH} at $\zeta$ and at
+$\xi$.
+
+First, since $t^{d}\neq0$,
+\[
+  \frac{\zeta}{|\zeta|}=\frac{t^{d}\xi}{t^{d}|\xi|}=\frac{\xi}{|\xi|} .
+\]
+Second, $\zeta^{3}=t^{3d}\xi^{3}$ and $|\zeta|^{3}=t^{3d}|\xi|^{3}$, and both
+$t^{3d}$ and $\xi^{3}$ are nonzero, so
+\[
+  \frac{|\zeta|^{3}}{\zeta^{3}}=\frac{t^{3d}|\xi|^{3}}{t^{3d}\xi^{3}}
+  =\frac{|\xi|^{3}}{\xi^{3}} .
+\]
+Hence the first factor of \noderef{ExtremalH} takes the same value at $\zeta$
+as at $\xi$.
+
+Third, using $t^{d}>0$, $|\xi|>0$ and the rules for real powers of positive
+numbers,
+\[
+  |\zeta|^{1/d}=\bigl(t^{d}|\xi|\bigr)^{1/d}
+  =\bigl(t^{d}\bigr)^{1/d}|\xi|^{1/d}
+  =t^{d\cdot(1/d)}|\xi|^{1/d}
+  =t\,|\xi|^{1/d},
+\]
+the last step because $d\cdot(1/d)=1$, which uses $d\neq0$.
+
+Combining the three computations with the formula of \noderef{ExtremalH},
+\[
+  H(\zeta)=\Bigl(\frac{\xi}{|\xi|}+\epsilon\frac{|\xi|^{3}}{\xi^{3}}\Bigr)\,t\,|\xi|^{1/d}
+  =t\Bigl(\frac{\xi}{|\xi|}+\epsilon\frac{|\xi|^{3}}{\xi^{3}}\Bigr)|\xi|^{1/d}
+  =t\,H(\xi),
+\]
+which is (b).
+\end{proof}

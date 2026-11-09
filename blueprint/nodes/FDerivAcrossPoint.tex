@@ -1,0 +1,83 @@
+\begin{lemma}
+Let $\Omega\subseteq\mathbb{C}$ be open, let $z_0\in\Omega$, let
+$g\colon\mathbb{C}\to\mathbb{C}$ and let $L\colon\mathbb{C}\to\mathbb{C}$ be a
+continuous $\mathbb{R}$-linear map.  Assume
+\begin{enumerate}
+\item[(H1)] $g$ is continuous on $\Omega$;
+\item[(H2)] $g$ is (real) differentiable at every point of $\Omega-\{z_0\}$;
+\item[(H3)] $\mathrm{d}g(z)\to L$ as $z\to z_0$ within $\Omega-\{z_0\}$.
+\end{enumerate}
+Then $g$ is differentiable at $z_0$ with $\mathrm{d}g(z_0)=L$, and
+$z\mapsto\mathrm{d}g(z)$ is continuous at $z_0$ within $\Omega$.
+
+This is the step Section 6 of the paper passes over.  It is what upgrades $C^1$
+to $C^k$ across the singular point: by (52), for $|\nu|=m+1\le k$ the exponent
+$d-m=k-1+\alpha-m$ is at least $\alpha>0$, so the derivative in question tends
+to $0$ at the singular point, and this lemma turns that into genuine
+differentiability there.  It is also the continuity at the singular point that
+the hypothesis ``$F$ continuous on $U$'' of Lemma 2 of the paper
+(paper.tex:538--539) silently presumes.
+\end{lemma}
+\begin{proof}
+Write $h(z)=g(z)-g(z_0)-L(z-z_0)$ for $z\in\Omega$.  By (H1), $h$ is continuous
+on $\Omega$ with $h(z_0)=0$; by (H2) and linearity of $L$, $h$ is
+differentiable at every $z\in\Omega-\{z_0\}$, with
+\begin{equation}\tag{1}
+  \mathrm{d}h(z)=\mathrm{d}g(z)-L\qquad(z\in\Omega-\{z_0\}).
+\end{equation}
+Since $\Omega$ is open and $z_0\in\Omega$, fix $r>0$ with
+$B=\{z:|z-z_0|<r\}\subseteq\Omega$.
+
+\emph{Step 1: the radial mean value estimate.}  We claim: if $0<\varepsilon$,
+$0<\delta\le r$, and
+\begin{equation}\tag{2}
+  \bigl\|\mathrm{d}g(w)-L\bigr\|\le\varepsilon\qquad
+  \text{for every }w\text{ with }0<|w-z_0|<\delta ,
+\end{equation}
+then
+\begin{equation}\tag{3}
+  \bigl\|h(z)\bigr\|\le\varepsilon\,|z-z_0|\qquad\text{for }|z-z_0|<\delta .
+\end{equation}
+
+Let $z$ with $|z-z_0|<\delta$.  If $z=z_0$ then $h(z)=0$ and (3) is clear, so
+assume $z\neq z_0$.  For $t\in(0,1]$ put $z_t=z_0+t(z-z_0)$, and let
+$S_t=[z_t,z]$ be the closed segment joining $z_t$ to $z$.  Every point of
+$S_t$ has the form $z_0+s(z-z_0)$ with $s\in[t,1]$, so its distance to $z_0$ is
+$s|z-z_0|\in(0,\delta)$; hence $S_t\subseteq B-\{z_0\}\subseteq\Omega-\{z_0\}$
+and, by (2) and (1), $\|\mathrm{d}h\|\le\varepsilon$ at every point of $S_t$.
+The segment $S_t$ is convex and $h$ is differentiable at each of its points, so
+the mean value inequality on a convex set --- if $\|\mathrm{d}h\|\le C$ on a
+convex set $S$ then $\|h(y)-h(x)\|\le C|y-x|$ for $x,y\in S$ --- gives
+\[
+  \bigl\|h(z)-h(z_t)\bigr\|\le\varepsilon\,|z-z_t|
+  =\varepsilon(1-t)|z-z_0|\le\varepsilon\,|z-z_0| .
+\]
+Now let $t\to0^{+}$.  Then $z_t\to z_0$, and $h$ is continuous at $z_0$ with
+$h(z_0)=0$, so $h(z_t)\to0$; the left-hand side therefore tends to
+$\|h(z)\|$, and (3) follows.
+
+\emph{Step 2: $g$ is differentiable at $z_0$ with derivative $L$.}  Let
+$\varepsilon>0$.  By (H3) there is $\delta_0>0$ such that (2) holds with
+$\delta=\min\{\delta_0,r\}$: indeed (H3) says precisely that for every
+$\varepsilon>0$ the set of $w\in\Omega-\{z_0\}$ with
+$\|\mathrm{d}g(w)-L\|\le\varepsilon$ contains the intersection of
+$\Omega-\{z_0\}$ with a punctured ball about $z_0$, and shrinking that ball
+into $B\subseteq\Omega$ makes every $w$ with $0<|w-z_0|<\delta$ lie in
+$\Omega-\{z_0\}$.  By Step 1,
+\[
+  \bigl\|g(z)-g(z_0)-L(z-z_0)\bigr\|\le\varepsilon\,|z-z_0|
+  \qquad\text{for }|z-z_0|<\delta .
+\]
+As $\varepsilon>0$ was arbitrary, $g(z)-g(z_0)-L(z-z_0)=o(|z-z_0|)$ as
+$z\to z_0$, which is exactly the statement that $g$ is differentiable at $z_0$
+with $\mathrm{d}g(z_0)=L$.
+
+\emph{Step 3: continuity of the derivative at $z_0$ within $\Omega$.}  By
+Step 2, $\mathrm{d}g(z_0)=L$.  Let $\varepsilon>0$ and take $\delta$ as in
+Step 2.  For $z\in\Omega$ with $|z-z_0|<\delta$ there are two cases: if
+$z\neq z_0$ then $\|\mathrm{d}g(z)-L\|\le\varepsilon$ by (2); and if $z=z_0$
+then $\mathrm{d}g(z)-L=L-L=0$.  In both cases
+$\|\mathrm{d}g(z)-\mathrm{d}g(z_0)\|\le\varepsilon$.  Hence
+$\mathrm{d}g(z)\to\mathrm{d}g(z_0)$ as $z\to z_0$ within $\Omega$, i.e.
+$z\mapsto\mathrm{d}g(z)$ is continuous at $z_0$ within $\Omega$.
+\end{proof}

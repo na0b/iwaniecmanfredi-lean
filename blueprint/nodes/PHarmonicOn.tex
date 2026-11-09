@@ -1,0 +1,40 @@
+\begin{definition}
+Let $\Omega\subset\mathbb{C}=\mathbb{R}^2$ be open and let $1<p<\infty$.  A
+real-valued function $u\colon\mathbb{C}\to\mathbb{R}$ is \emph{$p$-harmonic on
+$\Omega$} if there is a function $g\colon\mathbb{C}\to\mathbb{C}$ such that
+\begin{enumerate}
+\item[(a)] $u$ and $g$ both lie in $L^p_{\mathrm{loc}}(\Omega)$ in the sense
+of \noderef{MemLpLocOn};
+\item[(b)] $\operatorname{Re}g$ is the distributional
+$\partial/\partial x$-derivative of $u$ on $\Omega$ and $\operatorname{Im}g$
+is its distributional $\partial/\partial y$-derivative, both in the sense of
+\noderef{IsWeakPartialOn}; and
+\item[(c)] for every real-valued test function $\phi$ for $\Omega$ in the
+sense of \noderef{IsTestFn},
+\[
+  \int_{\mathbb{C}}|\nabla u|^{p-2}\,\langle\nabla u,\nabla\phi\rangle\,d\sigma=0 .
+\]
+\end{enumerate}
+Conditions (a) and (b) say precisely that $u$ belongs to the Sobolev class
+$W^{1,p}_{\mathrm{loc}}(\Omega)$ with weak gradient $\nabla u=(u_x,u_y)$
+recorded as the single complex-valued function $g=u_x+iu_y$; under this
+encoding $|\nabla u|=|g|$ and, writing $\nabla\phi=\phi_x+i\phi_y$ in the same
+way, $\langle\nabla u,\nabla\phi\rangle=\operatorname{Re}\bigl(g\,
+\overline{\nabla\phi}\bigr)=u_x\phi_x+u_y\phi_y$, so that the integrand of (c)
+is $|g|^{p-2}\operatorname{Re}(g\,\overline{\nabla\phi})$.  Both integrands
+vanish off the compact support of $\phi$, so the integral is effectively taken
+over a compact subset of $\Omega$, as in Section~1.
+
+This is the definition of Section~1 of the paper: ``a real-valued function $u$
+in the Sobolev class $W^{1,p}_{\mathrm{loc}}(\Omega)$, $1<p<\infty$, is said to
+be $p$-harmonic if it is a weak solution of the $p$-harmonic equation
+$\operatorname{div}(|\nabla u|^{p-2}\nabla u)=0$, or equivalently \dots\
+$\int_\Omega|\nabla u|^{p-2}\langle\nabla u(x),\nabla\phi(x)\rangle\,dx=0$''.
+The paper offers test functions $\phi\in W^{1,p}(\Omega)$ with compact support
+in $\Omega$; we use the smooth compactly supported test functions, which is
+the primary reading of ``weak solution''.  Where $\nabla u$ vanishes the factor
+$|\nabla u|^{p-2}$ is read as $0$ for $p\neq2$, which is the standard
+convention and the one under which the integrand
+$|\nabla u|^{p-2}\langle\nabla u,\nabla\phi\rangle$, bounded in modulus by
+$|\nabla u|^{p-1}|\nabla\phi|$, extends continuously by $0$.
+\end{definition}

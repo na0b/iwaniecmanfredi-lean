@@ -1,0 +1,32 @@
+\begin{definition}
+Let $\Omega\subset\mathbb{C}$ be open, let $k\ge0$ be an integer and let
+$0<\alpha\le1$.  A function $u\colon\mathbb{C}\to\mathbb{C}$ belongs to
+$C^{k+\alpha}_{\mathrm{loc}}(\Omega)$ if one of the following holds.
+\begin{enumerate}
+\item[(a)] $\alpha=1$ and $u$ is of class $C^{k+1}$ on $\Omega$.
+\item[(b)] $\alpha<1$, $u$ is of class $C^k$ on $\Omega$, and
+\[
+  \bigl\|D^ku(x)-D^ku(y)\bigr\|=o\bigl(|x-y|^\alpha\bigr)
+\]
+uniformly on compact subsets of $\Omega\times\Omega$; explicitly, for every
+compact $F\subset\Omega$ and every $\delta>0$ there is $\rho>0$ such that
+\[
+  \bigl\|D^ku(x)-D^ku(y)\bigr\|\le\delta\,|x-y|^\alpha
+  \qquad\text{whenever }x,y\in F\text{ and }|x-y|<\rho .
+\]
+\end{enumerate}
+Here $D^ku(x)$ and $\|\cdot\|$ are as in \noderef{MemHolderLocOn}.
+
+This is the space $C^{k+\alpha}_{\mathrm{loc}}(\Omega)$ of Section~1 of the
+paper.  Section~1 introduces it as the completion of $C^\infty(\Omega)$ in the
+topology of $C^{k,\alpha}_{\mathrm{loc}}(\Omega)$ and then states exactly the
+two descriptions used above: ``for $\alpha=1$ the space
+$C^{k+\alpha}_{\mathrm{loc}}(\Omega)$ coincides with $C^{k+1}(\Omega)$ whereas
+functions in $C^{k+\alpha}_{\mathrm{loc}}(\Omega)$ with $0<\alpha<1$ are
+characterized by the condition $\sum_{|\nu|=k}|D^\nu u(x)-D^\nu
+u(y)|=o(|x-y|^\alpha)$ uniformly on compact subsets of $\Omega\times\Omega$''.
+We take these two descriptions as the definition.  As in
+\noderef{MemHolderLocOn}, replacing the sum $\sum_{|\nu|=k}$ by the operator
+norm of the $k$-th total derivative changes the two sides only by factors
+depending on $k$ alone, which leaves a little-o condition unchanged.
+\end{definition}

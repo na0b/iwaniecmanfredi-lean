@@ -1,0 +1,181 @@
+\begin{helper}
+Let $n,k\ge0$ be integers, let $p$ be real, let $A\colon\mathbb{Z}\to\mathbb{C}$
+and let $\xi\in\mathbb{C}$ with $\xi\ne0$.  Write $A_k=A(k)$,
+$\lambda_k=\lambda_k(n,p)$ for the exponent of \noderef{LambdaCoef},
+$\epsilon_k=\epsilon_k(n,p)$ for the coefficient of \noderef{EpsCoef},
+\[
+  s=\lambda_k+n-k ,
+\]
+and let $T_k=T_k(n,p,A,\cdot)$ be the $k$-th summand of the series (19) as in
+\noderef{Thm2Term}, so that
+\[
+  T_k(z)=\Bigl(A_kz^{k}+\epsilon_k\overline{A_k}\,\bar z^{\,k}\Bigr)\,|z|^{s}\,z^{-n}.
+\]
+Then, with $\partial/\partial\xi$ as in \noderef{DZ} and
+$\partial/\partial\bar\xi$ as in \noderef{DZbar},
+\[
+  \frac{\partial T_k}{\partial\xi}(\xi)
+  =\frac{|\xi|^{s}\,\xi^{-n}}{\xi}
+    \Bigl(k\,A_k\xi^{k}
+      +\Bigl(\frac{s}{2}-n\Bigr)
+        \bigl(A_k\xi^{k}+\epsilon_k\overline{A_k}\,\bar\xi^{\,k}\bigr)\Bigr)
+\]
+and
+\[
+  \frac{\partial T_k}{\partial\bar\xi}(\xi)
+  =\frac{|\xi|^{s}\,\xi^{-n}}{\bar\xi}
+    \Bigl(k\,\epsilon_k\overline{A_k}\,\bar\xi^{\,k}
+      +\frac{s}{2}
+        \bigl(A_k\xi^{k}+\epsilon_k\overline{A_k}\,\bar\xi^{\,k}\bigr)\Bigr).
+\]
+
+These are the Cartesian form of the paper's polar transformation formulas
+$H_{\bar\xi}=\tfrac12\bigl(H_r+\tfrac{i}{r}H_\theta\bigr)e^{i\theta}$ and
+$H_\xi=\tfrac12\bigl(H_r-\tfrac{i}{r}H_\theta\bigr)e^{-i\theta}$ of
+\texttt{paper.tex:234-237}, specialised to a single summand of (19); every
+later use of equation (18) on one term reads them.
+
+No constraint whatever is imposed on $n$, $p$ or $k$: the identity is a formal
+differentiation of a product of integer and real powers, valid off the origin
+for every exponent.  In particular neither $n\ge1$, nor $p>1$, nor $k\ge n$ is
+needed.  That matters, because one consumer of this identity quantifies over
+every integer $k\ge0$ with no lower bound at all.
+\end{helper}
+\begin{proof}
+Throughout, $\xi\ne0$ is fixed, $s=\lambda_k+n-k$ is a fixed real number, and
+$|z|^{s}$ means $\exp(s\log|z|)$ for $z\ne0$, read as a complex-valued
+function of $z$.  Put
+\[
+  F(z)=A_kz^{k}+\epsilon_k\overline{A_k}\,\bar z^{\,k},\qquad
+  G(z)=|z|^{s},\qquad
+  H(z)=z^{-n},
+\]
+so that $T_k=F\cdot G\cdot H$ pointwise, by \noderef{Thm2Term}.
+
+\emph{Step 0: two derivatives of the elementary functions.}  First, for the
+identity function $\mathrm{id}(z)=z$ one has $D\,\mathrm{id}(z)=\mathrm{id}$,
+so $D\,\mathrm{id}(z)[1]=1$ and $D\,\mathrm{id}(z)[i]=i$, whence by
+\noderef{DZ} and \noderef{DZbar}
+\begin{equation}\tag{1}
+  \frac{\partial\,\mathrm{id}}{\partial\xi}=\frac12(1-i\cdot i)=1,
+  \qquad
+  \frac{\partial\,\mathrm{id}}{\partial\bar\xi}=\frac12(1+i\cdot i)=0 .
+\end{equation}
+Second, both operators are additive and commute with multiplication by a
+complex constant on functions real-differentiable at the point in question,
+because each is a fixed complex-linear expression in the values
+$Df(\xi)[1]$ and $Df(\xi)[i]$ of the real Fr\'echet derivative, and
+$D(f+g)(\xi)=Df(\xi)+Dg(\xi)$, $D(cf)(\xi)=c\,Df(\xi)$.
+
+\emph{Step 1: smoothness of the three factors at $\xi$.}  The map
+$z\mapsto\bar z$ is $\mathbb{R}$-linear, hence $C^\infty$ on $\mathbb{C}$; so
+$z\mapsto z^{k}$ and $z\mapsto\bar z^{\,k}$ are $C^\infty$ on $\mathbb{C}$,
+being integer powers of $C^\infty$ maps with $k\ge0$, and therefore $F$ is
+$C^\infty$ on all of $\mathbb{C}$, in particular real-differentiable at $\xi$.
+$G$ is $C^\infty$ at $\xi$ by part (a) of \noderef{WirtingerModulusPowerRule},
+since $\xi\ne0$.  And $H$ is $C^\infty$ at $\xi$: on the open set
+$\Omega=\mathbb{C}-\{0\}$ the function $z\mapsto z^{n}$ is $C^\infty$ and
+nonvanishing, so its reciprocal $z\mapsto z^{-n}$ is $C^\infty$ there, and
+$\xi\in\Omega$.
+
+\emph{Step 2: the derivatives of $F$.}  Since $\overline{\,\cdot\,}$ is a ring
+homomorphism, $\bar z^{\,k}=\overline{z^{k}}$.  Applying
+\noderef{WirtingerPowerRule} with $\Omega=\mathbb{C}-\{0\}$, $g=\mathrm{id}$
+and $a=k$, and then (1),
+\begin{equation}\tag{2}
+  \frac{\partial(z^{k})}{\partial\xi}(\xi)=k\,\xi^{k-1},
+  \qquad
+  \frac{\partial(z^{k})}{\partial\bar\xi}(\xi)=k\,\xi^{k-1}\cdot0=0 .
+\end{equation}
+Hence, by \noderef{WirtingerConjRule} applied to $f(z)=z^{k}$,
+\begin{equation}\tag{3}
+  \frac{\partial(\bar z^{\,k})}{\partial\xi}(\xi)
+  =\overline{\frac{\partial(z^{k})}{\partial\bar\xi}(\xi)}=\bar0=0,
+  \qquad
+  \frac{\partial(\bar z^{\,k})}{\partial\bar\xi}(\xi)
+  =\overline{\frac{\partial(z^{k})}{\partial\xi}(\xi)}
+  =\overline{k\,\xi^{k-1}}=k\,\bar\xi^{\,k-1} .
+\end{equation}
+By the additivity and constant-multiplicativity of Step 0, together with (2)
+and (3),
+\begin{equation}\tag{4}
+  \frac{\partial F}{\partial\xi}(\xi)=k\,A_k\,\xi^{k-1},
+  \qquad
+  \frac{\partial F}{\partial\bar\xi}(\xi)
+  =k\,\epsilon_k\overline{A_k}\,\bar\xi^{\,k-1} .
+\end{equation}
+
+\emph{Step 3: the derivatives of $G$ and $H$.}  Part (b) of
+\noderef{WirtingerModulusPowerRule} with $\mu=s$ gives
+\begin{equation}\tag{5}
+  \frac{\partial G}{\partial\xi}(\xi)=\frac{s}{2}\cdot\frac{|\xi|^{s}}{\xi},
+  \qquad
+  \frac{\partial G}{\partial\bar\xi}(\xi)
+    =\frac{s}{2}\cdot\frac{|\xi|^{s}}{\bar\xi} .
+\end{equation}
+\noderef{WirtingerPowerRule} with $\Omega=\mathbb{C}-\{0\}$, $g=\mathrm{id}$
+and $a=-n$, together with (1), gives
+\begin{equation}\tag{6}
+  \frac{\partial H}{\partial\xi}(\xi)=-n\,\xi^{-n-1},
+  \qquad
+  \frac{\partial H}{\partial\bar\xi}(\xi)=-n\,\xi^{-n-1}\cdot0=0 .
+\end{equation}
+
+\emph{Step 4: the product rule on the triple.}  All three factors are
+real-differentiable at $\xi$ by Step 1, so two applications of
+\noderef{WirtingerProductRule} --- first to $(FG)\cdot H$, then to $F\cdot G$
+--- give, for each of the two operators $\partial\in\{\partial/\partial\xi,
+\partial/\partial\bar\xi\}$,
+\begin{equation}\tag{7}
+  \partial(FGH)(\xi)
+  =\bigl(\partial F(\xi)\,G(\xi)+F(\xi)\,\partial G(\xi)\bigr)H(\xi)
+   +F(\xi)\,G(\xi)\,\partial H(\xi).
+\end{equation}
+(The product $FG$ is real-differentiable at $\xi$, being a product of two such
+functions, so the outer application is legitimate.)
+
+\emph{Step 5: collecting, for $\partial/\partial\xi$.}  Substituting (4), (5)
+and (6) into (7),
+\[
+  \frac{\partial T_k}{\partial\xi}(\xi)
+  =\Bigl(k\,A_k\xi^{k-1}\,|\xi|^{s}
+     +F(\xi)\,\frac{s}{2}\frac{|\xi|^{s}}{\xi}\Bigr)\xi^{-n}
+   +F(\xi)\,|\xi|^{s}\,\bigl(-n\,\xi^{-n-1}\bigr).
+\]
+Since $\xi\ne0$ we may write $\xi^{k-1}=\xi^{k}/\xi$ and
+$\xi^{-n-1}=\xi^{-n}/\xi$, so every term carries the common factor
+$|\xi|^{s}\xi^{-n}/\xi$, and factoring it out leaves
+\[
+  \frac{\partial T_k}{\partial\xi}(\xi)
+  =\frac{|\xi|^{s}\xi^{-n}}{\xi}
+    \Bigl(k\,A_k\xi^{k}+\frac{s}{2}F(\xi)-n\,F(\xi)\Bigr)
+  =\frac{|\xi|^{s}\xi^{-n}}{\xi}
+    \Bigl(k\,A_k\xi^{k}+\Bigl(\frac{s}{2}-n\Bigr)F(\xi)\Bigr),
+\]
+which, on substituting the definition of $F$, is the first asserted identity.
+
+\emph{Step 6: collecting, for $\partial/\partial\bar\xi$.}  Substituting the
+second halves of (4), (5) and (6) into (7), the last summand of (7) vanishes
+because $\partial H/\partial\bar\xi(\xi)=0$, and
+\[
+  \frac{\partial T_k}{\partial\bar\xi}(\xi)
+  =\Bigl(k\,\epsilon_k\overline{A_k}\,\bar\xi^{\,k-1}\,|\xi|^{s}
+     +F(\xi)\,\frac{s}{2}\frac{|\xi|^{s}}{\bar\xi}\Bigr)\xi^{-n}.
+\]
+Since $\xi\ne0$ we also have $\bar\xi\ne0$, so
+$\bar\xi^{\,k-1}=\bar\xi^{\,k}/\bar\xi$, and both terms carry the common
+factor $|\xi|^{s}\xi^{-n}/\bar\xi$.  Factoring it out leaves
+\[
+  \frac{\partial T_k}{\partial\bar\xi}(\xi)
+  =\frac{|\xi|^{s}\xi^{-n}}{\bar\xi}
+    \Bigl(k\,\epsilon_k\overline{A_k}\,\bar\xi^{\,k}
+      +\frac{s}{2}F(\xi)\Bigr),
+\]
+which, on substituting the definition of $F$, is the second asserted identity.
+
+No step used any inequality between $n$, $k$ or $p$: the only hypothesis
+consumed is $\xi\ne0$, needed for the smoothness of $G$ and $H$ at $\xi$, for
+the three divisions by $\xi$ and $\bar\xi$, and for the negative powers
+$\xi^{-n}$ to be the genuine reciprocals rather than the value $0$ assigned by
+convention at the origin.
+\end{proof}

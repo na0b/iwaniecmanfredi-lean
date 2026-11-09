@@ -1,0 +1,193 @@
+\begin{theorem}
+Let $n\ge1$ be an integer and let $1<p<\infty$.  Write
+$\mathbb{B}=\{\xi:|\xi|<1\}$ and $d\sigma$ for plane Lebesgue measure.  Then
+there is a constant $C=C(n,p)>0$ with the following property.
+
+Let $H\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in the sense of
+  \noderef{MemWLocOn}, $H$ continuous on $\mathbb{B}$, and $H$ differentiable
+  at almost every point of $\mathbb{B}$;
+\item[(H2)] $H$ solves equation (18) on $\mathbb{B}$ in the sense of
+  \noderef{SolvesEq18};
+\item[(H3)] $|H_\xi|^2+|H_{\bar\xi}|^2$ integrable on $\mathbb{B}$, where
+  $H_\xi$, $H_{\bar\xi}$ are the Wirtinger derivatives of \noderef{DZ} and
+  \noderef{DZbar}.
+\end{enumerate}
+Then there are complex numbers $A_k$, $k\in\mathbb{Z}$, such that, with
+$\lambda_k=\lambda_{|k|}(n,p)$ the exponent of \noderef{LambdaCoef},
+$\epsilon_k=\epsilon_k(n,p)$ the coefficient of \noderef{EpsCoef}, $a_k$ the
+Fourier coefficient of \noderef{FourierCoefOfH} and $T_k$ the $k$-th summand of
+(19) in the sense of \noderef{Thm2Term}:
+\begin{enumerate}
+\item[(39)] $A_{-k}=\epsilon_k\overline{A_k}$ for every integer $k\ge n$;
+\item[(b)] $a_k(r)=A_k\,r^{\lambda_k}$ for every $k\in\mathbb{Z}$ with
+  $|k|\ge n$ and every $r\in(0,1)$;
+\item[(22)] the series $\sum_{m\ge0}(n+1+m)|A_{n+1+m}|^2$ converges, and
+\[
+  \sum_{m=0}^{\infty}(n+1+m)\,|A_{n+1+m}|^2
+  \le C\iint_{\mathbb{B}}\bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma ,
+\]
+that is $\sum_{k=n+1}^{\infty}k|A_k|^2<\infty$ and
+$\sum_{k=n+1}^{\infty}k|A_k|^2\le C\iint_{\mathbb{B}}(|H_\xi|^2+|H_{\bar\xi}|^2)d\sigma$;
+\item[(19)] the series (19) converges to $H$ in $W^{1,2}(\mathbb{B})$:
+\[
+  \iint_{\mathbb{B}}\Bigl|H-\sum_{k=n}^{n+N}T_k\Bigr|^2d\sigma
+  +\iint_{\mathbb{B}}\Bigl|H_\xi-\Bigl(\sum_{k=n}^{n+N}T_k\Bigr)_\xi\Bigr|^2d\sigma
+  +\iint_{\mathbb{B}}\Bigl|H_{\bar\xi}
+      -\Bigl(\sum_{k=n}^{n+N}T_k\Bigr)_{\bar\xi}\Bigr|^2d\sigma
+  \longrightarrow0
+\]
+as $N\to\infty$.
+\end{enumerate}
+
+This is the forward half of Theorem 2 of the paper (paper.tex:187--205).  Its
+hypothesis surface is now the printed one, $H\in W^{1,2}(\mathbb{B})$ solving
+(18), together with two clauses that cost nothing: continuity of $H$ on
+$\mathbb{B}$, which the inverse of a quasiconformal homeomorphism has because
+it is a homeomorphism, and differentiability almost everywhere, which item (C2)
+of the paper's note supplies for that same inverse and which is needed because
+(18) and the polar derivatives are written with the Fr\'echet derivative.  In
+particular the $C^\infty$ half of the normalisation licensed at paper.tex:183,
+``$H\in C^\infty(\mathbb{B}-\{0\})$'', is no longer assumed: it is a
+\emph{consequence} of the expansion: it is produced downstream by term-by-term
+differentiation of (19), exactly as at paper.tex:387--388, and so cannot be
+assumed here.  In accordance with the statement of
+Theorem 2 there is no quasiregularity hypothesis and no restriction $p\neq2$:
+the paper's exclusion of $p=2$ at paper.tex:230 comes \emph{after} the Remark
+that computes the case $p=2$ explicitly, so it governs Sections 3--6 and not
+the theorem.
+\end{theorem}
+\begin{proof}
+\emph{Step 0: the constant.}  Put
+\[
+  K=\max\Bigl\{p-1,\ \frac1{p-1}\Bigr\} .
+\]
+Since $p>1$ we have $p-1>0$; if $p\ge2$ then $K\ge p-1\ge1$, and if $p<2$ then
+$0<p-1<1$ so $K\ge1/(p-1)>1$.  Thus $K\ge1$, and
+\noderef{EnergyIdentity} applies with this $n$, $p$ and $K$; let $C>0$ be the
+constant it provides.  It depends only on $n$, $p$ and $K$, and $K$ depends only
+on $p$, so $C=C(n,p)$.  Now fix $H$ satisfying (H1)--(H3).
+
+\emph{Step 1: $H$ is $K$-quasiregular on $\mathbb{B}$.}  By
+\noderef{Eq18ImpliesQuasiregular}, applied with $\Omega=\mathbb{B}$, using
+$H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ from (H1) and (H2),
+\begin{equation}\tag{1}
+  H\ \text{is}\ K\text{-quasiregular on }\mathbb{B}
+  \ \text{in the sense of \noderef{QuasiregularOn}} .
+\end{equation}
+
+\emph{Step 2: the coefficients.}  Let $j\in\mathbb{Z}$.  By part (a) of
+\noderef{FourierCoefRegularity}, applied with the three clauses of (H1), the
+function $a_j$ is continuous on $[0,1)$; and by the third clause of
+\noderef{FourierCoefOde}, applied with $n\ge1$, $1<p<\infty$, (H1) and (H2),
+it is $C^\infty$ on $(0,1)$.  By the second clause of \noderef{FourierCoefOde},
+applied with the same data, $a_j$ satisfies
+\[
+  r\bigl(r\,a_j'\bigr)'(r)+pn\,r\,a_j'(r)+(n^2-j^2)(p-1)\,a_j(r)=0
+  \qquad\text{for every }r\in(0,1),
+\]
+which is the Euler equation (35).  These are exactly the hypotheses of
+\noderef{FourierCoefForm36} at the index $j$, which imposes no restriction on
+$p$.  Its two cases give:
+\begin{equation}\tag{2}
+  |j|<n\ \Longrightarrow\ a_j(r)=0\ \text{ for every }r\in[0,1),
+\end{equation}
+\begin{equation}\tag{3}
+  |j|\ge n\ \Longrightarrow\ \exists\,A_j\in\mathbb{C}:\
+    a_j(r)=A_j\,r^{\lambda_{|j|}}\ \text{ for every }r\in[0,1) .
+\end{equation}
+Choose, for each $j$ with $|j|\ge n$, such a constant $A_j$, and put $A_j=0$
+for $|j|<n$.  This defines $A\colon\mathbb{Z}\to\mathbb{C}$, and since
+$(0,1)\subseteq[0,1)$ and $\lambda_j=\lambda_{|j|}$, (3) is exactly assertion
+(b).
+
+\emph{Step 3: proof of (39).}  The hypotheses of
+\noderef{CoefCompatAndSeries} are met: $n\ge1$, $1<p<\infty$, $H$ continuous on
+$\mathbb{B}$, in $W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ and differentiable at
+almost every point of $\mathbb{B}$, all three by (H1), $H$ a solution of (18)
+by (H2), and the
+coefficient hypothesis is (b) of Step 2.  Its second and
+third conclusions give
+\begin{equation}\tag{4}
+  A_{-n}=0,\qquad A_{-k}=\epsilon_k\overline{A_k}\quad\text{for every integer }k>n .
+\end{equation}
+It remains to treat $k=n$.  By part (23) of \noderef{LambdaEpsEstimates},
+$\epsilon_n(n,p)=0$, so $\epsilon_n\overline{A_n}=0=A_{-n}$ by the first part of
+(4).  Hence
+\begin{equation}\tag{5}
+  A_{-k}=\epsilon_k\overline{A_k}\qquad\text{for every integer }k\ge n,
+\end{equation}
+which is (39).
+
+\emph{Step 4: proof of (22).}  Apply \noderef{EnergyIdentity} with this $H$ and
+this $A$.  Its hypotheses hold: (H0) there is our (H2); (H1) there is the
+continuity and the almost-everywhere differentiability of our (H1); its quasiregularity hypothesis is (1);
+its integrability hypothesis is our (H3); its hypothesis (H4) is assertion (b)
+of Step 2; and its hypothesis (H5), namely $A_{-k}=\epsilon_k\overline{A_k}$
+for $k>n$, is contained in (5).  Its clause (22a) is precisely the pair of assertions
+\begin{equation}\tag{6}
+  \sum_{m=0}^{\infty}(n+1+m)|A_{n+1+m}|^2\ \text{converges},\qquad
+  \sum_{m=0}^{\infty}(n+1+m)|A_{n+1+m}|^2
+  \le C\iint_{\mathbb{B}}\bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma ,
+\end{equation}
+which is (22); the reindexing $k=n+1+m$ turns the left side into
+$\sum_{k\ge n+1}k|A_k|^2$.
+
+\emph{Step 5: summability of $\sum_{k\ge n}k|A_k|^2$.}  By the first part of
+(6) the series $\sum_{m\ge0}(n+1+m)|A_{n+1+m}|^2$ converges.  Adding the single
+further term $n|A_n|^2$,
+\begin{equation}\tag{7}
+  \sum_{m=0}^{\infty}(n+m)|A_{n+m}|^2
+  =n|A_n|^2+\sum_{m=0}^{\infty}(n+1+m)|A_{n+1+m}|^2<\infty ,
+\end{equation}
+so the series of nonnegative terms $\sum_{m}(n+m)|A_{n+m}|^2$ converges, which
+is hypothesis (S) of \noderef{Thm2SeriesW12Convergence}.
+
+\emph{Step 6: the series and its sum $H'$.}  By (5) and (7) the two hypotheses
+(C) and (S) of \noderef{Thm2SeriesW12Convergence} hold for this $A$.  That node
+therefore provides a function $H'$ which is continuous on $\mathbb{B}$ and
+$C^\infty$ on $\mathbb{B}-\{0\}$, whose Fourier coefficients satisfy
+\begin{equation}\tag{8}
+  a_j(H')(r)=A_j\,r^{\lambda_j}\ \ (|j|\ge n),\qquad
+  a_j(H')(r)=0\ \ (|j|<n),\qquad r\in(0,1),
+\end{equation}
+and for which the series (19) converges to $H'$ in $W^{1,2}(\mathbb{B})$ in the
+sense of its clause (g).
+
+\emph{Step 7: $H=H'$ on $\mathbb{B}$.}  Fix $r\in(0,1)$ and consider the
+$2\pi$-periodic continuous function
+\[
+  g_r(\theta)=H\bigl(re^{i\theta}\bigr)-H'\bigl(re^{i\theta}\bigr),
+\]
+continuous because both $H$ and $H'$ are continuous on $\mathbb{B}$ and
+$\theta\mapsto re^{i\theta}$ is continuous with values in $\mathbb{B}$.  By
+\noderef{FourierCoefOfH}, the $j$-th Fourier coefficient of $g_r$ in the
+relevant normalisation is $a_j(H)(r)-a_j(H')(r)$ for every $j\in\mathbb{Z}$.
+For $|j|\ge n$ this is $A_jr^{\lambda_j}-A_jr^{\lambda_j}=0$ by Step 2 (b) and
+(8); for $|j|<n$ it is $0-0=0$ by (2) and (8).  So all Fourier coefficients of
+the continuous $2\pi$-periodic function $g_r$ vanish, and therefore
+$g_r\equiv0$, by the uniqueness theorem for Fourier coefficients of continuous
+periodic functions.  As $r\in(0,1)$ was arbitrary and every $\xi$ with
+$0<|\xi|<1$ is of the form $re^{i\theta}$ with $r=|\xi|\in(0,1)$, we get
+$H=H'$ on $\mathbb{B}-\{0\}$.  At the origin, both $H$ and $H'$ are continuous
+on $\mathbb{B}$, so
+\[
+  H(0)=\lim_{\xi\to0}H(\xi)=\lim_{\xi\to0}H'(\xi)=H'(0),
+\]
+the limits being along $\mathbb{B}-\{0\}$.  Hence $H=H'$ on $\mathbb{B}$.
+
+\emph{Step 8: proof of (19).}  Since $H=H'$ on the open set $\mathbb{B}$, for
+every $\xi\in\mathbb{B}$ the two functions agree on a neighbourhood of $\xi$,
+so their real Fréchet derivatives agree there and hence, by \noderef{DZ} and
+\noderef{DZbar}, $H_\xi=H'_\xi$ and $H_{\bar\xi}=H'_{\bar\xi}$ on
+$\mathbb{B}-\{0\}$, where both are differentiable.  Therefore the three
+integrands of clause (g) of Step 6 coincide with those of the assertion (19)
+almost everywhere on $\mathbb{B}$ --- everywhere except possibly at the single
+point $0$, which is a Lebesgue null set --- so the three integrals are equal
+for every $N$, and the convergence to $0$ asserted in (19) is clause (g).
+
+Steps 3, 2, 4 and 8 give (39), (b), (22) --- both its convergence assertion and
+its inequality --- and (19) respectively, with the
+constant $C$ of Step 0, which completes the proof.
+\end{proof}

@@ -1,0 +1,174 @@
+\begin{lemma}
+Let $1<p<\infty$, let $V\subseteq\mathbb{C}$ be open, let
+$H,f\colon\mathbb{C}\to\mathbb{C}$, and assume
+\begin{enumerate}
+\item[(H1)] $H(V)$ is open;
+\item[(H2)] $H$ is $C^1$ on $V-\{0\}$;
+\item[(H3)] $H$ solves equation (18) at $n=1$ on $V$ in the sense of
+  \noderef{SolvesEq18};
+\item[(H4)] $f(H(\xi))=\xi$ for every $\xi\in V$;
+\item[(H5)] $f$ is differentiable at almost every point of $H(V)$, and
+  $J_f(z)=|f_z(z)|^2-|f_{\bar z}(z)|^2\neq0$ for almost every $z\in H(V)$,
+  with $J_f$ as in \noderef{Jac};
+\item[(H6)] $f\in W^{1,1}_{\mathrm{loc}}(H(V))$ in the sense of
+  \noderef{MemWLocOn}.
+\end{enumerate}
+Then $f$ solves equation (12) on $H(V)$ in the sense of \noderef{SolvesEq12}.
+
+This is the converse of the hodograph step of Section 3, which consumes
+(12) and produces (18), whereas Section 7 of the paper starts from the
+explicit solution (54) of (18) and must conclude that its inverse satisfies
+(12).  The two coefficient brackets match only at $n=1$, which is the only
+case Section 7 uses.
+
+Hypothesis (H6) is what the conclusion needs, and nothing more: by
+\noderef{SolvesEq12}, solving (12) is an identity between the weak Wirtinger
+derivatives of $f$, and membership in $W^{1,1}_{\mathrm{loc}}$ is exactly the
+data those consist of.  For the $f$ of Section 7 it follows from the explicit
+homogeneity of the inverse of (54), and in general from the quoted result
+(C1), which places the complex gradient of a $p$-harmonic function in
+$W^{1,2}_{\mathrm{loc}}\subseteq W^{1,1}_{\mathrm{loc}}$.
+\end{lemma}
+\begin{proof}
+Throughout put
+\[
+  c=\tfrac12-\tfrac1p,\qquad c'=\tfrac1p-\tfrac12=-c .
+\]
+
+\emph{Step 1: the inverse relations on $H(V)$.}  Let $z\in H(V)$.  Then
+$z=H(\xi)$ for some $\xi\in V$, and (H4) gives $f(z)=f(H(\xi))=\xi$.  Hence
+\begin{equation}\tag{1}
+  f(z)\in V\quad\text{and}\quad H(f(z))=H(\xi)=z\qquad(z\in H(V)).
+\end{equation}
+
+\emph{Step 2: (18) holds at \emph{every} point of $V-\{0\}$.}  The set
+$V-\{0\}$ is open, $V$ being open.  By (H2) the map $z\mapsto\mathrm{d}H(z)$ is
+continuous on $V-\{0\}$, hence so are
+$H_\xi=\tfrac12(\mathrm{d}H[1]-i\,\mathrm{d}H[i])$ and
+$H_{\bar\xi}=\tfrac12(\mathrm{d}H[1]+i\,\mathrm{d}H[i])$ of \noderef{DZ} and
+\noderef{DZbar}; and $\xi\mapsto\xi/\bar\xi$ and $\xi\mapsto\bar\xi/\xi$ are
+continuous on $V-\{0\}$.  Therefore both sides of
+\begin{equation}\tag{18}
+  H_{\bar\xi}(\xi)=c\Bigl[\frac{\xi}{\bar\xi}H_\xi(\xi)
+    +\frac{\bar\xi}{\xi}\overline{H_\xi(\xi)}\Bigr]
+\end{equation}
+are continuous functions of $\xi$ on $V-\{0\}$.
+
+By (H3) and \noderef{SolvesEq18} at $n=1$ there are weak Wirtinger
+derivatives $a_H,b_H$ of $H$ on $V$, in the sense of
+\noderef{IsWeakWirtingerOn}, and a Lebesgue null set $Z_0$ with
+\begin{equation}\tag{18$'$}
+  b_H(\xi)=c\Bigl[\frac{\xi}{\bar\xi}a_H(\xi)
+    +\frac{\bar\xi}{\xi}\overline{a_H(\xi)}\Bigr]
+  \qquad(\xi\in V-Z_0,\ \xi\neq0).
+\end{equation}
+We first replace $a_H,b_H$ by the pointwise derivatives.  By
+\noderef{IsWeakWirtingerOn} there are $H_x,H_y$ with
+$H,H_x,H_y\in L^1_{\mathrm{loc}}(V)$, with $H_x$ and $H_y$ the distributional
+$\partial_0$- and $\partial_1$-derivatives of $H$ on $V$, and with
+$a_H=\tfrac12(H_x-iH_y)$, $b_H=\tfrac12(H_x+iH_y)$ at every point.  These are
+hypotheses (H1) and (H2) of \noderef{WeakPartialEqFDerivAE} for the open set
+$V$, the function $H$ and the pair $D_0=H_x$, $D_1=H_y$; its (H3) holds
+because $H$ is $C^1$ on $V-\{0\}$ by (H2), hence differentiable at every point
+of $V$ except possibly the single point $0$, which is a null set.  So there is
+a null set $Z_1$ with $H_x=\partial_0H$ and $H_y=\partial_1H$ on $V-Z_1$,
+where $\partial_j=D^{[j]}$ is the classical partial derivative of
+\noderef{PartialWord}, that is $\partial_0H(\xi)=\mathrm{d}H(\xi)[1]$ and
+$\partial_1H(\xi)=\mathrm{d}H(\xi)[i]$.  Since $H_\xi$ and $H_{\bar\xi}$ are
+by \noderef{DZ} and \noderef{DZbar} the same two combinations
+$\tfrac12\bigl(\mathrm{d}H(\xi)[1]\mp i\,\mathrm{d}H(\xi)[i]\bigr)$,
+\begin{equation}\tag{18$''$}
+  a_H(\xi)=H_\xi(\xi),\qquad b_H(\xi)=H_{\bar\xi}(\xi)\qquad(\xi\in V-Z_1).
+\end{equation}
+Put $Z=Z_0\cup Z_1$, a null set.  Substituting (18$''$) into (18$'$), the
+identity (18) holds at every $\xi\in V-Z$ with $\xi\neq0$.
+Thus (18) holds on $\bigl(V-\{0\}\bigr)-Z$.  A null set has empty interior, so
+its complement meets every nonempty open subset of $V-\{0\}$; that is,
+$\bigl(V-\{0\}\bigr)-Z$ is dense in $V-\{0\}$.  Two continuous functions on an
+open set which agree on a dense subset of it agree on all of it.  Hence (18)
+holds at every $\xi\in V-\{0\}$.
+
+\emph{Step 3: the exceptional null set in the $z$ variable.}  By (H5) there are
+null sets $N_1,N_2$ such that $f$ is differentiable at every $z\in H(V)-N_1$
+and $J_f(z)\neq0$ for every $z\in H(V)-N_2$.  Put $N=N_1\cup N_2$, again null.
+
+\emph{Step 4: the inverse-derivative formulas at a good point.}  Fix
+$z\in H(V)-N$ with $f(z)\neq0$, and put $\xi=f(z)$ and $J=J_f(z)$.  By (1),
+$\xi\in V$, and $\xi\neq0$ by assumption, so $\xi\in V-\{0\}$.  Since
+$V-\{0\}$ is open and $H$ is $C^1$ there by (H2), $H$ is differentiable at
+$\xi=f(z)$.  Also $f$ is differentiable at $z$ and $J\neq0$, by the choice of
+$z$.
+
+Apply \noderef{ChiFirstDerivs} with the open set $U=H(V)$, which is open by
+(H1), with the pair of mutually inverse maps taken in the order $(H,f)$ --- that
+is, $H$ in the role of the map differentiated at the image point and $f$ in the
+role of the map differentiated at $z$ --- with the point $z\in U$, with the
+relation $H(f(\zeta))=\zeta$ for $\zeta\in U$ supplied by (1), with
+differentiability of $f$ at $z$ and of $H$ at $f(z)$, and with $J\neq0$.  Its
+hypotheses constrain the pair only through that relation, so it applies in this
+order, and it gives
+\begin{equation}\tag{2}
+  H_\xi(\xi)=\frac{\overline{f_z(z)}}{J},\qquad
+  H_{\bar\xi}(\xi)=-\frac{f_{\bar z}(z)}{J}.
+\end{equation}
+Since $J$ is real by \noderef{Jac}, conjugating the first identity of (2)
+gives
+\begin{equation}\tag{3}
+  \overline{H_\xi(\xi)}=\frac{f_z(z)}{J}.
+\end{equation}
+
+\emph{Step 5: (12) at $z$.}  By Step 2, (18) holds at $\xi$.  Substituting (2)
+and (3) into (18),
+\[
+  -\frac{f_{\bar z}(z)}{J}
+  =c\Bigl[\frac{\xi}{\bar\xi}\cdot\frac{\overline{f_z(z)}}{J}
+    +\frac{\bar\xi}{\xi}\cdot\frac{f_z(z)}{J}\Bigr].
+\]
+Multiplying by $-J\neq0$ and using $-c=c'$,
+\[
+  f_{\bar z}(z)
+  =c'\Bigl[\frac{\bar\xi}{\xi}f_z(z)
+    +\frac{\xi}{\bar\xi}\overline{f_z(z)}\Bigr].
+\]
+Finally $\xi=f(z)$, so $\bar\xi/\xi=\overline{f(z)}/f(z)$ and
+$\xi/\bar\xi=f(z)/\overline{f(z)}$, and the display reads
+\begin{equation}\tag{12}
+  f_{\bar z}(z)=c'\Bigl[\frac{\overline{f(z)}}{f(z)}f_z(z)
+    +\frac{f(z)}{\overline{f(z)}}\overline{f_z(z)}\Bigr],
+\end{equation}
+which is the pointwise form of equation (12) at $z$.
+
+\emph{Step 6: the weak form of (12), and conclusion.}  Step 5 establishes the
+pointwise identity (12), between $f_{\bar z}$ and $f_z$, at every
+$z\in H(V)-N$ with $f(z)\neq0$.  It remains to read it for the weak Wirtinger
+derivatives of $f$, which is what \noderef{SolvesEq12} asks for.  Write
+$U=H(V)$, open by (H1).
+
+By (H6) and \noderef{MemWLocOn} there is a family $(f_w)$, indexed by the words
+$w$ in $\{0,1\}$, with $f_{()}=f$, with $f_w\in L^1_{\mathrm{loc}}(U)$ in the
+sense of \noderef{MemLpLocOn} for every $w$ with $|w|\le1$, and with $f_{(j)}$
+the distributional $\partial_j$-derivative of $f$ on $U$ in the sense of
+\noderef{IsWeakPartialOn} for $j=0,1$.  Put $f_x=f_{(0)}$, $f_y=f_{(1)}$, and
+define $a=\tfrac12(f_x-if_y)$, $b=\tfrac12(f_x+if_y)$ at every point of
+$\mathbb{C}$.  Then $a$ and $b$ are weak Wirtinger derivatives of $f$ on $U$
+in the sense of \noderef{IsWeakWirtingerOn}: its clause (a) is the local
+integrability of $f,f_x,f_y$, its clause (b) the distributional-derivative
+property of $f_x,f_y$, and its clause (c) the definition of $a,b$.
+
+Those two clauses are also hypotheses (H1) and (H2) of
+\noderef{WeakPartialEqFDerivAE} for the open set $U$, the function $f$ and the
+pair $D_0=f_x$, $D_1=f_y$, and its (H3) is the first half of (H5).  So there is
+a null set $N_3$ with $f_x=\partial_0f$ and $f_y=\partial_1f$ on $U-N_3$,
+whence, exactly as in Step 2 and by \noderef{DZ} and \noderef{DZbar},
+\begin{equation}\tag{4}
+  a(z)=f_z(z),\qquad b(z)=f_{\bar z}(z)\qquad(z\in U-N_3).
+\end{equation}
+Combining (4) with Step 5, for every $z\in U-(N\cup N_3)$ with $f(z)\neq0$,
+\[
+  b(z)=c'\Bigl[\frac{\overline{f(z)}}{f(z)}a(z)
+    +\frac{f(z)}{\overline{f(z)}}\overline{a(z)}\Bigr].
+\]
+The set $N\cup N_3$ is null, so this holds at almost every $z\in U$ with
+$f(z)\neq0$; with the pair $a,b$ exhibited above, this is exactly the
+assertion that $f$ solves (12) on $H(V)$ in the sense of \noderef{SolvesEq12}.
+\end{proof}

@@ -1,0 +1,150 @@
+\begin{helper}
+Write $\mathbb{B}=\{\xi\in\mathbb{C}:|\xi|<1\}$ and let $d\sigma$ denote plane
+Lebesgue measure.  Let $f\colon\mathbb{C}\to\mathbb{C}$ be Lebesgue
+measurable.  Then, as an identity between Lebesgue integrals with values in
+$[0,\infty]$,
+\[
+  \int_{0}^{1}\!r\Bigl(\int_{0}^{2\pi}
+      \bigl|f\bigl(re^{i\theta}\bigr)\bigr|^{2}\,d\theta\Bigr)dr
+  =\int_{\mathbb{B}}|f(\xi)|^{2}\,d\sigma(\xi),
+\]
+the integrals on the left being over $r\in(0,1)$ and $\theta\in(0,2\pi)$.
+
+This is the polar evaluation of the Dirichlet-type energy of a function on the
+unit disc, and it is the first move of the energy computation of Section 4
+(\texttt{paper.tex:353-357}), where the area integral of $|H_r|^{2}$ over
+$\mathbb{B}$ is rewritten as $\int_0^1r\int_0^{2\pi}|H_r|^{2}d\theta\,dr$
+before Parseval is applied to the inner integral.
+
+Two features of the statement are what make it reusable.  First, the integrals
+are the $[0,\infty]$-valued Lebesgue integrals of nonnegative measurable
+functions, so no integrability hypothesis is needed or asserted: the two sides
+are infinite together when the energy is infinite, and measurability of $f$ is
+the only assumption.  That is what lets the identity be applied to each of
+$H$, $H_\xi$ and $H_{\bar\xi}$, and to partial sums of the series (19),
+without first knowing any of them to be square-integrable.  Second, the
+angular window is $(0,2\pi)$, which is the window in which the Fourier
+computation of Section 4 is carried out; the standard polar parametrisation
+uses $(-\pi,\pi)$ instead, and moving between the two is part of the proof.
+\end{helper}
+\begin{proof}
+Throughout, all integrals are Lebesgue integrals of nonnegative measurable
+functions with values in $[0,\infty]$, for which Tonelli's theorem and
+countable additivity hold with no finiteness hypothesis.  Write
+$\mathbb{B}=\{\xi:|\xi|<1\}$.
+
+\emph{Step 0: two elementary facts.}  The set $\mathbb{B}$ is open, being the
+preimage of $(-\infty,1)$ under the continuous map $\xi\mapsto|\xi|$, hence
+measurable.  And for every $r>0$ and every $\theta$,
+\begin{equation}\tag{1}
+  \bigl|re^{i\theta}\bigr|=|r|\cdot\bigl|e^{i\theta}\bigr|=r ,
+\end{equation}
+since $|e^{i\theta}|=1$ and $r>0$.  In particular $re^{i\theta}\in\mathbb{B}$
+if and only if $r<1$, for every $\theta$.
+
+\emph{Step 1: pass to the indicator.}  Define
+$F\colon\mathbb{C}\to[0,\infty]$ by
+\[
+  F(\zeta)=\mathbf1_{\mathbb{B}}(\zeta)\,|f(\zeta)|^{2},
+\]
+i.e. $F=|f|^{2}$ on $\mathbb{B}$ and $F=0$ off $\mathbb{B}$.  Then $F$ is
+measurable: $\zeta\mapsto|f(\zeta)|^{2}$ is measurable because $f$ is and both
+the modulus and squaring are continuous, the passage to $[0,\infty]$ is
+measurable, and $\mathbb{B}$ is measurable by Step 0.  By the defining
+property of the integral of an indicator,
+\begin{equation}\tag{2}
+  \int_{\mathbb{B}}|f(\xi)|^{2}\,d\sigma(\xi)=\int_{\mathbb{C}}F\,d\sigma .
+\end{equation}
+
+\emph{Step 2: the polar change of variables.}  The polar parametrisation
+$(r,\theta)\mapsto re^{i\theta}$ is a diffeomorphism from
+$(0,\infty)\times(-\pi,\pi)$ onto $\mathbb{C}$ minus the closed ray
+$(-\infty,0]$, with Jacobian $r$; the removed ray is a Lebesgue-null subset of
+the plane.  Hence for every measurable $G\colon\mathbb{C}\to[0,\infty]$,
+\begin{equation}\tag{3}
+  \iint_{(0,\infty)\times(-\pi,\pi)}r\,G\bigl(re^{i\theta}\bigr)
+    \,d(r,\theta)
+  =\int_{\mathbb{C}}G\,d\sigma .
+\end{equation}
+Apply (3) to $G(\zeta)=F(-\zeta)$, which is measurable because
+$\zeta\mapsto-\zeta$ is continuous.  The map $\zeta\mapsto-\zeta$ is a
+measure-preserving bijection of $\mathbb{C}$, so
+$\int_{\mathbb{C}}F(-\zeta)\,d\sigma(\zeta)=\int_{\mathbb{C}}F\,d\sigma$, and
+(3) becomes
+\begin{equation}\tag{4}
+  \iint_{(0,\infty)\times(-\pi,\pi)}r\,F\bigl(-re^{i\theta}\bigr)
+    \,d(r,\theta)
+  =\int_{\mathbb{C}}F\,d\sigma .
+\end{equation}
+The detour through $-\zeta$ is deliberate: it is exactly what converts the
+angular window $(-\pi,\pi)$ into $(0,2\pi)$ in Step 4, because
+$-re^{i\theta}=re^{i(\theta+\pi)}$.
+
+\emph{Step 3: Tonelli.}  The function
+$(r,\theta)\mapsto r\,F\bigl(-re^{i\theta}\bigr)$ is measurable on
+$\mathbb{R}\times\mathbb{R}$: it is the product of the measurable
+$(r,\theta)\mapsto r$ with the composition of the measurable $F$ with
+negation and with the continuous map $(r,\theta)\mapsto re^{i\theta}$.  Plane
+Lebesgue measure on $\mathbb{R}^{2}$ is the product of the one-dimensional
+Lebesgue measures, and its restriction to a product of sets is the product of
+the restrictions, so Tonelli's theorem applies and gives
+\begin{equation}\tag{5}
+  \iint_{(0,\infty)\times(-\pi,\pi)}r\,F\bigl(-re^{i\theta}\bigr)d(r,\theta)
+  =\int_{0}^{\infty}\!r\Bigl(\int_{-\pi}^{\pi}
+      F\bigl(-re^{i\theta}\bigr)\,d\theta\Bigr)dr ,
+\end{equation}
+the factor $r$ being a finite constant in the inner integral and so coming out
+of it.
+
+\emph{Step 4: the angular shift.}  Fix $r$.  Since $e^{i\pi}=-1$ we have
+\begin{equation}\tag{6}
+  -re^{i\theta}=re^{i\theta}e^{i\pi}=re^{i(\theta+\pi)}
+  \qquad(\theta\in\mathbb{R}),
+\end{equation}
+and plainly $\theta\in(-\pi,\pi)$ if and only if $\theta+\pi\in(0,2\pi)$.
+Therefore, for every $\theta\in\mathbb{R}$,
+\[
+  \mathbf1_{(-\pi,\pi)}(\theta)\,F\bigl(-re^{i\theta}\bigr)
+  =\mathbf1_{(0,2\pi)}(\theta+\pi)\,F\bigl(re^{i(\theta+\pi)}\bigr):
+\]
+when $\theta\in(-\pi,\pi)$ both sides equal $F(-re^{i\theta})$ by (6), and
+otherwise both indicators vanish and both sides are $0$.  Writing each angular
+integral as the integral over $\mathbb{R}$ of the corresponding indicator and
+using the invariance of Lebesgue measure on $\mathbb{R}$ under the translation
+$\theta\mapsto\theta+\pi$,
+\begin{equation}\tag{7}
+  \int_{-\pi}^{\pi}F\bigl(-re^{i\theta}\bigr)d\theta
+  =\int_{0}^{2\pi}F\bigl(re^{i\theta}\bigr)d\theta .
+\end{equation}
+
+\emph{Step 5: restricting the radius, and removing the indicator.}  Combining
+(4), (5), (7) and (2),
+\begin{equation}\tag{8}
+  \int_{0}^{\infty}\!r\Bigl(\int_{0}^{2\pi}F\bigl(re^{i\theta}\bigr)
+      d\theta\Bigr)dr
+  =\int_{\mathbb{C}}F\,d\sigma
+  =\int_{\mathbb{B}}|f(\xi)|^{2}d\sigma(\xi).
+\end{equation}
+It remains to see that the left-hand side of (8) equals the left-hand side of
+the assertion, i.e. that replacing the radial window $(0,\infty)$ by $(0,1)$
+and $F$ by $|f|^{2}$ changes nothing.  Write both radial integrals as
+integrals over $\mathbb{R}$ of the corresponding indicators and compare the
+two integrands at each $r\in\mathbb{R}$.
+
+If $0<r<1$, then by (1) $|re^{i\theta}|=r<1$, so $re^{i\theta}\in\mathbb{B}$
+and $F\bigl(re^{i\theta}\bigr)=\bigl|f\bigl(re^{i\theta}\bigr)\bigr|^{2}$ for
+every $\theta$; both indicators are $1$ and the two inner integrals coincide
+termwise, so the integrands agree.
+
+If $r\ge1$, the indicator of $(0,1)$ vanishes, so the integrand of the
+asserted left-hand side is $0$ at $r$.  On the other side, by (1)
+$|re^{i\theta}|=r\ge1$, so $re^{i\theta}\notin\mathbb{B}$ and hence
+$F\bigl(re^{i\theta}\bigr)=0$ for every $\theta$; the inner integral is the
+integral of the zero function, which is $0$, and $r\cdot0=0$.  So both
+integrands are $0$ at $r$.
+
+If $r\le0$ both indicators vanish and both integrands are $0$.
+
+Thus the two radial integrands agree at every $r$, so the two radial integrals
+agree, and with (8) this is exactly the asserted identity.
+\end{proof}

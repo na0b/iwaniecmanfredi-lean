@@ -1,0 +1,292 @@
+\begin{lemma}
+Let $1<p<\infty$, let $\Omega\subseteq\mathbb{C}$ be open, let
+$S\subseteq\Omega$, let $f\colon\mathbb{C}\to\mathbb{C}$ and let
+$v\colon\mathbb{C}\to\mathbb{R}$.  Assume
+\begin{enumerate}
+\item[(H1)] $S\cap K$ is finite for every compact $K\subseteq\Omega$;
+\item[(H2)] for $z\in\Omega$, $f(z)=0$ if and only if $z\in S$;
+\item[(H3)] $f$ is continuous on $\Omega$;
+\item[(H4)] $f$ is $C^\infty$ on $\Omega-S$;
+\item[(H5)] $f$ solves equation (12) on $\Omega$ in the sense of
+  \noderef{SolvesEq12};
+\item[(H6)] $v$ is continuous on $\Omega$;
+\item[(H7)] $v$ is $C^\infty$ on $\Omega-S$;
+\item[(H8)] $\partial v/\partial z=f$ on $\Omega-S$, with $\partial/\partial z$
+  as in \noderef{DZ};
+\item[(H9)] $v$ and $f$ belong to $L^p_{\mathrm{loc}}(\Omega)$ in the sense of
+  \noderef{MemLpLocOn};
+\item[(H10)] both first-order partial derivatives $\partial_j w$,
+  $j\in\{0,1\}$, of $w=|f|^{p-2}f$ in the sense of \noderef{PartialWord}
+  belong to $L^1_{\mathrm{loc}}(\Omega)$.
+\end{enumerate}
+Then $v$ is $p$-harmonic on $\Omega$ in the sense of \noderef{PHarmonicOn}.
+
+This is the converse of the quoted result (C1), and the paper's note lists it
+among the facts that must be proved: ``the inverse of (54) is the complex
+gradient of a $p$-harmonic function on $\mathbb{C}$''.  The potential is taken
+as a hypothesis in the paper's own form $\partial v/\partial z=f$ of (55);
+constructing a potential is a separate matter, which in Section 7 uses the
+homogeneity of the extremal inverse.
+\end{lemma}
+\begin{proof}
+Write $c'=\tfrac1p-\tfrac12=\tfrac{2-p}{2p}$, and let
+$\varphi_v(z)$ denote $v(z)$ regarded as a complex number, so that (H8) reads
+$\partial_z\varphi_v=f$ on $\Omega-S$.  Set
+\[
+  w(z)=|f(z)|^{p-2}f(z)\qquad(z\in\mathbb{C}),
+\]
+with the convention that the product is $0$ when $f(z)=0$, which it is, the
+second factor vanishing.
+
+\emph{Step 0: $\Omega-S$ is open, and $S$ is a null set.}  Let $z\in\Omega-S$ and
+choose $\rho>0$ with $\overline{B}(z,\rho)\subseteq\Omega$.  By (H1) the set
+$S\cap\overline{B}(z,\rho)$ is finite and does not contain $z$, so it has a
+positive distance $\delta$ to $z$; then $B(z,\min(\rho,\delta))$ misses $S$.
+Hence $\Omega-S$ is open.  Moreover $\Omega$ is a countable union of compact
+subsets of $\Omega$ (for instance the closed balls $\overline{B}(q,r)\subseteq
+\Omega$ with $q$ of rational coordinates and $r$ rational), so by (H1) the set
+$S$ is countable and therefore Lebesgue null.
+
+\emph{Step 1: (12) holds at every point of $\Omega-S$.}  By (H2), $f$ does not
+vanish on $\Omega-S$, and by (H4) it is $C^\infty$ there; by Step 0 that set is
+open.  Hence $z\mapsto\mathrm{d}f(z)$ is continuous on $\Omega-S$, so $f_z$ and
+$f_{\bar z}$, being the fixed combinations
+$\tfrac12(\mathrm{d}f[1]\mp i\,\mathrm{d}f[i])$ of \noderef{DZ} and
+\noderef{DZbar}, are continuous there, and so are
+$\overline{f}/f$ and $f/\overline{f}$.  Both sides of
+\begin{equation}\tag{12}
+  f_{\bar z}=c'\Bigl[\frac{\overline{f}}{f}f_z+\frac{f}{\overline{f}}
+    \overline{f_z}\Bigr]
+\end{equation}
+are therefore continuous on $\Omega-S$.
+
+By (H5) and \noderef{SolvesEq12} there are weak Wirtinger derivatives $a_f,b_f$
+of $f$ on $\Omega$, in the sense of \noderef{IsWeakWirtingerOn}, and a null set
+$Z_0$ such that
+\[
+  b_f(z)=c'\Bigl[\frac{\overline{f(z)}}{f(z)}a_f(z)
+    +\frac{f(z)}{\overline{f(z)}}\overline{a_f(z)}\Bigr]
+\]
+at every $z\in\Omega-Z_0$ with $f(z)\neq0$.  We replace $a_f,b_f$ by $f_z$,
+$f_{\bar z}$.  By \noderef{IsWeakWirtingerOn} there are $f_x,f_y$ with
+$f,f_x,f_y\in L^1_{\mathrm{loc}}(\Omega)$ in the sense of \noderef{MemLpLocOn},
+with $f_x$ and $f_y$ the distributional $\partial_0$- and
+$\partial_1$-derivatives of $f$ on $\Omega$ in the sense of
+\noderef{IsWeakPartialOn}, and with $a_f=\tfrac12(f_x-if_y)$,
+$b_f=\tfrac12(f_x+if_y)$ at every point.  These are hypotheses (H1) and (H2) of
+\noderef{WeakPartialEqFDerivAE} for the open set $\Omega$, the function $f$ and
+the pair $D_0=f_x$, $D_1=f_y$; and its (H3) holds, because by (H4) and Step 0
+$f$ is differentiable at every point of the open set $\Omega-S$, while $S$ is
+null by Step 0.  So there is a null set $Z_1$ with $f_x=\partial_0f$ and
+$f_y=\partial_1f$ on $\Omega-Z_1$, where $\partial_j=D^{[j]}$ is the classical
+partial derivative of \noderef{PartialWord}, that is
+$\partial_0f(z)=\mathrm{d}f(z)[1]$ and $\partial_1f(z)=\mathrm{d}f(z)[i]$.  Since
+$f_z$ and $f_{\bar z}$ are by \noderef{DZ} and \noderef{DZbar} the same two
+combinations $\tfrac12\bigl(\mathrm{d}f(z)[1]\mp i\,\mathrm{d}f(z)[i]\bigr)$,
+we get $a_f=f_z$ and $b_f=f_{\bar z}$ on $\Omega-Z_1$.
+
+Put $Z=Z_0\cup Z_1$, a null set.  By the last two paragraphs, (12) holds at
+every $z\notin Z$ with $z\in\Omega$
+and $f(z)\neq0$; on $\Omega-S$ the last condition is automatic by (H2).  Thus
+(12) holds on $(\Omega-S)-Z$, which is dense in $\Omega-S$ because a null set
+has empty interior, and two continuous functions on an open set agreeing on a
+dense subset agree everywhere on it.  Hence (12) holds at every point of
+$\Omega-S$.
+
+\emph{Step 2: $f_{\bar z}$ is real on $\Omega-S$.}  Put $a=(\overline{f}/f)f_z$.
+Then
+\[
+  \frac{f}{\overline{f}}\overline{f_z}
+  =\overline{\Bigl(\frac{\overline{f}}{f}f_z\Bigr)}=\bar a ,
+\]
+so the bracket in (12) is $a+\bar a$, which is real; and $c'$ is real.  By
+Step 1, $f_{\bar z}=c'(a+\bar a)$ at each point of $\Omega-S$, so
+\begin{equation}\tag{1}
+  \overline{f_{\bar z}}=f_{\bar z}\qquad\text{on }\Omega-S .
+\end{equation}
+
+\emph{Step 3: $w$ is continuous on $\Omega$ and $C^\infty$ on $\Omega-S$.}  On
+$\Omega-S$ the function $f$ is $C^\infty$ and non-vanishing, and
+$\zeta\mapsto|\zeta|^{p-2}$ is $C^\infty$ on $\mathbb{C}-\{0\}$ by the first
+clause of \noderef{WirtingerModulusPowerRule}; hence $|f|^{p-2}$, and with it
+$w$, is $C^\infty$ on $\Omega-S$.  For continuity on $\Omega$ it remains to
+check the points of $S$.  Where $f\neq0$ we have
+$|w|=|f|^{p-2}|f|=|f|^{p-1}$, and $w=0$ where $f=0$; so
+$|w(z)|=|f(z)|^{p-1}$ for every $z$.  If $z_0\in S$ then $f(z_0)=0$ by (H2),
+and $f$ is continuous at $z_0$ by (H3), so $|w(z)|=|f(z)|^{p-1}\to0=|w(z_0)|$
+as $z\to z_0$ in $\Omega$, using $p-1>0$.  Hence $w$ is continuous on $\Omega$.
+
+\emph{Step 4: the formula for $w_{\bar z}$ on $\Omega-S$.}  Fix $z\in\Omega-S$ and
+let $F(\zeta)=|\zeta|^{p-2}$.  By \noderef{WirtingerModulusPowerRule} at the
+exponent $\mu=p-2$ and the point $f(z)\neq0$, $F$ is $C^\infty$, in particular
+differentiable, at $f(z)$, with
+\[
+  F_\zeta(f(z))=\frac{p-2}{2}\cdot\frac{|f(z)|^{p-2}}{f(z)},\qquad
+  F_{\bar\zeta}(f(z))=\frac{p-2}{2}\cdot\frac{|f(z)|^{p-2}}
+    {\overline{f(z)}} .
+\]
+Since $f$ is differentiable at $z$, \noderef{WirtingerChainRule} applies to the
+pair $(F,f)$ at $z$ and gives
+\[
+  \partial_{\bar z}\bigl(|f|^{p-2}\bigr)
+  =F_\zeta(f)f_{\bar z}+F_{\bar\zeta}(f)\overline{f_z}
+  =\frac{p-2}{2}|f|^{p-2}\Bigl[\frac{f_{\bar z}}{f}
+    +\frac{\overline{f_z}}{\overline{f}}\Bigr],
+\]
+all arguments being $z$.  Both $|f|^{p-2}$ and $f$ are differentiable at $z$,
+so \noderef{WirtingerProductRule} gives
+\[
+  w_{\bar z}=\partial_{\bar z}\bigl(|f|^{p-2}\bigr)\,f+|f|^{p-2}f_{\bar z}
+  =|f|^{p-2}\Bigl[\frac{p-2}{2}\Bigl(f_{\bar z}
+    +\frac{f}{\overline{f}}\overline{f_z}\Bigr)+f_{\bar z}\Bigr]
+  =|f|^{p-2}\Bigl[\frac{p}{2}f_{\bar z}
+    +\frac{p-2}{2}\cdot\frac{f}{\overline{f}}\overline{f_z}\Bigr].
+\]
+Multiplying the bracket by $|f|^2/|f|^2$ and using
+$|f|^2=f\overline{f}$, so that $(f/\overline{f})|f|^2=f^2$, we obtain
+\begin{equation}\tag{2}
+  w_{\bar z}=|f|^{p-4}X,\qquad
+  X=\frac p2|f|^2f_{\bar z}+\frac{p-2}{2}f^2\overline{f_z},
+\end{equation}
+at every point of $\Omega-S$.
+
+\emph{Step 5: $\operatorname{Re}w_{\bar z}=0$ on $\Omega-S$.}  Fix $z\in\Omega-S$.
+Using (1) and the reality of $|f|^2$,
+\[
+  \bar X=\frac p2|f|^2f_{\bar z}+\frac{p-2}{2}\overline{f}^{\,2}f_z ,
+\]
+so
+\[
+  X+\bar X=p|f|^2f_{\bar z}
+    +\frac{p-2}{2}\bigl(f^2\overline{f_z}+\overline{f}^{\,2}f_z\bigr).
+\]
+By Step 1 and $c'=(2-p)/(2p)$,
+\[
+  p|f|^2f_{\bar z}
+  =p\,f\overline{f}\cdot\frac{2-p}{2p}\Bigl[\frac{\overline{f}}{f}f_z
+    +\frac{f}{\overline{f}}\overline{f_z}\Bigr]
+  =\frac{2-p}{2}\bigl(\overline{f}^{\,2}f_z+f^2\overline{f_z}\bigr),
+\]
+the two cancellations being legitimate because $f(z)\neq0$.  Hence
+\[
+  X+\bar X=\frac{2-p}{2}\bigl(\overline{f}^{\,2}f_z+f^2\overline{f_z}\bigr)
+    +\frac{p-2}{2}\bigl(f^2\overline{f_z}+\overline{f}^{\,2}f_z\bigr)=0,
+\]
+the two coefficients being exact negatives.  Since $X+\bar X=2\operatorname{Re}X$
+we get $\operatorname{Re}X=0$, and by (2), $|f|^{p-4}$ being real,
+\begin{equation}\tag{3}
+  \operatorname{Re}w_{\bar z}=0\qquad\text{on }\Omega-S .
+\end{equation}
+
+\emph{Step 6: the gradient field.}  Define
+\[
+  g(z)=2\overline{f(z)}\qquad(z\in\mathbb{C}).
+\]
+On $\Omega-S$ we have, by (H8) and \noderef{DZ},
+$\tfrac12\bigl(\partial_x\varphi_v-i\,\partial_y\varphi_v\bigr)=f$; the function
+$v$ is real-valued, so $\partial_x\varphi_v$ and $\partial_y\varphi_v$ are
+real, and comparing real and imaginary parts,
+\begin{equation}\tag{4}
+  \partial_x\varphi_v=2\operatorname{Re}f=\operatorname{Re}g,\qquad
+  \partial_y\varphi_v=-2\operatorname{Im}f=\operatorname{Im}g
+  \qquad\text{on }\Omega-S .
+\end{equation}
+Next, at every $z\in\mathbb{C}$,
+\begin{equation}\tag{5}
+  |g|^{p-2}\operatorname{Re}g=2^{p-1}\operatorname{Re}w,\qquad
+  |g|^{p-2}\operatorname{Im}g=-2^{p-1}\operatorname{Im}w .
+\end{equation}
+Indeed, if $f(z)\neq0$ then $|g|=2|f|\neq0$ and
+$|g|^{p-2}\operatorname{Re}g=2^{p-2}|f|^{p-2}\cdot2\operatorname{Re}f
+=2^{p-1}\operatorname{Re}\bigl(|f|^{p-2}f\bigr)$, and similarly for the
+imaginary part; and if $f(z)=0$ then $g(z)=0$, so both sides of each identity
+vanish, the left ones because the factors $\operatorname{Re}g$ and
+$\operatorname{Im}g$ do.
+
+\emph{Step 7: the weak gradient of $v$ on all of $\Omega$.}  We apply
+\noderef{WeakPartialAcrossPoint} on $\Omega$ with the exceptional set $S$,
+which satisfies its local finiteness hypothesis by (H1), and with growth
+exponent $\beta=0$.  Take first $j=0$, the function $\varphi_v$ and the
+candidate derivative $\operatorname{Re}g$.  Its hypotheses hold:
+$\varphi_v$ is $C^1$ on $\Omega-S$ by (H7); its classical $x$-partial there is
+$\operatorname{Re}g$ by (4); $\varphi_v$ is continuous on $\Omega$ by (H6) and
+$\operatorname{Re}g$ is continuous on $\Omega$ by (H3), so both are bounded on
+every compact subset of $\Omega$ and hence lie in
+$L^1_{\mathrm{loc}}(\Omega)$; and for $z_0\in S$, continuity of $\varphi_v$ at
+$z_0$ gives $M,\rho>0$ with $|\varphi_v(z)|\le M=M|z-z_0|^{-0}$ for
+$0<|z-z_0|<\rho$.  The conclusion is that $\operatorname{Re}g$ is the
+distributional $x$-partial of $\varphi_v$ on $\Omega$ in the sense of
+\noderef{IsWeakPartialOn}.  Taking $j=1$ with the candidate
+$\operatorname{Im}g$ gives in the same way that $\operatorname{Im}g$ is the
+distributional $y$-partial of $\varphi_v$ on $\Omega$.
+
+\emph{Step 8: the weak form of the $p$-harmonic equation.}  Let
+$W_1=\operatorname{Re}w$ and $W_2=\operatorname{Im}w$, regarded as
+complex-valued functions.  By Step 3 they are continuous on $\Omega$ and
+$C^\infty$ on $\Omega-S$.  Apply \noderef{WeakPartialAcrossPoint} on $\Omega$
+with exceptional set $S$, $\beta=0$, first to $j=0$, the function $W_1$ and its
+classical $x$-partial $\partial_xW_1$ on $\Omega-S$, and then to $j=1$, the
+function $W_2$ and its classical $y$-partial $\partial_yW_2$.  The local
+integrability of $W_1,W_2$ follows from their continuity on $\Omega$; the local
+integrability of $\partial_xW_1$ and $\partial_yW_2$ follows from (H10):
+taking real or imaginary parts is a continuous $\mathbb{R}$-linear operation and
+so commutes with differentiation, so on $\Omega-S$ we have
+$\partial_xW_1=\operatorname{Re}(\partial_0w)$ and
+$\partial_yW_2=\operatorname{Im}(\partial_1w)$, dominated in modulus by
+$|\partial_0w|$ and $|\partial_1w|$ respectively, and $S$ is null by Step 0, so
+the domination off a null set suffices for integrability on compact subsets of
+$\Omega$; and the growth hypothesis
+holds with $\beta=0$ because $W_1,W_2$ are continuous, hence bounded near each
+point of $S$.  We obtain
+\begin{equation}\tag{6}
+  \int W_1\,\partial_x\phi=-\int(\partial_xW_1)\phi,\qquad
+  \int W_2\,\partial_y\phi=-\int(\partial_yW_2)\phi
+\end{equation}
+for every test function $\phi$ for $\Omega$ in the sense of \noderef{IsTestFn}.
+
+On $\Omega-S$ we compute, from \noderef{DZbar},
+\[
+  \operatorname{Re}w_{\bar z}
+  =\operatorname{Re}\Bigl(\tfrac12(\partial_xw+i\,\partial_yw)\Bigr)
+  =\tfrac12\bigl(\partial_x\operatorname{Re}w-\partial_y\operatorname{Im}w\bigr)
+  =\tfrac12\bigl(\partial_xW_1-\partial_yW_2\bigr),
+\]
+so by (3),
+\begin{equation}\tag{7}
+  \partial_xW_1-\partial_yW_2=0\qquad\text{on }\Omega-S .
+\end{equation}
+
+Now let $\phi$ be a real-valued test function for $\Omega$; regarded as
+complex-valued it is a test function in the sense of \noderef{IsTestFn}.  Using
+(5), then (6), then (7) together with the fact that $S$ is null by Step 0 and
+that $\phi$ vanishes off a compact subset of $\Omega$,
+\[
+  \int|g|^{p-2}\bigl(\operatorname{Re}g\cdot\partial_x\phi
+    +\operatorname{Im}g\cdot\partial_y\phi\bigr)
+  =2^{p-1}\int\bigl(W_1\partial_x\phi-W_2\partial_y\phi\bigr)
+  =-2^{p-1}\int\bigl(\partial_xW_1-\partial_yW_2\bigr)\phi=0 .
+\]
+Finally, since $\partial_x\phi$ and $\partial_y\phi$ are real, at every $z$
+\[
+  \operatorname{Re}\Bigl(g(z)\,
+    \overline{\partial_x\phi(z)+i\,\partial_y\phi(z)}\Bigr)
+  =\operatorname{Re}g(z)\,\partial_x\phi(z)
+    +\operatorname{Im}g(z)\,\partial_y\phi(z).
+\]
+Hence
+\[
+  \int|g|^{p-2}\operatorname{Re}
+    \Bigl(g\,\overline{\partial_x\phi+i\,\partial_y\phi}\Bigr)=0
+\]
+for every real test function $\phi$ for $\Omega$, which is the equation clause
+of \noderef{PHarmonicOn}.
+
+\emph{Step 9: conclusion.}  Take $g=2\overline{f}$ as the witness required by
+\noderef{PHarmonicOn}.  Then $v\in L^p_{\mathrm{loc}}(\Omega)$ by (H9); and
+$g\in L^p_{\mathrm{loc}}(\Omega)$ because $|g|=2|f|$ and
+$f\in L^p_{\mathrm{loc}}(\Omega)$ by (H9).  Step 7 supplies the two weak
+partial derivatives of $v$, namely $\operatorname{Re}g$ in the $x$ direction
+and $\operatorname{Im}g$ in the $y$ direction, and Step 8 supplies the
+equation.  Hence $v$ is $p$-harmonic on $\Omega$ in the sense of
+\noderef{PHarmonicOn}.
+\end{proof}

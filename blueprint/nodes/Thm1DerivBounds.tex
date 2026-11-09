@@ -1,0 +1,331 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, let $K'\ge1$, and assume the
+bundle (C2) of \noderef{QCPackage}.  Let $W\subseteq\mathbb{C}$ be open, let
+$z_0\in W$, let $u\colon\mathbb{C}\to\mathbb{R}$ and
+$f,\chi,H\colon\mathbb{C}\to\mathbb{C}$, and assume
+\begin{enumerate}
+\item[(H1)] $f$ solves (12) on $W$ in the sense of \noderef{SolvesEq12}, and
+  $f(z_0)=0$;
+\item[(H2)] $\chi$ is $K'$-quasiconformal on $W$ in the sense of
+  \noderef{QuasiconformalOn}, $\chi(z_0)=0$, and $f=\chi^{n}$ on $W$;
+\item[(H3)] $\chi$ is $C^\infty$ on $W-\{z_0\}$;
+\item[(H4)] $H(\chi(z))=z$ for every $z\in W$ and $H$ is continuous on
+  $\chi(W)$;
+\item[(H5)] $\partial_0u=f+\bar f$ and $\partial_1u=i(f-\bar f)$ on $W$, where
+  $\partial_0$, $\partial_1$ are the partial derivatives of
+  \noderef{PartialWord} along the words $[0]$, $[1]$; that is, $f$ is the
+  complex gradient of $u$ on $W$.
+\end{enumerate}
+Write $d=d(p)$ for the exponent of \noderef{DExp}.  Then there are $\delta$
+with $0<\delta\le1$ and constants $B_m$, $m=0,1,2,\dots$, such that for
+$0<|z-z_0|<\delta$
+\begin{align}
+  \sum_{|w|=m}\bigl|D^{w}f(z)\bigr|&\le B_m|z-z_0|^{d-m},\tag{51}\\
+  \sum_{|w|=m+1}\bigl|D^{w}u(z)\bigr|&\le B_m|z-z_0|^{d-m},\tag{52}
+\end{align}
+the sums running over all words $w$ of the indicated length in $\{0,1\}$ and
+$D^{w}$ being the iterated partial derivative of \noderef{PartialWord}.
+
+These are the estimates (51) and (52) of the paper, which Section 6 obtains
+from Corollary 2 in the two sentences at paper.tex:515 and paper.tex:520: the
+reduction to a singular point at the origin, and the observation that the
+smallest of the numbers $n/\gamma_n$ occurs at $n=1$ and equals $d$.  The
+restriction $\delta\le1$ is not cosmetic; see Step 4.
+\end{lemma}
+\begin{proof}
+Write $d=d(p)$, $\gamma_n=\gamma_n(p)$ for the exponent of \noderef{GammaExp},
+and $\tau(\zeta)=\zeta+z_0$ for the translation carrying $0$ to $z_0$.
+
+\emph{Step 0: $d>0$.}  By \noderef{DExpEqGammaOneInv}, $\gamma_1>0$ and
+$\gamma_1d=1$, so $d=1/\gamma_1>0$.
+
+\emph{Step 1: how the iterated partials behave under a translation.}  We claim
+that for every word $w$ and every $F\colon\mathbb{C}\to\mathbb{C}$,
+\begin{equation}\tag{1}
+  D^{w}\bigl(F\circ\tau\bigr)=\bigl(D^{w}F\bigr)\circ\tau .
+\end{equation}
+Induct on $w$.  If $w$ is empty, both sides are $F\circ\tau$ by
+\noderef{PartialWord}.  For $w=j\!:\!\!:w'$ we have
+$D^{w}=\partial_j\circ D^{w'}$ by \noderef{PartialWord}, and by the inductive
+hypothesis $D^{w'}(F\circ\tau)=(D^{w'}F)\circ\tau$ as functions on
+$\mathbb{C}$.  The translation $\tau$ is affine with Fréchet derivative the
+identity at every point, and so is $\tau^{-1}(\zeta)=\zeta-z_0$.  Hence
+$G\circ\tau$ is real-differentiable at $\zeta$ \emph{if and only if} $G$ is
+real-differentiable at $\tau\zeta$: in one direction compose with $\tau$ and use
+the chain rule, in the other write $G=(G\circ\tau)\circ\tau^{-1}$ and compose
+with $\tau^{-1}$.  We claim that for every $G$ and every $\zeta$,
+\[
+  \partial_j\bigl(G\circ\tau\bigr)(\zeta)
+  =\mathrm{d}G(\tau\zeta)\bigl[\mathrm{d}\tau(\zeta)[e_j]\bigr]
+  =\mathrm{d}G(\tau\zeta)[e_j]=\bigl(\partial_jG\bigr)(\tau\zeta),
+\]
+where $e_0=1$ and $e_1=i$.  This needs the two cases of the equivalence just
+proved, because the identification of $\mathrm{d}G(\tau\zeta)$ with a genuine
+derivative is not automatic: by \noderef{PartialWord} the symbol
+$\mathrm{d}G(\tau\zeta)$ denotes the zero map wherever $G$ fails to be
+real-differentiable.  If $G$ is real-differentiable at $\tau\zeta$, then
+$G\circ\tau$ is real-differentiable at $\zeta$ and the first equality is the
+chain rule, while the second uses $\mathrm{d}\tau(\zeta)=\mathrm{id}$.  If $G$
+is not real-differentiable at $\tau\zeta$, then $G\circ\tau$ is not
+real-differentiable at $\zeta$, so $\mathrm{d}G(\tau\zeta)$ and
+$\mathrm{d}(G\circ\tau)(\zeta)$ are both the zero map by that convention and
+all four expressions in the display are $0$.  So the display holds for every $G$
+and every $\zeta$, with no differentiability hypothesis, which is what the
+induction needs: (1) is asserted for arbitrary $F$, and Steps 2(b), 2(d) and 3
+apply it to test functions, to $\chi$ and to members of a \noderef{MemWLocOn}
+family, none of which is known to be differentiable at the point in question.
+Applying it with $G=D^{w'}F$ gives (1) for $w$.
+
+\emph{Step 2: the translated data.}  Put
+\[
+  \widetilde W=\tau^{-1}(W),\qquad \tilde f=f\circ\tau,\qquad
+  \tilde\chi=\chi\circ\tau,\qquad \widetilde H=H-z_0,\qquad
+  \tilde u=u\circ\tau .
+\]
+We check that these satisfy every hypothesis of \noderef{Cor2} with the same
+$n$, $p$, $K'$ and (C2).
+
+\emph{(a) $\widetilde W$ is open and $0\in\widetilde W$.}  $\tau$ is a
+homeomorphism of $\mathbb{C}$, so $\widetilde W$ is open; and
+$\tau(0)=z_0\in W$.
+
+\emph{(b) $\tilde f$ solves (12) on $\widetilde W$.}  We first record how the
+two clauses that make up the weak data behave under $\tau$; this is used again
+in (d).  \emph{Let $u,u'\colon\mathbb{C}\to\mathbb{C}$ and $j\in\{0,1\}$.
+(i) If $u\in L^{s}_{\mathrm{loc}}(W)$ in the sense of \noderef{MemLpLocOn},
+$s\in\{1,2\}$, then $u\circ\tau\in L^{s}_{\mathrm{loc}}(\widetilde W)$.
+(ii) If $u'$ is the distributional $\partial_j$-derivative of $u$ on $W$ in the
+sense of \noderef{IsWeakPartialOn}, then $u'\circ\tau$ is the distributional
+$\partial_j$-derivative of $u\circ\tau$ on $\widetilde W$.}  For (i): $\tau$
+carries every compact $\kappa\subseteq\widetilde W$ onto a compact subset
+$\tau(\kappa)$ of $W$, is a homeomorphism, and preserves Lebesgue measure, so
+$u\circ\tau$ is measurable and
+$\int_\kappa|u\circ\tau|^{s}d\sigma=\int_{\tau(\kappa)}|u|^{s}d\sigma<\infty$.
+For (ii): let $\varphi$ be a test function for $\widetilde W$ in the sense of
+\noderef{IsTestFn} and put $\tilde\varphi=\varphi\circ\tau^{-1}$.  Then
+$\tilde\varphi$ is $C^\infty$ and
+$\operatorname{tsupp}\tilde\varphi=\tau(\operatorname{tsupp}\varphi)$ is
+compact and contained in $\tau(\widetilde W)=W$, so $\tilde\varphi$ is a test
+function for $W$; and the argument of Step 1 applies verbatim to the
+translation $\tau^{-1}$, giving
+$\partial_j\tilde\varphi=(\partial_j\varphi)\circ\tau^{-1}$.  Hence, by
+translation invariance of $\sigma$ and the hypothesis on $u,u'$ applied to
+$\tilde\varphi$,
+\[
+  \int (u\circ\tau)\,\partial_j\varphi\,d\sigma
+  =\int u\,\bigl((\partial_j\varphi)\circ\tau^{-1}\bigr)d\sigma
+  =\int u\,\partial_j\tilde\varphi\,d\sigma
+  =-\int u'\,\tilde\varphi\,d\sigma
+  =-\int (u'\circ\tau)\,\varphi\,d\sigma ,
+\]
+which is the required identity for $\varphi$.  Call this fact (T).
+
+By (H1) and \noderef{SolvesEq12} there are weak Wirtinger derivatives $a,b$ of
+$f$ on $W$, in the sense of \noderef{IsWeakWirtingerOn}, with underlying
+family $f_x,f_y$ --- so that $f,f_x,f_y\in L^1_{\mathrm{loc}}(W)$, $f_x$ and
+$f_y$ are the distributional $\partial_0$- and $\partial_1$-derivatives of $f$
+on $W$, and $a=\tfrac12(f_x-if_y)$, $b=\tfrac12(f_x+if_y)$ at every point ---
+and a null set $Z$ such that
+\[
+  b(z)=\Bigl(\tfrac1p-\tfrac12\Bigr)
+  \Bigl[\tfrac{\overline{f(z)}}{f(z)}a(z)
+    +\tfrac{f(z)}{\overline{f(z)}}\overline{a(z)}\Bigr]
+\]
+at every $z\in W-Z$ with $f(z)\neq0$.  By (T), the functions
+$\tilde f=f\circ\tau$, $f_x\circ\tau$ and $f_y\circ\tau$ lie in
+$L^1_{\mathrm{loc}}(\widetilde W)$ and $f_x\circ\tau$, $f_y\circ\tau$ are the
+distributional $\partial_0$- and $\partial_1$-derivatives of $\tilde f$ on
+$\widetilde W$; and composing the two identities for $a$ and $b$ with $\tau$
+gives $a\circ\tau=\tfrac12(f_x\circ\tau-i\,f_y\circ\tau)$ and
+$b\circ\tau=\tfrac12(f_x\circ\tau+i\,f_y\circ\tau)$ at every point.  So
+$a\circ\tau$ and $b\circ\tau$ are weak Wirtinger derivatives of $\tilde f$ on
+$\widetilde W$.
+
+Let now $\zeta\notin\tau^{-1}(Z)$ with $\zeta\in\widetilde W$ and
+$\tilde f(\zeta)\neq0$; then $z=\tau\zeta\in W$, $z\notin Z$ and
+$f(z)=\tilde f(\zeta)\neq0$, so the displayed identity holds at $z$, and it is
+verbatim the same identity for the pair $a\circ\tau$, $b\circ\tau$ and the
+function $\tilde f$ at $\zeta$.  Finally $\tau^{-1}(Z)$ is null, Lebesgue
+measure being translation invariant.  So $\tilde f$ solves (12) on
+$\widetilde W$ in the sense of \noderef{SolvesEq12}.
+
+\emph{(c) $\tilde f(0)=f(z_0)=0$, $\tilde\chi(0)=\chi(z_0)=0$, and
+$\tilde f=\tilde\chi^{\,n}$ on $\widetilde W$} --- the last because
+$\tilde f(\zeta)=f(\tau\zeta)=\chi(\tau\zeta)^n=\tilde\chi(\zeta)^n$ for
+$\zeta\in\widetilde W$, using (H2).
+
+\emph{(d) $\tilde\chi$ is $K'$-quasiconformal on $\widetilde W$.}  We verify
+the five clauses of \noderef{QuasiconformalOn}.  For $K'$-quasiregularity
+(\noderef{QuasiregularOn}): $1\le K'$ is a hypothesis; the distortion clause
+transports exactly as the equation did in (b), namely
+\noderef{QuasiregularOn} applied to $\chi$ on $W$ provides weak Wirtinger
+derivatives $a_\chi,b_\chi$ of $\chi$ on $W$, with underlying family
+$\chi_x,\chi_y$, and a null set $Z_1$ with
+$|b_\chi|\le\kappa_0|a_\chi|$ on $W-Z_1$, where $\kappa_0=(K'-1)/(K'+1)$; by
+(T) and the same composition with $\tau$ as in (b), $a_\chi\circ\tau$ and
+$b_\chi\circ\tau$ are weak Wirtinger derivatives of $\tilde\chi$ on
+$\widetilde W$, and for $\zeta\in\widetilde W-\tau^{-1}(Z_1)$ the inequality
+$|b_\chi(\tau\zeta)|\le\kappa_0|a_\chi(\tau\zeta)|$ is exactly the required
+inequality for the transported pair at $\zeta$, the set $\tau^{-1}(Z_1)$ being
+null; and $\tilde\chi\in W^{1,2}_{\mathrm{loc}}(\widetilde W)$ in
+the sense of \noderef{MemWLocOn} because, given a coherent family $D$ for
+$\chi$ on $W$, the family $\widetilde D(w)=D(w)\circ\tau$ is coherent for
+$\tilde\chi$ on $\widetilde W$: each $\widetilde D(w)$ lies in
+$L^2_{\mathrm{loc}}(\widetilde W)$ in the sense of \noderef{MemLpLocOn}, since
+$\tau$ carries compact subsets of $\widetilde W$ to compact subsets of $W$ and
+preserves Lebesgue measure; and the integration-by-parts identity of
+\noderef{IsWeakPartialOn} transports because $\varphi\mapsto\varphi\circ\tau^{-1}$
+is a bijection from the test functions for $\widetilde W$ onto those for $W$ in
+the sense of \noderef{IsTestFn}, and the two integrals agree by translation
+invariance together with (1).  Clause (a) of \noderef{MemWLocOn} also holds for
+the transported family: $\widetilde D(())=D(())\circ\tau=\chi\circ\tau=\tilde\chi$,
+since $D$ satisfies that clause for $\chi$.  Injectivity and continuity of $\tilde\chi$ on
+$\widetilde W$ are immediate from those of $\chi$ on $W$.  The image is
+unchanged, $\tilde\chi(\widetilde W)=\chi(W)$, so it is open.  And if $\psi$ is
+the continuous inverse supplied for $\chi$ by \noderef{QuasiconformalOn}, then
+$\tilde\psi=\psi-z_0$ satisfies
+$\tilde\psi(\tilde\chi(\zeta))=\psi(\chi(\tau\zeta))-z_0=\tau\zeta-z_0=\zeta$
+for $\zeta\in\widetilde W$, and is continuous on
+$\tilde\chi(\widetilde W)=\chi(W)$.
+
+\emph{(e) $\tilde\chi$ is $C^\infty$ on $\widetilde W-\{0\}$.}  Indeed
+$\tau(\widetilde W-\{0\})=W-\{z_0\}$, where $\chi$ is $C^\infty$ by (H3), and
+$\tau$ is $C^\infty$.
+
+\emph{(f) The inverse data.}  For $\zeta\in\widetilde W$,
+$\widetilde H(\tilde\chi(\zeta))=H(\chi(\tau\zeta))-z_0=\tau\zeta-z_0=\zeta$ by
+(H4).  Also $\tilde\chi(\widetilde W)=\chi(W)$, on which $H$ is continuous, so
+$\widetilde H=H-z_0$ is continuous there.  That is all \noderef{Cor2} asks of
+the inverse: it assumes no smoothness of it, deriving everything else about
+$\widetilde H$ from the bundle (C2) and from the equation.
+
+\emph{Step 3: Corollary 2.}  By Step 2 the hypotheses of \noderef{Cor2} hold
+for $(n,p,K')$, the bundle (C2), $\widetilde W$, and
+$\tilde f,\tilde\chi,\widetilde H$.  It therefore provides $\delta_0>0$ and
+constants $B_m^{0}$ with
+\begin{equation}\tag{48}
+  \sum_{|w|=m}\bigl|D^{w}\tilde f(\zeta)\bigr|
+  \le B^{0}_m|\zeta|^{\,n/\gamma_n-m}\qquad(0<|\zeta|<\delta_0).
+\end{equation}
+By (1), $D^{w}\tilde f(\zeta)=\bigl(D^{w}f\bigr)(\zeta+z_0)$, so substituting
+$z=\zeta+z_0$,
+\begin{equation}\tag{48$'$}
+  \sum_{|w|=m}\bigl|D^{w}f(z)\bigr|
+  \le B^{0}_m|z-z_0|^{\,n/\gamma_n-m}\qquad(0<|z-z_0|<\delta_0).
+\end{equation}
+Each $B^{0}_m\ge0$: the left side of (48$'$) is a sum of moduli, hence
+nonnegative, and $|z-z_0|^{\,n/\gamma_n-m}>0$ for any admissible $z$, of which
+there is at least one since $\delta_0>0$.
+
+\emph{Step 4: eliminating $n$, and why $\delta\le1$.}  By part (b) of
+\noderef{GammaRatioMinAtOne}, $1/\gamma_1\le n/\gamma_n$ for every integer
+$n\ge1$; and $d=1/\gamma_1$ by Step 0.  Hence
+\begin{equation}\tag{3}
+  d\le\frac{n}{\gamma_n},\qquad\text{so}\qquad
+  \frac{n}{\gamma_n}-m\ \ge\ d-m .
+\end{equation}
+Since $W$ is open and $z_0\in W$, choose $\delta_W>0$ with
+$\{z:|z-z_0|<\delta_W\}\subseteq W$, and put
+\[
+  \delta=\min\{\delta_0,\ \delta_W,\ 1\}>0,\qquad\text{so}\qquad\delta\le1 .
+\]
+Let $0<|z-z_0|<\delta$ and set $t=|z-z_0|$, so $0<t<1$ and $z\in W$.  For real
+$a\ge b$ one has $t^{a}=t^{b}\cdot t^{a-b}\le t^{b}$, because $0<t<1$ and
+$a-b\ge0$ give $t^{a-b}\le1$.  Applying this with $a=n/\gamma_n-m$ and
+$b=d-m$, which is legitimate by (3), and using $B^{0}_m\ge0$, (48$'$) gives
+\begin{equation}\tag{51$'$}
+  \sum_{|w|=m}\bigl|D^{w}f(z)\bigr|\le B^{0}_m|z-z_0|^{\,d-m}
+  \qquad(0<|z-z_0|<\delta).
+\end{equation}
+This is where $\delta\le1$ is needed: for $t>1$ the inequality $t^{a}\le t^{b}$
+reverses, and since $n/\gamma_n$ may be strictly larger than $d$ the estimate
+would fail.
+
+\emph{Step 5: from (51) to (52).}  Let $m\ge0$ and $0<|z-z_0|<\delta$, so
+$z\in W$ by Step 4.  (Throughout this step $u$, which is real-valued, is read
+as a map $\mathbb{C}\to\mathbb{C}$ through the inclusion
+$\mathbb{R}\subseteq\mathbb{C}$, since $\partial_0$, $\partial_1$ and $D^{w}$
+of \noderef{PartialWord} are defined for maps $\mathbb{C}\to\mathbb{C}$;
+this is the reading under which (H5) and (52) are stated, and the inclusion is
+$\mathbb{R}$-linear, so it commutes with every $D^{w}$ and changes none of the
+moduli below.)  Every word $w$ of length $m+1$ is uniquely
+$w=w'\!+\!\!+[j]$ with $|w'|=m$ and $j\in\{0,1\}$, and this is a bijection
+between the words of length $m+1$ and the pairs $(w',j)$.
+
+By \noderef{PartialWord} the operator attached to $w=(j_1,\dots,j_m)$ is
+$D^{w}=\partial_{j_1}\partial_{j_2}\cdots\partial_{j_m}$, so the recursion it
+supplies peels the \emph{first} letter, $D^{j::w'}=\partial_j\circ D^{w'}$,
+which is the form Step 1 used.  The form needed here peels the last letter,
+\begin{equation}\tag{4}
+  D^{w'+\!\!+[j]}G=D^{w'}\bigl(D^{[j]}G\bigr),
+\end{equation}
+and follows from the first-letter form by induction on $w'$.  If $w'$ is empty
+then $w'\!+\!\!+[j]=[j]$ and both sides are $D^{[j]}G$, since
+$D^{()}G=G$.  If $w'=i::w''$ then $w'\!+\!\!+[j]=i::(w''\!+\!\!+[j])$, so by
+the first-letter form and the inductive hypothesis applied to $w''$,
+\[
+  D^{w'+\!\!+[j]}G=\partial_i\bigl(D^{w''+\!\!+[j]}G\bigr)
+  =\partial_i\bigl(D^{w''}\bigl(D^{[j]}G\bigr)\bigr)
+  =D^{i::w''}\bigl(D^{[j]}G\bigr)=D^{w'}\bigl(D^{[j]}G\bigr),
+\]
+which is (4) for $w'$.
+By (H5) the functions $D^{[0]}u$ and $f+\bar f$ agree on the open set $W$, as
+do $D^{[1]}u$ and $i(f-\bar f)$; iterated partial derivatives are local
+operators, so $D^{w'}$ of either side agrees at points of $W$.
+
+It remains to apply $D^{w'}$ to the sums $f+\bar f$ and $i(f-\bar f)$, and for
+that we must first record \emph{where} $D^{w'}$ is additive.  It is not additive
+unconditionally: by the convention of \noderef{PartialWord} a derivative is
+taken to be $0$ wherever the function fails to be real-differentiable, so if $G$
+is real-differentiable at a point and $G'$ is not, then $G+G'$ is not either and
+$\partial_j(G+G')=0$ there while $\partial_jG+\partial_jG'$ need not vanish.
+What is true, and all that is used, is that the Fréchet derivative is additive
+at a point at which both summands are differentiable, so $\partial_j$ and hence
+$D^{w'}$ are additive on any open set on which both summands are $C^\infty$.
+Such a set is at hand.  By (H2) $f=\chi^{n}$ on $W$, and by (H3) $\chi$ is
+$C^\infty$ on the open set $W-\{z_0\}$; since $W-\{z_0\}$ is open and
+$\zeta\mapsto\zeta^{n}$ is $C^\infty$ on $\mathbb{C}$, the function $f$ is
+$C^\infty$ on $W-\{z_0\}$, and so is $\bar f$, conjugation being
+$\mathbb{R}$-linear.  Consequently every iterated partial derivative of $f$ and
+of $\bar f$ is again $C^\infty$ on $W-\{z_0\}$, so each of the $m$ applications
+of $\partial_0$ or $\partial_1$ making up $D^{w'}$ acts on a map that is
+$C^\infty$ there.  Finally the point $z$ lies in $W-\{z_0\}$: $z\in W$ by
+Step 4, and $|z-z_0|>0$ gives $z\neq z_0$.  So $f$ and $\bar f$ are $C^\infty$
+on a neighbourhood of $z$, and $D^{w'}(f+\bar f)=D^{w'}f+D^{w'}\bar f$ and
+$D^{w'}\bigl(i(f-\bar f)\bigr)=i\bigl(D^{w'}f-D^{w'}\bar f\bigr)$ hold at $z$.
+The subtraction is the additivity just justified applied to $f$ and $-\bar f$,
+and the scalar $i$ passes through unconditionally: for a nonzero constant
+$c\in\mathbb{C}$ the map $\zeta\mapsto c\zeta$ is an $\mathbb{R}$-linear
+homeomorphism of $\mathbb{C}$, so $G$ is real-differentiable at a point exactly
+when $cG$ is, and then $\mathrm{d}(cG)=c\,\mathrm{d}G$ by the chain rule, while
+at a point of non-differentiability both $D^{w'}(cG)$ and $c\,D^{w'}G$ are $0$
+by the convention of \noderef{PartialWord}.
+
+Commuting with conjugation, by contrast, needs no hypothesis at all:
+$\zeta\mapsto\bar\zeta$ is an $\mathbb{R}$-linear isometric involution of
+$\mathbb{C}$, so a map is real-differentiable at a point exactly when its
+conjugate is, and then their derivatives are conjugate; while at a point of
+non-differentiability both $D^{w'}(\bar G)$ and $\overline{D^{w'}G}$ are $0$ by
+the same convention.  Hence $D^{w'}(\bar G)=\overline{D^{w'}G}$ at every point
+and for every $G$, and in particular $D^{w'}\bar f(z)=\overline{D^{w'}f(z)}$.
+Hence at $z$
+\[
+  D^{w'+\!\!+[0]}u(z)=D^{w'}f(z)+\overline{D^{w'}f(z)},\qquad
+  D^{w'+\!\!+[1]}u(z)=i\Bigl(D^{w'}f(z)-\overline{D^{w'}f(z)}\Bigr),
+\]
+and both have modulus at most $2\bigl|D^{w'}f(z)\bigr|$, by the triangle
+inequality and $|\bar\zeta|=|\zeta|$, $|i|=1$.  Summing over the bijection,
+\[
+  \sum_{|w|=m+1}\bigl|D^{w}u(z)\bigr|
+  =\sum_{|w'|=m}\Bigl(\bigl|D^{w'+\!\!+[0]}u(z)\bigr|
+     +\bigl|D^{w'+\!\!+[1]}u(z)\bigr|\Bigr)
+  \le4\sum_{|w'|=m}\bigl|D^{w'}f(z)\bigr|
+  \le4B^{0}_m|z-z_0|^{\,d-m},
+\]
+the last step by (51$'$).
+
+\emph{Step 6: conclusion.}  Put $B_m=4B^{0}_m\ge0$.  Then (52) is Step 5, and
+(51) follows from (51$'$) because $B^{0}_m\le4B^{0}_m$ and
+$|z-z_0|^{\,d-m}\ge0$.  Together with $0<\delta\le1$ from Step 4 this is the
+assertion.
+\end{proof}

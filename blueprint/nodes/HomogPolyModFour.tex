@@ -1,0 +1,105 @@
+\begin{lemma}
+Let $\epsilon\in\mathbb{C}$ with $\epsilon\neq0$, let $d\ge1$ be an integer, and
+let $A_{mn}\in\mathbb{C}$ for $m,n\ge0$.  Then the identity
+\begin{equation}\tag{60}
+  \xi=\sum_{m+n=d}A_{mn}
+    \bigl(\xi+\epsilon\xi^{-3}\bigr)^{m}
+    \bigl(\xi^{-1}+\epsilon\xi^{3}\bigr)^{n}
+\end{equation}
+cannot hold for every $\xi\in\mathbb{C}$ with $\xi\neq0$.  Here the sum runs
+over the $d+1$ pairs $(m,n)$ with $m+n=d$, $m,n\ge0$, and powers are taken with
+the convention $w^{0}=1$ for every $w\in\mathbb{C}$, including $w=0$.
+
+This is the contradiction with which Section 7 of the paper closes
+(paper.tex:636--642), and with it the optimality half of Theorem 1.  The only
+input is $\epsilon\neq0$, which for the extremal function (54) is exactly the
+condition $p\neq2$.
+\end{lemma}
+\begin{proof}
+Suppose (60) holds for every $\xi\neq0$.
+
+\emph{Step 1: the two sets of fourth roots.}  Since $\epsilon\neq0$ we have
+$-\epsilon\neq0$ and $-1/\epsilon\neq0$.  Every nonzero complex number has a
+fourth root, so fix $\zeta\neq0$ with $\zeta^{4}=-\epsilon$ and $\eta\neq0$ with
+$\eta^{4}=-1/\epsilon$.  Note that $(i\zeta)^{4}=i^{4}\zeta^{4}=\zeta^{4}=-\epsilon$
+and likewise $(i\eta)^{4}=-1/\epsilon$, and that $i\zeta\neq0$, $i\eta\neq0$.
+
+\emph{Step 2: the first evaluation.}  Let $\xi\neq0$ with $\xi^{4}=-\epsilon$.
+Then
+\[
+  \xi+\epsilon\xi^{-3}=\xi^{-3}\bigl(\xi^{4}+\epsilon\bigr)
+  =\xi^{-3}\bigl(-\epsilon+\epsilon\bigr)=0 .
+\]
+Hence in (60) each term with $m\ge1$ carries the factor $0^{m}=0$ and vanishes,
+while the term with $m=0$, $n=d$ carries $0^{0}=1$.  So (60) reduces to
+\[
+  \xi=A_{0d}\bigl(\xi^{-1}+\epsilon\xi^{3}\bigr)^{d} .
+\]
+Moreover
+\[
+  \xi^{-1}+\epsilon\xi^{3}=\xi^{-1}\bigl(1+\epsilon\xi^{4}\bigr)
+  =\xi^{-1}\bigl(1+\epsilon(-\epsilon)\bigr)=\xi^{-1}\bigl(1-\epsilon^{2}\bigr),
+\]
+so $\xi=A_{0d}\,\xi^{-d}\bigl(1-\epsilon^{2}\bigr)^{d}$.  Multiplying by
+$\xi^{d}$, which is legitimate since $\xi\neq0$,
+\begin{equation}\tag{1}
+  \xi^{d+1}=A_{0d}\bigl(1-\epsilon^{2}\bigr)^{d}
+  \qquad\text{for every }\xi\neq0\text{ with }\xi^{4}=-\epsilon .
+\end{equation}
+The right-hand side of (1) does not depend on which such $\xi$ is taken.
+
+\emph{Step 3: $4$ divides $d+1$.}  Apply (1) to $\xi=\zeta$ and to
+$\xi=i\zeta$, both legitimate by Step 1.  The two right-hand sides are equal,
+so
+\[
+  \zeta^{d+1}=(i\zeta)^{d+1}=i^{d+1}\zeta^{d+1}.
+\]
+Since $\zeta\neq0$ we have $\zeta^{d+1}\neq0$, and dividing by it gives
+$i^{d+1}=1$.  The element $i$ has order $4$ in the multiplicative group of
+$\mathbb{C}$ --- its powers cycle through $i,-1,-i,1$ --- so $i^{N}=1$ if and
+only if $4\mid N$.  Hence
+\begin{equation}\tag{2}
+  4\mid d+1 .
+\end{equation}
+
+\emph{Step 4: the second evaluation.}  Let $\xi\neq0$ with
+$\xi^{4}=-1/\epsilon$.  Then
+\[
+  \xi^{-1}+\epsilon\xi^{3}=\xi^{-1}\bigl(1+\epsilon\xi^{4}\bigr)
+  =\xi^{-1}\Bigl(1+\epsilon\cdot\Bigl(-\frac1\epsilon\Bigr)\Bigr)=0 ,
+\]
+using $\epsilon\neq0$.  Hence in (60) each term with $n=d-m\ge1$, that is with
+$m\le d-1$, carries the factor $0^{n}=0$ and vanishes, while the term with
+$m=d$, $n=0$ carries $0^{0}=1$.  So (60) reduces to
+\[
+  \xi=A_{d0}\bigl(\xi+\epsilon\xi^{-3}\bigr)^{d},
+\]
+and
+\[
+  \xi+\epsilon\xi^{-3}=\xi^{-3}\bigl(\xi^{4}+\epsilon\bigr)
+  =\xi^{-3}\Bigl(\epsilon-\frac1\epsilon\Bigr),
+\]
+so $\xi=A_{d0}\,\xi^{-3d}\bigl(\epsilon-1/\epsilon\bigr)^{d}$.  Multiplying by
+$\xi^{3d}$,
+\begin{equation}\tag{3}
+  \xi^{3d+1}=A_{d0}\Bigl(\epsilon-\frac1\epsilon\Bigr)^{d}
+  \qquad\text{for every }\xi\neq0\text{ with }\xi^{4}=-1/\epsilon ,
+\end{equation}
+again with a right-hand side independent of the choice of root.
+
+\emph{Step 5: $4$ divides $3d+1$.}  Exactly as in Step 3, applying (3) to
+$\xi=\eta$ and $\xi=i\eta$ gives
+$\eta^{3d+1}=i^{3d+1}\eta^{3d+1}$ with $\eta^{3d+1}\neq0$, hence $i^{3d+1}=1$
+and
+\begin{equation}\tag{4}
+  4\mid 3d+1 .
+\end{equation}
+
+\emph{Step 6: the contradiction.}  By (2) and (4), $4$ divides the sum
+\[
+  (d+1)+(3d+1)=4d+2 .
+\]
+But $4\mid 4d$, so $4\mid 4d+2$ would give $4\mid2$, which is false.  This
+contradiction shows that (60) cannot hold for every $\xi\neq0$, which is the
+assertion.
+\end{proof}

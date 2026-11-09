@@ -1,0 +1,230 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, let $W,V\subseteq\mathbb{C}$ be
+open, let $z_0\in W$, and let $f,\chi,H\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $f(z)=[\chi(z)]^{n}$ for every $z\in W$;
+\item[(H2)] $\chi(z_0)=0$ and $\chi$ is injective on $W$;
+\item[(H3)] $\chi$ is $C^\infty$ on $W-\{z_0\}$;
+\item[(H3$'$)] $H$ is differentiable at almost every point of $V$, and
+  $J(\xi)=|H_\xi(\xi)|^2-|H_{\bar\xi}(\xi)|^2\neq0$ for almost every
+  $\xi\in V$, with $J$ as in \noderef{Jac};
+\item[(H3$''$)] $H\in W^{1,2}_{\mathrm{loc}}(V)$ in the sense of
+  \noderef{MemWLocOn};
+\item[(H4)] $H(\xi)\in W$ and $\chi(H(\xi))=\xi$ for every $\xi\in V$, and
+  $H(0)=z_0$;
+\item[(H5)] $f$ solves equation (12) on $W$ in the sense of
+  \noderef{SolvesEq12}.
+\end{enumerate}
+Then $H$ solves equation (18) on $V$ in the sense of \noderef{SolvesEq18}.
+
+This is the hodograph step of Section 3 of the paper: (H1) is the
+factorization (15), and the conclusion is the paper's assertion at
+paper.tex:179--181 that ``from (16) we see that $H$ satisfies the linear
+equation (18)''.  It is what connects the $f$-side of the development, where
+(12) is the hypothesis, to the $H$-side, where (18) is.
+
+The hypotheses on $H$ are exactly what (17) and the weak form of (18)
+consume: differentiability almost everywhere, $J\neq0$ almost everywhere, and
+membership in $W^{1,2}_{\mathrm{loc}}(V)$.  All three are supplied by item
+(C2) of the paper's note for the inverse of a quasiconformal homeomorphism,
+whose clause reads ``the inverse $H$ of a quasiconformal homeomorphism belongs
+to $W^{1,2}_{\mathrm{loc}}$, has Jacobian $J>0$ almost everywhere, and
+satisfies (17)''.  Hypothesis (H3$''$) is what makes the conclusion statable:
+by \noderef{SolvesEq18} solving (18) is an identity between the weak Wirtinger
+derivatives of $H$, and those exist exactly because $H$ lies in a local
+Sobolev space.  No smoothness of $H$ is assumed, and none may be: the paper's
+arrow runs $H\to\chi$ (paper.tex:416), and $H$'s regularity off the origin is
+produced only later, from (18) itself, so assuming it here would invert the
+development.
+\end{lemma}
+\begin{proof}
+Write $c'=\tfrac1p-\tfrac12$ and $c=\tfrac12-\tfrac1p=-c'$.
+
+\emph{Step 1: $\chi$ and $f$ do not vanish on $W-\{z_0\}$.}  Let $z\in W$ with
+$z\neq z_0$.  If $\chi(z)=0$ then $\chi(z)=\chi(z_0)$ with $z,z_0\in W$ by
+(H2), so injectivity gives $z=z_0$, a contradiction.  Hence $\chi(z)\neq0$,
+and by (H1) and $n\ge1$,
+\begin{equation}\tag{1}
+  f(z)=[\chi(z)]^{n}\neq0\qquad(z\in W-\{z_0\}).
+\end{equation}
+
+\emph{Step 2: (12) holds at \emph{every} point of $W-\{z_0\}$.}  The set
+$W-\{z_0\}$ is open, $W$ being open.  On it $f$ agrees with $z\mapsto\chi(z)^n$
+by (H1), and $\chi$ is $C^\infty$ there by (H3), so $f$ is $C^\infty$ on
+$W-\{z_0\}$.  Consequently $z\mapsto\mathrm{d}f(z)$ is continuous on $W-\{z_0\}$,
+hence so are $f_z$ and $f_{\bar z}$, these being the fixed linear combinations
+$\tfrac12(\mathrm{d}f[1]\mp i\,\mathrm{d}f[i])$ of \noderef{DZ} and
+\noderef{DZbar}; and $f$ is continuous and nonvanishing there by (1).
+Therefore both sides of
+\begin{equation}\tag{12}
+  f_{\bar z}(z)=c'\Bigl[\frac{\overline{f(z)}}{f(z)}f_z(z)
+    +\frac{f(z)}{\overline{f(z)}}\overline{f_z(z)}\Bigr]
+\end{equation}
+are continuous functions of $z$ on $W-\{z_0\}$.
+
+By (H5) and \noderef{SolvesEq12} there are weak Wirtinger derivatives $a_f$,
+$b_f$ of $f$ on $W$, in the sense of \noderef{IsWeakWirtingerOn}, and a
+Lebesgue null set $Z_0$ such that
+\begin{equation}\tag{12$'$}
+  b_f(z)=c'\Bigl[\frac{\overline{f(z)}}{f(z)}a_f(z)
+    +\frac{f(z)}{\overline{f(z)}}\overline{a_f(z)}\Bigr]
+\end{equation}
+at every $z\in W-Z_0$ with $f(z)\neq0$.  We pass from $a_f,b_f$ to the
+pointwise derivatives $f_z,f_{\bar z}$.  By \noderef{IsWeakWirtingerOn} there
+are $f_x,f_y$ with $f,f_x,f_y\in L^1_{\mathrm{loc}}(W)$, with $f_x$ and $f_y$
+the distributional $\partial_0$- and $\partial_1$-derivatives of $f$ on $W$,
+and with $a_f=\tfrac12(f_x-if_y)$, $b_f=\tfrac12(f_x+if_y)$ at every point.
+These are hypotheses (H1) and (H2) of \noderef{WeakPartialEqFDerivAE} for the
+open set $W$, the function $f$ and the pair $D_0=f_x$, $D_1=f_y$; and its (H3)
+holds, because $f$ is $C^\infty$ on $W-\{z_0\}$ as just shown and hence
+differentiable at every point of $W$ except possibly the single point $z_0$,
+which is a null set.  That lemma therefore gives a null set $Z_1$ with
+$f_x=\partial_0f$ and $f_y=\partial_1f$ on $W-Z_1$, where
+$\partial_j=D^{[j]}$ is the classical partial derivative of
+\noderef{PartialWord}, that is $\partial_0f(z)=\mathrm{d}f(z)[1]$ and
+$\partial_1f(z)=\mathrm{d}f(z)[i]$.  Since $f_z$ and $f_{\bar z}$ are by
+\noderef{DZ} and \noderef{DZbar} the same two combinations
+$\tfrac12\bigl(\mathrm{d}f(z)[1]\mp i\,\mathrm{d}f(z)[i]\bigr)$ of those
+numbers,
+\begin{equation}\tag{12$''$}
+  a_f(z)=f_z(z),\qquad b_f(z)=f_{\bar z}(z)\qquad(z\in W-Z_1).
+\end{equation}
+Put $Z=Z_0\cup Z_1$, a null set.  Substituting (12$''$) into (12$'$), the
+identity (12) holds at every $z\in W-Z$ with $f(z)\neq0$; by (1) the last
+condition is automatic on $W-\{z_0\}$.  So (12) holds on
+$\bigl(W-\{z_0\}\bigr)-Z$.  A null set has empty interior, so its complement
+meets every nonempty open subset of $W-\{z_0\}$; that is,
+$\bigl(W-\{z_0\}\bigr)-Z$ is dense in $W-\{z_0\}$.  Two continuous functions on an
+open set that agree on a dense subset of it agree on all of it.  Hence (12)
+holds at every $z\in W-\{z_0\}$.
+
+\emph{Step 3: equation (16) at every $z\in W-\{z_0\}$.}  Fix $z\in W-\{z_0\}$.  On
+the open set $W-\{z_0\}$ the map $\chi$ is $C^\infty$ and nonvanishing by Step 1,
+so \noderef{WirtingerPowerRule} applies to it there with the integer exponent
+$n$ and gives
+\begin{equation}\tag{2}
+  \partial_z\bigl(\chi^{n}\bigr)(z)=n\,\chi(z)^{n-1}\chi_z(z),\qquad
+  \partial_{\bar z}\bigl(\chi^{n}\bigr)(z)=n\,\chi(z)^{n-1}\chi_{\bar z}(z).
+\end{equation}
+Since $f$ agrees with $\chi^{n}$ on the open set $W-\{z_0\}$, the two sides have
+the same Wirtinger derivatives at $z$, so $f_z(z)$ and $f_{\bar z}(z)$ are
+given by the right-hand sides of (2).  Also
+$\overline{f(z)}=\overline{\chi(z)}^{\,n}$ and
+$\overline{f_z(z)}=n\,\overline{\chi(z)}^{\,n-1}\overline{\chi_z(z)}$.
+Substituting all of this into (12),
+\[
+  n\chi^{n-1}\chi_{\bar z}
+  =c'\Bigl[\frac{\bar\chi^{\,n}}{\chi^{n}}\,n\chi^{n-1}\chi_z
+    +\frac{\chi^{n}}{\bar\chi^{\,n}}\,n\bar\chi^{\,n-1}\overline{\chi_z}\Bigr],
+\]
+all arguments being $z$.  Dividing by $n\chi(z)^{n-1}\neq0$, which is legitimate
+by Step 1 and $n\ge1$, and simplifying
+$\dfrac{\chi^{n}}{\bar\chi^{\,n}}\cdot\dfrac{\bar\chi^{\,n-1}}{\chi^{n-1}}
+=\dfrac{\chi}{\bar\chi}$, we obtain
+\begin{equation}\tag{16}
+  \chi_{\bar z}(z)=c'\Bigl[\frac{\overline{\chi(z)}^{\,n}}{\chi(z)^{n}}\chi_z(z)
+    +\frac{\chi(z)}{\overline{\chi(z)}}\,\overline{\chi_z(z)}\Bigr]
+  \qquad(z\in W-\{z_0\}),
+\end{equation}
+which is equation (16) of the paper.
+
+\emph{Step 4: $H(\xi)\in W-\{z_0\}$, and the data (17) needs.}  Let $\xi\in V$
+with $\xi\neq0$.  If $H(\xi)=z_0$ then $\xi=\chi(H(\xi))=\chi(z_0)=0$ by (H4)
+and (H2), a contradiction; so, using $H(\xi)\in W$ from (H4),
+\begin{equation}\tag{3}
+  H(\xi)\in W-\{z_0\}\qquad(\xi\in V-\{0\}).
+\end{equation}
+In particular $\chi$ is $C^\infty$ at $H(\xi)$ by (H3), the set $W-\{z_0\}$
+being open, so $\chi$ is differentiable at $H(\xi)$.  No corresponding
+pointwise statement about $H$ is available, and none is claimed: (H3$'$)
+controls $H$ only almost everywhere, so the next paragraph has to discard a
+null set.
+
+By (H3$'$), with $J$ as in \noderef{Jac}, there are null sets $N_1$ and $N_2$
+such that $H$ is differentiable at every $\xi\in V-N_1$ and $J(\xi)\neq0$ for
+every $\xi\in V-N_2$.  Put $N=N_1\cup N_2$, again null.  Combining these two
+facts with the differentiability of $\chi$ at $H(\xi)$ just obtained, which
+holds at every $\xi\in V$ with $\xi\neq0$, we conclude that for every
+$\xi\in V-N$ with $\xi\neq0$,
+\begin{equation}\tag{4}
+  H\ \text{is differentiable at }\xi,\qquad
+  \chi\ \text{is differentiable at }H(\xi),\qquad
+  J(\xi)\neq0 .
+\end{equation}
+
+\emph{Step 5: equation (18) off a null set.}  Fix $\xi\in V-N$ with
+$\xi\neq0$ and write $z=H(\xi)$, $J=J(\xi)$.  The hypotheses of
+\noderef{ChiFirstDerivs} hold with the open set $V$, the pair $(\chi,H)$, the
+point $\xi\in V$, the relation $\chi(H(\zeta))=\zeta$ for $\zeta\in V$ from
+(H4), differentiability of $H$ at $\xi$ and of $\chi$ at $H(\xi)$ from (4),
+and $J\neq0$ from (4).  It gives
+\begin{equation}\tag{17}
+  \chi_z(z)=\frac{\overline{H_\xi(\xi)}}{J},\qquad
+  \chi_{\bar z}(z)=-\frac{H_{\bar\xi}(\xi)}{J}.
+\end{equation}
+Note $\chi(z)=\chi(H(\xi))=\xi$ by (H4), and $J$ is real, so
+$\overline{\chi_z(z)}=\overline{\overline{H_\xi(\xi)}/J}=H_\xi(\xi)/J$.
+Substituting (17) and $\chi(z)=\xi$ into (16), which applies because
+$z\in W-\{z_0\}$ by (3),
+\[
+  -\frac{H_{\bar\xi}(\xi)}{J}
+  =c'\Bigl[\frac{\bar\xi^{\,n}}{\xi^{n}}\cdot\frac{\overline{H_\xi(\xi)}}{J}
+    +\frac{\xi}{\bar\xi}\cdot\frac{H_\xi(\xi)}{J}\Bigr].
+\]
+Multiplying by $-J\neq0$ and using $-c'=c=\tfrac12-\tfrac1p$,
+\[
+  H_{\bar\xi}(\xi)
+  =c\Bigl[\frac{\xi}{\bar\xi}H_\xi(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}\overline{H_\xi(\xi)}\Bigr],
+\]
+which is the pointwise form of equation (18) at $\xi$.
+
+\emph{Step 6: the weak form of (18), and conclusion.}  Step 5 establishes the
+pointwise identity (18), between $H_{\bar\xi}$ and $H_\xi$, at every
+$\xi\in V-N$ with $\xi\neq0$.  It remains to read it for the weak Wirtinger
+derivatives, which is what \noderef{SolvesEq18} asks for.
+
+By (H3$''$) and \noderef{MemWLocOn} there is a family $(H_w)$, indexed by the
+words $w$ in $\{0,1\}$, with $H_{()}=H$, with $H_w\in L^2_{\mathrm{loc}}(V)$ in
+the sense of \noderef{MemLpLocOn} for every $w$ with $|w|\le1$, and with
+$H_{(j)}$ the distributional $\partial_j$-derivative of $H$ on $V$ in the sense
+of \noderef{IsWeakPartialOn} for $j=0,1$.  Put $H_x=H_{(0)}$, $H_y=H_{(1)}$.
+
+Local square integrability implies local integrability: if
+$u\in L^2_{\mathrm{loc}}(V)$ and $\kappa\subseteq V$ is compact, then
+$\mathbf{1}_\kappa u$ is measurable and, by the Cauchy--Schwarz inequality,
+\[
+  \int_\kappa|u|\,d\sigma
+  \le\sigma(\kappa)^{1/2}\Bigl(\int_\kappa|u|^2\,d\sigma\Bigr)^{1/2}<\infty,
+\]
+$\sigma(\kappa)$ being finite because $\kappa$ is bounded; so
+$u\in L^1_{\mathrm{loc}}(V)$ in the sense of \noderef{MemLpLocOn}.  Applying
+this to $H$, $H_x$ and $H_y$ gives $H,H_x,H_y\in L^1_{\mathrm{loc}}(V)$.
+
+Define $a=\tfrac12(H_x-iH_y)$ and $b=\tfrac12(H_x+iH_y)$ at every point of
+$\mathbb{C}$.  Then $a$ and $b$ are weak Wirtinger derivatives of $H$ on $V$
+in the sense of \noderef{IsWeakWirtingerOn}: its clause (a) is the local
+integrability just proved, its clause (b) is the distributional-derivative
+property of $H_x,H_y$, and its clause (c) is the definition of $a$ and $b$.
+
+Those same two clauses are hypotheses (H1) and (H2) of
+\noderef{WeakPartialEqFDerivAE} for the open set $V$, the function $H$ and the
+pair $D_0=H_x$, $D_1=H_y$, and its (H3) is the first half of (H3$'$).  So
+there is a null set $N_3$ with $H_x=\partial_0H$ and $H_y=\partial_1H$ on
+$V-N_3$, with $\partial_j=D^{[j]}$ the classical partial derivative of
+\noderef{PartialWord}; as in Step 2, $H_\xi$ and $H_{\bar\xi}$ are by
+\noderef{DZ} and \noderef{DZbar} the same two combinations of
+$\mathrm{d}H(\xi)[1]=\partial_0H(\xi)$ and
+$\mathrm{d}H(\xi)[i]=\partial_1H(\xi)$, whence
+\begin{equation}\tag{5}
+  a(\xi)=H_\xi(\xi),\qquad b(\xi)=H_{\bar\xi}(\xi)\qquad(\xi\in V-N_3).
+\end{equation}
+Combining (5) with Step 5, for every $\xi\in V-(N\cup N_3)$ with $\xi\neq0$,
+\[
+  b(\xi)=c\Bigl[\frac{\xi}{\bar\xi}a(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}\overline{a(\xi)}\Bigr].
+\]
+The set $N\cup N_3$ is null, so this holds at almost every $\xi\in V$ with
+$\xi\neq0$.  With the pair $a,b$ exhibited above, this is precisely the
+assertion that $H$ solves (18) on $V$ in the sense of \noderef{SolvesEq18}.
+\end{proof}

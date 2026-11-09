@@ -1,0 +1,38 @@
+\begin{lemma}
+Let $\Omega\subset\mathbb{C}$ be open, let $H\colon\mathbb{C}\to\mathbb{C}$ be
+$C^\infty$ on $\Omega$, let $s,k\ge0$ be integers and let
+$P\in\mathbb{P}(s,k)$ relative to $H$ in the sense of \noderef{PClass}.  Then
+$P$ is $C^\infty$ on $\Omega$.
+\end{lemma}
+\begin{proof}
+By \noderef{PClass} fix an integer $r\ge0$, complex numbers $c_1,\dots,c_r$ and
+lists $M_1,\dots,M_r$ of derivative symbols, each of type $(s,k)$, with
+\begin{equation}\tag{1}
+  P(\xi)=\sum_{\alpha=1}^{r}c_\alpha H^{M_\alpha}(\xi)\qquad\text{for every }\xi\in\mathbb{C}.
+\end{equation}
+
+\emph{Step 1: every symbol value is $C^\infty$ on $\Omega$.}  Let
+$d=(i,j,\beta)$ be a derivative symbol and put
+$g_d=\partial^{i+j}H/\partial\xi^i\partial\bar\xi^j$, the iterated derivative
+of \noderef{WirtingerIter}.  By part (a) of \noderef{WirtingerIterSwap},
+$g_d$ is $C^\infty$ on $\Omega$.  By \noderef{SymbolValue}, $H^{d}$ is either
+$g_d$ or its pointwise complex conjugate $\overline{g_d}$.  Complex
+conjugation is an $\mathbb{R}$-linear isometry of $\mathbb{C}$, so composing a
+$C^\infty$ function on $\Omega$ with it again yields a $C^\infty$ function on
+$\Omega$.  Hence $H^{d}$ is $C^\infty$ on $\Omega$ in either case.
+
+\emph{Step 2: every monomial is $C^\infty$ on $\Omega$.}  By
+\noderef{MonomialValue}, $H^{M_\alpha}$ is the pointwise product of the symbol
+values $H^{d}$ over the finitely many entries $d$ of $M_\alpha$, and is the
+constant function $1$ when $M_\alpha$ is empty.  A finite pointwise product of
+$C^\infty$ functions on $\Omega$ is $C^\infty$ on $\Omega$, and constants are
+$C^\infty$; so $H^{M_\alpha}$ is $C^\infty$ on $\Omega$ for each
+$\alpha=1,\dots,r$ by Step 1.
+
+\emph{Step 3: conclusion.}  By (1), $P$ agrees at every point of $\mathbb{C}$,
+hence in particular at every point of $\Omega$, with the function
+$\xi\mapsto\sum_{\alpha}c_\alpha H^{M_\alpha}(\xi)$.  A finite
+$\mathbb{C}$-linear combination of $C^\infty$ functions on $\Omega$ is
+$C^\infty$ on $\Omega$, so that function is $C^\infty$ on $\Omega$ by Step 2,
+and therefore so is $P$.
+\end{proof}

@@ -1,0 +1,93 @@
+\begin{lemma}
+Let $1<p<\infty$, let $\epsilon_k(n,p)$ be as in \noderef{EpsCoef} and let
+$d=d(p)$ be as in \noderef{DExp}.  Then
+\begin{enumerate}
+\item[(a)] $\epsilon_2(1,p)=\dfrac{1-d}{1+3d}$,
+\item[(b)] $\bigl|\epsilon_2(1,p)\bigr|<\dfrac13$, and
+\item[(c)] $\epsilon_2(1,p)=0$ if and only if $p=2$.
+\end{enumerate}
+Thus the number $\epsilon$ of equation (54) of the paper, which Section~7
+introduces as $\epsilon=\epsilon_2=\frac{\lambda_2-1}{\lambda_2+3}=
+\frac{1-d}{1+3d}$, satisfies $|\epsilon|<\frac13$, and $\epsilon\neq0$ exactly
+when $p\neq2$.
+\end{lemma}
+\begin{proof}
+Fix $p>1$ and write $\gamma=\gamma_1(p)$.  By \noderef{DExpEqGammaOneInv},
+\[
+  \gamma>0\qquad\text{and}\qquad \gamma\, d=1 .
+\]
+In particular $d=1/\gamma$.
+
+\emph{Step 0 (what $\epsilon_2(1,p)$ is).}  By \noderef{EpsCoef} with $n=1$,
+$k=2$, and since $\lambda_2(1,p)=\gamma_1(p)=\gamma$ by
+\noderef{GammaExp},
+\[
+  \epsilon_2(1,p)=\frac{\lambda_2(1,p)+1-2}{\lambda_2(1,p)+1+2}
+  =\frac{\gamma-1}{\gamma+3}.
+\]
+Since $\gamma>0$ we have $\gamma+3>3>0$, so this is a well-defined real
+number.
+
+\emph{Step 1 (a closed form for $\gamma$, and $\gamma<3$).}  By
+\noderef{GammaExp} and \noderef{LambdaCoef} with $n=1$, $k=2$,
+\[
+  2\gamma=-p+\sqrt{4\cdot2^2(p-1)+(p-2)^2}=-p+\sqrt{p^2+12p-12},
+\]
+because $16(p-1)+(p-2)^2=p^2+12p-12$.  Since $p>1$ we have
+$p^2+12p-12>p^2\ge0$, so the radicand is positive; write
+$S=\sqrt{p^2+12p-12}>0$, so $S^2=p^2+12p-12$ and $2\gamma=S-p$.
+
+We claim $\gamma<3$, i.e.\ $S<p+6$.  Both $S\ge0$ and $p+6>0$, so it suffices
+to compare squares:
+\[
+  (p+6)^2-S^2=\bigl(p^2+12p+36\bigr)-\bigl(p^2+12p-12\bigr)=48>0 .
+\]
+Hence $S<p+6$, so $2\gamma=S-p<6$ and $\gamma<3$.
+
+\emph{Step 2 (proof of (a)).}  Since $\gamma>0$,
+\[
+  1-d=1-\frac1\gamma=\frac{\gamma-1}{\gamma},
+  \qquad
+  1+3d=1+\frac3\gamma=\frac{\gamma+3}{\gamma},
+\]
+and $\dfrac{\gamma+3}{\gamma}>0$, so $1+3d\neq0$ and
+\[
+  \frac{1-d}{1+3d}
+  =\frac{(\gamma-1)/\gamma}{(\gamma+3)/\gamma}
+  =\frac{\gamma-1}{\gamma+3}
+  =\epsilon_2(1,p)
+\]
+by Step 0.
+
+\emph{Step 3 (proof of (b)).}  By Step 0,
+$|\epsilon_2(1,p)|=\dfrac{|\gamma-1|}{\gamma+3}$ with $\gamma+3>0$, so the
+assertion $|\epsilon_2(1,p)|<\frac13$ is equivalent to
+$3|\gamma-1|<\gamma+3$.  We distinguish two cases.
+
+If $\gamma\ge1$, then $|\gamma-1|=\gamma-1$ and
+\[
+  3(\gamma-1)<\gamma+3\iff 2\gamma<6\iff\gamma<3,
+\]
+which holds by Step 1.
+
+If $\gamma<1$, then $|\gamma-1|=1-\gamma$ and
+\[
+  3(1-\gamma)<\gamma+3\iff 0<4\gamma\iff\gamma>0,
+\]
+which holds since $\gamma>0$.
+
+In both cases $3|\gamma-1|<\gamma+3$, hence $|\epsilon_2(1,p)|<\frac13$.
+
+\emph{Step 4 (proof of (c)).}  Since $\gamma+3>0$, Step 0 gives
+\[
+  \epsilon_2(1,p)=0\iff\gamma-1=0\iff\gamma=1 .
+\]
+By Step 1, $2\gamma=S-p$ with $S=\sqrt{p^2+12p-12}\ge0$, so
+$\gamma=1\iff S=p+2$.
+
+If $p=2$, then $p^2+12p-12=4+24-12=16$, so $S=4=p+2$ and $\gamma=1$.
+Conversely, if $S=p+2$, then squaring (both sides are nonnegative, as
+$p+2>0$) gives $p^2+12p-12=p^2+4p+4$, i.e.\ $8p=16$, i.e.\ $p=2$.
+
+Hence $\epsilon_2(1,p)=0$ if and only if $p=2$.
+\end{proof}

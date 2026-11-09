@@ -1,0 +1,72 @@
+\begin{definition}
+Let $\Omega\subseteq\mathbb{C}$ and let $f,a,b\colon\mathbb{C}\to\mathbb{C}$.
+Identify $\mathbb{C}$ with $\mathbb{R}^2$ by $z=x+iy$ and write
+$\partial_0=\partial/\partial x$, $\partial_1=\partial/\partial y$.  We say
+that $a$ and $b$ are the \emph{weak Wirtinger derivatives of $f$ on $\Omega$}
+if there are functions $f_x,f_y\colon\mathbb{C}\to\mathbb{C}$ such that
+\begin{enumerate}
+\item[(a)] $f$, $f_x$ and $f_y$ belong to $L^1_{\mathrm{loc}}(\Omega)$ in the
+sense of \noderef{MemLpLocOn};
+\item[(b)] $f_x$ is the distributional $\partial_0$-derivative of $f$ on
+$\Omega$ and $f_y$ is the distributional $\partial_1$-derivative of $f$ on
+$\Omega$, both in the sense of \noderef{IsWeakPartialOn};
+\item[(c)] for every $z\in\mathbb{C}$,
+\[
+  a(z)=\tfrac12\bigl(f_x(z)-i\,f_y(z)\bigr),
+  \qquad
+  b(z)=\tfrac12\bigl(f_x(z)+i\,f_y(z)\bigr).
+\]
+\end{enumerate}
+We then write $a=\partial f/\partial z$ and $b=\partial f/\partial\bar z$ in
+the weak sense, and also $a=f_z$, $b=f_{\bar z}$.
+
+This is the pair of operators
+\[
+  \frac{\partial}{\partial z}=\frac12\Bigl(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\Bigr),
+  \qquad
+  \frac{\partial}{\partial\bar z}=\frac12\Bigl(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\Bigr)
+\]
+of Section~2 of the paper, applied in the distributional sense.  It is the
+reading the paper's text forces where those operators are first used.  A
+mapping is called $K$-quasiregular at paper.tex:129--133 if
+$f\in W^{1,2}_{\mathrm{loc}}(\Omega)$ \emph{and} the inequality (11) between
+$\partial f/\partial\bar z$ and $\partial f/\partial z$ holds almost
+everywhere; at that point in the paper $f$ carries no hypothesis beyond
+Sobolev membership, so the derivatives appearing in (11) --- and in (12),
+which is about the same $f$ one sentence later --- are necessarily the
+distributional ones whose existence that membership asserts.  The same is true
+of the system (18), whose solutions the paper assumes only to lie in
+$W^{1,2}$.
+
+Clause (a) is part of the data for two reasons.  First, it is what makes
+clause (b) say what it should: the integration-by-parts identity of
+\noderef{IsWeakPartialOn} is an identity between integrals, and a divergent
+integral carries no information, so without local integrability that identity
+could be met by functions which are not derivatives of $f$ in any sense.
+Second, (a) and (b) are exactly the hypotheses under which the weak partial
+derivatives of an almost everywhere differentiable function are known to agree
+almost everywhere with its classical ones.  Consequently, when $\Omega$ is
+open and $f$ is in addition differentiable at almost every point of $\Omega$,
+one has $f_x=\partial_0f$ and $f_y=\partial_1f$ almost everywhere, hence
+$a=\partial f/\partial z$ and $b=\partial f/\partial\bar z$ almost everywhere
+with the right-hand sides read through the real Fr\'echet derivative of $f$.
+So for an almost everywhere differentiable function the weak and the pointwise
+readings of the two operators agree almost everywhere, which is what lets the
+pointwise computations of Sections~4--6 proceed.  For a function known only up
+to a null set, by contrast, only the weak reading has content: the Fr\'echet
+derivative is taken to be $0$ wherever a function fails to be differentiable,
+so both pointwise operators vanish identically on a nowhere differentiable
+representative of a class, and any inequality or identity between them is
+satisfied vacuously there.
+
+Finally, $a$ and $b$ are determined by $f$ and $\Omega$ up to null sets when
+$\Omega$ is open: if $f_x$ and $f_x'$ are both distributional
+$\partial_0$-derivatives of $f$ on $\Omega$ lying in
+$L^1_{\mathrm{loc}}(\Omega)$, then $\int(f_x-f_x')\phi\,d\sigma=0$ for every
+test function $\phi$ for $\Omega$, whence $f_x=f_x'$ almost everywhere on
+$\Omega$, and likewise for $f_y$.  So the choice of the family in (b) does not
+matter, and a statement of the form ``there are weak Wirtinger derivatives
+$a,b$ of $f$ on $\Omega$ such that $P(a,b)$ holds almost everywhere'' is
+unambiguous for every property $P$ which is insensitive to changes of its
+arguments on null sets.
+\end{definition}

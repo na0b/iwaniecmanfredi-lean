@@ -1,0 +1,48 @@
+\begin{definition}
+Let $\Omega\subset\mathbb{C}$ be open and let $1<p<\infty$.  A mapping
+$f\colon\mathbb{C}\to\mathbb{C}$ is said to \emph{satisfy the system (12) on
+$\Omega$} if there are weak Wirtinger derivatives $a=\partial f/\partial z$
+and $b=\partial f/\partial\bar z$ of $f$ on $\Omega$, in the sense of
+\noderef{IsWeakWirtingerOn}, such that
+\[
+  b(z)
+  =\Bigl(\frac1p-\frac12\Bigr)
+   \Bigl[\frac{\overline{f(z)}}{f(z)}\,a(z)
+     +\frac{f(z)}{\overline{f(z)}}\,\overline{a(z)}\Bigr]
+\]
+at almost every $z\in\Omega$ with $f(z)\neq0$, ``almost every'' referring to
+two-dimensional Lebesgue measure.
+
+This is equation (12) of the paper,
+\[
+  \frac{\partial f}{\partial\bar z}
+  =\Bigl(\frac1p-\frac12\Bigr)
+   \Bigl[\frac{\bar f}{f}\frac{\partial f}{\partial z}
+        +\frac f{\bar f}\,\overline{\frac{\partial f}{\partial z}}\Bigr],
+  \tag{12}
+\]
+the one complex equation into which Section~2 recasts the $p$-harmonic
+equation (1) for the complex gradient $f=\partial u/\partial z$.  The
+right-hand side involves the quotients $\bar f/f$ and $f/\bar f$ and is
+therefore defined only where $f$ does not vanish, which is why the condition
+is imposed off the zero set of $f$; the paper asserts (12) ``almost
+everywhere'', and in its situation the zero set of $f$ is discrete, hence of
+measure zero, so the two readings agree.
+
+The derivatives are the weak ones.  Equation (12) is introduced at
+paper.tex:140--143 for the same $f$, and in the same breath, as the distortion
+inequality (11) of \noderef{QuasiregularOn}, and the only hypothesis that $f$
+carries there is $f\in W^{1,2}_{\mathrm{loc}}(\Omega)$; so $\partial f/\partial z$
+and $\partial f/\partial\bar z$ in (12) are the distributional derivatives,
+and satisfying (12) is a property of the class of $f$.  Read through the real
+Fr\'echet derivative of a chosen representative, (12) would be satisfied
+vacuously by every nowhere differentiable representative of every $L^2$-class,
+since both of its sides would vanish identically.  By the next-to-last
+paragraph of \noderef{IsWeakWirtingerOn}, whenever $f$ is in addition
+differentiable at almost every point of $\Omega$ the pair $(a,b)$ agrees
+almost everywhere on $\Omega$ with the pointwise pair $(f_z,f_{\bar z})$ read
+through $\mathrm{d}f$, which is how the pointwise form of (12) --- the form
+consumed by the elliptic-regularity step and by the hodograph transformation
+--- is recovered.  By the last paragraph of \noderef{IsWeakWirtingerOn} the
+choice of the witnessing pair is immaterial.
+\end{definition}

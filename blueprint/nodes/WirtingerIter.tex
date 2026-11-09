@@ -1,0 +1,22 @@
+\begin{definition}
+For non-negative integers $i,j$ and a map $H\colon\mathbb{C}\to\mathbb{C}$ put
+\[
+  \frac{\partial^{i+j}H}{\partial\xi^i\partial\bar\xi^j}
+  =\Bigl(\frac{\partial}{\partial\xi}\Bigr)^{\!i}
+   \Bigl(\frac{\partial}{\partial\bar\xi}\Bigr)^{\!j}H,
+\]
+that is, the function obtained from $H$ by applying the operator
+$\partial/\partial\bar\xi$ of \noderef{DZbar} $j$ times and then the operator
+$\partial/\partial\xi$ of \noderef{DZ} $i$ times.  For $i=j=0$ this is $H$
+itself.
+
+These are the iterated partials $\partial^sH/\partial\xi^i\partial\bar\xi^j$
+with $s=i+j$ appearing in the convention of Section~5 of the paper.  The
+definition fixes one order of application, so that the expression is defined
+for every $H$ without any smoothness assumption, using the convention of
+\noderef{DZ} and \noderef{DZbar} that a point of non-differentiability
+contributes a zero derivative.  On an open set where $H$ is $C^\infty$ the two
+operators commute, so the choice of order is immaterial there; that
+commutation is proved separately in the tablet and is not part of this
+definition.
+\end{definition}

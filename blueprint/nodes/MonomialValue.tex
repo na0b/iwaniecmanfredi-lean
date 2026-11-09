@@ -1,0 +1,25 @@
+\begin{definition}
+Let $H\colon\mathbb{C}\to\mathbb{C}$ and let $M=(d_1,d_2,\dots,d_k)$ be a
+finite list of derivative symbols in the sense of \noderef{DerivSymbol}.  The
+\emph{monomial determined by $M$} is the function
+\[
+  H^M=H^{d_1}H^{d_2}\cdots H^{d_k},
+\]
+the pointwise product of the symbol values of \noderef{SymbolValue}.  For the
+empty list, $H^M$ is the constant function $1$.
+
+The list $M$ carries two numerical invariants, both computed from $M$:
+\[
+  k(M)=k\ \ \text{(the length of $M$)},\qquad
+  s(M)=|d_1|+|d_2|+\dots+|d_k|\ \ \text{(the sum of the orders of its entries)} .
+\]
+We say that $M$, and also the function $H^M$, is \emph{of type $(s(M),k(M))$}.
+
+With this terminology $H^M$ is exactly an expression
+$H^{s_1}H^{s_2}\cdots H^{s_k}$ with $s_1+s_2+\dots+s_k=s(M)$, which is what
+Section~5 of the paper calls a monomial of type $(s,k)$: ``Any expression of
+the form $H^{s_1}H^{s_2}\cdots H^{s_k}$, where $s_1+s_2+\dots+s_k=s$ will be
+called a monomial of type $(s,k)$.''  Because the type is read off from the
+list rather than imposed on it, the order $|d_t|$ of each individual factor
+stays visible in $M$.
+\end{definition}

@@ -1,0 +1,68 @@
+\begin{lemma}
+Let $f\colon\mathbb{C}\to\mathbb{C}$ be real-differentiable at
+$\xi\in\mathbb{C}$, and let $\bar f$ denote the function
+$z\mapsto\overline{f(z)}$.  Then
+\[
+  \frac{\partial\bar f}{\partial\xi}(\xi)
+  =\overline{\frac{\partial f}{\partial\bar\xi}(\xi)},
+  \qquad
+  \frac{\partial\bar f}{\partial\bar\xi}(\xi)
+  =\overline{\frac{\partial f}{\partial\xi}(\xi)},
+\]
+with $\partial/\partial\xi$ as in \noderef{DZ} and $\partial/\partial\bar\xi$
+as in \noderef{DZbar}.
+\end{lemma}
+\begin{proof}
+Let $c\colon\mathbb{C}\to\mathbb{C}$, $c(w)=\bar w$, denote complex
+conjugation, so that $\bar f=c\circ f$.  As a map of the two real variables,
+$c$ is $\mathbb{R}$-linear and continuous, hence real-differentiable at every
+point with $Dc(w)=c$ for all $w$.
+
+Since $f$ is real-differentiable at $\xi$, the chain rule for the real
+Fr\'echet derivative shows that $c\circ f$ is real-differentiable at $\xi$ with
+$D(c\circ f)(\xi)=Dc(f(\xi))\circ Df(\xi)=c\circ Df(\xi)$, that is,
+\begin{equation}\tag{$*$}
+  D(\bar f)(\xi)[v]=\overline{Df(\xi)[v]}\qquad\text{for every }v\in\mathbb{C}.
+\end{equation}
+
+We use two elementary identities of complex arithmetic: for every
+$w\in\mathbb{C}$,
+\begin{equation}\tag{$**$}
+  \overline{i\,w}=\bar i\,\bar w=-i\,\bar w,
+  \qquad
+  \overline{-i\,w}=i\,\bar w ,
+\end{equation}
+and $\overline{\tfrac12 w}=\tfrac12\bar w$ because $\tfrac12$ is real.
+
+Now by \noderef{DZ} and $(*)$,
+\[
+  \frac{\partial\bar f}{\partial\xi}(\xi)
+  =\tfrac12\Bigl(D(\bar f)(\xi)[1]-i\,D(\bar f)(\xi)[i]\Bigr)
+  =\tfrac12\Bigl(\overline{Df(\xi)[1]}-i\,\overline{Df(\xi)[i]}\Bigr).
+\]
+By the first identity of $(**)$ with $w=Df(\xi)[i]$ we have
+$-i\,\overline{Df(\xi)[i]}=\overline{i\,Df(\xi)[i]}$, so the right-hand side
+equals
+\[
+  \tfrac12\Bigl(\overline{Df(\xi)[1]}+\overline{i\,Df(\xi)[i]}\Bigr)
+  =\tfrac12\,\overline{Df(\xi)[1]+i\,Df(\xi)[i]}
+  =\overline{\tfrac12\bigl(Df(\xi)[1]+i\,Df(\xi)[i]\bigr)}
+  =\overline{\frac{\partial f}{\partial\bar\xi}(\xi)},
+\]
+using additivity of conjugation, then $\overline{\tfrac12w}=\tfrac12\bar w$,
+and finally the formula of \noderef{DZbar}.  This is the first identity.
+
+Symmetrically, by \noderef{DZbar} and $(*)$,
+\[
+  \frac{\partial\bar f}{\partial\bar\xi}(\xi)
+  =\tfrac12\Bigl(\overline{Df(\xi)[1]}+i\,\overline{Df(\xi)[i]}\Bigr),
+\]
+and by the second identity of $(**)$ with $w=Df(\xi)[i]$ we have
+$i\,\overline{Df(\xi)[i]}=\overline{-i\,Df(\xi)[i]}$, so this equals
+\[
+  \tfrac12\,\overline{Df(\xi)[1]-i\,Df(\xi)[i]}
+  =\overline{\tfrac12\bigl(Df(\xi)[1]-i\,Df(\xi)[i]\bigr)}
+  =\overline{\frac{\partial f}{\partial\xi}(\xi)}
+\]
+by the formula of \noderef{DZ}.
+\end{proof}

@@ -1,0 +1,201 @@
+\begin{lemma}
+Let $\Omega\subseteq\mathbb{C}$ be open, let $S\subseteq\Omega$ meet every
+compact subset of $\Omega$ in a finite set, let $j\in\{0,1\}$, let
+$g,v\colon\mathbb{C}\to\mathbb{C}$, and let $\beta$ satisfy $0\le\beta<1$.
+Assume
+\begin{enumerate}
+\item[(H1)] $g$ is of class $C^1$ on $\Omega-S$;
+\item[(H2)] $\partial_jg=v$ on $\Omega-S$, where $\partial_0$ and $\partial_1$
+  are the partial derivatives of \noderef{PartialWord} along the words $[0]$
+  and $[1]$;
+\item[(H3)] $g\in L^1_{\mathrm{loc}}(\Omega)$ and $v\in L^1_{\mathrm{loc}}(\Omega)$
+  in the sense of \noderef{MemLpLocOn};
+\item[(H4)] for every $z_0\in S$ there are $M$ and $\rho>0$ with
+  $\|g(z)\|\le M\,|z-z_0|^{-\beta}$ whenever $0<|z-z_0|<\rho$.
+\end{enumerate}
+Then $v$ is the distributional $j$-th partial derivative of $g$ on $\Omega$, in
+the sense of \noderef{IsWeakPartialOn}.
+
+This is the step hidden in Section 6's ``Hence
+$u\in W^{k+2,q}_{\mathrm{loc}}(\Omega)$'' at paper.tex:534: the derivatives of
+the regular representative are classical only off the singular set, and near a
+singular point they grow like a negative power of the distance.  The same
+statement carries Section 7's classical $p$-harmonic identity off the origin to
+the weak form, with $S=\{0\}$ and $\beta=0$ there.
+\end{lemma}
+\begin{proof}
+By \noderef{IsWeakPartialOn} we must show
+\begin{equation}\tag{G}
+  \int_{\mathbb{C}}g\,\partial_j\varphi\,d\sigma
+  =-\int_{\mathbb{C}}v\,\varphi\,d\sigma
+\end{equation}
+for every test function $\varphi$ for $\Omega$ in the sense of
+\noderef{IsTestFn}, that is, every $\varphi$ smooth on $\mathbb{C}$ with
+compact support $T=\operatorname{supp}\varphi\subseteq\Omega$.  Fix such a
+$\varphi$; write $\|\varphi\|_\infty$ and $\|\partial_j\varphi\|_\infty$ for the
+suprema of $|\varphi|$ and $|\partial_j\varphi|$, finite because both are
+continuous with compact support.  Throughout $d\sigma$ is plane Lebesgue
+measure.
+
+\emph{Step 0: the finitely many exceptional points in the support, and
+integrability.}  By hypothesis $S\cap T$ is finite; write
+$S\cap T=\{\zeta_1,\dots,\zeta_N\}$ (possibly $N=0$).  Both $g$ and $v$ are
+measurable on $\Omega$: they are continuous on the open set $\Omega-S$ --- $g$
+by (H1), and $v$ by (H1) together with (H2), being there the continuous
+function $\partial_jg$ --- and $S\cap T$ is finite, hence null.  By (H3) and
+compactness of $T\subseteq\Omega$,
+\begin{equation}\tag{1}
+  \int_{T}\|g\|\,d\sigma<\infty,\qquad \int_{T}\|v\|\,d\sigma<\infty ,
+\end{equation}
+so both integrals in (G) converge absolutely, their integrands vanishing off
+$T$.
+
+\emph{Step 1: the cutoffs.}  Fix once and for all a smooth
+$\chi\colon\mathbb{R}\to\mathbb{R}$ with
+\[
+  0\le\chi\le1,\qquad \chi(t)=0\ (t\le1),\qquad \chi(t)=1\ (t\ge2),\qquad
+  |\chi'|\le C_0
+\]
+for an absolute constant $C_0$; such a $\chi$ exists by the standard
+construction of smooth bump functions (take $\chi(t)=\int_{-\infty}^{t}\zeta$
+with $\zeta\ge0$ smooth, supported in $(1,2)$, of total integral $1$).  By
+(H4) choose for each $i\le N$ numbers $M_i$ and $\rho_i>0$ with
+\begin{equation}\tag{2}
+  \|g(z)\|\le M_i\,|z-\zeta_i|^{-\beta}\qquad(0<|z-\zeta_i|<\rho_i),
+\end{equation}
+and put $\rho_*=\min_i\rho_i>0$ (with $\rho_*=1$ if $N=0$) and
+$M_*=\max_iM_i$.  Fix also
+\[
+  0<\varepsilon<\tfrac14\min\Bigl\{\rho_*,\ \min_{i\neq i'}|\zeta_i-\zeta_{i'}|\Bigr\},
+\]
+the second minimum being over distinct pairs and omitted if $N\le1$, and set
+\[
+  \eta_\varepsilon(z)=\prod_{i=1}^{N}\chi\Bigl(\frac{|z-\zeta_i|}{\varepsilon}\Bigr)
+\]
+(the empty product being $1$ when $N=0$).  Each factor is smooth on
+$\mathbb{C}$: it vanishes identically on the ball $|z-\zeta_i|<\varepsilon$, and
+on the open set $z\neq\zeta_i$ the map $z\mapsto|z-\zeta_i|$ is smooth, so the
+factor is smooth on each of two open sets covering $\mathbb{C}$.  Hence
+$\eta_\varepsilon$ is smooth, and
+\begin{equation}\tag{3}
+  \eta_\varepsilon=0\ \text{near each }\zeta_i,\qquad
+  \eta_\varepsilon=1\ \text{off }\textstyle\bigcup_i\{|z-\zeta_i|<2\varepsilon\},
+  \qquad 0\le\eta_\varepsilon\le1 .
+\end{equation}
+Because $4\varepsilon$ is less than the distance between distinct $\zeta_i$, the
+annuli $\varepsilon<|z-\zeta_i|<2\varepsilon$ are pairwise disjoint and at most
+one factor of $\eta_\varepsilon$ differs from $1$ at any given point; so by the
+product rule, the chain rule and $|\nabla|z-\zeta_i||=1$,
+\begin{equation}\tag{4}
+  \bigl|\partial_j\eta_\varepsilon(z)\bigr|\le\frac{C_0}{\varepsilon},
+  \qquad
+  \partial_j\eta_\varepsilon=0\ \text{ unless }
+  \varepsilon<|z-\zeta_i|<2\varepsilon\ \text{ for some }i .
+\end{equation}
+
+\emph{Step 2: the product has vanishing total derivative.}  Put
+\[
+  \psi_\varepsilon=g\,\varphi\,\eta_\varepsilon .
+\]
+We claim $\psi_\varepsilon\in C^1_c(\mathbb{C})$.  Its support is contained in
+the compact $T$.  For smoothness, the open sets
+\[
+  \{z:|z-\zeta_i|<\varepsilon\}\ (i\le N),\qquad \Omega-S,\qquad \mathbb{C}-T
+\]
+cover $\mathbb{C}$: a point outside all the first ones and outside the third
+lies in $T\subseteq\Omega$ and is distinct from every $\zeta_i$, hence lies
+outside $S\cap T$; and since it lies in $T$, lying in $S$ would put it in
+$S\cap T$, so it lies in $\Omega-S$.  On each of these sets $\psi_\varepsilon$
+is $C^1$: on the first ones it is $0$ by (3), on the second it is a product of
+the $C^1$ function $g$ with the smooth $\varphi$ and $\eta_\varepsilon$, and on
+the third it is $0$ because $\varphi$ is.  Hence $\psi_\varepsilon$ is $C^1$ on
+$\mathbb{C}$ with compact support, and therefore
+\begin{equation}\tag{5}
+  \int_{\mathbb{C}}\partial_j\psi_\varepsilon\,d\sigma=0 .
+\end{equation}
+Indeed, choose $R$ with $\operatorname{supp}\psi_\varepsilon\subseteq[-R,R]^2$;
+for $j=0$, by Fubini and the fundamental theorem of calculus in the first
+variable,
+\[
+  \int_{\mathbb{C}}\partial_x\psi_\varepsilon\,d\sigma
+  =\int_{-R}^{R}\Bigl(\int_{-R}^{R}\partial_x\psi_\varepsilon(x,y)\,dx\Bigr)dy
+  =\int_{-R}^{R}\bigl(\psi_\varepsilon(R,y)-\psi_\varepsilon(-R,y)\bigr)dy=0,
+\]
+both boundary values vanishing; the case $j=1$ is the same in the second
+variable.  (This is the plane divergence theorem for a $C^1$ field of compact
+support, applied to the field whose only nonzero component is the $j$-th.)
+
+\emph{Step 3: expanding (5).}  At every $z\in\Omega-S$ the product rule and
+(H2) give
+\[
+  \partial_j\psi_\varepsilon
+  =v\,\varphi\,\eta_\varepsilon+g\,(\partial_j\varphi)\,\eta_\varepsilon
+    +g\,\varphi\,(\partial_j\eta_\varepsilon).
+\]
+At a point $\zeta_i$ both sides vanish, since $\psi_\varepsilon$ is identically
+$0$ near $\zeta_i$ and since $\eta_\varepsilon$ and $\partial_j\eta_\varepsilon$
+vanish there by (3) and (4); at a point of $S$ outside $T$, and at any point
+outside $\Omega$, all terms vanish because $\varphi$ and $\partial_j\varphi$ are
+supported in $T\subseteq\Omega$.  So the identity holds everywhere, and all
+three terms are integrable by (1), (3) and (4).  Integrating and using (5),
+\begin{equation}\tag{6}
+  0=\int v\varphi\,\eta_\varepsilon\,d\sigma
+   +\int g\,(\partial_j\varphi)\,\eta_\varepsilon\,d\sigma
+   +\int g\,\varphi\,(\partial_j\eta_\varepsilon)\,d\sigma .
+\end{equation}
+
+\emph{Step 4: the first two terms converge.}  By (3), for every $z$ outside the
+finite set $\{\zeta_1,\dots,\zeta_N\}$ we have $\eta_\varepsilon(z)=1$ once
+$\varepsilon$ is small enough, so $\eta_\varepsilon\to1$ pointwise off a null
+set.  Since
+$|v\varphi\eta_\varepsilon|\le\|\varphi\|_\infty\|v\|\mathbf{1}_T$ and
+$|g(\partial_j\varphi)\eta_\varepsilon|\le\|\partial_j\varphi\|_\infty\|g\|\mathbf{1}_T$,
+both integrable by (1), dominated convergence gives
+\[
+  \int v\varphi\,\eta_\varepsilon\,d\sigma\to\int v\varphi\,d\sigma,
+  \qquad
+  \int g\,(\partial_j\varphi)\,\eta_\varepsilon\,d\sigma
+  \to\int g\,\partial_j\varphi\,d\sigma .
+\]
+
+\emph{Step 5: the cutoff term vanishes --- this is where $\beta<1$ is used.}
+By (4) the integrand of the third term of (6) is supported in
+$\bigcup_{i\le N}A_{i,\varepsilon}$ with
+$A_{i,\varepsilon}=\{z:\varepsilon<|z-\zeta_i|<2\varepsilon\}$, and
+$2\varepsilon<\rho_i$, so (2) applies on $A_{i,\varepsilon}$.  Hence, by (4),
+\[
+  \Bigl|\int g\,\varphi\,(\partial_j\eta_\varepsilon)\,d\sigma\Bigr|
+  \le\|\varphi\|_\infty\frac{C_0}{\varepsilon}\sum_{i=1}^{N}
+    \int_{A_{i,\varepsilon}}\|g\|\,d\sigma
+  \le\|\varphi\|_\infty\frac{C_0M_*}{\varepsilon}\sum_{i=1}^{N}
+    \int_{A_{i,\varepsilon}}|z-\zeta_i|^{-\beta}d\sigma .
+\]
+In polar coordinates about $\zeta_i$,
+\[
+  \int_{A_{i,\varepsilon}}|z-\zeta_i|^{-\beta}d\sigma
+  =2\pi\int_{\varepsilon}^{2\varepsilon}r^{1-\beta}\,dr
+  \le2\pi(2\varepsilon)^{1-\beta}\cdot\varepsilon
+  =2^{2-\beta}\pi\,\varepsilon^{2-\beta},
+\]
+using that $r\mapsto r^{1-\beta}$ is nondecreasing, as $1-\beta>0$, so its
+maximum on $[\varepsilon,2\varepsilon]$ is $(2\varepsilon)^{1-\beta}$, and that
+the interval has length $\varepsilon$.  Therefore
+\[
+  \Bigl|\int g\,\varphi\,(\partial_j\eta_\varepsilon)\,d\sigma\Bigr|
+  \le 2^{2-\beta}\pi C_0M_*N\|\varphi\|_\infty\,\varepsilon^{1-\beta}
+  \ \longrightarrow\ 0\qquad(\varepsilon\to0^{+}),
+\]
+because $1-\beta>0$.  This is the only place the hypothesis $\beta<1$ enters,
+and it is sharp: at $\beta=1$ the bound is a constant.  Note that $N$ is fixed
+once $\varphi$ is, which is why the local finiteness of $S$ is needed and a
+merely discrete $S$ would not do.
+
+\emph{Step 6: conclusion.}  Letting $\varepsilon\to0^{+}$ in (6) and using
+Steps 4 and 5,
+\[
+  0=\int v\varphi\,d\sigma+\int g\,\partial_j\varphi\,d\sigma ,
+\]
+that is $\int g\,\partial_j\varphi\,d\sigma=-\int v\varphi\,d\sigma$, which is
+(G).  As $\varphi$ was an arbitrary test function for $\Omega$, this is the
+assertion.
+\end{proof}

@@ -1,0 +1,27 @@
+\begin{definition}
+Identify $\mathbb{C}$ with $\mathbb{R}^2$ by $z=x+iy$ and write
+$\partial_0=\partial/\partial x$, $\partial_1=\partial/\partial y$, each
+evaluated through the real Fr\'echet derivative $Dg(z)$, so that
+$\partial_0 g(z)=Dg(z)[1]$ and $\partial_1 g(z)=Dg(z)[i]$.
+
+For a finite word $w=(j_1,j_2,\dots,j_m)$ with entries $j_t\in\{0,1\}$ and a
+map $f\colon\mathbb{C}\to\mathbb{C}$ put
+\[
+  D^w f=\partial_{j_1}\partial_{j_2}\cdots\partial_{j_m}f,
+\]
+with $D^{()}f=f$ for the empty word.
+
+A word $w$ of length $m$ determines a partial derivative operator of order
+$m$, and as $w$ ranges over the words of length $m$ these operators are
+exactly the operators $D^\nu$ with $|\nu|=m$ that the paper writes with
+multi-index notation; words that differ by a permutation of their entries give
+the same operator on functions whose partials of order $m$ are continuous.  A
+sum $\sum_{|\nu|=m}$ over multi-indices is therefore rendered below as a sum
+over the words of length $m$ (up to a combinatorial factor depending only on
+$m$, which is harmless in every estimate of the paper, all of which carry an
+unspecified constant $C_m$ depending on $m$).
+
+At a point where the relevant function fails to be
+real-differentiable its derivative is taken to be zero, so $D^wf$ is defined
+at every point of $\mathbb{C}$.
+\end{definition}

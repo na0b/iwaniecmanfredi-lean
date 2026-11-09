@@ -1,0 +1,98 @@
+\begin{lemma}
+Let $\Omega\subset\mathbb{C}$ be open, let $g\colon\mathbb{C}\to\mathbb{C}$ be
+$C^\infty$ on $\Omega$ with $g(\zeta)\neq0$ for every $\zeta\in\Omega$, and let
+$a\in\mathbb{Z}$.  Write $g^a$ for the function $z\mapsto g(z)^a$, the integer
+power.  Then for every $\xi\in\Omega$
+\[
+  \frac{\partial(g^a)}{\partial\xi}(\xi)=a\,g(\xi)^{a-1}\,\frac{\partial g}{\partial\xi}(\xi),
+  \qquad
+  \frac{\partial(g^a)}{\partial\bar\xi}(\xi)=a\,g(\xi)^{a-1}\,\frac{\partial g}{\partial\bar\xi}(\xi),
+\]
+with $\partial/\partial\xi$ as in \noderef{DZ} and $\partial/\partial\bar\xi$
+as in \noderef{DZbar}.  (Negative powers of $g$ are defined on $\Omega$
+because $g$ does not vanish there; at points where $g$ vanishes a negative
+power is read as $0$, which is irrelevant since the assertion concerns only
+$\xi\in\Omega$ and derivatives at such a $\xi$ depend only on the values of
+the function on the open set $\Omega$.)
+\end{lemma}
+\begin{proof}
+Note first that for every integer $b$ the function $g^{b}$ is $C^\infty$ on
+$\Omega$: for $b\ge0$ it is a finite product of copies of $g$, and for $b<0$ it
+is a finite product of copies of $1/g$, which is $C^\infty$ on $\Omega$ because
+$g$ is $C^\infty$ and non-vanishing there.  In particular every function
+appearing below is real-differentiable at every point of $\Omega$, so
+\noderef{WirtingerProductRule} is applicable at such points.
+
+We give the argument for $\partial/\partial\xi$.  The argument for
+$\partial/\partial\bar\xi$ is word for word the same, using at each step the
+second of the two identities of \noderef{WirtingerProductRule} in place of the
+first, and the formula of \noderef{DZbar} in place of that of \noderef{DZ}.
+
+\emph{Step 1: non-negative exponents.}  We prove by induction on the integer
+$n\ge0$ that
+\begin{equation}\tag{1}
+  \frac{\partial(g^{n})}{\partial\xi}(\xi)=n\,g(\xi)^{n-1}\,\frac{\partial g}{\partial\xi}(\xi)
+  \qquad\text{for every }\xi\in\Omega .
+\end{equation}
+
+For $n=0$ the function $g^{0}$ is the constant function $1$.  A constant
+function is real-differentiable with zero derivative at every point, so by
+\noderef{DZ} the left-hand side of (1) is $0$; the right-hand side is
+$0\cdot g(\xi)^{-1}\,\partial g/\partial\xi(\xi)=0$ as well.
+
+Assume (1) for some $n\ge0$ and let $\xi\in\Omega$.  On all of $\Omega$ we have
+$g^{n+1}=g^{n}\cdot g$ pointwise, and both factors are $C^\infty$ on $\Omega$,
+hence real-differentiable at $\xi$.  By \noderef{WirtingerProductRule},
+\[
+  \frac{\partial(g^{n+1})}{\partial\xi}(\xi)
+  =\frac{\partial(g^{n})}{\partial\xi}(\xi)\,g(\xi)
+   +g(\xi)^{n}\,\frac{\partial g}{\partial\xi}(\xi).
+\]
+By the induction hypothesis the first term is
+$n\,g(\xi)^{n-1}g(\xi)\,\partial g/\partial\xi(\xi)
+ =n\,g(\xi)^{n}\,\partial g/\partial\xi(\xi)$, where
+$g(\xi)^{n-1}g(\xi)=g(\xi)^{n}$ holds because $g(\xi)\neq0$ (for $n=0$ both
+sides of that identity are interpreted using $g(\xi)^{-1}=1/g(\xi)$, and the
+term is $0$ in any case).  Adding the second term gives
+\[
+  \frac{\partial(g^{n+1})}{\partial\xi}(\xi)
+  =(n+1)\,g(\xi)^{n}\,\frac{\partial g}{\partial\xi}(\xi),
+\]
+which is (1) for $n+1$.
+
+\emph{Step 2: the exponent $-1$.}  On $\Omega$ we have $g\cdot g^{-1}=1$, the
+constant function, and both factors are $C^\infty$ on $\Omega$.  Let
+$\xi\in\Omega$.  Differentiating the constant function $1$ gives $0$ as in
+Step 1, so \noderef{WirtingerProductRule} yields
+\[
+  0=\frac{\partial g}{\partial\xi}(\xi)\,g(\xi)^{-1}
+    +g(\xi)\,\frac{\partial (g^{-1})}{\partial\xi}(\xi).
+\]
+Since $g(\xi)\neq0$ we may divide by $g(\xi)$ and rearrange:
+\begin{equation}\tag{2}
+  \frac{\partial (g^{-1})}{\partial\xi}(\xi)
+  =-g(\xi)^{-2}\,\frac{\partial g}{\partial\xi}(\xi)
+  =(-1)\,g(\xi)^{-1-1}\,\frac{\partial g}{\partial\xi}(\xi),
+\end{equation}
+which is the assertion for $a=-1$.
+
+\emph{Step 3: negative exponents.}  Let $a<0$ and write $a=-n$ with $n\ge1$ an
+integer.  On $\Omega$ we have $g^{a}=(g^{-1})^{n}$ pointwise.  The function
+$g^{-1}$ is $C^\infty$ on $\Omega$ and non-vanishing there, so Step 1 applies
+with $g^{-1}$ in place of $g$ and gives, for $\xi\in\Omega$,
+\[
+  \frac{\partial(g^{a})}{\partial\xi}(\xi)
+  =n\,\bigl(g(\xi)^{-1}\bigr)^{n-1}\,\frac{\partial(g^{-1})}{\partial\xi}(\xi)
+  =n\,g(\xi)^{1-n}\cdot\Bigl(-g(\xi)^{-2}\,\frac{\partial g}{\partial\xi}(\xi)\Bigr),
+\]
+using (2) at the second step.  Since $g(\xi)\neq0$, the powers combine:
+$g(\xi)^{1-n}g(\xi)^{-2}=g(\xi)^{-n-1}$.  Hence
+\[
+  \frac{\partial(g^{a})}{\partial\xi}(\xi)
+  =-n\,g(\xi)^{-n-1}\,\frac{\partial g}{\partial\xi}(\xi)
+  =a\,g(\xi)^{a-1}\,\frac{\partial g}{\partial\xi}(\xi),
+\]
+because $-n=a$ and $-n-1=a-1$.
+
+Steps 1 and 3 together cover every $a\in\mathbb{Z}$.
+\end{proof}

@@ -1,0 +1,151 @@
+\begin{lemma}
+Let $\Omega\subset\mathbb{C}$ be open, let $1\le K<\infty$, and let
+$H\colon\mathbb{C}\to\mathbb{C}$ be $K$-quasiregular on $\Omega$ in the sense
+of \noderef{QuasiregularOn} and differentiable at almost every point of
+$\Omega$.  Then for almost every $\xi\in\Omega$ with $\xi\neq0$,
+\begin{equation*}\tag{26}
+  K^{-1}|H_r(\xi)|^2\ \le\ J(\xi)\ \le\ K|H_r(\xi)|^2,
+\end{equation*}
+and
+\begin{equation*}\tag{27}
+  \bigl(1+K^{-2}\bigr)|H_r(\xi)|^2
+  \ \le\ 2|H_\xi(\xi)|^2+2|H_{\bar\xi}(\xi)|^2
+  \ \le\ \bigl(1+K^{2}\bigr)|H_r(\xi)|^2,
+\end{equation*}
+where $H_r$ is as in \noderef{HRad}, $H_\xi$ as in \noderef{DZ},
+$H_{\bar\xi}$ as in \noderef{DZbar}, and
+$J=|H_\xi|^2-|H_{\bar\xi}|^2$ as in \noderef{Jac}.
+
+These are the estimates (26) and (27) of Section~4 of the paper, there stated
+for the $K$-quasiregular $H$ with $K=\max\{p-1,1/(p-1)\}$ of (13).  Every
+quantity in them is built from the Fr\'echet derivative of $H$, so
+almost-everywhere differentiability is the right hypothesis: it is what item
+(C2) of the paper's note supplies for the inverse of a quasiconformal
+homeomorphism, and the conclusion is an almost-everywhere statement like the
+distortion inequality it rearranges.
+\end{lemma}
+\begin{proof}
+Put
+\[
+  \kappa=\frac{K-1}{K+1} .
+\]
+Since $K\ge1$ we have $K>0$, $K+1>0$ and $0\le\kappa<1$.
+
+\emph{Step 0: the distortion inequality for the pointwise derivatives.}  By
+\noderef{QuasiregularOn} there are weak Wirtinger derivatives $a,b$ of $H$ on
+$\Omega$, in the sense of \noderef{IsWeakWirtingerOn}, and a null set $Z_0$
+with
+\begin{equation}\tag{1$'$}
+  \bigl|b(\xi)\bigr|\le\kappa\,\bigl|a(\xi)\bigr|
+  \qquad(\xi\in\Omega-Z_0).
+\end{equation}
+By \noderef{IsWeakWirtingerOn} there are in turn $H_x,H_y$ such that
+$H,H_x,H_y\in L^1_{\mathrm{loc}}(\Omega)$, such that $H_x$ and $H_y$ are the
+distributional $\partial_0$- and $\partial_1$-derivatives of $H$ on $\Omega$,
+and such that $a=\tfrac12(H_x-iH_y)$ and $b=\tfrac12(H_x+iH_y)$ at every
+point.  These are exactly hypotheses (H1) and (H2) of
+\noderef{WeakPartialEqFDerivAE} for the open set $\Omega$, the function $H$
+and the pair $D_0=H_x$, $D_1=H_y$, and its (H3) is the hypothesis that $H$ is
+differentiable at almost every point of $\Omega$.  That lemma therefore
+provides a null set $Z_1$ with
+\[
+  H_x(\xi)=\partial_0H(\xi),\qquad H_y(\xi)=\partial_1H(\xi)
+  \qquad(\xi\in\Omega-Z_1),
+\]
+$\partial_j=D^{[j]}$ being the classical partial derivative of
+\noderef{PartialWord}, that is $\partial_0H(\xi)=\mathrm{d}H(\xi)[1]$ and
+$\partial_1H(\xi)=\mathrm{d}H(\xi)[i]$.  By \noderef{DZ} and \noderef{DZbar},
+$H_\xi$ and $H_{\bar\xi}$ are the same two combinations
+$\tfrac12\bigl(\mathrm{d}H(\xi)[1]\mp i\,\mathrm{d}H(\xi)[i]\bigr)$ of those
+two numbers, so
+\begin{equation}\tag{1$''$}
+  a(\xi)=H_\xi(\xi),\qquad b(\xi)=H_{\bar\xi}(\xi)
+  \qquad(\xi\in\Omega-Z_1).
+\end{equation}
+Combining (1$'$) and (1$''$), the distortion inequality
+\begin{equation}\tag{1}
+  \bigl|H_{\bar\xi}(\xi)\bigr|\le\kappa\,\bigl|H_\xi(\xi)\bigr|
+\end{equation}
+holds at every $\xi\in\Omega-(Z_0\cup Z_1)$, hence for almost every
+$\xi\in\Omega$.
+
+Discard the union of $Z_0\cup Z_1$ and the null set on which $H$ fails to be
+differentiable, which is again null, and fix a remaining $\xi\in\Omega$ with
+$\xi\neq0$.  Then $H$ is
+real-differentiable at $\xi$, so \noderef{WirtingerPolarForm} applies there.
+Put
+\[
+  a=\bigl\|H_\xi(\xi)\bigr\|\ge0,\qquad b=\bigl\|H_{\bar\xi}(\xi)\bigr\|\ge0,
+\]
+so that $b\le\kappa a$ by (1).
+
+\emph{Step 1: the key inequality.}  We claim
+\begin{equation}\tag{2}
+  a+b\le K\,(a-b),
+\end{equation}
+and that $a-b\ge0$.  For (2): since $K+1>0$,
+\[
+  a+b\le K(a-b)
+  \iff b(K+1)\le a(K-1)
+  \iff b\le a\,\frac{K-1}{K+1}=\kappa a,
+\]
+which holds.  For $a-b\ge0$: the left side of (2) is $a+b\ge0$, so
+$K(a-b)\ge0$, and $K>0$ gives $a-b\ge0$.
+
+\emph{Step 2: a two-sided bound on $|H_r(\xi)|$.}  By the third identity of
+\noderef{WirtingerPolarForm},
+\[
+  H_r(\xi)=H_\xi(\xi)\,\frac{\xi}{|\xi|}+H_{\bar\xi}(\xi)\,\frac{\bar\xi}{|\xi|},
+\]
+and $\bigl|\xi/|\xi|\bigr|=\bigl|\bar\xi/|\xi|\bigr|=1$, so the two summands
+have moduli exactly $a$ and $b$.  By the triangle inequality and its reverse
+form,
+\begin{equation}\tag{3}
+  a-b\ \le\ \bigl|H_r(\xi)\bigr|\ \le\ a+b .
+\end{equation}
+
+\emph{Step 3: proof of (26).}  By \noderef{Jac},
+\[
+  J(\xi)=a^2-b^2=(a-b)(a+b).
+\]
+For the upper bound, multiply (2) by $a-b\ge0$:
+\[
+  J(\xi)=(a-b)(a+b)\le K\,(a-b)^2\le K\bigl|H_r(\xi)\bigr|^2,
+\]
+the last step because $0\le a-b\le|H_r(\xi)|$ by (3), so
+$(a-b)^2\le|H_r(\xi)|^2$, and $K>0$.
+
+For the lower bound, (3) and $a+b\ge0$ give
+$|H_r(\xi)|^2\le(a+b)^2$, and multiplying (2) by $a+b\ge0$ gives
+$(a+b)^2\le K(a-b)(a+b)=K\,J(\xi)$.  Hence
+$|H_r(\xi)|^2\le K\,J(\xi)$, i.e.\ $K^{-1}|H_r(\xi)|^2\le J(\xi)$, dividing by
+$K>0$.
+
+\emph{Step 4: proof of (27).}  We use the elementary identity
+\begin{equation}\tag{4}
+  (a+b)^2+(a-b)^2=2\bigl(a^2+b^2\bigr)
+  =2\bigl|H_\xi(\xi)\bigr|^2+2\bigl|H_{\bar\xi}(\xi)\bigr|^2 .
+\end{equation}
+
+For the upper bound: both sides of (2) are nonnegative (the left by
+$a,b\ge0$), so squaring (2) gives $(a+b)^2\le K^2(a-b)^2$.  With (4),
+\[
+  2\bigl(a^2+b^2\bigr)=(a+b)^2+(a-b)^2\le K^2(a-b)^2+(a-b)^2=(1+K^2)(a-b)^2
+  \le(1+K^2)\bigl|H_r(\xi)\bigr|^2,
+\]
+the last step by (3) with $a-b\ge0$ and $1+K^2>0$.
+
+For the lower bound: dividing (2) by $K>0$ gives $K^{-1}(a+b)\le a-b$, and both
+sides are nonnegative, so squaring gives $K^{-2}(a+b)^2\le(a-b)^2$.  Hence, by
+(4),
+\[
+  \bigl(1+K^{-2}\bigr)(a+b)^2=(a+b)^2+K^{-2}(a+b)^2\le(a+b)^2+(a-b)^2
+  =2\bigl(a^2+b^2\bigr).
+\]
+Finally $|H_r(\xi)|^2\le(a+b)^2$ by (3), and $1+K^{-2}>0$, so
+\[
+  \bigl(1+K^{-2}\bigr)\bigl|H_r(\xi)\bigr|^2\le\bigl(1+K^{-2}\bigr)(a+b)^2
+  \le2\bigl(a^2+b^2\bigr),
+\]
+which completes (27).
+\end{proof}

@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite the paper and this repository."
+title: "Lean 4 formalization of: Regularity of p-harmonic functions on the plane"
+type: software
+license: Apache-2.0
+authors:
+  - family-names: Manfredi
+    given-names: Juan J.
+    affiliation: University of Pittsburgh
+preferred-citation:
+  type: article
+  title: "Regularity of p-harmonic functions on the plane"
+  authors:
+    - family-names: Iwaniec
+      given-names: Tadeusz
+    - family-names: Manfredi
+      given-names: Juan J.
+  journal: "Revista Matemática Iberoamericana"
+  volume: 5
+  issue: "1-2"
+  start: 1
+  end: 19
+  year: 1989

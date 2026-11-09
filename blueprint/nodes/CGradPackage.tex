@@ -1,0 +1,80 @@
+\begin{definition}
+A \emph{complex-gradient package} is a datum consisting of proofs of the
+following two statements.
+
+\emph{First statement.}  Let $\Omega\subset\mathbb{C}$ be open, let $1<p<\infty$, let
+$u\colon\mathbb{C}\to\mathbb{R}$ be $p$-harmonic on $\Omega$ in the sense of
+\noderef{PHarmonicOn}, and let $g\colon\mathbb{C}\to\mathbb{C}$ be such that
+$\operatorname{Re}g$ and $\operatorname{Im}g$ are the distributional
+$\partial/\partial x$- and $\partial/\partial y$-derivatives of $u$ on
+$\Omega$, in the sense of \noderef{IsWeakPartialOn}; that is, $g=u_x+iu_y$
+records the weak gradient $\nabla u$.  Then the complex gradient
+\[
+  f=\frac{\partial u}{\partial z}=\tfrac12\bigl(u_x-iu_y\bigr)=\tfrac12\,\overline{g}
+\]
+satisfies
+\begin{enumerate}
+\item[(a)] $f\in W^{1,2}_{\mathrm{loc}}(\Omega)$ in the sense of
+\noderef{MemWLocOn};
+\item[(b)] $f$ satisfies equation (12) on $\Omega$ in the sense of
+\noderef{SolvesEq12}; and
+\item[(c)] $f$ is $K$-quasiregular on $\Omega$ in the sense of
+\noderef{QuasiregularOn}, with
+\[
+  K=\max\Bigl\{p-1,\frac{1}{p-1}\Bigr\},
+\]
+the exponent of equation (13).
+\end{enumerate}
+
+\emph{Second statement.}  Let $\Omega$, $p$, $u$ and $g$ be as above, and let
+$f_c\colon\mathbb{C}\to\mathbb{C}$ satisfy $f_c=f$ almost everywhere on
+$\Omega$ and be continuous on $\Omega$.  Then
+\begin{enumerate}
+\item[(d)] $f_c$ is real-differentiable at almost every point of $\Omega$; and
+\item[(e)] $f_c$ satisfies equation (12) on $\Omega$ in the sense of
+\noderef{SolvesEq12}.
+\end{enumerate}
+
+This is item (C1) of the paper's note for the formalization, which quotes it
+from [BI] and [Ma]: ``If $u\in W^{1,p}_{\mathrm{loc}}(\Omega)$,
+$1<p<\infty$, is $p$-harmonic on a plane domain $\Omega$, then its complex
+gradient $f=\partial u/\partial z$ belongs to $W^{1,2}_{\mathrm{loc}}(\Omega)$
+and satisfies (12) almost everywhere; in particular $f$ is $K$-quasiregular
+with $K$ as in (13).''  The note directs that such quoted results be carried
+as explicit hypotheses, bundled into a structure or passed as arguments, and
+that they not be introduced as axioms; this definition is that bundle, so that
+a theorem needing (C1) takes a complex-gradient package as an argument.  The
+hypothesis $u\in W^{1,p}_{\mathrm{loc}}(\Omega)$ of the quoted statement is
+part of $p$-harmonicity as \noderef{PHarmonicOn} defines it.
+
+The second statement reads the same quoted sentence for a continuous
+representative of the complex gradient.  It is not a strengthening of the
+first in its clause (e): equation (12) as \noderef{SolvesEq12} states it is an
+identity between the \emph{weak} Wirtinger derivatives of its argument, and by
+\noderef{IsWeakWirtingerOn} those depend only on the almost-everywhere class
+of that argument on $\Omega$ --- the local integrability and the
+integration-by-parts clauses see the argument only through integrals, and the
+pointwise values of $f_c$ occur in (12) only inside an ``almost every $z$''
+quantifier.  So (e) for $f_c$ and (b) for $\tfrac12\bar g$ are equivalent,
+given $f_c=f$ almost everywhere, and (e) is recorded only to spare the
+consumer that unfolding.  This is the right behaviour: the paper's complex
+gradient is the continuous object --- paper.tex:156 states that
+$f=\partial u/\partial z$ is continuous and writes its zero set as
+$f^{-1}(0)=\{z\in\Omega:\nabla u(z)=0\}$ --- and the quoted assertion that $f$
+``satisfies (12) almost everywhere'' should hold of that representative as
+well as of the one attached to a chosen weak gradient $g$, which with the weak
+reading of (12) it does.
+
+The one item of the second statement that the quoted sentence does not contain
+is clause (d), the almost-everywhere real differentiability of the continuous
+representative.  It is quoted from the same sources and in the same spirit as
+the rest: a quasiregular mapping is differentiable almost everywhere, by the
+$W^{1,2}_{\mathrm{loc}}$ membership of clause (a) together with the standard
+regularity theory of [Ah], [LV], and clause (c) makes $f$ quasiregular.  It is
+carried here rather than proved because it is an \emph{input} to the
+elliptic-regularity bundle (C3), which assumes it of the representative whose
+smoothness it concludes, so it cannot be obtained from (C3); and it is not
+among the three conclusions that (C2) quotes for the inverse of a
+quasiconformal homeomorphism.  The representative itself is not produced here:
+the consumer supplies it, obtaining it from the continuity clause of (C2).
+\end{definition}

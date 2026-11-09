@@ -1,0 +1,158 @@
+\begin{lemma}
+Let $\Omega\subseteq\mathbb{C}$ be open, let $j\in\{0,1\}$, write $e_0=1$ and
+$e_1=i$, and let $u,D\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $u\in L^{1}_{\mathrm{loc}}(\Omega)$ and
+  $D\in L^{1}_{\mathrm{loc}}(\Omega)$, in the sense of \noderef{MemLpLocOn};
+\item[(H2)] $D$ is the distributional $j$-th partial derivative of $u$ on
+  $\Omega$, in the sense of \noderef{IsWeakPartialOn}.
+\end{enumerate}
+Let $K\subseteq\Omega$ be compact.  Then there is $\delta>0$ such that for
+every real $t$ with $|t|\le\delta$,
+\[
+  u(z+te_j)-u(z)=\int_0^tD(z+se_j)\,ds
+  \qquad\text{for almost every }z\in K .
+\]
+
+This is the absolute continuity of $u$ along almost every line parallel to
+$e_j$, localised to a compact subset of $\Omega$.  It is the only route from
+(H2), which sees $u$ exclusively through integrals against test functions, to
+pointwise information about the increments of $u$ itself, and it is what the
+paper relies on implicitly wherever Sections 4 to 6 treat the
+$W^{1,2}$ derivatives of $H$, and of the inverse $\chi$, as classical
+derivatives: the integration-by-parts identity alone says nothing about any
+particular representative of the $L^1$-class of $u$, whereas the displayed
+identity pins down every increment of $u$ along $e_j$ from $D$.  The
+restriction to a compact $K$ and to small $|t|$ is not a weakening: the
+translate $z+te_j$ must stay inside $\Omega$ for the right-hand side to be
+meaningful, and no uniform bound on $|t|$ is available on $\Omega$ itself.
+\end{lemma}
+\begin{proof}
+Write $d\sigma$ for plane Lebesgue measure.  Throughout, $\partial_jv(z)
+=\mathrm{d}v(z)[e_j]$ denotes the classical partial derivative of a
+differentiable $v$ along $e_j$.
+
+\emph{Step 0: the scale $\delta$.}  Since $K$ is compact, $\Omega$ is open and
+$K\subseteq\Omega$, there is $\delta>0$ with
+\[
+  K^{3\delta}:=\{z:\operatorname{dist}(z,K)\le3\delta\}\subseteq\Omega ;
+\]
+indeed either $\Omega=\mathbb{C}$, where any $\delta>0$ serves, or
+$\operatorname{dist}(K,\mathbb{C}-\Omega)>0$ because $K$ is compact and
+$\mathbb{C}-\Omega$ is closed, nonempty and disjoint from $K$, and then any
+$\delta$ below a third of that distance serves.  The set $K^{3\delta}$ is
+closed and bounded, hence compact, and
+$K\subseteq K^{\delta}\subseteq K^{2\delta}\subseteq K^{3\delta}$.  We prove
+the assertion with this $\delta$.  For $t=0$ both sides vanish, so we may
+assume $0<|t|\le\delta$.
+
+\emph{Step 1: the mollifier.}  Fix a function
+$\varrho\colon\mathbb{C}\to\mathbb{R}$ of class $C^\infty$ with $\varrho\ge0$,
+$\varrho(y)=0$ for $|y|\ge1$ and $\int\varrho\,d\sigma=1$, and for
+$0<\varepsilon\le\delta$ put
+$\varrho_\varepsilon(y)=\varepsilon^{-2}\varrho(y/\varepsilon)$, which is
+$C^\infty$, vanishes for $|y|\ge\varepsilon$ and has
+$\int\varrho_\varepsilon\,d\sigma=1$.  Let
+\[
+  U=\mathbf{1}_{K^{3\delta}}\,u,\qquad V=\mathbf{1}_{K^{3\delta}}\,D .
+\]
+By (H1) applied to the compact set $K^{3\delta}\subseteq\Omega$ and
+\noderef{MemLpLocOn}, $U$ and $V$ belong to $L^{1}(\mathbb{C})$.  Put
+$u_\varepsilon=U*\varrho_\varepsilon$ and
+$v_\varepsilon=V*\varrho_\varepsilon$.
+
+\emph{Step 2: $u_\varepsilon$ is smooth and
+$\partial_ju_\varepsilon=v_\varepsilon$ near $K$.}  The convolution of an
+$L^{1}$ function with a compactly supported $C^\infty$ function is $C^\infty$,
+with derivatives obtained by differentiating the smooth factor; so
+$u_\varepsilon$ is $C^\infty$ on $\mathbb{C}$ and
+\begin{equation}\tag{1}
+  \partial_ju_\varepsilon(z)
+  =\bigl(U*\partial_j\varrho_\varepsilon\bigr)(z)
+  =\int U(w)\,(\partial_j\varrho_\varepsilon)(z-w)\,d\sigma(w).
+\end{equation}
+Fix $z$ with $\operatorname{dist}(z,K)\le2\delta$ and $0<\varepsilon\le\delta$,
+and define $\varphi(w)=\varrho_\varepsilon(z-w)$, read as a complex-valued
+function.  Then $\varphi$ is $C^\infty$ and vanishes off the closed ball
+$\{w:|w-z|\le\varepsilon\}$, which is compact and contained in
+$K^{3\delta}\subseteq\Omega$ because $\operatorname{dist}(z,K)\le2\delta$ and
+$\varepsilon\le\delta$.  Hence $\operatorname{tsupp}\varphi\subseteq\Omega$ and
+$\varphi$ is a test function for $\Omega$ in the sense of \noderef{IsTestFn}.
+The map $w\mapsto z-w$ is affine with derivative $-\mathrm{id}$, so by the
+chain rule
+\[
+  \mathrm{d}\varphi(w)[e_j]=-(\partial_j\varrho_\varepsilon)(z-w).
+\]
+Therefore (H2), applied to $\varphi$, reads
+\[
+  -\int u(w)\,(\partial_j\varrho_\varepsilon)(z-w)\,d\sigma(w)
+  =-\int D(w)\,\varrho_\varepsilon(z-w)\,d\sigma(w),
+\]
+that is
+\begin{equation}\tag{2}
+  \int u(w)\,(\partial_j\varrho_\varepsilon)(z-w)\,d\sigma(w)
+  =\int D(w)\,\varrho_\varepsilon(z-w)\,d\sigma(w).
+\end{equation}
+Both integrands vanish off $\{w:|w-z|\le\varepsilon\}\subseteq K^{3\delta}$,
+where $u=U$ and $D=V$; so by (1) the left side of (2) is
+$\partial_ju_\varepsilon(z)$ and the right side is $v_\varepsilon(z)$.  Hence
+\begin{equation}\tag{3}
+  \partial_ju_\varepsilon(z)=v_\varepsilon(z)
+  \qquad\bigl(\operatorname{dist}(z,K)\le2\delta,\ 0<\varepsilon\le\delta\bigr).
+\end{equation}
+
+\emph{Step 3: the finite-difference identity for $u_\varepsilon$.}  Let
+$z\in K$ and let $s$ lie between $0$ and $t$.  Then
+$\operatorname{dist}(z+se_j,K)\le|s|\le|t|\le\delta\le2\delta$, so (3) applies
+at $z+se_j$.  The function $s\mapsto u_\varepsilon(z+se_j)$ is $C^\infty$ on
+$\mathbb{R}$ with derivative $\partial_ju_\varepsilon(z+se_j)$, by the chain
+rule, so the fundamental theorem of calculus and (3) give
+\begin{equation}\tag{4}
+  u_\varepsilon(z+te_j)-u_\varepsilon(z)
+  =\int_0^t\partial_ju_\varepsilon(z+se_j)\,ds
+  =\int_0^tv_\varepsilon(z+se_j)\,ds .
+\end{equation}
+
+\emph{Step 4: letting $\varepsilon\to0$ in (4).}  For $g\in L^{1}(\mathbb{C})$
+the mollifications converge in $L^1$, that is
+$\|g*\varrho_\varepsilon-g\|_{L^{1}(\mathbb{C})}\to0$ as $\varepsilon\to0$, by
+\noderef{MollificationL1Convergence}; applied to $U$ and $V$,
+\begin{equation}\tag{5}
+  \|u_\varepsilon-U\|_{L^{1}(\mathbb{C})}\to0,\qquad
+  \|v_\varepsilon-V\|_{L^{1}(\mathbb{C})}\to0 .
+\end{equation}
+Regard both sides of (4) as functions of $z\in K$, with $t$ fixed.  For the
+left side, translation invariance of $d\sigma$ gives
+\[
+  \int_K\bigl|u_\varepsilon(z+te_j)-U(z+te_j)\bigr|\,d\sigma(z)
+  \le\|u_\varepsilon-U\|_{L^{1}(\mathbb{C})},
+\]
+and the same bound without the translation, so
+$z\mapsto u_\varepsilon(z+te_j)-u_\varepsilon(z)$ converges in $L^{1}(K)$ to
+$z\mapsto U(z+te_j)-U(z)$, which equals $u(z+te_j)-u(z)$ for $z\in K$ because
+$z$ and $z+te_j$ both lie in $K^{3\delta}$.  For the right side, write $I_t$
+for the interval between $0$ and $t$; the function
+$(z,s)\mapsto\bigl(v_\varepsilon-V\bigr)(z+se_j)$ is measurable on
+$K\times I_t$, being the composition of a measurable function with the
+continuous map $(z,s)\mapsto z+se_j$, so by Tonelli's theorem and translation
+invariance
+\[
+  \int_K\Bigl|\int_0^t\bigl(v_\varepsilon-V\bigr)(z+se_j)\,ds\Bigr|
+    d\sigma(z)
+  \le\int_{I_t}\!\Bigl(\int_K\bigl|v_\varepsilon-V\bigr|(z+se_j)
+    \,d\sigma(z)\Bigr)ds
+  \le|t|\,\|v_\varepsilon-V\|_{L^{1}(\mathbb{C})},
+\]
+which tends to $0$ by (5); and $V(z+se_j)=D(z+se_j)$ for $z\in K$ and
+$|s|\le\delta$, because then $z+se_j\in K^{\delta}\subseteq K^{3\delta}$.
+Thus the left sides of (4) converge in $L^1(K)$ to
+$z\mapsto u(z+te_j)-u(z)$ and the right sides converge in $L^1(K)$ to
+$z\mapsto\int_0^tD(z+se_j)\,ds$.  Two $L^{1}(K)$ limits of one and the same
+family agree almost everywhere, so
+\[
+  u(z+te_j)-u(z)=\int_0^tD(z+se_j)\,ds
+  \qquad\text{for almost every }z\in K,
+\]
+which is the assertion for this $t$.  As $t$ with $0<|t|\le\delta$ was
+arbitrary, and the case $t=0$ is trivial, the proof is complete.
+\end{proof}

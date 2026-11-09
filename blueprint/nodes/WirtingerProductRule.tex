@@ -1,0 +1,59 @@
+\begin{lemma}
+Let $f,g\colon\mathbb{C}\to\mathbb{C}$ be real-differentiable at
+$\xi\in\mathbb{C}$.  Then
+\[
+  \frac{\partial(fg)}{\partial\xi}(\xi)
+  =\frac{\partial f}{\partial\xi}(\xi)\,g(\xi)+f(\xi)\,\frac{\partial g}{\partial\xi}(\xi),
+\]
+\[
+  \frac{\partial(fg)}{\partial\bar\xi}(\xi)
+  =\frac{\partial f}{\partial\bar\xi}(\xi)\,g(\xi)+f(\xi)\,\frac{\partial g}{\partial\bar\xi}(\xi),
+\]
+where $fg$ denotes the pointwise product $z\mapsto f(z)g(z)$,
+$\partial/\partial\xi$ is as in \noderef{DZ} and $\partial/\partial\bar\xi$ is
+as in \noderef{DZbar}.
+\end{lemma}
+\begin{proof}
+For a map $h\colon\mathbb{C}\to\mathbb{C}$ real-differentiable at $\xi$ write
+$Dh(\xi)$ for its real Fr\'echet derivative at $\xi$, a real-linear map
+$\mathbb{C}\to\mathbb{C}$.  By \noderef{DZ} and \noderef{DZbar},
+\begin{equation*}
+  \frac{\partial h}{\partial\xi}(\xi)=\tfrac12\bigl(Dh(\xi)[1]-i\,Dh(\xi)[i]\bigr),
+  \qquad
+  \frac{\partial h}{\partial\bar\xi}(\xi)=\tfrac12\bigl(Dh(\xi)[1]+i\,Dh(\xi)[i]\bigr).
+\end{equation*}
+
+Multiplication $\mathbb{C}\times\mathbb{C}\to\mathbb{C}$ is a continuous
+$\mathbb{R}$-bilinear map, so since $f$ and $g$ are real-differentiable at
+$\xi$ the pointwise product $fg$ is real-differentiable at $\xi$ and its
+derivative is given by the bilinear product rule
+\begin{equation}\tag{$*$}
+  D(fg)(\xi)[v]=\bigl(Df(\xi)[v]\bigr)g(\xi)+f(\xi)\bigl(Dg(\xi)[v]\bigr)
+  \qquad\text{for every }v\in\mathbb{C}.
+\end{equation}
+
+Insert $(*)$ with $v=1$ and with $v=i$ into the formula for
+$\partial/\partial\xi$:
+\begin{align*}
+  \frac{\partial(fg)}{\partial\xi}(\xi)
+  &=\tfrac12\Bigl(D(fg)(\xi)[1]-i\,D(fg)(\xi)[i]\Bigr)\\
+  &=\tfrac12\Bigl(\bigl(Df(\xi)[1]\bigr)g(\xi)+f(\xi)\bigl(Dg(\xi)[1]\bigr)
+      -i\bigl(Df(\xi)[i]\bigr)g(\xi)-i\,f(\xi)\bigl(Dg(\xi)[i]\bigr)\Bigr)\\
+  &=\tfrac12\bigl(Df(\xi)[1]-i\,Df(\xi)[i]\bigr)\,g(\xi)
+    +f(\xi)\,\tfrac12\bigl(Dg(\xi)[1]-i\,Dg(\xi)[i]\bigr)\\
+  &=\frac{\partial f}{\partial\xi}(\xi)\,g(\xi)+f(\xi)\,\frac{\partial g}{\partial\xi}(\xi),
+\end{align*}
+where the third equality only regroups the four terms, using that $g(\xi)$ and
+$f(\xi)$ are fixed complex numbers and that multiplication in $\mathbb{C}$ is
+commutative and distributive.
+
+The second identity is the same computation with $+i$ in place of $-i$
+throughout:
+\begin{align*}
+  \frac{\partial(fg)}{\partial\bar\xi}(\xi)
+  &=\tfrac12\Bigl(D(fg)(\xi)[1]+i\,D(fg)(\xi)[i]\Bigr)\\
+  &=\tfrac12\bigl(Df(\xi)[1]+i\,Df(\xi)[i]\bigr)\,g(\xi)
+    +f(\xi)\,\tfrac12\bigl(Dg(\xi)[1]+i\,Dg(\xi)[i]\bigr)\\
+  &=\frac{\partial f}{\partial\bar\xi}(\xi)\,g(\xi)+f(\xi)\,\frac{\partial g}{\partial\bar\xi}(\xi).
+\end{align*}
+\end{proof}

@@ -1,0 +1,116 @@
+\begin{lemma}
+Let $n\ge1$ be an integer and let $y\colon\mathbb{R}\to\mathbb{C}$ be
+$C^\infty$ on $(0,1)$ and satisfy
+\[
+  r\bigl(r\,y'\bigr)'(r)+2n\,r\,y'(r)+n^2\,y(r)=0
+  \qquad\text{for every }r\in(0,1).
+\]
+Then there are $A,B\in\mathbb{C}$ with
+\[
+  y(r)=\bigl(A+B\log r\bigr)r^{-n}\qquad\text{for every }r\in(0,1).
+\]
+
+This is the equation (35) of the paper at the single pair $(k,p)=(0,2)$, where
+$pn=2n$ and $(n^2-k^2)(p-1)=n^2$.  It is exactly the case in which the
+indicial polynomial $\lambda^2+pn\lambda+(n^2-k^2)(p-1)$ degenerates to
+$(\lambda+n)^2$, so that the two roots coincide at $-n$ and the paper's
+assertion at line 313 that they are distinct fails; the solution
+$(\log r)\,r^{-n}$ obtained here for $A=0$, $B=1$ is not a combination of
+powers $r^{\lambda}$ at all.
+\end{lemma}
+\begin{proof}
+First note the degeneration of the indicial polynomial recorded in the
+statement: at $k=0$ and $p=2$,
+\[
+  \lambda^2+pn\lambda+(n^2-k^2)(p-1)=\lambda^2+2n\lambda+n^2=(\lambda+n)^2 ,
+\]
+so $-n$ is a double root.  This is the algebraic reason a logarithm appears
+below, and the reason the two-power conclusion is unavailable.
+
+\emph{Step 1: the substitution $r=e^{t}$.}  Put $J=(-\infty,0)$ and
+\[
+  Y(t)=y\bigl(e^{t}\bigr)\qquad(t\in J).
+\]
+For $t<0$ one has $e^{t}\in(0,1)$, so $Y$ is defined on $J$, and $Y$ is
+$C^\infty$ on $J$, being the composite of the $C^\infty$ map $t\mapsto e^{t}$
+(with values in $(0,1)$) with $y$, which is $C^\infty$ on $(0,1)$.  By the chain
+rule, with $r=e^{t}$,
+\[
+  Y'(t)=e^{t}y'(e^{t})=r\,y'(r),
+\]
+and differentiating once more,
+\[
+  Y''(t)=e^{t}y'(e^{t})+e^{2t}y''(e^{t})=r\,y'(r)+r^{2}y''(r).
+\]
+Since $r\bigl(r\,y'\bigr)'(r)=r\bigl(y'(r)+r\,y''(r)\bigr)=r\,y'(r)+r^{2}y''(r)$,
+\begin{equation}\tag{1}
+  Y''(t)=r\bigl(r\,y'\bigr)'(r),\qquad Y'(t)=r\,y'(r)\qquad\bigl(r=e^{t}\bigr).
+\end{equation}
+Every $r\in(0,1)$ equals $e^{t}$ for exactly one $t\in J$, namely $t=\log r$, so
+the hypothesis together with (1) says precisely that
+\begin{equation}\tag{2}
+  Y''(t)+2n\,Y'(t)+n^2\,Y(t)=0\qquad\text{for every }t\in J .
+\end{equation}
+
+\emph{Step 2: a function with vanishing derivative on $J$ is constant.}  We
+isolate this step, used twice below, because the standard statement is for a
+closed interval while $J$ is open.  Let $g\colon J\to\mathbb{C}$ be
+differentiable with $g'(t)=0$ for every $t\in J$, and let $t_0,t_1\in J$ with
+$t_0\le t_1$.  Since $J$ is an interval, $[t_0,t_1]\subseteq J$; $g$ is
+continuous on the compact interval $[t_0,t_1]$, and for every $x\in[t_0,t_1)$
+the derivative of $g$ at $x$ within $[x,\infty)$ exists and equals $0$, being a
+restriction of the two-sided derivative $g'(x)=0$.  The theorem that a function
+continuous on $[t_0,t_1]$ whose derivative within $[x,\infty)$ vanishes at every
+$x\in[t_0,t_1)$ is constant on $[t_0,t_1]$ gives $g(t_1)=g(t_0)$.  As any two
+points of $J$ are comparable, $g$ is constant on $J$.
+
+\emph{Step 3: first integrating factor.}  Put
+\[
+  W(t)=Y'(t)+n\,Y(t)\qquad(t\in J),
+\]
+which is $C^\infty$ on $J$.  By (2),
+\[
+  W'(t)=Y''(t)+n\,Y'(t)=-2n\,Y'(t)-n^2Y(t)+n\,Y'(t)
+  =-n\bigl(Y'(t)+n\,Y(t)\bigr)=-n\,W(t).
+\]
+Hence $g(t)=e^{nt}W(t)$ is differentiable on $J$ with
+\[
+  g'(t)=e^{nt}\bigl(W'(t)+n\,W(t)\bigr)=0\qquad(t\in J),
+\]
+so by Step 2 it is constant; call its value $B\in\mathbb{C}$.  Thus
+\begin{equation}\tag{3}
+  Y'(t)+n\,Y(t)=W(t)=B\,e^{-nt}\qquad(t\in J).
+\end{equation}
+
+\emph{Step 4: second integrating factor --- this is where the logarithm
+enters.}  Let
+\[
+  h(t)=e^{nt}Y(t)-B\,t\qquad(t\in J),
+\]
+which is differentiable on $J$.  Using (3),
+\[
+  \frac{d}{dt}\Bigl(e^{nt}Y(t)\Bigr)=e^{nt}\bigl(Y'(t)+n\,Y(t)\bigr)
+  =e^{nt}\cdot B\,e^{-nt}=B ,
+\]
+so $h'(t)=B-B=0$ for every $t\in J$.  By Step 2, $h$ is constant on $J$; call
+its value $A\in\mathbb{C}$.  (Note what has happened: because the two roots
+coincide, the right-hand side of (3) after multiplication by $e^{nt}$ is the
+\emph{constant} $B$ rather than a nonconstant exponential, and its primitive is
+the linear function $B\,t$.  This is the single point at which the argument
+differs from the non-degenerate one, and it is what produces the logarithm.)
+Hence
+\begin{equation}\tag{4}
+  e^{nt}Y(t)=A+B\,t,\qquad\text{i.e.}\qquad Y(t)=\bigl(A+B\,t\bigr)e^{-nt}
+  \qquad(t\in J).
+\end{equation}
+
+\emph{Step 5: back to the variable $r$.}  Let $r\in(0,1)$ and put $t=\log r$.
+Then $t<0$, so $t\in J$, and $e^{t}=r$.  For a real exponent $\lambda$ and
+$r>0$ one has $e^{\lambda\log r}=r^{\lambda}$, so $e^{-nt}=r^{-n}$.  Therefore
+by (4)
+\[
+  y(r)=Y(\log r)=\bigl(A+B\log r\bigr)r^{-n},
+\]
+which is the assertion, with the constants $A$ and $B$ produced in Steps 4
+and 3.
+\end{proof}

@@ -1,0 +1,148 @@
+\begin{helper}
+Let $n\ge1$ be an integer, let $1<p<\infty$ and let
+$A\colon\mathbb{Z}\to\mathbb{C}$ satisfy the energy hypothesis
+\[
+  \sum_{m\ge0}(n+m)\,|A_{n+m}|^{2}<\infty .
+\]
+Write $T_k=T_k(n,p,A,\cdot)$ for the $k$-th summand of the series (19) as in
+\noderef{Thm2Term}, $\lambda_k=\lambda_k(n,p)$ as in \noderef{LambdaCoef}, and
+$\mathbb{B}=\{\xi\in\mathbb{C}:|\xi|<1\}$.  Then the pointwise sum of the
+series is of class $C^\infty$ on the punctured disc:
+\[
+  \xi\longmapsto\sum_{m\ge0}T_{n+m}(\xi)
+  \quad\text{is }C^\infty\text{ on }\mathbb{B}-\{0\}.
+\]
+
+This is the paper's "we note that $\lim\lambda_k=\infty$.  Therefore, we can
+perform any finite number of term-by-term differentiations in formula (19)"
+(\texttt{paper.tex:387}), carried out in full.  Both ingredients are already
+nodes and the content here is the induction that combines them: every summand
+is $C^\infty$ off the origin and obeys the all-order word-derivative bound of
+\noderef{Thm2TermWordDerivBound}, and that bound is summable in $m$ at every
+order against the geometric majorant of
+\noderef{Thm2TermGeometricSummability}.  So on a small ball about any punctured
+point the term-by-term differentiated series converges uniformly at every
+order, and a locally uniform limit of $C^\infty$ functions whose derived series
+of every order converge locally uniformly is itself $C^\infty$.
+
+The statement is about the series itself and carries no hypothesis tying it to
+any particular function: a consumer holding $H=\sum_m T_{n+m}$ off the origin
+transfers the conclusion to $H$ by congruence, which is how
+\noderef{Thm2SeriesW12Convergence} uses it to obtain its conjunct (b).
+\end{helper}
+\begin{proof}
+Throughout, $\rho$ and radii are real, $\mathbb{B}-\{0\}$ is open, and for a
+word $w$ of complex letters $D_w$ denotes the iterated directional derivative
+and $V_w$ the product of the moduli of its letters, both as supplied by
+\noderef{Thm2TermWordDerivBound}.
+
+\emph{Step 0: the two inputs.}  From \noderef{Thm2TermWordDerivBound} we take,
+for every word $w$ with $|w|=q$, every $m\ge0$ and every $\xi\ne0$,
+\begin{equation}\tag{1}
+  \bigl\|D_wT_{n+m}(\xi)\bigr\|
+  \le\Bigl(2\bigl((n+m)(3+\sqrt{p-1})+q\bigr)\Bigr)^{q}V_w
+     \bigl(2|A_{n+m}|\bigr)|\xi|^{\lambda_{n+m}-q},
+\end{equation}
+together with the fact that each $D_wT_{n+m}$ is $C^\infty$ at every $\xi\ne0$.
+From \noderef{Thm2TermGeometricSummability} we take that for every integer
+$M\ge0$ and every $\rho\in(0,1)$
+\begin{equation}\tag{2}
+  \sum_{m\ge0}(n+m)^{M}|A_{n+m}|\,\rho^{\lambda_{n+m}}<\infty ,
+\end{equation}
+and from \noderef{LambdaEpsEstimates} that $\lambda_{n+m}\ge0$ for every
+$m\ge0$ --- for $m=0$ this is (23) and for $m\ge1$ it is the lower bound of
+(25).
+
+\emph{Step 1: reduction to a finite order on a small ball.}  Being $C^\infty$
+on a set means being $C^N$ there for every finite $N$, so fix $N$.  Being
+$C^N$ on a set is a local property: it suffices to produce, for each
+$x\in\mathbb{B}-\{0\}$, an open neighbourhood of $x$ on which the sum is
+$C^N$.  So fix $x$ with $0<|x|<1$ and put
+\[
+  \rho_x=\min\Bigl(\frac{|x|}{2},\ \frac{1-|x|}{2}\Bigr)>0 ,
+  \qquad
+  \rho=\frac{1+|x|}{2}\in(0,1).
+\]
+For $z$ in the ball $B(x,\rho_x)$ we have, by the triangle inequality,
+\[
+  \frac{|x|}{2}\le|x|-\rho_x\le|z|\le|x|+\rho_x\le\rho<1 ,
+\]
+so in particular $z\ne0$ and $B(x,\rho_x)\subseteq\mathbb{B}-\{0\}$.
+
+\emph{Step 2: a uniform bound on the ball, for each word.}  Fix a word $w$
+with $|w|=q$ and let $z\in B(x,\rho_x)$.  Since $\lambda_{n+m}\ge0$ and
+$|z|\le\rho$ we have $|z|^{\lambda_{n+m}}\le\rho^{\lambda_{n+m}}$; and since
+$|z|\ge|x|/2>0$ we have $|z|^{-q}\le(|x|/2)^{-q}$.  Writing
+$|z|^{\lambda_{n+m}-q}=|z|^{\lambda_{n+m}}|z|^{-q}$ and substituting into (1),
+\begin{equation}\tag{3}
+  \sup_{z\in B(x,\rho_x)}\bigl\|D_wT_{n+m}(z)\bigr\|
+  \le C(w,x)\,(n+m)^{q}\,|A_{n+m}|\,\rho^{\lambda_{n+m}} ,
+\end{equation}
+where $C(w,x)$ collects the factors independent of $m$: the constant
+$2^{q}(3+\sqrt{p-1})^{q}$-type expansion of
+$\bigl(2((n+m)(3+\sqrt{p-1})+q)\bigr)^{q}$ into a multiple of $(n+m)^{q}$,
+which is legitimate because $n+m\ge1$ and $q$ is fixed, together with $V_w$,
+the factor $2$, and $(|x|/2)^{-q}$.
+
+\emph{Step 3: uniform convergence of every derived series.}  By (2) with
+$M=q$ and this $\rho\in(0,1)$, the right-hand side of (3) is the general term
+of a convergent series of nonnegative reals.  Hence, by the Weierstrass
+$M$-test, the series
+\[
+  \sum_{m\ge0}D_wT_{n+m}
+\]
+converges uniformly on $B(x,\rho_x)$, for every word $w$.  Taking $w$ empty,
+and using $D_{()}f=f$, the series $\sum_mT_{n+m}$ itself converges uniformly
+there.
+
+\emph{Step 4: differentiating the sum, by induction on the word.}  We show by
+induction on $|w|$, downwards from $N$, that for every word $w$ with
+$|w|\le N$ the function $z\mapsto\sum_mD_wT_{n+m}(z)$ is $C^{N-|w|}$ on
+$B(x,\rho_x)$.
+
+For the base case $|w|=N$ the claim is continuity, which holds because by
+Step 3 the series converges uniformly on the ball and each term is continuous
+there, being $C^\infty$ at every point $z\ne0$ by Step 0.
+
+For the inductive step, let $|w|<N$ and consider the two words $1::w$ and
+$\mathrm{i}::w$ obtained by prefixing the letters $1$ and $\mathrm{i}$.  Each
+$D_wT_{n+m}$ is differentiable on the ball, again by Step 0, with
+$\mathrm{d}(D_wT_{n+m})(z)[v]$ equal to $D_{v::w}T_{n+m}(z)$ for $v\in\{1,
+\mathrm{i}\}$ by the defining recursion of $D$.  By Step 3 the series
+$\sum_mD_wT_{n+m}$ converges uniformly on the ball and so do the two derived
+series $\sum_mD_{1::w}T_{n+m}$ and $\sum_mD_{\mathrm{i}::w}T_{n+m}$.  By the
+standard theorem on differentiating a uniformly convergent series --- if a
+series of differentiable functions on an open set converges pointwise and its
+derived series converges uniformly, the sum is differentiable and its
+derivative is the sum of the derived series --- the function
+$z\mapsto\sum_mD_wT_{n+m}(z)$ is differentiable on the ball, and its Fréchet
+derivative at $z$ is the real-linear map sending $v$ to the corresponding
+limit.
+
+Here the two directional limits determine the whole derivative.  A real-linear
+map $L\colon\mathbb{C}\to\mathbb{C}$ satisfies
+\[
+  Lv=(\operatorname{Re}v)\,L(1)+(\operatorname{Im}v)\,L(\mathrm{i})
+  \qquad(v\in\mathbb{C}),
+\]
+because $v=(\operatorname{Re}v)\cdot1+(\operatorname{Im}v)\cdot\mathrm{i}$ and
+$L$ is additive and commutes with real scalars.  So the assignment
+\[
+  (q_1,q_2)\longmapsto\bigl(v\mapsto(\operatorname{Re}v)q_1
+    +(\operatorname{Im}v)q_2\bigr)
+\]
+is itself a continuous linear map $\mathbb{C}\times\mathbb{C}\to
+(\mathbb{C}\to_{\mathbb{R}}\mathbb{C})$, and the Fréchet derivative of
+$\sum_mD_wT_{n+m}$ is its composition with the pair of sums
+$\bigl(\sum_mD_{1::w}T_{n+m},\ \sum_mD_{\mathrm{i}::w}T_{n+m}\bigr)$.  By the
+inductive hypothesis applied to the two longer words, each component of that
+pair is $C^{N-|w|-1}$ on the ball; composing with a continuous linear map
+preserves that class, so the derivative is $C^{N-|w|-1}$ and therefore
+$\sum_mD_wT_{n+m}$ is $C^{N-|w|}$, as claimed.
+
+\emph{Step 5: conclusion.}  Taking $w$ empty in Step 4 gives that
+$z\mapsto\sum_mT_{n+m}(z)$ is $C^{N}$ on $B(x,\rho_x)$, an open neighbourhood
+of $x$ contained in $\mathbb{B}-\{0\}$.  Since $x\in\mathbb{B}-\{0\}$ was
+arbitrary and being $C^{N}$ is local, the sum is $C^{N}$ on
+$\mathbb{B}-\{0\}$; and since $N$ was arbitrary it is $C^\infty$ there.
+\end{proof}

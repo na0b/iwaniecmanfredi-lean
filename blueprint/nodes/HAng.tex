@@ -1,0 +1,24 @@
+\begin{definition}
+For a map $H\colon\mathbb{C}\to\mathbb{C}$ and a point $\xi\in\mathbb{C}$ put
+\[
+  H_\theta(\xi)=DH(\xi)\bigl[i\xi\bigr],
+\]
+the value of the real Fr\'echet derivative $DH(\xi)$ on the vector $i\xi$.
+
+This is the angular derivative $H_\theta$ of Section~4 of the paper, written as
+a function of $\xi$ rather than of the polar coordinates.  With
+$\xi=re^{i\theta}$ and $H(r,\theta)=H(re^{i\theta})$ as in Section~4, the curve
+$\theta\mapsto re^{i\theta}$ has velocity
+$\partial(re^{i\theta})/\partial\theta=ire^{i\theta}=i\xi$, so the chain rule
+gives
+\[
+  \frac{\partial}{\partial\theta}H(r,\theta)=DH(re^{i\theta})\bigl[ire^{i\theta}\bigr]
+  =H_\theta\bigl(re^{i\theta}\bigr),
+\]
+whenever $H$ is real-differentiable at $re^{i\theta}$.
+
+At a point where $H$ is not real-differentiable,
+$DH(\xi)$ is taken to be the zero map, so the expression is defined at every
+point of $\mathbb{C}$; note that unlike $H_r$ this one needs no convention at
+$\xi=0$, where it is $DH(0)[0]=0$.
+\end{definition}

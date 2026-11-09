@@ -1,0 +1,451 @@
+\begin{theorem}
+Let $1<p<\infty$ with $p\neq2$, let $k\ge1$ be an integer and
+$0<\alpha\le1$ with $k+\alpha$ equal to the right-hand side of (9), as in
+\noderef{KAlphaExp}, and put $q=\frac{2}{2-\alpha}$.  Let
+$U\subseteq\mathbb{C}$ be open with $0\in U$, let $H=H_p$ be the extremal
+function (54) of \noderef{ExtremalH}, let $d=d(p)$ be the exponent of
+\noderef{DExp}, and let $f\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $f$ is $C^\infty$ on $\mathbb{C}-\{0\}$;
+\item[(H2)] $f(H(\xi))=\xi$ for every $\xi\in\mathbb{C}$, and $H(f(z))=z$ for
+  every $z\in\mathbb{C}$;
+\item[(H3)] $f(tz)=t^{d}f(z)$ for every $t\ge0$ and every $z\in\mathbb{C}$;
+\item[(H4)] $D^\nu f(tz)=t^{\,d-|\nu|}D^\nu f(z)$ for every $t>0$, every
+  $z\neq0$ and every iterated partial derivative $D^\nu$ of
+  \noderef{PartialWord}.
+\end{enumerate}
+Then
+\[
+  f\notin C^{k-1+\alpha}_{\mathrm{loc}}(U)
+  \quad\text{and}\quad
+  f\notin W^{k+1,q}_{\mathrm{loc}}(U),
+\]
+in the senses of \noderef{MemHolderSmallOn} and \noderef{MemWLocOn}; here
+$k\ge1$, so $k-1$ is the ordinary predecessor.
+
+This is (56) of the paper, the heart of the optimality half of Theorem 1.  Two
+features of the statement are forced.  The two non-memberships are asserted on
+an arbitrary open $U$ containing the singular point, not on $\mathbb{C}$: a
+failure of the little-o condition, or of the integrability, is witnessed by a
+compact subset of the domain, and a witness inside $\mathbb{C}$ need not meet a
+prescribed subdomain, so a statement about $\mathbb{C}$ would not restrict to
+one about $U$.  And the Sobolev exponent is the endpoint $q=2/(2-\alpha)$ and
+nothing smaller: $(2-\alpha)q=2$ is what makes the Jacobian factor cancel in
+the scaling identity (59), and for smaller $q$ the assertion is false, which is
+why the positive half (10) of Theorem 1 carries a strict inequality.
+
+The properties of $f$ are taken as hypotheses, as they are in the other nodes
+of the Theorem 1 chain; they are properties of the inverse of (54), and are
+discharged where this theorem is applied.
+\end{theorem}
+\begin{proof}
+Throughout, $e_0=1$ and $e_1=i$, and for $h\in\mathbb{C}$ we write
+$h^{(0)}=\operatorname{Re}h$, $h^{(1)}=\operatorname{Im}h$, so that
+$h=h^{(0)}e_0+h^{(1)}e_1$.  A word $\nu=(j_1,\dots,j_m)$ in $\{0,1\}$ has
+length $|\nu|=m$ and $D^\nu=\partial_{j_1}\cdots\partial_{j_m}$ as in
+\noderef{PartialWord}, so that $D^{(j,\nu)}=\partial_j D^\nu$.  Finally
+$c_\nu(h)=h^{(j_1)}\cdots h^{(j_m)}$.
+
+\emph{Step 0: elementary consequences of the hypotheses.}
+
+\noindent(0a) $d=k-1+\alpha$.  By \noderef{KAlphaEqDExpAddOne} the right-hand
+side of (9) equals $d+1$, and by hypothesis it equals $k+\alpha$; hence
+$d=k+\alpha-1$.
+
+\noindent(0b) $d>0$, since $k\ge1$ and $\alpha>0$ give $d\ge\alpha>0$.
+
+\noindent(0c) $f(0)=0$.  Apply (H3) with $t=0$ and any $z$: $f(0)=0^{d}f(z)=0$,
+because $d\neq0$ by (0b).
+
+\noindent(0d) $f$ is not identically zero: $f(H(1))=1$ by (H2).
+
+\noindent(0e) $\alpha<1$ if and only if $d<k$, and $\alpha=1$ if and only if
+$d=k$; both by (0a).
+
+\noindent(0f) $q\ge1$ and $(2-\alpha)q=2$.  Indeed $0<\alpha\le1$ gives
+$1\le2-\alpha<2$, so $q=2/(2-\alpha)$ satisfies $q>1$ and
+$(2-\alpha)q=2$.
+
+\noindent(0g) If $\alpha<1$ then $d-j\neq0$ for every integer $0\le j\le k$.
+By (0a), $k-1<d<k$; so for $j\le k-1$ we have $d-j\ge d-(k-1)=\alpha>0$, and
+$d-k=\alpha-1<0$.
+
+\emph{Step 1: three standard facts, recorded for use below.}
+
+\noindent(1a) \emph{Decomposition of a differential.}  Let $F$ be
+differentiable at $w$, $L=\mathrm{d}F(w)$, $a=F_z(w)$, $b=F_{\bar z}(w)$.  By
+\noderef{DZ} and \noderef{DZbar}, $a=\tfrac12(L[1]-iL[i])$ and
+$b=\tfrac12(L[1]+iL[i])$, so $L[1]=a+b$ and $L[i]=i(a-b)$, and for
+$h=h^{(0)}+ih^{(1)}$,
+\[
+  L[h]=h^{(0)}(a+b)+h^{(1)}i(a-b)=a\,h+b\,\bar h .
+\]
+
+\noindent(1b) \emph{Derivatives along a ray.}  Let $\Omega$ be open, let $g$ be
+$C^\infty$ on $\Omega$, let $z_0\in\mathbb{C}$ and let $I$ be an interval of
+positive reals with $tz_0\in\Omega$ for $t\in I$.  Put $\psi(t)=g(tz_0)$.  Then
+$\psi$ is $C^\infty$ on $I$ and
+\begin{equation}\tag{1}
+  \psi^{(m)}(t)=\sum_{|\nu|=m}c_\nu(z_0)\,D^\nu g(tz_0)\qquad(t\in I,\ m\ge0).
+\end{equation}
+For $m=0$ this is the definition.  If it holds for $m$, then each $D^\nu g$ is
+$C^\infty$ on $\Omega$ and, for any $C^1$ function $G$ on $\Omega$,
+\[
+  \frac{\mathrm{d}}{\mathrm{d}t}G(tz_0)=\mathrm{d}G(tz_0)[z_0]
+  =\sum_{j\in\{0,1\}}z_0^{(j)}\,(\partial_jG)(tz_0)
+\]
+by the chain rule and the $\mathbb{R}$-linearity of $\mathrm{d}G(tz_0)$ in the
+direction.  Applying this to each $G=D^\nu g$ and using
+$\partial_jD^\nu=D^{(j,\nu)}$ gives (1) for $m+1$.
+
+\noindent(1c) \emph{Partial derivatives and iterated Fréchet derivatives.}  Let
+$\Omega$ be open and $g$ of class $C^m$ on $\Omega$.  Since $\Omega$ is open,
+the iterated Fréchet derivative of $g$ within $\Omega$ coincides on $\Omega$
+with the iterated Fréchet derivative of $g$, which we write
+$\mathrm{d}^mg(x)$; it is the symmetric $m$-linear map characterized by the
+recursion $\mathrm{d}^{m+1}g(x)[v_0,v_1,\dots,v_m]
+=\bigl(\mathrm{d}(\mathrm{d}^mg)(x)[v_0]\bigr)[v_1,\dots,v_m]$, with
+$\mathrm{d}^0g(x)=g(x)$.  Comparing this recursion with
+$D^{(j,\nu)}=\partial_jD^\nu$ gives, for every word $\nu=(j_1,\dots,j_m)$,
+\begin{equation}\tag{2}
+  D^\nu g(x)=\mathrm{d}^mg(x)[e_{j_1},\dots,e_{j_m}]\qquad(x\in\Omega),
+\end{equation}
+and consequently, $\|e_j\|=1$,
+\begin{equation}\tag{3}
+  \bigl|D^\nu g(x)-D^\nu g(y)\bigr|
+  \le\bigl\|\mathrm{d}^mg(x)-\mathrm{d}^mg(y)\bigr\|\qquad(x,y\in\Omega).
+\end{equation}
+Also, $g$ of class $C^m$ on $\Omega$ makes each $D^\nu g$ with $|\nu|=m$
+continuous on $\Omega$, and each $D^\nu g$ with $|\nu|=m-1$ of class $C^1$ on
+$\Omega$.
+
+\emph{Step 2: the radial vanishing lemma.}  Let $m\ge0$, let $R>0$, let
+$|z_0|=1$, and suppose
+\[
+  D^\nu f(tz_0)=0\qquad\text{for every }|\nu|=m\text{ and every }0<t<R .
+\]
+Suppose moreover that $d-j\neq0$ for every integer $0\le j\le m-1$.  Then
+$f(z_0)=0$.
+
+Indeed, put $\psi(t)=f(tz_0)$ for $t\in(0,R)$.  By (H1) and (1b) with
+$\Omega=\mathbb{C}-\{0\}$, which contains $tz_0$ for $0<t<R$, the function
+$\psi$ is $C^\infty$ on $(0,R)$ and, by (1) and the hypothesis,
+\[
+  \psi^{(m)}(t)=\sum_{|\nu|=m}c_\nu(z_0)D^\nu f(tz_0)=0\qquad(0<t<R).
+\]
+On the other hand (H3) gives $\psi(t)=t^{d}f(z_0)$ for $t>0$, whence
+$\psi^{(m)}(t)=d(d-1)\cdots(d-m+1)\,t^{\,d-m}f(z_0)$, the product being empty
+and equal to $1$ when $m=0$.  Each factor is non-zero by assumption and
+$t^{\,d-m}>0$, so $f(z_0)=0$.
+
+\emph{Step 3: $f$ cannot vanish on the whole unit circle.}  Suppose
+$f(z_0)=0$ for every $|z_0|=1$.  For $z\neq0$, (H3) with $t=|z|>0$ and the
+point $z/|z|$ gives $f(z)=|z|^{d}f(z/|z|)=0$, and $f(0)=0$ by (0c).  So
+$f\equiv0$, contradicting (0d).  Hence there is $z_0$ with $|z_0|=1$ and
+$f(z_0)\neq0$.
+
+\emph{Step 4: the $\alpha=1$ endgame.}  Assume $\alpha=1$, let $R>0$ with
+$\overline{B}(0,R)\subseteq U$, and assume
+\begin{equation}\tag{4}
+  D^\nu f(z)=0\qquad\text{for every }|\nu|=k+1\text{ and every }
+  0<|z|<R .
+\end{equation}
+We derive a contradiction.
+
+\noindent(4a) The set $B=\{z:0<|z|<R\}$ is open, non-empty and connected: it is
+the image of the connected set $(0,R)\times\mathbb{R}$ under the continuous map
+$(r,\theta)\mapsto re^{i\theta}$.
+
+\noindent(4b) By (H1), $f$ is $C^\infty$ on $B\subseteq\mathbb{C}-\{0\}$, and by
+(4) every partial derivative of order $k+1$ of $f$ vanishes on $B$.  Hence
+\noderef{VanishingDerivsIsPolynomial} applies on $B$ with $m=k$ and yields
+coefficients $a_{ij}$, vanishing unless $i+j\le k$, with
+\begin{equation}\tag{5}
+  f(z)=\sum_{i+j\le k}a_{ij}z^i\bar z^{\,j}\qquad(z\in B).
+\end{equation}
+
+\noindent(4c) \emph{$f$ agrees on $B$ with the top-degree part.}  Put
+$Q(z)=\sum_{i+j=k}a_{ij}z^i\bar z^{\,j}$.  By (0e), $d=k$.  Let $z\in B$ and
+$0<s<1$; then $sz\in B$, and (H3) gives $f(sz)=s^{k}f(z)$.  Substituting (5) on
+both sides,
+\[
+  \sum_{n=0}^{k}s^{n}\sum_{i+j=n}a_{ij}z^i\bar z^{\,j}
+  =s^{k}\sum_{i+j\le k}a_{ij}z^i\bar z^{\,j}
+  \qquad(0<s<1).
+\]
+Both sides are polynomials in $s$ of degree at most $k$ which agree at the
+infinitely many points of $(0,1)$, so they agree coefficientwise.  Comparing
+the coefficients of $s^{k}$ and using (5),
+\begin{equation}\tag{6}
+  Q(z)=\sum_{i+j=k}a_{ij}z^i\bar z^{\,j}
+  =\sum_{i+j\le k}a_{ij}z^i\bar z^{\,j}=f(z)\qquad(z\in B).
+\end{equation}
+
+\noindent(4d) \emph{$f=Q$ on $\mathbb{C}-\{0\}$.}  Note $Q(tz)=t^{k}Q(z)$ for
+$t>0$, each monomial having $i+j=k$ and $t$ being real.  Let $z\neq0$ and put
+$t=R/(2|z|)>0$, so that $0<|tz|=R/2<R$ and $tz\in B$.  By (H3),
+$f(tz)=t^{k}f(z)$, so by (6)
+\[
+  f(z)=t^{-k}f(tz)=t^{-k}Q(tz)=t^{-k}t^{k}Q(z)=Q(z).
+\]
+
+\noindent(4e) \emph{The identity on the unit circle.}  If $\xi\neq0$ then
+$H(\xi)\neq0$: otherwise (H2) and (0c) give $\xi=f(H(\xi))=f(0)=0$.  Let
+$|\xi|=1$.  Then $H(\xi)\neq0$, so by (H2) and (4d),
+\begin{equation}\tag{7}
+  \xi=f(H(\xi))=Q(H(\xi))
+  =\sum_{m=0}^{k}a_{m,k-m}H(\xi)^{m}\overline{H(\xi)}^{\,k-m}.
+\end{equation}
+Write $\xi=e^{i\theta}$, which is possible for every $\xi$ of modulus $1$.  The
+first clause of \noderef{ExtremalPolarForm} at $r=1$ gives
+\[
+  H(\xi)=1^{1/d}\bigl(e^{i\theta}+\varepsilon e^{-3i\theta}\bigr)
+  =\xi+\varepsilon\xi^{-3},
+\]
+where $\varepsilon=\epsilon_2(1,p)$ is the real coefficient of
+\noderef{EpsCoef}, and $e^{-3i\theta}=\xi^{-3}$.  Since $|\xi|=1$ we have
+$\bar\xi=\xi^{-1}$, so $\overline{\xi^{-3}}=\xi^{3}$ and, $\varepsilon$ being
+real,
+\[
+  \overline{H(\xi)}=\xi^{-1}+\varepsilon\xi^{3}.
+\]
+Substituting into (7),
+\begin{equation}\tag{8}
+  \xi=\sum_{m=0}^{k}a_{m,k-m}
+    \bigl(\xi+\varepsilon\xi^{-3}\bigr)^{m}
+    \bigl(\xi^{-1}+\varepsilon\xi^{3}\bigr)^{k-m}
+  \qquad(|\xi|=1).
+\end{equation}
+
+\noindent(4f) \emph{Continuation of (8) to all $\xi\neq0$.}  For $\xi\neq0$,
+\[
+  \bigl(\xi+\varepsilon\xi^{-3}\bigr)^{m}=\xi^{-3m}\bigl(\xi^{4}+\varepsilon
+  \bigr)^{m},\qquad
+  \bigl(\xi^{-1}+\varepsilon\xi^{3}\bigr)^{k-m}
+  =\xi^{-(k-m)}\bigl(1+\varepsilon\xi^{4}\bigr)^{k-m},
+\]
+so multiplying the $m$-th summand of (8) by $\xi^{3k}$ produces
+$a_{m,k-m}\xi^{\,3k-3m-(k-m)}(\xi^{4}+\varepsilon)^{m}
+(1+\varepsilon\xi^{4})^{k-m}$ with
+$3k-3m-(k-m)=2(k-m)\ge0$.  Hence, setting
+\[
+  P_1(X)=X^{3k+1},\qquad
+  P_2(X)=\sum_{m=0}^{k}a_{m,k-m}X^{2(k-m)}
+    \bigl(X^{4}+\varepsilon\bigr)^{m}
+    \bigl(1+\varepsilon X^{4}\bigr)^{k-m},
+\]
+both $P_1$ and $P_2$ are polynomials, and multiplying (8) by $\xi^{3k}$ gives
+$P_1(\xi)=P_2(\xi)$ for every $\xi$ with $|\xi|=1$.  The unit circle is
+infinite, $\theta\mapsto e^{i\theta}$ being injective on $[0,2\pi)$, so the
+polynomial $P_1-P_2$ has infinitely many roots and is therefore the zero
+polynomial.  Hence $P_1(\xi)=P_2(\xi)$ for every $\xi\in\mathbb{C}$, and
+dividing by $\xi^{3k}\neq0$ and undoing the two displays above,
+\begin{equation}\tag{9}
+  \xi=\sum_{m=0}^{k}a_{m,k-m}
+    \bigl(\xi+\varepsilon\xi^{-3}\bigr)^{m}
+    \bigl(\xi^{-1}+\varepsilon\xi^{3}\bigr)^{k-m}
+  \qquad(\xi\neq0).
+\end{equation}
+
+\noindent(4g) \emph{The contradiction.}  By \noderef{ExtremalEpsBound},
+$\varepsilon=0$ if and only if $p=2$; since $p\neq2$ we have
+$\varepsilon\neq0$.  Also $k\ge1$.  So \noderef{HomogPolyModFour} applies with
+the coefficient $\varepsilon$, the degree $k$ and the coefficient family
+$a_{ij}$, whose hypothesis is exactly (9), and it yields a contradiction.  This
+completes Step 4.
+
+\emph{Step 5: $f\notin C^{k-1+\alpha}_{\mathrm{loc}}(U)$.}  Suppose to the
+contrary that $f\in C^{k-1+\alpha}_{\mathrm{loc}}(U)$ in the sense of
+\noderef{MemHolderSmallOn} at the index $k-1$.  Since $0\in U$ and $U$ is open,
+fix $\rho>0$ with $K=\overline{B}(0,\rho)\subseteq U$; $K$ is compact.  By
+\noderef{MemHolderSmallOn} one of two cases holds.
+
+\noindent\emph{Case A: $\alpha<1$.}  Then $f$ is of class $C^{k-1}$ on $U$ and,
+for every compact $K'\subseteq U$ and every $\delta>0$, there is $\rho'>0$ with
+\begin{equation}\tag{10}
+  \bigl\|\mathrm{d}^{k-1}f(x)-\mathrm{d}^{k-1}f(y)\bigr\|
+  \le\delta|x-y|^{\alpha}\qquad(x,y\in K',\ |x-y|<\rho'),
+\end{equation}
+where we have used (1c) to replace the derivative within $U$ by the derivative
+at the point, $U$ being open.
+
+Fix a word $\nu$ with $|\nu|=k-1$.
+
+First, $D^\nu f(0)=0$.  By (1c), $D^\nu f$ is continuous on $U$.  Pick any $z$
+with $0<|z|\le\rho$; then $tz\in K\subseteq U$ for $0<t\le1$, and (H4) gives
+\[
+  D^\nu f(tz)=t^{\,d-(k-1)}D^\nu f(z)=t^{\alpha}D^\nu f(z)\longrightarrow0
+  \qquad(t\to0^+),
+\]
+using (0a) and $\alpha>0$.  Since $tz\to0$ and $D^\nu f$ is continuous at
+$0\in U$, we get $D^\nu f(0)=0$.
+
+Next, let $\delta>0$ and let $\rho'>0$ be as in (10) for $K'=K$.  Fix $z$ with
+$0<|z|\le\rho$ and let $0<t\le1$ satisfy $t|z|<\rho'$.  Then $x=tz$ and $y=0$
+lie in $K$ and $|x-y|=t|z|<\rho'$, so by (10) and (3),
+\[
+  \bigl|D^\nu f(tz)\bigr|=\bigl|D^\nu f(tz)-D^\nu f(0)\bigr|
+  \le\delta\,(t|z|)^{\alpha}.
+\]
+Combining with $D^\nu f(tz)=t^{\alpha}D^\nu f(z)$ and dividing by
+$t^{\alpha}>0$,
+\[
+  \bigl|D^\nu f(z)\bigr|\le\delta|z|^{\alpha}.
+\]
+As $\delta>0$ was arbitrary, $D^\nu f(z)=0$.  Thus
+\begin{equation}\tag{11}
+  D^\nu f(z)=0\qquad\text{for every }|\nu|=k-1\text{ and }0<|z|\le\rho .
+\end{equation}
+
+Now let $|z_0|=1$.  For $0<t<\rho$ we have $0<|tz_0|=t\le\rho$, so (11) gives
+$D^\nu f(tz_0)=0$ for every $|\nu|=k-1$.  By (0g) the numbers $d-j$ are
+non-zero for $0\le j\le k-2$, so Step 2 with $m=k-1$ and $R=\rho$ gives
+$f(z_0)=0$.  This holds for every $z_0$ on the unit circle, contradicting
+Step 3.
+
+\noindent\emph{Case B: $\alpha=1$.}  Then, by \noderef{MemHolderSmallOn} at the
+index $k-1$ and $\alpha=1$, the function $f$ is of class $C^{(k-1)+1}=C^{k}$ on
+$U$, using $k\ge1$.
+
+Fix a word $\nu$ with $|\nu|=k-1$.  By (1c), $D^\nu f$ is of class $C^1$ on
+$U$; in particular it is continuous on $U$ and differentiable at $0$.  Exactly
+as in Case A --- using (H4) with $d-(k-1)=\alpha=1$ --- we get $D^\nu f(0)=0$.
+Put $a=\partial_z(D^\nu f)(0)$ and $b=\partial_{\bar z}(D^\nu f)(0)$.  By
+differentiability at $0$, $D^\nu f(0)=0$ and (1a),
+\begin{equation}\tag{12}
+  D^\nu f(\zeta)=a\zeta+b\bar\zeta+o(|\zeta|)\qquad(\zeta\to0).
+\end{equation}
+Fix $z\neq0$.  For all small $t>0$ we have $tz\in U$, and (H4) with
+$|\nu|=k-1$ and $d-(k-1)=1$ gives $D^\nu f(tz)=t\,D^\nu f(z)$.  Hence by (12)
+with $\zeta=tz$,
+\[
+  t\,D^\nu f(z)=a(tz)+b\overline{(tz)}+o(t)=t\bigl(az+b\bar z\bigr)+o(t) ,
+\]
+and dividing by $t$ and letting $t\to0^+$,
+\begin{equation}\tag{13}
+  D^\nu f(z)=a_\nu z+b_\nu\bar z\qquad(z\neq0),
+\end{equation}
+where we now write $a_\nu,b_\nu$ for the constants $a,b$ attached to $\nu$.
+
+Let $\nu'$ be any word with $|\nu'|=k+1$.  Since $k\ge1$, $|\nu'|\ge2$, so we
+may write $\nu'=(j_1,j_2,\nu)$ with $|\nu|=k-1$, and then
+$D^{\nu'}f=\partial_{j_1}\partial_{j_2}(D^\nu f)$.  On the open set
+$\mathbb{C}-\{0\}$ the function $D^\nu f$ agrees by (13) with the
+$\mathbb{R}$-linear map $z\mapsto a_\nu z+b_\nu\bar z$, whose first partial
+derivatives are the constants $a_\nu e_{j}+b_\nu\overline{e_{j}}$; hence
+$\partial_{j_2}(D^\nu f)$ is constant on $\mathbb{C}-\{0\}$ and
+$D^{\nu'}f=\partial_{j_1}\partial_{j_2}(D^\nu f)=0$ there.
+
+Finally choose $R>0$ with $\overline{B}(0,R)\subseteq U$.  Then (4) holds, and
+Step 4 gives a contradiction.
+
+In both cases we have reached a contradiction, so
+$f\notin C^{k-1+\alpha}_{\mathrm{loc}}(U)$.
+
+\emph{Step 6: $f\notin W^{k+1,q}_{\mathrm{loc}}(U)$.}  Suppose to the contrary
+that $f\in W^{k+1,q}_{\mathrm{loc}}(U)$ in the sense of \noderef{MemWLocOn}.
+Let $(D_w)_w$ be the corresponding family, indexed by words, so that
+$D_{()}=f$, each $D_w$ with $|w|\le k+1$ lies in $L^{q}_{\mathrm{loc}}(U)$ in
+the sense of \noderef{MemLpLocOn}, and $D_{w\frown(j)}$ is the distributional
+$j$-th partial derivative of $D_w$ on $U$ in the sense of
+\noderef{IsWeakPartialOn} whenever $|w|<k+1$, where $w\frown(j)$ denotes $w$
+with the letter $j$ appended on the right.  Put
+$\Omega'=U-\{0\}$, an open set on which $f$ is $C^\infty$ by (H1).
+
+\noindent(6a) \emph{Identification of the weak derivatives.}  We claim that for
+every word $w$ with $|w|\le k+1$,
+\begin{equation}\tag{14}
+  D_w=D^{\overleftarrow{w}}f\quad\text{almost everywhere on }\Omega',
+\end{equation}
+where $\overleftarrow{w}$ is $w$ reversed.  We induct on $|w|$.  For $|w|=0$
+both sides are $f$.  Assume (14) for all words of length $s<k+1$ and let
+$|w|=s$, $j\in\{0,1\}$; we prove it for $w\frown(j)$, whose reverse is
+$(j,\overleftarrow{w})$.
+
+Put $u=D^{\overleftarrow{w}}f$, which is $C^\infty$ on $\Omega'$.  Every test
+function for $\Omega'$ is a test function for $U$, its support being contained
+in $\Omega'\subseteq U$; so, restricting the integration-by-parts identity of
+\noderef{IsWeakPartialOn} to such test functions, $D_{w\frown(j)}$ is the
+distributional $j$-th partial of $D_w$ on $\Omega'$.  Both integrals in that
+identity are unchanged if $D_w$ is replaced by a function agreeing with it
+almost everywhere on $\Omega'$, the integrands being supported in $\Omega'$; so
+by the inductive hypothesis $D_{w\frown(j)}$ is also the distributional $j$-th
+partial of $u$ on $\Omega'$, for each of the two letters $j$.
+
+We may now apply \noderef{WeakPartialEqFDerivAE} on the open set $\Omega'$ to
+the function $u$ and to the pair of candidate derivatives
+$j\mapsto D_{w\frown(j)}$.  Its hypotheses hold: $u$ is continuous on
+$\Omega'$, hence bounded on compact subsets of $\Omega'$ and therefore in
+$L^1_{\mathrm{loc}}(\Omega')$; each $D_{w\frown(j)}$ lies in
+$L^{q}_{\mathrm{loc}}(U)$ with $|w\frown(j)|=s+1\le k+1$, hence in
+$L^1_{\mathrm{loc}}(\Omega')$, because compact subsets of $\Omega'$ are
+compact subsets of $U$ of finite measure and $q\ge1$ by (0f), so Hölder's
+inequality bounds the $L^1$ norm on such a set by the $L^{q}$ norm; the two
+integration-by-parts identities were just established; and $u$, being
+$C^\infty$ on $\Omega'$, is differentiable at every point of $\Omega'$.  The
+conclusion is that, almost everywhere on $\Omega'$,
+\[
+  D_{w\frown(j)}=\partial_j u=\partial_j D^{\overleftarrow{w}}f
+  =D^{(j,\overleftarrow{w})}f=D^{\overleftarrow{w\frown(j)}}f ,
+\]
+which is (14) for $w\frown(j)$.  This proves the claim.
+
+\noindent(6b) \emph{Finiteness of the integral.}  Fix $R>0$ with
+$\overline{B}(0,R)\subseteq U$ and fix a word $\nu$ with $|\nu|=k+1$; put
+$F=D^\nu f$.  By (6a) applied to $w=\overleftarrow{\nu}$, we have $F=D_{w}$
+almost everywhere on $\Omega'$, hence almost everywhere on $B(0,R)$, the origin
+being a null set.  Since $\overline{B}(0,R)$ is a compact subset of $U$ and
+$D_{w}\in L^{q}_{\mathrm{loc}}(U)$,
+\begin{equation}\tag{15}
+  \int_{B(0,R)}|F|^{q}\,\mathrm{d}\sigma
+  =\int_{B(0,R)}|D_{w}|^{q}\,\mathrm{d}\sigma<\infty .
+\end{equation}
+Note also that $F$ is continuous on the open set $B=\{0<|z|<R\}$ by (H1), hence
+measurable.
+
+\noindent(6c) \emph{The scaling identity (59) and its integrated form.}  By
+(H4) with $|\nu|=k+1$ and (0a),
+$d-(k+1)=\alpha-2$, so
+\begin{equation}\tag{16}
+  F(z)=t^{\,2-\alpha}F(tz)\qquad(z\neq0,\ t>0).
+\end{equation}
+Let $0<t\le1$.  Using (16), then $(2-\alpha)q=2$ from (0f), then the change of
+variables $\zeta=tz$, whose Jacobian is $t^{2}$,
+\[
+  \int_{B(0,R)}|F(z)|^{q}\,\mathrm{d}\sigma(z)
+  =t^{(2-\alpha)q}\int_{B(0,R)}|F(tz)|^{q}\,\mathrm{d}\sigma(z)
+  =t^{2}\,t^{-2}\int_{B(0,tR)}|F(\zeta)|^{q}\,\mathrm{d}\sigma(\zeta)
+  =\int_{B(0,tR)}|F|^{q}\,\mathrm{d}\sigma ,
+\]
+the first equality holding because (16) is valid at every $z\neq0$, that is
+almost everywhere.  This is the paper's identity
+$\iint_{|z|<R}|D^\nu f|^{q}=\iint_{|z|<tR}|D^\nu f|^{q}$, and it is exactly
+here that the endpoint exponent is used: for $q<2/(2-\alpha)$ the two powers of
+$t$ do not cancel.
+
+\noindent(6d) \emph{$F$ vanishes.}  By (15) the function $|F|^{q}$ is integrable
+on $B(0,R)$, and the sets $B(0,tR)$ decrease to $\{0\}$ as $t\to0^+$, a null
+set; so by dominated convergence
+$\int_{B(0,tR)}|F|^{q}\to0$.  By (6c) the left-hand side of the display is
+independent of $t$, so
+\[
+  \int_{B(0,R)}|F|^{q}\,\mathrm{d}\sigma=0 ,
+\]
+whence $F=0$ almost everywhere on $B(0,R)$.  Since $F$ is continuous on the
+open set $B=\{0<|z|<R\}$ and the complement of a null set is dense, $F=0$ at
+every point of $B$.  As $\nu$ with $|\nu|=k+1$ was arbitrary,
+\begin{equation}\tag{17}
+  D^\nu f(z)=0\qquad\text{for every }|\nu|=k+1\text{ and every }0<|z|<R .
+\end{equation}
+
+\noindent(6e) \emph{The contradiction, in two branches.}  If $\alpha<1$, let
+$|z_0|=1$; for $0<t<R$ we have $0<|tz_0|=t<R$, so (17) gives
+$D^\nu f(tz_0)=0$ for every $|\nu|=k+1$, and by (0g) the numbers $d-j$ are
+non-zero for $0\le j\le k$, so Step 2 with $m=k+1$ and this $R$ gives
+$f(z_0)=0$.  This holds for every $z_0$ on the unit circle, contradicting
+Step 3.  If $\alpha=1$, then (17) is exactly (4) and Step 4 gives the
+contradiction directly.
+
+Hence $f\notin W^{k+1,q}_{\mathrm{loc}}(U)$, and with Step 5 the theorem is
+proved.
+\end{proof}

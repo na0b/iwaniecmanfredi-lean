@@ -1,0 +1,422 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, write $\mathbb{B}=\{\xi:|\xi|<1\}$,
+let $\lambda_k=\lambda_{|k|}(n,p)$ be the exponent of \noderef{LambdaCoef},
+$\epsilon_k=\epsilon_k(n,p)$ the coefficient of \noderef{EpsCoef},
+$\gamma_n=\lambda_{n+1}(n,p)$ the exponent of \noderef{GammaExp}, $a_k$ the
+Fourier coefficient of \noderef{FourierCoefOfH}, $T_k$ the $k$-th summand of
+(19) in the sense of \noderef{Thm2Term}, and $D^{w}$ the iterated partial
+derivative of \noderef{PartialWord}.  Let $H\colon\mathbb{C}\to\mathbb{C}$ and
+$A\colon\mathbb{Z}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $H$ is continuous on $\mathbb{B}$, lies in
+  $W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in the sense of \noderef{MemWLocOn},
+  and is differentiable at almost every point of $\mathbb{B}$;
+\item[(H2)] $H$ solves (18) on $\mathbb{B}$ in the sense of
+  \noderef{SolvesEq18};
+\item[(H3)] $a_k(r)=A_k\,r^{\lambda_k}$ for every $k\in\mathbb{Z}$ with
+  $|k|\ge n$ and every $r\in(0,1)$;
+\item[(H4)] $A_{-k}=\epsilon_k\overline{A_k}$ for every integer $k\ge n$;
+\item[(H5)] $\sum_{m\ge0}(n+m)|A_{n+m}|^2<\infty$, that is
+  $\sum_{k\ge n}k|A_k|^2<\infty$.
+\end{enumerate}
+Then:
+\begin{enumerate}
+\item[(a)] for every $\xi$ with $0<|\xi|<1$ the series (19) converges and
+\[
+  H(\xi)=\sum_{m=0}^{\infty}T_{n+m}(\xi);
+\]
+\item[(b)] for every $\rho\in(0,1)$ and every integer $j\ge n$ there is
+$C\ge0$ with
+\[
+  \Bigl|H(\xi)-\sum_{k=n}^{j}T_k(\xi)\Bigr|\le C\,|\xi|^{\lambda_{j+1}}
+  \qquad\text{for }0<|\xi|\le\rho ;
+\]
+\item[(c)] for every $\rho\in(0,1)$ and every integer $j\ge n$ there is
+$C\ge0$ with
+\[
+  \Bigl|H_r(\xi)-\sum_{k=n}^{j}\bigl(T_k\bigr)_r(\xi)\Bigr|
+  \le C\,|\xi|^{\lambda_{j+1}-1}
+  \qquad\text{for }0<|\xi|\le\rho ,
+\]
+where $(\cdot)_r$ is the radial derivative of \noderef{HRad};
+\item[(d)] if moreover $A_n=0$, then for every integer $m\ge0$ and every
+$\rho\in(0,1)$ there is $C_m\ge0$ with
+\[
+  \sum_{|w|=m}\bigl|D^{w}H(\xi)\bigr|\le C_m\,|\xi|^{\gamma_n-m}
+  \qquad\text{for }0<|\xi|\le\rho ,
+\]
+the sum running over all $2^m$ words $w$ of length $m$ in $\{0,1\}$;
+\item[(e)] $H$ is of class $C^\infty$ on $\mathbb{B}-\{0\}$.
+\end{enumerate}
+
+Clause (e) is where the smoothness of $H$ away from the origin is
+\emph{produced}, and it is the paper's own step: paper.tex:387--388 notes that
+$\lambda_k\to\infty$ and concludes ``therefore, we can perform any finite
+number of term-by-term differentiations in formula (19) for $0<|\xi|<1$''.  No
+smoothness is assumed in (H1) --- only almost-everywhere differentiability,
+which is what item (C2) of the paper's note grants for the inverse of a
+quasiconformal homeomorphism and which (H1) needs because the hypotheses of the
+Section-4 nodes are stated with it.  Clause (d) is estimate (43) of Corollary 1; the words of length $m$ realize
+exactly the operators $D^\nu$ with $|\nu|=m$, as \noderef{PartialWord} records,
+so the sum over words is the paper's $\sum_{|\nu|=m}$ up to the multiplicities
+with which each $D^\nu$ occurs, which are at most $2^m$ and are absorbed into
+$C_m$.  Clause (a) is the pointwise form of (19); clauses (b) and (c) are the
+tail estimates with which the lower bounds in (41) and (42) are obtained.
+\end{lemma}
+\begin{proof}
+Throughout, $k$ and $j$ denote integers, $\lambda_{-k}=\lambda_k$, and
+$\epsilon_k\in\mathbb{R}$ by \noderef{EpsCoef}.  Write
+\[
+  E=\sum_{k\ge n}k|A_k|^2<\infty
+\]
+by (H5); since $k\ge n\ge1$ we have $|A_k|^2\le k|A_k|^2$, so also
+$\sum_{k\ge n}|A_k|^2\le E$.
+
+\emph{Step 0: the exponents.}  By part (a) of \noderef{GammaRatioMinAtOne},
+$\gamma_n>0$.  Put $\beta=\gamma_n/(n+1)>0$.  By
+\noderef{LambdaLinearLowerBound},
+\begin{equation}\tag{1}
+  \lambda_k\ge\beta k\qquad(k\ge n+1),
+\end{equation}
+and by parts (23), (24), (25) of \noderef{LambdaEpsEstimates},
+$\lambda_n=0$, $\epsilon_n=0$, $|\epsilon_k|<1$ and
+$\lambda_k\le k\sqrt{p-1}$ for $k\ge n+1$.  Hence, for every $k\ge n$,
+\begin{equation}\tag{2}
+  0\le\lambda_k\le k\sqrt{p-1},\qquad|\epsilon_k|\le1,
+\end{equation}
+the case $k=n$ holding because $\lambda_n=0$ and $\epsilon_n=0$.
+
+Also $\lambda_k$ is \emph{strictly increasing} in $k\ge0$: by
+\noderef{LambdaCoef},
+$2\lambda_k+np=\sqrt{4k^2(p-1)+n^2(p-2)^2}$, the radicand is strictly
+increasing in $k\ge0$ because $p-1>0$ and $(k+1)^2>k^2$, and the square root is
+strictly increasing on $[0,\infty)$.  Therefore
+\begin{equation}\tag{3}
+  \lambda_{k}<\lambda_{k+1}\quad(k\ge0),\qquad\text{so}\qquad
+  \lambda_k\ge\lambda_{j+1}\ \text{ for }k\ge j+1 .
+\end{equation}
+
+\emph{Step 1: the summands.}  By part (b) of \noderef{Thm2TermSolvesEq18}, for
+every $k\ge n$, every $r>0$ and every $\theta$,
+\begin{equation}\tag{4}
+  T_k\bigl(re^{i\theta}\bigr)=r^{\lambda_k}\Phi_k(\theta),\qquad
+  \Phi_k(\theta)=A_ke^{i(k-n)\theta}+\epsilon_k\overline{A_k}e^{i(-k-n)\theta},
+\end{equation}
+and by its part (a) each $T_k$ is $C^\infty$ at every point $\xi\neq0$.  From
+(4) and (2),
+\begin{equation}\tag{5}
+  \bigl|T_k(\xi)\bigr|\le2|A_k|\,|\xi|^{\lambda_k},\qquad
+  \bigl|\Phi_k^{(b)}(\theta)\bigr|\le2|A_k|(k+n)^{b}\quad(b\ge0),
+\end{equation}
+the second because each differentiation multiplies the two terms of $\Phi_k$ by
+$i(k-n)$ and $i(-k-n)$ respectively, of modulus at most $k+n$.
+
+\emph{Step 2: the master summability estimate.}  We claim that for every
+integer $N\ge0$ and every $\rho\in(0,1)$,
+\begin{equation}\tag{6}
+  \Sigma_N(\rho):=\sum_{k\ge n}(1+k)^{N}|A_k|\,\rho^{\lambda_k}<\infty .
+\end{equation}
+Indeed, by (1), for $k\ge n+1$ we have $\lambda_k\ge\beta k$ and hence
+$\rho^{\lambda_k}\le\rho^{\beta k}=q^{k}$, where
+\[
+  q=\rho^{\beta}\in(0,1)
+\]
+because $0<\rho<1$ and $\beta>0$.  By the Cauchy--Schwarz inequality applied to
+the sequences $\bigl(k^{1/2}|A_k|\bigr)_{k\ge n+1}$ and
+$\bigl((1+k)^{N}q^{k}k^{-1/2}\bigr)_{k\ge n+1}$,
+\[
+  \sum_{k\ge n+1}(1+k)^{N}|A_k|\rho^{\lambda_k}
+  \le\Bigl(\sum_{k\ge n+1}k|A_k|^2\Bigr)^{1/2}
+    \Bigl(\sum_{k\ge n+1}\frac{(1+k)^{2N}q^{2k}}{k}\Bigr)^{1/2}
+  \le E^{1/2}\Bigl(\sum_{k\ge1}(1+k)^{2N}q^{2k}\Bigr)^{1/2},
+\]
+and the last series converges because $0<q^2<1$ and a geometric series
+dominates any fixed power of $k$ (the standard fact that
+$\sum_{k\ge1}k^{M}x^{k}<\infty$ for $0\le x<1$ and every $M$).  Adding the
+single term $k=n$, which is finite, gives (6).  This is the paper's
+Cauchy--Schwarz split at paper.tex:391, and it is here that the \emph{linear}
+lower bound (1) is used: the constant bound $\lambda_k\ge(p-1)/(np)$ of (25)
+would leave $\rho^{\lambda_k}$ bounded below by a positive constant and (6)
+would fail.
+
+The linear rate $\beta$ of (1), the uniform coefficient bound
+$|A_k|\le C_A$ that the energy hypothesis supplies, the geometric domination
+$\rho^{\lambda_{n+m}}\le(\rho^{\beta})^{m}$ and the resulting convergence of
+the weighted tails at every polynomial weight are collected as
+\noderef{Thm2TermGeometricSummability}, which also records the constant value
+of $T_n$ off the origin and the bound
+$|T_{n+m}(\xi)|\le2|A_{n+m}||\xi|^{\lambda_{n+m}}$.
+
+\emph{Step 3: homogeneity of the summands and their derivatives.}  Fix $k\ge n$
+and a word $w$ of length $m$.  By (4), for $u>0$ and $\xi\neq0$, writing
+$\xi=re^{i\theta}$,
+\begin{equation}\tag{7}
+  T_k(u\xi)=(ur)^{\lambda_k}\Phi_k(\theta)=u^{\lambda_k}T_k(\xi),
+\end{equation}
+so $T_k$ is homogeneous of degree $\lambda_k$.  Next, for any function $F$ that
+is $C^\infty$ on $\mathbb{C}-\{0\}$ and any $u>0$, an induction on $w$ using
+\noderef{PartialWord} and the chain rule for the $\mathbb{R}$-linear map
+$\xi\mapsto u\xi$, whose Fréchet derivative is that same map, gives
+\[
+  D^{w}\bigl(\xi\mapsto F(u\xi)\bigr)(\xi)=u^{|w|}\bigl(D^{w}F\bigr)(u\xi)
+\]
+--- the base case $w$ empty being trivial, and the inductive step being
+$\partial_j\bigl(u^{|w'|}(D^{w'}F)\circ(u\cdot)\bigr)(\xi)
+=u^{|w'|}\cdot u\cdot\partial_j(D^{w'}F)(u\xi)$, by
+$\mathbb{R}$-linearity of the derivative in its argument.  Applying $D^{w}$ in
+$\xi$ to both sides of (7) therefore yields
+\[
+  u^{m}\bigl(D^{w}T_k\bigr)(u\xi)=u^{\lambda_k}\bigl(D^{w}T_k\bigr)(\xi),
+\]
+that is
+\begin{equation}\tag{8}
+  \bigl(D^{w}T_k\bigr)(u\xi)=u^{\lambda_k-m}\bigl(D^{w}T_k\bigr)(\xi)
+  \qquad(u>0,\ \xi\neq0).
+\end{equation}
+Taking $u=1/|\xi|$ and rearranging,
+\begin{equation}\tag{9}
+  \bigl|D^{w}T_k(\xi)\bigr|
+  =|\xi|^{\lambda_k-m}\,\bigl|D^{w}T_k\bigl(\xi/|\xi|\bigr)\bigr|
+  \qquad(\xi\neq0).
+\end{equation}
+
+\emph{Step 4: the bound on the unit circle.}  We claim that for every $m\ge0$
+there is a constant $C_0(m)$, depending only on $m$, with
+\begin{equation}\tag{10}
+  \sup_{|\eta|=1}\bigl|D^{w}T_k(\eta)\bigr|
+  \le C_0(m)\bigl(1+\lambda_k+k+n\bigr)^{m}\cdot2|A_k|
+\end{equation}
+for every word $w$ of length $m$ and every $k\ge n$.
+
+Cover the unit circle by finitely many open sectors, each contained in the
+annulus $\Omega_0=\{\tfrac12<|\eta|<2\}$, on each of which a single branch of
+the argument is defined.  On such a sector the map
+$\Psi(t,\theta)=e^{t}e^{i\theta}$ is a $C^\infty$ diffeomorphism from an open
+subset of $(\log\tfrac12,\log2)\times\mathbb{R}$ onto the sector, with inverse
+$\eta\mapsto(\log|\eta|,\arg\eta)$; all derivatives of $\Psi$ and of
+$\Psi^{-1}$ of order at most $m$ are bounded on the relevant compact sets by a
+constant depending only on $m$, since $|\eta|\ge\tfrac12$ on $\Omega_0$.  By
+(4), $T_k\circ\Psi(t,\theta)=e^{\lambda_kt}\Phi_k(\theta)$, so at the points of
+the unit circle, where $t=0$ and $e^{\lambda_kt}=1$,
+\[
+  \bigl|\partial_t^{a}\partial_\theta^{b}\bigl(T_k\circ\Psi\bigr)(0,\theta)\bigr|
+  =\lambda_k^{a}\bigl|\Phi_k^{(b)}(\theta)\bigr|
+  \le\lambda_k^{a}\cdot2|A_k|(k+n)^{b}
+  \le2|A_k|\bigl(1+\lambda_k+k+n\bigr)^{a+b}
+\]
+by (5).  The chain rule expresses $D^{w}T_k$ on each sector as a finite sum of
+terms, each a product of derivatives of $\Psi^{-1}$ of order at most $m$, all
+bounded as just said, with a derivative
+$\partial_t^{a}\partial_\theta^{b}(T_k\circ\Psi)$ for some $a+b\le m$.  Taking
+the maximum over the finitely many sectors gives (10).
+
+Combining (9), (10) and (2), and using $n\le k$ and $1\le k$, so that
+$1+\lambda_k+k+n\le\bigl(3+\sqrt{p-1}\bigr)(1+k)$, we obtain a constant
+$C_1(m)$ depending only on $m$, $n$, $p$ with
+\begin{equation}\tag{11}
+  \bigl|D^{w}T_k(\xi)\bigr|\le C_1(m)(1+k)^{m}|A_k|\,|\xi|^{\lambda_k-m}
+  \qquad(\xi\neq0,\ |w|=m,\ k\ge n).
+\end{equation}
+
+An explicit form of (11), with the constant $C_1(m)$ named and with the
+accompanying fact that each $D^{w}T_k$ is $C^\infty$ off the origin, is
+\noderef{Thm2TermWordDerivBound}; that node proves both by the monomial
+calculus of the class $E(s,j,l)(\xi)=|\xi|^{s}\xi^{j}\bar\xi^{\,l}$ instead of
+by sectors, and either route serves what follows.
+
+
+\emph{Step 5: proof of (a).}  Fix $r\in(0,1)$.  By (5) and (6) with $N=0$ and
+$\rho=r$, the series $\sum_{k\ge n}T_k(re^{i\theta})
+=\sum_{k\ge n}r^{\lambda_k}\Phi_k(\theta)$ converges absolutely, and uniformly
+in $\theta$, since its terms are bounded in modulus by $2|A_k|r^{\lambda_k}$,
+whose sum is $\Sigma_0(r)<\infty$.  Let $F_r(\theta)$ be its sum; $F_r$ is
+continuous and $2\pi$-periodic, being a uniform limit of such functions.
+
+We compute the Fourier coefficients of $F_r$.  Uniform convergence permits
+term-by-term integration, so for $j\in\mathbb{Z}$
+\[
+  \frac1{2\pi}\int_0^{2\pi}F_r(\theta)e^{i(n-j)\theta}d\theta
+  =\sum_{k\ge n}r^{\lambda_k}\cdot\frac1{2\pi}
+    \int_0^{2\pi}\Phi_k(\theta)e^{i(n-j)\theta}d\theta .
+\]
+Since $\frac1{2\pi}\int_0^{2\pi}e^{i\ell\theta}d\theta$ is $1$ for $\ell=0$ and
+$0$ otherwise, applying this with $\ell=k-j$ and $\ell=-k-j$ gives
+\[
+  \frac1{2\pi}\int_0^{2\pi}\Phi_k(\theta)e^{i(n-j)\theta}d\theta
+  =\begin{cases}
+     A_k&k=j,\\
+     \epsilon_k\overline{A_k}&k=-j,\\
+     0&\text{otherwise},
+   \end{cases}
+\]
+the first two cases being mutually exclusive because $k=j=-k$ would force
+$k=0$, while $k\ge n\ge1$.  Reading off the three regimes: if $|j|<n$, no
+$k\ge n$ satisfies $k=j$ or $k=-j$, so the $j$-th coefficient of $F_r$ is $0$;
+if $j\ge n$ it is $A_jr^{\lambda_j}$; and if $j\le-n$ it is
+$\epsilon_{-j}\overline{A_{-j}}r^{\lambda_{-j}}$, which by (H4) at the index
+$-j\ge n$ and $\lambda_{-j}=\lambda_j$ equals $A_jr^{\lambda_j}$.  So
+\begin{equation}\tag{12}
+  \text{the }j\text{-th Fourier coefficient of }F_r\text{ is }
+  A_jr^{\lambda_j}\ (|j|\ge n)\quad\text{and}\quad0\ (|j|<n).
+\end{equation}
+
+Now the Fourier coefficients of $\theta\mapsto H(re^{i\theta})$.  By
+\noderef{FourierCoefOfH} the $j$-th one is $a_j(r)$.  For $|j|\ge n$, (H3)
+gives $a_j(r)=A_jr^{\lambda_j}$.  For $|j|<n$: the hypotheses of
+\noderef{FourierCoefOde} are met --- $n\ge1$, $1<p<\infty$, $H$ continuous on
+$\mathbb{B}$, in $W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ and differentiable at
+almost every point of $\mathbb{B}$, all three by (H1), and $H$ a solution of
+(18) by (H2) --- so its second clause gives, for this $j$ and every
+$r\in(0,1)$,
+\[
+  r\bigl(r\,a_j'\bigr)'(r)+pn\,r\,a_j'(r)+(n^2-j^2)(p-1)\,a_j(r)=0,
+\]
+the Euler equation (35); and $a_j$ is continuous on $[0,1)$ by part (a) of
+\noderef{FourierCoefRegularity} and $C^\infty$ on $(0,1)$ by the third clause
+of \noderef{FourierCoefOde}.  These are exactly the hypotheses of
+\noderef{FourierCoefForm36} at the index $j$, whose first case ($|j|<n$) gives
+$a_j\equiv0$ on $[0,1)$.
+
+So $\theta\mapsto H(re^{i\theta})$ and $F_r$ are continuous $2\pi$-periodic
+functions with the same Fourier coefficients, hence are equal, by the
+uniqueness theorem for Fourier coefficients of continuous periodic functions.
+Given $\xi$ with $0<|\xi|<1$, write $\xi=re^{i\theta}$ with $r=|\xi|\in(0,1)$;
+then $H(\xi)=F_r(\theta)=\sum_{k\ge n}T_k(\xi)$.  The convergence is
+\emph{absolute}: by (5) and (6) with $N=0$ and $\rho=r$,
+$\sum_{k\ge n}|T_k(\xi)|\le\sum_{k\ge n}2|A_k|r^{\lambda_k}=\Sigma_0(r)<\infty$.
+An absolutely convergent series of complex numbers is unconditionally
+summable, with the same sum, so the family $\bigl(T_{n+m}(\xi)\bigr)_{m\ge0}$
+is summable with sum $H(\xi)$; reindexing $k=n+m$, this is (a) in the
+unconditional form in which it is stated.
+
+\emph{Step 6: term-by-term differentiation.}  Let $0<\delta\le\rho<1$ and let
+$w$ be a word of length $m$.  For $\delta\le|\xi|\le\rho$ we have, by (11) and
+(2),
+\[
+  \bigl|D^{w}T_k(\xi)\bigr|
+  \le C_1(m)(1+k)^{m}|A_k|\,|\xi|^{\lambda_k}|\xi|^{-m}
+  \le C_1(m)\delta^{-m}(1+k)^{m}|A_k|\,\rho^{\lambda_k},
+\]
+using $|\xi|^{\lambda_k}\le\rho^{\lambda_k}$ (valid since $\lambda_k\ge0$ and
+$|\xi|\le\rho$) and $|\xi|^{-m}\le\delta^{-m}$.  By (6) with $N=m$ these bounds
+are summable over $k\ge n$.  Hence, for every word $w$, the series
+$\sum_{k\ge n}D^{w}T_k$ converges uniformly on each closed annulus
+$\{\delta\le|\xi|\le\rho\}\subseteq\mathbb{B}-\{0\}$; each $T_k$ is $C^\infty$
+there by Step 1; and by Step 5 the series with $w$ empty converges to $H$
+there.  By the standard theorem on differentiation of uniformly convergent
+series --- if a series of $C^\infty$ functions on an open set converges
+uniformly on compact subsets together with each of its derived series, then the
+sum is $C^\infty$ and its derivatives are the sums of the derived series --- we
+conclude
+\begin{equation}\tag{13}
+  D^{w}H(\xi)=\sum_{k\ge n}D^{w}T_k(\xi)\qquad(0<|\xi|<1),
+\end{equation}
+for every word $w$, since every point of $\mathbb{B}-\{0\}$ lies in the
+interior of such an annulus for a suitable choice of $\delta$ and $\rho$.  The
+same theorem gives that the sum is of class $C^\infty$ on the open set
+$\mathbb{B}-\{0\}$, and by Step 5 that sum is $H$ there; smoothness on an open
+set being a local property, and every point of $\mathbb{B}-\{0\}$ lying in the
+interior of such an annulus, we conclude
+\begin{equation}\tag{13$'$}
+  H\ \text{is of class }C^\infty\ \text{on }\mathbb{B}-\{0\},
+\end{equation}
+which is (e).  Note that this is the only route to the derivatives $D^{w}H$
+appearing in (c) and (d): no smoothness of $H$ is assumed.
+
+\emph{Step 7: proof of (b).}  Let $\rho\in(0,1)$ and $j\ge n$.  For
+$0<|\xi|\le\rho$, by (a) and (5),
+\[
+  \Bigl|H(\xi)-\sum_{k=n}^{j}T_k(\xi)\Bigr|
+  =\Bigl|\sum_{k\ge j+1}T_k(\xi)\Bigr|
+  \le\sum_{k\ge j+1}2|A_k|\,|\xi|^{\lambda_k}.
+\]
+For $k\ge j+1$ we have $\lambda_k-\lambda_{j+1}\ge0$ by (3), and $|\xi|\le\rho$,
+so $|\xi|^{\lambda_k}=|\xi|^{\lambda_{j+1}}|\xi|^{\lambda_k-\lambda_{j+1}}
+\le|\xi|^{\lambda_{j+1}}\rho^{\lambda_k-\lambda_{j+1}}$.  Hence
+\[
+  \Bigl|H(\xi)-\sum_{k=n}^{j}T_k(\xi)\Bigr|
+  \le|\xi|^{\lambda_{j+1}}\cdot2\rho^{-\lambda_{j+1}}
+    \sum_{k\ge j+1}|A_k|\rho^{\lambda_k}
+  =C\,|\xi|^{\lambda_{j+1}}
+\]
+with $C=2\rho^{-\lambda_{j+1}}\sum_{k\ge j+1}|A_k|\rho^{\lambda_k}$, which is
+finite by (6) with $N=0$ and nonnegative.  This is (b).
+
+\emph{Step 8: proof of (c).}  First the radial derivative of a summand.  By
+\noderef{HRad}, $f_r(\xi)$ is the derivative of $f$ at $\xi$ in the direction
+$\xi/|\xi|$, which at $\xi=re^{i\theta}$ with $r>0$ is
+$\partial\bigl(f(re^{i\theta})\bigr)/\partial r$.  By (4) the function
+$r\mapsto T_k(re^{i\theta})=r^{\lambda_k}\Phi_k(\theta)$ is differentiable on
+$(0,\infty)$ with derivative $\lambda_kr^{\lambda_k-1}\Phi_k(\theta)$, so
+\begin{equation}\tag{14}
+  \bigl(T_k\bigr)_r\bigl(re^{i\theta}\bigr)
+  =\lambda_k\,r^{\lambda_k-1}\Phi_k(\theta),\qquad
+  \bigl|\bigl(T_k\bigr)_r(\xi)\bigr|\le2\lambda_k|A_k|\,|\xi|^{\lambda_k-1},
+\end{equation}
+the bound by (5).  This is the expansion of $H_r$ displayed at paper.tex:396.
+
+Next, $H_r=\sum_{k\ge n}(T_k)_r$ on $\mathbb{B}-\{0\}$.  Indeed, writing
+$\xi=|\xi|e^{i\theta}$ we have $\xi/|\xi|=\cos\theta+i\sin\theta$, so by
+$\mathbb{R}$-linearity of the Fréchet derivative and \noderef{HRad},
+\[
+  f_r(\xi)=\cos\theta\cdot D^{[0]}f(\xi)+\sin\theta\cdot D^{[1]}f(\xi)
+\]
+for every $f$ differentiable at $\xi$, the words $[0]$ and $[1]$ giving the
+derivatives in the directions $1$ and $i$.  Applying (13) with $w=[0]$ and
+$w=[1]$ and forming this fixed linear combination gives
+\begin{equation}\tag{15}
+  H_r(\xi)=\sum_{k\ge n}\bigl(T_k\bigr)_r(\xi)\qquad(0<|\xi|<1).
+\end{equation}
+The series converges absolutely: on a closed annulus
+$\{\delta\le|\xi|\le\rho\}\subseteq\mathbb{B}-\{0\}$ the bound (14) together
+with $\lambda_k\le\sqrt{p-1}\,(1+k)$ from (2) and
+$|\xi|^{\lambda_k-1}\le\delta^{-1}\rho^{\lambda_k}$ gives majorants
+$2\sqrt{p-1}\,\delta^{-1}(1+k)|A_k|\rho^{\lambda_k}$, summable by (6) with
+$N=1$.
+
+Now let $\rho\in(0,1)$ and $j\ge n$.  For $0<|\xi|\le\rho$, by (15) and (14),
+\[
+  \Bigl|H_r(\xi)-\sum_{k=n}^{j}\bigl(T_k\bigr)_r(\xi)\Bigr|
+  \le\sum_{k\ge j+1}2\lambda_k|A_k|\,|\xi|^{\lambda_k-1}.
+\]
+As in Step 7, $|\xi|^{\lambda_k-1}=|\xi|^{\lambda_{j+1}-1}
+|\xi|^{\lambda_k-\lambda_{j+1}}\le|\xi|^{\lambda_{j+1}-1}
+\rho^{\lambda_k-\lambda_{j+1}}$, using $\lambda_k-\lambda_{j+1}\ge0$ from (3).
+And $\lambda_k\le k\sqrt{p-1}\le\sqrt{p-1}\,(1+k)$ by (2).  Hence
+\[
+  \Bigl|H_r(\xi)-\sum_{k=n}^{j}\bigl(T_k\bigr)_r(\xi)\Bigr|
+  \le C\,|\xi|^{\lambda_{j+1}-1},\qquad
+  C=2\sqrt{p-1}\,\rho^{-\lambda_{j+1}}\sum_{k\ge j+1}(1+k)|A_k|\rho^{\lambda_k},
+\]
+finite by (6) with $N=1$ and nonnegative.  This is (c).
+
+\emph{Step 9: proof of (d).}  Assume $A_n=0$.  Then $T_n$ vanishes
+identically: by \noderef{Thm2Term} its two terms carry the factors $A_n$ and
+$\overline{A_n}$, both zero.  So in (13) the sum may be taken over $k\ge n+1$.
+
+Let $m\ge0$, let $\rho\in(0,1)$ and let $w$ be a word of length $m$.  For
+$k\ge n+1$ we have $\lambda_k\ge\lambda_{n+1}=\gamma_n$ by (3), so for
+$0<|\xi|\le\rho$,
+\[
+  |\xi|^{\lambda_k-m}=|\xi|^{\gamma_n-m}\,|\xi|^{\lambda_k-\gamma_n}
+  \le|\xi|^{\gamma_n-m}\rho^{\lambda_k-\gamma_n}.
+\]
+Hence by (13) (summed over $k\ge n+1$) and (11),
+\[
+  \bigl|D^{w}H(\xi)\bigr|\le\sum_{k\ge n+1}\bigl|D^{w}T_k(\xi)\bigr|
+  \le|\xi|^{\gamma_n-m}\,C_1(m)\rho^{-\gamma_n}
+    \sum_{k\ge n+1}(1+k)^{m}|A_k|\rho^{\lambda_k}
+  =C_w\,|\xi|^{\gamma_n-m},
+\]
+where $C_w=C_1(m)\rho^{-\gamma_n}\Sigma_m(\rho)$ is finite by (6) with $N=m$
+and nonnegative; note $C_w$ depends only on $m$, $n$, $p$, $\rho$ and $A$, not
+on $w$.  Summing over the $2^m$ words of length $m$,
+\[
+  \sum_{|w|=m}\bigl|D^{w}H(\xi)\bigr|\le 2^{m}C_w\,|\xi|^{\gamma_n-m}
+  \qquad(0<|\xi|\le\rho),
+\]
+which is (d) with $C_m=2^{m}C_w$.  This is the paper's chain of estimates at
+paper.tex:388--391, the final Cauchy--Schwarz factor
+$\bigl[\sum k^{2m-1}\rho^{2\lambda_k-2\lambda_{n+1}}\bigr]^{1/2}$ there being
+exactly the second factor produced by (6).
+\end{proof}

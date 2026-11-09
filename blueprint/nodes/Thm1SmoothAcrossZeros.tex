@@ -1,0 +1,152 @@
+\begin{lemma}
+Let $\Omega\subseteq\mathbb{C}$ be open, let $Z\subseteq\Omega$ meet every
+compact subset of $\Omega$ in a finite set, let $k\ge1$ be an integer and
+$\alpha>0$, and let $w\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $w$ is of class $C^1$ on $\Omega$;
+\item[(H2)] $w$ is of class $C^\infty$ on $\Omega-Z$;
+\item[(H3)] for every $z_0\in Z$ there are $\delta>0$ and constants $B_j$ with
+\[
+  \sum_{|v|=j}\bigl|D^{v}w(z)\bigr|\le B_j\,|z-z_0|^{\,k+\alpha-j}
+  \qquad(1\le j\le k,\ 0<|z-z_0|<\delta),
+\]
+the sum running over the words $v$ of length $j$ in $\{0,1\}$ and $D^{v}$ being
+the iterated partial derivative of \noderef{PartialWord}.
+\end{enumerate}
+Then $w$ is of class $C^{k}$ on $\Omega$.
+
+This is the step Section 6 of the paper passes over.  Under the hypotheses of
+Theorem 1 the exponent in (52) at order $j=m+1\le k$ is
+$d-m=k-1+\alpha-m=k+\alpha-j\ge\alpha>0$, so the derivatives of order at most
+$k$ tend to $0$ at a singular point; this lemma is what turns that into
+differentiability there, and it also supplies the continuity at the singular
+point which the hypothesis ``$F$ continuous on $U$'' of Lemma 2 of the paper
+(paper.tex:538--539) silently presumes.
+
+The hypothesis on $Z$ is the paper's own.  At paper.tex:156 the complex
+gradient $f$ is asserted to be continuous and, in the same sentence, its zero
+set $f^{-1}(0)$ to be discrete; a discrete subset that is closed in $\Omega$ ---
+which $f^{-1}(0)$ is, by that continuity --- meets every compact subset of
+$\Omega$ in a finite set.  So local finiteness is what the paper supplies, and
+it is also what the argument below needs: mere isolation of each point of $Z$
+within $Z$ would leave $\Omega-Z$ possibly non-open, since such a $Z$ may
+accumulate at a point of $\Omega$ outside $Z$, and steps (b) and (d) both read
+$\Omega-Z$ as an open set.
+\end{lemma}
+\begin{proof}
+\emph{Step 0: two consequences of the hypothesis on $Z$.}  Both are used below,
+and both come from the local finiteness of $Z$.  Fix the following construction,
+available at any $\zeta\in\Omega$: since $\Omega$ is open there is $\rho>0$ with
+$\kappa_\zeta=\{z:|z-\zeta|\le\rho\}\subseteq\Omega$, and $\kappa_\zeta$ is
+compact, so $Z\cap\kappa_\zeta$ is finite by hypothesis.
+
+\emph{(0a) $\Omega-Z$ is open.}  Let $z\in\Omega-Z$ and form $\kappa_z$ and
+$\rho$ as above.  The set $Z\cap\kappa_z$ is finite and does not contain $z$,
+so each of its finitely many elements $\zeta$ has $|\zeta-z|>0$; let
+$\varepsilon$ be the least of those distances if $Z\cap\kappa_z\neq\emptyset$,
+and $\varepsilon=\rho$ otherwise, and put $s=\min\{\varepsilon,\rho\}>0$.  If
+$|z'-z|<s$ then $z'\in\kappa_z\subseteq\Omega$, and $z'\notin Z$: otherwise
+$z'\in Z\cap\kappa_z$ with $|z'-z|<s\le\varepsilon\le|z'-z|$, a contradiction.
+So $\{z':|z'-z|<s\}\subseteq\Omega-Z$, and $z$ is interior to $\Omega-Z$.
+
+\emph{(0b) Each point of $Z$ is isolated in $Z$.}  Let $z_0\in Z$ and form
+$\kappa_{z_0}$ and $\rho$ as above.  The set $Z\cap\kappa_{z_0}$ is finite, so
+its elements other than $z_0$ are finitely many and each has $|\zeta-z_0|>0$;
+let $\varepsilon$ be the least of those distances if there are any, and
+$\varepsilon=\rho$ otherwise, and put $r_0=\min\{\varepsilon,\rho\}>0$.  If
+$z\in Z$ with $|z-z_0|<r_0$ then $z\in\kappa_{z_0}$, so $z\in Z\cap\kappa_{z_0}$,
+and $z\neq z_0$ would give $\varepsilon\le|z-z_0|<r_0\le\varepsilon$; hence
+$z=z_0$.  That is, $\{z:|z-z_0|<r_0\}\cap Z=\{z_0\}$.
+
+We prove by induction on $i$ that $w$ is of class $C^{i}$ on $\Omega$ for every
+$i$ with $1\le i\le k$; the case $i=k$ is the assertion.
+
+\emph{Base case $i=1$.}  This is (H1).
+
+\emph{Inductive step.}  Let $1\le i<k$ and assume $w$ is of class $C^{i}$ on
+$\Omega$.  We show that $w$ is of class $C^{i+1}$ on $\Omega$.  It suffices to
+show that for every word $v'$ of length $i$ the function
+\[
+  g=D^{v'}w
+\]
+is of class $C^{1}$ on $\Omega$: a function of class $C^{i}$ on an open set all
+of whose iterated partial derivatives of order $i$ are of class $C^{1}$ there
+is of class $C^{i+1}$ there, since the derivative of order $i+1$ is assembled
+from the first derivatives of the derivatives of order $i$, and these are then
+continuous.
+
+Fix such a $v'$.  We check that $g$ is differentiable at every point of
+$\Omega$ and that $\mathrm{d}g$ is continuous on $\Omega$.
+
+\emph{(a) $g$ is continuous on $\Omega$.}  $w$ is $C^{i}$ on $\Omega$ by the
+inductive hypothesis and $|v'|=i$, so $g=D^{v'}w$ is continuous on $\Omega$:
+the iterated derivative of order $i$ is continuous there, and $g$ is its value
+on the fixed tuple of basis vectors prescribed by $v'$, by
+\noderef{PartialWord}.
+
+\emph{(b) $g$ is $C^\infty$, in particular $C^1$, on $\Omega-Z$.}  The set
+$\Omega-Z$ is open by (0a), and by (H2) $w$ is $C^\infty$ on it; hence so is
+each of its iterated partial derivatives, in particular $g$.  This is where the
+openness of $\Omega-Z$ is needed: on a non-open set the smoothness of (H2)
+would be smoothness within the set and would not give differentiability at a
+point of $\Omega$.
+
+\emph{(c) At each point of $Z$.}  Let $z_0\in Z$ and take $\delta>0$ and $B_j$
+as in (H3) for this $z_0$.  Choose $r>0$ with
+\[
+  r<\delta,\qquad \{z:|z-z_0|<r\}\subseteq\Omega,\qquad
+  \{z:|z-z_0|<r\}\cap Z=\{z_0\} ,
+\]
+which is possible: the first two by $\delta>0$ and openness of $\Omega$ at
+$z_0\in Z\subseteq\Omega$, and the third by (0b), after shrinking $r$ below the
+$r_0$ it provides.  Put
+$\Omega'=\{z:|z-z_0|<r\}$, an open set containing $z_0$ with
+$\Omega'\subseteq\Omega$ and $\Omega'-\{z_0\}\subseteq\Omega-Z$.
+
+By (a), $g$ is continuous on $\Omega'$.  By (b), $g$ is differentiable at every
+point of $\Omega'-\{z_0\}$.  For the derivative limit, let
+$z\in\Omega'-\{z_0\}$.  The two first partial derivatives of $g$ at $z$ are
+$D^{[0]+\!\!+v'}w(z)$ and $D^{[1]+\!\!+v'}w(z)$: by the recursion of
+\noderef{PartialWord} one has $D^{\,\iota::v'}=\partial_\iota\circ D^{v'}$, so
+prefixing a letter to the word is applying that partial derivative last.  And
+an $\mathbb{R}$-linear map $\mathbb{C}\to\mathbb{C}$ has operator norm at most
+the sum of the moduli of its values on $1$ and $i$.  Hence
+\[
+  \bigl\|\mathrm{d}g(z)\bigr\|
+  \le\bigl|D^{[0]+\!\!+v'}w(z)\bigr|+\bigl|D^{[1]+\!\!+v'}w(z)\bigr|
+  \le\sum_{|v|=i+1}\bigl|D^{v}w(z)\bigr|
+  \le B_{i+1}\,|z-z_0|^{\,k+\alpha-(i+1)},
+\]
+the middle inequality because the two words $[0]\!+\!\!+v'$ and
+$[1]\!+\!\!+v'$ are among the words of length $i+1$ and all terms of the sum
+are nonnegative, and the last by (H3) applied with $j=i+1$, which is legitimate
+since $1\le i+1\le k$ and $0<|z-z_0|<r<\delta$.
+
+Now $i+1\le k$ gives $k+\alpha-(i+1)\ge\alpha>0$, so
+$|z-z_0|^{\,k+\alpha-(i+1)}\to0$ as $z\to z_0$.  Also $B_{i+1}\ge0$, since the
+left-hand side of (H3) is a sum of moduli and the power of $|z-z_0|$ is
+positive for at least one admissible $z$.  Therefore
+\[
+  \mathrm{d}g(z)\ \longrightarrow\ 0\qquad
+  \text{as }z\to z_0\text{ within }\Omega'-\{z_0\}.
+\]
+The hypotheses of \noderef{FDerivAcrossPoint} now hold with the open set
+$\Omega'$, the point $z_0\in\Omega'$, the function $g$, and $L=0$: $g$ is
+continuous on $\Omega'$, differentiable at every point of $\Omega'-\{z_0\}$,
+and its derivative tends to $0$ at $z_0$ within $\Omega'-\{z_0\}$.  It
+therefore gives that $g$ is differentiable at $z_0$ with $\mathrm{d}g(z_0)=0$,
+and that $\mathrm{d}g$ is continuous at $z_0$ within $\Omega'$.  Since
+$\Omega'$ is an open neighbourhood of $z_0$, continuity within $\Omega'$ at
+$z_0$ is continuity at $z_0$, hence also continuity at $z_0$ within $\Omega$.
+
+\emph{(d) Conclusion for $g$.}  By (b), $g$ is differentiable at every point of
+$\Omega-Z$ and $\mathrm{d}g$ is continuous there; by (c), $g$ is differentiable
+at every point of $Z$ and $\mathrm{d}g$ is continuous at each such point within
+$\Omega$.  As $\Omega=(\Omega-Z)\cup Z$, the function $g$ is differentiable
+everywhere on $\Omega$ and $\mathrm{d}g$ is continuous on $\Omega$; that is, $g$
+is of class $C^{1}$ on $\Omega$.
+
+Since $v'$ was an arbitrary word of length $i$, the remark opening the
+inductive step gives that $w$ is of class $C^{i+1}$ on $\Omega$, completing the
+induction and the proof.
+\end{proof}

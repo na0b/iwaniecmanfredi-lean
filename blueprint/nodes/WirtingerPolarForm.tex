@@ -1,0 +1,91 @@
+\begin{lemma}
+Let $H\colon\mathbb{C}\to\mathbb{C}$ be real-differentiable at
+$\xi\in\mathbb{C}$ with $\xi\neq0$, and write $r=|\xi|>0$ and
+$e^{i\theta}=\xi/r$, so that $e^{-i\theta}=\bar\xi/r$.  Then
+\[
+  H_{\bar\xi}(\xi)=\frac12\Bigl(H_r(\xi)+\frac ir H_\theta(\xi)\Bigr)e^{i\theta},
+  \qquad
+  H_\xi(\xi)=\frac12\Bigl(H_r(\xi)-\frac ir H_\theta(\xi)\Bigr)e^{-i\theta},
+\]
+and equivalently
+\[
+  H_r(\xi)=H_\xi(\xi)\,e^{i\theta}+H_{\bar\xi}(\xi)\,e^{-i\theta},
+\]
+where $H_\xi$ is as in \noderef{DZ}, $H_{\bar\xi}$ as in \noderef{DZbar},
+$H_r$ as in \noderef{HRad} and $H_\theta$ as in \noderef{HAng}.
+
+The first two identities are the transformation formulas displayed at the start
+of the proof of Theorem~2 in Section~4 of the paper.  The third is the
+resolution of that pair for $H_r$; it is recorded here because the distortion
+estimates (26), (27) and the Fourier computation of Section~4 use $H_r$
+expressed through $H_\xi$ and $H_{\bar\xi}$ rather than the other way round.
+\end{lemma}
+\begin{proof}
+Put $r=|\xi|$, which is $>0$ since $\xi\neq0$, and
+\[
+  e=\frac{\xi}{r},
+\]
+so that $|e|=1$, that is $e\bar e=1$, and $\bar e=\bar\xi/r$.  Write
+$L=DH(\xi)$ for the real Fr\'echet derivative of $H$ at $\xi$, a real-linear
+map $\mathbb{C}\to\mathbb{C}$, and put
+\[
+  A=H_\xi(\xi),\qquad B=H_{\bar\xi}(\xi).
+\]
+By \noderef{DZ} and \noderef{DZbar},
+\begin{equation}\tag{1}
+  A=\tfrac12\bigl(L[1]-i\,L[i]\bigr),\qquad B=\tfrac12\bigl(L[1]+i\,L[i]\bigr).
+\end{equation}
+Adding and subtracting the two formulas in (1) gives
+\begin{equation}\tag{2}
+  L[1]=A+B,\qquad L[i]=i(A-B),
+\end{equation}
+the second because $A-B=-i\,L[i]$ and $i(-i\,L[i])=L[i]$.
+
+\emph{Step 1: the two directional derivatives.}  By \noderef{HRad},
+$H_r(\xi)=L[\xi/|\xi|]=L[e]$, and by \noderef{HAng},
+$H_\theta(\xi)=L[i\xi]=L[i\,re]=r\,L[ie]$, the last step by real-linearity of
+$L$, $r$ being a real scalar.
+
+Write $e=c+is$ with $c,s\in\mathbb{R}$, so that $ie=-s+ic$ and
+$\bar e=c-is$.  By real-linearity of $L$ and (2),
+\[
+  H_r(\xi)=L[c\cdot1+s\cdot i]=c\,L[1]+s\,L[i]=c(A+B)+s\,i(A-B)
+  =A(c+is)+B(c-is),
+\]
+that is
+\begin{equation}\tag{3}
+  H_r(\xi)=A\,e+B\,\bar e .
+\end{equation}
+Likewise
+\[
+  L[ie]=L[(-s)\cdot1+c\cdot i]=-s\,L[1]+c\,L[i]=-s(A+B)+c\,i(A-B)
+  =A(-s+ic)+B(-s-ic),
+\]
+and $-s+ic=ie$ while $-s-ic=-i(c-is)=-i\bar e$, so $L[ie]=A(ie)-B(i\bar e)$ and
+therefore
+\begin{equation}\tag{4}
+  H_\theta(\xi)=r\,L[ie]=i\,r\bigl(A\,e-B\,\bar e\bigr).
+\end{equation}
+
+\emph{Step 2: the two Wirtinger formulas.}  Since $r\neq0$, (4) gives
+\[
+  \frac ir H_\theta(\xi)=\frac ir\cdot i\,r\bigl(A\,e-B\,\bar e\bigr)
+  =i^2\bigl(A\,e-B\,\bar e\bigr)=-A\,e+B\,\bar e .
+\]
+Adding and subtracting this and (3),
+\[
+  H_r(\xi)+\frac ir H_\theta(\xi)=2B\,\bar e,
+  \qquad
+  H_r(\xi)-\frac ir H_\theta(\xi)=2A\,e .
+\]
+Multiplying the first by $\tfrac12 e$ and the second by $\tfrac12\bar e$, and
+using $e\bar e=1$,
+\[
+  \frac12\Bigl(H_r(\xi)+\frac ir H_\theta(\xi)\Bigr)e=B\,\bar e\,e=B=H_{\bar\xi}(\xi),
+\]
+\[
+  \frac12\Bigl(H_r(\xi)-\frac ir H_\theta(\xi)\Bigr)\bar e=A\,e\,\bar e=A=H_\xi(\xi).
+\]
+Since $e=\xi/r=e^{i\theta}$ and $\bar e=\bar\xi/r=e^{-i\theta}$, these are the
+first two identities of the statement, and (3) is the third.
+\end{proof}

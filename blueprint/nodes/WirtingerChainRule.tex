@@ -1,0 +1,117 @@
+\begin{lemma}
+Let $F,G\colon\mathbb{C}\to\mathbb{C}$, let $\xi\in\mathbb{C}$, and suppose
+that $G$ is real-differentiable at $\xi$ and that $F$ is real-differentiable at
+$G(\xi)$.  Then
+\[
+  \frac{\partial(F\circ G)}{\partial\xi}(\xi)
+  =\frac{\partial F}{\partial z}\bigl(G(\xi)\bigr)\frac{\partial G}{\partial\xi}(\xi)
+   +\frac{\partial F}{\partial\bar z}\bigl(G(\xi)\bigr)\,
+    \overline{\frac{\partial G}{\partial\bar\xi}(\xi)},
+\]
+\[
+  \frac{\partial(F\circ G)}{\partial\bar\xi}(\xi)
+  =\frac{\partial F}{\partial z}\bigl(G(\xi)\bigr)\frac{\partial G}{\partial\bar\xi}(\xi)
+   +\frac{\partial F}{\partial\bar z}\bigl(G(\xi)\bigr)\,
+    \overline{\frac{\partial G}{\partial\xi}(\xi)},
+\]
+where $\partial/\partial\xi$, $\partial/\partial z$ are as in \noderef{DZ} and
+$\partial/\partial\bar\xi$, $\partial/\partial\bar z$ are as in
+\noderef{DZbar}.
+\end{lemma}
+\begin{proof}
+For a map $h$ real-differentiable at a point $w$ write $Dh(w)$ for its real
+Fr\'echet derivative there, a real-linear map $\mathbb{C}\to\mathbb{C}$.  By
+\noderef{DZ} and \noderef{DZbar},
+\begin{equation}\tag{0}
+  \frac{\partial h}{\partial z}(w)=\tfrac12\bigl(Dh(w)[1]-i\,Dh(w)[i]\bigr),
+  \qquad
+  \frac{\partial h}{\partial\bar z}(w)=\tfrac12\bigl(Dh(w)[1]+i\,Dh(w)[i]\bigr).
+\end{equation}
+
+\emph{Step 1: the real derivative in Wirtinger form.}  Let $h$ be
+real-differentiable at $w$.  We claim that
+\begin{equation}\tag{1}
+  Dh(w)[v]
+  =\frac{\partial h}{\partial z}(w)\,v
+   +\frac{\partial h}{\partial\bar z}(w)\,\bar v
+  \qquad\text{for every }v\in\mathbb{C}.
+\end{equation}
+Both sides of (1) are $\mathbb{R}$-linear functions of $v$: the left side
+because $Dh(w)$ is $\mathbb{R}$-linear, the right side because $v\mapsto v$ and
+$v\mapsto\bar v$ are $\mathbb{R}$-linear and the two coefficients are fixed
+complex numbers.  Since $1$ and $i$ form a basis of $\mathbb{C}$ over
+$\mathbb{R}$, it suffices to verify (1) for $v=1$ and $v=i$.
+
+For $v=1$ we have $\bar v=1$ and, by (0),
+\[
+  \frac{\partial h}{\partial z}(w)+\frac{\partial h}{\partial\bar z}(w)
+  =\tfrac12\bigl(Dh(w)[1]-i\,Dh(w)[i]\bigr)+\tfrac12\bigl(Dh(w)[1]+i\,Dh(w)[i]\bigr)
+  =Dh(w)[1].
+\]
+For $v=i$ we have $\bar v=-i$ and, by (0),
+\[
+  \frac{\partial h}{\partial z}(w)-\frac{\partial h}{\partial\bar z}(w)
+  =\tfrac12\bigl(-2i\,Dh(w)[i]\bigr)=-i\,Dh(w)[i],
+\]
+so
+\[
+  \frac{\partial h}{\partial z}(w)\,i+\frac{\partial h}{\partial\bar z}(w)(-i)
+  =i\Bigl(\frac{\partial h}{\partial z}(w)-\frac{\partial h}{\partial\bar z}(w)\Bigr)
+  =i\bigl(-i\,Dh(w)[i]\bigr)=Dh(w)[i],
+\]
+using $i(-i)=1$.  This proves (1).
+
+\emph{Step 2: the real chain rule.}  Since $G$ is real-differentiable at $\xi$
+and $F$ is real-differentiable at $G(\xi)$, the composite $F\circ G$ is
+real-differentiable at $\xi$ and
+$D(F\circ G)(\xi)=DF\bigl(G(\xi)\bigr)\circ DG(\xi)$, that is,
+\[
+  D(F\circ G)(\xi)[v]=DF\bigl(G(\xi)\bigr)\bigl[DG(\xi)[v]\bigr]
+  \qquad(v\in\mathbb{C}).
+\]
+Applying (1) to $h=F$, $w=G(\xi)$ and the vector $DG(\xi)[v]$ gives
+\begin{equation}\tag{2}
+  D(F\circ G)(\xi)[v]
+  =\frac{\partial F}{\partial z}\bigl(G(\xi)\bigr)DG(\xi)[v]
+   +\frac{\partial F}{\partial\bar z}\bigl(G(\xi)\bigr)\overline{DG(\xi)[v]} .
+\end{equation}
+
+\emph{Step 3: taking the two Wirtinger combinations.}  Abbreviate
+$A=\frac{\partial F}{\partial z}(G(\xi))$ and
+$B=\frac{\partial F}{\partial\bar z}(G(\xi))$.  By (0) applied to $F\circ G$ at
+$\xi$, and then (2) with $v=1$ and $v=i$,
+\[
+  \frac{\partial(F\circ G)}{\partial\xi}(\xi)
+  =\tfrac12\Bigl(D(F\circ G)(\xi)[1]-i\,D(F\circ G)(\xi)[i]\Bigr)
+  =A\cdot\tfrac12\bigl(DG(\xi)[1]-i\,DG(\xi)[i]\bigr)
+   +B\cdot\tfrac12\Bigl(\overline{DG(\xi)[1]}-i\,\overline{DG(\xi)[i]}\Bigr),
+\]
+after regrouping the four terms (legitimate since $A$ and $B$ are fixed complex
+numbers).  By (0) the first bracket is
+$\frac{\partial G}{\partial\xi}(\xi)$.  For the second, $\overline{i\,w}=-i\bar w$
+for every $w\in\mathbb{C}$, so $-i\,\overline{DG(\xi)[i]}=\overline{i\,DG(\xi)[i]}$
+and, conjugation being additive and $\tfrac12$ real,
+\[
+  \tfrac12\Bigl(\overline{DG(\xi)[1]}-i\,\overline{DG(\xi)[i]}\Bigr)
+  =\overline{\tfrac12\bigl(DG(\xi)[1]+i\,DG(\xi)[i]\bigr)}
+  =\overline{\frac{\partial G}{\partial\bar\xi}(\xi)} .
+\]
+This gives the first identity of the lemma.
+
+For the second, (0) gives
+\[
+  \frac{\partial(F\circ G)}{\partial\bar\xi}(\xi)
+  =\tfrac12\Bigl(D(F\circ G)(\xi)[1]+i\,D(F\circ G)(\xi)[i]\Bigr)
+  =A\cdot\tfrac12\bigl(DG(\xi)[1]+i\,DG(\xi)[i]\bigr)
+   +B\cdot\tfrac12\Bigl(\overline{DG(\xi)[1]}+i\,\overline{DG(\xi)[i]}\Bigr).
+\]
+The first bracket is $\frac{\partial G}{\partial\bar\xi}(\xi)$ by (0).  For the
+second, $\overline{-i\,w}=i\bar w$, so
+$i\,\overline{DG(\xi)[i]}=\overline{-i\,DG(\xi)[i]}$ and
+\[
+  \tfrac12\Bigl(\overline{DG(\xi)[1]}+i\,\overline{DG(\xi)[i]}\Bigr)
+  =\overline{\tfrac12\bigl(DG(\xi)[1]-i\,DG(\xi)[i]\bigr)}
+  =\overline{\frac{\partial G}{\partial\xi}(\xi)} .
+\]
+This gives the second identity.
+\end{proof}

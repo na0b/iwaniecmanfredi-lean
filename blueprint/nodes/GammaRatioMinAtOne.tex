@@ -1,0 +1,68 @@
+\begin{lemma}
+Let $1<p<\infty$ and let $\gamma_n=\gamma_n(p)$ be as in \noderef{GammaExp}.
+Then
+\begin{enumerate}
+\item[(a)] $\gamma_n>0$ for every integer $n\ge1$, and
+\item[(b)] $\dfrac{1}{\gamma_1}\le\dfrac{n}{\gamma_n}$ for every integer
+$n\ge1$.
+\end{enumerate}
+That is, the smallest of the numbers $n/\gamma_n$, $n=1,2,\dots$, occurs for
+$n=1$, as asserted in Section~6 of the paper.
+\end{lemma}
+\begin{proof}
+Fix $p>1$, so $p-1>0$.  By \noderef{GammaExp} and \noderef{LambdaCoef}, for
+every integer $n\ge1$,
+\[
+  2\gamma_n=2\lambda_{n+1}(n,p)=-np+\sqrt{4(n+1)^2(p-1)+n^2(p-2)^2},
+\]
+and $np>0$.  Write $R(n)=4(n+1)^2(p-1)+n^2(p-2)^2$, a sum of two nonnegative
+terms, so $R(n)\ge0$.
+
+\emph{Step 1 (proof of (a)).}  Fix $n\ge1$.  Then
+\[
+  R(n)-n^2p^2=4(n+1)^2(p-1)+n^2\bigl[(p-2)^2-p^2\bigr]
+  =4(n+1)^2(p-1)-4n^2(p-1)=4(p-1)(2n+1),
+\]
+where we used the identity $(p-2)^2-p^2=-4(p-1)$ and
+$(n+1)^2-n^2=2n+1$.  Since $p-1>0$ and $n\ge1$, this is positive.  Hence
+$R(n)>n^2p^2\ge0$, and therefore
+\[
+  \sqrt{R(n)}>\sqrt{n^2p^2}=np
+\]
+(the square root being strictly increasing on $[0,\infty)$, and $np\ge0$).
+Consequently $2\gamma_n=-np+\sqrt{R(n)}>0$, i.e.\ $\gamma_n>0$.
+
+\emph{Step 2 (a scale-free formula for $\gamma_n/n$).}  Fix $n\ge1$.  Since
+$n>0$,
+\[
+  \frac{\sqrt{R(n)}}{n}=\sqrt{\frac{R(n)}{n^2}}
+  =\sqrt{4\Bigl(\frac{n+1}{n}\Bigr)^2(p-1)+(p-2)^2}
+  =\sqrt{4\Bigl(1+\frac1n\Bigr)^2(p-1)+(p-2)^2},
+\]
+and therefore
+\[
+  \frac{2\gamma_n}{n}=-p+\sqrt{4\Bigl(1+\frac1n\Bigr)^2(p-1)+(p-2)^2}.
+\]
+
+\emph{Step 3 ($\gamma_n/n\le\gamma_1$).}  Fix $n\ge1$.  Then $1/n\le1$, so
+$0<1+\frac1n\le2$ and hence $\bigl(1+\frac1n\bigr)^2\le4$.  Since $p-1>0$,
+\[
+  4\Bigl(1+\frac1n\Bigr)^2(p-1)+(p-2)^2\ \le\ 16(p-1)+(p-2)^2 ,
+\]
+and the square root is nondecreasing on $[0,\infty)$, so
+\[
+  \frac{2\gamma_n}{n}=-p+\sqrt{4\Bigl(1+\tfrac1n\Bigr)^2(p-1)+(p-2)^2}
+  \ \le\ -p+\sqrt{16(p-1)+(p-2)^2}=\frac{2\gamma_1}{1}=2\gamma_1 ,
+\]
+the right-hand equality being Step 2 at $n=1$, where
+$4\bigl(1+\frac11\bigr)^2=16$.  Dividing by $2$ gives
+$\gamma_n/n\le\gamma_1$.
+
+\emph{Step 4 (proof of (b)).}  Fix $n\ge1$.  By Step 1 both $\gamma_n$ and
+$\gamma_1$ are positive, and $n>0$, so $\gamma_n/n>0$.  Step 3 gives
+$0<\gamma_n/n\le\gamma_1$, and taking reciprocals of positive numbers reverses
+the inequality:
+\[
+  \frac{1}{\gamma_1}\le\frac{1}{\gamma_n/n}=\frac{n}{\gamma_n}.
+\]
+\end{proof}

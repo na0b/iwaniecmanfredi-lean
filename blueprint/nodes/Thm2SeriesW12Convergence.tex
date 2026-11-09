@@ -1,0 +1,499 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, write $\mathbb{B}=\{\xi:|\xi|<1\}$
+and $d\sigma$ for plane Lebesgue measure, and let
+$A\colon\mathbb{Z}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(C)] $A_{-k}=\epsilon_k\overline{A_k}$ for every integer $k\ge n$, where
+  $\epsilon_k=\epsilon_k(n,p)$ is the coefficient of \noderef{EpsCoef};
+\item[(S)] $\sum_{m=0}^{\infty}(n+m)\,|A_{n+m}|^2<\infty$, that is
+  $\sum_{k\ge n}k|A_k|^2<\infty$.
+\end{enumerate}
+Write $\lambda_k=\lambda_{|k|}(n,p)$ for the exponent of \noderef{LambdaCoef},
+let $T_k$ be the $k$-th summand of (19) in the sense of \noderef{Thm2Term}, and
+put
+\[
+  S_N(\xi)=\sum_{k=n}^{n+N}T_k(\xi)\qquad(N\ge0).
+\]
+Then there is a function $H\colon\mathbb{C}\to\mathbb{C}$ with:
+\begin{enumerate}
+\item[(a)] $H$ continuous on $\mathbb{B}$;
+\item[(b)] $H$ of class $C^\infty$ on $\mathbb{B}-\{0\}$;
+\item[(c)] $H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in the sense of
+  \noderef{MemWLocOn};
+\item[(d)] $|H_\xi|^2+|H_{\bar\xi}|^2$ integrable on $\mathbb{B}$, where
+  $H_\xi$, $H_{\bar\xi}$ are the Wirtinger derivatives of \noderef{DZ} and
+  \noderef{DZbar};
+\item[(e)] $a_k(r)=A_k\,r^{\lambda_k}$ for every $k\in\mathbb{Z}$ with
+  $|k|\ge n$ and every $r\in(0,1)$, where $a_k$ is the Fourier coefficient of
+  \noderef{FourierCoefOfH};
+\item[(f)] $a_k(r)=0$ for every $k\in\mathbb{Z}$ with $|k|<n$ and every
+  $r\in(0,1)$;
+\item[(g)] the series (19) converges to $H$ in $W^{1,2}(\mathbb{B})$:
+\[
+  \iint_{\mathbb{B}}|H-S_N|^2\,d\sigma
+  +\iint_{\mathbb{B}}\bigl|H_\xi-(S_N)_\xi\bigr|^2\,d\sigma
+  +\iint_{\mathbb{B}}\bigl|H_{\bar\xi}-(S_N)_{\bar\xi}\bigr|^2\,d\sigma
+  \ \longrightarrow\ 0\qquad(N\to\infty).
+\]
+\end{enumerate}
+
+Clause (g) is the paper's assertion ``The series converges in
+$W^{1,2}(\mathbb{B})$'', made by both halves of Theorem 2 at paper.tex:205 and
+paper.tex:210; nothing else in the development supplies it, the Fourier
+expansion giving only convergence in $L^2$ on each circle separately.  Clauses
+(a)--(f) are the remaining properties of the sum that Theorem 2's two halves
+consume.  No restriction on $p$ is imposed.
+\end{lemma}
+\begin{proof}
+Throughout, $k$ and $j$ denote integers, $\lambda_k$ depends on $k$ only
+through $|k|$, so $\lambda_{-k}=\lambda_k$, and $\epsilon_k\in\mathbb{R}$ by
+\noderef{EpsCoef}.  Set
+\[
+  E=\sum_{k\ge n}k|A_k|^2<\infty
+\]
+by (S), and for $N\ge0$ let $R_N=\sum_{k>n+N}k|A_k|^2$, so $R_N\to0$ as
+$N\to\infty$, being the tail of a convergent series of nonnegative terms.
+Since $k\ge n\ge1$ we have $|A_k|^2\le k|A_k|^2$, so also
+$\sum_{k\ge n}|A_k|^2\le E$.
+
+\emph{Step 0: the constants, and the basic estimates on $\lambda_k$ and
+$\epsilon_k$.}  By part (a) of \noderef{GammaRatioMinAtOne},
+$\gamma_n=\lambda_{n+1}(n,p)>0$.  Put
+\[
+  \beta=\frac{\gamma_n}{n+1}>0,\qquad c_1=2+\sqrt{p-1},\qquad
+  c_2=\max\Bigl\{2\pi,\ \frac{\pi c_1^2(n+1)}{2\gamma_n}\Bigr\}.
+\]
+By \noderef{LambdaLinearLowerBound},
+\begin{equation}\tag{1}
+  \lambda_k\ge\beta k\qquad(k\ge n+1),
+\end{equation}
+and by parts (23), (24), (25) of \noderef{LambdaEpsEstimates},
+\begin{equation}\tag{2}
+  \lambda_n=0,\quad\epsilon_n=0,\quad|\epsilon_k|<1\ (k\ge n+1),\quad
+  \lambda_k\le k\sqrt{p-1}\ (k\ge n+1).
+\end{equation}
+In particular, for every $k\ge n$,
+\begin{equation}\tag{3}
+  0\le\lambda_k\le k\sqrt{p-1},\qquad |\epsilon_k|\le1,\qquad
+  \lambda_k+k+n\le c_1k ,
+\end{equation}
+the last because $\lambda_k\le k\sqrt{p-1}$ and $n\le k$; at $k=n$ all three
+hold by (2), and $\lambda_n=0\le n\sqrt{p-1}$.
+
+\emph{Step 1: the polar form of each summand.}  By part (b) of
+\noderef{Thm2TermSolvesEq18}, for every $k\ge n$, $r>0$ and
+$\theta\in\mathbb{R}$,
+\begin{equation}\tag{4}
+  T_k\bigl(re^{i\theta}\bigr)=r^{\lambda_k}\Phi_k(\theta),\qquad
+  \Phi_k(\theta)=A_ke^{i(k-n)\theta}+\epsilon_k\overline{A_k}e^{i(-k-n)\theta},
+\end{equation}
+and by part (a) of the same node $T_k$ is $C^\infty$ at every $\xi\neq0$.  From
+(4) and (3),
+\begin{equation}\tag{5}
+  |T_k(\xi)|\le2|A_k|\,|\xi|^{\lambda_k},\qquad
+  \bigl|\Phi_k^{(b)}(\theta)\bigr|\le2|A_k|(k+n)^{b}\quad(b\ge0),
+\end{equation}
+the second because differentiating (4)'s profile $b$ times multiplies each of
+its two terms by $\bigl(i(k-n)\bigr)^{b}$, resp.\ $\bigl(i(-k-n)\bigr)^{b}$,
+whose moduli are at most $(k+n)^b$.
+
+\emph{Step 2: a summability estimate, used repeatedly.}  We claim that for
+every integer $m\ge0$ and every $\rho\in(0,1)$,
+\begin{equation}\tag{6}
+  \sum_{k\ge n}\bigl(1+\lambda_k+k+n\bigr)^{m}|A_k|\,\rho^{\lambda_k}<\infty .
+\end{equation}
+Indeed, by (3), $1+\lambda_k+k+n\le(1+c_1)k$ for $k\ge n\ge1$.  By (1),
+$\rho^{\lambda_k}\le\rho^{\beta k}=q^{k}$ for $k\ge n+1$, where
+$q=\rho^{\beta}\in(0,1)$.  Hence, by the Cauchy--Schwarz inequality applied to
+the sequences $\bigl(\sqrt{k}|A_k|\bigr)$ and
+$\bigl((1+c_1)^{m}k^{m}q^{k}/\sqrt{k}\bigr)$ over $k\ge n+1$,
+\[
+  \sum_{k\ge n+1}\bigl(1+\lambda_k+k+n\bigr)^{m}|A_k|\rho^{\lambda_k}
+  \le(1+c_1)^{m}\Bigl(\sum_{k\ge n+1}k|A_k|^2\Bigr)^{1/2}
+    \Bigl(\sum_{k\ge n+1}k^{2m-1}q^{2k}\Bigr)^{1/2},
+\]
+and the last series converges because $0<q<1$, a geometric factor dominating
+any fixed power of $k$.  The single remaining term $k=n$ is finite.  This
+proves (6).
+
+The linear rate $\beta$ of (1), the uniform coefficient bound
+$|A_k|\le C_A$ that the energy hypothesis supplies, the geometric domination
+$\rho^{\lambda_{n+m}}\le(\rho^{\beta})^{m}$ and the resulting convergence of
+the weighted tails at every polynomial weight are collected as
+\noderef{Thm2TermGeometricSummability}, which also records the constant value
+of $T_n$ off the origin and the bound
+$|T_{n+m}(\xi)|\le2|A_{n+m}||\xi|^{\lambda_{n+m}}$.
+
+\emph{Step 3: locally uniform convergence of the series and all its
+derivatives off the origin.}  Fix four radii
+\[
+  0<\delta'<\delta<\rho<\rho'<1
+\]
+and let $K=\{\xi:\delta\le|\xi|\le\rho\}$, a compact subset of the open
+annulus $\Omega'=\{\xi:\delta'<|\xi|<\rho'\}$, itself a subset of
+$\mathbb{B}-\{0\}$.  We claim that for every multi-index $\nu$ of order
+$m=|\nu|$ in the Cartesian variables $x,y$ there is a constant
+$C=C(m,\delta',\rho')$, independent of $k$, with
+\begin{equation}\tag{7}
+  \sup_{\xi\in K}\bigl|\partial^{\nu}T_k(\xi)\bigr|
+  \le C\bigl(1+\lambda_k+k+n\bigr)^{m}\cdot2|A_k|\,(\rho')^{\lambda_k}
+  \qquad(k\ge n).
+\end{equation}
+
+An explicit form of the $k$-dependence in (7), together with the smoothness of
+each $\partial^{\nu}T_k$ off the origin, is
+\noderef{Thm2TermWordDerivBound}; that node proves both by the monomial
+calculus of the class $E(s,j,l)(\xi)=|\xi|^{s}\xi^{j}\bar\xi^{\,l}$ instead of
+by sectors, and either route serves what follows.
+
+
+To see this, cover $K$ by finitely many open sectors, each contained in
+$\Omega'$, on each of which a single branch of the argument is defined.  On
+such a sector the map $\Psi(t,\theta)=e^{t}e^{i\theta}$ is a $C^\infty$
+diffeomorphism from an open subset of
+$(\log\delta',\log\rho')\times\mathbb{R}$ onto the sector, with inverse
+$\xi\mapsto(\log|\xi|,\arg\xi)$; all derivatives of $\Psi$ and of $\Psi^{-1}$
+of order at most $m$ are bounded there by a constant depending only on $m$,
+$\delta'$ and $\rho'$, because $|\xi|\ge\delta'>0$ on $\Omega'$.  By (4),
+$T_k\circ\Psi(t,\theta)=e^{\lambda_kt}\Phi_k(\theta)$, so for $a,b\ge0$ and
+$e^{t}<\rho'$,
+\[
+  \bigl|\partial_t^{a}\partial_\theta^{b}\bigl(T_k\circ\Psi\bigr)(t,\theta)\bigr|
+  =\lambda_k^{a}e^{\lambda_kt}\bigl|\Phi_k^{(b)}(\theta)\bigr|
+  \le\lambda_k^{a}(\rho')^{\lambda_k}\cdot2|A_k|(k+n)^{b}
+  \le2|A_k|(\rho')^{\lambda_k}\bigl(1+\lambda_k+k+n\bigr)^{a+b},
+\]
+using (5), $\lambda_k\ge0$ from (3), and $e^{\lambda_kt}\le(\rho')^{\lambda_k}$.
+The chain rule expresses $\partial^{\nu}T_k$ on each sector as a finite sum of
+terms, each a product of derivatives of $\Psi^{-1}$ of order at most $m$ --- all
+bounded as just said --- with a derivative
+$\partial_t^{a}\partial_\theta^{b}(T_k\circ\Psi)$ for some $a+b\le m$.  Taking
+the maximum over the finitely many sectors gives (7).
+
+By (6) applied with $m=|\nu|$ and $\rho'$ in place of $\rho$, which is
+legitimate since $\rho'\in(0,1)$, the right-hand sides of (7) are summable over
+$k\ge n$.
+Hence for every $\nu$ the series $\sum_{k\ge n}\partial^{\nu}T_k$ converges
+uniformly on $K$.  Each $T_k$ is $C^\infty$ on $\Omega'$ by Step 1.  The
+conclusion of this paragraph --- that the sum of the series is $C^\infty$ on
+$\mathbb{B}-\{0\}$ --- is \noderef{Thm2SeriesSmoothOffZero}, stated there for
+the series itself and transferred to $H$ here by congruence, since $H$ agrees
+with the sum off the origin.  By the standard theorem on differentiation of
+uniformly convergent series --- if a series of $C^\infty$ functions on an open
+set converges uniformly on compact subsets together with each of its derived
+series, the sum is $C^\infty$ and its derivatives are the sums of the derived
+series --- the function
+\begin{equation}\tag{8}
+  H(\xi)=\sum_{k\ge n}T_k(\xi)
+\end{equation}
+is well defined and $C^\infty$ on the interior of $K$, with
+$\partial^{\nu}H=\sum_k\partial^{\nu}T_k$ there, and $S_N\to H$ uniformly on
+$K$, as do $\partial^{\nu}S_N\to\partial^{\nu}H$ for every $\nu$.
+Every point of $\mathbb{B}-\{0\}$ lies in the interior of such a $K$ for a
+suitable choice of the four radii, so
+(8) defines a function $C^\infty$ on $\mathbb{B}-\{0\}$, which is (b), and
+\begin{equation}\tag{9}
+  S_N\to H,\quad (S_N)_\xi\to H_\xi,\quad (S_N)_{\bar\xi}\to H_{\bar\xi}
+  \quad\text{uniformly on compact subsets of }\mathbb{B}-\{0\},
+\end{equation}
+since by \noderef{DZ} and \noderef{DZbar} the operators
+$\partial/\partial\xi$ and $\partial/\partial\bar\xi$ are fixed complex linear
+combinations of $\partial/\partial x$ and $\partial/\partial y$.  We complete
+the definition of $H$ by setting
+\[
+  H(0)=A_n,\qquad H(\xi)=0\quad\text{for }|\xi|\ge1 .
+\]
+
+\emph{Step 4: proof of (a).}  By (4) at $k=n$ and (2),
+$T_n(re^{i\theta})=r^{0}\bigl(A_ne^{0}+0\bigr)=A_n$, so $T_n$ is the constant
+$A_n$ on $\mathbb{C}-\{0\}$.  Hence for $0<|\xi|<1$, by (8) and (5),
+\[
+  \bigl|H(\xi)-A_n\bigr|\le\sum_{k\ge n+1}|T_k(\xi)|
+  \le2\sum_{k\ge n+1}|A_k|\,|\xi|^{\lambda_k}
+  \le2\sum_{k\ge n+1}|A_k|\,q^{k},\qquad q=|\xi|^{\beta}\in(0,1),
+\]
+using (1).  By Cauchy--Schwarz and $\sum_{k\ge1}q^{2k}=q^2/(1-q^2)$,
+\[
+  \sum_{k\ge n+1}|A_k|q^{k}
+  \le\Bigl(\sum_{k\ge n+1}k|A_k|^2\Bigr)^{1/2}
+    \Bigl(\sum_{k\ge n+1}\frac{q^{2k}}{k}\Bigr)^{1/2}
+  \le E^{1/2}\Bigl(\frac{q^2}{1-q^2}\Bigr)^{1/2}.
+\]
+As $\xi\to0$ we have $q=|\xi|^{\beta}\to0$, so the right-hand side tends to
+$0$; hence $H(\xi)\to A_n=H(0)$ as $\xi\to0$.  Together with the continuity of
+$H$ on $\mathbb{B}-\{0\}$ from (b), $H$ is continuous on $\mathbb{B}$, which is
+(a).
+
+This whole step, together with the continuity off the origin that Step~3
+supplies, is \noderef{Thm2SeriesContinuousOnDisc}, stated there for the sum of
+the series itself.  It also records what this computation shows about the
+value at the origin: since $T_n$ is the constant $A_n$ and every later summand
+carries a positive power of $|\xi|$, the sum tends to $A_n$, so $A_n$ is the
+only completing value for which $H$ is continuous at $0$.
+
+\emph{Step 5: the polar form of the two Wirtinger derivatives of $T_k$.}  The
+Cartesian closed form of these same two derivatives, obtained instead by
+differentiating the product $(A_k\xi^{k}+\epsilon_k\overline{A_k}\bar\xi^{\,k})
+|\xi|^{\lambda_k+n-k}\xi^{-n}$ factor by factor, is
+\noderef{Thm2TermWirtingerDerivs}; it holds for every $k\ge0$ with no
+constraint on $n$, $p$ or $k$, and either form serves what follows.  In polar
+coordinates, let
+$\xi=re^{i\theta}$ with $r>0$.  By (4), the radial and angular derivatives of
+$T_k$ at $\xi$, in the sense of \noderef{HRad} and \noderef{HAng}, are
+\[
+  (T_k)_r=\lambda_kr^{\lambda_k-1}\Phi_k(\theta),\qquad
+  (T_k)_\theta=r^{\lambda_k}\Phi_k'(\theta).
+\]
+By \noderef{WirtingerPolarForm}, applied at $\xi\neq0$ where $T_k$ is
+differentiable by Step 1, and with $e^{i\theta}=\xi/|\xi|$,
+\begin{align}
+  (T_k)_\xi&=\tfrac12\Bigl((T_k)_r-\frac{i}{r}(T_k)_\theta\Bigr)e^{-i\theta}
+  =\tfrac12r^{\lambda_k-1}\bigl(\lambda_k\Phi_k(\theta)-i\Phi_k'(\theta)\bigr)
+    e^{-i\theta},\tag{10}\\
+  (T_k)_{\bar\xi}&=\tfrac12\Bigl((T_k)_r+\frac{i}{r}(T_k)_\theta\Bigr)e^{i\theta}
+  =\tfrac12r^{\lambda_k-1}\bigl(\lambda_k\Phi_k(\theta)+i\Phi_k'(\theta)\bigr)
+    e^{i\theta}.\tag{11}
+\end{align}
+Substituting $\Phi_k'(\theta)=i(k-n)A_ke^{i(k-n)\theta}
++i(-k-n)\epsilon_k\overline{A_k}e^{i(-k-n)\theta}$ and multiplying out the
+factors $e^{\mp i\theta}$,
+\begin{align}
+  (T_k)_\xi&=\tfrac12r^{\lambda_k-1}\Bigl(
+    \bigl[\lambda_k+k-n\bigr]A_ke^{i(k-n-1)\theta}
+    +\bigl[\lambda_k-k-n\bigr]\epsilon_k\overline{A_k}e^{i(-k-n-1)\theta}\Bigr),
+    \tag{12}\\
+  (T_k)_{\bar\xi}&=\tfrac12r^{\lambda_k-1}\Bigl(
+    \bigl[\lambda_k-k+n\bigr]A_ke^{i(k-n+1)\theta}
+    +\bigl[\lambda_k+k+n\bigr]\epsilon_k\overline{A_k}e^{i(-k-n+1)\theta}\Bigr).
+    \tag{13}
+\end{align}
+Identities (12) and (13) --- the polar form of the two Wirtinger derivatives
+of a single summand of (19), which is the summand-level instance of the
+transformation formulas (4) --- are \noderef{Thm2TermPolarWirtingerDerivs},
+proved there by substituting $\xi=re^{i\theta}$ into the Cartesian closed form
+and using $|re^{i\theta}|=r$ and $\overline{e^{i\theta}}=e^{-i\theta}$ to collect
+the modulus power and the two angular frequencies.
+All four bracketed numbers have modulus at most $\lambda_k+k+n\le c_1k$ by (3).
+The resulting pointwise bound, in the form actually used below --- namely
+$|(T_{n+m})_\xi|,|(T_{n+m})_{\bar\xi}|
+\le(4+\sqrt{p-1})(n+m)|A_{n+m}|\,|\xi|^{\lambda_{n+m}-1}$ for every $m\ge0$
+and every $\xi\neq0$, with a constant independent of $m$ --- is
+\noderef{Thm2TermDerivBound}.
+At $k=n$ both derivatives vanish identically, since there $\lambda_n=0$ and
+$\epsilon_n=0$ give $\lambda_n+k-n=0$ and $\epsilon_n=0$ in (12), and
+$\lambda_n-k+n=0$ and $\epsilon_n=0$ in (13) --- as it must be, $T_n$ being
+constant.
+
+\emph{Step 6: the three $L^2(\mathbb{B})$ bounds.}  Let $k\ge n$.  In polar
+coordinates $d\sigma=r\,dr\,d\theta$; the identity
+$\int_{\mathbb{B}}|g|^{2}d\sigma=\int_0^1r\int_0^{2\pi}|g(re^{i\theta})|^{2}
+d\theta\,dr$, for an arbitrary measurable $g$ and with both sides read in
+$[0,\infty]$, is \noderef{DiscEnergyPolarCoord}, and it is used below at each
+of $T_k$, $(T_k)_\xi$, $(T_k)_{\bar\xi}$ and the partial sums.  The two exponentials in $\Phi_k$ have
+distinct frequencies $k-n$ and $-k-n$, their difference being $2k\neq0$, so
+they are orthogonal on $(0,2\pi)$; the finite-sum form of that orthogonality,
+for two frequency families each injective on the index set and never colliding
+with one another, is \noderef{TwoFamilyTrigParseval}, and it is what the
+partial-sum computation below uses.  At a single $k$ it gives
+\[
+  \int_0^{2\pi}|\Phi_k(\theta)|^2d\theta
+  =2\pi\bigl(|A_k|^2+\epsilon_k^2|A_k|^2\bigr)\le4\pi|A_k|^2
+\]
+by (3).  The whole of this step -- the passage to polar coordinates, the
+angular Parseval evaluation and the radial integral
+$\int_0^1r^{2\lambda_k-1}dr=1/(2\lambda_k)$ -- is packaged for a finite sum of
+polar-separated summands as \noderef{PolarSeparatedSumEnergy}, which is what
+the partial-sum estimate below applies.  Hence, by (4),
+\[
+  \iint_{\mathbb{B}}|T_k|^2d\sigma
+  =\int_0^1r^{2\lambda_k+1}\Bigl(\int_0^{2\pi}|\Phi_k|^2d\theta\Bigr)dr
+  \le4\pi|A_k|^2\int_0^1r^{2\lambda_k+1}dr
+  =\frac{4\pi|A_k|^2}{2\lambda_k+2}\le2\pi|A_k|^2,
+\]
+the integral being finite because $2\lambda_k+1\ge1>-1$ by (3).  Since
+$k\ge1$, $|A_k|^2\le k|A_k|^2$, so
+\begin{equation}\tag{14}
+  \iint_{\mathbb{B}}|T_k|^2d\sigma\le2\pi\,k|A_k|^2\le c_2\,k|A_k|^2 .
+\end{equation}
+
+For the derivatives, take $k\ge n+1$ first, so that $\lambda_k>0$ by (2).  The
+two exponentials in (12) have distinct frequencies, their difference being
+$2k\neq0$, hence are orthogonal, and $|e^{i(\cdot)}|=1$; so by (12), (3),
+\[
+  \int_0^{2\pi}\bigl|(T_k)_\xi\bigr|^2d\theta
+  =\tfrac14r^{2\lambda_k-2}\cdot2\pi\Bigl(
+    \bigl[\lambda_k+k-n\bigr]^2|A_k|^2
+    +\bigl[\lambda_k-k-n\bigr]^2\epsilon_k^2|A_k|^2\Bigr)
+  \le\frac{\pi}{2}r^{2\lambda_k-2}c_1^2k^2\cdot2|A_k|^2 .
+\]
+Multiplying by $r$ and integrating, and using
+$\int_0^1r^{2\lambda_k-1}dr=1/(2\lambda_k)$, finite because $\lambda_k>0$,
+\[
+  \iint_{\mathbb{B}}\bigl|(T_k)_\xi\bigr|^2d\sigma
+  \le\pi c_1^2k^2|A_k|^2\cdot\frac{1}{2\lambda_k}
+  \le\frac{\pi c_1^2(n+1)}{2\gamma_n}\,k|A_k|^2\le c_2\,k|A_k|^2,
+\]
+where the middle step used $\lambda_k\ge\beta k=\gamma_nk/(n+1)$ from (1), so
+that $k^2/\lambda_k\le k(n+1)/\gamma_n$.  The identical computation applies to
+(13), the four bracketed numbers obeying the same bound.  For $k=n$ both
+derivatives vanish by Step 5, so the bound holds trivially there.  Therefore
+\begin{equation}\tag{15}
+  \iint_{\mathbb{B}}\bigl|(T_k)_\xi\bigr|^2d\sigma\le c_2k|A_k|^2,\qquad
+  \iint_{\mathbb{B}}\bigl|(T_k)_{\bar\xi}\bigr|^2d\sigma\le c_2k|A_k|^2
+  \qquad(k\ge n).
+\end{equation}
+
+\emph{Step 7: orthogonality, and the Cauchy property.}  Let $k\neq k'$, both
+$\ge n$.  The frequency set of $\Phi_k$ is $\{k-n,-k-n\}$.  These sets are
+disjoint for $k\neq k'$: $k-n=k'-n$ and $-k-n=-k'-n$ both force $k=k'$, while
+$k-n=-k'-n$ forces $k=-k'$, impossible since $k,k'\ge n\ge1$.  Hence, by (4),
+\[
+  \iint_{\mathbb{B}}T_k\overline{T_{k'}}\,d\sigma
+  =\int_0^1r^{\lambda_k+\lambda_{k'}+1}
+    \Bigl(\int_0^{2\pi}\Phi_k\overline{\Phi_{k'}}\,d\theta\Bigr)dr=0,
+\]
+the inner integral vanishing term by term.  The same argument applies to the
+derivatives: by (12) the frequency set of the angular profile of
+$(T_k)_\xi$ is $\{k-n-1,-k-n-1\}$, and $k-n-1=-k'-n-1$ forces $k=-k'$, again
+impossible; by (13) the frequency set of $(T_k)_{\bar\xi}$ is
+$\{k-n+1,-k-n+1\}$, and $k-n+1=-k'-n+1$ forces $k=-k'$.  So
+$\{T_k\}_{k\ge n}$, $\{(T_k)_\xi\}_{k\ge n}$ and $\{(T_k)_{\bar\xi}\}_{k\ge n}$
+are three mutually orthogonal families in $L^2(\mathbb{B})$.
+
+Now let $M>N\ge0$.  Then $S_M-S_N=\sum_{k=n+N+1}^{n+M}T_k$, and on
+$\mathbb{B}-\{0\}$ the Wirtinger derivatives of a finite sum are the sums of
+the derivatives, by linearity of the Fréchet derivative and \noderef{DZ},
+\noderef{DZbar}; the omitted point $0$ is a Lebesgue null set and does not
+affect any integral.  By orthogonality (Pythagoras) and (14), (15),
+\[
+  \iint_{\mathbb{B}}|S_M-S_N|^2d\sigma=\sum_{k=n+N+1}^{n+M}
+    \iint_{\mathbb{B}}|T_k|^2d\sigma\le c_2R_N,
+\]
+and likewise for $(S_M-S_N)_\xi$ and $(S_M-S_N)_{\bar\xi}$.  Since $R_N\to0$,
+the three sequences $(S_N)$, $\bigl((S_N)_\xi\bigr)$,
+$\bigl((S_N)_{\bar\xi}\bigr)$ are Cauchy in $L^2(\mathbb{B})$.  By
+completeness of $L^2(\mathbb{B})$ they converge in $L^2(\mathbb{B})$ to
+functions $G_0,G_1,G_2\in L^2(\mathbb{B})$.
+
+\emph{Step 8: identification of the limits, and proof of (d) and (g).}  An
+$L^2(\mathbb{B})$-convergent sequence has a subsequence converging almost
+everywhere.  Applying this to each of the three sequences and comparing with
+(9), which gives pointwise convergence on $\mathbb{B}-\{0\}$, we get
+\[
+  G_0=H,\qquad G_1=H_\xi,\qquad G_2=H_{\bar\xi}
+  \qquad\text{almost everywhere on }\mathbb{B}-\{0\},
+\]
+hence almost everywhere on $\mathbb{B}$, since $\{0\}$ is null.  In particular
+$H_\xi$ and $H_{\bar\xi}$ agree a.e.\ with elements of $L^2(\mathbb{B})$, so
+$|H_\xi|^2+|H_{\bar\xi}|^2$ is integrable on $\mathbb{B}$, which is (d).  And
+the three integrals in (g) are exactly
+$\|H-S_N\|_{L^2}^2+\|H_\xi-(S_N)_\xi\|_{L^2}^2
++\|H_{\bar\xi}-(S_N)_{\bar\xi}\|_{L^2}^2$, each of which tends to $0$ by
+Step 7; this is (g).
+
+\emph{Step 9: proof of (c).}  By \noderef{DZ} and \noderef{DZbar}, for any
+function $f$ real-differentiable at a point,
+\[
+  \frac{\partial f}{\partial x}=f_\xi+f_{\bar\xi},\qquad
+  \frac{\partial f}{\partial y}=i\bigl(f_\xi-f_{\bar\xi}\bigr),
+\]
+since $f_\xi+f_{\bar\xi}=\tfrac12(\partial_x-i\partial_y)f
++\tfrac12(\partial_x+i\partial_y)f=\partial_xf$ and
+$f_\xi-f_{\bar\xi}=-i\,\partial_yf$.  Put
+\[
+  u_0=G_1+G_2,\qquad u_1=i\bigl(G_1-G_2\bigr),
+\]
+both in $L^2(\mathbb{B})$, so that $\partial_xS_N\to u_0$ and
+$\partial_yS_N\to u_1$ in $L^2(\mathbb{B})$ by Step 7.
+
+Let $\varphi$ be a test function for $\mathbb{B}$ in the sense of
+\noderef{IsTestFn} and let $j\in\{0,1\}$, with $\partial_0=\partial/\partial x$
+and $\partial_1=\partial/\partial y$, matching the indexing of
+\noderef{IsWeakPartialOn}.  Fix $N$.  For $0<\varepsilon<1$ the function $S_N$ is
+$C^\infty$ on a neighbourhood of $\overline{\mathbb{B}}-\mathbb{B}_\varepsilon$
+intersected with $\operatorname{supp}\varphi$, so the divergence theorem on
+$\mathbb{B}-\mathbb{B}_\varepsilon$ gives
+\[
+  \iint_{\mathbb{B}-\mathbb{B}_\varepsilon}S_N\,\partial_j\varphi\,d\sigma
+  =-\iint_{\mathbb{B}-\mathbb{B}_\varepsilon}(\partial_jS_N)\varphi\,d\sigma
+    +\oint_{|\xi|=\varepsilon}S_N\varphi\,\nu_j\,ds,
+\]
+with $\nu$ the outward unit normal.  By (5) and (3), $\lambda_k\ge0$, so
+$|S_N(\xi)|\le2\sum_{k=n}^{n+N}|A_k|=:M_N$ for $0<|\xi|<1$; hence the boundary
+term is at most $2\pi\varepsilon M_N\sup|\varphi|$, which tends to $0$ as
+$\varepsilon\to0$.  Moreover $S_N$ and $\partial_jS_N$ lie in
+$L^2(\mathbb{B})\subseteq L^1(\mathbb{B})$, $\mathbb{B}$ having finite measure,
+so the two area integrals converge to the corresponding integrals over
+$\mathbb{B}$.  Letting $\varepsilon\to0$,
+\[
+  \iint_{\mathbb{B}}S_N\,\partial_j\varphi\,d\sigma
+  =-\iint_{\mathbb{B}}(\partial_jS_N)\varphi\,d\sigma .
+\]
+Now let $N\to\infty$.  Since $\varphi$ and $\partial_j\varphi$ are bounded with
+compact support, they lie in $L^2(\mathbb{B})$, so by the Cauchy--Schwarz
+inequality both sides converge, giving
+\[
+  \iint_{\mathbb{B}}H\,\partial_j\varphi\,d\sigma
+  =-\iint_{\mathbb{B}}u_j\varphi\,d\sigma ,
+\]
+where on the left we used $S_N\to H$ in $L^2(\mathbb{B})$ from Step 8.  As
+$\varphi$ was arbitrary, $u_j$ is the distributional $j$-th partial derivative
+of $H$ on $\mathbb{B}$ in the sense of \noderef{IsWeakPartialOn}.  Finally
+define $D[\,]=H$, $D[j]=u_j$ for $j\in\{0,1\}$ and $D(w)=0$ for words $w$ of
+length at least $2$.  Then $D[\,]=H$; every $D(w)$ with $|w|\le1$ lies in
+$L^2(\mathbb{B})$, hence in $L^2_{\mathrm{loc}}(\mathbb{B})$ in the sense of
+\noderef{MemLpLocOn}, because the indicator of a compact subset of
+$\mathbb{B}$ times an $L^2(\mathbb{B})$ function is in $L^2$; and the only
+words of length $<1$ are the empty word, for which the weak-derivative
+requirement is what we just proved.  So $H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$
+in the sense of \noderef{MemWLocOn}, which is (c).
+
+\emph{Step 10: proof of (e) and (f).}  Fix $r\in(0,1)$ and $j\in\mathbb{Z}$.
+Choose radii as in Step 3 with $\delta<r<\rho$; the circle $|\xi|=r$ is
+contained in the corresponding $K$, so by Step 3 the convergence $S_N\to H$ is
+uniform on it.
+Uniform convergence permits passing to the limit under the integral in
+\noderef{FourierCoefOfH}, so
+\[
+  a_j(r)=\frac1{2\pi}\int_0^{2\pi}H\bigl(re^{i\theta}\bigr)e^{i(n-j)\theta}d\theta
+  =\lim_{N\to\infty}\sum_{k=n}^{n+N}r^{\lambda_k}\cdot
+    \frac1{2\pi}\int_0^{2\pi}\Phi_k(\theta)e^{i(n-j)\theta}d\theta ,
+\]
+using (4).  Now, for any integer $\ell$,
+$\frac1{2\pi}\int_0^{2\pi}e^{i\ell\theta}d\theta$ equals $1$ if $\ell=0$ and
+$0$ otherwise; applying this to $\ell=k-j$ and $\ell=-k-j$ gives
+\[
+  \frac1{2\pi}\int_0^{2\pi}\Phi_k(\theta)e^{i(n-j)\theta}d\theta
+  =\begin{cases}
+    A_k&\text{if }k=j,\\
+    \epsilon_k\overline{A_k}&\text{if }k=-j,\\
+    0&\text{otherwise,}
+  \end{cases}
+\]
+the two cases being mutually exclusive because $k=j=-k$ would force $k=0$,
+while $k\ge n\ge1$.  We read off the three regimes.
+
+Both halves of this computation --- the polar form of one summand tested
+against $e^{i(n-j)\theta}$, and the term-by-term integration that leaves only
+the indices $k=j$ and $k=-j$ --- are \noderef{Thm2SeriesCircleFourierCoef},
+stated there for the series itself; the interchange of sum and integral is
+justified there by the geometric domination of
+\noderef{Thm2TermGeometricSummability}, which bounds
+$\|T_{k}(re^{i\theta})\|$ uniformly in $\theta$ by a summable sequence, in place
+of the uniform convergence used above.
+
+If $|j|<n$: no $k\ge n$ satisfies $k=j$ or $k=-j$, since $|j|<n\le k$.  So
+every term vanishes and $a_j(r)=0$.  This is (f).
+
+If $j\ge n$: the only contributing index is $k=j$ (the alternative $k=-j$ would
+need $-j\ge n\ge1$, i.e.\ $j\le-1$).  Hence $a_j(r)=A_jr^{\lambda_j}$.
+
+If $j\le-n$: the only contributing index is $k=-j\ge n$, through the second
+case, so $a_j(r)=\epsilon_{-j}\overline{A_{-j}}\,r^{\lambda_{-j}}$.  By
+hypothesis (C) applied at the index $-j\ge n$, we have
+$A_{j}=A_{-(-j)}=\epsilon_{-j}\overline{A_{-j}}$; and $\lambda_{-j}=\lambda_j$
+because $\lambda$ depends only on the absolute value of its index.  Hence
+$a_j(r)=A_jr^{\lambda_j}$.
+
+The last two regimes together are exactly (e), and the proof is complete.
+\end{proof}

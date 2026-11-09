@@ -1,0 +1,110 @@
+\begin{lemma}
+Write $\mathbb{T}=\mathbb{R}/2\pi\mathbb{Z}$ and let $q\colon\mathbb{R}\to\mathbb{T}$
+be the quotient map.  Let $\gamma\colon[0,1]\to\mathbb{C}$ be continuous with
+$\gamma(t)\neq0$ for every $t$, and let $\operatorname{ind}(\gamma)$ be its
+index about $0$ in the sense of \noderef{WindingNumber}.  Then:
+\begin{enumerate}
+\item[(a)] \emph{(Existence of a continuous branch.)}  There is a continuous
+$\Theta\colon[0,1]\to\mathbb{R}$ with
+\[
+  \Theta(0)=\arg\gamma(0),\qquad
+  q\bigl(\Theta(t)\bigr)=q\bigl(\arg\gamma(t)\bigr)\ \text{ for all }t,
+\]
+and consequently
+\[
+  \gamma(t)=|\gamma(t)|\,e^{i\Theta(t)}\qquad\text{for all }t .
+\]
+\item[(b)] \emph{(Characterisation of the index.)}  Conversely, for \emph{every}
+continuous $\Theta\colon[0,1]\to\mathbb{R}$ satisfying
+$\Theta(0)=\arg\gamma(0)$ and $q(\Theta(t))=q(\arg\gamma(t))$ for all $t$,
+\[
+  2\pi\operatorname{ind}(\gamma)=\Theta(1)-\Theta(0).
+\]
+\item[(c)] \emph{(Integrality.)}  If $\gamma$ is a loop, i.e.\
+$\gamma(0)=\gamma(1)$, then $\operatorname{ind}(\gamma)$ is an integer.
+\item[(d)] \emph{(Model circles.)}  If $w\neq0$, $k\in\mathbb{Z}$ and
+$\gamma(t)=w\,e^{2\pi ikt}$ for all $t\in[0,1]$, then
+$\operatorname{ind}(\gamma)=k$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+We first recall the data through which \noderef{WindingNumber} defines the
+index.  The map $q$ is a covering map.  Since $\gamma(t)\neq0$ for every $t$ and
+the reduction $z\mapsto q(\arg z)$ of the principal argument is continuous at
+every nonzero $z$, the composite
+\[
+  \alpha\colon[0,1]\to\mathbb{T},\qquad \alpha(t)=q\bigl(\arg\gamma(t)\bigr),
+\]
+is continuous.  By the path-lifting property of the covering $q$ there is a
+continuous $\Theta_\gamma\colon[0,1]\to\mathbb{R}$, unique with these two
+properties, such that
+\begin{equation}\tag{1}
+  q\bigl(\Theta_\gamma(t)\bigr)=\alpha(t)=q\bigl(\arg\gamma(t)\bigr)\quad\text{for all }t,
+  \qquad \Theta_\gamma(0)=\arg\gamma(0),
+\end{equation}
+and \noderef{WindingNumber} defines
+\begin{equation}\tag{2}
+  \operatorname{ind}(\gamma)=\frac{\Theta_\gamma(1)-\arg\gamma(0)}{2\pi}
+  =\frac{\Theta_\gamma(1)-\Theta_\gamma(0)}{2\pi}.
+\end{equation}
+Uniqueness in (1) is the standard uniqueness of lifts along a covering map: two
+lifts of $\alpha$ that agree at one point of the connected space $[0,1]$ agree
+everywhere.
+
+We shall use twice the elementary description of the kernel of $q$: for
+$x,y\in\mathbb{R}$,
+\begin{equation}\tag{3}
+  q(x)=q(y)\iff x-y=2\pi j\ \text{ for some }j\in\mathbb{Z},
+\end{equation}
+and that $q$ is a homomorphism of additive groups, so $q(x+y)=q(x)+q(y)$.
+
+\emph{Proof of (a).}  Take $\Theta=\Theta_\gamma$.  The two displayed
+properties are (1).  For the polar representation, fix $t$.  By (1) and (3)
+there is $j\in\mathbb{Z}$ with $\Theta_\gamma(t)-\arg\gamma(t)=2\pi j$, whence
+\[
+  e^{i\Theta_\gamma(t)}=e^{i\arg\gamma(t)}e^{2\pi ij}=e^{i\arg\gamma(t)},
+\]
+because $e^{2\pi ij}=1$ for integer $j$.  Since $\gamma(t)\neq0$, the polar
+decomposition of a nonzero complex number gives
+$\gamma(t)=|\gamma(t)|e^{i\arg\gamma(t)}=|\gamma(t)|e^{i\Theta_\gamma(t)}$.
+
+\emph{Proof of (b).}  Let $\Theta$ be continuous with $\Theta(0)=\arg\gamma(0)$
+and $q(\Theta(t))=q(\arg\gamma(t))$ for all $t$.  Then $\Theta$ and
+$\Theta_\gamma$ are both lifts of $\alpha$ along $q$ agreeing at $t=0$, so by
+the uniqueness recorded in (1), $\Theta=\Theta_\gamma$.  Now (2) gives
+$2\pi\operatorname{ind}(\gamma)=\Theta_\gamma(1)-\Theta_\gamma(0)=\Theta(1)-\Theta(0)$.
+
+\emph{Proof of (c).}  Suppose $\gamma(0)=\gamma(1)$.  Then
+$\arg\gamma(1)=\arg\gamma(0)$, so by (1) applied at $t=1$ and at $t=0$,
+\[
+  q\bigl(\Theta_\gamma(1)\bigr)=q\bigl(\arg\gamma(1)\bigr)
+  =q\bigl(\arg\gamma(0)\bigr)=q\bigl(\Theta_\gamma(0)\bigr).
+\]
+By (3) there is $k\in\mathbb{Z}$ with $\Theta_\gamma(1)-\Theta_\gamma(0)=2\pi k$,
+and by (2), $2\pi\operatorname{ind}(\gamma)=2\pi k$.  Since $2\pi\neq0$,
+$\operatorname{ind}(\gamma)=k$.
+
+\emph{Proof of (d).}  Let $w\neq0$, $k\in\mathbb{Z}$ and suppose
+$\gamma(t)=w\,e^{2\pi ikt}$ for all $t\in[0,1]$.  Taking $t=0$ gives
+$\gamma(0)=w$.  Define
+\[
+  \Theta(t)=\arg w+2\pi kt ,
+\]
+which is continuous on $[0,1]$ and satisfies $\Theta(0)=\arg w=\arg\gamma(0)$.
+We check the lifting property.  Fix $t$.  Both $w$ and $e^{2\pi ikt}$ are
+nonzero, so the additivity of the argument modulo $2\pi$ gives
+\[
+  q\bigl(\arg\gamma(t)\bigr)=q\bigl(\arg w\bigr)+q\bigl(\arg e^{2\pi ikt}\bigr),
+\]
+and since $\arg e^{i\vartheta}\equiv\vartheta\pmod{2\pi}$ for every real
+$\vartheta$, the second term is $q(2\pi kt)$.  As $q$ is additive,
+\[
+  q\bigl(\arg\gamma(t)\bigr)=q(\arg w)+q(2\pi kt)=q\bigl(\arg w+2\pi kt\bigr)=q\bigl(\Theta(t)\bigr).
+\]
+So $\Theta$ satisfies both hypotheses of (b), and therefore
+\[
+  2\pi\operatorname{ind}(\gamma)=\Theta(1)-\Theta(0)
+  =\bigl(\arg w+2\pi k\bigr)-\arg w=2\pi k .
+\]
+Dividing by $2\pi\neq0$ gives $\operatorname{ind}(\gamma)=k$.
+\end{proof}

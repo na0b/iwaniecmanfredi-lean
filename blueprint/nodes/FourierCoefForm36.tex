@@ -1,0 +1,167 @@
+\begin{lemma}
+Let $n\ge1$ be an integer, let $1<p<\infty$, and let
+$k\in\mathbb{Z}$.  Let $a\colon\mathbb{R}\to\mathbb{C}$ be continuous on
+$[0,1)$, $C^\infty$ on $(0,1)$, and a solution of the Euler equation
+\[
+  r\bigl(r\,a'\bigr)'(r)+pn\,r\,a'(r)+(n^2-k^2)(p-1)\,a(r)=0
+  \qquad\text{for every }r\in(0,1).
+\]
+Then
+\[
+  a(r)=\begin{cases}
+    0 & \text{if }|k|<n,\\
+    A\,r^{\lambda_{|k|}(n,p)} & \text{if }|k|\ge n,
+  \end{cases}
+  \qquad\text{for every }r\in[0,1),
+\]
+where in the second case $A\in\mathbb{C}$ is a constant depending on $a$, and
+$\lambda_{|k|}(n,p)$ is the exponent of \noderef{LambdaCoef}.  Real powers are
+taken with the conventions $0^{\lambda}=0$ for $\lambda>0$ and $0^{0}=1$.
+
+This is formula (36) of the paper, with $\lambda_k=\lambda_{|k|}(n,p)$ its (37);
+the two agree because only $k^2$ enters the formula, which is the paper's remark
+$\lambda_k=\lambda_{-k}$ at line 331.  No restriction $p\neq2$ is imposed: the
+conclusion holds for every $1<p<\infty$, including the single pair $(k,p)=(0,2)$
+at which the indicial roots coincide.
+\end{lemma}
+\begin{proof}
+Write $S=\sqrt{4k^2(p-1)+n^2(p-2)^2}$ and
+\[
+  \lambda^{+}=\lambda_{|k|}(n,p)=\frac{-pn+S}{2},\qquad
+  \lambda^{-}=-pn-\lambda^{+}=\frac{-pn-S}{2},
+\]
+as in \noderef{LambdaCoef} (using $|k|^2=k^2$).
+
+\emph{Step 0a: the two cases.}  Since $p>1$ we have $4k^2(p-1)\ge0$, with
+strict inequality when $k\neq0$; and $n^2(p-2)^2\ge0$, with strict inequality
+when $p\neq2$, because $n\ge1$.  Hence the radicand
+$4k^2(p-1)+n^2(p-2)^2$ is positive unless $k=0$ and $p=2$, in which case it is
+$0$.  We therefore distinguish the \emph{non-degenerate case} ($k\neq0$ or
+$p\neq2$), treated in Steps 0--5, and the \emph{degenerate case} ($k=0$ and
+$p=2$), treated in Step 6.  The degenerate case is the one in which the paper's
+assertion at line 313 that the roots are distinct fails.  Only the bound (4) of
+Step 0b is used in both cases.
+
+\emph{Step 0b: $a$ is bounded near $0$; this is common to both cases.}  The
+interval $[0,\tfrac12]$ is a compact subset of $[0,1)$ and $a$ is continuous on
+$[0,1)$, so
+\begin{equation}\tag{4}
+  M=\sup_{r\in[0,1/2]}|a(r)|<\infty .
+\end{equation}
+
+\emph{Steps 0--5 assume $k\neq0$ or $p\neq2$.}  Then the radicand is positive
+by Step 0a, so
+\begin{equation}\tag{1}
+  S>0,\qquad S^2=4k^2(p-1)+n^2(p-2)^2,\qquad \lambda^{+}-\lambda^{-}=S>0 .
+\end{equation}
+
+\emph{Step 0: $\lambda^{-}<0$ always, and the sign of $\lambda^{+}$ in three
+regimes.}  Since $n\ge1$ and $p>1$ we have $pn>0$, and $S\ge0$, so
+\begin{equation}\tag{2}
+  \lambda^{-}=\frac{-pn-S}{2}<0 .
+\end{equation}
+For $\lambda^{+}$, note that $\lambda^{+}$ and $0$ compare exactly as $S$ and
+$pn$ do, by (1); and both $S\ge0$ and $pn>0$, so $S$ and $pn$ compare exactly as
+$S^2$ and $(pn)^2$ do.  Now, using the identity $p^2-(p-2)^2=4(p-1)$,
+\[
+  S^2-(pn)^2=4k^2(p-1)+n^2(p-2)^2-n^2p^2
+  =4k^2(p-1)-n^2\bigl(p^2-(p-2)^2\bigr)=4(p-1)\bigl(k^2-n^2\bigr),
+\]
+and $4(p-1)>0$.  Therefore
+\begin{equation}\tag{3}
+  \lambda^{+}<0\iff|k|<n,\qquad \lambda^{+}=0\iff|k|=n,\qquad \lambda^{+}>0\iff|k|>n,
+\end{equation}
+since $k^2-n^2$ is negative, zero or positive exactly as $|k|$ is less than,
+equal to or greater than $n$.  The middle regime is the one the paper's
+sentence at line 323 passes over: at $|k|=n$ the exponent is exactly $0$, so
+$r^{\lambda^{+}}$ is the constant $1$, which is bounded, and the corresponding
+constant need \emph{not} vanish.  Note also that the roots remain distinct
+there, since $\lambda^{-}<0=\lambda^{+}$ by (2).
+
+\emph{Step 2: the two constants.}  The hypotheses of
+\noderef{EulerOdeSolution} are met: $n\ge1$, $1<p<\infty$, its non-degeneracy
+hypothesis ``$k\neq0$ or $p\neq2$'' is the case assumption in force, $a$ is
+$C^\infty$ on $(0,1)$, and $a$ satisfies the Euler equation there.  It
+therefore provides $A^{+},A^{-}\in\mathbb{C}$ with
+\begin{equation}\tag{5}
+  a(r)=A^{+}r^{\lambda^{+}}+A^{-}r^{\lambda^{-}}\qquad\text{for every }r\in(0,1).
+\end{equation}
+
+\emph{Step 3: $A^{-}=0$.}  Multiply (5) by $r^{-\lambda^{-}}$, which is
+legitimate for $r>0$, and use $r^{-\lambda^{-}}r^{\lambda^{+}}=r^{\lambda^{+}-\lambda^{-}}=r^{S}$
+and $r^{-\lambda^{-}}r^{\lambda^{-}}=1$:
+\begin{equation}\tag{6}
+  r^{-\lambda^{-}}a(r)=A^{+}r^{S}+A^{-}\qquad\text{for every }r\in(0,1).
+\end{equation}
+Let $r\to0^{+}$.  By (2), $-\lambda^{-}>0$, so $r^{-\lambda^{-}}\to0$, and by
+(4), $|r^{-\lambda^{-}}a(r)|\le M\,r^{-\lambda^{-}}\to0$ for $r\in(0,\tfrac12]$;
+thus the left-hand side of (6) tends to $0$.  By (1), $S>0$, so
+$r^{S}\to0$ and the first term on the right tends to $0$.  Hence $A^{-}=0$, and
+(5) becomes
+\begin{equation}\tag{7}
+  a(r)=A^{+}r^{\lambda^{+}}\qquad\text{for every }r\in(0,1).
+\end{equation}
+
+\emph{Step 4: the case $|k|<n$.}  Here $\lambda^{+}<0$ by (3).  Suppose
+$A^{+}\neq0$.  Then by (7), for $r\in(0,\tfrac12]$,
+$|a(r)|=|A^{+}|r^{\lambda^{+}}\to\infty$ as $r\to0^{+}$, because
+$-\lambda^{+}>0$; this contradicts the bound (4).  Hence $A^{+}=0$, and by (7)
+$a(r)=0$ for every $r\in(0,1)$.  Finally $a$ is continuous at $0$ from the
+right, so $a(0)=\lim_{r\to0^{+}}a(r)=0$ as well.  Therefore $a(r)=0$ for every
+$r\in[0,1)$, which is the first case of the assertion.
+
+\emph{Step 5: the case $|k|\ge n$.}  Here $\lambda^{+}\ge0$ by (3).  Put
+$A=A^{+}$.  By (7), $a(r)=A\,r^{\lambda^{+}}$ for every $r\in(0,1)$, so it
+remains only to check the equality at $r=0$, i.e.\ that
+$a(0)=A\cdot0^{\lambda^{+}}$.  We distinguish the two sub-regimes of (3).
+
+If $|k|>n$ then $\lambda^{+}>0$, so $0^{\lambda^{+}}=0$ by the convention for
+real powers, and $r^{\lambda^{+}}\to0$ as $r\to0^{+}$; by continuity of $a$ at
+$0$ and (7),
+$a(0)=\lim_{r\to0^{+}}A\,r^{\lambda^{+}}=0=A\cdot0^{\lambda^{+}}$.
+
+If $|k|=n$ then $\lambda^{+}=0$, so $r^{\lambda^{+}}=1$ for every $r>0$ and
+$0^{\lambda^{+}}=0^{0}=1$.  Thus (7) says $a(r)=A$ for every $r\in(0,1)$, and by
+continuity of $a$ at $0$, $a(0)=\lim_{r\to0^{+}}A=A=A\cdot0^{\lambda^{+}}$.  This
+is the regime in which the coefficient is a nonzero constant; it is exactly the
+$k=\pm n$ branch of (36), and it is consistent with the paper's remark
+$\lambda_n=0$ at line 331.
+
+In both sub-regimes $a(r)=A\,r^{\lambda^{+}}$ for every $r\in[0,1)$, which is
+the second case of the assertion.  This completes the non-degenerate case.
+
+\emph{Step 6: the degenerate case $k=0$, $p=2$.}  Here only the first branch of
+the assertion has to be proved, and the second is vacuous: $|k|=0$, and
+$0<n$ because $n\ge1$, so $|k|<n$ and the hypothesis $|k|\ge n$ of the second
+branch is never met.
+
+With $k=0$ and $p=2$ the Euler equation in the hypothesis reads
+\[
+  r\bigl(r\,a'\bigr)'(r)+2n\,r\,a'(r)+n^2\,a(r)=0\qquad\text{for every }r\in(0,1),
+\]
+because $pn=2n$ and $(n^2-k^2)(p-1)=n^2\cdot1=n^2$.  Together with $n\ge1$ and
+the $C^\infty$-smoothness of $a$ on $(0,1)$, these are exactly the hypotheses of
+\noderef{EulerOdeDegenerate}, which therefore provides $A,B\in\mathbb{C}$ with
+\begin{equation}\tag{8}
+  a(r)=\bigl(A+B\log r\bigr)r^{-n}\qquad\text{for every }r\in(0,1).
+\end{equation}
+
+We show $B=0$.  Suppose $B\neq0$.  For $0<r\le\tfrac12$ we have $r^{-n}\ge1$,
+since $n\ge1$ and $0<r\le1$; and $\log r<0$, so $|\log r|=-\log r$.  Hence by
+(8) and the triangle inequality, for $0<r\le\tfrac12$,
+\[
+  |a(r)|=\bigl|A+B\log r\bigr|\,r^{-n}
+  \ge\bigl(|B|\,|\log r|-|A|\bigr)r^{-n}\ge|B|\,|\log r|-|A|
+\]
+whenever the middle quantity is nonnegative.  As $r\to0^{+}$ we have
+$|\log r|\to\infty$, so $|B||\log r|-|A|\to\infty$, contradicting the bound
+$|a(r)|\le M$ of (4).  Therefore $B=0$.
+
+Now (8) reads $a(r)=A\,r^{-n}$ on $(0,1)$.  If $A\neq0$ then
+$|a(r)|=|A|r^{-n}\to\infty$ as $r\to0^{+}$, because $n\ge1$, again
+contradicting (4).  Therefore $A=0$ and $a(r)=0$ for every $r\in(0,1)$.
+Finally $a$ is continuous at $0$ from the right, so
+$a(0)=\lim_{r\to0^{+}}a(r)=0$ as well, and $a(r)=0$ for every $r\in[0,1)$.
+This is the first case of the assertion, and it is the only one that can arise
+in the degenerate case.
+\end{proof}

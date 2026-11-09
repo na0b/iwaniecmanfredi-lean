@@ -1,0 +1,114 @@
+\begin{lemma}
+Let $\Omega\subseteq\mathbb{C}$ be open, let $j\in\{0,1\}$, write $e_0=1$ and
+$e_1=i$, and let $u,D\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $u\in L^{1}_{\mathrm{loc}}(\Omega)$ and
+  $D\in L^{1}_{\mathrm{loc}}(\Omega)$, in the sense of \noderef{MemLpLocOn};
+\item[(H2)] $D$ is the distributional $j$-th partial derivative of $u$ on
+  $\Omega$, in the sense of \noderef{IsWeakPartialOn}.
+\end{enumerate}
+Let $K\subseteq\Omega$ be compact.  Then there is a sequence $(t_l)_{l\ge1}$ of
+nonzero real numbers with $t_l\to0$ such that
+\[
+  \frac{u(z+t_le_j)-u(z)}{t_l}\longrightarrow D(z)\qquad(l\to\infty)
+\]
+for almost every $z\in K$.
+
+This is the statement that the distributional derivative is a genuine limit of
+difference quotients of $u$, almost everywhere, and it is what makes the
+distributional derivative comparable with a classical one.  The paper uses it
+implicitly throughout Sections 4 to 6, where the $W^{1,2}$ derivatives of $H$
+and of the inverse $\chi$ are manipulated as classical derivatives.
+
+Two features of the statement are deliberate and are exactly what the
+argument supplies.  First, the increments form a sequence rather than a
+continuous parameter: the difference quotients converge to $D$ in
+$L^{1}(K)$ as $t\to0$, and almost-everywhere convergence is obtained from
+that only along a subsequence.  A full statement, with $t\to0$ continuously
+and one exceptional null set, is false in general, because the exceptional
+set depends on the increment.  Second, the conclusion is confined to a
+compact $K$, since the translate $z+t e_j$ must remain in $\Omega$.  Neither
+restriction costs anything where the statement is used: at a point where $u$
+is differentiable, every null sequence of increments gives the classical
+derivative, and $\Omega$ is a countable union of compact sets.
+\end{lemma}
+\begin{proof}
+Write $d\sigma$ for plane Lebesgue measure.
+
+\emph{Step 1: a compact collar and the truncation of $D$.}  Since $K$ is
+compact, $\Omega$ is open and $K\subseteq\Omega$, there is $\delta_1>0$ with
+\[
+  K^{\delta_1}:=\{z:\operatorname{dist}(z,K)\le\delta_1\}\subseteq\Omega ;
+\]
+either $\Omega=\mathbb{C}$, where any $\delta_1>0$ serves, or
+$\operatorname{dist}(K,\mathbb{C}-\Omega)>0$ because $K$ is compact and
+$\mathbb{C}-\Omega$ is closed, nonempty and disjoint from $K$, and then any
+$\delta_1$ below that distance serves.  The set $K^{\delta_1}$ is closed and
+bounded, hence compact.  Put $V=\mathbf{1}_{K^{\delta_1}}D$.  By (H1) applied
+to the compact set $K^{\delta_1}\subseteq\Omega$ and \noderef{MemLpLocOn},
+$V\in L^{1}(\mathbb{C})$; by the same hypothesis applied to $K^{\delta_1}$,
+$u$ is almost everywhere strongly measurable on $K^{\delta_1}$, so for each
+fixed $t$ the difference quotient below is almost everywhere strongly
+measurable on $K$.
+
+\emph{Step 2: the line-integral identity.}  By \noderef{WeakPartialLineIntegral}
+applied to $\Omega$, $j$, $u$, $D$ and $K$ there is $\delta_2>0$ such that for
+every real $t$ with $|t|\le\delta_2$,
+\begin{equation}\tag{1}
+  u(z+te_j)-u(z)=\int_0^tD(z+se_j)\,ds
+  \qquad\text{for almost every }z\in K .
+\end{equation}
+Put $\delta=\min\{\delta_1,\delta_2\}>0$.
+
+\emph{Step 3: the difference quotients converge in $L^{1}(K)$.}  For
+$0<|t|\le\delta$ put
+\[
+  \Delta_t(z)=\frac{u(z+te_j)-u(z)}{t}\qquad(z\in\mathbb{C}).
+\]
+Since $\frac1t\int_0^tD(z)\,ds=D(z)$ for every $z$, (1) gives, for almost
+every $z\in K$,
+\begin{equation}\tag{2}
+  \Delta_t(z)-D(z)=\frac1t\int_0^t\bigl[D(z+se_j)-D(z)\bigr]\,ds .
+\end{equation}
+Let $z\in K$ and $|s|\le\delta$.  Then
+$\operatorname{dist}(z+se_j,K)\le|s|\le\delta_1$, so $z+se_j\in K^{\delta_1}$
+and hence $D(z+se_j)=V(z+se_j)$; and $z\in K\subseteq K^{\delta_1}$, so
+$D(z)=V(z)$.  Therefore the bracket in (2) may be replaced by
+$V(z+se_j)-V(z)$.  Writing $I_t$ for the interval between $0$ and $t$, whose
+length is $|t|$, and noting that $(z,s)\mapsto V(z+se_j)-V(z)$ is measurable
+on $\mathbb{C}\times I_t$, being built from the measurable $V$ and the
+continuous map $(z,s)\mapsto z+se_j$, we get from (2), the triangle
+inequality for integrals, Tonelli's theorem and $K\subseteq\mathbb{C}$ that
+\[
+  \int_K\bigl|\Delta_t-D\bigr|\,d\sigma
+  \le\frac1{|t|}\int_{I_t}\Bigl(\int_{\mathbb{C}}
+      \bigl|V(z+se_j)-V(z)\bigr|\,d\sigma(z)\Bigr)ds
+  \le\sup_{|s|\le|t|}\bigl\|V(\cdot+se_j)-V\bigr\|_{L^{1}(\mathbb{C})} ,
+\]
+the last step because the inner integral is at most that supremum for every
+$s\in I_t$ and $|I_t|=|t|$.  Translation is continuous in
+$L^{1}(\mathbb{C})$, so $\|V(\cdot+se_j)-V\|_{L^{1}(\mathbb{C})}\to0$ as
+$s\to0$, and therefore the right-hand side tends to $0$ as $t\to0$.  Hence
+\begin{equation}\tag{3}
+  \int_K\bigl|\Delta_t-D\bigr|\,d\sigma\longrightarrow0
+  \qquad\text{as }t\to0 ,
+\end{equation}
+that is, $\Delta_t\to D$ in $L^{1}(K)$.
+
+\emph{Step 4: extraction of an almost everywhere convergent sequence.}  Put
+$\tau_l=\delta/l$ for $l\ge1$.  Then $\tau_l\neq0$, $|\tau_l|\le\delta$ and
+$\tau_l\to0$, so by (3) we have $\int_K|\Delta_{\tau_l}-D|\,d\sigma\to0$,
+i.e.\ $\Delta_{\tau_l}\to D$ in $L^{1}(K)$.  Convergence in $L^{1}(K)$
+implies convergence in measure on $K$: for $\eta>0$,
+\[
+  \sigma\bigl(\{z\in K:|\Delta_{\tau_l}(z)-D(z)|\ge\eta\}\bigr)
+  \le\frac1\eta\int_K\bigl|\Delta_{\tau_l}-D\bigr|\,d\sigma
+  \longrightarrow0 .
+\]
+A sequence of almost everywhere strongly measurable functions converging in
+measure has a subsequence converging almost everywhere; let
+$l_1<l_2<\cdots$ index such a subsequence and put $t_i=\tau_{l_i}$.  Then
+each $t_i$ is nonzero, $t_i\to0$ because $l_i\to\infty$, and
+$\Delta_{t_i}\to D$ almost everywhere on $K$, which is precisely the
+assertion.
+\end{proof}

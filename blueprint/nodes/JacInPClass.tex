@@ -1,0 +1,156 @@
+\begin{lemma}
+Let $\Omega\subset\mathbb{C}$ be open and let $H\colon\mathbb{C}\to\mathbb{C}$
+be $C^\infty$ on $\Omega$.  Write
+\[
+  H_\xi=\frac{\partial H}{\partial\xi},\quad
+  H_{\bar\xi}=\frac{\partial H}{\partial\bar\xi},\quad
+  H_{\xi\xi}=\frac{\partial^2H}{\partial\xi^2},\quad
+  H_{\xi\bar\xi}=\frac{\partial^2H}{\partial\xi\partial\bar\xi},\quad
+  H_{\bar\xi\bar\xi}=\frac{\partial^2H}{\partial\bar\xi^2}
+\]
+for the iterated derivatives of \noderef{WirtingerIter}, and let
+$J=|H_\xi|^2-|H_{\bar\xi}|^2$ be the Jacobian of \noderef{Jac}, regarded as a
+complex-valued function.  Then, relative to $H$ and in the sense of
+\noderef{PClass},
+\begin{enumerate}
+\item[(a)] $J\in\mathbb{P}(2,2)$;
+\item[(b)] the function
+\[
+  R=H_{\xi\xi}\overline{H_\xi}+\overline{H_{\xi\bar\xi}}H_\xi
+     -H_{\xi\bar\xi}\overline{H_{\bar\xi}}-\overline{H_{\bar\xi\bar\xi}}H_{\bar\xi}
+\]
+belongs to $\mathbb{P}(3,2)$; and
+\item[(c)] $\dfrac{\partial J}{\partial\xi}(\xi)=R(\xi)$ for every
+$\xi\in\Omega$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+By \noderef{WirtingerIter}, $H_\xi$ is the iterated derivative with indices
+$(1,0)$ and $H_{\bar\xi}$ the one with indices $(0,1)$, while $H_{\xi\xi}$,
+$H_{\xi\bar\xi}$, $H_{\bar\xi\bar\xi}$ are those with indices $(2,0)$,
+$(1,1)$, $(0,2)$ respectively.
+
+\emph{Step 1: $J$ as a combination of symbol values.}  For any
+$w\in\mathbb{C}$ one has $|w|^2=w\bar w$ as complex numbers.  Hence, by
+\noderef{Jac}, for every $\xi\in\mathbb{C}$
+\begin{equation}\tag{1}
+  J(\xi)=|H_\xi(\xi)|^2-|H_{\bar\xi}(\xi)|^2
+  =H_\xi(\xi)\overline{H_\xi(\xi)}-H_{\bar\xi}(\xi)\overline{H_{\bar\xi}(\xi)} .
+\end{equation}
+This is the expression $J=H_\xi\overline{H_\xi}-H_{\bar\xi}\overline{H_{\bar\xi}}$
+displayed in Section~5 of the paper.
+
+\emph{Step 2: proof of (a).}  Consider the derivative symbols
+\[
+  e_1=(1,0,\text{false}),\quad e_1^{c}=(1,0,\text{true}),\quad
+  e_2=(0,1,\text{false}),\quad e_2^{c}=(0,1,\text{true}),
+\]
+each of order $1$, and the two lists
+\[
+  M=(e_1,e_1^{c}),\qquad N=(e_2,e_2^{c}).
+\]
+By \noderef{SymbolValue}, $H^{e_1}=H_\xi$, $H^{e_1^{c}}=\overline{H_\xi}$,
+$H^{e_2}=H_{\bar\xi}$, $H^{e_2^{c}}=\overline{H_{\bar\xi}}$, and by
+\noderef{MonomialValue}
+\[
+  H^{M}=H_\xi\overline{H_\xi},\qquad H^{N}=H_{\bar\xi}\overline{H_{\bar\xi}} .
+\]
+Each of $M$ and $N$ has length $2$, and the orders of its two entries are $1$
+and $1$, so $s(M)=s(N)=2$ and $k(M)=k(N)=2$: both lists have type $(2,2)$.  By
+(1), $J=1\cdot H^{M}+(-1)\cdot H^{N}$ at every point of $\mathbb{C}$.  The
+coefficients $1,-1$ together with the lists $M,N$ therefore present $J$ as a
+finite $\mathbb{C}$-linear combination of monomials of type $(2,2)$, so
+$J\in\mathbb{P}(2,2)$ by \noderef{PClass}.
+
+\emph{Step 3: proof of (b).}  Consider the four lists
+\[
+  A_1=\bigl((2,0,\text{false}),(1,0,\text{true})\bigr),\qquad
+  A_2=\bigl((1,1,\text{true}),(1,0,\text{false})\bigr),
+\]
+\[
+  A_3=\bigl((1,1,\text{false}),(0,1,\text{true})\bigr),\qquad
+  A_4=\bigl((0,2,\text{true}),(0,1,\text{false})\bigr),
+\]
+with coefficients $1,1,-1,-1$ respectively.  Each $A_\mu$ has length $2$, and
+the orders of its two entries are $2$ and $1$; hence $s(A_\mu)=3$ and
+$k(A_\mu)=2$, so each has type $(3,2)$.  By \noderef{SymbolValue} and
+\noderef{MonomialValue},
+\[
+  H^{A_1}=H_{\xi\xi}\overline{H_\xi},\quad
+  H^{A_2}=\overline{H_{\xi\bar\xi}}H_\xi,\quad
+  H^{A_3}=H_{\xi\bar\xi}\overline{H_{\bar\xi}},\quad
+  H^{A_4}=\overline{H_{\bar\xi\bar\xi}}H_{\bar\xi},
+\]
+so $R=1\cdot H^{A_1}+1\cdot H^{A_2}+(-1)\cdot H^{A_3}+(-1)\cdot H^{A_4}$ at
+every point of $\mathbb{C}$.  By \noderef{PClass}, $R\in\mathbb{P}(3,2)$.
+
+\emph{Step 4: differentiability of the four first-order factors.}  By part (a)
+of \noderef{WirtingerIterSwap}, each of $H_\xi$ and $H_{\bar\xi}$ is
+$C^\infty$ on $\Omega$; in particular each is real-differentiable at every
+point of $\Omega$.  Complex conjugation is an $\mathbb{R}$-linear isometry of
+$\mathbb{C}$, so $\overline{H_\xi}$ and $\overline{H_{\bar\xi}}$ are
+real-differentiable at every point of $\Omega$ as well.
+
+\emph{Step 5: the two products.}  Let $\xi\in\Omega$.  By Step 4 and
+\noderef{WirtingerProductRule},
+\[
+  \frac{\partial\bigl(H_\xi\overline{H_\xi}\bigr)}{\partial\xi}(\xi)
+  =\frac{\partial H_\xi}{\partial\xi}(\xi)\,\overline{H_\xi(\xi)}
+   +H_\xi(\xi)\,\frac{\partial\overline{H_\xi}}{\partial\xi}(\xi).
+\]
+Here $\partial H_\xi/\partial\xi=H_{\xi\xi}$ on all of $\mathbb{C}$, directly
+by \noderef{WirtingerIter}, since applying $\partial/\partial\xi$ to the
+iterated derivative with indices $(1,0)$ gives the one with indices $(2,0)$.
+For the second term, \noderef{WirtingerConjRule} applies to $H_\xi$ at $\xi$ by
+Step 4 and gives
+$\partial\overline{H_\xi}/\partial\xi(\xi)=\overline{\partial H_\xi/\partial\bar\xi(\xi)}$,
+while part (b) of \noderef{WirtingerIterSwap} with indices $i=1$, $j=0$ gives
+$\partial H_\xi/\partial\bar\xi(\xi)=H_{\xi\bar\xi}(\xi)$.  Hence
+\begin{equation}\tag{2}
+  \frac{\partial\bigl(H_\xi\overline{H_\xi}\bigr)}{\partial\xi}(\xi)
+  =H_{\xi\xi}(\xi)\overline{H_\xi(\xi)}+H_\xi(\xi)\overline{H_{\xi\bar\xi}(\xi)} .
+\end{equation}
+In the same way, by Step 4 and \noderef{WirtingerProductRule},
+\[
+  \frac{\partial\bigl(H_{\bar\xi}\overline{H_{\bar\xi}}\bigr)}{\partial\xi}(\xi)
+  =\frac{\partial H_{\bar\xi}}{\partial\xi}(\xi)\,\overline{H_{\bar\xi}(\xi)}
+   +H_{\bar\xi}(\xi)\,\frac{\partial\overline{H_{\bar\xi}}}{\partial\xi}(\xi).
+\]
+Here $\partial H_{\bar\xi}/\partial\xi=H_{\xi\bar\xi}$ on all of $\mathbb{C}$
+by \noderef{WirtingerIter}, since applying $\partial/\partial\xi$ to the
+iterated derivative with indices $(0,1)$ gives the one with indices $(1,1)$;
+and by \noderef{WirtingerConjRule} together with part (b) of
+\noderef{WirtingerIterSwap} with indices $i=0$, $j=1$,
+\[
+  \frac{\partial\overline{H_{\bar\xi}}}{\partial\xi}(\xi)
+  =\overline{\frac{\partial H_{\bar\xi}}{\partial\bar\xi}(\xi)}
+  =\overline{H_{\bar\xi\bar\xi}(\xi)} .
+\]
+Hence
+\begin{equation}\tag{3}
+  \frac{\partial\bigl(H_{\bar\xi}\overline{H_{\bar\xi}}\bigr)}{\partial\xi}(\xi)
+  =H_{\xi\bar\xi}(\xi)\overline{H_{\bar\xi}(\xi)}
+   +H_{\bar\xi}(\xi)\overline{H_{\bar\xi\bar\xi}(\xi)} .
+\end{equation}
+
+\emph{Step 6: proof of (c).}  Let $\xi\in\Omega$.  By (1), the function $J$
+agrees at every point of $\mathbb{C}$ with
+$H_\xi\overline{H_\xi}-H_{\bar\xi}\overline{H_{\bar\xi}}$, so the two have the
+same real Fr\'echet derivative at $\xi$ and hence, by \noderef{DZ}, the same
+$\partial/\partial\xi$ at $\xi$.  Both products are real-differentiable at
+$\xi$ by Step 4, and by \noderef{DZ} the operator $\partial/\partial\xi$ at
+$\xi$ is a fixed $\mathbb{C}$-linear expression in the values of the real
+Fr\'echet derivative at the vectors $1$ and $i$; since that derivative is
+additive on functions differentiable at $\xi$, so is $\partial/\partial\xi$.
+Therefore, by (2) and (3),
+\[
+  \frac{\partial J}{\partial\xi}(\xi)
+  =\frac{\partial\bigl(H_\xi\overline{H_\xi}\bigr)}{\partial\xi}(\xi)
+   -\frac{\partial\bigl(H_{\bar\xi}\overline{H_{\bar\xi}}\bigr)}{\partial\xi}(\xi)
+  =H_{\xi\xi}(\xi)\overline{H_\xi(\xi)}+\overline{H_{\xi\bar\xi}(\xi)}H_\xi(\xi)
+   -H_{\xi\bar\xi}(\xi)\overline{H_{\bar\xi}(\xi)}
+   -\overline{H_{\bar\xi\bar\xi}(\xi)}H_{\bar\xi}(\xi),
+\]
+which is $R(\xi)$.  This is exactly the formula for $J_\xi$ displayed as
+property (ii) in Section~5 of the paper.
+\end{proof}

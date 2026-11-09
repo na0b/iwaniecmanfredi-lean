@@ -1,0 +1,65 @@
+\begin{lemma}
+Let $1<p<\infty$.  Then $\gamma_1=\gamma_1(p)>0$ and
+\[
+  \gamma_1(p)\cdot d(p)=1,
+\]
+where $\gamma_1$ is as in \noderef{GammaExp} and $d$ is the exponent (50) of
+\noderef{DExp}.  Equivalently, $d(p)=1/\gamma_1(p)$.
+\end{lemma}
+\begin{proof}
+Fix $p>1$, so $p-1>0$.
+
+\emph{Step 1 (closed form for $\gamma_1$).}  By \noderef{GammaExp} and
+\noderef{LambdaCoef} with $n=1$, $k=2$,
+\[
+  2\gamma_1=2\lambda_2(1,p)=-p+\sqrt{4\cdot2^2(p-1)+1^2\cdot(p-2)^2}
+  =-p+\sqrt{16(p-1)+(p-2)^2},
+\]
+and
+\[
+  16(p-1)+(p-2)^2=16p-16+p^2-4p+4=p^2+12p-12 .
+\]
+Write $S=\sqrt{p^2+12p-12}$, so that
+\[
+  2\gamma_1=-p+S .
+\]
+
+\emph{Step 2 ($S>p>0$, and $\gamma_1>0$).}  We have
+\[
+  \bigl(p^2+12p-12\bigr)-p^2=12(p-1)>0 ,
+\]
+so $p^2+12p-12>p^2\ge0$.  In particular the radicand is positive, so
+$S>0$ and $S^2=p^2+12p-12$; and since the square root is strictly increasing
+on $[0,\infty)$ and $p>0$,
+\[
+  S=\sqrt{p^2+12p-12}>\sqrt{p^2}=p .
+\]
+Hence $2\gamma_1=-p+S>0$, i.e.\ $\gamma_1>0$.
+
+\emph{Step 3 (closed form for $d$).}  Since $p-1>0$,
+\[
+  1+\frac{14}{p-1}+\frac{1}{(p-1)^2}
+  =\frac{(p-1)^2+14(p-1)+1}{(p-1)^2}
+  =\frac{p^2-2p+1+14p-14+1}{(p-1)^2}
+  =\frac{p^2+12p-12}{(p-1)^2}.
+\]
+Taking square roots, and using $p-1>0$ together with
+$\sqrt{X/(p-1)^2}=\sqrt X/(p-1)$ for $X\ge0$,
+\[
+  \sqrt{1+\frac{14}{p-1}+\frac{1}{(p-1)^2}}=\frac{S}{p-1}.
+\]
+Also $1+\dfrac1{p-1}=\dfrac{p}{p-1}$.  Hence, by \noderef{DExp},
+\[
+  6\,d(p)=1+\frac1{p-1}+\frac{S}{p-1}=\frac{p+S}{p-1}.
+\]
+
+\emph{Step 4 (the product).}  Multiplying the formulas of Steps 1 and 3,
+\[
+  2\gamma_1\cdot 6\,d(p)=(S-p)\cdot\frac{p+S}{p-1}
+  =\frac{S^2-p^2}{p-1}
+  =\frac{\bigl(p^2+12p-12\bigr)-p^2}{p-1}
+  =\frac{12(p-1)}{p-1}=12 ,
+\]
+using $S^2=p^2+12p-12$ from Step 2 and $p-1\neq0$.  Thus
+$12\,\gamma_1 d(p)=12$, and dividing by $12$ gives $\gamma_1 d(p)=1$.
+\end{proof}

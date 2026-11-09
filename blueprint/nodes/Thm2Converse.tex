@@ -1,0 +1,242 @@
+\begin{theorem}
+Let $n\ge1$ be an integer and let $1<p<\infty$.  Write
+$\mathbb{B}=\{\xi:|\xi|<1\}$ and $d\sigma$ for plane Lebesgue measure, let
+$\lambda_k=\lambda_{|k|}(n,p)$ be the exponent of \noderef{LambdaCoef},
+$\epsilon_k=\epsilon_k(n,p)$ the coefficient of \noderef{EpsCoef}, and $T_k$
+the $k$-th summand of (19) in the sense of \noderef{Thm2Term}.  Then there is a
+constant $C=C(n,p)>0$ with the following property.
+
+Let $A\colon\mathbb{Z}\to\mathbb{C}$ satisfy
+\[
+  \sum_{m=0}^{\infty}(n+m)\,|A_{n+m}|^2<\infty,
+  \qquad\text{that is}\qquad \sum_{k=n}^{\infty}k|A_k|^2<\infty .
+\]
+Then there is a function $H\colon\mathbb{C}\to\mathbb{C}$ with
+\begin{enumerate}
+\item[(a)] $H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ in the sense of
+  \noderef{MemWLocOn}, $H$ continuous on $\mathbb{B}$, and $H$ of class
+  $C^\infty$ on $\mathbb{B}-\{0\}$;
+\item[(b)] $H$ a solution of equation (18) on $\mathbb{B}$ in the sense of
+  \noderef{SolvesEq18};
+\item[(c)] the series (19) converging to $H$ in $W^{1,2}(\mathbb{B})$:
+\[
+  \iint_{\mathbb{B}}\Bigl|H-\sum_{k=n}^{n+N}T_k\Bigr|^2d\sigma
+  +\iint_{\mathbb{B}}\Bigl|H_\xi-\Bigl(\sum_{k=n}^{n+N}T_k\Bigr)_\xi\Bigr|^2d\sigma
+  +\iint_{\mathbb{B}}\Bigl|H_{\bar\xi}
+      -\Bigl(\sum_{k=n}^{n+N}T_k\Bigr)_{\bar\xi}\Bigr|^2d\sigma
+  \longrightarrow0
+\]
+as $N\to\infty$, where $H_\xi$, $H_{\bar\xi}$ are the Wirtinger derivatives of
+\noderef{DZ} and \noderef{DZbar};
+\item[(d)] the energy bound
+\[
+  \iint_{\mathbb{B}}\bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma
+  \le C\sum_{m=0}^{\infty}(n+1+m)\,|A_{n+1+m}|^2
+  =C\sum_{k=n+1}^{\infty}k|A_k|^2 .
+\]
+\end{enumerate}
+
+This is the converse half of Theorem 2 of the paper (paper.tex:207--212).  Note
+the paper's own asymmetry, reproduced here: the hypothesis sums from $k=n$ while
+the bound (d) sums from $k=n+1$.  It is correct, because $\lambda_n=0$ makes the
+$k=n$ summand the constant $A_n$, which contributes nothing to the energy.
+As in the forward half there is no quasiregularity hypothesis and no
+restriction $p\neq2$.
+\end{theorem}
+\begin{proof}
+\emph{Step 0: the constant.}  Put
+\[
+  K=\max\Bigl\{p-1,\ \frac1{p-1}\Bigr\}.
+\]
+Since $p>1$ we have $p-1>0$; if $p\ge2$ then $K\ge p-1\ge1$, and if $p<2$ then
+$0<p-1<1$, so $K\ge1/(p-1)>1$.  Thus $K\ge1$ and \noderef{EnergyIdentity}
+applies with this $n$, $p$ and $K$; let $C>0$ be the constant it provides.  It
+depends only on $n$, $p$ and $K$, and $K$ on $p$ alone, so $C=C(n,p)$.  Now fix
+$A$ with the stated summability.
+
+\emph{Step 1: normalising the coefficient family.}  Define
+$\widetilde{A}\colon\mathbb{Z}\to\mathbb{C}$ by
+\[
+  \widetilde{A}_j=\begin{cases}
+    A_j&\text{if }j\ge n,\\
+    \epsilon_{-j}\overline{A_{-j}}&\text{if }j\le-n,\\
+    0&\text{if }|j|<n .
+  \end{cases}
+\]
+The three cases are mutually exclusive and exhaust $\mathbb{Z}$: $j\ge n$ and
+$j\le-n$ cannot both hold, since $n\ge1$.  So $\widetilde{A}$ is well defined.
+Three properties follow at once.
+
+First, $\widetilde{A}_j=A_j$ for every $j\ge n$, by the first case.  Second,
+for every integer $k\ge n$,
+\begin{equation}\tag{1}
+  \widetilde{A}_{-k}=\epsilon_{k}\overline{A_{k}}
+  =\epsilon_k\overline{\widetilde{A}_k},
+\end{equation}
+by the second case applied at $j=-k\le-n$ and then the first case at $k$.
+Third, for every $k\ge n$,
+\begin{equation}\tag{2}
+  T_k=\text{the }k\text{-th summand of (19) for }\widetilde{A}
+  =\text{the }k\text{-th summand of (19) for }A ,
+\end{equation}
+because by \noderef{Thm2Term} the $k$-th summand depends on the coefficient
+family only through its value at the single index $k$, namely
+\[
+  \bigl(A_k\xi^k+\epsilon_k\overline{A_k}\bar\xi^{\,k}\bigr)
+    |\xi|^{\lambda_k+n-k}\xi^{-n},
+\]
+and $\widetilde{A}_k=A_k$ there.  In particular the partial sums
+$\sum_{k=n}^{n+N}T_k$ formed from $\widetilde{A}$ and from $A$ are the same
+function, so clauses (c) below may be read for either family.
+
+Finally, the summability hypothesis of the theorem reads, for $\widetilde{A}$,
+\begin{equation}\tag{3}
+  \sum_{m=0}^{\infty}(n+m)|\widetilde{A}_{n+m}|^2
+  =\sum_{m=0}^{\infty}(n+m)|A_{n+m}|^2<\infty ,
+\end{equation}
+since $n+m\ge n$ for every $m\ge0$.
+
+\emph{Step 2: the sum of the series.}  By (1) and (3) the hypotheses (C) and
+(S) of \noderef{Thm2SeriesW12Convergence} hold for $\widetilde{A}$.  That node
+provides $H$ with:
+\begin{itemize}
+\item $H$ continuous on $\mathbb{B}$ and $C^\infty$ on $\mathbb{B}-\{0\}$
+  (its (a), (b));
+\item $H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ (its (c));
+\item $|H_\xi|^2+|H_{\bar\xi}|^2$ integrable on $\mathbb{B}$ (its (d));
+\item $a_j(r)=\widetilde{A}_j\,r^{\lambda_j}$ for $|j|\ge n$ and $r\in(0,1)$
+  (its (e));
+\item the $W^{1,2}(\mathbb{B})$ convergence of $\sum_{k=n}^{n+N}T_k$ to $H$
+  (its (g)).
+\end{itemize}
+The first three bullets give assertion (a), and the last, read through (2),
+gives assertion (c).
+
+\emph{Step 3: proof of (b).}  Write $S_N=\sum_{k=n}^{n+N}T_k$.
+
+We shall use twice the following passage between the two readings of the
+Wirtinger operators.  \emph{Let $\Omega\subseteq\mathbb{C}$ be open, let
+$u\colon\mathbb{C}\to\mathbb{C}$ be differentiable at almost every point of
+$\Omega$, and let $a,b$ be weak Wirtinger derivatives of $u$ on $\Omega$ in
+the sense of \noderef{IsWeakWirtingerOn}.  Then $a=u_z$ and $b=u_{\bar z}$
+almost everywhere on $\Omega$, with $u_z,u_{\bar z}$ the pointwise operators
+of \noderef{DZ} and \noderef{DZbar}.}  Indeed, by \noderef{IsWeakWirtingerOn}
+there are $u_x,u_y$ with $u,u_x,u_y\in L^1_{\mathrm{loc}}(\Omega)$ in the sense
+of \noderef{MemLpLocOn}, with $u_x,u_y$ the distributional $\partial_0$- and
+$\partial_1$-derivatives of $u$ on $\Omega$ in the sense of
+\noderef{IsWeakPartialOn}, and with $a=\tfrac12(u_x-iu_y)$,
+$b=\tfrac12(u_x+iu_y)$ at every point; the first two are hypotheses (H1) and
+(H2) of \noderef{WeakPartialEqFDerivAE} for $\Omega$, $u$ and the pair
+$D_0=u_x$, $D_1=u_y$, and the almost-everywhere differentiability is its (H3),
+so $u_x=\partial_0u$ and $u_y=\partial_1u$ almost everywhere on $\Omega$,
+$\partial_j=D^{[j]}$ being the classical partial derivative of
+\noderef{PartialWord}, that is $\partial_0u=\mathrm{d}u[1]$,
+$\partial_1u=\mathrm{d}u[i]$; and $u_z,u_{\bar z}$ are by \noderef{DZ} and
+\noderef{DZbar} the same two combinations
+$\tfrac12(\mathrm{d}u[1]\mp i\,\mathrm{d}u[i])$.  Call this fact (W).
+
+By part (a) of \noderef{Thm2TermSolvesEq18}, each $T_k$ with $k\ge n$ is
+$C^\infty$ at every $\xi\neq0$, hence differentiable at every point of
+$\mathbb{B}$ except possibly $0$, which is a null set.  By its part (c) each
+$T_k$ solves (18) on $\mathbb{B}$ in the sense of \noderef{SolvesEq18}: there
+are weak Wirtinger derivatives $a_k,b_k$ of $T_k$ on $\mathbb{B}$ and a null
+set $Z_k'$ off which the identity holds for $a_k,b_k$ at the points of
+$\mathbb{B}-\{0\}$.  By (W) applied to $u=T_k$ on $\Omega=\mathbb{B}$, which is open, there is
+a null set $Z_k''$ with $a_k=(T_k)_\xi$ and $b_k=(T_k)_{\bar\xi}$ on
+$\mathbb{B}-Z_k''$.  So, with $Z_k=Z_k'\cup Z_k''$, a null set, for
+$\xi\notin Z_k$ with $\xi\in\mathbb{B}$, $\xi\neq0$,
+\begin{equation}\tag{4}
+  (T_k)_{\bar\xi}(\xi)=c\Bigl[\frac{\xi}{\bar\xi}(T_k)_\xi(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}\overline{(T_k)_\xi(\xi)}\Bigr],
+  \qquad c=\tfrac12-\tfrac1p .
+\end{equation}
+Let $Z=\bigcup_{k\ge n}Z_k$, a countable union of null sets, hence null.  Fix
+$\xi\in\mathbb{B}$ with $\xi\neq0$ and $\xi\notin Z$.  For each $N$, all the
+summands of $S_N$ are differentiable at $\xi$, so by linearity of the Fréchet
+derivative and \noderef{DZ}, \noderef{DZbar},
+$(S_N)_\xi(\xi)=\sum_{k=n}^{n+N}(T_k)_\xi(\xi)$ and likewise for
+$\partial/\partial\bar\xi$.  The map
+\[
+  w\ \longmapsto\ c\Bigl[\frac{\xi}{\bar\xi}w
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}\overline{w}\Bigr]
+\]
+is additive, because $w\mapsto\overline{w}$ is, and $c$ is real.  Summing (4)
+over $k=n,\dots,n+N$ therefore gives
+\begin{equation}\tag{5}
+  (S_N)_{\bar\xi}(\xi)=c\Bigl[\frac{\xi}{\bar\xi}(S_N)_\xi(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}\overline{(S_N)_\xi(\xi)}\Bigr]
+  \qquad\text{for every }N\ge0 .
+\end{equation}
+
+By assertion (c) of Step 2, $(S_N)_\xi\to H_\xi$ and
+$(S_N)_{\bar\xi}\to H_{\bar\xi}$ in $L^2(\mathbb{B})$.  An
+$L^2(\mathbb{B})$-convergent sequence has a subsequence converging almost
+everywhere, so there are a null set $Z'$ and a subsequence $N_1<N_2<\cdots$
+with
+\[
+  (S_{N_i})_\xi(\xi)\to H_\xi(\xi),\qquad
+  (S_{N_i})_{\bar\xi}(\xi)\to H_{\bar\xi}(\xi)
+  \qquad\text{for every }\xi\notin Z' .
+\]
+The map displayed above is continuous in $w$, being the sum of a
+$\mathbb{C}$-linear and a conjugate-linear term with fixed coefficients.
+Hence, letting $i\to\infty$ in (5) along the subsequence, for every
+$\xi\in\mathbb{B}$ with $\xi\neq0$ and $\xi\notin Z\cup Z'$,
+\begin{equation}\tag{5$'$}
+  H_{\bar\xi}(\xi)=c\Bigl[\frac{\xi}{\bar\xi}H_\xi(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}\overline{H_\xi(\xi)}\Bigr],
+\end{equation}
+an identity between the pointwise Wirtinger derivatives of $H$, valid off the
+null set $Z\cup Z'$.
+
+It remains to read (5$'$) for the weak Wirtinger derivatives, which is what
+\noderef{SolvesEq18} asks for.  By Step 2, $H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$,
+so by \noderef{MemWLocOn} there is a family $(H_w)$ indexed by the words in
+$\{0,1\}$ with $H_{()}=H$, with $H_w\in L^2_{\mathrm{loc}}(\mathbb{B})$ in the
+sense of \noderef{MemLpLocOn} for $|w|\le1$, and with $H_{(j)}$ the
+distributional $\partial_j$-derivative of $H$ on $\mathbb{B}$ in the sense of
+\noderef{IsWeakPartialOn}.  Put $H_x=H_{(0)}$, $H_y=H_{(1)}$ and
+$a=\tfrac12(H_x-iH_y)$, $b=\tfrac12(H_x+iH_y)$.  Each of $H,H_x,H_y$ lies in
+$L^1_{\mathrm{loc}}(\mathbb{B})$: for compact $\kappa\subseteq\mathbb{B}$ the
+Cauchy--Schwarz inequality gives
+$\int_\kappa|g|\,d\sigma\le\sigma(\kappa)^{1/2}
+\bigl(\int_\kappa|g|^2d\sigma\bigr)^{1/2}<\infty$, $\sigma(\kappa)$ being
+finite because $\kappa$ is bounded.  So the three clauses of
+\noderef{IsWeakWirtingerOn} hold and $a,b$ are weak Wirtinger derivatives of
+$H$ on $\mathbb{B}$.
+
+By Step 2, $H$ is $C^\infty$ on $\mathbb{B}-\{0\}$, hence differentiable at
+every point of $\mathbb{B}$ except possibly $0$; so (W) applies to $u=H$ on
+the open set $\Omega=\mathbb{B}$ and gives a null set $Z''$ with $a=H_\xi$ and
+$b=H_{\bar\xi}$ on $\mathbb{B}-Z''$.  Combining with (5$'$), for every
+$\xi\in\mathbb{B}$ with $\xi\neq0$ and $\xi\notin Z\cup Z'\cup Z''$,
+\[
+  b(\xi)=c\Bigl[\frac{\xi}{\bar\xi}a(\xi)
+    +\frac{\bar\xi^{\,n}}{\xi^{n}}\overline{a(\xi)}\Bigr].
+\]
+The set $Z\cup Z'\cup Z''$ is null, so with the pair $a,b$ this says precisely
+that $H$ solves (18) on $\mathbb{B}$ in the sense of \noderef{SolvesEq18},
+which is (b).
+
+\emph{Step 4: proof of (d).}  By \noderef{Eq18ImpliesQuasiregular}, applied
+with $\Omega=\mathbb{B}$, using $H\in W^{1,2}_{\mathrm{loc}}(\mathbb{B})$ from
+Step 2 and (b) from Step 3,
+\begin{equation}\tag{6}
+  H\ \text{is}\ K\text{-quasiregular on }\mathbb{B}.
+\end{equation}
+Now apply \noderef{EnergyIdentity} with this $H$ and the family
+$\widetilde{A}$.  Its hypotheses hold: (H0) is (b); (H1) is the continuity and
+$C^\infty$-smoothness from Step 2; its quasiregularity hypothesis is (6); its
+integrability hypothesis is the third bullet of Step 2; its hypothesis (H4) is
+the fourth bullet of Step 2; and its hypothesis (H5), namely
+$\widetilde{A}_{-k}=\epsilon_k\overline{\widetilde{A}_k}$ for $k>n$, is
+contained in (1).  Its third conclusion reads
+\[
+  \iint_{\mathbb{B}}\bigl(|H_\xi|^2+|H_{\bar\xi}|^2\bigr)d\sigma
+  \le C\sum_{m=0}^{\infty}(n+1+m)\,|\widetilde{A}_{n+1+m}|^2 .
+\]
+Finally $\widetilde{A}_{n+1+m}=A_{n+1+m}$ for every $m\ge0$, because
+$n+1+m\ge n$, so the right-hand side equals
+$C\sum_{m\ge0}(n+1+m)|A_{n+1+m}|^2$.  This is (d), and with Steps 2 and 3 the
+proof is complete.
+\end{proof}

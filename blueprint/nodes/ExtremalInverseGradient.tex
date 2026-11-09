@@ -1,0 +1,545 @@
+\begin{theorem}
+Let $1<p<\infty$.  Then there are maps $f\colon\mathbb{C}\to\mathbb{C}$ and
+$v\colon\mathbb{C}\to\mathbb{R}$ with the following properties, where
+$H=H_p$ is the extremal function (54) of \noderef{ExtremalH} and
+$d=d(p)$ is the exponent of \noderef{DExp}:
+\begin{enumerate}
+\item[(a)] $f$ is continuous on $\mathbb{C}$, $f(H(\xi))=\xi$ for every
+  $\xi\in\mathbb{C}$ and $H(f(z))=z$ for every $z\in\mathbb{C}$;
+\item[(b)] $f$ is $C^\infty$ on $\mathbb{C}-\{0\}$;
+\item[(c)] $f(tz)=t^{d}f(z)$ for every $t\ge0$ and every $z$, and
+  $D^\nu f(tz)=t^{\,d-|\nu|}D^\nu f(z)$ for every $t>0$, every $z\neq0$ and
+  every iterated partial derivative $D^\nu$ of \noderef{PartialWord};
+\item[(d)] $v$ is continuous on $\mathbb{C}$, is $C^\infty$ on
+  $\mathbb{C}-\{0\}$, and is $p$-harmonic on $\mathbb{C}$ in the sense of
+  \noderef{PHarmonicOn};
+\item[(e)] $\partial v/\partial z=f$ at every $z\neq0$, with
+  $\partial/\partial z$ as in \noderef{DZ}.
+\end{enumerate}
+
+This is (55) of the paper together with the assertion of paper.tex:592 that it
+defines a $p$-harmonic function of complex gradient $f$; the paper's note lists
+that assertion among the facts which must be proved.  Every regularity
+statement above is a conclusion and none is assumed: the paper's arrow runs
+from the equation to the regularity.
+\end{theorem}
+\begin{proof}
+Write $\mu=1/d$, $\varepsilon=\epsilon_2(1,p)$ for the coefficient of
+\noderef{EpsCoef} appearing in \noderef{ExtremalH}, $\lambda_2=\lambda_2(1,p)$
+for the exponent of \noderef{LambdaCoef}, and
+$c=\tfrac12-\tfrac1p$, so that (18) at $n=1$ reads
+\begin{equation}\tag{18}
+  H_{\bar\xi}(\xi)=c\Bigl[\frac{\xi}{\bar\xi}H_\xi(\xi)
+    +\frac{\bar\xi}{\xi}\overline{H_\xi(\xi)}\Bigr].
+\end{equation}
+
+\emph{Step 1: $d>0$ and $\lambda_2=\mu$.}  By \noderef{GammaExp},
+$\gamma_1=\lambda_2(1,p)$.  By \noderef{DExpEqGammaOneInv}, $\gamma_1>0$ and
+$\gamma_1\,d=1$.  Hence $\lambda_2>0$, $d=1/\lambda_2>0$ and
+$\lambda_2=1/d=\mu$.
+
+\emph{Step 2: the inverse, and its zero.}  By \noderef{ExtremalInjective}, $H$
+is continuous and bijective and there is a continuous $f$ with
+$f(H(\xi))=\xi$ and $H(f(z))=z$ for all $\xi,z\in\mathbb{C}$.  Fix this $f$;
+this is (a).
+
+The second clause of \noderef{ExtremalPolarForm} gives
+$t\,H(\xi)=H(t^{d}\xi)$ for $t>0$; at $\xi=0$ and $t=2$ this reads
+$2H(0)=H(0)$, so
+\begin{equation}\tag{1}
+  H(0)=0,\qquad\text{and hence}\qquad
+  f(z)=0\iff z=0 .
+\end{equation}
+Indeed $f(0)=f(H(0))=0$, and if $f(z)=0$ then $z=H(f(z))=H(0)=0$.
+
+\emph{Step 3: $H$ is the $k=2$ summand of (19) at $n=1$.}  Let
+$A\colon\mathbb{Z}\to\mathbb{C}$ be $A(2)=1$ and $A(j)=0$ for $j\neq2$.  By
+\noderef{Thm2Term} at $n=1$, $k=2$,
+\[
+  T(\xi):=\bigl(A(2)\xi^{2}+\varepsilon\,\overline{A(2)}\,\bar\xi^{\,2}\bigr)
+    |\xi|^{\lambda_2+1-2}\xi^{-1}
+  =\bigl(\xi^{2}+\varepsilon\bar\xi^{\,2}\bigr)|\xi|^{\lambda_2-1}\xi^{-1},
+\]
+$\varepsilon$ being real.  If $\xi\neq0$ then $\bar\xi=|\xi|^{2}/\xi$, so
+$\bar\xi^{\,2}=|\xi|^{4}/\xi^{2}$ and
+\[
+  T(\xi)=\Bigl(\xi^{2}+\varepsilon\frac{|\xi|^{4}}{\xi^{2}}\Bigr)
+    \frac{|\xi|^{\lambda_2-1}}{\xi}
+  =\Bigl(\xi+\varepsilon\frac{|\xi|^{4}}{\xi^{3}}\Bigr)|\xi|^{\lambda_2-1}
+  =\Bigl(\frac{\xi}{|\xi|}+\varepsilon\frac{|\xi|^{3}}{\xi^{3}}\Bigr)
+    |\xi|^{\lambda_2}
+  =H(\xi),
+\]
+by \noderef{ExtremalH} and $\lambda_2=\mu=1/d$ from Step 1.  At $\xi=0$ both
+sides vanish: $T(0)=0$ because its first factor does, and $H(0)=0$ by (1).
+Hence $H=T$ as functions on $\mathbb{C}$.
+
+By \noderef{Thm2TermSolvesEq18} at $n=1$, $k=2$, whose hypotheses $1\le1$,
+$1\le2$ and $1<p$ hold, $T$ is $C^\infty$ at every $\xi\neq0$ and solves (18)
+at $n=1$ on $\{|\xi|<1\}$ in the sense of \noderef{SolvesEq18}.  Therefore
+\begin{equation}\tag{2}
+  H\ \text{is}\ C^\infty\ \text{on}\ \mathbb{C}-\{0\},
+\end{equation}
+the set $\mathbb{C}-\{0\}$ being open, and $H$ solves (18) on $\{|\xi|<1\}$.
+
+\emph{Step 3$'$: weak and classical Wirtinger derivatives agree.}  We record
+once, in general form, the passage between the two readings of the Wirtinger
+operators, and use it twice below.  \emph{Let $\Omega\subseteq\mathbb{C}$ be
+open, let $u\colon\mathbb{C}\to\mathbb{C}$ be differentiable at almost every
+point of $\Omega$, and let $a,b$ be weak Wirtinger derivatives of $u$ on
+$\Omega$ in the sense of \noderef{IsWeakWirtingerOn}.  Then $a=u_z$ and
+$b=u_{\bar z}$ almost everywhere on $\Omega$, with $u_z,u_{\bar z}$ the
+pointwise operators of \noderef{DZ} and \noderef{DZbar}.}  Indeed, by
+\noderef{IsWeakWirtingerOn} there are $u_x,u_y$ with
+$u,u_x,u_y\in L^1_{\mathrm{loc}}(\Omega)$ in the sense of \noderef{MemLpLocOn},
+with $u_x$ and $u_y$ the distributional $\partial_0$- and
+$\partial_1$-derivatives of $u$ on $\Omega$ in the sense of
+\noderef{IsWeakPartialOn}, and with $a=\tfrac12(u_x-iu_y)$,
+$b=\tfrac12(u_x+iu_y)$ at every point.  The first two are hypotheses (H1) and
+(H2) of \noderef{WeakPartialEqFDerivAE} for $\Omega$, $u$ and the pair
+$D_0=u_x$, $D_1=u_y$, and the almost-everywhere differentiability is its (H3);
+so $u_x=\partial_0u$ and $u_y=\partial_1u$ almost everywhere on $\Omega$, where
+$\partial_j=D^{[j]}$ is the classical partial derivative of
+\noderef{PartialWord}, that is $\partial_0u=\mathrm{d}u[1]$ and
+$\partial_1u=\mathrm{d}u[i]$; and $u_z,u_{\bar z}$ are by \noderef{DZ} and
+\noderef{DZbar} the same two combinations
+$\tfrac12(\mathrm{d}u[1]\mp i\,\mathrm{d}u[i])$.  Call this fact (W).  We note
+for later use the two identities it rests on, valid at every point by
+\noderef{DZ} and \noderef{DZbar}:
+\begin{equation}\tag{2$'$}
+  \partial_0u=u_z+u_{\bar z},\qquad \partial_1u=i\,(u_z-u_{\bar z}).
+\end{equation}
+
+\emph{Step 4: (18) at every point of the punctured unit disc.}  By (2) the map
+$\xi\mapsto\mathrm{d}H(\xi)$ is continuous on $\mathbb{C}-\{0\}$, so $H_\xi$ and
+$H_{\bar\xi}$ of \noderef{DZ} and \noderef{DZbar}, being the fixed combinations
+$\tfrac12(\mathrm{d}H[1]\mp i\,\mathrm{d}H[i])$, are continuous there, and so
+are $\xi\mapsto\xi/\bar\xi$ and $\xi\mapsto\bar\xi/\xi$.  Hence both sides of
+(18) are continuous on the open set $\{0<|\xi|<1\}$.  By Step 3 and
+\noderef{SolvesEq18} there are weak Wirtinger derivatives $a_H,b_H$ of $H$ on
+$\mathbb{B}=\{|\xi|<1\}$ and a null set $Z_0$ such that the identity (18) holds
+for the pair $a_H,b_H$ at every $\xi\in\mathbb{B}-Z_0$ with $\xi\neq0$; and by
+(W), applied to $u=H$ on the open set $\mathbb{B}$ --- legitimate because by
+(2) $H$ is differentiable at every point of $\mathbb{B}$ except possibly $0$,
+a null set --- there is a null set $Z_1$ with $a_H=H_\xi$ and
+$b_H=H_{\bar\xi}$ on $\mathbb{B}-Z_1$.  So, with $Z=Z_0\cup Z_1$, a null set,
+(18) holds for $H_\xi,H_{\bar\xi}$ at every $\xi\notin Z$ with $|\xi|<1$ and
+$\xi\neq0$.  A null set has empty interior, so
+$\{0<|\xi|<1\}-Z$ is dense in $\{0<|\xi|<1\}$, and two continuous functions on
+an open set agreeing on a dense subset agree everywhere on it.  Hence (18)
+holds at every $\xi$ with $0<|\xi|<1$.
+
+\emph{Step 5: (18) at every $\xi\neq0$.}  Let $\lambda>0$ and put
+$t=\lambda^{\mu}>0$, so that $t^{d}=\lambda^{\mu d}=\lambda$; the second clause
+of \noderef{ExtremalPolarForm} then gives
+\begin{equation}\tag{3}
+  H(\lambda\xi)=\lambda^{\mu}H(\xi)\qquad(\xi\in\mathbb{C},\ \lambda>0).
+\end{equation}
+Let $m(\xi)=\lambda\xi$.  Then $\mathrm{d}m(\xi)[1]=\lambda$ and
+$\mathrm{d}m(\xi)[i]=\lambda i$, so by \noderef{DZ} and \noderef{DZbar},
+\[
+  \partial_\xi m=\tfrac12(\lambda-i\cdot\lambda i)=\lambda,\qquad
+  \partial_{\bar\xi}m=\tfrac12(\lambda+i\cdot\lambda i)=0 .
+\]
+Fix $\xi_0\neq0$ and choose $\lambda$ with $0<\lambda<1/|\xi_0|$, so that
+$0<|\lambda\xi_0|<1$.  By (2), $H$ is differentiable at $\lambda\xi_0=m(\xi_0)$,
+and $m$ is differentiable at $\xi_0$, so \noderef{WirtingerChainRule} applies
+to the pair $(H,m)$ at $\xi_0$ and gives
+\[
+  \partial_\xi(H\circ m)(\xi_0)=\lambda\,H_\xi(\lambda\xi_0),\qquad
+  \partial_{\bar\xi}(H\circ m)(\xi_0)=\lambda\,H_{\bar\xi}(\lambda\xi_0),
+\]
+using $\partial_\xi m=\lambda$, $\partial_{\bar\xi}m=0$ and
+$\overline{\lambda}=\lambda$.  On the other hand $H\circ m=\lambda^{\mu}H$ as
+functions by (3), and $\partial_\xi$, $\partial_{\bar\xi}$ are
+$\mathbb{R}$-linear in the function, so
+$\partial_\xi(H\circ m)(\xi_0)=\lambda^{\mu}H_\xi(\xi_0)$ and likewise for
+$\partial_{\bar\xi}$.  Comparing, and dividing by $\lambda\neq0$,
+\begin{equation}\tag{4}
+  H_\xi(\lambda\xi_0)=\lambda^{\mu-1}H_\xi(\xi_0),\qquad
+  H_{\bar\xi}(\lambda\xi_0)=\lambda^{\mu-1}H_{\bar\xi}(\xi_0).
+\end{equation}
+Since $\lambda>0$ is real, $\lambda\xi_0/\overline{\lambda\xi_0}=\xi_0/\bar\xi_0$
+and $\overline{\lambda\xi_0}/(\lambda\xi_0)=\bar\xi_0/\xi_0$.  Substituting (4)
+into (18) at the point $\lambda\xi_0$, which is legitimate by Step 4, and
+dividing by $\lambda^{\mu-1}\neq0$, we obtain (18) at $\xi_0$.  Hence
+\begin{equation}\tag{5}
+  \text{(18) holds at every }\xi\neq0,
+\end{equation}
+where (18) is read for the pointwise derivatives $H_\xi$, $H_{\bar\xi}$.
+
+\emph{Step 5$'$: $H$ solves (18) on $\mathbb{C}$ in the sense of
+\noderef{SolvesEq18}.}  We must produce weak Wirtinger derivatives of $H$ on
+$\mathbb{C}$ and check (18) for them almost everywhere.
+
+First a growth bound near the origin.  Let $0<|\xi|<1$ and put
+$\xi_0=\xi/|\xi|$ and $\lambda=|\xi|$, so that $|\xi_0|=1$, $\lambda>0$,
+$\lambda<1=1/|\xi_0|$ and $\lambda\xi_0=\xi$; these are exactly the conditions
+under which (4) was established, so
+$H_\xi(\xi)=\lambda^{\mu-1}H_\xi(\xi_0)$ and
+$H_{\bar\xi}(\xi)=\lambda^{\mu-1}H_{\bar\xi}(\xi_0)$.  By (2) the functions
+$H_\xi$ and $H_{\bar\xi}$ are continuous on $\mathbb{C}-\{0\}$, hence bounded
+on the compact unit circle, say by $C_0$.  Therefore
+\[
+  |H_\xi(\xi)|\le C_0|\xi|^{\mu-1},\qquad
+  |H_{\bar\xi}(\xi)|\le C_0|\xi|^{\mu-1}\qquad(0<|\xi|<1),
+\]
+whence by (2$'$), for $j=0,1$,
+\begin{equation}\tag{5$'$}
+  |\partial_jH(\xi)|\le 2C_0\,|\xi|^{\mu-1}\qquad(0<|\xi|<1).
+\end{equation}
+
+Next, $H$ and $\partial_0H,\partial_1H$ lie in
+$L^1_{\mathrm{loc}}(\mathbb{C})$ in the sense of \noderef{MemLpLocOn}.  For $H$
+this holds because $H$ is continuous on $\mathbb{C}$ by Step 2, hence bounded
+on every compact set, which has finite measure.  For $\partial_jH$:  it is
+continuous on $\mathbb{C}-\{0\}$ by (2), hence measurable off the null set
+$\{0\}$ and so measurable.  Let $\kappa\subseteq\mathbb{C}$ be compact and
+split $\kappa=\kappa_1\cup\kappa_2$ with
+$\kappa_1=\kappa\cap\{|\xi|\le\tfrac12\}$ and
+$\kappa_2=\kappa\cap\{|\xi|\ge\tfrac12\}$.  On $\kappa_1$, by (5$'$) and polar
+coordinates,
+\[
+  \int_{\kappa_1}|\partial_jH|\,d\sigma
+  \le 2C_0\int_{\{|\xi|<1/2\}}|\xi|^{\mu-1}d\sigma(\xi)
+  =4\pi C_0\int_0^{1/2}r^{\mu-1}\,r\,dr
+  =4\pi C_0\int_0^{1/2}r^{\mu}\,dr<\infty,
+\]
+because $\mu>0>-1$ by Step 1.  The set $\kappa_2$ is closed and bounded, hence
+compact, and contained in $\mathbb{C}-\{0\}$, where $\partial_jH$ is
+continuous; so $\partial_jH$ is bounded on $\kappa_2$, which has finite
+measure, and $\int_{\kappa_2}|\partial_jH|\,d\sigma<\infty$.  Adding the two
+bounds gives $\int_\kappa|\partial_jH|\,d\sigma<\infty$.
+
+Now fix $j\in\{0,1\}$ and apply \noderef{WeakPartialAcrossPoint} with
+$\Omega=\mathbb{C}$, $S=\{0\}$, this $j$, $g=H$, $v=\partial_jH$ and
+$\beta=0$.  Its hypotheses hold: $\mathbb{C}$ is open and $S\subseteq\mathbb{C}$
+with $S\cap\kappa$ finite for every compact $\kappa$, $S$ being a singleton;
+$0\le\beta=0<1$; $g$ is $C^1$ on $\mathbb{C}-S$ by (2), a function $C^\infty$
+on an open set being $C^1$ there; $D^{[j]}g=v$ on
+$\mathbb{C}-S$ by the definition of $v$; $g,v\in L^1_{\mathrm{loc}}(\mathbb{C})$
+by the previous paragraph; and the growth hypothesis holds at the only point
+$0$ of $S$ with $\rho=1$ and the constant
+$M=\sup_{|\xi|\le1}|H(\xi)|<\infty$, finite because $H$ is continuous on the
+compact set $\{|\xi|\le1\}$, since $\|H(\xi)\|\le M=M|\xi-0|^{-0}$ for
+$0<|\xi|<1$.  Therefore $\partial_jH$ is the distributional
+$\partial_j$-derivative of $H$ on $\mathbb{C}$ in the sense of
+\noderef{IsWeakPartialOn}.
+
+Consequently the three clauses of \noderef{IsWeakWirtingerOn} hold for $H$ on
+$\mathbb{C}$ with $u_x=\partial_0H$, $u_y=\partial_1H$ and the pair
+$a=H_\xi$, $b=H_{\bar\xi}$: clause (a) is the local integrability just proved,
+clause (b) is the last paragraph, and clause (c) is (2$'$) solved for $H_\xi$
+and $H_{\bar\xi}$, that is
+$H_\xi=\tfrac12(\partial_0H-i\partial_1H)$ and
+$H_{\bar\xi}=\tfrac12(\partial_0H+i\partial_1H)$, which hold at every point by
+\noderef{DZ} and \noderef{DZbar}.  So $H_\xi$ and $H_{\bar\xi}$ are themselves
+weak Wirtinger derivatives of $H$ on $\mathbb{C}$, and by (5) the identity
+(18) holds for them at every $\xi\neq0$, hence at almost every
+$\xi\in\mathbb{C}$ with $\xi\neq0$.  This is exactly the assertion that $H$
+solves (18) at $n=1$ on $\mathbb{C}$ in the sense of \noderef{SolvesEq18};
+record it as
+\begin{equation}\tag{5$''$}
+  H\ \text{solves (18) at }n=1\ \text{on }\mathbb{C}\ \text{in the sense of
+  \noderef{SolvesEq18}} .
+\end{equation}
+
+\emph{Step 6: $H_\xi\neq0$ off the origin.}  Let $\xi\neq0$.  By
+\noderef{ExtremalH} and $|\xi|>0$,
+\[
+  H(\xi)=\xi\,|\xi|^{\mu-1}+\varepsilon\,|\xi|^{\mu+3}\xi^{-3}
+  =:T_1(\xi)+T_2(\xi).
+\]
+By \noderef{DZ} applied to the identity map, $\partial_\xi\xi=1$ and
+$\partial_{\bar\xi}\xi=0$.  By \noderef{WirtingerModulusPowerRule},
+$\partial_\xi(|\xi|^{m})=\tfrac m2|\xi|^{m}/\xi$ for every real $m$, and these
+functions are $C^\infty$ at $\xi$.  By \noderef{WirtingerPowerRule} applied to
+the identity map on the open set $\mathbb{C}-\{0\}$, where it is $C^\infty$ and
+non-vanishing, with the integer exponent $-3$,
+$\partial_\xi(\xi^{-3})=-3\xi^{-4}$.  Hence, by
+\noderef{WirtingerProductRule},
+\[
+  \partial_\xi T_1=|\xi|^{\mu-1}+\xi\cdot\frac{\mu-1}{2}
+    \frac{|\xi|^{\mu-1}}{\xi}=\frac{\mu+1}{2}|\xi|^{\mu-1},
+\]
+\[
+  \partial_\xi T_2
+  =\varepsilon\Bigl[\frac{\mu+3}{2}\frac{|\xi|^{\mu+3}}{\xi}\xi^{-3}
+    -3|\xi|^{\mu+3}\xi^{-4}\Bigr]
+  =\varepsilon\frac{\mu-3}{2}|\xi|^{\mu+3}\xi^{-4}
+  =\varepsilon\frac{\mu-3}{2}|\xi|^{\mu-1}\frac{|\xi|^{4}}{\xi^{4}} ,
+\]
+where the last step uses $|\xi|^{\mu+3}=|\xi|^{\mu-1}|\xi|^{4}$.  Since
+$\bigl||\xi|^{4}/\xi^{4}\bigr|=1$,
+\begin{equation}\tag{6}
+  |H_\xi(\xi)|\ \ge\ |\xi|^{\mu-1}\cdot
+    \frac{(\mu+1)-|\varepsilon|\,|\mu-3|}{2} .
+\end{equation}
+We check that the last numerator is positive.  By
+\noderef{ExtremalEpsBound}, $\varepsilon=(1-d)/(1+3d)$, and $d>0$ by Step 1, so
+$1+3d>0$ and $|\varepsilon|=|1-d|/(1+3d)$.  With $\mu=1/d$,
+\[
+  \mu+1=\frac{1+d}{d},\qquad |\mu-3|=\frac{|1-3d|}{d},
+\]
+so $(\mu+1)-|\varepsilon||\mu-3|>0$ is equivalent, after multiplying by the
+positive number $d(1+3d)$, to
+\[
+  (1+d)(1+3d)>|1-d|\,|1-3d|=|(1-d)(1-3d)| ,
+\]
+that is, to $1+4d+3d^{2}>|1-4d+3d^{2}|$.  This holds because
+$(1+4d+3d^{2})-(1-4d+3d^{2})=8d>0$ and
+$(1+4d+3d^{2})+(1-4d+3d^{2})=2+6d^{2}>0$.  Hence the numerator in (6) is
+positive and
+\begin{equation}\tag{7}
+  H_\xi(\xi)\neq0\qquad(\xi\neq0).
+\end{equation}
+
+\emph{Step 7: $\det\mathrm{d}H=J_H$, and $J_H>0$ off the origin.}  Let
+$F\colon\mathbb{C}\to\mathbb{C}$ be differentiable at $w$ and put
+$L=\mathrm{d}F(w)$, $a=F_z(w)$, $b=F_{\bar z}(w)$.  By \noderef{DZ} and
+\noderef{DZbar}, $a=\tfrac12(L[1]-iL[i])$ and $b=\tfrac12(L[1]+iL[i])$, so
+$L[1]=a+b$ and $L[i]=i(a-b)$.  In the basis $\{1,i\}$ the matrix of $L$ has
+columns $(\operatorname{Re}(a+b),\operatorname{Im}(a+b))$ and
+$(-\operatorname{Im}(a-b),\operatorname{Re}(a-b))$, so
+\[
+  \det L=\operatorname{Re}(a+b)\operatorname{Re}(a-b)
+    +\operatorname{Im}(a+b)\operatorname{Im}(a-b)
+  =\operatorname{Re}\bigl((a+b)\overline{(a-b)}\bigr)=|a|^{2}-|b|^{2},
+\]
+because $b\bar a-a\bar b=b\bar a-\overline{b\bar a}$ is purely imaginary.  By
+\noderef{Jac} this says
+\begin{equation}\tag{8}
+  \det\mathrm{d}F(w)=J_F(w)=|F_z(w)|^{2}-|F_{\bar z}(w)|^{2}.
+\end{equation}
+
+Now let $\xi\neq0$.  Taking moduli in (5) and using
+$|\xi/\bar\xi|=|\bar\xi/\xi|=1$ and
+$|\overline{H_\xi}|=|H_\xi|$,
+\[
+  |H_{\bar\xi}(\xi)|\le2|c|\,|H_\xi(\xi)|=\frac{|p-2|}{p}|H_\xi(\xi)| .
+\]
+For $p>1$ we have $|p-2|<p$, since $p-2<p$ and $-(p-2)=2-p<p$ is
+$1<p$; so $|p-2|/p<1$ and, by (7) and \noderef{Jac},
+\begin{equation}\tag{9}
+  J_H(\xi)=|H_\xi(\xi)|^{2}-|H_{\bar\xi}(\xi)|^{2}
+  \ \ge\ \Bigl(1-\frac{(p-2)^{2}}{p^{2}}\Bigr)|H_\xi(\xi)|^{2}>0
+  \qquad(\xi\neq0).
+\end{equation}
+
+\emph{Step 8: $f$ is $C^\infty$ off the origin, with $J_f\neq0$ there.}  Fix
+$z_0\neq0$ and put $\xi_0=f(z_0)$.  By (1), $\xi_0\neq0$, and
+$H(\xi_0)=H(f(z_0))=z_0$ by Step 2.  By (2), $H$ is $C^\infty$ on a
+neighbourhood of $\xi_0$, and by (8) and (9) its differential
+$\mathrm{d}H(\xi_0)$ has non-zero determinant, hence is invertible.  By the
+inverse function theorem there are open sets $N\ni\xi_0$ and $M\ni z_0$ such
+that $H$ maps $N$ bijectively onto $M$ and the inverse
+$h\colon M\to N$ of this restriction is $C^\infty$.
+
+Since $f$ is continuous and $f(z_0)=\xi_0\in N$, there is an open $M'$ with
+$z_0\in M'\subseteq M$ and $f(M')\subseteq N$.  For $z\in M'$ we have
+$H(f(z))=z$ with $f(z)\in N$ and $z\in M$, so $f(z)=h(H(f(z)))=h(z)$.  Thus
+$f=h$ on $M'$, and $f$ is $C^\infty$ on a neighbourhood of $z_0$.  As
+$z_0\neq0$ was arbitrary, this proves (b).
+
+Moreover, differentiating $H\circ f=\mathrm{id}$ on $M'$ at $z_0$ gives
+$\mathrm{d}H(\xi_0)\circ\mathrm{d}f(z_0)=\mathrm{id}$, so $\mathrm{d}f(z_0)$ is
+invertible and, by (8) applied to $f$,
+\begin{equation}\tag{10}
+  J_f(z)=\det\mathrm{d}f(z)\neq0\qquad(z\neq0).
+\end{equation}
+
+\emph{Step 9: homogeneity.}  By (b), $f$ is $C^\infty$ on
+$\{0\}^{c}=\mathbb{C}-\{0\}$, so \noderef{ExtremalHomogeneous} applies with the
+two inverse relations of Step 2, and yields exactly the two clauses of (c).
+Nothing in its hypotheses refers to equation (12), so this step may be taken
+before Step 11.
+
+\emph{Step 10: $f\in W^{1,1}_{\mathrm{loc}}(\mathbb{C})$.}  By the second
+clause of (c) at $|\nu|=1$, that is for the one-letter words $w=[j]$,
+\[
+  \partial_jf(tz)=t^{\,d-1}\partial_jf(z)\qquad(t>0,\ z\neq0,\ j=0,1),
+\]
+$\partial_j=D^{[j]}$ being the classical partial derivative of
+\noderef{PartialWord}.  By (b) the functions $\partial_0f,\partial_1f$ are
+continuous on $\mathbb{C}-\{0\}$, hence bounded on the compact unit circle, say
+by $C_1$; taking $t=|z|$ and the point $z/|z|$ of that circle,
+\begin{equation}\tag{10$'$}
+  |\partial_jf(z)|\le C_1|z|^{\,d-1}\qquad(z\neq0,\ j=0,1).
+\end{equation}
+Hence $\partial_jf\in L^1_{\mathrm{loc}}(\mathbb{C})$ in the sense of
+\noderef{MemLpLocOn}: it is continuous off the null set $\{0\}$ and so
+measurable, and for compact $\kappa\subseteq B(0,R)$, by (10$'$) and polar
+coordinates,
+\[
+  \int_\kappa|\partial_jf|\,d\sigma
+  \le C_1\int_{B(0,R)}|z|^{\,d-1}d\sigma(z)
+  =2\pi C_1\int_0^{R}r^{\,d-1}r\,dr=2\pi C_1\int_0^{R}r^{\,d}\,dr<\infty,
+\]
+because $d>0>-1$ by Step 1.  Also $f\in L^1_{\mathrm{loc}}(\mathbb{C})$, being
+continuous on $\mathbb{C}$ by (a) and hence bounded on each compact set, which
+has finite measure.
+
+Fix $j\in\{0,1\}$ and apply \noderef{WeakPartialAcrossPoint} with
+$\Omega=\mathbb{C}$, $S=\{0\}$, this $j$, $g=f$, $v=\partial_jf$ and
+$\beta=0$: $\mathbb{C}$ is open, $S$ is a singleton contained in it so
+$S\cap\kappa$ is finite for every compact $\kappa$, $0\le\beta=0<1$, $g$ is
+$C^1$ on $\mathbb{C}-S$ by (b), a function $C^\infty$ on an open set being
+$C^1$ there, $D^{[j]}g=v$ there by the definition of $v$,
+$g$ and $v$ are in $L^1_{\mathrm{loc}}(\mathbb{C})$ by the last paragraph, and
+the growth hypothesis holds at $0$ with $\rho=1$ and
+$M=\sup_{|z|\le1}|f(z)|<\infty$, finite by continuity of $f$ on the compact
+disc $\{|z|\le1\}$.  So $\partial_jf$ is the distributional
+$\partial_j$-derivative of $f$ on $\mathbb{C}$ in the sense of
+\noderef{IsWeakPartialOn}.
+
+Therefore the family $D$ with $D_{()}=f$, $D_{(j)}=\partial_jf$ for $j=0,1$ and
+$D_w=0$ for $|w|\ge2$ witnesses the three clauses of \noderef{MemWLocOn} for
+$k=1$, $s=1$ on $\mathbb{C}$: clause (a) is $D_{()}=f$; clause (b) is the local
+integrability of $f$ and of $\partial_0f,\partial_1f$ just proved, the
+functions $D_w$ with $|w|\ge2$ being irrelevant since $|w|\le k=1$; and clause
+(c), which concerns only the empty word, is the previous paragraph.  Hence
+\begin{equation}\tag{10$''$}
+  f\in W^{1,1}_{\mathrm{loc}}(\mathbb{C})\quad\text{in the sense of
+  \noderef{MemWLocOn}} .
+\end{equation}
+
+\emph{Step 11: $f$ solves (12) on $\mathbb{C}$.}  We apply
+\noderef{InverseSolvesEq12} with $V=\mathbb{C}$ and the pair $(H,f)$.  Its
+hypotheses hold: $\mathbb{C}$ is open; $H(\mathbb{C})=\mathbb{C}$ is open, $H$
+being surjective by Step 2; $H$ is $C^1$ on $\mathbb{C}-\{0\}$ by (2); $H$
+solves (18) at $n=1$ on $\mathbb{C}$ in the sense of \noderef{SolvesEq18} by
+(5$''$); $f(H(\xi))=\xi$ for every $\xi$ by Step 2; by (b) and (10), $f$ is
+differentiable with $J_f\neq0$ at every $z\neq0$, hence at almost every $z$,
+the origin being a null set; and its hypothesis (H6),
+$f\in W^{1,1}_{\mathrm{loc}}(H(\mathbb{C}))=W^{1,1}_{\mathrm{loc}}(\mathbb{C})$,
+is (10$''$), the image $H(\mathbb{C})$ being $\mathbb{C}$ by Step 2.  The
+conclusion is that $f$ solves (12) on $\mathbb{C}$ in the sense of
+\noderef{SolvesEq12}: there are weak Wirtinger derivatives $a_f,b_f$ of $f$ on
+$\mathbb{C}$ and a null set off which
+\[
+  b_f=\Bigl(\frac1p-\frac12\Bigr)
+    \Bigl[\frac{\overline{f}}{f}a_f+\frac{f}{\overline{f}}
+      \overline{a_f}\Bigr]
+\]
+at the points where $f\neq0$.  By (W) of Step 3$'$, applied to $u=f$ on the open set
+$\Omega=\mathbb{C}$ --- legitimate because $f$ is differentiable at every point
+of $\mathbb{C}-\{0\}$ by (b) and $\{0\}$ is null --- we have $a_f=f_z$ and
+$b_f=f_{\bar z}$ almost everywhere, so, the union of two null sets being null,
+\begin{equation}\tag{11}
+  f_{\bar z}=\Bigl(\frac1p-\frac12\Bigr)
+    \Bigl[\frac{\overline{f}}{f}f_z+\frac{f}{\overline{f}}
+      \overline{f_z}\Bigr]
+\end{equation}
+almost everywhere where $f\neq0$, the derivatives now being the pointwise ones
+of \noderef{DZ} and \noderef{DZbar}.
+
+\emph{Step 12: (12) holds at every $z\neq0$, and $f_{\bar z}$ is real there.}  By
+(1), $f$ does not vanish on the open set $\mathbb{C}-\{0\}$, and by (b) it is
+$C^\infty$ there, so, as in Step 4, both sides of (11) are continuous on
+$\mathbb{C}-\{0\}$ while (11) holds off a null set; the complement of a null set
+is dense, so (11) holds at every $z\neq0$.  Writing
+$a=(\overline{f}/f)f_z$ we have $(f/\overline{f})\overline{f_z}=\bar a$, so the
+bracket in (11) is $a+\bar a$, which is real, and $1/p-1/2$ is real.  Hence
+\begin{equation}\tag{12}
+  \overline{f_{\bar z}(z)}=f_{\bar z}(z)\qquad(z\neq0).
+\end{equation}
+
+\emph{Step 13: Euler's identity.}  Let $F$ be differentiable at $w$ and
+$L=\mathrm{d}F(w)$, $a=F_z(w)$, $b=F_{\bar z}(w)$.  By the computation in
+Step 7, $L[1]=a+b$ and $L[i]=i(a-b)$, so for $h=h_1+ih_2$ with $h_1,h_2$ real,
+\[
+  L[h]=h_1(a+b)+h_2\,i(a-b)=a(h_1+ih_2)+b(h_1-ih_2)=a\,h+b\,\bar h .
+\]
+Fix $z\neq0$ and put $\psi(t)=f(tz)$ for $t>0$.  By (b) and the chain rule,
+$\psi$ is differentiable and $\psi'(1)=\mathrm{d}f(z)[z]=z f_z(z)+\bar z
+f_{\bar z}(z)$.  By the first clause of (c), $\psi(t)=t^{d}f(z)$ for $t>0$, so
+$\psi'(1)=d\,f(z)$.  Hence
+\begin{equation}\tag{13}
+  z f_z(z)+\bar z f_{\bar z}(z)=d\,f(z)\qquad(z\neq0).
+\end{equation}
+
+\emph{Step 14: the potential.}  By Step 1, $d+1>0$.  Define
+\[
+  v(z)=\frac{2}{d+1}\operatorname{Re}\bigl(z f(z)\bigr)\qquad(z\in\mathbb{C}),
+\]
+a real-valued function, continuous on $\mathbb{C}$ because $f$ is.  Let
+$\varphi_v$ denote $v$ regarded as complex-valued, so that
+\[
+  \varphi_v(z)=\frac{1}{d+1}\Bigl(z f(z)+\overline{z f(z)}\Bigr).
+\]
+Since $f$ is $C^\infty$ on $\mathbb{C}-\{0\}$ and conjugation is a real-linear
+isometry, $\varphi_v$ is $C^\infty$ on $\mathbb{C}-\{0\}$.  Fix $z\neq0$.  By
+$\partial_z z=1$, $\partial_{\bar z}z=0$ and
+\noderef{WirtingerProductRule},
+\[
+  \partial_z\bigl(zf(z)\bigr)=f(z)+zf_z(z),\qquad
+  \partial_{\bar z}\bigl(zf(z)\bigr)=z f_{\bar z}(z),
+\]
+and by \noderef{WirtingerConjRule} and (12),
+\[
+  \partial_z\overline{\bigl(zf(z)\bigr)}
+  =\overline{\partial_{\bar z}\bigl(zf(z)\bigr)}
+  =\overline{z f_{\bar z}(z)}=\bar z\,f_{\bar z}(z).
+\]
+Adding and using (13),
+\begin{equation}\tag{14}
+  \partial_z\varphi_v(z)=\frac{1}{d+1}
+    \bigl(f(z)+zf_z(z)+\bar z f_{\bar z}(z)\bigr)
+  =\frac{1}{d+1}\bigl(f(z)+d\,f(z)\bigr)=f(z)\qquad(z\neq0),
+\end{equation}
+which is (e).
+
+\emph{Step 15: local integrability of the derivatives of $|f|^{p-2}f$.}  Put
+$w=|f|^{p-2}f$ and $\kappa=(p-1)d>0$.  By (1) and (b), $f$ is $C^\infty$ and
+non-vanishing on $\mathbb{C}-\{0\}$, and $\zeta\mapsto|\zeta|^{p-2}$ is
+$C^\infty$ on $\mathbb{C}-\{0\}$ by \noderef{WirtingerModulusPowerRule}, so $w$
+is $C^\infty$ on $\mathbb{C}-\{0\}$.  For $t>0$ and $z\neq0$, the first clause
+of (c) gives $f(tz)=t^{d}f(z)$ with $t^{d}>0$, so
+\[
+  w(tz)=\bigl|t^{d}f(z)\bigr|^{p-2}t^{d}f(z)=t^{(p-2)d}t^{d}w(z)
+  =t^{\kappa}w(z).
+\]
+Fix $t>0$ and $j\in\{0,1\}$.  Differentiating the identity
+$w(tz)=t^{\kappa}w(z)$ in $z$ on the open set $\mathbb{C}-\{0\}$, the left side
+has $j$-th partial $t\,(\partial_jw)(tz)$ by the chain rule and the right side
+has $t^{\kappa}\partial_jw(z)$, so
+\[
+  (\partial_jw)(tz)=t^{\kappa-1}\partial_jw(z)\qquad(z\neq0,\ t>0).
+\]
+The function $\partial_jw$ is continuous on $\mathbb{C}-\{0\}$, hence bounded on
+the unit circle, say by $C$.  For $z\neq0$, applying the last display with
+$t=|z|$ and the point $z/|z|$ of the unit circle,
+\[
+  |\partial_jw(z)|=|z|^{\kappa-1}\bigl|\partial_jw(z/|z|)\bigr|
+  \le C|z|^{\kappa-1}.
+\]
+Let $K\subseteq\mathbb{C}$ be compact and choose $R$ with
+$K\subseteq B(0,R)$.  In polar coordinates
+\[
+  \int_{B(0,R)}|z|^{\kappa-1}\,\mathrm{d}\sigma(z)
+  =2\pi\int_0^{R}r^{\kappa-1}\,r\,\mathrm{d}r
+  =2\pi\int_0^{R}r^{\kappa}\,\mathrm{d}r<\infty,
+\]
+because $\kappa>0>-1$.  Hence $\partial_jw$, which is continuous off the null
+set $\{0\}$ and so measurable, is integrable on $K$; that is,
+$\partial_jw\in L^1_{\mathrm{loc}}(\mathbb{C})$ in the sense of
+\noderef{MemLpLocOn}.
+
+\emph{Step 16: $v$ is $p$-harmonic.}  We apply \noderef{Eq12ImpliesPHarmonic}
+with $\Omega=\mathbb{C}$, $S=\{0\}$, and the pair $(f,v)$.  Its hypotheses hold:
+$S\cap K\subseteq\{0\}$ is finite for every compact $K$; $f(z)=0$ exactly for
+$z\in S$ by (1); $f$ is continuous by (a) and $C^\infty$ on
+$\mathbb{C}-\{0\}$ by (b); $f$ solves (12) on $\mathbb{C}$ by Step 11; $v$ is
+continuous on $\mathbb{C}$ and $C^\infty$ on $\mathbb{C}-\{0\}$ by Step 14;
+$\partial v/\partial z=f$ on $\mathbb{C}-\{0\}$ by (14); $v$ and $f$ are
+continuous, hence bounded on compact sets, hence in
+$L^p_{\mathrm{loc}}(\mathbb{C})$ in the sense of \noderef{MemLpLocOn}; and the
+two first-order partial derivatives of $|f|^{p-2}f$ are in
+$L^1_{\mathrm{loc}}(\mathbb{C})$ by Step 15.  The conclusion is that $v$ is
+$p$-harmonic on $\mathbb{C}$ in the sense of \noderef{PHarmonicOn}, which
+together with the continuity of $v$ on $\mathbb{C}$ and its smoothness on
+$\mathbb{C}-\{0\}$, both established in Step 14, is (d).
+
+Steps 2, 8, 9, 14 and 16 establish (a), (b), (c), (e) and (d) respectively, so
+the pair $(f,v)$ has all the stated properties.
+\end{proof}

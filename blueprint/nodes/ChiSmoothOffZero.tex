@@ -1,0 +1,117 @@
+\begin{lemma}
+Let $m\ge1$ be an integer, let $U\subseteq\mathbb{C}$ be open and let
+$f,\chi\colon\mathbb{C}\to\mathbb{C}$ satisfy
+\begin{enumerate}
+\item[(H1)] $\chi$ is continuous on $U$;
+\item[(H2)] $f(z)=[\chi(z)]^{m}$ for every $z\in U$;
+\item[(H3)] $f$ is $C^\infty$ on $U$;
+\item[(H4)] $f(z)\neq0$ for every $z\in U$.
+\end{enumerate}
+Then $\chi$ is $C^\infty$ on $U$.
+
+This is the smoothness of the quasiconformal factor of the factorization (15)
+away from the singular point.  The paper differentiates $\chi$ at
+paper.tex:170--174, where it passes from (12) to (16), and Lemma~1
+differentiates it arbitrarily often, whereas the factorization theorem quoted
+in item (C2) of the note for the formalization supplies only that $\chi$ is a
+quasiconformal homeomorphism of a neighborhood of the singular point, hence
+only that $\chi$ is continuous.  The statement here is what closes that gap:
+applied on a punctured neighborhood of the singular point, on which (C3) makes
+$f$ smooth and discreteness of the zero set makes $f$ nonvanishing, it gives
+$\chi\in C^\infty$ there.  The hypotheses are exactly what that application
+provides, and neither (H1) nor (H4) can be dropped: for $m=2$,
+$U=\mathbb{C}$, $f(z)=z\bar z=|z|^{2}$ and $\chi(z)=|z|$ all of (H1), (H2),
+(H3) hold while $\chi$ fails to be differentiable at $z=0$, the one point
+where (H4) fails; and without (H1) an arbitrary pointwise choice of $m$-th
+roots of $f(z)$ satisfies (H2) and is in general not even measurable.
+\end{lemma}
+\begin{proof}
+Smoothness on an open set is a local property: if every point of the open set
+$U$ has an open neighborhood contained in $U$ on which $\chi$ is $C^\infty$,
+then $\chi$ is $C^\infty$ on $U$.  So fix $z_1\in U$; we produce such a
+neighborhood.
+
+\emph{Step 1: a holomorphic $m$-th root on a disc about $f(z_1)$.}  Put
+$w_1=f(z_1)$, so $w_1\neq0$ by (H4), and let
+\[
+  D=\{w\in\mathbb{C}:|w-w_1|<|w_1|\},
+\]
+an open disc with $w_1\in D$.  For $w\in D$ we have
+$|w/w_1-1|=|w-w_1|/|w_1|<1$, and $|\zeta-1|<1$ forces
+$\operatorname{Re}\zeta>0$: writing $\zeta=s+it$, the inequality
+$(s-1)^2+t^2<1$ gives $s^2+t^2<2s$, hence $s>0$.  Thus $w/w_1$ lies in the
+open right half-plane for every $w\in D$; in particular $0\notin D$.  The
+principal logarithm $\operatorname{Log}$ is holomorphic on the right
+half-plane and satisfies $e^{\operatorname{Log}\zeta}=\zeta$ there.  Choose
+$\ell_1\in\mathbb{C}$ with $e^{\ell_1}=w_1$, which is possible because
+$w_1\neq0$, and define
+\[
+  \varphi(w)=\exp\Bigl(\frac{\ell_1+\operatorname{Log}(w/w_1)}{m}\Bigr),
+  \qquad w\in D .
+\]
+Then $\varphi$ is holomorphic on $D$, being a composition of the holomorphic
+maps $w\mapsto w/w_1$, $\operatorname{Log}$, an affine map and $\exp$, it does
+not vanish, being a value of $\exp$, and, using $m\ge1$,
+\begin{equation}\tag{1}
+  \varphi(w)^{m}=\exp\bigl(\ell_1+\operatorname{Log}(w/w_1)\bigr)
+  =e^{\ell_1}\,\frac{w}{w_1}=w\qquad(w\in D).
+\end{equation}
+
+\emph{Step 2: a ball on which $f$ takes values in $D$.}  By (H3) the function
+$f$ is continuous on $U$.  Since $U$ is open there is $r_0>0$ with
+$\{z:|z-z_1|<r_0\}\subseteq U$, and on that ball continuity of $f$ relative to
+$U$ is continuity of $f$ at $z_1$; as $D$ is an open neighborhood of
+$f(z_1)=w_1$ there is therefore $r\in(0,r_0]$ with
+\[
+  B:=\{z:|z-z_1|<r\}\subseteq U\qquad\text{and}\qquad f(z)\in D
+  \ \text{for every }z\in B .
+\]
+The set $B$ is open and connected, being an open ball, and $z_1\in B$.
+
+\emph{Step 3: a $C^\infty$ nonvanishing $m$-th root of $f$ on $B$.}  Put
+$\psi=\varphi\circ f$ on $B$.  A holomorphic function on an open subset of
+$\mathbb{C}$ is $C^\infty$ as a map of the two real variables, and $f$ is
+$C^\infty$ on $B\subseteq U$ by (H3) with $f(B)\subseteq D$, so $\psi$ is
+$C^\infty$ on $B$.  Moreover $\psi$ does not vanish on $B$, $\varphi$ not
+vanishing on $D$, and by (1)
+\begin{equation}\tag{2}
+  \psi(z)^{m}=\varphi\bigl(f(z)\bigr)^{m}=f(z)\qquad(z\in B).
+\end{equation}
+
+\emph{Step 4: the quotient $\chi/\psi$ is constant on $B$.}  Define
+$q=\chi/\psi$ on $B$, which is legitimate since $\psi$ has no zero there.  For
+$z\in B$, (H2) and (2) give $\chi(z)^{m}=f(z)=\psi(z)^{m}$, hence
+\begin{equation}\tag{3}
+  q(z)^{m}=\frac{\chi(z)^{m}}{\psi(z)^{m}}=1\qquad(z\in B),
+\end{equation}
+so $q$ takes its values in the set
+$\mu_m=\{\omega\in\mathbb{C}:\omega^{m}=1\}$.  That set is finite with at
+least one element: it is the zero set in $\mathbb{C}$ of the polynomial
+$X^{m}-1$, which is not the zero polynomial because $m\ge1$, so it has at most
+$m$ elements, and $1\in\mu_m$.  The function $q$ is continuous on $B$: $\chi$
+is continuous on $U\supseteq B$ by (H1), and $\psi$ is continuous and
+nonvanishing on $B$ by Step 3.
+
+We claim a continuous function on a connected set with values in a finite
+subset $S\subseteq\mathbb{C}$ is constant.  Let $\rho>0$ be smaller than
+$|\omega-\omega'|$ for all distinct $\omega,\omega'\in S$ (any $\rho>0$ if $S$
+has at most one element).  For $\omega\in S$ the set
+$q^{-1}(\{\omega\})\cap B$ equals
+$q^{-1}\bigl(\{w:|w-\omega|<\rho\}\bigr)\cap B$, because a value of $q$ lies
+in $S$ and the only point of $S$ within $\rho$ of $\omega$ is $\omega$ itself;
+the latter set is open in $B$ by continuity of $q$.  It is also closed in $B$,
+being the preimage of the closed set $\{\omega\}$.  So each of the finitely
+many sets $q^{-1}(\{\omega\})\cap B$, $\omega\in S$, is a clopen subset of the
+connected set $B$ and hence is empty or all of $B$; they cover $B$, which is
+nonempty, so one of them equals $B$ and $q$ is constant on $B$.  Hence there is $\omega_0$ with
+$\omega_0^{m}=1$ and
+\begin{equation}\tag{4}
+  \chi(z)=\omega_0\,\psi(z)\qquad(z\in B).
+\end{equation}
+
+\emph{Step 5: conclusion.}  By (4) the function $\chi$ agrees on $B$ with the
+constant multiple $\omega_0\psi$ of the $C^\infty$ function $\psi$, so $\chi$
+is $C^\infty$ on the open set $B$, which contains $z_1$ and is contained in
+$U$.  Since $z_1\in U$ was arbitrary, the locality of smoothness recorded at
+the start gives that $\chi$ is $C^\infty$ on $U$.
+\end{proof}

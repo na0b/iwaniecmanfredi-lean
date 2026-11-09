@@ -1,0 +1,127 @@
+\begin{helper}
+Let $F\subset\mathbb{N}$ be finite, let $g_1,g_2\colon\mathbb{N}\to\mathbb{Z}$
+and $c_1,c_2\colon\mathbb{N}\to\mathbb{C}$, and assume
+\begin{enumerate}
+\item[(i)] $g_1$ is injective on $F$: for $k,k'\in F$, $g_1(k)=g_1(k')$ implies
+  $k=k'$;
+\item[(ii)] $g_2$ is injective on $F$: for $k,k'\in F$, $g_2(k)=g_2(k')$
+  implies $k=k'$;
+\item[(iii)] the two frequency families never collide: $g_1(k)\neq g_2(k')$ for
+  all $k,k'\in F$.
+\end{enumerate}
+Then
+\[
+  \int_{0}^{2\pi}\Bigl|\sum_{k\in F}\bigl(c_1(k)\,e^{i g_1(k)\theta}
+      +c_2(k)\,e^{i g_2(k)\theta}\bigr)\Bigr|^{2}d\theta
+  =2\pi\sum_{k\in F}\bigl(|c_1(k)|^{2}+|c_2(k)|^{2}\bigr).
+\]
+
+This is the Parseval step of the energy computation of Section 4
+(\texttt{paper.tex:353-357}), in exactly the generality that computation needs.
+On the circle of radius $r$ the summand $T_k$ of the series (19) carries
+precisely the two frequencies $k-n$ and $-k-n$; the family $k\mapsto k-n$ is
+injective, the family $k\mapsto-k-n$ is injective, and the two never meet
+because $(k-n)-(-k'-n)=k+k'>0$ for $k,k'\ge n\ge1$.  Applying the identity to
+a partial sum of (19) and then integrating in $r$ against the Jacobian is what
+produces the $\pi\sum\lambda_k(1+\epsilon_k^{2})|A_k|^{2}$ of the energy
+identity.
+
+Hypotheses (i)--(iii) are exactly what makes the diagonal the whole story: the
+two injectivity assumptions kill the off-diagonal pairs within each family and
+(iii) kills every cross pair.  Nothing is assumed about the sign or the size of
+the frequencies, and $F$ is an arbitrary finite index set, so the identity
+applies verbatim to any partial sum.
+\end{helper}
+\begin{proof}
+For $l\in\mathbb{Z}$ write $E_l(\theta)=e^{il\theta}$, and abbreviate
+\[
+  S(\theta)=\sum_{k\in F}\bigl(c_1(k)E_{g_1(k)}(\theta)
+    +c_2(k)E_{g_2(k)}(\theta)\bigr).
+\]
+
+\emph{Step 0: orthogonality of the characters.}  For every $l\in\mathbb{Z}$,
+\begin{equation}\tag{1}
+  \int_{0}^{2\pi}E_l(\theta)\,d\theta
+  =\begin{cases}2\pi,&l=0,\\[2pt]0,&l\neq0.\end{cases}
+\end{equation}
+Indeed, if $l=0$ the integrand is the constant $1$ and the integral is $2\pi$.
+If $l\neq0$, put $a=il\in\mathbb{C}$, which is nonzero because $l\neq0$ and
+$i\neq0$; writing $E_l(\theta)=e^{a\theta}$ and using the antiderivative
+$\theta\mapsto e^{a\theta}/a$ of $\theta\mapsto e^{a\theta}$,
+\[
+  \int_{0}^{2\pi}e^{a\theta}d\theta=\frac{e^{2\pi a}-1}{a}
+  =\frac{e^{2\pi i l}-1}{il}=0,
+\]
+since $e^{2\pi il}=1$ for every integer $l$.
+
+\emph{Step 1: integrability.}  For each $l$ and each $c\in\mathbb{C}$ the
+function $\theta\mapsto cE_l(\theta)$ is continuous on $\mathbb{R}$, hence
+interval-integrable on $[0,2\pi]$.  Consequently $S$, a finite sum of such
+functions, is continuous and interval-integrable there, and so are
+$\theta\mapsto\overline{S(\theta)}$ and $\theta\mapsto|S(\theta)|^{2}$.  Every
+integral written below is therefore defined, and the integral of a finite sum
+of such functions is the sum of their integrals.
+
+\emph{Step 2: expanding the square.}  For every $\theta$ we have
+$|S(\theta)|^{2}=S(\theta)\overline{S(\theta)}$, an identity between a real
+number and a complex one, read through the inclusion
+$\mathbb{R}\hookrightarrow\mathbb{C}$.  Also
+\begin{equation}\tag{2}
+  \overline{E_l(\theta)}=\overline{e^{il\theta}}=e^{-il\theta}
+  =E_{-l}(\theta),
+\end{equation}
+because conjugation is a continuous field automorphism fixing $\mathbb{R}$ and
+sending $i$ to $-i$.  Expanding the product of the two finite sums and using
+(2) termwise,
+\begin{equation}\tag{3}
+  S(\theta)\overline{S(\theta)}
+  =\sum_{k\in F}\sum_{k'\in F}
+    \begin{aligned}[t]
+      \Bigl[&c_1(k)\overline{c_1(k')}\,E_{g_1(k)-g_1(k')}(\theta)
+       +c_1(k)\overline{c_2(k')}\,E_{g_1(k)-g_2(k')}(\theta)\\
+      &{}+c_2(k)\overline{c_1(k')}\,E_{g_2(k)-g_1(k')}(\theta)
+       +c_2(k)\overline{c_2(k')}\,E_{g_2(k)-g_2(k')}(\theta)\Bigr],
+    \end{aligned}
+\end{equation}
+using $E_a(\theta)E_b(\theta)=E_{a+b}(\theta)$, which is the additivity of the
+exponential.
+
+\emph{Step 3: integrating, and discarding the off-diagonal terms.}  Integrate
+(3) over $[0,2\pi]$.  The right-hand side is a finite sum of functions of the
+form $cE_l$, so by Step 1 the integral is the corresponding finite sum of
+integrals, and each is $c\int_0^{2\pi}E_l$, evaluated by (1).  We examine the
+four families of terms.
+
+The first family contributes only when $g_1(k)-g_1(k')=0$, i.e.
+$g_1(k)=g_1(k')$, which by (i) happens exactly when $k=k'$; for such a pair
+the contribution is $2\pi\,c_1(k)\overline{c_1(k)}=2\pi|c_1(k)|^{2}$.
+
+The fourth family likewise contributes only when $g_2(k)=g_2(k')$, which by
+(ii) happens exactly when $k=k'$, with contribution
+$2\pi\,c_2(k)\overline{c_2(k)}=2\pi|c_2(k)|^{2}$.
+
+The second family would need $g_1(k)=g_2(k')$ for some $k,k'\in F$, which (iii)
+forbids, so every one of its terms integrates to $0$.  The third family would
+need $g_2(k)=g_1(k')$ for some $k,k'\in F$; applying (iii) with the two
+indices interchanged gives $g_1(k')\neq g_2(k)$, so this too is impossible and
+every term integrates to $0$.
+
+Hence only the diagonal pairs $k=k'$ of the first and fourth families survive,
+and
+\begin{equation}\tag{4}
+  \int_{0}^{2\pi}S(\theta)\overline{S(\theta)}\,d\theta
+  =\sum_{k\in F}2\pi\bigl(|c_1(k)|^{2}+|c_2(k)|^{2}\bigr)
+  =2\pi\sum_{k\in F}\bigl(|c_1(k)|^{2}+|c_2(k)|^{2}\bigr).
+\end{equation}
+
+\emph{Step 4: descending to the real identity.}  By Step 2 the integrand on
+the left of (4) is the image of the real-valued function
+$\theta\mapsto|S(\theta)|^{2}$ under the inclusion
+$\mathbb{R}\hookrightarrow\mathbb{C}$, and that inclusion commutes with the
+integral of an interval-integrable real function.  So the left side of (4) is
+the image of $\int_{0}^{2\pi}|S(\theta)|^{2}d\theta$, while the right side is
+the image of the real number
+$2\pi\sum_{k\in F}(|c_1(k)|^{2}+|c_2(k)|^{2})$.  The inclusion
+$\mathbb{R}\hookrightarrow\mathbb{C}$ is injective, so the two real numbers are
+equal, which is the assertion.
+\end{proof}

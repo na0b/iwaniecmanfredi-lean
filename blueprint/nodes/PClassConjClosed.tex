@@ -1,0 +1,78 @@
+\begin{lemma}
+Let $H\colon\mathbb{C}\to\mathbb{C}$, let $s,k\ge0$ be integers and let
+$P\in\mathbb{P}(s,k)$ relative to $H$ in the sense of \noderef{PClass}.  Then
+the pointwise complex conjugate $\bar P$, defined by
+$\bar P(\xi)=\overline{P(\xi)}$, also belongs to $\mathbb{P}(s,k)$ relative to
+$H$.
+\end{lemma}
+\begin{proof}
+By \noderef{PClass} fix an integer $r\ge0$, complex numbers $c_1,\dots,c_r$ and
+lists $M_1,\dots,M_r$ of derivative symbols with
+\begin{equation}\tag{1}
+  s(M_\alpha)=s,\qquad k(M_\alpha)=k\qquad(\alpha=1,\dots,r),
+\end{equation}
+\begin{equation}\tag{2}
+  P(\xi)=\sum_{\alpha=1}^{r}c_\alpha H^{M_\alpha}(\xi)\qquad\text{for every }\xi\in\mathbb{C}.
+\end{equation}
+
+\emph{Step 1: flipping one symbol.}  For a derivative symbol $d=(i,j,\beta)$ in
+the sense of \noderef{DerivSymbol} put
+\[
+  d^{\flat}=(i,\,j,\,\neg\beta),
+\]
+the symbol with the same two indices and the opposite Boolean.  Then
+$d^{\flat}$ is again a derivative symbol, since its indices are the same
+non-negative integers and therefore still satisfy $i+j>0$, and its order is
+unchanged:
+\begin{equation}\tag{3}
+  |d^{\flat}|=i+j=|d| .
+\end{equation}
+Write $g_d=\partial^{i+j}H/\partial\xi^i\partial\bar\xi^j$ for the iterated
+derivative of \noderef{WirtingerIter}, which depends only on $i$ and $j$ and so
+is the same for $d$ and $d^{\flat}$.  By \noderef{SymbolValue},
+$H^{d}=g_d$ and $H^{d^{\flat}}=\overline{g_d}$ when $\beta$ is false, while
+$H^{d}=\overline{g_d}$ and $H^{d^{\flat}}=g_d$ when $\beta$ is true.  Since
+complex conjugation is an involution, $\overline{\overline{g_d}}=g_d$, and in
+both cases
+\begin{equation}\tag{4}
+  \overline{H^{d}(\xi)}=H^{d^{\flat}}(\xi)\qquad\text{for every }\xi\in\mathbb{C}.
+\end{equation}
+
+\emph{Step 2: flipping a monomial.}  For a list $M=(d_1,\dots,d_k)$ of
+derivative symbols put $M^{\flat}=(d_1^{\flat},\dots,d_k^{\flat})$.  By
+\noderef{MonomialValue}, $k(\,\cdot\,)$ is the length of a list and
+$s(\,\cdot\,)$ is the sum of the orders of its entries; flipping every entry
+changes neither the length nor, by (3), any of the orders, so
+\begin{equation}\tag{5}
+  k(M^{\flat})=k(M),\qquad s(M^{\flat})=s(M).
+\end{equation}
+Moreover $H^{M}$ is by \noderef{MonomialValue} the pointwise product of the
+symbol values over the entries of $M$, and complex conjugation is
+multiplicative, so by (4)
+\begin{equation}\tag{6}
+  \overline{H^{M}(\xi)}
+  =\overline{\prod_{t=1}^{k}H^{d_t}(\xi)}
+  =\prod_{t=1}^{k}\overline{H^{d_t}(\xi)}
+  =\prod_{t=1}^{k}H^{d_t^{\flat}}(\xi)
+  =H^{M^{\flat}}(\xi)
+\end{equation}
+for every $\xi\in\mathbb{C}$.  For the empty list both sides of (6) are the
+constant $1$, since $\bar1=1$.
+
+\emph{Step 3: conclusion.}  Complex conjugation is additive and satisfies
+$\overline{cw}=\bar c\,\bar w$.  Hence, for every $\xi\in\mathbb{C}$, by (2)
+and (6),
+\[
+  \overline{P(\xi)}
+  =\overline{\sum_{\alpha=1}^{r}c_\alpha H^{M_\alpha}(\xi)}
+  =\sum_{\alpha=1}^{r}\overline{c_\alpha}\;\overline{H^{M_\alpha}(\xi)}
+  =\sum_{\alpha=1}^{r}\overline{c_\alpha}\,H^{M_\alpha^{\flat}}(\xi).
+\]
+By (1) and (5) each list $M_\alpha^{\flat}$ satisfies
+$s(M_\alpha^{\flat})=s$ and $k(M_\alpha^{\flat})=k$, i.e.\ has type $(s,k)$.
+The complex numbers $\overline{c_\alpha}$ together with the lists
+$M_\alpha^{\flat}$ therefore present $\bar P$ as a finite
+$\mathbb{C}$-linear combination of monomials of type $(s,k)$, valid at every
+point of $\mathbb{C}$.  By \noderef{PClass} this says exactly that
+$\bar P\in\mathbb{P}(s,k)$ relative to $H$.
+\end{proof}

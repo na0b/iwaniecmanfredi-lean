@@ -1,0 +1,53 @@
+\begin{lemma}
+Let $1<p<\infty$ and let $\kappa(p)$ be the right-hand side of equation (9),
+as in \noderef{KAlphaExp}.  Then there is exactly one pair $(k,\alpha)$
+consisting of an integer $k\ge1$ and a real number $\alpha$ with
+$0<\alpha\le1$ such that
+\[
+  k+\alpha=\kappa(p).
+\]
+\end{lemma}
+\begin{proof}
+Fix $p>1$ and write $v=\kappa(p)$ and $q=\dfrac1{p-1}$, so that $q>0$ and, by
+\noderef{KAlphaExp},
+\[
+  6v=7+q+\sqrt{1+14q+q^2}.
+\]
+
+\emph{Step 1 ($v>\tfrac43$, in particular $v>1$).}  Since $q>0$ we have
+$14q>0$ and $q^2\ge0$, so $1+14q+q^2>1$.  The square root is strictly
+increasing on $[0,\infty)$ and $\sqrt1=1$, so $\sqrt{1+14q+q^2}>1$.  Hence
+\[
+  6v=7+q+\sqrt{1+14q+q^2}>7+0+1=8 ,
+\]
+so $v>\tfrac86=\tfrac43>1$.
+
+\emph{Step 2 (existence).}  Let $m=\lceil v\rceil$ be the least integer
+$\ge v$, and set
+\[
+  k=m-1,\qquad \alpha=v-k .
+\]
+Since $v>1$, the integer $1$ is not $\ge v$, so $m\ge2$ and therefore
+$k=m-1\ge1$ is an integer $\ge1$.  By definition of the ceiling we have
+$v\le m$, and also $m-1<v$, for otherwise $m-1$ would be an integer $\ge v$
+smaller than $m$.  Thus
+\[
+  k<v\le k+1 ,
+\]
+and hence $\alpha=v-k$ satisfies $0<\alpha\le1$.  Finally
+$k+\alpha=k+(v-k)=v$.  So the pair $(k,\alpha)$ has all the required
+properties.
+
+\emph{Step 3 (uniqueness).}  Suppose $(k,\alpha)$ and $(k',\alpha')$ both
+consist of an integer $\ge1$ and a real number in $(0,1]$, and that
+\[
+  k+\alpha=v=k'+\alpha' .
+\]
+Then $k-k'=\alpha'-\alpha$.  From $0<\alpha\le1$ and $0<\alpha'\le1$ we get
+\[
+  -1\le-\alpha<\alpha'-\alpha<\alpha'\le1,
+\]
+so $\alpha'-\alpha$ lies in the open interval $(-1,1)$.  Hence the integer
+$k-k'$ lies in $(-1,1)$, which forces $k-k'=0$, i.e.\ $k=k'$.  Then
+$\alpha=v-k=v-k'=\alpha'$.  So the two pairs coincide.
+\end{proof}
