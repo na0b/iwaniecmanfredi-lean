@@ -133,9 +133,9 @@ The formalization was produced with [Trellis](https://github.com/wpegden/trellis
 - its faithfulness to the article;
 - the agreement between its Lean statement and its natural-language statement.
 
-Juan J. Manfredi chose the targets, decided which cited results are carried as hypotheses, and approved the statements at the Trellis gates. The Lean kernel checks every proof.
+Juan J. Manfredi chose the targets, decided which cited results are carried as hypotheses, and approved the statements at the Trellis gates. The Lean kernel checks every proof. Tadeusz Iwaniec agreed to the publication of the formalization.  
 
-**Review status.** The Lean statements and definitions have been read against the article by J. J. Manfredi. They have not yet been reviewed by T. Iwaniec.
+
 
 ## Citation
 
